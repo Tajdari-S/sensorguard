@@ -32,7 +32,7 @@ Collaborators should put their names beside one primary lane in `docs/OWNERS.md`
 7. Derive minimum sampling-rate and bit-depth requirements and confirm them in hardware.
 8. Freeze claims, figures, and the paper before the final upload day.
 
-The dated plan is in [`docs/TIMELINE.md`](docs/TIMELINE.md). The exact tests and acceptance criteria are in [`docs/EXPERIMENT_PROTOCOL.md`](docs/EXPERIMENT_PROTOCOL.md). The complete named application/evasion registry and its feasibility status are in [`docs/WORKLOAD_COVERAGE.md`](docs/WORKLOAD_COVERAGE.md); the exact reviewer-to-experiment mapping is in [`docs/REVIEWER_REQUIREMENTS.md`](docs/REVIEWER_REQUIREMENTS.md); daily commands and gates are in [`docs/DAILY_RUNBOOK.md`](docs/DAILY_RUNBOOK.md).
+The dated plan is in [`docs/TIMELINE.md`](docs/TIMELINE.md). The exact tests and acceptance criteria are in [`docs/EXPERIMENT_PROTOCOL.md`](docs/EXPERIMENT_PROTOCOL.md). The complete named application/evasion registry and its feasibility status are in [`docs/WORKLOAD_COVERAGE.md`](docs/WORKLOAD_COVERAGE.md); daily commands and gates are in [`docs/DAILY_RUNBOOK.md`](docs/DAILY_RUNBOOK.md).
 
 ## Repository map
 
