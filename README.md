@@ -32,7 +32,7 @@ Collaborators should put their names beside one primary lane in `docs/OWNERS.md`
 7. Derive minimum sampling-rate and bit-depth requirements and confirm them in hardware.
 8. Freeze claims, figures, and the paper before the final upload day.
 
-The dated plan is in [`docs/TIMELINE.md`](docs/TIMELINE.md). The exact tests and acceptance criteria are in [`docs/EXPERIMENT_PROTOCOL.md`](docs/EXPERIMENT_PROTOCOL.md). The complete named application/evasion registry and its feasibility status are in [`docs/WORKLOAD_COVERAGE.md`](docs/WORKLOAD_COVERAGE.md); daily commands and gates are in [`docs/DAILY_RUNBOOK.md`](docs/DAILY_RUNBOOK.md).
+The dated plan is in [`docs/TIMELINE.md`](docs/TIMELINE.md). The exact tests and acceptance criteria are in [`docs/EXPERIMENT_PROTOCOL.md`](docs/EXPERIMENT_PROTOCOL.md). The complete named application/evasion registry and its feasibility status are in [`docs/WORKLOAD_COVERAGE.md`](docs/WORKLOAD_COVERAGE.md); daily commands and gates are in [`docs/DAILY_RUNBOOK.md`](docs/DAILY_RUNBOOK.md); executable roofline tests are in [`docs/ROOFLINE_RUNBOOK.md`](docs/ROOFLINE_RUNBOOK.md).
 
 ## Repository map
 
@@ -52,7 +52,8 @@ scripts/     Inventory and validation helpers
 - [ ] Run `bash scripts/capture_inventory.sh results/inventory`.
 - [ ] Fill and freeze `configs/preregistration.yaml`.
 - [ ] Validate it with `python3 scripts/validate_preregistration.py configs/preregistration.yaml`.
-- [ ] Validate application/reviewer coverage with `python3 scripts/check_workload_coverage.py`.
+- [ ] Validate application coverage with `python3 scripts/check_workload_coverage.py`.
+- [ ] Run `make roofline-test`; after CUDA/PyTorch setup, run `make roofline-smoke`.
 - [ ] Review every `blocked_exact_name` and `external_hardware` workload before freezing scope.
 - [ ] Record a single synchronization pulse across all active sensor loggers.
 - [ ] Run one idle, GEMM, memory-copy, and burst calibration trace.
@@ -70,4 +71,4 @@ scripts/     Inventory and validation helpers
 
 ## What the scripts currently do
 
-The repository now contains runnable inventory, preregistration-validation, workload-coverage-validation, and CSV queue-generation tools. It does **not yet execute the ML/HPC applications**: those adapters must be ported, pinned, smoke-tested, and connected to synchronized sensor logging. `scripts/run_matrix.py` is deliberately a non-executing planner so a placeholder can never be mistaken for a completed experiment.
+The repository contains runnable inventory, preregistration validation, workload-coverage validation, CSV queue generation, and roofline microbenchmark/plot tools. The roofline microbenchmarks execute when CUDA PyTorch is installed; the Nsight wrapper executes when `ncu` is available. Full ML/HPC application adapters still need to be ported, pinned, smoke-tested, and connected to synchronized sensor logging. `scripts/run_matrix.py` is deliberately a non-executing planner so a placeholder can never be mistaken for a completed experiment.
