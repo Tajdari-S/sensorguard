@@ -1,0 +1,43 @@
+run_id: YYYYMMDD_workload_gpu_seed_rep
+git_commit: TBD
+operator: TBD
+start_utc: TBD
+end_utc: TBD
+workload:
+  family: training
+  name: TBD
+  command: TBD
+  dataset: TBD
+  model: TBD
+  precision: TBD
+  batch_size: TBD
+  sequence_length: TBD
+  seed: 0
+  useful_work_metric: samples_per_second
+hardware:
+  gpu_uuids: []
+  scope_channels: []
+  camera_rois: []
+  contact_sensor_ids: []
+  network_flow_scope: TBD
+environment:
+  container_digest: TBD
+  driver: TBD
+  cuda: TBD
+  pytorch: TBD
+controls:
+  power_limit_W: TBD
+  graphics_clock_MHz: TBD
+  memory_clock_MHz: TBD
+  ambient_inlet_C: TBD
+sensors:
+  nvml: true
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  visible_camera: false
+  fiber_tap: false
+status: planned
+exclusion_reason: null
+notes: null
+
