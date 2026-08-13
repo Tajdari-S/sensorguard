@@ -95,11 +95,10 @@ Test replay/freeze/shift/channel swap and model/application identity probes usin
 
 ## P2 conditional
 
-### 16. [P2][Aug 22] Decide whether visible imaging adds conditional value
+### 16. [P2][Aug 22] Decide whether ultrasound or RF adds conditional value
 
-Drop unless equipment-only optical features improve the frozen validation endpoint beyond retained channels.
+Screen ultrasound and RF separately, then conditional on NVML plus electrical sensing. Drop either modality unless it improves the frozen validation endpoint and passes the health, privacy, and overhead criteria.
 
-### 17. [P2][Aug 22] Decide whether the fiber tap is in scope
+### 17. [P2][Aug 22] Decide whether mirrored Ethernet is in scope
 
-Drop for single-node experiments unless actual tapped traffic is relevant; it cannot observe PCIe/NVLink collectives.
-
+Validate the 10Gtek NIC plus TP-Link TL-SG108E port-mirroring path. Drop for single-node experiments unless observed Ethernet traffic is relevant; it cannot observe PCIe/NVLink collectives.
