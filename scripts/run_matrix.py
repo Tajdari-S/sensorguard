@@ -22,7 +22,7 @@ def select(rows, group, priority, status):
 def main() -> int:
     parser = argparse.ArgumentParser(description="List workload coverage or create an auditable CSV queue")
     parser.add_argument("--manifest", default="configs/workloads.json")
-    parser.add_argument("--group", choices=["training", "inference", "non_ml", "evasion", "reviewer_extension"])
+    parser.add_argument("--group", choices=["training", "inference", "non_ml", "evasion", "evaluation"])
     parser.add_argument("--priority", choices=["P0", "P1", "P2"])
     parser.add_argument("--status")
     parser.add_argument("--repetitions", type=int, default=1)
