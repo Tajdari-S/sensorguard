@@ -1,0 +1,36 @@
+project: sensorguard-asplos27
+freeze_date: 2026-08-15
+deadline: 2026-09-09_AoE
+primary_endpoint: run_level_TPR_at_fixed_global_false_alert_budget
+false_alert_budget_per_gpu_hour: 0.0416667
+false_alert_sensitivity_per_gpu_hour:
+  - 0.125
+  - 0.0138889
+window_seconds: 30
+stride_seconds: 15
+baseline_rule: three_of_five_windows_at_probability_0.75
+primary_model: calibrated_logistic_late_fusion_plus_CUSUM
+split_unit: run
+group_fields:
+  - gpu_uuid
+  - collection_day
+  - application_configuration
+  - evasion_family
+required_holdouts:
+  gpu_count: 1
+  evasion_family_count: 1
+sensor_retention:
+  minimum_relative_miss_reduction: 0.10
+  paired_ci_must_exclude_zero: true
+  maximum_monitor_overhead_fraction: 0.01
+  smallest_set_within_one_standard_error: true
+repetitions:
+  screening: 3
+  retained_evaluation: 5
+test_open_count: 1
+unresolved:
+  - held_out_gpu_uuid
+  - held_out_evasion_family
+  - thermal_start_band_C
+  - maximum_allowed_missing_fraction
+  - maximum_alignment_error_ms
