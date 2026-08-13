@@ -1,6 +1,6 @@
 # SensorGuard: ASPLOS 2027 submission sprint
 
-Private collaboration repository for **Beyond NVML: Sensor-Fused Hardware Telemetry for Robust AI Compute Governance**.
+Public collaboration repository for **Beyond NVML: Sensor-Fused Hardware Telemetry for Robust AI Compute Governance**.
 
 ## Deadline
 
@@ -32,7 +32,7 @@ Collaborators should put their names beside one primary lane in `docs/OWNERS.md`
 7. Derive minimum sampling-rate and bit-depth requirements and confirm them in hardware.
 8. Freeze claims, figures, and the paper before the final upload day.
 
-The dated plan is in [`docs/TIMELINE.md`](docs/TIMELINE.md). The exact tests and acceptance criteria are in [`docs/EXPERIMENT_PROTOCOL.md`](docs/EXPERIMENT_PROTOCOL.md).
+The dated plan is in [`docs/TIMELINE.md`](docs/TIMELINE.md). The exact tests and acceptance criteria are in [`docs/EXPERIMENT_PROTOCOL.md`](docs/EXPERIMENT_PROTOCOL.md). The complete named application/evasion registry and its feasibility status are in [`docs/WORKLOAD_COVERAGE.md`](docs/WORKLOAD_COVERAGE.md); daily commands and gates are in [`docs/DAILY_RUNBOOK.md`](docs/DAILY_RUNBOOK.md).
 
 ## Repository map
 
@@ -52,6 +52,8 @@ scripts/     Inventory and validation helpers
 - [ ] Run `bash scripts/capture_inventory.sh results/inventory`.
 - [ ] Fill and freeze `configs/preregistration.yaml`.
 - [ ] Validate it with `python3 scripts/validate_preregistration.py configs/preregistration.yaml`.
+- [ ] Validate application/reviewer coverage with `python3 scripts/check_workload_coverage.py`.
+- [ ] Review every `blocked_exact_name` and `external_hardware` workload before freezing scope.
 - [ ] Record a single synchronization pulse across all active sensor loggers.
 - [ ] Run one idle, GEMM, memory-copy, and burst calibration trace.
 - [ ] Confirm the raw-data storage location, quota, backups, and deletion policy.
@@ -66,3 +68,6 @@ scripts/     Inventory and validation helpers
 - Do not commit raw camera, network, power, or telemetry traces to GitHub.
 - Do not claim a sensor helps unless its paired run-bootstrap interval excludes zero and it passes the retention rule.
 
+## What the scripts currently do
+
+The repository now contains runnable inventory, preregistration-validation, workload-coverage-validation, and CSV queue-generation tools. It does **not yet execute the ML/HPC applications**: those adapters must be ported, pinned, smoke-tested, and connected to synchronized sensor logging. `scripts/run_matrix.py` is deliberately a non-executing planner so a placeholder can never be mistaken for a completed experiment.
