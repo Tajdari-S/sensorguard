@@ -1,0 +1,37 @@
+# Raw and processed experimental data
+data/raw/**
+data/processed/**
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Large or identifying sensor media
+*.pcap
+*.pcapng
+*.parquet
+*.npy
+*.npz
+*.mp4
+*.mov
+*.avi
+
+# Python and notebooks
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+
+# LaTeX build products
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+
+# Local secrets and machine configuration
+.env
+secrets/
+local_config.*
+
