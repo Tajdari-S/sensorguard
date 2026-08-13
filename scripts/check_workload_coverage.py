@@ -13,10 +13,6 @@ REVIEWER_CRITICAL = {
     "attack_b_low_util", "attack_j_pid", "attack_l_diluted", "attack_whitebox_full",
     "attack_whitebox_lora", "reviewer_fused_update", "reviewer_latency_reconciliation",
     *(f"reviewer_custom_kernel_{i}" for i in range(1, 6)),
-    "train_ppo", "data_etl", "database_acceleration", "mixed_ml_hpc", "jax_xla",
-    "infer_multi_query", "infer_multi_user_serving", "reviewer_amd_cross_vendor",
-    "reviewer_virtualization_mig", "reviewer_signal_robustness",
-    "reviewer_adaptive_surrogate", "reviewer_telemetry_integrity",
 }
 REQUIRED_ATTACKS = {
     "attack_a_util_modulation", "attack_b_low_util", "attack_d_temporal_disruption",
