@@ -15,11 +15,11 @@ Dates are in 2026. The official September-cycle full-paper deadline is **Septemb
 | Aug 13 | Kickoff; confirm four owners; freeze paper claim and P0/P1/P2 scope | Paper/integration | Owner map; scope decision log |
 | Aug 14 | Inventory six RTX 3090 GPUs, host, topology, clocks, software, and every sensor; safety review | Sensors | Complete system table; topology diagram; inventory archive |
 | Aug 15 | Freeze run manifest, workload matrix, false-alert budget, split groups, exclusions, and retention rule | Analysis | Hashed preregistration; immutable split IDs |
-| Aug 16-17 | Validate synchronized loggers with idle/GEMM/memcpy/bursty tests; measure noise, drift, clipping, jitter | Sensors | Calibration report; channel map; pass/fail per modality |
+| Aug 16-17 | Validate synchronized loggers with idle/GEMM/memcpy/bursty tests; run roofline smoke; measure noise, drift, clipping, jitter | Sensors | Calibration report; channel map; roofline smoke JSON/SVG; pass/fail per modality |
 | Aug 16-18 | Reproduce strict NeurIPS NVML pipeline on one GPU, then all six; lock feature code | Analysis | Strict and 3090-tuned baseline table |
 | Aug 17-19 | Pin WAVE commit; map Ampere counters; run GPT-2/LLaMA/Qwen representative cases on one GPU | Paper/integration | Adaptation log; fidelity and overhead table |
 | Aug 18-21 | P0 synchronized collection: training, matched inference, GEMM/FFT/memcpy/rendering/mining proxy, and hard evasions | Workloads | Audited development/validation corpus |
-| Aug 20-21 | Separate roofline characterization passes; freeze matched-overlap pairs | Analysis | Classical roofline; frozen pair IDs |
+| Aug 20-21 | Run separate Nsight roofline characterization passes and generate the RTX-3090 roofline; freeze matched-overlap pairs | Analysis | NCU CSV, parsed roofline JSON/SVG, command log, frozen pair IDs |
 | **Aug 22** | **Gate 1: sensor retain/drop decision** using validation only | All | Decision record; P2 modalities killed or retained |
 | Aug 23-26 | Full repetitions for NVML, electrical, and retained sensors across GPU/day groups; collect useful-work costs | Sensors + workloads | P0 evaluation corpus; failure ledger |
 | Aug 24-27 | Implement five evasion families and telemetry replay/freeze/shift/channel-swap tests | Workloads | Zero-shot held-out attack corpus |
