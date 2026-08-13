@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the paper/reviewer workload coverage contract using the stdlib only."""
+"""Validate the public SensorGuard workload coverage contract using the stdlib only."""
 
 import argparse
 import json
@@ -9,10 +9,14 @@ from pathlib import Path
 
 REQUIRED_FIELDS = {"id", "category", "application", "variants", "source", "priority", "status", "fit_3090"}
 ALLOWED_STATUS = {"runnable", "adapter_needed", "external_hardware", "blocked_exact_name"}
-REVIEWER_CRITICAL = {
+PROJECT_CRITICAL = {
     "attack_b_low_util", "attack_j_pid", "attack_l_diluted", "attack_whitebox_full",
-    "attack_whitebox_lora", "reviewer_fused_update", "reviewer_latency_reconciliation",
-    *(f"reviewer_custom_kernel_{i}" for i in range(1, 6)),
+    "attack_whitebox_lora", "eval_fused_update", "eval_latency",
+    *(f"custom_kernel_variant_{i}" for i in range(1, 6)),
+    "train_ppo", "data_etl", "database_acceleration", "mixed_ml_hpc", "jax_xla",
+    "infer_multi_query", "infer_multi_user_serving", "eval_amd_cross_vendor",
+    "eval_virtualization_mig", "eval_signal_robustness",
+    "eval_adaptive_surrogate", "eval_telemetry_integrity",
 }
 REQUIRED_ATTACKS = {
     "attack_a_util_modulation", "attack_b_low_util", "attack_d_temporal_disruption",
@@ -45,7 +49,7 @@ def main() -> int:
         if not isinstance(row.get("variants"), list) or not row.get("variants"):
             errors.append(f"{row.get('id', index)} needs at least one variant")
     present = set(ids)
-    for label, required in (("NeurIPS attack", REQUIRED_ATTACKS), ("reviewer-critical", REVIEWER_CRITICAL)):
+    for label, required in (("public-paper attack", REQUIRED_ATTACKS), ("project-critical", PROJECT_CRITICAL)):
         missing = sorted(required - present)
         if missing:
             errors.append(f"missing {label} ids: {', '.join(missing)}")
