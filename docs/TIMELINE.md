@@ -6,7 +6,7 @@ Dates are in 2026. The official September-cycle full-paper deadline is **Septemb
 
 - **P0: submission-critical.** Frozen NVML baseline; synchronized electrical sensing; matched-overlap evaluation; held-out evasion; calibrated run-level rule; overhead; one hardware co-design sweep; complete paper.
 - **P1: strengthens the paper.** WAVE reproduction on one RTX 3090; contact temperature; tamper/replay; privacy probe; all-six-GPU confirmation.
-- **P2: include only if early evidence is positive.** Thermal camera, visible camera, and fiber-tap expansion; exhaustive triples; broad cross-platform cloud study.
+- **P2: include only if early evidence is positive.** Ultrasound, RF, and mirrored-Ethernet expansion; exhaustive triples; broad cross-platform cloud study.
 
 ## Schedule
 
@@ -43,9 +43,8 @@ Dates are in 2026. The official September-cycle full-paper deadline is **Septemb
 
 ## Scope cuts if behind
 
-1. Cut full visible-camera and fiber-tap evaluation unless either gives a validation-only gain beyond NVML plus electrical sensing.
+1. Cut full ultrasound, RF, and mirrored-Ethernet evaluation unless a modality gives a validation-only gain beyond NVML plus electrical sensing.
 2. Limit WAVE to one GPU and representative model sizes; keep it as a high-information/overhead reference.
 3. Prefer contact temperature over full thermal imaging if it lies within one standard error of the camera.
 4. Cut exhaustive three-sensor combinations before cutting held-out attack families or confidence intervals.
 5. Never cut the fixed-threshold run-level evaluation, useful-work cost, or leakage-safe split.
-
