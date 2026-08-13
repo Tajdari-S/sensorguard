@@ -6,7 +6,7 @@ The dates below complement `TIMELINE.md`. Queue generation is runnable now; GPU 
 |---|---|---|---|
 | Aug 13 | Registry and owner freeze | `python3 scripts/check_workload_coverage.py` | Zero schema/coverage errors; owners assigned |
 | Aug 14 | Six-GPU and sensor inventory | `bash scripts/capture_inventory.sh results/inventory` | GPU UUID/topology and every sensor channel recorded |
-| Aug 15 | Preregistration, exact paper/reviewer registry, and all workload IDs | `python3 scripts/validate_preregistration.py configs/preregistration.yaml` | Hash stored; split groups, exclusions and reviewer matrix frozen |
+| Aug 15 | Preregistration and all workload IDs | `python3 scripts/validate_preregistration.py configs/preregistration.yaml` | Hash stored; split groups and exclusions frozen |
 | Aug 16 | Idle/GEMM/memcpy/burst calibration | `python3 scripts/run_matrix.py --group non_ml --priority P0` | Sensor alignment/noise/clipping report passes |
 | Aug 17 | Clean training smoke tests | `python3 scripts/run_matrix.py --group training --priority P0` | Each native adapter produces manifest + samples |
 | Aug 18 | Clean inference smoke tests | `python3 scripts/run_matrix.py --group inference --priority P0` | Matched controls and prefill/decode labels verified |
@@ -17,7 +17,7 @@ The dates below complement `TIMELINE.md`. Queue generation is runnable now; GPU 
 | Aug 23–24 | Full clean repetitions | materialize P0 training/inference/non-ML queues | Repetition/GPU/day quotas met |
 | Aug 25–26 | NeurIPS evasions R1–R3 | `python3 scripts/run_matrix.py --group evasion --priority P0` | A–L families audited with useful work |
 | Aug 27 | NeurIPS evasions R4–R5 | same queue, filtered in run ledger | All 20 families and variants accounted for |
-| Aug 28 | Reviewer custom/fused, signal-noise, tamper and adaptive cases | `python3 scripts/run_matrix.py --group reviewer_extension --priority P0` | Five names resolved; fused controls and reviewer P0 tests collected |
+| Aug 28 | Reviewer custom/fused cases | `python3 scripts/run_matrix.py --group reviewer_extension --priority P0` | Five names resolved; fused controls collected |
 | Aug 29 | Calibration/CUSUM and LOO | analysis adapter (to implement) | Model, threshold and code commit frozen |
 | Aug 30 | Held-out test once | frozen analysis command only | Claims table and immutable output hash |
 | Aug 31–Sep 2 | Sensor rate/bit/ROI sweeps | hardware sweep adapter (to implement) | Minimum spec within one SE, hardware confirmed |
