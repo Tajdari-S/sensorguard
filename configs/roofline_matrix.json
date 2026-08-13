@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "microbenchmarks": [
+    "gemm_1024", "gemm_2048", "gemm_4096", "gemm_tall",
+    "gemv", "copy", "elementwise"
+  ],
+  "application_sweeps": [
+    {"workload_id":"infer_resnet_family","modes":["ResNet-18","ResNet-50","ResNet-101","ResNet-152"],"sweep":"batch size"},
+    {"workload_id":"infer_vit_family","modes":["ViT-S","ViT-B","ViT-L"],"sweep":"batch size"},
+    {"workload_id":"infer_gpt2","modes":["prefill","decode"],"sweep":"model, batch, prompt/output length"},
+    {"workload_id":"train_resnet_cifar10","modes":["forward-only","training"],"sweep":"batch and precision"},
+    {"workload_id":"train_gpt2_wikitext","modes":["forward-only","fine-tuning"],"sweep":"model, batch, sequence length"},
+    {"workload_id":"hpc_gemm","modes":["square","tall-skinny"],"sweep":"shape and precision"},
+    {"workload_id":"hpc_fft","modes":["1D","batched"],"sweep":"transform size"},
+    {"workload_id":"hpc_memcpy","modes":["H2D","D2H","D2D"],"sweep":"transfer size"}
+  ],
+  "rule": "Profiled roofline runs are separate from unprofiled sensor traces. Record exact clocks, power limit, dtype, batch, dimensions, software versions and command."
+}
