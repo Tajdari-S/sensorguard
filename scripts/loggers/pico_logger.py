@@ -57,32 +57,38 @@ def stream_unit(handle, seconds: float, sample_interval_us: int, out_prefix: Pat
     for ch in (0, 1):  # A, B
         assert ps.ps2000_set_channel(handle, ch, 1, 1, RANGE_2V) != 0
 
-    chunks_a, chunks_b, anchors = [], [], []
-    state = {"overflow": 0, "n_polls": 0}
-
-    @ps.GetOverviewBuffersMaxMin
-    def cb(buffers, overflow, triggered_at, triggered, auto_stop, n_values):
-        if n_values <= 0:
-            return
-        state["overflow"] |= overflow
-        arr_type = ctypes.POINTER(ctypes.c_int16)
-        bufs = ctypes.cast(buffers, ctypes.POINTER(arr_type))
-        a = np.ctypeslib.as_array(bufs[0], shape=(n_values,)).copy()
-        b = np.ctypeslib.as_array(bufs[2], shape=(n_values,)).copy()
-        chunks_a.append(a)
-        chunks_b.append(b)
-        anchors.append((raw_now(), int(n_values)))
-
-    # sample_interval in ns units arg: (interval, time_units 2=us? -> use ns=1)
     ok = ps.ps2000_run_streaming_ns(
         handle, sample_interval_us * 1000, 1,  # 1 = PS2000_NS
-        60000, 0, 1, 15000)
+        60000, 0, 1, 30000)
     assert ok != 0, "run_streaming_ns failed"
+
+    n_max = 30000
+    buf_a = np.zeros(n_max, dtype=np.int16)
+    buf_b = np.zeros(n_max, dtype=np.int16)
+    p_i16 = ctypes.POINTER(ctypes.c_int16)
+    chunks_a, chunks_b, anchors = [], [], []
+    state = {"overflow": 0}
 
     t_end = raw_now() + seconds
     while raw_now() < t_end:
-        ps.ps2000_get_streaming_last_values(handle, cb)
-        time.sleep(0.01)
+        start_time = ctypes.c_double()
+        overflow = ctypes.c_int16()
+        trigger_at = ctypes.c_uint32()
+        triggered = ctypes.c_int16()
+        n = ps.ps2000_get_streaming_values_no_aggregation(
+            handle, ctypes.byref(start_time),
+            buf_a.ctypes.data_as(p_i16), buf_b.ctypes.data_as(p_i16),
+            None, None,
+            ctypes.byref(overflow), ctypes.byref(trigger_at),
+            ctypes.byref(triggered), n_max)
+        n = n.value if hasattr(n, "value") else int(n)
+        if n > 0:
+            state["overflow"] |= overflow.value
+            chunks_a.append(buf_a[:n].copy())
+            chunks_b.append(buf_b[:n].copy())
+            anchors.append((raw_now(), int(n)))
+        else:
+            time.sleep(0.005)
     ps.ps2000_stop(handle)
 
     a = np.concatenate(chunks_a) if chunks_a else np.array([], dtype=np.int16)
