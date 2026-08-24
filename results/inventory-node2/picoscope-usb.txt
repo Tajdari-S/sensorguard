@@ -1,0 +1,1 @@
+no PicoScope USB devices

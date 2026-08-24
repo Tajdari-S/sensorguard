@@ -1,0 +1,2 @@
+Bus 003 Device 002: ID 0ce9:1007 Pico Technology PicoScope 2000 series PC Oscilloscope
+Bus 003 Device 003: ID 0ce9:1007 Pico Technology PicoScope 2000 series PC Oscilloscope

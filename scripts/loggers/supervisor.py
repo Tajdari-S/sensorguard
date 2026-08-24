@@ -49,16 +49,29 @@ def parse_marker_lines(text: str):
 
 
 def nvml_health(trace: Path, gpu_index: int, bursts, interval_s=1.0):
-    """Missingness and measured alignment error for one NVML channel."""
+    """Missingness, clock alignment, and edge-detection latency for one NVML channel.
+
+    NVML samples and the load marker share CLOCK_MONOTONIC_RAW on the same
+    host, so channel alignment is the scheduling/receipt jitter of the
+    sampling loop (subject to the preregistered alignment limit). The power
+    edge is a separate diagnostic: its latency includes the GPU power
+    sensor's own lag plus 1 Hz quantization, so it gets a physical-latency
+    budget rather than the clock-alignment limit. For external channels
+    (scope, camera) with no shared clock, the edge IS the alignment.
+    """
     rows = [r for r in csv.DictReader(trace.open()) if r["status"] in ("ok", "missed")]
     gpu_rows = [r for r in rows if r["status"] == "ok" and int(r["gpu_index"]) == gpu_index]
     missed = sum(1 for r in rows if r["status"] == "missed")
     total_ticks = max((int(r["tick_index"]) for r in rows), default=-1) + 1
     missing_fraction = missed / total_ticks if total_ticks else 1.0
 
-    # Alignment: earliest sample inside each marker burst whose power rises
-    # >=50 W above the pre-burst floor; error = that sample time - burst start.
-    errors = []
+    # Clock alignment: worst receipt-vs-target jitter across the run.
+    jitter = [abs(float(r["t_receipt_raw_s"]) - float(r["t_target_raw_s"])) for r in gpu_rows]
+    alignment_error_s = max(jitter) if jitter else None
+
+    # Edge detection: earliest sample inside each marker burst whose power
+    # rises >=50 W above the pre-burst floor.
+    latencies = []
     times = [float(r["t_target_raw_s"]) for r in gpu_rows]
     powers = [float(r["power_w"]) for r in gpu_rows]
     for start, end in bursts:
@@ -66,13 +79,13 @@ def nvml_health(trace: Path, gpu_index: int, bursts, interval_s=1.0):
         floor = min(pre) if pre else 30.0
         hits = [t for t, p in zip(times, powers) if start <= t <= end + interval_s and p >= floor + 50]
         if hits:
-            errors.append(abs(hits[0] - start))
-    alignment_error_s = max(errors) if errors else None
+            latencies.append(abs(hits[0] - start))
     return {
         "samples": len(gpu_rows),
         "missing_fraction": round(missing_fraction, 5),
         "alignment_error_ms": None if alignment_error_s is None else round(alignment_error_s * 1000, 1),
-        "bursts_detected": len(errors),
+        "edge_latency_ms": None if not latencies else round(max(latencies) * 1000, 1),
+        "bursts_detected": len(latencies),
         "bursts_expected": len(bursts),
     }
 
@@ -90,6 +103,8 @@ def main() -> int:
     parser.add_argument("--python", default=sys.executable)
     parser.add_argument("--max-missing-fraction", type=float, default=0.01)
     parser.add_argument("--max-alignment-error-ms", type=float, default=100.0)
+    parser.add_argument("--max-edge-latency-ms", type=float, default=3000.0,
+                        help="power-edge detection budget: sensor lag + 1 Hz quantization")
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--profiled", action="store_true",
                         help="mark this run as a profiled characterization pass")
@@ -145,6 +160,8 @@ def main() -> int:
         ok = (h["missing_fraction"] <= args.max_missing_fraction
               and h["alignment_error_ms"] is not None
               and h["alignment_error_ms"] <= args.max_alignment_error_ms
+              and h["edge_latency_ms"] is not None
+              and h["edge_latency_ms"] <= args.max_edge_latency_ms
               and h["bursts_detected"] == h["bursts_expected"])
         health_pass &= ok
         channels.append({"channel_id": f"nvml.gpu{args.gpu_index}", "sample_rate_hz": 1.0,
@@ -188,7 +205,8 @@ def main() -> int:
     print(f"supervisor: status={status} manifest={manifest_path}")
     for ch in channels:
         print(f"  {ch['channel_id']}: health={ch['health']} "
-              f"missing={ch.get('missing_fraction')} align_ms={ch.get('alignment_error_ms')}")
+              f"missing={ch.get('missing_fraction')} align_ms={ch.get('alignment_error_ms')} "
+              f"edge_ms={ch.get('edge_latency_ms')}")
     return 0 if status == "completed" else 1
 
 

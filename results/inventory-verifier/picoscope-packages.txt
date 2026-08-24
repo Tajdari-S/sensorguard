@@ -1,0 +1,12 @@
+ii  libps2000                               3.0.152-3r6217                             amd64        PicoScope 2000 Linux driver
+ii  libps2000a                              2.2.158-5r6596                             amd64        PicoScope 2000A Linux driver
+ii  libps3000                               4.0.151-3r6217                             amd64        PicoScope 3000 Linux driver
+ii  libps3000a                              2.2.160-6r7569                             amd64        PicoScope 3000A Linux driver
+ii  libps4000                               2.1.153-2r6217                             amd64        PicoScope 4000 Linux driver
+ii  libps4000a                              2.2.257-2r7890                             amd64        PicoScope 4000a Linux driver
+ii  libps5000                               2.1.152-3r6217                             amd64        PicoScope 5000 Linux driver
+ii  libps5000a                              2.2.16-5r5110                              amd64        PicoScope 5000A Linux driver
+ii  libps6000                               2.1.152-6r6217                             amd64        PicoScope 6000 series Linux driver
+ii  libps6000a                              2.1.1-0r227                                amd64        PicoScope 6000 Series (A API) driver
+ii  libpsospa                               1.1.7-0r5994                               amd64        PicoScope driver
+ii  picoscope                               7.2.24.9932                                amd64        PicoScope 7 For Linux
