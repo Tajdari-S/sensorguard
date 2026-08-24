@@ -15,7 +15,9 @@ lsblk -o NAME,MODEL,SIZE,TYPE,FSTYPE,MOUNTPOINTS > "$out_dir/storage.txt"
 if command -v nvidia-smi >/dev/null 2>&1; then
     nvidia-smi -q > "$out_dir/nvidia-smi-q.txt"
     nvidia-smi topo -m > "$out_dir/nvidia-smi-topo.txt"
-    nvidia-smi --query-gpu=index,uuid,name,pci.bus_id,pci.link.gen.current,pci.link.width.current,vbios_version,power.limit,clocks.max.graphics,clocks.max.memory --format=csv > "$out_dir/gpus.csv"
+    # field names changed from pci.link.* to pcie.link.* in newer drivers
+    nvidia-smi --query-gpu=index,uuid,name,pci.bus_id,pcie.link.gen.current,pcie.link.width.current,vbios_version,power.limit,clocks.max.graphics,clocks.max.memory --format=csv > "$out_dir/gpus.csv" 2>/dev/null \
+        || nvidia-smi --query-gpu=index,uuid,name,pci.bus_id,pci.link.gen.current,pci.link.width.current,vbios_version,power.limit,clocks.max.graphics,clocks.max.memory --format=csv > "$out_dir/gpus.csv"
 else
     echo "nvidia-smi not present" > "$out_dir/gpus.csv"
 fi
