@@ -57,9 +57,9 @@ def stream_unit(handle, seconds: float, sample_interval_us: int, out_prefix: Pat
     for ch in (0, 1):  # A, B
         assert ps.ps2000_set_channel(handle, ch, 1, 1, RANGE_2V) != 0
 
+    # PS2000_TIME_UNITS: 0=fs 1=ps 2=ns 3=us 4=ms 5=s
     ok = ps.ps2000_run_streaming_ns(
-        handle, sample_interval_us * 1000, 1,  # 1 = PS2000_NS
-        60000, 0, 1, 30000)
+        handle, sample_interval_us, 3, 60000, 0, 1, 30000)
     assert ok != 0, "run_streaming_ns failed"
 
     n_max = 30000
