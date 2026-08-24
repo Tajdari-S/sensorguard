@@ -34,7 +34,7 @@ def main() -> int:
     tok.pad_token = tok.eos_token
     model = AutoModelForCausalLM.from_pretrained(args.model).to(device)
 
-    ds = load_dataset("wikitext", "wikitext-2-raw-v1", split="train")
+    ds = load_dataset("Salesforce/wikitext", "wikitext-2-raw-v1", split="train")
     texts = [t for t in ds["text"] if len(t) > 200]
 
     end = raw_now() + args.duration_s

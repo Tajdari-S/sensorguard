@@ -100,14 +100,19 @@ def main() -> int:
                         "temp_c": pynvml.nvmlDeviceGetTemperature(h, pynvml.NVML_TEMPERATURE_GPU),
                         "clock_sm_mhz": pynvml.nvmlDeviceGetClockInfo(h, pynvml.NVML_CLOCK_SM),
                         "clock_mem_mhz": pynvml.nvmlDeviceGetClockInfo(h, pynvml.NVML_CLOCK_MEM),
-                        "pcie_tx_kbps": pynvml.nvmlDeviceGetPcieThroughput(h, pynvml.NVML_PCIE_UTIL_TX_BYTES),
-                        "pcie_rx_kbps": pynvml.nvmlDeviceGetPcieThroughput(h, pynvml.NVML_PCIE_UTIL_RX_BYTES),
                         "status": "ok",
                     }
+                    # Receipt is stamped after the instantaneous fields; the two
+                    # PCIe throughput queries each block ~20 ms by NVML design
+                    # (they measure a rate window), so they come after the stamp.
+                    receipt = raw_now()
+                    row["pcie_tx_kbps"] = pynvml.nvmlDeviceGetPcieThroughput(h, pynvml.NVML_PCIE_UTIL_TX_BYTES)
+                    row["pcie_rx_kbps"] = pynvml.nvmlDeviceGetPcieThroughput(h, pynvml.NVML_PCIE_UTIL_RX_BYTES)
                 except pynvml.NVMLError as err:
                     row = {"status": f"error:{err}"}
+                    receipt = raw_now()
                 row.update({"tick_index": ticks, "t_target_raw_s": target,
-                            "t_receipt_raw_s": raw_now(), "utc_anchor": "",
+                            "t_receipt_raw_s": receipt, "utc_anchor": "",
                             "gpu_index": i, "gpu_uuid": uuids[i]})
                 return row
             for row in pool.map(sample, indices):

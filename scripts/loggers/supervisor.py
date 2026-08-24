@@ -14,6 +14,7 @@ machinery is channel-agnostic.
 import argparse
 import csv
 import hashlib
+import os
 import shlex
 import signal
 import subprocess
@@ -109,6 +110,11 @@ def main() -> int:
     parser.add_argument("--profiled", action="store_true",
                         help="mark this run as a profiled characterization pass")
     args = parser.parse_args()
+
+    # cuda:N must mean the same physical GPU as NVML index N: CUDA's default
+    # FASTEST_FIRST ordering diverges from PCI order on mixed-VBIOS hosts
+    # (E1 blinded activation caught this on node2 gpu4).
+    os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
 
     sensors = [s.strip() for s in args.sensors.split(",") if s.strip()]
     out = args.out_root / args.run_id
