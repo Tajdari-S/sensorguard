@@ -14,6 +14,7 @@ import csv
 import signal
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -56,6 +57,7 @@ def main() -> int:
     uuids = {i: pynvml.nvmlDeviceGetUUID(h) for i, h in handles.items()}
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
+    pool = ThreadPoolExecutor(max_workers=len(indices))
     t0 = raw_now()
     ticks = 0
     missed = 0
@@ -83,7 +85,10 @@ def main() -> int:
                                      "gpu_index": -1, "gpu_uuid": "", "status": "missed"})
                     ticks += 1
                     missed += 1
-            for i in indices:
+            # GPUs are sampled in parallel: the two PCIe-throughput queries
+            # block ~20 ms each by NVML design, so serial sampling would push
+            # later GPUs past the preregistered alignment limit.
+            def sample(i):
                 h = handles[i]
                 try:
                     util = pynvml.nvmlDeviceGetUtilizationRates(h)
@@ -101,10 +106,13 @@ def main() -> int:
                     }
                 except pynvml.NVMLError as err:
                     row = {"status": f"error:{err}"}
-                    missed += 1
                 row.update({"tick_index": ticks, "t_target_raw_s": target,
                             "t_receipt_raw_s": raw_now(), "utc_anchor": "",
                             "gpu_index": i, "gpu_uuid": uuids[i]})
+                return row
+            for row in pool.map(sample, indices):
+                if row["status"] != "ok":
+                    missed += 1
                 writer.writerow(row)
             fh.flush()
             ticks += 1
