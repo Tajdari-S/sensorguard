@@ -11,7 +11,11 @@ Default field set (DCGM field ids):
   155 power usage (W)        150 GPU temp (C)
   100 SM clock (MHz)         101 memory clock (MHz)
   203 GPU utilization (%)    204 memory-copy utilization (%)
-  252 framebuffer used (MiB) 1009 PCIe TX (KB/s)   1010 PCIe RX (KB/s)
+  252 framebuffer used (MiB)
+
+PCIe throughput fields (1009/1010) are DCGM profiling-class fields and are
+NOT supported on GeForce GPUs (dmon fails with "Result: -36"); PCIe rates
+come from the NVML logger instead.
 """
 
 import argparse
@@ -22,7 +26,7 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 
-DEFAULT_FIELDS = "155,150,100,101,203,204,252,1009,1010"
+DEFAULT_FIELDS = "155,150,100,101,203,204,252"
 
 
 def raw_now() -> float:

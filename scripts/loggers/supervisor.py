@@ -173,12 +173,17 @@ def main() -> int:
         channels.append({"channel_id": f"nvml.gpu{args.gpu_index}", "sample_rate_hz": 1.0,
                          "clock_source": "CLOCK_MONOTONIC_RAW", "health": "pass" if ok else "fail", **h})
     if "dcgm" in sensors and (out / "dcgm.tsv").exists():
-        n_lines = sum(1 for line in (out / "dcgm.tsv").open() if not line.startswith("#"))
-        ok = n_lines > 0
+        lines = [line for line in (out / "dcgm.tsv").open()]
+        errors = sum(1 for line in lines if "Error" in line)
+        # data rows: receipt timestamp + "GPU <id>" entity columns
+        n_data = sum(1 for line in lines if "\tGPU " in line)
+        wl_s = 0 if t_wl_end is None else t_wl_end - t_wl_start
+        ok = errors == 0 and n_data >= max(1, int(0.5 * wl_s))
         health_pass &= ok
         channels.append({"channel_id": "dcgm.all", "sample_rate_hz": 1.0,
                          "clock_source": "CLOCK_MONOTONIC_RAW(receipt)",
-                         "health": "pass" if ok else "fail", "samples": n_lines})
+                         "health": "pass" if ok else "fail",
+                         "samples": n_data, "error_lines": errors})
 
     if workload_rc not in (0, None):
         status = f"workload_exit_{workload_rc}"
