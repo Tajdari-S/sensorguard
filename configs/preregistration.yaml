@@ -28,9 +28,10 @@ repetitions:
   screening: 3
   retained_evaluation: 5
 test_open_count: 1
-unresolved:
-  - held_out_gpu_uuid
-  - held_out_evasion_family
-  - thermal_start_band_C
-  - maximum_allowed_missing_fraction
-  - maximum_alignment_error_ms
+# Values below proposed 2026-08-24 (see DECISION_LOG); team must countersign at freeze.
+held_out_gpu_uuid: GPU-127e16de-2b5f-dde9-1932-b4e29bb818c0  # node2 GPU 4; NVML/DCGM holdout. Electrical-fusion holdout may be constrained to verifier GPUs pending probe wiring.
+held_out_evasion_family: fused_update_kernel  # hardest family in the prior NVML study
+thermal_start_band_C: 2.0  # +/- band around the frozen ambient-inlet baseline
+maximum_allowed_missing_fraction: 0.01  # per channel per run
+maximum_alignment_error_ms: 100  # 1/10 of the smallest retained temporal feature (1 s at 1 Hz tiers); electrical channels additionally <=1 ms to the power-edge marker
+unresolved: []

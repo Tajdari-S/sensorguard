@@ -32,11 +32,24 @@ controls:
   ambient_inlet_C: TBD
 sensors:
   nvml: true
+  dcgm: true
   electrical: false
   thermal_camera: false
   contact_temperature: false
-  visible_camera: false
-  fiber_tap: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+  # one entry per active channel; filled by the run supervisor
+  - channel_id: TBD           # e.g. nvml.gpu0, pico0.chA
+    sample_rate_hz: TBD
+    clock_source: CLOCK_MONOTONIC_RAW
+    alignment_error_ms: TBD   # measured against the run's load marker, never assumed
+    missing_fraction: TBD
+    health: TBD               # pass | fail; failing channels flag the run
+profiled: false               # true only for Nsight/WAVE characterization passes, never for sensor corpus runs
+useful_work_value: TBD        # measured value of workload.useful_work_metric
+artifact_checksums: {}        # path -> sha256, filled at run close
 status: planned
 exclusion_reason: null
 notes: null
