@@ -50,7 +50,7 @@ def main() -> int:
         t = raw_now() + args.burst_period_s
         while raw_now() < min(t, end):
             a @ b
-        torch.cuda.synchronize(device)
+            torch.cuda.synchronize(device)
         time.sleep(max(0, min(args.burst_period_s, end - raw_now())))
     return 0
 

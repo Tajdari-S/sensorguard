@@ -34,9 +34,11 @@ def main() -> int:
 
     for i in range(args.bursts):
         start = raw_now()
+        # Synchronize every iteration: unsynced enqueue races ahead of a
+        # slow/throttled GPU and the drain can exceed any timeout.
         while raw_now() - start < args.burst_s:
             a @ b
-        torch.cuda.synchronize(device)
+            torch.cuda.synchronize(device)
         end = raw_now()
         print(f"marker_burst {i} start_raw_s={start:.6f} end_raw_s={end:.6f} device={args.device}", flush=True)
         time.sleep(args.gap_s)
