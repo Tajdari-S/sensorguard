@@ -1,0 +1,54 @@
+run_id: 20260825_calib-bursty_node2-gpu4_s0_r05
+git_commit: 352b35ea81c250ac1f5b2831bd39780a0a98f2b3
+operator: supervisor
+start_utc: '2026-08-25T05:29:55.461072+00:00'
+end_utc: '2026-08-25T05:31:32.659670+00:00'
+workload:
+  family: non_ml
+  name: calib_bursty
+  command: python scripts/loggers/calib_workload.py --mode bursty --device cuda:4
+    --duration-s 60
+  seed: 0
+  duration_s: 61.978
+hardware:
+  gpu_index_under_test: 4
+  gpu_set: all
+sensors:
+  nvml: true
+  dcgm: false
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu4
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 97
+  missing_fraction: 0.0
+  alignment_error_ms: 69.6
+  edge_latency_ms: 1216.2
+  bursts_detected: 6
+  bursts_expected: 6
+marker_bursts:
+  pre:
+  - - 31361.167591
+    - 31363.19373
+  - - 31365.194024
+    - 31367.224592
+  - - 31369.224844
+    - 31371.258606
+  post:
+  - - 31438.057904
+    - 31440.092902
+  - - 31442.093191
+    - 31444.118401
+  - - 31446.118653
+    - 31448.15684
+profiled: false
+artifact_checksums:
+  nvml.csv: 94973d053220dcc5819f1d3362d1d9ed99aba54103da4048d8db7357b8325d7e
+status: completed

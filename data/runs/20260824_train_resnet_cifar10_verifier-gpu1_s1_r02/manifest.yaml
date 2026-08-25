@@ -1,0 +1,61 @@
+run_id: 20260824_train_resnet_cifar10_verifier-gpu1_s1_r02
+git_commit: 28978153fab04501772570a090cf65941924b7d9
+operator: supervisor
+start_utc: '2026-08-25T01:49:27.148253+00:00'
+end_utc: '2026-08-25T02:02:26.329169+00:00'
+workload:
+  family: training
+  name: train_resnet_cifar10
+  command: python scripts/workloads/train_resnet_cifar10.py --device cuda:1 --duration-s
+    600 --seed 1
+  seed: 0
+  duration_s: 604.935
+hardware:
+  gpu_index_under_test: 1
+  gpu_set: all
+sensors:
+  nvml: true
+  dcgm: true
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu1
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 779
+  missing_fraction: 0.0
+  alignment_error_ms: 10.3
+  edge_latency_ms: 1952.8
+  bursts_detected: 6
+  bursts_expected: 6
+- channel_id: dcgm.all
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW(receipt)
+  health: pass
+  samples: 1554
+  error_lines: 0
+marker_bursts:
+  pre:
+  - - 19549.619529
+    - 19574.865361
+  - - 19576.865653
+    - 19602.157781
+  - - 19604.158067
+    - 19629.471388
+  post:
+  - - 20238.62735
+    - 20263.907372
+  - - 20265.907662
+    - 20291.222126
+  - - 20293.222407
+    - 20318.538533
+profiled: false
+artifact_checksums:
+  dcgm.tsv: 2202be2e23601a97093e0a4e4605f6e197262b8e26d8493793971744aaa4b36c
+  nvml.csv: 13cf2986b6bbad2dabcb29806577eca1b91051078eb52a86e0e0a42f7d023cc9
+status: completed

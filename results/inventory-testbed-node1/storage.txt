@@ -1,0 +1,6 @@
+NAME                      MODEL                      SIZE TYPE FSTYPE      MOUNTPOINTS
+nvme0n1                   Samsung SSD 9100 PRO 1TB 931.5G disk             
+├─nvme0n1p1                                            1G part vfat        /boot/efi
+├─nvme0n1p2                                            2G part ext4        /boot
+└─nvme0n1p3                                        928.5G part LVM2_member 
+  └─ubuntu--vg-ubuntu--lv                          928.5G lvm  ext4        /

@@ -1,0 +1,6 @@
+# anchor t_raw_s=7726.397891194 utc=2026-08-24T22:32:28.579004+00:00
+# cmd=dcgmi dmon -i -1 -e 155,150,100,101,203,204,252,1009,1010 -d 1000
+7726.402281	#Entity         POWER             TMPTR        SMCLK        MMCLK        GPUTL             MCUTL             FBUSD             PCITX                       PCIRX
+7726.402362	ID               W                 C
+7726.405064	Error setting watches. Result: -36: Profiling is not supported for this group of GPUs or GPU
+7726.405084	

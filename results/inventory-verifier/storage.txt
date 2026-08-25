@@ -1,0 +1,10 @@
+NAME                                   MODEL                          SIZE TYPE FSTYPE      MOUNTPOINTS
+nvme0n1                                Samsung SSD 970 EVO Plus 1TB 931.5G disk             
+|-nvme0n1p1                                                             1G part vfat        /boot/efi
+|-nvme0n1p2                                                             2G part ext4        /boot
+`-nvme0n1p3                                                         928.5G part LVM2_member 
+  |-ubuntu--vg-ubuntu--lv-real                                        100G lvm              
+  | |-ubuntu--vg-ubuntu--lv                                           100G lvm  ext4        /
+  | `-ubuntu--vg-ubuntu--lv--presnap                                  100G lvm  ext4        
+  `-ubuntu--vg-ubuntu--lv--presnap-cow                                 50G lvm              
+    `-ubuntu--vg-ubuntu--lv--presnap                                  100G lvm  ext4        

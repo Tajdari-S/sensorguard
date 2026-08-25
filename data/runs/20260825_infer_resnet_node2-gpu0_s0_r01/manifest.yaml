@@ -1,0 +1,54 @@
+run_id: 20260825_infer_resnet_node2-gpu0_s0_r01
+git_commit: 80fd457626af3b662dcd8ac614532b6f4859c8ff
+operator: supervisor
+start_utc: '2026-08-25T00:55:29.589685+00:00'
+end_utc: '2026-08-25T01:08:31.811974+00:00'
+workload:
+  family: inference
+  name: infer_resnet
+  command: python scripts/workloads/infer_resnet.py --device cuda:0 --duration-s 600
+    --seed 0
+  seed: 0
+  duration_s: 605.418
+hardware:
+  gpu_index_under_test: 0
+  gpu_set: all
+sensors:
+  nvml: true
+  dcgm: false
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu0
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 782
+  missing_fraction: 0.0
+  alignment_error_ms: 66.1
+  edge_latency_ms: 2177.3
+  bursts_detected: 6
+  bursts_expected: 6
+marker_bursts:
+  pre:
+  - - 14895.154473
+    - 14920.647257
+  - - 14922.647553
+    - 14948.232915
+  - - 14950.233205
+    - 14975.843332
+  post:
+  - - 15585.987653
+    - 15611.490476
+  - - 15613.490786
+    - 15639.084224
+  - - 15641.084493
+    - 15666.688632
+profiled: false
+artifact_checksums:
+  nvml.csv: 9ed8f05beebbd650d3f18c113c49998fcb09ce7217261a499db872d8bbc6c9d5
+status: completed

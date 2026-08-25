@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts" / "roofline"))
 
 from benchmark_kernels import case_metadata
-from parse_ncu import measured_dram_bytes, parse_metrics, scaled_number
+from parse_ncu import dominant_kernel_bytes, parse_launches, scaled_number
 
 
 class RooflineToolsTest(unittest.TestCase):
@@ -28,11 +28,18 @@ class RooflineToolsTest(unittest.TestCase):
             path = Path(directory) / "sample.csv"
             with path.open("w", newline="") as handle:
                 writer = csv.writer(handle)
-                writer.writerow(["Metric Name", "Metric Unit", "Metric Value"])
-                writer.writerow(["dram__bytes_read.sum", "Mbyte", "100"])
-                writer.writerow(["dram__bytes_write.sum", "Mbyte", "25"])
-            metrics = parse_metrics(path)
-            self.assertEqual(measured_dram_bytes(metrics), 125e6)
+                writer.writerow(["ID", "Kernel Name", "Metric Name", "Metric Unit", "Metric Value"])
+                # init kernel launch: must not win over the benchmark kernel
+                writer.writerow(["0", "fill_kernel", "dram__bytes_read.sum", "Mbyte", "1"])
+                writer.writerow(["0", "fill_kernel", "dram__bytes_write.sum", "Mbyte", "1"])
+                for launch in (1, 2, 3):
+                    writer.writerow([str(launch), "sgemm_kernel", "dram__bytes_read.sum", "Mbyte", "100"])
+                    writer.writerow([str(launch), "sgemm_kernel", "dram__bytes_write.sum", "Mbyte", "25"])
+            launches = parse_launches(path)
+            self.assertEqual(len(launches), 4)
+            kernel, dram_bytes = dominant_kernel_bytes(launches)
+            self.assertEqual(kernel, "sgemm_kernel")
+            self.assertEqual(dram_bytes, 125e6)
 
     def test_unit_scaling(self):
         self.assertEqual(scaled_number("1.5", "Gbyte"), 1.5e9)

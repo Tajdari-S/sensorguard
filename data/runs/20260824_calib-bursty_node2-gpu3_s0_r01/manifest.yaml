@@ -1,0 +1,54 @@
+run_id: 20260824_calib-bursty_node2-gpu3_s0_r01
+git_commit: a3a87c0f09d3bbf045255a66de4424fa63022d2a
+operator: supervisor
+start_utc: '2026-08-24T23:27:19.862126+00:00'
+end_utc: '2026-08-24T23:31:52.076853+00:00'
+workload:
+  family: non_ml
+  name: calib_bursty
+  command: python scripts/loggers/calib_workload.py --mode bursty --device cuda:3
+    --duration-s 60
+  seed: 0
+  duration_s: 84.954
+hardware:
+  gpu_index_under_test: 3
+  gpu_set: all
+sensors:
+  nvml: true
+  dcgm: false
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu3
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 272
+  missing_fraction: 0.0
+  alignment_error_ms: 89.4
+  edge_latency_ms: 2229.3
+  bursts_detected: 6
+  bursts_expected: 6
+marker_bursts:
+  pre:
+  - - 9605.373938
+    - 9632.561217
+  - - 9634.561504
+    - 9662.260465
+  - - 9664.260733
+    - 9691.512114
+  post:
+  - - 9781.174536
+    - 9808.514277
+  - - 9810.514453
+    - 9837.800608
+  - - 9839.800884
+    - 9867.069157
+profiled: false
+artifact_checksums:
+  nvml.csv: ea4d4d66c3207336134ce75fa0b7224042fbabc6ab6e1cb4cf2cc7a3e3f3c56b
+status: completed

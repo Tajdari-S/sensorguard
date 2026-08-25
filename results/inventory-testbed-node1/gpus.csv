@@ -1,0 +1,2 @@
+index, uuid, name, pci.bus_id, pcie.link.gen.current, pcie.link.width.current, vbios_version, power.limit [W], clocks.max.graphics [MHz], clocks.max.memory [MHz]
+0, GPU-392b25f7-d685-7d9d-ee07-864670a4e2e9, NVIDIA GeForce RTX 3090, 00000000:41:00.0, 1, 16, 94.02.42.80.9F, 200.00 W, 2115 MHz, 9751 MHz

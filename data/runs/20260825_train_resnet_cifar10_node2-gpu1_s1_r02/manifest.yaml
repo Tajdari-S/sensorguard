@@ -1,0 +1,54 @@
+run_id: 20260825_train_resnet_cifar10_node2-gpu1_s1_r02
+git_commit: 80fd457626af3b662dcd8ac614532b6f4859c8ff
+operator: supervisor
+start_utc: '2026-08-25T02:06:39.649564+00:00'
+end_utc: '2026-08-25T02:19:37.890583+00:00'
+workload:
+  family: training
+  name: train_resnet_cifar10
+  command: python scripts/workloads/train_resnet_cifar10.py --device cuda:1 --duration-s
+    600 --seed 1
+  seed: 0
+  duration_s: 605.364
+hardware:
+  gpu_index_under_test: 1
+  gpu_set: all
+sensors:
+  nvml: true
+  dcgm: false
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu1
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 778
+  missing_fraction: 0.0
+  alignment_error_ms: 34.3
+  edge_latency_ms: 2085.9
+  bursts_detected: 6
+  bursts_expected: 6
+marker_bursts:
+  pre:
+  - - 19165.249754
+    - 19189.873682
+  - - 19191.873985
+    - 19216.700543
+  - - 19218.700811
+    - 19243.765689
+  post:
+  - - 19853.860726
+    - 19879.04381
+  - - 19881.044107
+    - 19906.271189
+  - - 19908.271469
+    - 19933.517488
+profiled: false
+artifact_checksums:
+  nvml.csv: f79d1cea92005a04cb16587163328077052bd43e21bb37b56ec3b60ac226d878
+status: completed

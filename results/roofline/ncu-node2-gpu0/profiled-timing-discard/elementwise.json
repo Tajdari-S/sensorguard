@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "results": [
+    {
+      "case": "elementwise",
+      "operation": "elementwise",
+      "dimensions": {
+        "elements": 33554432
+      },
+      "flops": 67108864,
+      "minimum_bytes": 268435456,
+      "arithmetic_intensity_min": 0.25,
+      "dtype": "float32",
+      "device": "cuda:0",
+      "warmup": 3,
+      "iterations": 5,
+      "median_ms": 33.68016052246094,
+      "tflops": 0.0019925339713047336,
+      "minimum_gbps": 7.970135885218934
+    }
+  ]
+}

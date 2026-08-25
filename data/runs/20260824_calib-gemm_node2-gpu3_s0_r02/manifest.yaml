@@ -1,0 +1,54 @@
+run_id: 20260824_calib-gemm_node2-gpu3_s0_r02
+git_commit: 80fd457626af3b662dcd8ac614532b6f4859c8ff
+operator: supervisor
+start_utc: '2026-08-25T00:25:01.876840+00:00'
+end_utc: '2026-08-25T00:29:10.059609+00:00'
+workload:
+  family: non_ml
+  name: calib_gemm
+  command: python scripts/loggers/calib_workload.py --mode gemm --device cuda:3 --duration-s
+    60
+  seed: 0
+  duration_s: 61.952
+hardware:
+  gpu_index_under_test: 3
+  gpu_set: all
+sensors:
+  nvml: true
+  dcgm: false
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu3
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 248
+  missing_fraction: 0.0
+  alignment_error_ms: 62.2
+  edge_latency_ms: 2144.2
+  bursts_detected: 6
+  bursts_expected: 6
+marker_bursts:
+  pre:
+  - - 13067.423456
+    - 13094.388482
+  - - 13096.388786
+    - 13124.005571
+  - - 13126.005852
+    - 13153.139859
+  post:
+  - - 13219.842297
+    - 13246.81211
+  - - 13248.812399
+    - 13276.013375
+  - - 13278.013653
+    - 13305.147644
+profiled: false
+artifact_checksums:
+  nvml.csv: 927d2a3d37d1235cc529ba1a1d22784ff292935fbb12732ae64ecb94bfa448d0
+status: completed

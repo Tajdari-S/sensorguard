@@ -1,0 +1,54 @@
+run_id: 20260825_calib-memcpy_node2-gpu2_s0_r04
+git_commit: 80fd457626af3b662dcd8ac614532b6f4859c8ff
+operator: supervisor
+start_utc: '2026-08-25T05:11:23.468720+00:00'
+end_utc: '2026-08-25T05:15:21.673781+00:00'
+workload:
+  family: non_ml
+  name: calib_memcpy
+  command: python scripts/loggers/calib_workload.py --mode memcpy --device cuda:2
+    --duration-s 60
+  seed: 0
+  duration_s: 62.214
+hardware:
+  gpu_index_under_test: 2
+  gpu_set: all
+sensors:
+  nvml: true
+  dcgm: false
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu2
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 238
+  missing_fraction: 0.0
+  alignment_error_ms: 61.0
+  edge_latency_ms: 1992.7
+  bursts_detected: 6
+  bursts_expected: 6
+marker_bursts:
+  pre:
+  - - 30249.170391
+    - 30274.303379
+  - - 30276.303672
+    - 30301.681198
+  - - 30303.681475
+    - 30329.312157
+  post:
+  - - 30396.277698
+    - 30421.7863
+  - - 30423.786605
+    - 30449.480278
+  - - 30451.480554
+    - 30477.258166
+profiled: false
+artifact_checksums:
+  nvml.csv: ed081a038c41c57691a0fe4fea656c646c515f1f5b3ae13bc4c89072d2fbad4e
+status: completed

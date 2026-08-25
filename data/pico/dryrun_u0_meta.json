@@ -1,0 +1,14 @@
+{
+  "serial": "12789/2929",
+  "api": "ps2000-fast-streaming",
+  "sample_interval_us": 100,
+  "range_mv": 2000,
+  "samples": 49908,
+  "polls": 66,
+  "overflow_flags": 0,
+  "first_anchor_raw_s": 13088.104641714,
+  "last_anchor_raw_s": 13093.018383737,
+  "clipping_fraction_a": 0.0,
+  "mean_mv_a": 3.0527119330397725,
+  "p2p_mv_a": 70.25360881374553
+}

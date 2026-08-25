@@ -1,0 +1,61 @@
+run_id: 20260825_infer_resnet_verifier-gpu1_s3_r03
+git_commit: 982400312796599339081f7d95ee7580991c9688
+operator: supervisor
+start_utc: '2026-08-25T18:39:18.405288+00:00'
+end_utc: '2026-08-25T18:49:57.568819+00:00'
+workload:
+  family: inference
+  name: infer_resnet
+  command: python scripts/workloads/infer_resnet.py --device cuda:1 --duration-s 600
+    --seed 3
+  seed: 0
+  duration_s: 605.2
+hardware:
+  gpu_index_under_test: 1
+  gpu_set: all
+sensors:
+  nvml: true
+  dcgm: true
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu1
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 639
+  missing_fraction: 0.0
+  alignment_error_ms: 21.7
+  edge_latency_ms: 1817.9
+  bursts_detected: 6
+  bursts_expected: 6
+- channel_id: dcgm.all
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW(receipt)
+  health: pass
+  samples: 1276
+  error_lines: 0
+marker_bursts:
+  pre:
+  - - 80141.164292
+    - 80143.173354
+  - - 80145.173642
+    - 80147.21742
+  - - 80149.217661
+    - 80151.26236
+  post:
+  - - 80760.769556
+    - 80762.780725
+  - - 80764.78101
+    - 80766.826351
+  - - 80768.826619
+    - 80770.828692
+profiled: false
+artifact_checksums:
+  dcgm.tsv: c61a269747b2ce173593b32aececa52f65fb0a743646ee1054ecd43f94fa3481
+  nvml.csv: 5460db9c202a22c5c78fe135d2fbb1f6b1a635b22388282acaa34aa36acf43f7
+status: completed

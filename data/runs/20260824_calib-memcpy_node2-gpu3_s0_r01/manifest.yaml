@@ -1,0 +1,54 @@
+run_id: 20260824_calib-memcpy_node2-gpu3_s0_r01
+git_commit: a3a87c0f09d3bbf045255a66de4424fa63022d2a
+operator: supervisor
+start_utc: '2026-08-24T23:23:08.565148+00:00'
+end_utc: '2026-08-24T23:27:19.776166+00:00'
+workload:
+  family: non_ml
+  name: calib_memcpy
+  command: python scripts/loggers/calib_workload.py --mode memcpy --device cuda:3
+    --duration-s 60
+  seed: 0
+  duration_s: 62.244
+hardware:
+  gpu_index_under_test: 3
+  gpu_set: all
+sensors:
+  nvml: true
+  dcgm: false
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu3
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: fail
+  samples: 251
+  missing_fraction: 0.0
+  alignment_error_ms: 111.8
+  edge_latency_ms: 2197.7
+  bursts_detected: 6
+  bursts_expected: 6
+marker_bursts:
+  pre:
+  - - 9354.087657
+    - 9381.323434
+  - - 9383.323725
+    - 9411.197478
+  - - 9413.197751
+    - 9440.482687
+  post:
+  - - 9507.425246
+    - 9535.992705
+  - - 9537.993
+    - 9565.552062
+  - - 9567.552334
+    - 9594.741072
+profiled: false
+artifact_checksums:
+  nvml.csv: a02125e86449ae8b1227e70226411bd2e3463cc7bb58f290e00a83a805f135dc
+status: flagged_channel_health

@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "results": [
+    {
+      "case": "copy",
+      "operation": "copy",
+      "dimensions": {
+        "elements": 33554432
+      },
+      "flops": 0,
+      "minimum_bytes": 268435456,
+      "arithmetic_intensity_min": 0.0,
+      "dtype": "float32",
+      "device": "cuda:0",
+      "warmup": 3,
+      "iterations": 5,
+      "median_ms": 0.33801600337028503,
+      "tflops": 0.0,
+      "minimum_gbps": 794.1501388203153
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+run_id: 20260824_calib-bursty_node2-gpu2_s0_r01
+git_commit: a3a87c0f09d3bbf045255a66de4424fa63022d2a
+operator: supervisor
+start_utc: '2026-08-24T23:10:37.691877+00:00'
+end_utc: '2026-08-24T23:14:55.906513+00:00'
+workload:
+  family: non_ml
+  name: calib_bursty
+  command: python scripts/loggers/calib_workload.py --mode bursty --device cuda:2
+    --duration-s 60
+  seed: 0
+  duration_s: 80.218
+hardware:
+  gpu_index_under_test: 2
+  gpu_set: all
+sensors:
+  nvml: true
+  dcgm: false
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu2
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: fail
+  samples: 258
+  missing_fraction: 0.0
+  alignment_error_ms: 167.2
+  edge_latency_ms: 2099.4
+  bursts_detected: 6
+  bursts_expected: 6
+marker_bursts:
+  pre:
+  - - 8603.209464
+    - 8628.910426
+  - - 8630.910714
+    - 8656.701997
+  - - 8658.702267
+    - 8684.532539
+  post:
+  - - 8769.440549
+    - 8795.20657
+  - - 8797.206861
+    - 8823.032016
+  - - 8825.032291
+    - 8850.862258
+profiled: false
+artifact_checksums:
+  nvml.csv: 2be4d6d0ae2a5c97f9ff5dc05916bee2eeb1d65aebfe200e22a0f4e6deff4538
+status: flagged_channel_health

@@ -1,0 +1,61 @@
+run_id: 20260824_hpc_fft_verifier-gpu0_s0_r01
+git_commit: 28978153fab04501772570a090cf65941924b7d9
+operator: supervisor
+start_utc: '2026-08-25T01:25:30.372975+00:00'
+end_utc: '2026-08-25T01:33:29.515687+00:00'
+workload:
+  family: non_ml
+  name: hpc_fft
+  command: python scripts/workloads/hpc_workload.py --mode fft --device cuda:0 --duration-s
+    300 --seed 0
+  seed: 0
+  duration_s: 302.178
+hardware:
+  gpu_index_under_test: 0
+  gpu_set: all
+sensors:
+  nvml: true
+  dcgm: true
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu0
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 479
+  missing_fraction: 0.0
+  alignment_error_ms: 8.5
+  edge_latency_ms: 1962.5
+  bursts_detected: 6
+  bursts_expected: 6
+- channel_id: dcgm.all
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW(receipt)
+  health: pass
+  samples: 956
+  error_lines: 0
+marker_bursts:
+  pre:
+  - - 18112.839485
+    - 18138.52361
+  - - 18140.523915
+    - 18166.414321
+  - - 18168.414486
+    - 18194.335589
+  post:
+  - - 18500.690305
+    - 18526.483391
+  - - 18528.48369
+    - 18554.365881
+  - - 18556.366055
+    - 18582.254151
+profiled: false
+artifact_checksums:
+  dcgm.tsv: e65340353496d6deaf4aa24759f68728da091099c1cd0305d14c9047d24f469a
+  nvml.csv: 1413435bbddaad186ccdb8b4b11dd0208bb260c8b79d4df9dbb3ddc46d8e86eb
+status: completed

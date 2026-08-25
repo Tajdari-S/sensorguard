@@ -1,0 +1,61 @@
+run_id: 20260824_calib-gemm_verifier-gpu0_s0_r01
+git_commit: ed6d4692db52b6db9d2844edbf1cb68369735600
+operator: supervisor
+start_utc: '2026-08-24T22:32:28.535751+00:00'
+end_utc: '2026-08-24T22:36:26.688946+00:00'
+workload:
+  family: non_ml
+  name: calib_gemm
+  command: python scripts/loggers/calib_workload.py --mode gemm --device cuda:0 --duration-s
+    60
+  seed: 0
+  duration_s: 61.854
+hardware:
+  gpu_index_under_test: 0
+  gpu_set: all
+sensors:
+  nvml: true
+  dcgm: true
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu0
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 238
+  missing_fraction: 0.0
+  alignment_error_ms: 47.7
+  edge_latency_ms: 1533.3
+  bursts_detected: 6
+  bursts_expected: 6
+- channel_id: dcgm.all
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW(receipt)
+  health: pass
+  samples: 4
+marker_bursts:
+  pre:
+  - - 7730.909229
+    - 7756.516554
+  - - 7758.516859
+    - 7784.35465
+  - - 7786.354947
+    - 7812.222151
+  post:
+  - - 7878.20745
+    - 7904.072738
+  - - 7906.073032
+    - 7931.905072
+  - - 7933.905348
+    - 7959.750976
+profiled: false
+artifact_checksums:
+  dcgm.tsv: 1a4e28bd413be5f645717d7beefffe6a1d17147c0409848654a74466784fe0c0
+  manifest.yaml: f781176de7bc4bd2d74c4412188819fbe5aeae950dbaaa156d51cfd2518dbd7b
+  nvml.csv: 4e35130e05500a15afe72ad3066d8cb73a60a8c4a04a42b7a33550461b7a8650
+status: completed

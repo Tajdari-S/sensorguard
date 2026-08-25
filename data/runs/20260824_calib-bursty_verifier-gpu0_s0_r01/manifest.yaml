@@ -1,0 +1,60 @@
+run_id: 20260824_calib-bursty_verifier-gpu0_s0_r01
+git_commit: ed6d4692db52b6db9d2844edbf1cb68369735600
+operator: supervisor
+start_utc: '2026-08-24T22:40:25.007610+00:00'
+end_utc: '2026-08-24T22:44:41.158795+00:00'
+workload:
+  family: non_ml
+  name: calib_bursty
+  command: python scripts/loggers/calib_workload.py --mode bursty --device cuda:0
+    --duration-s 60
+  seed: 0
+  duration_s: 79.717
+hardware:
+  gpu_index_under_test: 0
+  gpu_set: all
+sensors:
+  nvml: true
+  dcgm: true
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu0
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 256
+  missing_fraction: 0.0
+  alignment_error_ms: 71.8
+  edge_latency_ms: 2089.4
+  bursts_detected: 6
+  bursts_expected: 6
+- channel_id: dcgm.all
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW(receipt)
+  health: pass
+  samples: 4
+marker_bursts:
+  pre:
+  - - 8207.444652
+    - 8233.040421
+  - - 8235.040733
+    - 8260.824073
+  - - 8262.824353
+    - 8288.573205
+  post:
+  - - 8372.520751
+    - 8398.295886
+  - - 8400.296194
+    - 8426.054999
+  - - 8428.0553
+    - 8453.926912
+profiled: false
+artifact_checksums:
+  dcgm.tsv: d8a8515692e9b9d79ac707d527e2a88188925376667098ea4ee89045d0811f78
+  nvml.csv: eaacad237c0edb317693834084955a763375be3edf3d27296470f5cf94237e87
+status: completed

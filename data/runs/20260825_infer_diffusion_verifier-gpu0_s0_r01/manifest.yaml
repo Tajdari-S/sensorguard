@@ -1,0 +1,61 @@
+run_id: 20260825_infer_diffusion_verifier-gpu0_s0_r01
+git_commit: 982400312796599339081f7d95ee7580991c9688
+operator: supervisor
+start_utc: '2026-08-25T19:55:29.625538+00:00'
+end_utc: '2026-08-25T20:06:17.798140+00:00'
+workload:
+  family: inference
+  name: infer_diffusion
+  command: python scripts/workloads/diffusion_workload.py --device cuda:0 --duration-s
+    600 --seed 0
+  seed: 0
+  duration_s: 613.941
+hardware:
+  gpu_index_under_test: 0
+  gpu_set: all
+sensors:
+  nvml: true
+  dcgm: true
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu0
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 648
+  missing_fraction: 0.0
+  alignment_error_ms: 9.0
+  edge_latency_ms: 1294.7
+  bursts_detected: 6
+  bursts_expected: 6
+- channel_id: dcgm.all
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW(receipt)
+  health: pass
+  samples: 1294
+  error_lines: 0
+marker_bursts:
+  pre:
+  - - 84712.392653
+    - 84714.404046
+  - - 84716.404337
+    - 84718.409951
+  - - 84720.410199
+    - 84722.42592
+  post:
+  - - 85340.586194
+    - 85342.587867
+  - - 85344.588154
+    - 85346.627489
+  - - 85348.627731
+    - 85350.661416
+profiled: false
+artifact_checksums:
+  dcgm.tsv: 0023f8efeb1cc4277cc33747b90410b334f523fa4fd033f966c2faa58a762bb9
+  nvml.csv: f421800f3a4e67e6e4d74047a65c8ec41311c111b56c8d4b4cd110b27f4bd4cb
+status: completed

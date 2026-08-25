@@ -1,0 +1,24 @@
+{
+  "results": [
+    {
+      "command": "/home/felkru/Wave/.venv/bin/python3 /home/felkru/Wave/eval/lower_bound/inference.py --model-type llama --n_layer 8 --hidden-dim 4096 --ffn-dim 16384 --n_head 32 --n_positions 1024 --max_new_tokens 2 --batch-size 4 --prompt-len 1",
+      "mean": 5.048745291193334,
+      "stddev": 0.060899999899791245,
+      "median": 5.08007858786,
+      "user": 5.465626813333333,
+      "system": 1.1158326733333332,
+      "min": 4.97855820286,
+      "max": 5.08759908286,
+      "times": [
+        4.97855820286,
+        5.08007858786,
+        5.08759908286
+      ],
+      "exit_codes": [
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

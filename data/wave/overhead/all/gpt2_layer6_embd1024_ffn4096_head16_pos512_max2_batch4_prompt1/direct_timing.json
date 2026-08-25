@@ -1,0 +1,24 @@
+{
+  "results": [
+    {
+      "command": "/home/felkru/Wave/.venv/bin/python3 /home/felkru/Wave/eval/lower_bound/inference.py --model-type gpt2 --n_layer 6 --hidden-dim 1024 --ffn-dim 4096 --n_head 16 --n_positions 512 --max_new_tokens 2 --batch-size 4 --prompt-len 1",
+      "mean": 4.293758805113334,
+      "stddev": 0.0183186838886062,
+      "median": 4.28560837078,
+      "user": 4.800327773333333,
+      "system": 1.12742164,
+      "min": 4.28092982178,
+      "max": 4.31473822278,
+      "times": [
+        4.28560837078,
+        4.31473822278,
+        4.28092982178
+      ],
+      "exit_codes": [
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

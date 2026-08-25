@@ -1,0 +1,60 @@
+run_id: 20260824_calib-memcpy_verifier-gpu0_s0_r01
+git_commit: ed6d4692db52b6db9d2844edbf1cb68369735600
+operator: supervisor
+start_utc: '2026-08-24T22:36:26.773072+00:00'
+end_utc: '2026-08-24T22:40:24.924017+00:00'
+workload:
+  family: non_ml
+  name: calib_memcpy
+  command: python scripts/loggers/calib_workload.py --mode memcpy --device cuda:0
+    --duration-s 60
+  seed: 0
+  duration_s: 61.989
+hardware:
+  gpu_index_under_test: 0
+  gpu_set: all
+sensors:
+  nvml: true
+  dcgm: true
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu0
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 238
+  missing_fraction: 0.0
+  alignment_error_ms: 47.6
+  edge_latency_ms: 1874.5
+  bursts_detected: 6
+  bursts_expected: 6
+- channel_id: dcgm.all
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW(receipt)
+  health: pass
+  samples: 4
+marker_bursts:
+  pre:
+  - - 7969.221858
+    - 7994.806797
+  - - 7996.807106
+    - 8022.557629
+  - - 8024.557913
+    - 8050.335913
+  post:
+  - - 8116.581629
+    - 8142.070817
+  - - 8144.071118
+    - 8169.804252
+  - - 8171.804534
+    - 8197.625128
+profiled: false
+artifact_checksums:
+  dcgm.tsv: 5ac63464f294931e88c07e6fbca58e247e0cfeef003ddf5cfe99fa0e1537cac4
+  nvml.csv: 344c7e6f6f5a5b9a936c078e4bf13fb0b7fc83a2ef029da90e3178bbcaf34467
+status: completed

@@ -1,0 +1,61 @@
+run_id: 20260825_train_gpt2_wikitext_node2-gpu3_s3_r02
+git_commit: 4322419ec6916aa64a238f0e5bcfcfff62a72dae
+operator: supervisor
+start_utc: '2026-08-25T21:17:52.303785+00:00'
+end_utc: '2026-08-25T21:28:37.513375+00:00'
+workload:
+  family: training
+  name: train_gpt2_wikitext
+  command: python scripts/workloads/gpt2_workload.py --mode train --device cuda:3
+    --duration-s 600 --seed 3
+  seed: 0
+  duration_s: 610.438
+hardware:
+  gpu_index_under_test: 3
+  gpu_set: all
+sensors:
+  nvml: true
+  dcgm: true
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu3
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 645
+  missing_fraction: 0.0
+  alignment_error_ms: 38.1
+  edge_latency_ms: 1860.6
+  bursts_detected: 6
+  bursts_expected: 6
+- channel_id: dcgm.all
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW(receipt)
+  health: pass
+  samples: 3220
+  error_lines: 0
+marker_bursts:
+  pre:
+  - - 88238.533992
+    - 88240.564886
+  - - 88242.565174
+    - 88244.589234
+  - - 88246.589487
+    - 88248.619212
+  post:
+  - - 88863.75279
+    - 88865.775317
+  - - 88867.775558
+    - 88869.781661
+  - - 88871.78191
+    - 88873.787524
+profiled: false
+artifact_checksums:
+  dcgm.tsv: 068048cff56f2a360a77e6ad5d63df194d135664ff8800172289a3fe7c2e9aa0
+  nvml.csv: c56bb3ae556b2b7d884880e3b3acc31984c49aefbc226fc7e9c0dbf6cb27732c
+status: completed

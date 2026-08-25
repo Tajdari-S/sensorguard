@@ -1,0 +1,60 @@
+run_id: 20260825_idle_verifier-gpu1_s3_r03
+git_commit: 982400312796599339081f7d95ee7580991c9688
+operator: supervisor
+start_utc: '2026-08-25T19:28:16.882465+00:00'
+end_utc: '2026-08-25T19:33:53.023404+00:00'
+workload:
+  family: non_ml
+  name: idle
+  command: python scripts/loggers/calib_workload.py --mode idle --duration-s 300
+  seed: 0
+  duration_s: 302.018
+hardware:
+  gpu_index_under_test: 1
+  gpu_set: all
+sensors:
+  nvml: true
+  dcgm: true
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu1
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 336
+  missing_fraction: 0.0
+  alignment_error_ms: 10.7
+  edge_latency_ms: 1490.8
+  bursts_detected: 6
+  bursts_expected: 6
+- channel_id: dcgm.all
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW(receipt)
+  health: pass
+  samples: 672
+  error_lines: 0
+marker_bursts:
+  pre:
+  - - 83079.641654
+    - 83081.651053
+  - - 83083.651326
+    - 83085.694919
+  - - 83087.695072
+    - 83089.739359
+  post:
+  - - 83396.025692
+    - 83398.036461
+  - - 83400.036748
+    - 83402.081858
+  - - 83404.081984
+    - 83406.082491
+profiled: false
+artifact_checksums:
+  dcgm.tsv: 3b69f4ad9f4d1658b9cc58ee31e1e6ec8567c201040a022c44afff6b06dad93d
+  nvml.csv: 724c8e1a9b93fb7cd4351ac09191fb1e85379c6a8b51d27ce40254ae61fce37b
+status: completed
