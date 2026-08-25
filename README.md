@@ -66,7 +66,7 @@ scripts/     Inventory and validation helpers
 - Evaluate the held-out test split exactly once after the model and decision rule are frozen.
 - Run Nsight/WAVE characterization separately from unprofiled physical-sensor collection.
 - Keep failed and excluded runs in an audit ledger with a preregistered reason.
-- Do not commit raw camera, network, power, or telemetry traces to GitHub.
+- Telemetry, scope, and profiler traces ARE committed, with binary formats via git LFS (decision 2026-08-25, following github.com/robirahman/GPU-monitoring conventions). Camera and network captures are still never committed.
 - Do not claim a sensor helps unless its paired run-bootstrap interval excludes zero and it passes the retention rule.
 
 ## What the scripts currently do
