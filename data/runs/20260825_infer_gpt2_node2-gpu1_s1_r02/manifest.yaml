@@ -1,0 +1,54 @@
+run_id: 20260825_infer_gpt2_node2-gpu1_s1_r02
+git_commit: 80fd457626af3b662dcd8ac614532b6f4859c8ff
+operator: supervisor
+start_utc: '2026-08-25T02:45:42.568083+00:00'
+end_utc: '2026-08-25T02:58:47.769389+00:00'
+workload:
+  family: inference
+  name: infer_gpt2
+  command: python scripts/workloads/gpt2_workload.py --mode infer --device cuda:1
+    --duration-s 600 --seed 1
+  seed: 0
+  duration_s: 610.88
+hardware:
+  gpu_index_under_test: 1
+  gpu_set: all
+sensors:
+  nvml: true
+  dcgm: false
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu1
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 785
+  missing_fraction: 0.0
+  alignment_error_ms: 59.9
+  edge_latency_ms: 2159.1
+  bursts_detected: 6
+  bursts_expected: 6
+marker_bursts:
+  pre:
+  - - 21508.187441
+    - 21533.408068
+  - - 21535.408365
+    - 21560.705888
+  - - 21562.706163
+    - 21587.985543
+  post:
+  - - 22203.599226
+    - 22228.8749
+  - - 22230.875076
+    - 22256.138425
+  - - 22258.138701
+    - 22283.416407
+profiled: false
+artifact_checksums:
+  nvml.csv: b25e38eef415f7bf1e802bc206213c02d13e8e8611e326de26a2655204e33437
+status: completed

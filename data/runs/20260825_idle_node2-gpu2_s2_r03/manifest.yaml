@@ -1,0 +1,53 @@
+run_id: 20260825_idle_node2-gpu2_s2_r03
+git_commit: 80fd457626af3b662dcd8ac614532b6f4859c8ff
+operator: supervisor
+start_utc: '2026-08-25T04:47:00.200904+00:00'
+end_utc: '2026-08-25T04:54:59.406602+00:00'
+workload:
+  family: non_ml
+  name: idle
+  command: python scripts/loggers/calib_workload.py --mode idle --duration-s 300
+  seed: 0
+  duration_s: 301.739
+hardware:
+  gpu_index_under_test: 2
+  gpu_set: all
+sensors:
+  nvml: true
+  dcgm: false
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu2
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 479
+  missing_fraction: 0.0
+  alignment_error_ms: 50.9
+  edge_latency_ms: 1930.4
+  bursts_detected: 6
+  bursts_expected: 6
+marker_bursts:
+  pre:
+  - - 28785.886827
+    - 28811.571159
+  - - 28813.57145
+    - 28839.361924
+  - - 28841.362061
+    - 28867.183792
+  post:
+  - - 29173.73172
+    - 29199.061158
+  - - 29201.06146
+    - 29226.589423
+  - - 29228.589706
+    - 29254.266243
+profiled: false
+artifact_checksums:
+  nvml.csv: 8d1c553ac2296fd5612b38b04e3e5f2594e7178c575089b9d9576fddeaf14f95
+status: completed

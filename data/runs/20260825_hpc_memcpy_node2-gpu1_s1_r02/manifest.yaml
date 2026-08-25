@@ -1,0 +1,54 @@
+run_id: 20260825_hpc_memcpy_node2-gpu1_s1_r02
+git_commit: 80fd457626af3b662dcd8ac614532b6f4859c8ff
+operator: supervisor
+start_utc: '2026-08-25T03:14:43.436179+00:00'
+end_utc: '2026-08-25T03:22:40.626918+00:00'
+workload:
+  family: non_ml
+  name: hpc_memcpy
+  command: python scripts/workloads/hpc_workload.py --mode memcpy --device cuda:1
+    --duration-s 300 --seed 1
+  seed: 0
+  duration_s: 302.208
+hardware:
+  gpu_index_under_test: 1
+  gpu_set: all
+sensors:
+  nvml: true
+  dcgm: false
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu1
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 477
+  missing_fraction: 0.0
+  alignment_error_ms: 43.9
+  edge_latency_ms: 2027.6
+  bursts_detected: 6
+  bursts_expected: 6
+marker_bursts:
+  pre:
+  - - 23249.071496
+    - 23274.284955
+  - - 23276.285246
+    - 23301.59256
+  - - 23303.592838
+    - 23328.911608
+  post:
+  - - 23635.87372
+    - 23661.153618
+  - - 23663.153912
+    - 23688.480463
+  - - 23690.480747
+    - 23715.747458
+profiled: false
+artifact_checksums:
+  nvml.csv: b841ffd36b3016df59d3de1f77b3a7119e281b5915584692e88475446ed3ee58
+status: completed
