@@ -146,7 +146,10 @@ def main() -> int:
     try:
         bursts_pre = marker()
         t_wl_start = raw_now()
-        workload_rc = subprocess.run(args.workload_cmd, shell=True).returncode
+        # nice the workload so CPU-heavy phases (tokenization, pinned copies)
+        # cannot starve the sampling threads past the alignment limit.
+        workload_rc = subprocess.run(f"nice -n 10 {args.workload_cmd}",
+                                     shell=True).returncode
         t_wl_end = raw_now()
         bursts_post = marker()
     except Exception as err:
