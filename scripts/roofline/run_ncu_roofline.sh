@@ -18,6 +18,7 @@ for case_name in "${cases[@]}"; do
     --section MemoryWorkloadAnalysis \
     --csv --log-file "$out_dir/${case_name}.ncu.csv" \
     python3 scripts/roofline/benchmark_kernels.py \
-      --case "$case_name" --device "cuda:${gpu}" --warmup 3 --iterations 5 \
+      --case "$case_name" --device "cuda:${gpu}" --dtype float32 \
+      --warmup 3 --iterations 5 \
       --output "$out_dir/benchmarks/${case_name}.json"
 done
