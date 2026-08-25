@@ -46,8 +46,31 @@ architecturally — verify empirically against a known GEMM).
 - Overhead: hyperfine wall-clock for {unprofiled, single-metric, full-9-metric}
   on 3 representative configs.
 
+## Results (2026-08-24 campaign, node1 RTX 3090)
+
+Collected: 16 lower-bound configs (artifact small+medium grid + batch sweep
+b∈{1,2,4,8,16} at GPT-2 d=768), 0 collection failures; full upper-bound
+split-case set (14 split configs + no-split).
+
+| Evaluation | RTX 3090 (ours) | Paper reference |
+|---|---|---|
+| Lower bound, tight (false positives) | **16/16 correct (100%)** | 100% on 4090/5080/H100 |
+| Lower bound, loose (false negatives) | **15/16 correct (93.8%)** | 86.8% (4090), 72.7% (5080), 93.2% (H100) |
+| Upper bound, tight | **15/15 (100%)** | 100% |
+| Upper bound, loose | **15/15 (100%)** | 100% |
+
+The single false negative is GPT-2 d=768 b=1 — the same configuration that
+fails on the paper's own RTX 4090 and RTX 5080 (Table 7), consistent with
+their "excessive global load at odd batch sizes" failure mode. Ampere
+replicates the paper's behavior closely.
+
+Overhead (Table-3 style, hyperfine, hw + all modes): in progress.
+
 ## Status log
 
 - 2026-08-24: artifact cloned + pinned; NCU 2025.4.1 + hyperfine installed;
   profiling permission opened (RmProfilingAdminOnly=0 via modprobe.d, live
   module reload, no reboot needed); `uv sync` started.
+- 2026-08-24 (late): smoke + full representative campaign complete; results
+  above. Verification logs: node1 /tmp/wave_verify_{tight,loose}.log,
+  /tmp/wave_upper_{tight,loose}.log.
