@@ -64,7 +64,16 @@ fails on the paper's own RTX 4090 and RTX 5080 (Table 7), consistent with
 their "excessive global load at odd batch sizes" failure mode. Ampere
 replicates the paper's behavior closely.
 
-Overhead (Table-3 style, hyperfine, hw + all modes): in progress.
+Overhead (Table-3 style, 6 configs x 3 runs, hyperfine-driven):
+
+| Metric type | RTX 3090 min / max / mean | Paper: 4090 | 5080 | H100 |
+|---|---|---|---|---|
+| HW metric (gpu__time_duration only) | 131% / 186% / **161%** | 993/1333/1149% | 95/121/110% | 52/80/68% |
+| WAVE metrics (all 9) | 2254% / 3059% / **2750%** | 4094/5288/4689% | 2500/3443/3007% | 1196/1585/1340% |
+
+Ampere's profiling overhead lands between the paper's 5080 and H100 —
+far below their 4090 outlier — under node1's 200 W power cap (see
+deviations). Raw data: `results/wave/overhead_3090_{hw,all}.csv`.
 
 ## Status log
 
