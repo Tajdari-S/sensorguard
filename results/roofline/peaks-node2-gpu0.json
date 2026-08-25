@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "results": [
+    {
+      "case": "gemm_4096",
+      "operation": "gemm",
+      "dimensions": {
+        "m": 4096,
+        "n": 4096,
+        "k": 4096
+      },
+      "flops": 137438953472,
+      "minimum_bytes": 201326592,
+      "arithmetic_intensity_min": 682.6666666666666,
+      "dtype": "float32",
+      "device": "cuda:0",
+      "warmup": 3,
+      "iterations": 10,
+      "median_ms": 5.744127988815308,
+      "tflops": 23.926861264166572,
+      "minimum_gbps": 35.049113179931496
+    },
+    {
+      "case": "copy",
+      "operation": "copy",
+      "dimensions": {
+        "elements": 33554432
+      },
+      "flops": 0,
+      "minimum_bytes": 268435456,
+      "arithmetic_intensity_min": 0.0,
+      "dtype": "float32",
+      "device": "cuda:0",
+      "warmup": 3,
+      "iterations": 10,
+      "median_ms": 0.32819199562072754,
+      "tflops": 0.0,
+      "minimum_gbps": 817.9220077939235
+    }
+  ]
+}

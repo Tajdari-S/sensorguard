@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "results": [
+    {
+      "case": "gemm_1024",
+      "operation": "gemm",
+      "dimensions": {
+        "m": 1024,
+        "n": 1024,
+        "k": 1024
+      },
+      "flops": 2147483648,
+      "minimum_bytes": 12582912,
+      "arithmetic_intensity_min": 170.66666666666666,
+      "dtype": "float32",
+      "device": "cuda:0",
+      "warmup": 3,
+      "iterations": 5,
+      "median_ms": 16.570144653320312,
+      "tflops": 0.1295995715746325,
+      "minimum_gbps": 0.7593724896951124
+    }
+  ]
+}

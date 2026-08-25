@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "results": [
+    {
+      "case": "gemv",
+      "operation": "gemv",
+      "dimensions": {
+        "m": 16384,
+        "k": 4096
+      },
+      "flops": 134217728,
+      "minimum_bytes": 268517376,
+      "arithmetic_intensity_min": 0.4998474586612972,
+      "dtype": "float32",
+      "device": "cuda:0",
+      "warmup": 3,
+      "iterations": 5,
+      "median_ms": 0.32051199674606323,
+      "tflops": 0.4187603876379662,
+      "minimum_gbps": 837.7763663328403
+    }
+  ]
+}
