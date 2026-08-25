@@ -1,0 +1,43 @@
+run_id: 20260825_calib-bursty_node2-gpu4_s0_r04
+git_commit: 80fd457626af3b662dcd8ac614532b6f4859c8ff
+operator: supervisor
+start_utc: '2026-08-25T05:22:28.314252+00:00'
+end_utc: '2026-08-25T05:24:34.505536+00:00'
+workload:
+  family: non_ml
+  name: calib_bursty
+  command: python scripts/loggers/calib_workload.py --mode bursty --device cuda:4
+    --duration-s 60
+  seed: 0
+  duration_s: null
+hardware:
+  gpu_index_under_test: 4
+  gpu_set: all
+sensors:
+  nvml: true
+  dcgm: false
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu4
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: fail
+  samples: 126
+  missing_fraction: 0.0
+  alignment_error_ms: 64.2
+  edge_latency_ms: null
+  bursts_detected: 0
+  bursts_expected: 0
+marker_bursts:
+  pre: []
+  post: []
+profiled: false
+artifact_checksums:
+  nvml.csv: 951ad1a4523bf649afe4d43f02a205c0b7abe9d4971a87992d3b35d70a573c37
+status: failed:Command '['/home/felkru/sg-venv/bin/python', '/home/felkru/sensorguard/scripts/loggers/load_marker.py',
+  '--device', 'cuda:4']' timed out after 120 seconds
