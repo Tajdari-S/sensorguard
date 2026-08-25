@@ -1,0 +1,54 @@
+run_id: 20260824_calib-idle_node2-gpu2_s0_r01
+git_commit: ed6d4692db52b6db9d2844edbf1cb68369735600
+operator: supervisor
+start_utc: '2026-08-24T22:58:40.422769+00:00'
+end_utc: '2026-08-24T23:02:38.623586+00:00'
+workload:
+  family: non_ml
+  name: calib_idle
+  command: python scripts/loggers/calib_workload.py --mode idle --device cuda:2 --duration-s
+    60
+  seed: 0
+  duration_s: 61.801
+hardware:
+  gpu_index_under_test: 2
+  gpu_set: all
+sensors:
+  nvml: true
+  dcgm: false
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu2
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: fail
+  samples: 238
+  missing_fraction: 0.0
+  alignment_error_ms: 167.4
+  edge_latency_ms: 2125.9
+  bursts_detected: 6
+  bursts_expected: 6
+marker_bursts:
+  pre:
+  - - 7885.937775
+    - 7911.181765
+  - - 7913.182062
+    - 7938.611202
+  - - 7940.611475
+    - 7966.265776
+  post:
+  - - 8032.873121
+    - 8058.273126
+  - - 8060.273418
+    - 8085.904651
+  - - 8087.904814
+    - 8113.670626
+profiled: false
+artifact_checksums:
+  nvml.csv: c8e541ecca099ac5d36908750bd8edc7549908eb0bed9a1754887e100ab32f44
+status: flagged_channel_health

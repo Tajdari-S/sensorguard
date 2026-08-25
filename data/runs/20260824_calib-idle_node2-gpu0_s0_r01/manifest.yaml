@@ -1,0 +1,54 @@
+run_id: 20260824_calib-idle_node2-gpu0_s0_r01
+git_commit: ed6d4692db52b6db9d2844edbf1cb68369735600
+operator: supervisor
+start_utc: '2026-08-24T22:26:31.164512+00:00'
+end_utc: '2026-08-24T22:30:26.366565+00:00'
+workload:
+  family: non_ml
+  name: calib_idle
+  command: python scripts/loggers/calib_workload.py --mode idle --device cuda:0 --duration-s
+    60
+  seed: 0
+  duration_s: 61.813
+hardware:
+  gpu_index_under_test: 0
+  gpu_set: all
+sensors:
+  nvml: true
+  dcgm: false
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu0
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 235
+  missing_fraction: 0.0
+  alignment_error_ms: 75.7
+  edge_latency_ms: 2250.2
+  bursts_detected: 6
+  bursts_expected: 6
+marker_bursts:
+  pre:
+  - - 5956.780688
+    - 5981.618378
+  - - 5983.618681
+    - 6008.541223
+  - - 6010.541494
+    - 6035.671761
+  post:
+  - - 6102.318383
+    - 6127.237788
+  - - 6129.237977
+    - 6154.513827
+  - - 6156.514101
+    - 6181.943233
+profiled: false
+artifact_checksums:
+  nvml.csv: 6ff6312c84a8aa9995c3539b1570020c0ffbb6919f539279e7a12834fd9716fc
+status: completed

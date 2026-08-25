@@ -1,0 +1,24 @@
+{
+  "results": [
+    {
+      "command": "ncu --config-file off --export /home/felkru/Wave/data/overhead/3090/hw/qwen_layer8_embd4096_ffn16384_head32_pos1024_max2_batch4_prompt1/profile.ncu-rep --force-overwrite --replay-mode application --app-replay-mode relaxed --metrics gpu__time_duration.sum /home/felkru/Wave/.venv/bin/python3 /home/felkru/Wave/eval/lower_bound/inference.py --model-type qwen --n_layer 8 --hidden-dim 4096 --ffn-dim 16384 --n_head 32 --n_positions 1024 --max_new_tokens 2 --batch-size 4 --prompt-len 1",
+      "mean": 14.392071684446668,
+      "stddev": 0.04677499122570197,
+      "median": 14.409717028780001,
+      "user": 13.280404533333332,
+      "system": 7.545010726666667,
+      "min": 14.339040628780001,
+      "max": 14.427457395780001,
+      "times": [
+        14.427457395780001,
+        14.409717028780001,
+        14.339040628780001
+      ],
+      "exit_codes": [
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

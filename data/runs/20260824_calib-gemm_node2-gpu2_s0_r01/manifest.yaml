@@ -1,0 +1,54 @@
+run_id: 20260824_calib-gemm_node2-gpu2_s0_r01
+git_commit: ed6d4692db52b6db9d2844edbf1cb68369735600
+operator: supervisor
+start_utc: '2026-08-24T23:02:38.711138+00:00'
+end_utc: '2026-08-24T23:06:38.109098+00:00'
+workload:
+  family: non_ml
+  name: calib_gemm
+  command: python scripts/loggers/calib_workload.py --mode gemm --device cuda:2 --duration-s
+    60
+  seed: 0
+  duration_s: 61.996
+hardware:
+  gpu_index_under_test: 2
+  gpu_set: all
+sensors:
+  nvml: true
+  dcgm: false
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu2
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: fail
+  samples: 240
+  missing_fraction: 0.0
+  alignment_error_ms: 168.0
+  edge_latency_ms: 1634.3
+  bursts_detected: 6
+  bursts_expected: 6
+marker_bursts:
+  pre:
+  - - 8124.214115
+    - 8149.88802
+  - - 8151.888311
+    - 8177.68612
+  - - 8179.68639
+    - 8205.521931
+  post:
+  - - 8272.240412
+    - 8298.041139
+  - - 8300.041438
+    - 8325.91036
+  - - 8327.910494
+    - 8353.712265
+profiled: false
+artifact_checksums:
+  nvml.csv: 140e90226fe22a6294efb1bf59149d9947e6ced3086fb27c8087b8d6668f4de7
+status: flagged_channel_health

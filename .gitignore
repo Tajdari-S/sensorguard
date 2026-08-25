@@ -1,15 +1,9 @@
-# Raw and processed experimental data
-data/raw/**
-data/processed/**
-!data/raw/.gitkeep
-!data/processed/.gitkeep
-
-# Large or identifying sensor media
+# Experimental data IS committed (decision 2026-08-25, following
+# github.com/robirahman/GPU-monitoring conventions): binary formats go
+# through git LFS per .gitattributes. Only identifying media and network
+# captures stay out.
 *.pcap
 *.pcapng
-*.parquet
-*.npy
-*.npz
 *.mp4
 *.mov
 *.avi

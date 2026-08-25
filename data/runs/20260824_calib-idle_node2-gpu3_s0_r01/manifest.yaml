@@ -1,0 +1,54 @@
+run_id: 20260824_calib-idle_node2-gpu3_s0_r01
+git_commit: a3a87c0f09d3bbf045255a66de4424fa63022d2a
+operator: supervisor
+start_utc: '2026-08-24T23:14:55.994594+00:00'
+end_utc: '2026-08-24T23:19:00.199531+00:00'
+workload:
+  family: non_ml
+  name: calib_idle
+  command: python scripts/loggers/calib_workload.py --mode idle --device cuda:3 --duration-s
+    60
+  seed: 0
+  duration_s: 61.82
+hardware:
+  gpu_index_under_test: 3
+  gpu_set: all
+sensors:
+  nvml: true
+  dcgm: false
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu3
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: fail
+  samples: 244
+  missing_fraction: 0.0
+  alignment_error_ms: 112.0
+  edge_latency_ms: 1736.4
+  bursts_detected: 6
+  bursts_expected: 6
+marker_bursts:
+  pre:
+  - - 8861.595503
+    - 8887.037105
+  - - 8889.037399
+    - 8915.879194
+  - - 8917.87947
+    - 8944.666119
+  post:
+  - - 9011.35483
+    - 9037.029672
+  - - 9039.029962
+    - 9066.208095
+  - - 9068.208379
+    - 9095.058686
+profiled: false
+artifact_checksums:
+  nvml.csv: b81ce6eef3d5cbadbd5b9dafe1def773d6d668b0546c40ae332c41c1657262ff
+status: flagged_channel_health

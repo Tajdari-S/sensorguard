@@ -1,0 +1,61 @@
+run_id: 20260824_hpc_memcpy_verifier-gpu0_s0_r01
+git_commit: 28978153fab04501772570a090cf65941924b7d9
+operator: supervisor
+start_utc: '2026-08-25T01:33:29.608742+00:00'
+end_utc: '2026-08-25T01:41:28.790311+00:00'
+workload:
+  family: non_ml
+  name: hpc_memcpy
+  command: python scripts/workloads/hpc_workload.py --mode memcpy --device cuda:0
+    --duration-s 300 --seed 0
+  seed: 0
+  duration_s: 302.023
+hardware:
+  gpu_index_under_test: 0
+  gpu_set: all
+sensors:
+  nvml: true
+  dcgm: true
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu0
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 479
+  missing_fraction: 0.0
+  alignment_error_ms: 8.7
+  edge_latency_ms: 1914.4
+  bursts_detected: 6
+  bursts_expected: 6
+- channel_id: dcgm.all
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW(receipt)
+  health: pass
+  samples: 956
+  error_lines: 0
+marker_bursts:
+  pre:
+  - - 18592.134481
+    - 18617.822297
+  - - 18619.822473
+    - 18645.733615
+  - - 18647.733894
+    - 18673.664743
+  post:
+  - - 18979.949037
+    - 19005.774158
+  - - 19007.774461
+    - 19033.651562
+  - - 19035.651857
+    - 19061.481967
+profiled: false
+artifact_checksums:
+  dcgm.tsv: 070985e7aff2f0cc8b45f5724820d166c49d1294c6971e0206a4f9cb3507aff2
+  nvml.csv: bcf4f87274eaa9b76e834cb88d020d0cbbf39923ccdaaf244657465f7396396b
+status: completed

@@ -1,0 +1,24 @@
+{
+  "results": [
+    {
+      "command": "ncu --config-file off --export /home/felkru/Wave/data/overhead/3090/hw/gpt2_layer6_embd1024_ffn4096_head16_pos512_max2_batch4_prompt1/profile.ncu-rep --force-overwrite --replay-mode application --app-replay-mode relaxed --metrics gpu__time_duration.sum /home/felkru/Wave/.venv/bin/python3 /home/felkru/Wave/eval/lower_bound/inference.py --model-type gpt2 --n_layer 6 --hidden-dim 1024 --ffn-dim 4096 --n_head 16 --n_positions 512 --max_new_tokens 2 --batch-size 4 --prompt-len 1",
+      "mean": 10.0026028526,
+      "stddev": 0.07815902463207122,
+      "median": 10.0263095776,
+      "user": 10.304335013333333,
+      "system": 5.3735361,
+      "min": 9.9153351246,
+      "max": 10.0661638556,
+      "times": [
+        9.9153351246,
+        10.0661638556,
+        10.0263095776
+      ],
+      "exit_codes": [
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

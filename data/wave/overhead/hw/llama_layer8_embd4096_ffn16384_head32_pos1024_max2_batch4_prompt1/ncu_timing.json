@@ -1,0 +1,24 @@
+{
+  "results": [
+    {
+      "command": "ncu --config-file off --export /home/felkru/Wave/data/overhead/3090/hw/llama_layer8_embd4096_ffn16384_head32_pos1024_max2_batch4_prompt1/profile.ncu-rep --force-overwrite --replay-mode application --app-replay-mode relaxed --metrics gpu__time_duration.sum /home/felkru/Wave/.venv/bin/python3 /home/felkru/Wave/eval/lower_bound/inference.py --model-type llama --n_layer 8 --hidden-dim 4096 --ffn-dim 16384 --n_head 32 --n_positions 1024 --max_new_tokens 2 --batch-size 4 --prompt-len 1",
+      "mean": 13.987524421773331,
+      "stddev": 0.08726721446062403,
+      "median": 14.02637708444,
+      "user": 12.71303366,
+      "system": 7.390794173333333,
+      "min": 13.88757840544,
+      "max": 14.048617775439999,
+      "times": [
+        14.02637708444,
+        13.88757840544,
+        14.048617775439999
+      ],
+      "exit_codes": [
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

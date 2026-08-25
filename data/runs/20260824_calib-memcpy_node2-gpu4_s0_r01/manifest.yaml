@@ -1,0 +1,43 @@
+run_id: 20260824_calib-memcpy_node2-gpu4_s0_r01
+git_commit: a3a87c0f09d3bbf045255a66de4424fa63022d2a
+operator: supervisor
+start_utc: '2026-08-24T23:41:52.725766+00:00'
+end_utc: '2026-08-24T23:43:58.917627+00:00'
+workload:
+  family: non_ml
+  name: calib_memcpy
+  command: python scripts/loggers/calib_workload.py --mode memcpy --device cuda:4
+    --duration-s 60
+  seed: 0
+  duration_s: null
+hardware:
+  gpu_index_under_test: 4
+  gpu_set: all
+sensors:
+  nvml: true
+  dcgm: false
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu4
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: fail
+  samples: 126
+  missing_fraction: 0.0
+  alignment_error_ms: 107.6
+  edge_latency_ms: null
+  bursts_detected: 0
+  bursts_expected: 0
+marker_bursts:
+  pre: []
+  post: []
+profiled: false
+artifact_checksums:
+  nvml.csv: ff36ab59a07248fd6e15fd2d3e8523211e42eb490e37e49b4fdf24969f44513c
+status: failed:Command '['/home/felkru/sg-venv/bin/python', '/home/felkru/sensorguard/scripts/loggers/load_marker.py',
+  '--device', 'cuda:4']' timed out after 120 seconds
