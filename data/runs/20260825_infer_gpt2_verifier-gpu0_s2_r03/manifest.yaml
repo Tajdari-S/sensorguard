@@ -1,0 +1,61 @@
+run_id: 20260825_infer_gpt2_verifier-gpu0_s2_r03
+git_commit: 982400312796599339081f7d95ee7580991c9688
+operator: supervisor
+start_utc: '2026-08-25T17:55:28.955462+00:00'
+end_utc: '2026-08-25T18:06:13.106690+00:00'
+workload:
+  family: inference
+  name: infer_gpt2
+  command: python scripts/workloads/gpt2_workload.py --mode infer --device cuda:0
+    --duration-s 600 --seed 2
+  seed: 0
+  duration_s: 610.387
+hardware:
+  gpu_index_under_test: 0
+  gpu_set: all
+sensors:
+  nvml: true
+  dcgm: true
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu0
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 644
+  missing_fraction: 0.0
+  alignment_error_ms: 8.6
+  edge_latency_ms: 774.2
+  bursts_detected: 6
+  bursts_expected: 6
+- channel_id: dcgm.all
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW(receipt)
+  health: pass
+  samples: 1286
+  error_lines: 0
+marker_bursts:
+  pre:
+  - - 77511.711608
+    - 77513.724509
+  - - 77515.724801
+    - 77517.729837
+  - - 77519.73008
+    - 77521.74834
+  post:
+  - - 78136.40957
+    - 78138.448069
+  - - 78140.44836
+    - 78142.480167
+  - - 78144.480437
+    - 78146.513713
+profiled: false
+artifact_checksums:
+  dcgm.tsv: 53b451df5a70a3f7cdef71a8a1135bed0086a85a5759ce662b9f8c7fa1f2da22
+  nvml.csv: 6f74101d9c9f0a1618b8d43c85214abe2a03485f478fd88c0cdf0f90a399c2fd
+status: completed

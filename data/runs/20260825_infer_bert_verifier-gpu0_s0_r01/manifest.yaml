@@ -1,0 +1,61 @@
+run_id: 20260825_infer_bert_verifier-gpu0_s0_r01
+git_commit: 982400312796599339081f7d95ee7580991c9688
+operator: supervisor
+start_utc: '2026-08-25T19:44:45.352103+00:00'
+end_utc: '2026-08-25T19:55:29.536020+00:00'
+workload:
+  family: inference
+  name: infer_bert
+  command: python scripts/workloads/bert_workload.py --mode infer --device cuda:0
+    --duration-s 600 --seed 0
+  seed: 0
+  duration_s: 609.451
+hardware:
+  gpu_index_under_test: 0
+  gpu_set: all
+sensors:
+  nvml: true
+  dcgm: true
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu0
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 644
+  missing_fraction: 0.0
+  alignment_error_ms: 48.6
+  edge_latency_ms: 1722.3
+  bursts_detected: 6
+  bursts_expected: 6
+- channel_id: dcgm.all
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW(receipt)
+  health: pass
+  samples: 1286
+  error_lines: 0
+marker_bursts:
+  pre:
+  - - 84068.14634
+    - 84070.1562
+  - - 84072.156366
+    - 84074.164599
+  - - 84076.164747
+    - 84078.177976
+  post:
+  - - 84691.883008
+    - 84693.924159
+  - - 84695.924423
+    - 84697.953005
+  - - 84699.953134
+    - 84701.981933
+profiled: false
+artifact_checksums:
+  dcgm.tsv: 31ab6ed9868d7e8c4929951be97aef8eba0f8853785f41505fed6c5278f9224a
+  nvml.csv: 9632f3c81ae1b9e4f77acee7abf2d7172f767c2123ea453d6bce920c5d78afef
+status: completed

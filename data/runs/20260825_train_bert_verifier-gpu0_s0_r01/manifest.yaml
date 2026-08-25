@@ -1,0 +1,61 @@
+run_id: 20260825_train_bert_verifier-gpu0_s0_r01
+git_commit: 982400312796599339081f7d95ee7580991c9688
+operator: supervisor
+start_utc: '2026-08-25T19:33:53.114622+00:00'
+end_utc: '2026-08-25T19:44:45.262254+00:00'
+workload:
+  family: training
+  name: train_bert
+  command: python scripts/workloads/bert_workload.py --mode train --device cuda:0
+    --duration-s 600 --seed 0
+  seed: 0
+  duration_s: 617.789
+hardware:
+  gpu_index_under_test: 0
+  gpu_set: all
+sensors:
+  nvml: true
+  dcgm: true
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu0
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 652
+  missing_fraction: 0.0
+  alignment_error_ms: 19.0
+  edge_latency_ms: 1458.2
+  bursts_detected: 6
+  bursts_expected: 6
+- channel_id: dcgm.all
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW(receipt)
+  health: pass
+  samples: 1302
+  error_lines: 0
+marker_bursts:
+  pre:
+  - - 83415.906447
+    - 83417.951074
+  - - 83419.951366
+    - 83421.993752
+  - - 83423.993991
+    - 83426.037944
+  post:
+  - - 84047.974647
+    - 84050.018465
+  - - 84052.018764
+    - 84054.049963
+  - - 84056.050247
+    - 84058.079661
+profiled: false
+artifact_checksums:
+  dcgm.tsv: 76d73e821be2c6ef11ef190f2b8e879632e30e27d067f28e5bd742771f6e2dad
+  nvml.csv: 03f50234ae2caefb05983f8228003d000cf84d20cfc86d4a80c9d9adcf572b9a
+status: completed
