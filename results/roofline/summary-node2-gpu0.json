@@ -18,10 +18,11 @@
       "tflops": 0.0,
       "minimum_gbps": 809.0864365584532,
       "ncu_csv": "results/roofline/ncu-node2-gpu0/copy.ncu.csv",
-      "ncu_kernel": "void at::native::<unnamed>::distribution_elementwise_grid_stride_kernel<float, (int)4, void at::native::templates::cuda::normal_and_transform<float, float, at::CUDAGeneratorImpl *, void at::native::templates::cuda::normal_kernel<at::CUDAGeneratorImpl *>(const at::TensorBase &, double, double, T1)::[lambda() (instance 1)]::operator ()() const::[lambda() (instance 2)]::operator ()() const::[lambda(float) (instance 1)]>(at::TensorIteratorBase &, T3, T4)::[lambda(curandStatePhilox4_32_10 *) (instance 2)], void at::native::<unnamed>::distribution_nullary_kernel<float, float, float4, at::CUDAGeneratorImpl *, void at::native::templates::cuda::normal_and_transform<float, float, at::CUDAGeneratorImpl *, void at::native::templates::cuda::normal_kernel<at::CUDAGeneratorImpl *>(const at::TensorBase &, double, double, T1)::[lambda() (instance 1)]::operator ()() const::[lambda() (instance 2)]::operator ()() const::[lambda(float) (instance 1)]>(at::TensorIteratorBase &, T3, T4)::[lambda(curandStatePhilox4_32_10 *) (instance 2)], void at::native::templates::cuda::normal_kernel<at::CUDAGeneratorImpl *>(const at::TensorBase &, double, double, T1)::[lambda() (instance 1)]::operator ()() const::[lambda() (instance 2)]::operator ()() const::[lambda(float) (instance 1)]>(at::TensorIteratorBase &, T4, const T5 &, T6)::[lambda(int, float) (instance 1)]>(long, at::PhiloxCudaState, T3, T4)",
+      "ncu_kernel": null,
+      "ncu_kernel_valid": false,
       "ncu_launches": 1,
-      "measured_dram_bytes": 133008384.0,
-      "arithmetic_intensity_measured": 0.0
+      "measured_dram_bytes": null,
+      "arithmetic_intensity_measured": null
     },
     {
       "case": "elementwise",
@@ -41,6 +42,7 @@
       "minimum_gbps": 410.2410168332641,
       "ncu_csv": "results/roofline/ncu-node2-gpu0/elementwise.ncu.csv",
       "ncu_kernel": "void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctorOnSelf_add<float>, std::array<char *, (unsigned long)2>>(int, T2, T3)",
+      "ncu_kernel_valid": true,
       "ncu_launches": 17,
       "measured_dram_bytes": 265298496.0,
       "arithmetic_intensity_measured": 0.25295606651309477
@@ -65,6 +67,7 @@
       "minimum_gbps": 90.35293959189454,
       "ncu_csv": "results/roofline/ncu-node2-gpu0/gemm_1024.ncu.csv",
       "ncu_kernel": "ampere_sgemm_128x64_nn",
+      "ncu_kernel_valid": true,
       "ncu_launches": 10,
       "measured_dram_bytes": 27310528.0,
       "arithmetic_intensity_measured": 78.63208093230567
@@ -89,6 +92,7 @@
       "minimum_gbps": 65.44873378823418,
       "ncu_csv": "results/roofline/ncu-node2-gpu0/gemm_2048.ncu.csv",
       "ncu_kernel": "void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nn_align1>(T1::Params)",
+      "ncu_kernel_valid": true,
       "ncu_launches": 10,
       "measured_dram_bytes": 206319680.0,
       "arithmetic_intensity_measured": 83.26820390570595
@@ -113,6 +117,7 @@
       "minimum_gbps": 36.92169151499377,
       "ncu_csv": "results/roofline/ncu-node2-gpu0/gemm_4096.ncu.csv",
       "ncu_kernel": "void cutlass::Kernel2<cutlass_80_simt_sgemm_256x128_8x4_nn_align1>(T1::Params)",
+      "ncu_kernel_valid": true,
       "ncu_launches": 10,
       "measured_dram_bytes": 477964352.0,
       "arithmetic_intensity_measured": 287.55063614451313
@@ -137,6 +142,7 @@
       "minimum_gbps": 126.54729121893509,
       "ncu_csv": "results/roofline/ncu-node2-gpu0/gemm_tall.ncu.csv",
       "ncu_kernel": "ampere_sgemm_128x64_nn",
+      "ncu_kernel_valid": true,
       "ncu_launches": 10,
       "measured_dram_bytes": 186506624.0,
       "arithmetic_intensity_measured": 92.11398938838762
@@ -160,6 +166,7 @@
       "minimum_gbps": 837.7763663328403,
       "ncu_csv": "results/roofline/ncu-node2-gpu0/gemv.ncu.csv",
       "ncu_kernel": "std::enable_if<!T7, void>::type internal::gemvx::kernel<int, int, float, float, float, float, (bool)0, (bool)1, (bool)1, (bool)0, (int)6, (bool)0, cublasGemvParamsEx<int, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>, float>>(T13)",
+      "ncu_kernel_valid": true,
       "ncu_launches": 10,
       "measured_dram_bytes": 268545152.0,
       "arithmetic_intensity_measured": 0.4997957587407871

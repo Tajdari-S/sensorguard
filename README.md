@@ -72,3 +72,34 @@ scripts/     Inventory and validation helpers
 ## What the scripts currently do
 
 The repository contains runnable inventory, preregistration validation, workload-coverage validation, CSV queue generation, and roofline microbenchmark/plot tools. The roofline microbenchmarks execute when CUDA PyTorch is installed; the Nsight wrapper executes when `ncu` is available. Full ML/HPC application adapters still need to be ported, pinned, smoke-tested, and connected to synchronized sensor logging. `scripts/run_matrix.py` is deliberately a non-executing planner so a placeholder can never be mistaken for a completed experiment.
+
+## Reproduce the current evidence snapshot
+
+Install the pinned analysis dependencies, repair/audit early label metadata,
+run all tests, and regenerate the figures and tables:
+
+```bash
+python3 -m venv .venv
+. .venv/bin/activate
+python3 -m pip install -r requirements-analysis.txt
+make data-audit test validate baseline-audit figures
+```
+
+Generated publication assets live under `results/figures/` and
+`results/tables/`. `docs/FIGURE_DATA_CONTRACT.md` defines the schemas for the
+headline electrical, matched-roofline, operating-curve, time-to-alert,
+ablation, and hardware-sweep figures. Plotting code must reject missing inputs;
+it must never replace uncollected measurements with simulated values.
+
+The current `e2_baseline_combined.json` is a run-grouped pipeline diagnostic,
+not a held-out transfer result. New baseline runs should save out-of-fold
+window/run predictions and use `--group-by family`, `--group-by gpu_uuid`, and
+`--group-by collection_day` as separate generalization audits before the
+frozen untouched-test evaluation.
+
+The committed protocol audit exposes the present limitation instead of hiding
+it: run-grouped and leave-GPU-out evaluation each detect 22/23 training runs
+with 0/95 false-positive runs, whereas leave-family-out detects 0/23 training
+runs and raises 10/95 false-positive runs. One direction of the two-day audit
+is non-estimable because the first day contains no training runs. These are
+pipeline/generalization audits, not final sensor-fusion results.

@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts" / "roofline"))
 
 from benchmark_kernels import case_metadata
-from parse_ncu import dominant_kernel_bytes, parse_launches, scaled_number
+from parse_ncu import dominant_kernel_bytes, kernel_matches_case, parse_launches, scaled_number
 
 
 class RooflineToolsTest(unittest.TestCase):
@@ -44,6 +44,12 @@ class RooflineToolsTest(unittest.TestCase):
     def test_unit_scaling(self):
         self.assertEqual(scaled_number("1.5", "Gbyte"), 1.5e9)
 
+    def test_expected_kernel_validation(self):
+        self.assertTrue(kernel_matches_case("gemm_1024", "ampere_sgemm_128x64_nn"))
+        self.assertTrue(kernel_matches_case("gemv", "cublasGemvKernel"))
+        self.assertFalse(kernel_matches_case("copy", "normal_and_transform_kernel"))
+        self.assertFalse(kernel_matches_case("gemm_1024", "normal_and_transform_kernel"))
+
     def test_svg_plot_generation(self):
         with tempfile.TemporaryDirectory() as directory:
             summary = Path(directory) / "summary.json"
@@ -57,7 +63,7 @@ class RooflineToolsTest(unittest.TestCase):
                 str(summary), "--peak-tflops", "35.58", "--peak-gbps", "936.2",
                 "--output", str(output)
             ], check=True, capture_output=True, text=True)
-            self.assertIn("RTX 3090 empirical roofline", output.read_text())
+            self.assertIn("RTX 3090 measured microbenchmark roofline", output.read_text())
 
 
 if __name__ == "__main__":
