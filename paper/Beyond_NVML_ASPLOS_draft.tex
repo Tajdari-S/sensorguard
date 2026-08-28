@@ -1,25 +1,21 @@
-\documentclass[9pt,twocolumn]{extarticle}
-\usepackage[letterpaper,margin=0.67in,columnsep=0.22in]{geometry}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
+\documentclass[sigplan,anonymous,review,nonacm]{acmart}
 \usepackage{microtype}
 \usepackage{booktabs}
 \usepackage{array}
 \usepackage{tabularx}
 \usepackage{multirow}
 \usepackage{graphicx}
+\graphicspath{{results/figures/}{../results/figures/}}
 \usepackage{xcolor}
 \usepackage{amsmath,amssymb}
 \usepackage{enumitem}
-\usepackage{caption}
 \usepackage{subcaption}
 \usepackage{float}
 \usepackage[most]{tcolorbox}
 \usepackage{tikz}
 \usepackage{pgfplots}
-\usepackage{hyperref}
-\usepackage{fancyhdr}
 \usepackage{balance}
+\usepackage{comment}
 \pgfplotsset{compat=1.18}
 \usetikzlibrary{positioning,arrows.meta}
 
@@ -28,17 +24,12 @@
 \definecolor{darkblue}{RGB}{25,70,125}
 \definecolor{darkgreen}{RGB}{25,110,70}
 \hypersetup{colorlinks=true,linkcolor=darkblue,citecolor=darkgreen,urlcolor=darkblue}
-\captionsetup{font=small,labelfont=bf}
 \setlist{nosep,leftmargin=*}
-\setlength{\parskip}{2.0pt}
-\setlength{\parindent}{1em}
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{Anonymous ASPLOS submission draft}
-\fancyhead[R]{Results in red boxes are not yet measured}
-\fancyfoot[C]{\thepage}
-\renewcommand{\headrulewidth}{0.3pt}
+\settopmatter{printfolios=true}
 
+\newif\ifshowplan
+\showplanfalse % Set true only in the internal planning build.
+\ifshowplan
 \newtcolorbox{experimentbox}[1]{
   enhanced,
   breakable,
@@ -53,6 +44,9 @@
   before skip=5pt,after skip=5pt,
   fontupper=\small
 }
+\else
+\excludecomment{experimentbox}
+\fi
 
 \newcommand{\tbd}{\textcolor{planred}{\textbf{TBD}}}
 \newcommand{\nvml}{\textsc{NVML}}
@@ -64,11 +58,11 @@
 \date{}
 
 \begin{document}
-\maketitle
 
 \begin{abstract}
-Hardware-enabled governance requires evidence about how accelerators are used without inspecting model weights, data, or code. Prior work shows that 1~Hz NVIDIA Management Library (NVML) telemetry can classify training with high aggregate accuracy, yet its hardest low-rank and custom-kernel evasions deliberately approach the physical footprint of inference. Fine-grained performance-counter systems such as \wave{} expose stronger architectural invariants, but current GPU profiling interfaces impose prohibitive overhead and are not continuously available. We present \system{}, a sensor-fusion architecture that combines always-on GPU telemetry with independently measured electrical, thermal, acoustic, RF, and network evidence. The design treats each modality as a separately auditable witness, uses cross-modal consistency tests to expose forged or replayed software telemetry, and applies a calibrated sequential detector to accumulate weak evidence from long-running jobs. We develop a matched ``sensor-augmented roofline'' methodology that tests detection specifically where training and non-training workloads overlap in arithmetic intensity and throughput. Our evaluation plan reproduces the NVML and \wave{} baselines on a six-RTX-3090 server, measures each sensor alone and in combinations, holds out GPUs, days, applications, and evasion families, and reports run-level detection at a fixed false-alert budget. A sampling-rate and quantization sweep converts laboratory measurements into requirements for an integrated trusted telemetry path. \textcolor{planred}{\textbf{The final abstract must insert the measured worst-family detection gain, false alerts per GPU-hour, time to alert, monitor overhead, and minimum retained sensor specification after completing the red-box experiments.}}
+Hardware-enabled governance requires evidence about accelerator use without inspecting model weights, data, or code. Coarse NVIDIA Management Library (NVML) telemetry is inexpensive, but low-rank and custom-kernel evasions deliberately approach the physical footprint of inference; per-kernel performance counters expose stronger invariants but are too expensive for continuous monitoring. We present \system{}, an architecture that combines always-on NVML with independently measured rail-power evidence, cross-modal tamper residuals, and sequential run-level decisions. Other physical modalities are retained only if they add statistically significant conditional value. On the current 118-run pipeline-validation corpus, a reconstructed NVML detector identifies 22 of 23 training runs in both run-grouped and leave-GPU-out evaluation, with no alerts on 95 non-training runs. However, leave-family-out evaluation identifies 0 of 23 training runs and raises 10 false alerts, showing that device interpolation is not unseen-workload transfer. An RTX~3090 reproduction of \wave{} matches 16/16 tight and 15/16 loose lower-bound cases, but incurs 161\% mean overhead for one NCU metric and 2,750\% for the full metric set. The final evaluation holds out GPUs, days, applications, and the fused-update evasion family, then degrades full-rate electrical traces to derive the minimum trusted ADC specification. \textbf{Final-result fields remaining at freeze:} sensor-fusion gain, time to alert, monitor overhead, and retained sample rate/bit depth.
 \end{abstract}
+\maketitle
 
 \section{Introduction}
 
@@ -84,9 +78,9 @@ This paper asks:
 \emph{What is the smallest trusted sensor set that reliably separates training from matched inference and non-ML workloads, including previously unseen evasions, at a fixed run-level false-alert budget?}
 \end{quote}
 
-We answer this question with \system{}, a layered monitoring design and a controlled sensor-selection methodology. Our prototype testbed contains six RTX~3090 GPUs; three two-channel, 10~MHz Pico Technology oscilloscopes; a TOPDON TC001-A thermal camera; 10K 3950B thermistors; a Dodotronic 200/250~kHz USB ultrasound microphone; a NooElec NESDR SMArt receiver; and a mirrored-Ethernet path using a 10Gtek NIC and TP-Link TL-SG108E switch. The scopes provide high-rate electrical observations that emulate a future rail-monitor ADC; the thermal sensors expose slower spatial and thermal dynamics; the microphone and SDR screen acoustic/ultrasonic and RF leakage; and the mirrored switch port captures content-free packet timing and size metadata for traffic that actually crosses Ethernet. NVML remains the low-cost always-on layer, while \wave{} is reproduced as an offline, high-information reference rather than misrepresented as a deployable monitor.
+We answer this question with \system{}, a layered monitoring design and controlled sensor-selection methodology. The evaluation fleet contains eight RTX~3090 GPUs across three hosts: seven GPUs contribute the current NVML corpus, two verifier GPUs form the electrically instrumented subset, and one 200~W-capped GPU hosts the \wave{} reproduction. Rail power is submission-critical; thermal, acoustic, RF, and network modalities are retained only if they provide conditional value beyond NVML and electrical sensing. NVML remains the low-cost always-on layer, while \wave{} is an offline, high-information reference rather than a deployable monitor.
 
-This work is designed to make four contributions after the red-box experiments are completed:
+The submission is organized around four auditable contributions; result claims are released only after their preregistered acceptance conditions pass:
 
 \begin{enumerate}
   \item \textbf{A sensor-fused governance architecture.} Separately auditable modality encoders, cross-modal consistency checks, calibrated late fusion, and a sequential run-level decision rule distinguish evidence from any one software stack.
@@ -165,7 +159,7 @@ Figure~\ref{fig:architecture} shows the architecture. Tier~0 is the nine-signal 
 \begin{figure*}[t]
 \centering
 \begin{tikzpicture}[font=\small,>=stealth,box/.style={draw,rounded corners,minimum height=0.75cm,align=center,fill=blue!4},sensor/.style={draw,rounded corners,minimum height=0.65cm,align=center,fill=green!6}]
-\node[box,minimum width=2.4cm] (gpu) {6x RTX 3090\\workloads};
+\node[box,minimum width=2.4cm] (gpu) {8-GPU RTX 3090 fleet\\2-GPU sensor subset};
 \node[sensor,right=0.9cm of gpu,yshift=1.35cm] (nvml) {Tier 0: NVML\\1 Hz};
 \node[sensor,right=0.9cm of gpu,yshift=0.45cm] (power) {Tier 1: rail power\\oscilloscopes};
 \node[sensor,right=0.9cm of gpu,yshift=-0.45cm] (thermal) {Tier 1: thermal/contact\\ultrasound + RF};
@@ -243,9 +237,9 @@ Physical modalities are useful even when their direct class accuracy is modest. 
 
 \subsection{Testbed}
 
-The available server contains six NVIDIA RTX~3090 GPUs. Physical instrumentation includes three two-channel, 10~MHz Pico Technology oscilloscopes; a TOPDON TC001-A thermal camera (256$\times$192 IR, 512$\times$384 TISR, 25~Hz, stated range $-20$--$550^\circ$C); 10K 3950B thermistors; a Dodotronic 200/250~kHz USB ultrasound microphone; a NooElec NESDR SMArt bundle; and a 10Gtek NIC plus TP-Link TL-SG108E gigabit switch for mirrored Ethernet. The current inventory still lacks the exact PicoScope model and probes, microphone variant, SDR revision/frequency plan, thermistor logger/calibration, CPU, DRAM, motherboard/PCIe topology, OS, driver, CUDA, and framework versions. These are experimental variables, not cosmetic details, and are therefore explicitly collected before the first run.
+The fleet contains eight NVIDIA RTX~3090 GPUs across node2 (five GPUs), verifier (two GPUs), and testbed-node1 (one GPU). Current physical collection is restricted to the two verifier GPUs until probe wiring and safety qualification are complete. The WAVE host is separately power-capped at 200~W, while the remaining cards expose 350--370~W limits. Physical instrumentation includes three two-channel, 10~MHz Pico Technology oscilloscopes; a TOPDON TC001-A thermal camera (256$\times$192 IR, 512$\times$384 TISR, 25~Hz, stated range $-20$--$550^\circ$C); 10K 3950B thermistors; a Dodotronic 200/250~kHz USB ultrasound microphone; a NooElec NESDR SMArt bundle; and a mirrored-Ethernet path.
 
-Because each of the three oscilloscopes has two channels, six simultaneous electrical channels may be possible; this is not assumed until the probe inventory, isolation, approved wiring, aggregate sampling-rate limits, and cross-scope triggering are verified. The six GPUs are first characterized individually, then run in balanced groups so that GPU identity and sensor assignment are not confounded.
+Because each oscilloscope has two channels, six simultaneous electrical channels may eventually be possible; headline physical results use only channels that pass probe, isolation, wiring, acquisition-rate, and synchronization checks. GPUs are characterized individually and channels are rotated where practical so GPU identity and sensor assignment are not confounded.
 
 \begin{experimentbox}{Inventory, topology, and safety qualification}
 Record: GPU UUID/SKU/VBIOS, PCIe bus and NUMA topology, any NVLink bridges, CPU, DRAM, storage, NIC, PSU, OS/kernel, NVIDIA driver, CUDA, cuDNN, NCCL, PyTorch, Nsight Compute, power/clock limits, ambient conditions, and every sensor model/firmware/rate/resolution. Draw the exact cable/mirror/probe topology. Use only manufacturer-rated isolated current probes, shunts, or instrumented power cables. Do not probe mains or exposed GPU rails without a qualified lab procedure. Measure idle noise, clipping, channel gain, timestamp jitter, and GPU-to-channel mapping. Put the resulting table in the paper and archive \texttt{nvidia-smi -q}, \texttt{nvidia-smi topo -m}, and environment-lock outputs.
@@ -257,7 +251,7 @@ Table~\ref{tab:workloads} is a minimum corpus, not a menu from which easy cases 
 
 \begin{table*}[t]
 \centering
-\caption{Minimum RTX~3090 evaluation matrix. Model sizes are chosen to fit the six 24~GB GPUs; exact versions and datasets are frozen in the manifest.}
+\caption{Minimum RTX~3090 evaluation matrix. Model sizes are chosen to fit 24~GB GPUs; exact versions and datasets are frozen in the manifest.}
 \label{tab:workloads}
 \small
 \begin{tabularx}{\textwidth}{p{2.2cm}Xp{3.0cm}p{3.3cm}}
@@ -277,15 +271,27 @@ Telemetry attacks & Freeze, replay, offset, scale, timestamp drift, sample drop,
 
 The unit of independence is a run, not a window. The primary final split is grouped simultaneously by physical GPU, collection day, application configuration, and evasion family. At least one GPU and one full attack family are held out from model and threshold selection. If data volume permits, we report leave-one-GPU-out, leave-one-application-family-out, and leave-one-evasion-family-out results separately. Repetitions use at least three independent starts per configuration in screening and five for the retained full evaluation. We randomize run order within thermal constraints and record cool-down state.
 
-We use two campaigns. A fast campaign uses 180--300~s runs for electrical, NVML, acoustic, RF, and network characterization. A thermal campaign uses a fixed warm-up, steady-state interval, and cool-down criterion based on inlet-to-device delta rather than wall-clock delay alone. Thermal runs are screened on three GPUs before the retained sensor set is repeated on all six.
+We use two campaigns. A fast campaign uses 180--300~s runs for electrical and NVML characterization, with other modalities included only when attached and qualified. A thermal campaign, if retained, uses a fixed warm-up, steady-state interval, and cool-down criterion based on inlet-to-device delta rather than wall-clock delay alone.
 
 \section{Baseline Reproduction}
 
 \subsection{NeurIPS NVML detector}
 
-The reproduction uses the same nine signals, 1~Hz sampling, 166-feature vocabulary, two-stage random forest, 30~s causal windows with 15~s stride, and grouped evaluation as the earlier detector~\cite{rahman2026hidden}. We report both a strict reproduction using the published hyperparameters and a 3090-tuned version whose tuning is confined to the development split. The earlier 1,404-run corpus is not pooled with new physical sensor data for headline accuracy, because hardware, collection context, and missing modalities would create an easy domain cue. It is used for pretraining/feature design only in a separately labeled transfer experiment.
+The adapted reproduction uses the same nine signals, 1~Hz sampling, a reconstructed 166-feature vocabulary, two-stage random forest, 30~s causal windows with 15~s stride, and grouped evaluation as the earlier detector~\cite{rahman2026hidden}. Because the exact original feature code is not yet in the artifact, we do not label this row a strict reproduction. The earlier 1,404-run corpus is not pooled with new physical sensor data for headline accuracy, because hardware, collection context, and missing modalities would create an easy domain cue.
 
-\begin{experimentbox}{Reproduce the NVML baseline on all six RTX 3090 GPUs}
+\paragraph{Current pipeline diagnostic.}
+The committed 118-run corpus contains 23 training and 95 non-training runs across seven physical GPUs and two collection days. Run-grouped cross-validation detects 22/23 training runs and produces 0/95 false-positive runs, with fold window AUC 0.972--0.990. These folds prevent windows from the same run crossing the split, but they do not hold out GPU, day, or application family and therefore are not headline transfer evidence. The negative exposure is only 11.45 GPU-hours: with zero events, the one-sided 95\% Poisson upper bound remains 0.262 false alerts/GPU-hour. At least 71.9 zero-event negative GPU-hours are required to place this bound below the preregistered $1/24$ GPU-hour budget.
+
+The protocol audit in Figure~\ref{fig:generalization-audit} makes the gap concrete. Leave-GPU-out evaluation also detects 22/23 training runs with no false-positive runs, but leave-family-out evaluation detects 0/23 and raises 10 false alerts among 95 non-training runs (0.873/GPU-hour). The two-day corpus cannot estimate training transfer in both directions: training examples occur only on August~25, so the fold trained on August~24 lacks the classes required by the two-stage detector. We report that fold as non-estimable rather than silently pooling days. Thus the present baseline supports device interpolation on this homogeneous fleet, not unseen-workload or temporal transfer.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{generalization-audit.pdf}
+\caption{The reconstructed baseline is sensitive to evaluation protocol. Bars show aggregate run-level outcomes; TPR whiskers are Wilson 95\% intervals. Downward triangles mark one-sided 95\% false-alert-rate upper bounds when zero events were observed. Day holdout is omitted because one direction is not estimable.}
+\label{fig:generalization-audit}
+\end{figure}
+
+\begin{experimentbox}{Reproduce the NVML baseline across the RTX 3090 fleet}
 Run the clean core corpus first. Verify 1~Hz sample count and missingness; extract exactly the published 166 causal features; use RandomForest with 400 trees, no maximum depth, minimum leaf size 2, square-root feature sampling, and balanced classes. Report accuracy, macro-F1, ROC-AUC, PR-AUC, calibration, run-level miss rate, false alerts/GPU-hour, and time-to-first-alert. Repeat with (i) original 3-of-5 at $\tau=0.75$ and (ii) validation-calibrated CUSUM. Group by run and show a per-GPU confusion matrix. Acceptance condition for a faithful reproduction: no leakage audit failures and performance uncertainty overlaps the prior result on a comparable clean subset; otherwise explain the domain shift rather than retuning on test data.
 \end{experimentbox}
 
@@ -293,8 +299,17 @@ Run the clean core corpus first. Verify 1~Hz sample count and missingness; extra
 
 The RTX~3090 uses the Ampere architecture, which \wave{} did not report, although its metrics are conceptually architecture-independent. We reproduce the public artifact using GPT-2-, LLaMA-, and Qwen-style dense decoder configurations that fit 24~GB. Before running, \texttt{ncu --query-metrics} is used to map each requested metric. The required set includes scalar HFMA/FFMA/DFMA, ADD, and MUL counts; global load/store lookup-miss sectors; and global/shared load/store instruction counts. The exact names and any unavailable events are recorded.
 
+On the 200~W-capped RTX~3090, the adapted artifact obtains 16/16 tight and 15/16 loose lower-bound decisions and 15/15 decisions for both upper-bound settings. Profiling one NCU metric adds 131--186\% runtime (161\% mean), while the WAVE metric set adds 2,254--3,059\% (2,750\% mean). Figure~\ref{fig:wave-overhead} shows all six measured decoder configurations.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{wave-overhead.pdf}
+\caption{WAVE profiling overhead on the RTX~3090 reproduction host. Values are paired against three direct executions per configuration; the y-axis is logarithmic.}
+\label{fig:wave-overhead}
+\end{figure}
+
 \begin{experimentbox}{Replicate \wave{} as the architectural baseline}
-Check out the public \wave{} artifact at a recorded commit and create its stated CUDA/PyTorch/Nsight environment or a containerized compatible variant. Run the authors' GPT-2, LLaMA, Qwen, and split-layer cases on one 3090, then repeat a representative small/medium/large subset on all six GPUs. Measure recovered layer count, token count, batch, hidden size, FFN size, parameter-count error, lower/upper-bound false positives and negatives, solver time, trace size, and runtime slowdown. Repeat collection with each PMC family and single counters to quantify marginal overhead. Never use Nsight-profiled and unprofiled runs interchangeably in physical-sensor training. If Ampere lacks a metric, document the substitution and separately label the result ``adapted reproduction.''
+Check out the public \wave{} artifact at a recorded commit and create its stated CUDA/PyTorch/Nsight environment or a containerized compatible variant. Run the authors' GPT-2, LLaMA, Qwen, and split-layer cases on the dedicated 3090 reproduction host. Measure recovered layer count, token count, batch, hidden size, FFN size, parameter-count error, lower/upper-bound false positives and negatives, solver time, trace size, and runtime slowdown. Repeat collection with each PMC family and single counters to quantify marginal overhead. Never use Nsight-profiled and unprofiled runs interchangeably in physical-sensor training. If Ampere lacks a metric, document the substitution and separately label the result ``adapted reproduction.''
 \end{experimentbox}
 
 \section{Sensor-Augmented Roofline Evaluation}
@@ -416,14 +431,17 @@ Confidence intervals use a hierarchical bootstrap: sample workload families, the
 
 \begin{table}[t]
 \centering
-\caption{Primary results table to populate. Values must be run-level on the untouched test split.}
+\caption{Current baseline audits and slots for primary results. Final values must be run-level on the untouched test split.}
 \label{tab:primary}
 \scriptsize
 \begin{tabularx}{\columnwidth}{Xcccc}
 \toprule
 Monitor & Worst TPR & FA/GPU-h & Alert p50 & Ovh. \\
 \midrule
-NVML reproduction & \tbd & \tbd & \tbd & \tbd \\
+NVML run-grouped diagnostic & 22/23 & 0 observed$^*$ & N/A & \tbd \\
+NVML leave-GPU-out audit & 22/23 & 0 observed$^*$ & N/A & \tbd \\
+NVML leave-family-out audit & 0/23 & 0.873 & N/A & \tbd \\
+NVML held-out final test & \tbd & \tbd & \tbd & \tbd \\
 Best single physical & \tbd & \tbd & \tbd & \tbd \\
 NVML + best sensor & \tbd & \tbd & \tbd & \tbd \\
 Selected fusion & \tbd & \tbd & \tbd & \tbd \\
@@ -431,13 +449,14 @@ All sensors & \tbd & \tbd & \tbd & \tbd \\
 \wave{} (different task) & N/A & N/A & N/A & \tbd \\
 \bottomrule
 \end{tabularx}
+\parbox{\columnwidth}{\scriptsize $^*$11.45 negative GPU-hours; one-sided 95\% zero-event upper bound is 0.262 false alerts/GPU-hour. Audit rows are not the untouched final test result.}
 \end{table}
 
-\section{Expected Findings and Decision Logic}
+\section{Sensor-Retention Decision Logic}
 
-This section records hypotheses, not results. High-rate electrical sensing is most likely to add information for fused-update and diluted training because weight writes and backward phases create transient structure hidden by 1~Hz averaging. Contact temperature may retain most long-run value of the thermal camera at much lower bandwidth. The thermal camera may nevertheless reveal GPU-to-GPU imbalance and throttling. Mirrored Ethernet should help only when relevant traffic crosses the monitored switch; it cannot observe intra-node PCIe or NVLink and is therefore expected to add little on single-node DDP. Ultrasound and RF are exploratory and should be removed unless they provide repeatable conditional value beyond electrical and thermal evidence under placement and ambient-interference shifts.
+High-rate electrical sensing is the primary candidate because it directly tests whether weight writes and backward phases produce transient structure hidden by 1~Hz averaging. Contact temperature, thermal imaging, mirrored Ethernet, ultrasound, and RF remain optional: each must demonstrate conditional value beyond NVML and electrical evidence under placement/day shifts. The network channel is interpreted only when relevant traffic crosses the monitored switch; it cannot observe intra-node PCIe or NVLink.
 
-These hypotheses cannot be converted into conclusions without the red-box tests. A negative result is useful: ruling out redundant thermal, acoustic, RF, or switched-network channels narrows the deployable sensor set. The central outcome is the cost-robustness frontier, not the largest possible classifier.
+A negative result is useful: ruling out redundant modalities narrows the deployable sensor set. The central outcome is the cost--robustness frontier, not the largest possible classifier. Modalities failing the preregistered retention rule remain in the ruled-out-sensor table rather than disappearing from the evaluation.
 
 \section{Discussion}
 
@@ -447,17 +466,17 @@ The work is not only an application of multimodal machine learning. It evaluates
 
 \subsection{Relationship to prior submissions}
 
-The NeurIPS work contributes the NVML corpus, adversarial iteration method, and evidence that coarse telemetry detects training~\cite{rahman2026hidden}. The earlier roofline study contributes the observation that non-training workloads overlap training in arithmetic-intensity space~\cite{anonymous2026always}. This paper must contribute new synchronized physical data, sensor and hardware co-design, cross-modal tamper tests, a \wave{} reproduction on Ampere, and a matched overlap evaluation. Reusing earlier data for feature motivation is disclosed in Appendix~\ref{app:prior}; headline claims use the new held-out RTX~3090 corpus. If venue policies treat either prior manuscript as concurrent or substantially overlapping, the authors must disclose it and narrow duplicated text/results before submission.
+The NeurIPS work contributes the NVML corpus, adversarial iteration method, and evidence that coarse telemetry detects training~\cite{rahman2026hidden}. The earlier roofline study contributes the observation that non-training workloads overlap training in arithmetic-intensity space~\cite{anonymous2026always}. This paper must contribute new synchronized physical data, sensor and hardware co-design, cross-modal tamper tests, a \wave{} reproduction on Ampere, and a matched overlap evaluation. Reusing earlier data for feature motivation is tracked in the artifact's internal provenance map; headline claims use the new held-out RTX~3090 corpus. If venue policies treat either prior manuscript as concurrent or substantially overlapping, the authors must disclose it and narrow duplicated text/results before submission.
 
 \subsection{Limitations}
 
-The prototype is one six-GPU consumer server, not a datacenter fleet. RTX~3090 results may not transfer to H100/H200/B200 power delivery, HBM, NVLink/NVSwitch, cooling, or confidential-computing modes. Six simultaneous scope channels depend on probe, isolation, triggering, and acquisition-rate constraints. The mirrored Ethernet path cannot see intra-node collectives. Thermal, acoustic, and RF signals depend on ambient conditions, cooling policy, chassis layout, placement, interference, and workload duration; the microphone and network metadata add privacy and deployment concerns. The monitor detects training-like physical behavior, not intent or legal noncompliance. Sensor fusion increases the attack surface and requires a secure evidence path that our software prototype only emulates. Finally, an adaptive adversary may discover a new joint evasion; leave-one-family-out evaluation measures transfer but cannot prove completeness.
+The prototype is an eight-GPU consumer fleet with only a two-GPU electrically instrumented subset, not a datacenter deployment. RTX~3090 results may not transfer to H100/H200/B200 power delivery, HBM, NVLink/NVSwitch, cooling, or confidential-computing modes. Additional simultaneous scope channels depend on probe, isolation, triggering, and acquisition-rate constraints. The mirrored Ethernet path cannot see intra-node collectives. Thermal, acoustic, and RF signals depend on ambient conditions, chassis layout, placement, interference, and duration. The monitor detects training-like physical behavior, not intent or legal noncompliance. Sensor fusion increases the attack surface and requires a secure evidence path that our prototype only emulates. Finally, an adaptive adversary may discover a new joint evasion; leave-one-family-out evaluation measures transfer but cannot prove completeness.
 
 \section{Conclusion}
 
-\enlargethispage{4\baselineskip}
-\system{} is an experimental architecture that combines always-on NVML with independent physical evidence, cross-modal tamper checks, and sequential inference. Its central result will be the minimum sensor specification that improves held-out evasion detection at a fixed false-alert and overhead budget. Until the red-box experiments are complete, this is an evaluation plan, not evidence of improvement.
+\system{} combines always-on NVML with independent physical evidence, cross-modal tamper checks, and sequential inference. The current artifact establishes a leakage-audited diagnostic baseline, an Ampere WAVE reproduction, calibrated logging, and an empirical roofline toolchain. The final claim is intentionally narrower: the minimum electrical-sensing specification that improves held-out fused-update detection at a fixed false-alert and overhead budget. No modality is claimed useful until it passes the frozen sensor-retention rule on held-out evidence.
 
+\ifshowplan
 \appendix
 \onecolumn
 \section{How Prior NeurIPS Data Determines Sensor Tests}
@@ -625,6 +644,7 @@ Sensor disconnect/occlusion & \tbd & \tbd & \tbd & \tbd & N/A & N/A \\
 \end{table}
 
 \twocolumn
+\fi
 \begin{thebibliography}{99}
 \small
 

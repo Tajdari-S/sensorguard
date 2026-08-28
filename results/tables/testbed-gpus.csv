@@ -1,0 +1,9 @@
+host,gpu_index,gpu_uuid,pci_bus,pcie_width,vbios,power_limit_w,paper_role
+node2,0,GPU-9b96eb67-aeee-89d5-aa85-fc650af4e25c,00000000:01:00.0,16,94.02.59.00.F2,350.0,NVML fleet
+node2,1,GPU-37ffc98b-8551-c8a1-5f3c-27ade9ae735a,00000000:46:00.0,16,94.02.42.80.9F,350.0,NVML fleet
+node2,2,GPU-5443d59d-561f-ed1e-da42-1975937205f9,00000000:81:00.0,16,94.02.42.80.9F,350.0,NVML fleet
+node2,3,GPU-46bf67bb-cb31-bee1-3cf0-c35337ba97d2,00000000:C1:00.0,8,94.02.42.00.9A,350.0,NVML fleet
+node2,4,GPU-127e16de-2b5f-dde9-1932-b4e29bb818c0,00000000:C2:00.0,8,94.02.42.00.9D,370.0,NVML fleet
+verifier,0,GPU-42e33043-7008-2803-9ba8-9bb9ef7d0845,00000000:46:00.0,8,94.02.42.80.1F,350.0,NVML + electrical
+verifier,1,GPU-bff95c83-0adb-feb7-9825-359f31b26de8,00000000:C3:00.0,16,94.02.59.00.5E,370.0,NVML + electrical
+testbed-node1,0,GPU-392b25f7-d685-7d9d-ee07-864670a4e2e9,00000000:41:00.0,16,94.02.42.80.9F,200.0,WAVE reproduction

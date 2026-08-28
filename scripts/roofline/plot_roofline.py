@@ -16,11 +16,21 @@ def map_log(value, low, high, start, end):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("summary", type=Path)
-    parser.add_argument("--peak-tflops", type=float, required=True)
-    parser.add_argument("--peak-gbps", type=float, required=True)
+    parser.add_argument("--peak-tflops", type=float)
+    parser.add_argument("--peak-gbps", type=float)
+    parser.add_argument("--peaks-json", type=Path,
+                        help="Unprofiled measured GEMM/copy benchmark JSON")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     points = json.loads(args.summary.read_text())["points"]
+    if args.peaks_json:
+        peaks = json.loads(args.peaks_json.read_text())["results"]
+        measured_tflops = max(float(row.get("tflops", 0.0)) for row in peaks)
+        measured_gbps = max(float(row.get("minimum_gbps", 0.0)) for row in peaks)
+        args.peak_tflops = args.peak_tflops or measured_tflops
+        args.peak_gbps = args.peak_gbps or measured_gbps
+    if args.peak_tflops is None or args.peak_gbps is None:
+        parser.error("provide --peaks-json or both --peak-tflops and --peak-gbps")
     width, height = 900, 560
     left, right, top, bottom = 90, 850, 35, 500
     xmin, xmax, ymin, ymax = 0.01, 10000.0, 0.001, max(args.peak_tflops * 1.5, 1.0)
@@ -44,6 +54,8 @@ def main():
         ridge.append(f'{map_log(ai,xmin,xmax,left,right):.1f},{map_log(max(perf,ymin),ymin,ymax,bottom,top):.1f}')
     lines.append(f'<polyline class="roof" points="{" ".join(ridge)}"/>')
     for point in points:
+        if point.get("operation") == "copy":
+            continue
         ai = point.get("arithmetic_intensity_measured") or point["arithmetic_intensity_min"] or xmin
         perf = max(point.get("tflops", 0), ymin)
         x, y = map_log(ai,xmin,xmax,left,right), map_log(perf,ymin,ymax,bottom,top)
@@ -54,7 +66,8 @@ def main():
               f'<line class="axis" x1="{left}" y1="{top}" x2="{left}" y2="{bottom}"/>',
               f'<text x="{(left+right)/2}" y="548" text-anchor="middle">Arithmetic intensity (FLOP/DRAM byte)</text>',
               f'<text transform="translate(20 {(top+bottom)/2}) rotate(-90)" text-anchor="middle">Performance (TFLOP/s)</text>',
-              '<text x="450" y="22" text-anchor="middle" font-size="17">RTX 3090 empirical roofline</text>', '</svg>']
+              '<text x="450" y="20" text-anchor="middle" font-size="17">RTX 3090 measured microbenchmark roofline</text>',
+              f'<text x="450" y="38" text-anchor="middle">ceilings: {args.peak_tflops:.2f} TFLOP/s, {args.peak_gbps:.1f} GB/s</text>', '</svg>']
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text("\n".join(lines) + "\n")
     print(f"Wrote {args.output}")

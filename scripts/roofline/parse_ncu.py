@@ -73,10 +73,30 @@ def dominant_kernel_bytes(launches):
     return kernel, statistics.median(per_launch)
 
 
+def kernel_matches_case(case, kernel):
+    """Conservative validation that initialization did not win selection."""
+    if kernel is None:
+        return False
+    name = kernel.lower()
+    if case.startswith("gemm_"):
+        return "gemm" in name
+    if case == "gemv":
+        return "gemv" in name
+    if case == "elementwise":
+        return "elementwise" in name
+    # torch copy_ commonly uses a CUDA memcpy engine rather than a kernel, so
+    # NCU's kernel-only CSV cannot supply its DRAM byte count.
+    if case == "copy":
+        return False
+    return True
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("input_dir", type=Path)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--strict-kernel", action="store_true",
+                        help="Fail if NCU selects an initialization/unexpected kernel")
     args = parser.parse_args()
     points = []
     for csv_path in sorted(args.input_dir.glob("*.ncu.csv")):
@@ -87,8 +107,16 @@ def main():
         bench = json.loads(bench_path.read_text())["results"][0]
         launches = parse_launches(csv_path)
         kernel, dram_bytes = dominant_kernel_bytes(launches)
+        kernel_valid = kernel_matches_case(case, kernel)
+        if case == "copy":
+            # Bandwidth comes from the unprofiled copy timing, not a random
+            # initialization kernel accidentally selected from the NCU CSV.
+            kernel, dram_bytes = None, None
+        elif not kernel_valid and args.strict_kernel:
+            raise SystemExit(f"Unexpected NCU kernel for {case}: {kernel}")
         bench["ncu_csv"] = str(csv_path)
         bench["ncu_kernel"] = kernel
+        bench["ncu_kernel_valid"] = kernel_valid
         bench["ncu_launches"] = len(launches)
         bench["measured_dram_bytes"] = dram_bytes
         bench["arithmetic_intensity_measured"] = (

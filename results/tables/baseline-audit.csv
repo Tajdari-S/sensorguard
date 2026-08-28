@@ -1,0 +1,2 @@
+evaluation,training_runs_detected,nontraining_false_positive_runs,negative_gpu_hours,zero_event_upper_95_per_gpu_hour,publication_transfer_result
+Run-grouped diagnostic,22/23,0/95,11.453,0.262,False
