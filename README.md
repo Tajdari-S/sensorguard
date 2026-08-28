@@ -34,6 +34,10 @@ Collaborators should put their names beside one primary lane in `docs/OWNERS.md`
 
 The dated plan is in [`docs/TIMELINE.md`](docs/TIMELINE.md). The exact tests and acceptance criteria are in [`docs/EXPERIMENT_PROTOCOL.md`](docs/EXPERIMENT_PROTOCOL.md). The complete named application/evasion registry and its feasibility status are in [`docs/WORKLOAD_COVERAGE.md`](docs/WORKLOAD_COVERAGE.md); daily commands and gates are in [`docs/DAILY_RUNBOOK.md`](docs/DAILY_RUNBOOK.md); executable roofline tests are in [`docs/ROOFLINE_RUNBOOK.md`](docs/ROOFLINE_RUNBOOK.md).
 
+The live, machine-readable queue of unfinished evidence is in
+[`remaining_tests/`](remaining_tests/). Update that tracker with each result so
+diagnostic, validation, and untouched-test evidence cannot be conflated.
+
 ## Repository map
 
 ```text
