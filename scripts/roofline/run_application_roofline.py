@@ -36,7 +36,7 @@ def workload_command(args, case: dict, repetition: int, output: Path,
         args.python, "scripts/roofline/application_workload.py",
         "--case-id", case["case_id"], "--suite", case["suite"],
         "--platform", args.platform, "--repetition", str(repetition),
-        "--mode", case["mode"], "--device", f"cuda:{args.gpu_index}",
+        "--mode", case["mode"], "--device", args.cuda_device,
         "--dtype", case["dtype"], "--batch-size", str(case["batch_size"]),
         "--seq-len", str(case["seq_len"]),
         "--decode-tokens", str(case["decode_tokens"]),
@@ -44,6 +44,8 @@ def workload_command(args, case: dict, repetition: int, output: Path,
         "--iterations", str(case["iterations"]),
         "--seed", str(args.seed + repetition - 1), "--output", str(output),
     ]
+    if args.physical_gpu_uuid:
+        command.extend(["--physical-gpu-uuid", args.physical_gpu_uuid])
     if profile_range:
         command.append("--profile-range")
     return command
@@ -124,6 +126,16 @@ def main() -> int:
     if args.output_root is None:
         args.output_root = Path("results/roofline/applications") / args.platform / args.suite
 
+    args.cuda_device = f"cuda:{args.gpu_index}"
+    args.physical_gpu_uuid = ""
+    if args.execute:
+        # CUDA ordinals can shift when another card is faulted. Pin the process
+        # to the immutable NVML UUID, then address that one visible card as 0.
+        args.physical_gpu_uuid = gpu_uuid(args.gpu_index)
+        args.cuda_device = "cuda:0"
+        os.environ["CUDA_VISIBLE_DEVICES"] = args.physical_gpu_uuid
+        os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
+
     matrix = json.loads(args.matrix.read_text())
     items = plan(args, matrix)
     if not args.execute:
@@ -148,8 +160,6 @@ def main() -> int:
         return 3
     for directory in ["timing", "ncu", "profiled-timing-discard", "points"]:
         (args.output_root / directory).mkdir(parents=True, exist_ok=True)
-    os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-
     completed = 0
     for item in items:
         if args.resume and item["point"].exists():

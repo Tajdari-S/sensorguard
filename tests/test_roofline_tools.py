@@ -104,13 +104,31 @@ class RooflineToolsTest(unittest.TestCase):
         args = SimpleNamespace(
             repetitions=1, suite="cross_gpu_bridge", output_root=Path("out"),
             python="python3", platform="rtx3090", gpu_index=0, warmup=2,
-            seed=1, ncu="ncu",
+            seed=1, ncu="ncu", cuda_device="cuda:0", physical_gpu_uuid="",
         )
         items = plan(args, matrix)
         self.assertEqual(len(items), 1)
         self.assertIn("--profile-from-start", items[0]["ncu_command"])
         self.assertIn("--profile-range", items[0]["ncu_command"])
         self.assertNotIn("--profile-range", items[0]["timing_command"])
+
+    def test_application_plan_records_uuid_pinning(self):
+        matrix = {"repetitions": 1, "cases": [{
+            "case_id": "x", "suite": "cross_gpu_bridge", "mode": "gpt2_prefill",
+            "dtype": "float16", "batch_size": 2, "seq_len": 256,
+            "decode_tokens": 1, "gap_ms": 0, "iterations": 2,
+        }]}
+        args = SimpleNamespace(
+            repetitions=1, suite="cross_gpu_bridge", output_root=Path("out"),
+            python="python3", platform="node1-gpu1", gpu_index=1, warmup=2,
+            seed=1, ncu="ncu", cuda_device="cuda:0",
+            physical_gpu_uuid="GPU-immutable",
+        )
+        command = plan(args, matrix)[0]["timing_command"]
+        self.assertEqual(command[command.index("--device") + 1], "cuda:0")
+        self.assertEqual(
+            command[command.index("--physical-gpu-uuid") + 1], "GPU-immutable"
+        )
 
     def test_cross_gpu_bridge_requires_two_platforms(self):
         base = {

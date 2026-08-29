@@ -123,6 +123,8 @@ def main() -> int:
     parser.add_argument("--case-id", required=True)
     parser.add_argument("--suite", required=True)
     parser.add_argument("--platform", required=True)
+    parser.add_argument("--physical-gpu-uuid", default="",
+                        help="NVML UUID selected by the outer runner for audit")
     parser.add_argument("--repetition", type=int, required=True)
     parser.add_argument("--device", default="cuda:0")
     parser.add_argument("--dtype", choices=["float32", "float16", "bfloat16"],
@@ -186,6 +188,7 @@ def main() -> int:
         "case_id": args.case_id,
         "suite": args.suite,
         "platform": args.platform,
+        "physical_gpu_uuid": args.physical_gpu_uuid,
         "repetition": args.repetition,
         "gpu_name": torch.cuda.get_device_name(device),
         "mode": args.mode,
