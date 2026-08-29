@@ -36,7 +36,7 @@ def raw_now() -> float:
     return time.clock_gettime(time.CLOCK_MONOTONIC_RAW)
 
 
-def open_units(max_units=4):
+def open_units(max_units=16):
     units = []
     for _ in range(max_units):
         h = ps.ps2000_open_unit()
