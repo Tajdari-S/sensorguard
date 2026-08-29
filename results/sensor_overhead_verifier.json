@@ -1,0 +1,33 @@
+{
+  "config": {
+    "duration_s": 90.0,
+    "device": "cuda:0",
+    "gpus": "all"
+  },
+  "baseline_gemm_per_s": 22.3,
+  "sensors": [
+    {
+      "sensor": "nvml",
+      "available": true,
+      "cpu_pct_mean": 0.56,
+      "cpu_pct_max": 11.99,
+      "bytes_per_gpu_hour": 437280.0,
+      "trace_bytes": 10932,
+      "latency_ms_mean": 0.44,
+      "latency_ms_p95": 0.45,
+      "latency_ms_max": 4.65,
+      "throughput_ticks_per_s": 1.011,
+      "nominal_hz": 1.0,
+      "useful_work_penalty_pct": 0.0
+    },
+    {
+      "sensor": "dcgm",
+      "available": true,
+      "cpu_pct_mean": 0.04,
+      "cpu_pct_max": 5.99,
+      "bytes_per_gpu_hour": 512320.0,
+      "trace_bytes": 12808,
+      "useful_work_penalty_pct": 0.0
+    }
+  ]
+}
