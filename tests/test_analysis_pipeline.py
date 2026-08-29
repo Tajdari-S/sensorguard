@@ -12,6 +12,7 @@ sys.path.insert(0, str(ROOT / "scripts" / "analysis"))
 
 from evaluation import (  # noqa: E402
     assert_group_disjoint,
+    first_alert_index,
     hours_required_for_zero_event_bound,
     poisson_zero_event_upper,
     run_alert,
@@ -54,6 +55,12 @@ class AnalysisPipelineTest(unittest.TestCase):
         self.assertTrue(run_alert(np.array([0.8, 0.8, 0.1, 0.8, 0.1])))
         self.assertFalse(run_alert(np.array([0.8, 0.1, 0.8, 0.1, 0.1])))
         self.assertFalse(run_alert(np.array([])))
+
+    def test_first_alert_index(self):
+        self.assertEqual(first_alert_index(np.array([0.8, 0.8, 0.1, 0.8, 0.1])), 3)
+        self.assertEqual(first_alert_index(np.array([0.8, 0.8, 0.8])), 2)
+        self.assertIsNone(first_alert_index(np.array([0.8, 0.1, 0.8, 0.1, 0.1])))
+        self.assertIsNone(first_alert_index(np.array([])))
 
     def test_group_audit(self):
         groups = np.array(["a", "a", "b", "b"])

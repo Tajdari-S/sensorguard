@@ -31,6 +31,24 @@ def run_alert(
     return bool((counts >= k).any())
 
 
+def first_alert_index(
+    p_training: np.ndarray,
+    threshold: float = 0.75,
+    k: int = 3,
+    n: int = 5,
+) -> int | None:
+    """Return the first window index that completes a valid k-of-n alert."""
+    probabilities = np.asarray(p_training, dtype=float)
+    if probabilities.size == 0:
+        return None
+    hits = (probabilities >= threshold).astype(int)
+    for end in range(probabilities.size):
+        start = max(0, end - n + 1)
+        if hits[start:end + 1].sum() >= k:
+            return end
+    return None
+
+
 def validate_labels(runs: pd.DataFrame, group_by: str) -> None:
     """Fail closed on missing identifiers or malformed publication labels."""
     required = {

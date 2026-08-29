@@ -1,0 +1,12 @@
+schema_version: 1
+split_id: two_seen_one_model_unseen_v1
+purpose: Test whether two represented evasion families transfer to a third family excluded from fitting.
+seen_families:
+  - timing_shaping
+  - interleaving
+model_unseen_family: memory_minimization
+preregistered_final_family_excluded: fused_update_kernel
+notes:
+  - The model-unseen family is excluded from all feature, model, calibration, and threshold fitting.
+  - This is a development generalization test, not a claim that the attack idea was secret from the research team.
+  - Non-training control_test runs remain disjoint from fitting and are reused only to measure false alerts for each comparison.

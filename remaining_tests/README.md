@@ -74,6 +74,63 @@ Create `results/paper/matched_roofline.csv` using
 `docs/FIGURE_DATA_CONTRACT.md`. Freeze `pair_id` before inspecting sensor
 predictions.
 
+Two collection suites are ready. Previewing either suite is safe and does not
+touch the GPU:
+
+```bash
+# Test 1: current-paper RTX 3090 application roofline.
+python3 scripts/roofline/run_application_roofline.py \
+  --gpu-index 0 --platform rtx3090-node2 --suite rtx3090_application
+
+# Test 2: identical GPT-2 timing-shaping bridge cases for both GPU families.
+python3 scripts/roofline/run_application_roofline.py \
+  --gpu-index 0 --platform rtx3090-node2 --suite cross_gpu_bridge
+```
+
+The application pairs are declared before collection in
+`configs/application_roofline_pairs.csv`; the script never chooses the closest
+pairs after seeing the measurements. After three repetitions, materialize the
+fixed RTX pairs with:
+
+```bash
+python3 scripts/roofline/materialize_application_pairs.py \
+  --points results/roofline/applications/rtx3090-node2/rtx3090_application/application-roofline-points.csv \
+  --output results/paper/matched_application_roofline.csv
+```
+
+After verifying that the selected GPU is idle, execute with `--execute` and
+provide the sustained FP16 compute and DRAM-bandwidth ceilings measured under
+the same clock/power settings:
+
+```bash
+python3 scripts/roofline/run_application_roofline.py \
+  --gpu-index 0 --platform rtx3090-node2 --suite rtx3090_application \
+  --peak-tflops RTX_MEASURED_TFLOPS --peak-gbps RTX_MEASURED_GBPS --execute
+
+python3 scripts/roofline/run_application_roofline.py \
+  --gpu-index 0 --platform rtx3090-node2 --suite cross_gpu_bridge \
+  --peak-tflops RTX_MEASURED_TFLOPS --peak-gbps RTX_MEASURED_GBPS --execute
+```
+
+Run the same `cross_gpu_bridge` command on the H200 with a distinct platform
+label and its measured ceilings. Then join the two outputs:
+
+```bash
+python3 scripts/roofline/compare_cross_gpu_roofline.py \
+  --input results/roofline/applications/rtx3090-node2/cross_gpu_bridge/application-roofline-points.csv \
+  --input results/roofline/applications/h200-nvl/cross_gpu_bridge/application-roofline-points.csv \
+  --output results/paper/cross_gpu_roofline_link.csv
+```
+
+The bridge uses the same synthetic GPT-2 124M architecture, shapes, precision,
+seeds, and gaps on both GPUs. It does not pretend that raw RTX and H200 TFLOP/s
+are directly comparable: arithmetic intensity and throughput are normalized by
+each GPU's measured ridge point. Nsight runs remain separate from unprofiled
+sensor traces. FLOP counts are PyTorch-profiler estimates, so one case should
+be checked against an analytical or NCU FLOP count before using absolute
+TFLOP/s in the paper; the identical code path still supports the normalized
+cross-GPU comparison.
+
 ### 5. Collect held-out evasions and tamper cases
 
 The untouched evaluation must include:
@@ -97,6 +154,49 @@ folds. Retain a modality only when its paired 95% interval excludes zero,
 relative worst-family miss rate falls by at least 10%, monitor overhead is
 below 1%, and its channel-health test passes. Keep failed modalities in the
 paper table.
+
+Also run the lightweight cross-evasion diagnostic with the same two-stage
+random forest, 30-second windows, 15-second stride, and fixed 3-of-5 rule:
+
+1. **Pairwise transfer:** train on ordinary data plus evasion family A, then
+   test on a different family B.
+2. **Leave-one-evasion-out:** train on ordinary data plus every available
+   development evasion except B, then test on B.
+
+Use a preassigned `control_test` set to measure false alerts; those control
+runs must never enter model fitting. Start from
+`configs/evasion_transfer_labels.example.csv`, replace its illustrative rows
+with real run IDs and trace paths, and run:
+
+```bash
+python3 scripts/analysis/evasion_transfer.py \
+  --labels results/evaluation/evasion_transfer_labels.csv \
+  --output results/evaluation/evasion-transfer.json
+```
+
+The command writes a source-to-target transfer matrix and run-level
+predictions. It always excludes `fused_update_kernel`, even if that family is
+listed in the labels file. The excluded name is read from the preregistration,
+not from a command-line override. This known, preregistered final family is not
+used by the development diagnostic; only newly collected current-test traces
+are evaluated after the pipeline is frozen.
+
+For the requested two-seen/one-model-unseen test, use timing shaping and
+interleaving as represented families and exclude memory minimization from all
+fitting:
+
+```bash
+python3 scripts/analysis/evasion_transfer.py \
+  --labels results/evaluation/evasion_transfer_labels.csv \
+  --family-plan configs/evasion_two_seen_one_unseen.yaml \
+  --output results/evaluation/evasion-transfer.json
+```
+
+This produces three comparisons: timing-shaping to memory-minimization,
+interleaving to memory-minimization, and both seen families together to
+memory-minimization. `fused_update_kernel` remains excluded. “Model-unseen”
+means absent from fitting; it does not mean the research team was unaware of
+the attack concept.
 
 ### 7. Freeze fusion and the fixed run-level rule
 

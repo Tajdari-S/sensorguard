@@ -1,0 +1,4 @@
+pair_id,training_case,inference_case,model_family,freeze_note
+resnet50-b64,resnet50-train-b64,resnet50-infer-b64,resnet50,Same architecture precision and batch size
+gpt2-prefill-b2-s256,gpt2-train-b2-s256,gpt2-prefill-b2-s256,gpt2-124m,Same architecture precision batch size and context length
+gpt2-decode-b2-s256,gpt2-train-b2-s256,gpt2-decode-b2-s256-n32,gpt2-124m,Same architecture precision batch size and initial context length

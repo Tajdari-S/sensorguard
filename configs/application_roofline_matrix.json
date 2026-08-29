@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "repetitions": 3,
+  "cases": [
+    {"case_id":"resnet50-train-b64","suite":"rtx3090_application","mode":"resnet50_train","dtype":"float16","batch_size":64,"seq_len":1,"decode_tokens":1,"gap_ms":0,"iterations":3},
+    {"case_id":"resnet50-infer-b64","suite":"rtx3090_application","mode":"resnet50_infer","dtype":"float16","batch_size":64,"seq_len":1,"decode_tokens":1,"gap_ms":0,"iterations":5},
+    {"case_id":"gpt2-train-b2-s256","suite":"rtx3090_application","mode":"gpt2_train","dtype":"float16","batch_size":2,"seq_len":256,"decode_tokens":1,"gap_ms":0,"iterations":3},
+    {"case_id":"gpt2-prefill-b2-s256","suite":"rtx3090_application","mode":"gpt2_prefill","dtype":"float16","batch_size":2,"seq_len":256,"decode_tokens":1,"gap_ms":0,"iterations":5},
+    {"case_id":"gpt2-decode-b2-s256-n32","suite":"rtx3090_application","mode":"gpt2_decode","dtype":"float16","batch_size":2,"seq_len":256,"decode_tokens":32,"gap_ms":0,"iterations":2},
+    {"case_id":"bridge-gpt2-train-gap000","suite":"cross_gpu_bridge","mode":"gpt2_shaped_train","dtype":"float16","batch_size":2,"seq_len":256,"decode_tokens":1,"gap_ms":0,"iterations":3},
+    {"case_id":"bridge-gpt2-train-gap020","suite":"cross_gpu_bridge","mode":"gpt2_shaped_train","dtype":"float16","batch_size":2,"seq_len":256,"decode_tokens":1,"gap_ms":20,"iterations":3},
+    {"case_id":"bridge-gpt2-train-gap050","suite":"cross_gpu_bridge","mode":"gpt2_shaped_train","dtype":"float16","batch_size":2,"seq_len":256,"decode_tokens":1,"gap_ms":50,"iterations":3},
+    {"case_id":"bridge-gpt2-train-gap100","suite":"cross_gpu_bridge","mode":"gpt2_shaped_train","dtype":"float16","batch_size":2,"seq_len":256,"decode_tokens":1,"gap_ms":100,"iterations":3},
+    {"case_id":"bridge-gpt2-prefill","suite":"cross_gpu_bridge","mode":"gpt2_prefill","dtype":"float16","batch_size":2,"seq_len":256,"decode_tokens":1,"gap_ms":0,"iterations":5},
+    {"case_id":"bridge-gpt2-decode","suite":"cross_gpu_bridge","mode":"gpt2_decode","dtype":"float16","batch_size":2,"seq_len":256,"decode_tokens":32,"gap_ms":0,"iterations":2}
+  ]
+}

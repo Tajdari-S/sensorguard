@@ -1,0 +1,11 @@
+run_id,trace_path,gpu_index,label,family,evasion_family,split,gpu_uuid,collection_day
+ordinary-train-01,data/runs/ordinary-train-01/nvml.csv,0,training,ordinary_training,,fit,GPU-DEVELOPMENT-0,2026-08-29
+infer-fit-01,data/runs/infer-fit-01/nvml.csv,0,inference,matched_inference,,fit,GPU-DEVELOPMENT-0,2026-08-29
+hpc-fit-01,data/runs/hpc-fit-01/nvml.csv,0,non_ml,hpc_control,,fit,GPU-DEVELOPMENT-0,2026-08-29
+infer-control-01,data/runs/infer-control-01/nvml.csv,1,inference,matched_inference,,control_test,GPU-DEVELOPMENT-1,2026-08-30
+hpc-control-01,data/runs/hpc-control-01/nvml.csv,1,non_ml,hpc_control,,control_test,GPU-DEVELOPMENT-1,2026-08-30
+timing-shaping-01,data/runs/timing-shaping-01/nvml.csv,0,training,adversarial_training,timing_shaping,fit,GPU-DEVELOPMENT-0,2026-08-29
+interleaving-01,data/runs/interleaving-01/nvml.csv,0,training,adversarial_training,interleaving,fit,GPU-DEVELOPMENT-0,2026-08-29
+ballast-dilution-01,data/runs/ballast-dilution-01/nvml.csv,1,training,adversarial_training,ballast_dilution,fit,GPU-DEVELOPMENT-1,2026-08-30
+memory-minimization-01,data/runs/memory-minimization-01/nvml.csv,1,training,adversarial_training,memory_minimization,fit,GPU-DEVELOPMENT-1,2026-08-30
+sealed-fused-update-01,data/runs/SEALED-DO-NOT-OPEN/nvml.csv,4,training,adversarial_training,fused_update_kernel,fit,GPU-127e16de-2b5f-dde9-1932-b4e29bb818c0,2026-08-30
