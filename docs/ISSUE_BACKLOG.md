@@ -56,11 +56,11 @@ Create these issues after the private repository is available. Assign only after
 - Record throughput, optimizer progress, and energy.
 - Exit: entire attack family remains held out from initial defender training.
 
-### 9. [P0][Aug 29] Freeze fusion, CUSUM, and test protocol
+### 9. [P0][Aug 29] Freeze fusion, fixed 3-of-5 rule, and test protocol
 
-- Compare calibrated late fusion and boosted stacker.
+- Compare random-forest sensor configurations on validation.
 - Choose smallest set within one standard error.
-- Exit: model, calibration, health policy, threshold, and commit hash frozen.
+- Exit: model, calibration, health policy, 3-of-5 rule, 0.75 threshold, and commit hash frozen.
 
 ### 10. [P0][Aug 30] Gate 2: open the test split once and freeze claims
 

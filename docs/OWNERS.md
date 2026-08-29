@@ -7,7 +7,7 @@ Fill this table at kickoff. Each person owns one lane and reviews one other lane
 | Paper and integration | TBD | TBD | Scope, novelty, WAVE framing, writing, figures, HotCRP |
 | Telemetry and physical sensors | TBD | TBD | Electrical, thermal, ultrasound, RF, and network loggers; calibration, synchronization, safety |
 | Workloads and adversarial evaluation | TBD | TBD | Training/inference/non-ML corpus, custom kernels, evasion families, useful-work metrics |
-| Analysis, statistics, reproducibility | TBD | TBD | Splits, feature pipeline, fusion/CUSUM, bootstrap CIs, manifests, clean reruns |
+| Analysis, statistics, reproducibility | TBD | TBD | Splits, feature pipeline, random-forest fusion, fixed 3-of-5 rule, bootstrap CIs, manifests, clean reruns |
 
 ## Ownership rules
 

@@ -173,7 +173,7 @@ def generalization_outputs() -> None:
     """Compare leakage control with actual held-out-domain protocols."""
     specifications = [
         ("Run grouped", "run", "baseline-run-grouped.json"),
-        ("Held-out GPU", "GPU", "baseline-gpu-grouped.json"),
+        ("Held-out RTX 3090", "device", "baseline-gpu-grouped.json"),
         ("Held-out family", "family", "baseline-family-grouped.json"),
         ("Held-out day", "day", "baseline-day-grouped.json"),
     ]
@@ -252,7 +252,7 @@ def generalization_outputs() -> None:
     axes[0].set_xticks(x, plotted["protocol"], rotation=18, ha="right")
     axes[0].set_ylim(0, 1.08)
     axes[0].set_ylabel("Training run TPR")
-    axes[0].set_title("Transfer recall")
+    axes[0].set_title("Same-family device and workload recall")
     axes[0].grid(axis="y", alpha=0.25)
 
     axes[1].bar(x, false_rate, color=bar_colors[:len(plotted)])
@@ -267,7 +267,7 @@ def generalization_outputs() -> None:
     axes[1].set_title("False-alert exposure")
     axes[1].grid(axis="y", alpha=0.25)
     axes[1].legend(frameon=False, loc="upper left")
-    fig.suptitle("Evaluation protocol changes the baseline conclusion", y=1.02, fontsize=10)
+    fig.suptitle("Protocol audit: all device holdouts remain within RTX 3090", y=1.02, fontsize=10)
     fig.tight_layout()
     save(fig, "generalization-audit")
 

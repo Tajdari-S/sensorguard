@@ -28,7 +28,7 @@ Collaborators should put their names beside one primary lane in `docs/OWNERS.md`
 3. Establish a small WAVE reproduction on one RTX 3090 and quantify profiling overhead.
 4. Collect synchronized NVML plus electrical traces on matched training/non-training/evasion workloads.
 5. Screen each additional sensor on validation only; drop weak modalities at the gate.
-6. Freeze fusion and CUSUM, then evaluate once on held-out GPU/day/application/attack groups.
+6. Freeze the random-forest fusion model and fixed 3-of-5 rule, then evaluate once on held-out GPU/day/application/attack groups.
 7. Derive minimum sampling-rate and bit-depth requirements and confirm them in hardware.
 8. Freeze claims, figures, and the paper before the final upload day.
 
@@ -44,6 +44,7 @@ diagnostic, validation, and untouched-test evidence cannot be conflated.
 configs/     Frozen experiment and manifest templates
 data/        Local mount points only; raw traces are never committed
 docs/        Timeline, test protocol, system inventory, decisions, ownership
+next_paper/  Deferred CUSUM and optional extension roadmap
 paper/       Working LaTeX draft
 results/     Small derived tables/figures only
 scripts/     Inventory and validation helpers

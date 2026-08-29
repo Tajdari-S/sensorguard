@@ -1,0 +1,16 @@
+dataset,modality,window_sec,accuracy_mean,accuracy_std,f1_macro,n_windows,n_runs,n_features,evaluation_unit,split
+RTX 3090 base physical-sensor campaign,GPU current clamp,15,0.9921900381744206,0.006307743867479404,0.9908932174189987,766,37,30,window,5-fold StratifiedGroupKFold by run_id
+RTX 3090 base physical-sensor campaign,GPU current clamp,30,1.0,0.0,1.0,328,36,30,window,5-fold StratifiedGroupKFold by run_id
+RTX 3090 base physical-sensor campaign,GPU current clamp,60,1.0,0.0,1.0,138,34,30,window,5-fold StratifiedGroupKFold by run_id
+RTX 3090 base physical-sensor campaign,Motherboard clamp,15,0.7771808322441341,0.10524598252228791,0.741170694128467,766,37,13,window,5-fold StratifiedGroupKFold by run_id
+RTX 3090 base physical-sensor campaign,Motherboard clamp,30,0.7450280720523258,0.13277472185949474,0.7112895041336387,328,36,13,window,5-fold StratifiedGroupKFold by run_id
+RTX 3090 base physical-sensor campaign,Motherboard clamp,60,0.6641762452107279,0.1131829992246896,0.5986667059530684,138,34,13,window,5-fold StratifiedGroupKFold by run_id
+RTX 3090 base physical-sensor campaign,UltraMic,15,0.47532187390073133,0.13497884407980038,0.40932902582247194,766,37,56,window,5-fold StratifiedGroupKFold by run_id
+RTX 3090 base physical-sensor campaign,UltraMic,30,0.6062180574400723,0.037714430449279246,0.5085059520425373,328,36,56,window,5-fold StratifiedGroupKFold by run_id
+RTX 3090 base physical-sensor campaign,UltraMic,60,0.5510673234811165,0.12524916438645312,0.4774820574162679,138,34,56,window,5-fold StratifiedGroupKFold by run_id
+RTX 3090 base physical-sensor campaign,Electrical clamps,15,0.9921900381744206,0.006307743867479404,0.9908932174189987,766,37,43,window,5-fold StratifiedGroupKFold by run_id
+RTX 3090 base physical-sensor campaign,Electrical clamps,30,1.0,0.0,1.0,328,36,43,window,5-fold StratifiedGroupKFold by run_id
+RTX 3090 base physical-sensor campaign,Electrical clamps,60,1.0,0.0,1.0,138,34,43,window,5-fold StratifiedGroupKFold by run_id
+RTX 3090 base physical-sensor campaign,Electrical + acoustic,15,0.9921900381744206,0.006307743867479404,0.9908932174189987,766,37,99,window,5-fold StratifiedGroupKFold by run_id
+RTX 3090 base physical-sensor campaign,Electrical + acoustic,30,1.0,0.0,1.0,328,36,99,window,5-fold StratifiedGroupKFold by run_id
+RTX 3090 base physical-sensor campaign,Electrical + acoustic,60,1.0,0.0,1.0,138,34,99,window,5-fold StratifiedGroupKFold by run_id

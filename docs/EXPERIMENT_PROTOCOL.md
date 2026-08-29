@@ -9,7 +9,7 @@ Steps:
 1. Freeze the primary endpoint: run-level true-positive rate at a fixed global false-alert budget. The proposed primary budget is one false alert per 24 GPU-hours, with sensitivity at one per 8 and one per 72 GPU-hours; the team must confirm this choice by August 15.
 2. Group by run, GPU, day, application configuration, and evasion family.
 3. Hold out at least one GPU and one entire evasion family.
-4. Freeze the false-alert budget, CUSUM tuning procedure, sensor-retention rule, and exclusion policy.
+4. Freeze the false-alert budget, fixed 3-of-5 rule and threshold, sensor-retention rule, and exclusion policy.
 5. Hash the preregistration, split IDs, and feature vocabulary.
 
 Pass: validator succeeds and no final-test traces are visible to sensor/model selection.
@@ -66,11 +66,11 @@ Retain a sensor only if all are true:
 
 Failed modalities remain in the paper's ruled-out table.
 
-## E6: fusion and sequential detection
+## E6: fusion and fixed run-level detection
 
-Using validation only, compare NVML; each sensor; NVML plus each sensor; best pair; best triple if time permits; all sensors; selected set; and leave-one-out variants. Compare calibrated logistic late fusion with a boosted stacker. Choose the smallest set within one standard error of the best validation worst-family TPR.
+Using validation only, compare NVML; each sensor; NVML plus each sensor; best pair; best triple if time permits; all sensors; selected set; and leave-one-out variants. Use random-forest window classifiers and choose the smallest sensor set within one standard error of the best validation worst-family TPR.
 
-Tune one-sided CUSUM drift and threshold only on validation. Freeze the model, calibration transform, health policy, threshold, and code commit before opening the held-out test set once.
+Convert window probabilities to run alerts with the fixed 3-of-5 rule at probability 0.75. Freeze the model, calibration transform, health policy, rule, threshold, and code commit before opening the held-out test set once. Measure time to alert at the first causal 3-of-5 trigger and right-censor undetected runs.
 
 ## E7: adversarial and tamper robustness
 

@@ -9,7 +9,7 @@ false_alert_sensitivity_per_gpu_hour:
 window_seconds: 30
 stride_seconds: 15
 baseline_rule: three_of_five_windows_at_probability_0.75
-primary_model: calibrated_logistic_late_fusion_plus_CUSUM
+primary_model: random_forest_window_classifier_plus_fixed_three_of_five
 split_unit: run
 group_fields:
   - gpu_uuid

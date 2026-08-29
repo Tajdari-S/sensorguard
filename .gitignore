@@ -23,9 +23,10 @@ __pycache__/
 *.log
 *.out
 *.synctex.gz
+/output/
+/tmp/
 
 # Local secrets and machine configuration
 .env
 secrets/
 local_config.*
-

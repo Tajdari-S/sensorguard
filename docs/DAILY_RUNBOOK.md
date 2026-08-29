@@ -18,7 +18,7 @@ The dates below complement `TIMELINE.md`. Queue generation is runnable now; GPU 
 | Aug 25–26 | NeurIPS evasions R1–R3 | `python3 scripts/run_matrix.py --group evasion --priority P0` | A–L families audited with useful work |
 | Aug 27 | NeurIPS evasions R4–R5 | same queue, filtered in run ledger | All 20 families and variants accounted for |
 | Aug 28 | Custom/fused, signal-noise, tamper and adaptive cases | `python3 scripts/run_matrix.py --group evaluation --priority P0` | Five names resolved; fused controls and P0 robustness tests collected |
-| Aug 29 | Calibration/CUSUM and LOO | analysis adapter (to implement) | Model, threshold and code commit frozen |
+| Aug 29 | Random-forest calibration, fixed 3-of-5 rule, and LOO | analysis adapter (to implement) | Model, rule, threshold and code commit frozen |
 | Aug 30 | Held-out test once | frozen analysis command only | Claims table and immutable output hash |
 | Aug 31–Sep 2 | Sensor rate/bit/ROI sweeps | hardware sweep adapter (to implement) | Minimum spec within one SE, hardware confirmed |
 | Sep 3–8 | Figures, audits, paper freeze | clean-checkout reproduction command (to implement) | Every figure regenerated and PDF frozen |

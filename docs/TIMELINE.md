@@ -23,7 +23,7 @@ Dates are in 2026. The official September-cycle full-paper deadline is **Septemb
 | **Aug 22** | **Gate 1: sensor retain/drop decision** using validation only | All | Decision record; P2 modalities killed or retained |
 | Aug 23-26 | Full repetitions for NVML, electrical, and retained sensors across GPU/day groups; collect useful-work costs | Sensors + workloads | P0 evaluation corpus; failure ledger |
 | Aug 24-27 | Implement five evasion families and telemetry replay/freeze/shift/channel-swap tests | Workloads | Zero-shot held-out attack corpus |
-| Aug 27-29 | Train calibrated single-sensor and fusion models; tune CUSUM; bootstrap CIs; leave-one-family-out | Analysis | Frozen model/threshold hash; primary result table |
+| Aug 27-29 | Train random-forest single-sensor and fusion models; freeze 3-of-5 rule; bootstrap CIs; leave-one-family-out | Analysis | Frozen model/rule/threshold hash; primary result table |
 | **Aug 30** | **Gate 2: claims freeze**; open held-out test split once | All | Final headline numbers; claims matrix |
 | Aug 31-Sep 2 | Sampling-rate/bit-depth/duty-cycle/ROI sweeps; hardware-in-loop confirmation; monitor overhead | Sensors + analysis | Minimum sensor specification; overhead table |
 | Aug 31-Sep 3 | Paper writing: methods, results, threat model, limitations, appendix; generate figures | Paper/integration | Complete anonymous draft |

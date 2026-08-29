@@ -1,0 +1,8 @@
+id,priority,test,status,owner,required_artifact,acceptance_gate,generating_commit
+N01,P0,Implement causal CUSUM rule,pending,,next_paper/results/cusum_implementation.json,Unit tests match hand-calculated alert sequences,
+N02,P0,Calibrate CUSUM on validation,pending,,next_paper/results/cusum_calibration.csv,Drift and threshold selected without test access at fixed false-alert budgets,
+N03,P0,Compare CUSUM EWMA HMM and 3-of-5,pending,,next_paper/results/sequential_comparison.csv,Identical probabilities splits and right-censoring used for every rule,
+N04,P0,Run untouched sequential test,pending,,next_paper/results/sequential_primary_results.json,Model rules and code frozen before one test opening,
+N05,P1,Complete WAVE fidelity table,pending,,next_paper/results/wave_fidelity_summary.csv,Trace size solver time recovery and missing counters reported,
+N06,P1,Cross-host and cross-architecture confirmation,pending,,next_paper/results/platform_transfer.csv,Held-out hardware groups remain untouched during selection,
+N07,P2,Optional physical modality gate,pending,,next_paper/results/optional_sensor_gate.csv,Retain only modalities with conditional validation gain,
