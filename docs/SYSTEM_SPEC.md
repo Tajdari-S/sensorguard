@@ -17,7 +17,7 @@
 - Dodotronic USB ultrasound microphone, 200/250 kHz variant; exact model and selected maximum sampling rate remain to be confirmed. **Not attached to any node as of 2026-08-24** (no capture device present).
 - `sourcing map` 10K 3950B thermistors; acquisition electronics, placement, sampling rate, and calibration remain to be specified. **No acquisition device attached to any node as of 2026-08-24** (no ttyUSB/ttyACM present).
 - 10Gtek network interface card plus TP-Link TL-SG108E gigabit switch. This is a switched-Ethernet observation path, not a passive fiber tap; document port mirroring and timestamping configuration. It cannot observe intra-node PCIe or NVLink traffic.
-- NooElec NESDR SMArt Bundle for RF observation; record the exact receiver revision, antenna, center frequencies, gain, bandwidth, and approved placement. **Not attached to any node as of 2026-08-24.**
+- ~~NooElec NESDR SMArt Bundle for RF observation.~~ **DROPPED from the project (2026-08-29):** bench-tested and could not obtain usable readings from the GPU (the receiver does pick up broadcast radio stations, so the hardware works — it just yields no usable GPU-correlated signal). RF/SDR is out of scope for both papers; see DECISION_LOG.
 - No separate visible-light camera is currently specified.
 
 ## Required before first paper-quality run
@@ -44,7 +44,7 @@
 | Thermal camera model/rate/resolution/accuracy | TOPDON TC001-A; 25 Hz; 256 x 192 IR; 512 x 384 TISR; -20 C to 550 C stated range; accuracy TBD |
 | Ultrasound microphone | Dodotronic USB Ultrasound Microphone, 200/250 kHz variant; exact model/rate/firmware TBD |
 | Network observation path | 10Gtek NIC + TP-Link TL-SG108E 1 GbE switch; port mirroring/timestamp source TBD |
-| RF receiver/antenna | NooElec NESDR SMArt Bundle; revision/frequency plan/gain/bandwidth TBD |
+| RF receiver/antenna | DROPPED 2026-08-29 — NESDR yields no usable GPU-correlated signal (receiver works; picks up radio stations). Out of scope |
 | Contact sensor model/rate/accuracy/placement | sourcing map 10K 3950B thermistors; logger/rate/calibration/placement TBD |
 | Shared time source and measured alignment error | TBD |
 | Ambient inlet sensor and fan/cooling policy | TBD |

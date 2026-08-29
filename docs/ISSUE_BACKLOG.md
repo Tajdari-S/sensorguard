@@ -95,9 +95,9 @@ Test replay/freeze/shift/channel swap and model/application identity probes usin
 
 ## P2 conditional
 
-### 16. [P2][Aug 22] Decide whether ultrasound or RF adds conditional value
+### 16. [P2][Aug 22] Decide whether ultrasound adds conditional value
 
-Screen ultrasound and RF separately, then conditional on NVML plus electrical sensing. Drop either modality unless it improves the frozen validation endpoint and passes the health, privacy, and overhead criteria.
+Screen ultrasound conditional on NVML plus electrical sensing. Drop it unless it improves the frozen validation endpoint and passes the health, privacy, and overhead criteria. **RF/SDR resolved 2026-08-29: DROPPED** — bench test produced no usable GPU-correlated signal (receiver works, picks up radio stations).
 
 ### 17. [P2][Aug 22] Decide whether mirrored Ethernet is in scope
 

@@ -207,7 +207,7 @@ def main() -> int:
         "hardware": {"gpu_index_under_test": args.gpu_index, "gpu_set": args.gpus},
         "sensors": {s: (s in sensors) for s in
                     ["nvml", "dcgm", "electrical", "thermal_camera", "contact_temperature",
-                     "ultrasound", "rf_sdr", "network_mirror"]},
+                     "ultrasound", "network_mirror"]},  # rf_sdr dropped 2026-08-29
         "sensor_channels": channels,
         "marker_bursts": {"pre": bursts_pre, "post": bursts_post},
         "profiled": bool(args.profiled),

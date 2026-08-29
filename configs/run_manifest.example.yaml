@@ -37,8 +37,8 @@ sensors:
   thermal_camera: false
   contact_temperature: false
   ultrasound: false
-  rf_sdr: false
   network_mirror: false
+  # rf_sdr dropped 2026-08-29 (no usable GPU-correlated signal); see DECISION_LOG
 sensor_channels:
   # one entry per active channel; filled by the run supervisor
   - channel_id: TBD           # e.g. nvml.gpu0, pico0.chA

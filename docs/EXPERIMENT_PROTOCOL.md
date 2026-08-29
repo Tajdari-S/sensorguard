@@ -80,7 +80,7 @@ Inject NVML freeze/replay, bias, scale, clipping, sample drop, timestamp shift, 
 
 ## E8: minimum hardware specification
 
-From full-fidelity retained traces, causally filter before downsampling. Sweep electrical sample rate, 16/12/10/8/6/4 effective bits, dynamic range, duty cycle, thermal ROI reduction, ultrasound sample rate/band aggregation, RF bandwidth/frequency-bin aggregation, and mirrored-Ethernet timestamp/bin granularity as applicable. Retrain inside identical grouped folds.
+From full-fidelity retained traces, causally filter before downsampling. Sweep electrical sample rate, 16/12/10/8/6/4 effective bits, dynamic range, duty cycle, thermal ROI reduction, ultrasound sample rate/band aggregation, and mirrored-Ethernet timestamp/bin granularity as applicable. Retrain inside identical grouped folds. (RF/SDR bandwidth sweep dropped 2026-08-29 — modality yields no usable GPU-correlated signal.)
 
 Select the lowest-cost point within one standard error of full-fidelity validation performance. Confirm that point with a small hardware-in-loop rerun. Report latency, bytes/GPU-hour, logger CPU, useful-work overhead, and privacy exposure.
 
