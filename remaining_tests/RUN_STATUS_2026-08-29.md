@@ -21,6 +21,16 @@ minimum for a one-sided 95% zero-event Poisson upper bound below 1/24 alerts
 per GPU-hour. Calculate the final exposure from manifest workload timestamps,
 not directory counts.
 
+### Interim validated upload
+
+The first six completed node2 runs (GEMM and FFT on GPUs 0--2) passed manifest
+schema, channel-health, and artifact SHA-256 checks. Their measured workload
+durations contribute 3.004316 GPU-hours. With the prior 11.45 hours, the
+current auditable total is 14.454316 GPU-hours. The traces and manifests are
+under `results/negative_exposure/node2/`; `interim_summary.json` intentionally
+leaves the false-alert bound null because the frozen detector has not yet been
+applied.
+
 ### Quarantined node1 campaign
 
 Do not count the 20260829 node1 campaign. GPU0 reports `GPU requires reset`,

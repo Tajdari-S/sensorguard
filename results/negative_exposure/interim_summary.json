@@ -1,0 +1,73 @@
+{
+  "manifest_count": 6,
+  "eligible_manifest_count": 6,
+  "excluded_manifest_count": 0,
+  "prior_eligible_gpu_hours": 11.45,
+  "new_eligible_gpu_hours": 3.004316,
+  "total_eligible_gpu_hours": 14.454316,
+  "same_gpu_manifest_overlaps": [],
+  "zero_false_alerts_confirmed": false,
+  "one_sided_95pct_false_alert_upper_bound_per_gpu_hour": null,
+  "eligible_runs": [
+    {
+      "run_id": "20260829_neg-fft_node2-gpu0_s0_n001",
+      "host": "node2",
+      "gpu": 0,
+      "duration_s": 1802.227,
+      "channels": [
+        "nvml.gpu0",
+        "dcgm.all"
+      ]
+    },
+    {
+      "run_id": "20260829_neg-fft_node2-gpu1_s1_n001",
+      "host": "node2",
+      "gpu": 1,
+      "duration_s": 1802.573,
+      "channels": [
+        "nvml.gpu1",
+        "dcgm.all"
+      ]
+    },
+    {
+      "run_id": "20260829_neg-fft_node2-gpu2_s2_n001",
+      "host": "node2",
+      "gpu": 2,
+      "duration_s": 1802.615,
+      "channels": [
+        "nvml.gpu2",
+        "dcgm.all"
+      ]
+    },
+    {
+      "run_id": "20260829_neg-gemm_node2-gpu0_s0_n000",
+      "host": "node2",
+      "gpu": 0,
+      "duration_s": 1803.193,
+      "channels": [
+        "nvml.gpu0",
+        "dcgm.all"
+      ]
+    },
+    {
+      "run_id": "20260829_neg-gemm_node2-gpu1_s1_n000",
+      "host": "node2",
+      "gpu": 1,
+      "duration_s": 1802.578,
+      "channels": [
+        "nvml.gpu1",
+        "dcgm.all"
+      ]
+    },
+    {
+      "run_id": "20260829_neg-gemm_node2-gpu2_s2_n000",
+      "host": "node2",
+      "gpu": 2,
+      "duration_s": 1802.35,
+      "channels": [
+        "nvml.gpu2",
+        "dcgm.all"
+      ]
+    }
+  ]
+}
