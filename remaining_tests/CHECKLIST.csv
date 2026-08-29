@@ -7,7 +7,7 @@ R04,P0,Electrical channel and GPU mapping,pending,,results/electrical/channel_ma
 R05,P0,Matched clean synchronized corpus,pending,,results/paper/aligned_trace_panels.csv,Training matched inference and non-ML span GPU and day groups,
 R06,P0,Negative exposure target,partial,Sabiha,results/paper/operating_curve.csv,Exposure supports the declared false-alert confidence bound,
 R07,P0,Separate Nsight characterization,pending,,results/paper/matched_roofline.csv,Pair IDs frozen before sensor predictions are inspected,
-R08,P0,Fused-update held-out attack,pending,,results/attacks/fused_update.csv,Useful training progress and energy are recorded,
+R08,P0,Fused-update held-out attack,prepared,Sabiha,results/attacks/fused_update.csv,Useful training progress and energy are recorded,
 R09,P0,Power and duty-cycle shaping attack,pending,,results/attacks/power_shaping.csv,Useful training progress and energy are recorded,
 R10,P0,Training-inference interleaving attack,pending,,results/attacks/interleaving.csv,Useful training progress and energy are recorded,
 R11,P0,GPU migration attack,pending,,results/attacks/gpu_migration.csv,Migration is absent from fitting and threshold selection,

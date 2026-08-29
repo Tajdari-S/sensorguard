@@ -18,6 +18,12 @@ The machine-readable tracker is [`CHECKLIST.csv`](CHECKLIST.csv). Update its
 commit that adds a result. The claim release gates are in
 [`CLAIM_EVIDENCE_MATRIX.md`](CLAIM_EVIDENCE_MATRIX.md).
 
+Robi's existing implementations and prior measurements have been audited in
+[`ROBI_CODE_AUDIT.md`](ROBI_CODE_AUDIT.md) and
+[`../results/tables/robi_available_runs.csv`](../results/tables/robi_available_runs.csv).
+Those artifacts distinguish reusable code/prior evidence from results that
+must be repeated under the frozen current-paper protocol.
+
 ## Submission-critical sequence
 
 ### 1. Freeze the evaluation

@@ -59,3 +59,16 @@ useful-work penalty in the 90 s GEMM check, with mean logger CPU use of 0.56%
 and 0.04%, respectively. Physical electrical-logger overhead, randomized A/B
 repetitions, privacy probes, and final representative-workload measurements
 remain outstanding.
+
+## Fused-update held-out family (R08 prepared, not opened)
+
+Robi's private repository was audited and the prior TinyLlama symmetric-GEMM
+implementation/results were found. A SensorGuard-native acquisition adapter
+and guarded matrix runner were added. The fused-update and AdamW learning paths,
+dummy-write control, and forward controls passed CPU execution locally; the
+fused-update learning path also passed a low-priority CPU-only test on node2.
+
+No fused-update GPU telemetry was collected or queued. The preregistration
+names `fused_update_kernel` as the held-out evasion family, so the runner blocks
+execution until R15 is frozen and an explicit final-test authorization is
+given. This is a protocol gate, not a missing-code or access blocker.
