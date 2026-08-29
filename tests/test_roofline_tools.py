@@ -110,7 +110,9 @@ class RooflineToolsTest(unittest.TestCase):
         self.assertEqual(len(items), 1)
         self.assertIn("--profile-from-start", items[0]["ncu_command"])
         self.assertIn("--profile-range", items[0]["ncu_command"])
+        self.assertIn("--skip-flop-profiler", items[0]["ncu_command"])
         self.assertNotIn("--profile-range", items[0]["timing_command"])
+        self.assertNotIn("--skip-flop-profiler", items[0]["timing_command"])
 
     def test_application_plan_records_uuid_pinning(self):
         matrix = {"repetitions": 1, "cases": [{

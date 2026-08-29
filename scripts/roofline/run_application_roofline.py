@@ -47,7 +47,7 @@ def workload_command(args, case: dict, repetition: int, output: Path,
     if args.physical_gpu_uuid:
         command.extend(["--physical-gpu-uuid", args.physical_gpu_uuid])
     if profile_range:
-        command.append("--profile-range")
+        command.extend(["--profile-range", "--skip-flop-profiler"])
     return command
 
 

@@ -137,6 +137,8 @@ def main() -> int:
     parser.add_argument("--iterations", type=int, default=3)
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--profile-range", action="store_true")
+    parser.add_argument("--skip-flop-profiler", action="store_true",
+                        help="skip torch.profiler in the NCU pass to avoid CUPTI conflicts")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     if args.iterations < 1 or args.warmup < 0 or args.batch_size < 1:
@@ -156,9 +158,11 @@ def main() -> int:
     else:
         step, model = make_gpt2(torch, args, device, dtype)
 
-    flops_per_iteration = profiler_flops(torch, step)
-    if not math.isfinite(flops_per_iteration) or flops_per_iteration <= 0:
-        raise SystemExit("PyTorch profiler produced no usable FLOP estimate")
+    flops_per_iteration = None
+    if not args.skip_flop_profiler:
+        flops_per_iteration = profiler_flops(torch, step)
+        if not math.isfinite(flops_per_iteration) or flops_per_iteration <= 0:
+            raise SystemExit("PyTorch profiler produced no usable FLOP estimate")
     for _ in range(args.warmup):
         step()
     torch.cuda.synchronize(device)
@@ -182,7 +186,8 @@ def main() -> int:
     if args.profile_range:
         torch.cuda.profiler.stop()
     active_cuda_s = sum(start.elapsed_time(end) for start, end in events) / 1000.0
-    total_flops = flops_per_iteration * args.iterations
+    total_flops = (None if flops_per_iteration is None
+                   else flops_per_iteration * args.iterations)
     result = {
         "schema_version": 1,
         "case_id": args.case_id,
@@ -207,8 +212,10 @@ def main() -> int:
         "total_flops": total_flops,
         "active_cuda_s": active_cuda_s,
         "wall_elapsed_s": wall_elapsed_s,
-        "active_tflops": total_flops / active_cuda_s / 1e12,
-        "wall_tflops": total_flops / wall_elapsed_s / 1e12,
+        "active_tflops": (None if total_flops is None
+                           else total_flops / active_cuda_s / 1e12),
+        "wall_tflops": (None if total_flops is None
+                         else total_flops / wall_elapsed_s / 1e12),
         "final_scalar": None if final_value is None else float(final_value.detach()),
         "profile_range": bool(args.profile_range),
     }
