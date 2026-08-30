@@ -58,26 +58,35 @@ def make_gpt2(torch, args, device, dtype):
         n_head=12,
         use_cache=True,
     )
-    model = GPT2LMHeadModel(config).to(device=device, dtype=dtype)
     tokens = torch.randint(0, config.vocab_size,
                            (args.batch_size, args.seq_len), device=device)
 
     training_modes = {"gpt2_train", "gpt2_shaped_train", "gpt2_memory_minimized"}
     if args.mode in training_modes:
+        # Standard mixed-precision training keeps FP32 master parameters and
+        # uses autocast plus gradient scaling. Direct FP16 AdamW underflows its
+        # default epsilon and produced NaN loss on RTX 3090.
+        model = GPT2LMHeadModel(config).to(device=device, dtype=torch.float32)
         model.train()
         if args.mode == "gpt2_memory_minimized":
             model.gradient_checkpointing_enable()
             model.config.use_cache = False
         optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4)
+        scaler = torch.amp.GradScaler("cuda", enabled=(dtype == torch.float16))
 
         def step():
             optimizer.zero_grad(set_to_none=True)
-            loss = model(input_ids=tokens, labels=tokens).loss
-            loss.backward()
-            optimizer.step()
+            with torch.autocast(
+                device_type="cuda", dtype=dtype, enabled=(dtype != torch.float32)
+            ):
+                loss = model(input_ids=tokens, labels=tokens).loss
+            scaler.scale(loss).backward()
+            scaler.step(optimizer)
+            scaler.update()
             return loss
         return step, model
 
+    model = GPT2LMHeadModel(config).to(device=device, dtype=dtype)
     model.eval()
     if args.mode == "gpt2_prefill":
         def step():
@@ -207,6 +216,7 @@ def main() -> int:
         "warmup": args.warmup,
         "iterations": args.iterations,
         "parameters": int(sum(parameter.numel() for parameter in model.parameters())),
+        "parameter_dtype": str(next(model.parameters()).dtype).removeprefix("torch."),
         "flops_source": "torch.profiler.with_flops",
         "flops_per_iteration": flops_per_iteration,
         "total_flops": total_flops,
