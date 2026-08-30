@@ -1,0 +1,10 @@
+{
+  "negative_completed_runs": 137,
+  "negative_runs_checked": 137,
+  "negative_GPU_hours": 68.59,
+  "dev_corpus_runs": 118,
+  "rule": "3-of-5 at P>=0.85",
+  "false_alerts": 0,
+  "false_alert_detail": [],
+  "note": "DIAGNOSTIC: model trained on current dev corpus, not the frozen sealed model. Authoritative operating curve is a Gate-2 artifact."
+}
