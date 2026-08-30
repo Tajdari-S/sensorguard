@@ -98,6 +98,8 @@ def main() -> int:
     parser.add_argument("--workload-family", default="non_ml")
     parser.add_argument("--workload-name", default="")
     parser.add_argument("--gpu-index", type=int, default=0, help="GPU under test (marker + health)")
+    parser.add_argument("--gpu-uuid", default="",
+                        help="UUID used to pin the CUDA load marker; recommended on multi-GPU hosts")
     parser.add_argument("--gpus", default="all", help="GPU set passed to loggers")
     parser.add_argument("--sensors", default="nvml,dcgm")
     parser.add_argument("--out-root", type=Path, default=Path("data/runs"))
@@ -133,9 +135,18 @@ def main() -> int:
     time.sleep(3)  # loggers reach steady state before the first marker
 
     def marker() -> list:
+        marker_device = f"cuda:{args.gpu_index}"
+        marker_environment = os.environ.copy()
+        if args.gpu_uuid:
+            # CUDA ordinals have previously diverged from NVML indices on a
+            # mixed-VBIOS host.  Restrict visibility by UUID, then address the
+            # one visible card as cuda:0 so the marker and NVML health check
+            # necessarily refer to the same physical GPU.
+            marker_environment["CUDA_VISIBLE_DEVICES"] = args.gpu_uuid
+            marker_device = "cuda:0"
         res = subprocess.run(
-            [args.python, str(HERE / "load_marker.py"), "--device", f"cuda:{args.gpu_index}"],
-            capture_output=True, text=True, timeout=120)
+            [args.python, str(HERE / "load_marker.py"), "--device", marker_device],
+            capture_output=True, text=True, timeout=120, env=marker_environment)
         if res.returncode != 0:
             print(res.stdout + res.stderr, file=sys.stderr)
             raise RuntimeError("load marker failed")
@@ -204,7 +215,9 @@ def main() -> int:
         "workload": {"family": args.workload_family, "name": args.workload_name,
                      "command": args.workload_cmd, "seed": args.seed,
                      "duration_s": None if t_wl_end is None else round(t_wl_end - t_wl_start, 3)},
-        "hardware": {"gpu_index_under_test": args.gpu_index, "gpu_set": args.gpus},
+        "hardware": {"gpu_index_under_test": args.gpu_index,
+                     "gpu_uuid_under_test": args.gpu_uuid or None,
+                     "gpu_set": args.gpus},
         "sensors": {s: (s in sensors) for s in
                     ["nvml", "dcgm", "electrical", "thermal_camera", "contact_temperature",
                      "ultrasound", "network_mirror"]},  # rf_sdr dropped 2026-08-29
