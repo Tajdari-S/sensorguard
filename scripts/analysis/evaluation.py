@@ -16,7 +16,7 @@ import pandas as pd
 
 def run_alert(
     p_training: np.ndarray,
-    threshold: float = 0.75,
+    threshold: float = 0.85,
     k: int = 3,
     n: int = 5,
 ) -> bool:
@@ -33,7 +33,7 @@ def run_alert(
 
 def first_alert_index(
     p_training: np.ndarray,
-    threshold: float = 0.75,
+    threshold: float = 0.85,
     k: int = 3,
     n: int = 5,
 ) -> int | None:

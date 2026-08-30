@@ -9,7 +9,7 @@ split ALWAYS by run (never by window), grouped by gpu_uuid/day/family.
 
 Stage 1: ML (training+inference) vs non-ML, all 166 features.
 Stage 2: training vs inference, level features dropped.
-Run-level alert: 3-of-5 consecutive windows with P(training) >= 0.75.
+Run-level alert: 3-of-5 consecutive windows with P(training) >= 0.85.
 
 Outputs per-fold window accuracy/AUC and run-level TPR/FPR.
 """
@@ -34,7 +34,7 @@ from evaluation import (  # noqa: E402
 
 RF_KW = dict(n_estimators=400, min_samples_leaf=2, max_features="sqrt",
              class_weight="balanced", n_jobs=-1, random_state=0)
-THRESHOLD = 0.75
+THRESHOLD = 0.85
 K_OF_N = (3, 5)
 
 

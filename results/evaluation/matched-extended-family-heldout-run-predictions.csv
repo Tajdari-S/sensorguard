@@ -1,0 +1,123 @@
+method,run_id,workload_label,target,fold,training_probability,n_windows,correct_windows,prediction,outcome
+NVML,0dac05176434,adversarial_H_mimicry_cufft,1,1,0.7851501172255398,12,12,0,FN
+NVML,0e21516216ed,evasion2_nobubble,1,25,0.9945575969785192,4,4,1,TP
+NVML,0e24a18363e3,adversarial_L_diluted_10,1,4,0.998870802716461,12,12,1,TP
+NVML,110f9abd97cb,nbody_sim,0,30,0.11486283424725227,11,11,0,TN
+NVML,12218502b878,gpt2_wikitext2_amp,1,27,0.987366616323689,6,6,1,TP
+NVML,249404591c13,s2_fb24,1,36,0.9149286386682507,4,4,1,TP
+NVML,266df8ce3a9f,evasion2_aperiodic,1,21,0.9984285714285714,4,4,1,TP
+NVML,2b26e3764f81,pytorch_resnet_cifar10_amp,1,33,0.9991905342624854,5,5,1,TP
+NVML,2f2aa86d390b,dil_v3,1,13,0.8416962050058265,4,4,0,FN
+NVML,341ff17e1e2f,adversarial_composite_50,1,6,0.9974276378695695,7,7,1,TP
+NVML,351fa9211f65,pytorch_resnet_cifar10_amp,1,33,1.0,5,5,1,TP
+NVML,3b5137af6986,ev2b_aperiodic,1,14,0.9986755912835503,4,4,1,TP
+NVML,3f61bb11ea1f,ev2b_gradaccum,1,20,0.981159330051711,4,4,1,TP
+NVML,3fdd46f7155b,bert_sst2_amp,1,9,0.9968892957746479,2,2,0,FN
+NVML,413a6d2a7566,adversarial_physical_stealth,1,7,0.9846293884851924,3,3,1,TP
+NVML,42a139f9f6e2,evasion2_combo,1,24,0.9812149511450221,4,4,1,TP
+NVML,4773e1a29fb4,nbody_sim,0,30,0.08328510037297504,11,11,0,TN
+NVML,4e78dea94877,adversarial_physical_stealth,1,7,0.9756507316326355,9,9,1,TP
+NVML,50f59294d415,mining_ethash_proxy,0,29,0.592219670353197,11,0,0,TN
+NVML,51c5b375d06c,ev2b_baseline,1,15,0.9987576024327784,4,4,1,TP
+NVML,584f59f498e4,cufft_benchmark,0,10,0.5067375671570271,11,5,0,TN
+NVML,5a03c02cf51c,ev2b_gapfill0004,1,18,0.9953842957746479,4,4,1,TP
+NVML,5b66597fad00,pytorch_resnet_cifar10,1,32,0.9987443281746482,9,9,1,TP
+NVML,5c2b55c409e9,s3_tiny8,1,37,0.9230093019855347,4,4,1,TP
+NVML,5d8b2cc8d619,bert_sst2_amp,1,9,0.9979692957746479,2,2,0,FN
+NVML,6308febb89e8,ev2b_combo,1,17,0.9778964696172157,4,4,1,TP
+NVML,64c674b72b5c,adversarial_L_diluted_10,1,4,0.9957244186650259,12,12,1,TP
+NVML,67207d9b03ee,idle,0,28,0.4072709725055708,7,7,0,TN
+NVML,6ec160e0e8db,pytorch_resnet_cifar10,1,32,0.9955501578992388,9,9,1,TP
+NVML,6fdc09475c9c,gpt2_wikitext2,1,26,0.9152362567191015,13,13,1,TP
+NVML,7a6fc8762870,bert_sst2,1,8,0.9979208277381589,6,6,1,TP
+NVML,80a34acdeb1d,idle,0,28,0.4157692248906943,7,7,0,TN
+NVML,80bd3ba1c668,adversarial_physical_stealth,1,7,0.9877312181392073,3,3,1,TP
+NVML,85b4d732488a,adversarial_L_diluted_5,1,5,0.9905150333222967,12,12,1,TP
+NVML,89eb78e296d6,rendering_proxy,0,34,0.1950878722407338,11,10,0,TN
+NVML,977161b694e9,adversarial_L_diluted_5,1,5,0.9895689997984102,12,12,1,TP
+NVML,982a36e15fa1,s3_tp2,1,39,0.9206177350012252,4,4,1,TP
+NVML,99a711c2a5b5,ev2b_cofill,1,16,0.9912523191421255,4,4,1,TP
+NVML,9e038dc725fc,evasion2_cofill,1,23,0.9790615984586766,4,4,1,TP
+NVML,a605f7f1ffd0,s2_fb16,1,35,0.9310985747299284,4,4,1,TP
+NVML,aaa926354722,gpt2_wikitext2,1,26,0.9767062568860787,13,13,1,TP
+NVML,ab750b278848,s3_tp1,1,38,0.9498469024746681,4,4,1,TP
+NVML,abaa0766715a,bert_sst2,1,8,0.9983912352406903,6,6,1,TP
+NVML,ac263ea21e2c,adversarial_K_online_learning,1,3,0.9993550078869452,12,12,1,TP
+NVML,ac2b68140ba0,adversarial_composite_50,1,6,0.9921642084323871,7,7,1,TP
+NVML,ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,0.6764977996410733,12,12,0,FN
+NVML,b2a8baa95276,gpt2_wikitext2_amp,1,27,0.9770117365543355,6,6,1,TP
+NVML,b508f349a622,s3_tp3,1,40,0.9614437333464274,4,4,1,TP
+NVML,b84660b04abd,adversarial_physical_stealth,1,7,0.9838622926976693,3,3,1,TP
+NVML,c17acf29da10,evasion2_baseline,1,22,0.9928654897567222,4,4,1,TP
+NVML,c3bab27d8f97,cufft_benchmark,0,10,0.48559145913569357,11,7,0,TN
+NVML,c5353b820e4a,dil_v1,1,11,0.994874767472761,4,4,1,TP
+NVML,c95103b2e217,mining_ethash_proxy,0,29,0.5940704390160303,11,0,0,TN
+NVML,cff47fb488da,pytorch_mlp_cifar10,1,31,0.7756080657292822,5,5,0,FN
+NVML,d5e571cea1ec,adversarial_K_online_learning,1,3,0.9995320197044335,12,12,1,TP
+NVML,d8ac49f7c850,rendering_proxy,0,34,0.19054909647549326,11,10,0,TN
+NVML,ddc3d611de21,pytorch_mlp_cifar10,1,31,0.7793962362541247,5,5,0,FN
+NVML,e5031482d677,dil_v2,1,12,0.9880423191421255,4,4,1,TP
+NVML,eabf75b3311c,ev2b_gapfill0010,1,19,0.9989914772727273,4,4,1,TP
+NVML,ed7ab69e9c47,adversarial_J_pid_75,1,2,0.8813312264843044,12,12,1,TP
+NVML,fe2433e75bdc,adversarial_J_pid_75,1,2,0.9320326389181613,12,12,1,TP
+SensorGuard (GPU current),0dac05176434,adversarial_H_mimicry_cufft,1,1,0.9994068514055995,12,12,1,TP
+SensorGuard (GPU current),0e21516216ed,evasion2_nobubble,1,25,0.9934050442734008,4,4,1,TP
+SensorGuard (GPU current),0e24a18363e3,adversarial_L_diluted_10,1,4,0.9990206106992211,12,12,1,TP
+SensorGuard (GPU current),110f9abd97cb,nbody_sim,0,30,0.5684699563453113,11,0,0,TN
+SensorGuard (GPU current),12218502b878,gpt2_wikitext2_amp,1,27,0.994163270817881,6,6,1,TP
+SensorGuard (GPU current),249404591c13,s2_fb24,1,36,0.3790734956795581,4,1,0,FN
+SensorGuard (GPU current),266df8ce3a9f,evasion2_aperiodic,1,21,0.9763535724181998,4,4,1,TP
+SensorGuard (GPU current),2b26e3764f81,pytorch_resnet_cifar10_amp,1,33,0.9981287937041932,5,5,1,TP
+SensorGuard (GPU current),2f2aa86d390b,dil_v3,1,13,0.9893670169946038,4,4,1,TP
+SensorGuard (GPU current),341ff17e1e2f,adversarial_composite_50,1,6,0.9997304258241758,7,7,1,TP
+SensorGuard (GPU current),351fa9211f65,pytorch_resnet_cifar10_amp,1,33,0.9954706384099327,5,5,1,TP
+SensorGuard (GPU current),3b5137af6986,ev2b_aperiodic,1,14,0.9886511368209256,4,4,1,TP
+SensorGuard (GPU current),3f61bb11ea1f,ev2b_gradaccum,1,20,0.9958332394366198,4,4,1,TP
+SensorGuard (GPU current),3fdd46f7155b,bert_sst2_amp,1,9,0.9970322503201025,2,2,0,FN
+SensorGuard (GPU current),413a6d2a7566,adversarial_physical_stealth,1,7,0.8644859651356874,3,3,0,FN
+SensorGuard (GPU current),42a139f9f6e2,evasion2_combo,1,24,0.9960981391323362,4,4,1,TP
+SensorGuard (GPU current),4773e1a29fb4,nbody_sim,0,30,0.5502805411021148,11,1,0,TN
+SensorGuard (GPU current),4e78dea94877,adversarial_physical_stealth,1,7,0.8247630811038547,9,9,1,TP
+SensorGuard (GPU current),50f59294d415,mining_ethash_proxy,0,29,0.3370213517497089,11,11,0,TN
+SensorGuard (GPU current),51c5b375d06c,ev2b_baseline,1,15,0.998320248745693,4,4,1,TP
+SensorGuard (GPU current),584f59f498e4,cufft_benchmark,0,10,0.6991042968833947,11,0,0,TN
+SensorGuard (GPU current),5a03c02cf51c,ev2b_gapfill0004,1,18,0.99396852038709,4,4,1,TP
+SensorGuard (GPU current),5b66597fad00,pytorch_resnet_cifar10,1,32,0.9935350253828985,9,9,1,TP
+SensorGuard (GPU current),5c2b55c409e9,s3_tiny8,1,37,0.9700363356807101,4,4,1,TP
+SensorGuard (GPU current),5d8b2cc8d619,bert_sst2_amp,1,9,1.0,2,2,0,FN
+SensorGuard (GPU current),6308febb89e8,ev2b_combo,1,17,0.8263214557752041,4,4,0,FN
+SensorGuard (GPU current),64c674b72b5c,adversarial_L_diluted_10,1,4,0.9976138621870358,12,12,1,TP
+SensorGuard (GPU current),67207d9b03ee,idle,0,28,0.6155542214817273,7,3,0,TN
+SensorGuard (GPU current),6ec160e0e8db,pytorch_resnet_cifar10,1,32,0.9980643439990933,9,9,1,TP
+SensorGuard (GPU current),6fdc09475c9c,gpt2_wikitext2,1,26,0.987694132411269,13,13,1,TP
+SensorGuard (GPU current),7a6fc8762870,bert_sst2,1,8,0.9984581318604788,6,6,1,TP
+SensorGuard (GPU current),80a34acdeb1d,idle,0,28,0.4903696387253485,7,5,0,TN
+SensorGuard (GPU current),80bd3ba1c668,adversarial_physical_stealth,1,7,0.9957568013697425,3,3,1,TP
+SensorGuard (GPU current),85b4d732488a,adversarial_L_diluted_5,1,5,0.997595279389046,12,12,1,TP
+SensorGuard (GPU current),89eb78e296d6,rendering_proxy,0,34,0.8585358012075216,11,0,1,FP
+SensorGuard (GPU current),977161b694e9,adversarial_L_diluted_5,1,5,0.9984799263512792,12,12,1,TP
+SensorGuard (GPU current),982a36e15fa1,s3_tp2,1,39,0.48384801036754066,4,2,0,FN
+SensorGuard (GPU current),99a711c2a5b5,ev2b_cofill,1,16,0.7976972628923107,4,3,1,TP
+SensorGuard (GPU current),9e038dc725fc,evasion2_cofill,1,23,0.9982746478873239,4,4,1,TP
+SensorGuard (GPU current),a605f7f1ffd0,s2_fb16,1,35,0.35280975433889883,4,0,0,FN
+SensorGuard (GPU current),aaa926354722,gpt2_wikitext2,1,26,0.9915452426081105,13,13,1,TP
+SensorGuard (GPU current),ab750b278848,s3_tp1,1,38,0.898390609238395,4,4,1,TP
+SensorGuard (GPU current),abaa0766715a,bert_sst2,1,8,0.9992683413078151,6,6,1,TP
+SensorGuard (GPU current),ac263ea21e2c,adversarial_K_online_learning,1,3,0.9998215962441314,12,12,1,TP
+SensorGuard (GPU current),ac2b68140ba0,adversarial_composite_50,1,6,1.0,7,7,1,TP
+SensorGuard (GPU current),ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,0.996908303497369,12,12,1,TP
+SensorGuard (GPU current),b2a8baa95276,gpt2_wikitext2_amp,1,27,0.9935338752134855,6,6,1,TP
+SensorGuard (GPU current),b508f349a622,s3_tp3,1,40,0.8479693743552962,4,4,0,FN
+SensorGuard (GPU current),b84660b04abd,adversarial_physical_stealth,1,7,0.989230994728528,3,3,1,TP
+SensorGuard (GPU current),c17acf29da10,evasion2_baseline,1,22,0.9690312628040973,4,4,1,TP
+SensorGuard (GPU current),c3bab27d8f97,cufft_benchmark,0,10,0.6438686848449429,11,1,0,TN
+SensorGuard (GPU current),c5353b820e4a,dil_v1,1,11,0.7538270833776299,4,4,0,FN
+SensorGuard (GPU current),c95103b2e217,mining_ethash_proxy,0,29,0.31636935957738194,11,11,0,TN
+SensorGuard (GPU current),cff47fb488da,pytorch_mlp_cifar10,1,31,0.9847276783211182,5,5,1,TP
+SensorGuard (GPU current),d5e571cea1ec,adversarial_K_online_learning,1,3,0.9974346980168414,12,12,1,TP
+SensorGuard (GPU current),d8ac49f7c850,rendering_proxy,0,34,0.9058338437400205,11,0,1,FP
+SensorGuard (GPU current),ddc3d611de21,pytorch_mlp_cifar10,1,31,0.9917652709359606,5,5,1,TP
+SensorGuard (GPU current),e5031482d677,dil_v2,1,12,0.9569721958063327,4,4,1,TP
+SensorGuard (GPU current),eabf75b3311c,ev2b_gapfill0010,1,19,0.9939740742512465,4,4,1,TP
+SensorGuard (GPU current),ed7ab69e9c47,adversarial_J_pid_75,1,2,0.9905208149424487,12,12,1,TP
+SensorGuard (GPU current),fe2433e75bdc,adversarial_J_pid_75,1,2,0.9976380538639567,12,12,1,TP

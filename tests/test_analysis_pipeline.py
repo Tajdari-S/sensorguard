@@ -52,14 +52,14 @@ class AnalysisPipelineTest(unittest.TestCase):
             pd.testing.assert_series_equal(before.iloc[0], after.iloc[0])
 
     def test_alert_rule_uses_consecutive_windows(self):
-        self.assertTrue(run_alert(np.array([0.8, 0.8, 0.1, 0.8, 0.1])))
-        self.assertFalse(run_alert(np.array([0.8, 0.1, 0.8, 0.1, 0.1])))
+        self.assertTrue(run_alert(np.array([0.9, 0.9, 0.1, 0.9, 0.1])))
+        self.assertFalse(run_alert(np.array([0.9, 0.1, 0.9, 0.1, 0.1])))
         self.assertFalse(run_alert(np.array([])))
 
     def test_first_alert_index(self):
-        self.assertEqual(first_alert_index(np.array([0.8, 0.8, 0.1, 0.8, 0.1])), 3)
-        self.assertEqual(first_alert_index(np.array([0.8, 0.8, 0.8])), 2)
-        self.assertIsNone(first_alert_index(np.array([0.8, 0.1, 0.8, 0.1, 0.1])))
+        self.assertEqual(first_alert_index(np.array([0.9, 0.9, 0.1, 0.9, 0.1])), 3)
+        self.assertEqual(first_alert_index(np.array([0.9, 0.9, 0.9])), 2)
+        self.assertIsNone(first_alert_index(np.array([0.9, 0.1, 0.9, 0.1, 0.1])))
         self.assertIsNone(first_alert_index(np.array([])))
 
     def test_group_audit(self):

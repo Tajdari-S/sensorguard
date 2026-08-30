@@ -9,7 +9,7 @@ The current decision pipeline is:
 
 ```text
 NVML/retained-sensor features -> random-forest window probability
-                              -> fixed 3-of-5 rule at 0.75
+                              -> fixed 3-of-5 rule at 0.85
                               -> run-level alert
 ```
 
@@ -197,7 +197,7 @@ the attack concept.
 Compare NVML, each retained sensor, add-one, leave-one-out, best pair, selected
 set, and all sensors on validation only. Select the smallest sensor set within
 one standard error of the best worst-family TPR. Freeze the random-forest
-model, calibration, 3-of-5 rule, 0.75 threshold, health policy, split hash, and
+model, calibration, 3-of-5 rule, 0.85 threshold, health policy, split hash, and
 code hash before opening the final test set.
 
 ### 8. Run the untouched test once and complete statistics

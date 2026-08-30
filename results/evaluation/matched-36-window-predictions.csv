@@ -110,7 +110,7 @@ cff47fb488da,pytorch_mlp_cifar10,1,2,NVML,0.9793320943841206,1
 cff47fb488da,pytorch_mlp_cifar10,1,2,NVML,0.9817598400488607,1
 fe2433e75bdc,adversarial_J_pid_75,1,2,NVML,0.9765076335877864,1
 fe2433e75bdc,adversarial_J_pid_75,1,2,NVML,0.9566847459756768,1
-fe2433e75bdc,adversarial_J_pid_75,1,2,NVML,0.966127605236034,1
+fe2433e75bdc,adversarial_J_pid_75,1,2,NVML,0.9661276052360341,1
 fe2433e75bdc,adversarial_J_pid_75,1,2,NVML,0.9757216587051871,1
 fe2433e75bdc,adversarial_J_pid_75,1,2,NVML,0.9883591256072173,1
 fe2433e75bdc,adversarial_J_pid_75,1,2,NVML,1.0,1
@@ -223,7 +223,7 @@ d5e571cea1ec,adversarial_K_online_learning,1,3,NVML,0.9981750741839762,1
 89eb78e296d6,rendering_proxy,0,4,NVML,0.0054651810276677435,0
 89eb78e296d6,rendering_proxy,0,4,NVML,0.001307471264367816,0
 89eb78e296d6,rendering_proxy,0,4,NVML,0.007494709952044709,0
-ac263ea21e2c,adversarial_K_online_learning,1,4,NVML,0.9781678964494478,1
+ac263ea21e2c,adversarial_K_online_learning,1,4,NVML,0.9781678964494479,1
 ac263ea21e2c,adversarial_K_online_learning,1,4,NVML,0.9978862478777589,1
 ac263ea21e2c,adversarial_K_online_learning,1,4,NVML,1.0,1
 ac263ea21e2c,adversarial_K_online_learning,1,4,NVML,1.0,1
@@ -239,10 +239,10 @@ ad50fa608a8a,adversarial_H_mimicry_cufft,1,4,NVML,0.9378000318610599,1
 ad50fa608a8a,adversarial_H_mimicry_cufft,1,4,NVML,0.708628550976058,1
 ad50fa608a8a,adversarial_H_mimicry_cufft,1,4,NVML,0.7093343928930261,1
 ad50fa608a8a,adversarial_H_mimicry_cufft,1,4,NVML,0.9699335554380842,1
-ad50fa608a8a,adversarial_H_mimicry_cufft,1,4,NVML,0.9061771337852125,1
-ad50fa608a8a,adversarial_H_mimicry_cufft,1,4,NVML,0.8869834146430859,1
+ad50fa608a8a,adversarial_H_mimicry_cufft,1,4,NVML,0.9061771337852126,1
+ad50fa608a8a,adversarial_H_mimicry_cufft,1,4,NVML,0.8869834146430858,1
 ad50fa608a8a,adversarial_H_mimicry_cufft,1,4,NVML,0.8987457236808009,1
-ad50fa608a8a,adversarial_H_mimicry_cufft,1,4,NVML,0.8767324045936061,1
+ad50fa608a8a,adversarial_H_mimicry_cufft,1,4,NVML,0.876732404593606,1
 ad50fa608a8a,adversarial_H_mimicry_cufft,1,4,NVML,0.7089903538952669,1
 ad50fa608a8a,adversarial_H_mimicry_cufft,1,4,NVML,0.6909891634887724,1
 ad50fa608a8a,adversarial_H_mimicry_cufft,1,4,NVML,0.9342829166035571,1
@@ -251,7 +251,7 @@ ddc3d611de21,pytorch_mlp_cifar10,1,4,NVML,0.9133317896764852,1
 ddc3d611de21,pytorch_mlp_cifar10,1,4,NVML,0.9728881569852796,1
 ddc3d611de21,pytorch_mlp_cifar10,1,4,NVML,0.9312431164667939,1
 ddc3d611de21,pytorch_mlp_cifar10,1,4,NVML,0.9355893150579354,1
-ddc3d611de21,pytorch_mlp_cifar10,1,4,NVML,0.9228579024590117,1
+ddc3d611de21,pytorch_mlp_cifar10,1,4,NVML,0.9228579024590118,1
 ed7ab69e9c47,adversarial_J_pid_75,1,4,NVML,0.9460696780663261,1
 ed7ab69e9c47,adversarial_J_pid_75,1,4,NVML,0.9888669876205417,1
 ed7ab69e9c47,adversarial_J_pid_75,1,4,NVML,0.983594128930735,1
@@ -261,7 +261,7 @@ ed7ab69e9c47,adversarial_J_pid_75,1,4,NVML,0.8639676817273405,1
 ed7ab69e9c47,adversarial_J_pid_75,1,4,NVML,0.716481657166249,1
 ed7ab69e9c47,adversarial_J_pid_75,1,4,NVML,0.7486959437525562,1
 ed7ab69e9c47,adversarial_J_pid_75,1,4,NVML,0.7835656239304803,1
-ed7ab69e9c47,adversarial_J_pid_75,1,4,NVML,0.7772081370745625,1
+ed7ab69e9c47,adversarial_J_pid_75,1,4,NVML,0.7772081370745623,1
 ed7ab69e9c47,adversarial_J_pid_75,1,4,NVML,0.9702612684551424,1
 ed7ab69e9c47,adversarial_J_pid_75,1,4,NVML,0.9942704280155641,1
 110f9abd97cb,nbody_sim,0,5,NVML,0.20822153756731537,0
@@ -292,7 +292,7 @@ ed7ab69e9c47,adversarial_J_pid_75,1,4,NVML,0.9942704280155641,1
 4773e1a29fb4,nbody_sim,0,5,NVML,0.02243225062991522,0
 4773e1a29fb4,nbody_sim,0,5,NVML,0.027050259894405106,0
 4773e1a29fb4,nbody_sim,0,5,NVML,0.02799300454050333,0
-50f59294d415,mining_ethash_proxy,0,5,NVML,0.2712369870474111,0
+50f59294d415,mining_ethash_proxy,0,5,NVML,0.27123698704741117,0
 50f59294d415,mining_ethash_proxy,0,5,NVML,0.007780813606693372,0
 50f59294d415,mining_ethash_proxy,0,5,NVML,0.004367313132841386,0
 50f59294d415,mining_ethash_proxy,0,5,NVML,0.0039931265818652474,0

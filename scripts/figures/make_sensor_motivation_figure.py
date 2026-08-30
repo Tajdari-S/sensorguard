@@ -39,6 +39,8 @@ def collect_evidence() -> dict[str, dict[str, object]]:
     for row in matched.values():
         if row["total_runs"] != "36" or row["training_runs"] != "26" or row["nontraining_runs"] != "10":
             raise ValueError("matched comparison must use the same 36-run cohort")
+        if row["false_positive_false_alert"] != "0":
+            raise ValueError("panel A expects zero observed false alerts at threshold 0.85")
 
     wave_rows = read_csv(RESULTS / "wave" / "overhead_3090_all.csv")
     sensor_rows = read_csv(RESULTS / "wave" / "matched_sensor_overhead_3090.csv")
@@ -84,7 +86,7 @@ def collect_evidence() -> dict[str, dict[str, object]]:
             "fp": matched["NVML"]["false_positive_false_alert"],
             "tn": matched["NVML"]["true_negative_correct_rejection"],
             "scope": "same 36 runs: 26 training and 10 non-training",
-            "status": "leave-one-workload-family-out; fixed 3-of-5 rule at 0.75",
+            "status": "leave-one-workload-family-out; fixed 3-of-5 rule at 0.85",
         },
         "sensor_matched": {
             "panel": "A",
@@ -99,7 +101,7 @@ def collect_evidence() -> dict[str, dict[str, object]]:
             "fp": matched["SensorGuard (GPU current)"]["false_positive_false_alert"],
             "tn": matched["SensorGuard (GPU current)"]["true_negative_correct_rejection"],
             "scope": "same 36 runs: 26 training and 10 non-training",
-            "status": "leave-one-workload-family-out; fixed 3-of-5 rule at 0.75",
+            "status": "leave-one-workload-family-out; fixed 3-of-5 rule at 0.85",
         },
         "wave": {
             "panel": "B",
@@ -174,44 +176,35 @@ def make_figure(evidence: dict[str, dict[str, object]]) -> None:
         1, 2, figsize=(7.15, 2.75), gridspec_kw={"wspace": 0.26}
     )
 
-    # A: direct run-level outcomes on the exact same paired cohort.
-    outcomes = ["TP", "FN", "FP", "TN"]
-    nvml_counts = [int(nvml_matched[key.lower()]) for key in outcomes]
-    sensor_counts = [int(sensor_matched[key.lower()]) for key in outcomes]
-    x_positions = np.arange(len(outcomes))
-    width = 0.34
-    nvml_bars = scope_ax.bar(
-        x_positions - width / 2, nvml_counts, width=width, color=NVML,
-        edgecolor="#444444", linewidth=0.45, label="NVML",
+    # A: only the non-redundant training-detection outcome. Misses equal
+    # 26 - detections, and both methods have zero false alerts at p >= 0.85.
+    detected = [int(nvml_matched["tp"]), int(sensor_matched["tp"])]
+    x_positions = np.arange(2)
+    bars = scope_ax.bar(
+        x_positions, detected, width=0.58, color=[NVML, "#78E6C9"],
+        edgecolor="#444444", linewidth=0.45,
     )
-    sensor_bars = scope_ax.bar(
-        x_positions + width / 2, sensor_counts, width=width, color="#78E6C9",
-        edgecolor="#444444", linewidth=0.45, label="SensorGuard (GPU current)",
-    )
-    scope_ax.set_ylabel("Runs (count)")
-    scope_ax.set_xticks(
-        x_positions,
-        ["Detected\ntraining (TP)", "Missed\ntraining (FN)",
-         "False\nalerts (FP)", "Correct\nrejection (TN)"],
-    )
-    scope_ax.tick_params(axis="x", labelsize=6.8, pad=3)
-    scope_ax.set_ylim(0, 31)
-    scope_ax.set_yticks([0, 5, 10, 15, 20, 25, 30])
+    scope_ax.axhline(26, color="#8A8A8A", linestyle=":", linewidth=0.8)
+    scope_ax.text(1.43, 26.2, "26 training runs", ha="right", va="bottom", fontsize=6.2, color=MUTED)
+    scope_ax.set_ylabel("Training runs detected")
+    scope_ax.set_xticks(x_positions, ["NVML", "SensorGuard\nGPU current"])
+    scope_ax.tick_params(axis="x", labelsize=7.8, pad=3)
+    scope_ax.set_xlim(-0.55, 1.55)
+    scope_ax.set_ylim(0, 28.5)
+    scope_ax.set_yticks([0, 5, 10, 15, 20, 25])
     scope_ax.grid(axis="y", color=GRID, linestyle="--", linewidth=0.55, alpha=0.75)
     scope_ax.set_axisbelow(True)
     scope_ax.set_title("A", pad=3)
-    scope_ax.legend(loc="upper right", frameon=False, fontsize=6.5)
-    for bars, values in ((nvml_bars, nvml_counts), (sensor_bars, sensor_counts)):
-        for bar, value in zip(bars, values):
-            scope_ax.text(
-                bar.get_x() + bar.get_width() / 2,
-                value + (0.55 if value else 0.35),
-                str(value), ha="center", va="bottom", fontsize=7.4,
-                fontweight="bold",
-            )
+    for bar, value in zip(bars, detected):
+        scope_ax.text(
+            bar.get_x() + bar.get_width() / 2,
+            value + 0.55,
+            f"{value}/26", ha="center", va="bottom", fontsize=8.2,
+            fontweight="bold",
+        )
     scope_ax.text(
         0.5, -0.27,
-        "Same 36 runs; leave-one-family-out; fixed 3-of-5 rule at p >= 0.75",
+        "Same 36 runs; leave-one-family-out; 3-of-5 at p >= 0.85",
         transform=scope_ax.transAxes, ha="center", va="top", fontsize=6.0, color=MUTED,
     )
 

@@ -27,7 +27,7 @@ Pass: no unexplained clipping; missingness below the preregistered limit; alignm
 1. Collect the same nine NVML signals at 1 Hz.
 2. Reproduce the 166-feature, two-stage random-forest, 30-second causal window, 15-second stride configuration.
 3. Report strict published hyperparameters and a separately labeled RTX-3090-tuned version.
-4. Split by run, not window; report run-level alerts and the earlier 3-of-5 rule at threshold 0.75.
+4. Split by run, not window; report run-level alerts using the amended 3-of-5 rule at threshold 0.85.
 5. Measure logger overhead and data loss.
 
 Output: per-family AUC/PR-AUC, fixed-threshold TPR, false alerts/GPU-hour, time to alert, and 95% hierarchical-bootstrap intervals.
@@ -70,7 +70,7 @@ Failed modalities remain in the paper's ruled-out table.
 
 Using validation only, compare NVML; each sensor; NVML plus each sensor; best pair; best triple if time permits; all sensors; selected set; and leave-one-out variants. Use random-forest window classifiers and choose the smallest sensor set within one standard error of the best validation worst-family TPR.
 
-Convert window probabilities to run alerts with the fixed 3-of-5 rule at probability 0.75. Freeze the model, calibration transform, health policy, rule, threshold, and code commit before opening the held-out test set once. Measure time to alert at the first causal 3-of-5 trigger and right-censor undetected runs.
+Convert window probabilities to run alerts with the fixed 3-of-5 rule at probability 0.85. This candidate was selected on development data and must be frozen before opening the independent held-out test set once. Freeze the model, calibration transform, health policy, rule, threshold, and code commit before that test. Measure time to alert at the first causal 3-of-5 trigger and right-censor undetected runs.
 
 ## E7: adversarial and tamper robustness
 

@@ -29,12 +29,12 @@ NVML,ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,0.5125505506310887,12,4,0,FN
 NVML,b2a8baa95276,gpt2_wikitext2_amp,1,11,0.9148422072617223,6,6,1,TP
 NVML,c3bab27d8f97,cufft_benchmark,0,9,0.337052331697316,11,11,0,TN
 NVML,c95103b2e217,mining_ethash_proxy,0,13,0.5311769141035108,11,4,0,TN
-NVML,cff47fb488da,pytorch_mlp_cifar10,1,15,0.7899377208628802,5,5,1,TP
+NVML,cff47fb488da,pytorch_mlp_cifar10,1,15,0.7899377208628802,5,5,0,FN
 NVML,d5e571cea1ec,adversarial_K_online_learning,1,3,0.9979276517275796,12,12,1,TP
 NVML,d8ac49f7c850,rendering_proxy,0,18,0.12683569847396628,11,11,0,TN
-NVML,ddc3d611de21,pytorch_mlp_cifar10,1,15,0.8031829701700438,5,5,1,TP
-NVML,ed7ab69e9c47,adversarial_J_pid_75,1,2,0.7135618517428463,12,12,1,TP
-NVML,fe2433e75bdc,adversarial_J_pid_75,1,2,0.7759225670233897,12,12,1,TP
+NVML,ddc3d611de21,pytorch_mlp_cifar10,1,15,0.8031829701700438,5,5,0,FN
+NVML,ed7ab69e9c47,adversarial_J_pid_75,1,2,0.7135618517428463,12,12,0,FN
+NVML,fe2433e75bdc,adversarial_J_pid_75,1,2,0.7759225670233897,12,12,0,FN
 SensorGuard (GPU current),0dac05176434,adversarial_H_mimicry_cufft,1,1,0.9816999515197721,12,12,1,TP
 SensorGuard (GPU current),0e24a18363e3,adversarial_L_diluted_10,1,4,0.9947807630069455,12,12,1,TP
 SensorGuard (GPU current),110f9abd97cb,nbody_sim,0,14,0.02284649814924458,11,11,0,TN
@@ -67,7 +67,7 @@ SensorGuard (GPU current),c3bab27d8f97,cufft_benchmark,0,9,0.08793499696105639,1
 SensorGuard (GPU current),c95103b2e217,mining_ethash_proxy,0,13,0.042735610108127306,11,11,0,TN
 SensorGuard (GPU current),cff47fb488da,pytorch_mlp_cifar10,1,15,0.8937051448824385,5,5,1,TP
 SensorGuard (GPU current),d5e571cea1ec,adversarial_K_online_learning,1,3,0.999418366661466,12,12,1,TP
-SensorGuard (GPU current),d8ac49f7c850,rendering_proxy,0,18,0.5998000794860731,11,4,1,FP
+SensorGuard (GPU current),d8ac49f7c850,rendering_proxy,0,18,0.5998000794860731,11,4,0,TN
 SensorGuard (GPU current),ddc3d611de21,pytorch_mlp_cifar10,1,15,0.890772536384301,5,5,1,TP
 SensorGuard (GPU current),ed7ab69e9c47,adversarial_J_pid_75,1,2,0.9665899585490735,12,12,1,TP
 SensorGuard (GPU current),fe2433e75bdc,adversarial_J_pid_75,1,2,0.9851227291146145,12,12,1,TP

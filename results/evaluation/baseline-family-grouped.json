@@ -10,7 +10,7 @@
       "n_jobs": -1,
       "random_state": 0
     },
-    "threshold": 0.75,
+    "threshold": 0.85,
     "rule": "3of5",
     "n_features_stage1": 166,
     "n_features_stage2": 131,
@@ -26,7 +26,7 @@
         "train_bert",
         "train_gpt2_wikitext"
       ],
-      "window_auc_training": 0.45341346894744955,
+      "window_auc_training": 0.4673139158576052,
       "runs": 21,
       "tp": 0,
       "fn": 14,
@@ -47,10 +47,10 @@
       "runs": 23,
       "tp": 0,
       "fn": 0,
-      "fp": 9,
-      "tn": 14,
+      "fp": 2,
+      "tn": 21,
       "run_tpr": null,
-      "run_fpr": 0.391304347826087
+      "run_fpr": 0.08695652173913043
     },
     {
       "fold": 2,
@@ -77,14 +77,14 @@
         "hpc_fft",
         "train_resnet_cifar10"
       ],
-      "window_auc_training": 0.11671396827492134,
+      "window_auc_training": 0.11711731532205427,
       "runs": 26,
       "tp": 0,
       "fn": 9,
-      "fp": 1,
-      "tn": 16,
+      "fp": 0,
+      "tn": 17,
       "run_tpr": 0.0,
-      "run_fpr": 0.058823529411764705
+      "run_fpr": 0.0
     },
     {
       "fold": 4,
@@ -107,15 +107,15 @@
   "aggregate": {
     "tp": 0,
     "fn": 23,
-    "fp": 10,
-    "tn": 85,
+    "fp": 2,
+    "tn": 93,
     "run_tpr": 0.0,
     "run_tpr_ci_95": [
       0.0,
       0.14311661845042686
     ],
     "negative_gpu_hours": 11.45333333333333,
-    "false_alerts_per_gpu_hour": 0.8731082654249129,
+    "false_alerts_per_gpu_hour": 0.1746216530849826,
     "zero_event_rate_upper_95": null
   },
   "per_training_family": [

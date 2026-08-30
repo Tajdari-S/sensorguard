@@ -10,7 +10,7 @@
       "n_jobs": -1,
       "random_state": 0
     },
-    "threshold": 0.75,
+    "threshold": 0.85,
     "rule": "3of5",
     "n_features_stage1": 166,
     "n_features_stage2": 131,
@@ -47,7 +47,7 @@
         "20260825_train_gpt2_wikitext_node2-gpu1_s1_r02",
         "20260825_train_gpt2_wikitext_verifier-gpu0_s2_r03"
       ],
-      "window_auc_training": 0.9870092720457684,
+      "window_auc_training": 0.987315052278556,
       "runs": 24,
       "tp": 4,
       "fn": 0,
@@ -84,7 +84,7 @@
         "20260825_train_resnet_cifar10_node2-gpu3_s3_r01",
         "20260825_train_resnet_cifar10_verifier-gpu1_s3_r03"
       ],
-      "window_auc_training": 0.985867895545315,
+      "window_auc_training": 0.9854992319508449,
       "runs": 23,
       "tp": 4,
       "fn": 0,
@@ -123,7 +123,7 @@
         "20260825_train_gpt2_wikitext_node2-gpu0_s0_r01",
         "20260825_train_gpt2_wikitext_verifier-gpu1_s3_r03"
       ],
-      "window_auc_training": 0.9853776853776854,
+      "window_auc_training": 0.985070785070785,
       "runs": 25,
       "tp": 4,
       "fn": 0,
@@ -160,7 +160,7 @@
         "20260825_train_resnet_cifar10_node2-gpu4_s4_r01",
         "20260825_train_resnet_cifar10_verifier-gpu0_s2_r03"
       ],
-      "window_auc_training": 0.9835687568756877,
+      "window_auc_training": 0.9836391639163917,
       "runs": 23,
       "tp": 5,
       "fn": 0,
@@ -197,7 +197,7 @@
         "20260825_train_gpt2_wikitext_node2-gpu4_s4_r02",
         "20260825_train_resnet_cifar10_node2-gpu2_s2_r03"
       ],
-      "window_auc_training": 0.9825325069486598,
+      "window_auc_training": 0.9828280246637487,
       "runs": 23,
       "tp": 5,
       "fn": 1,

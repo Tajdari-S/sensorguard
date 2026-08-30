@@ -8,7 +8,7 @@ false_alert_sensitivity_per_gpu_hour:
   - 0.0138889
 window_seconds: 30
 stride_seconds: 15
-baseline_rule: three_of_five_windows_at_probability_0.75
+baseline_rule: three_of_five_windows_at_probability_0.85
 primary_model: random_forest_window_classifier_plus_fixed_three_of_five
 split_unit: run
 group_fields:

@@ -1,5 +1,5 @@
 panel,method,metric,value,low,high,unit,tp,fn,fp,tn,scope,status
-A,NVML,run-level confusion count,32,,,runs,22,4,0,10,same 36 runs: 26 training and 10 non-training,leave-one-workload-family-out; fixed 3-of-5 rule at 0.75
-A,SensorGuard (GPU current),run-level confusion count,33,,,runs,24,2,1,9,same 36 runs: 26 training and 10 non-training,leave-one-workload-family-out; fixed 3-of-5 rule at 0.75
+A,NVML,run-level confusion count,28,,,runs,18,8,0,10,same 36 runs: 26 training and 10 non-training,leave-one-workload-family-out; fixed 3-of-5 rule at 0.85
+A,SensorGuard (GPU current),run-level confusion count,34,,,runs,24,2,0,10,same 36 runs: 26 training and 10 non-training,leave-one-workload-family-out; fixed 3-of-5 rule at 0.85
 B,WAVE,whole-process runtime multiplier,28.496666666666666,23.54,31.59,x,,,,,"same 6 configurations: 2 GPT-2, 2 LLaMA, 2 Qwen; 3 repetitions",offline architectural verification
 B,SensorGuard base logger,whole-process runtime multiplier,1.049870646398301,1.0270499013371606,1.0825940167980588,x,,,,,"same 6 configurations: 2 GPT-2, 2 LLaMA, 2 Qwen; 3 repetitions; NVML+DCGM",base logger only; physical logger overhead pending

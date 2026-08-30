@@ -79,6 +79,6 @@ credential location; never request or send the password in email.
 They are valuable prior evidence and eliminate code duplication, but most were
 collected on a different testbed, classifier, sensor set, or adaptive analysis
 round. The paper's primary numbers require the same frozen grouped split,
-random forest, 0.75 threshold, 3-of-5 rule, synchronized channels, held-out
+random forest, 0.85 threshold, 3-of-5 rule, synchronized channels, held-out
 families, and reporting pipeline. Therefore they guide selection and provide
 provenance; they do not replace the untouched final test.

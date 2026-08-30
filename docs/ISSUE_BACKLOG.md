@@ -60,7 +60,7 @@ Create these issues after the private repository is available. Assign only after
 
 - Compare random-forest sensor configurations on validation.
 - Choose smallest set within one standard error.
-- Exit: model, calibration, health policy, 3-of-5 rule, 0.75 threshold, and commit hash frozen.
+- Exit: model, calibration, health policy, 3-of-5 rule, 0.85 threshold, and commit hash frozen.
 
 ### 10. [P0][Aug 30] Gate 2: open the test split once and freeze claims
 

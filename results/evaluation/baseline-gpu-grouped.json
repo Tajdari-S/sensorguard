@@ -10,7 +10,7 @@
       "n_jobs": -1,
       "random_state": 0
     },
-    "threshold": 0.75,
+    "threshold": 0.85,
     "rule": "3of5",
     "n_features_stage1": 166,
     "n_features_stage2": 131,
@@ -24,7 +24,7 @@
       "held_out_groups": [
         "GPU-42e33043-7008-2803-9ba8-9bb9ef7d0845"
       ],
-      "window_auc_training": 0.9907222380816443,
+      "window_auc_training": 0.9901354394645858,
       "runs": 25,
       "tp": 5,
       "fn": 0,
@@ -39,7 +39,7 @@
       "held_out_groups": [
         "GPU-bff95c83-0adb-feb7-9825-359f31b26de8"
       ],
-      "window_auc_training": 0.9885592069527431,
+      "window_auc_training": 0.9884997963063553,
       "runs": 23,
       "tp": 5,
       "fn": 0,
@@ -54,7 +54,7 @@
       "held_out_groups": [
         "GPU-5443d59d-561f-ed1e-da42-1975937205f9"
       ],
-      "window_auc_training": 0.9854900632339657,
+      "window_auc_training": 0.9861863896416742,
       "runs": 16,
       "tp": 3,
       "fn": 0,
@@ -70,7 +70,7 @@
         "GPU-127e16de-2b5f-dde9-1932-b4e29bb818c0",
         "GPU-9b96eb67-aeee-89d5-aa85-fc650af4e25c"
       ],
-      "window_auc_training": 0.99201737120005,
+      "window_auc_training": 0.9916346424219703,
       "runs": 27,
       "tp": 4,
       "fn": 1,
@@ -86,7 +86,7 @@
         "GPU-37ffc98b-8551-c8a1-5f3c-27ade9ae735a",
         "GPU-46bf67bb-cb31-bee1-3cf0-c35337ba97d2"
       ],
-      "window_auc_training": 0.9894238818464481,
+      "window_auc_training": 0.9895584190385075,
       "runs": 27,
       "tp": 5,
       "fn": 0,

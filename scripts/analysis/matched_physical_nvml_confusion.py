@@ -4,7 +4,7 @@
 The paired traces come from Robi Rahman's ``physical-sensor-detection`` branch.
 Both modalities use 30-second windows, a 15-second stride, the same five
 run-grouped folds, the same random-forest hyperparameters, and the current
-paper's fixed run rule: at least three probabilities at or above 0.75 in any
+paper's amended candidate run rule: at least three probabilities at or above 0.85 in any
 five consecutive windows.
 
 This is an in-corpus, run-grouped proof of concept.  It is not the sealed
@@ -28,6 +28,24 @@ from sklearn.model_selection import StratifiedGroupKFold
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 import physical_sensor_ablation as physical  # noqa: E402
+
+
+RUN_THRESHOLD = 0.85
+EXTENDED_TRAINING_PREFIXES = physical.FOLLOWUP_PREFIXES
+
+
+def load_extended_campaign(sensor_dir: Path) -> pd.DataFrame:
+    """Load all paired development runs, including adaptive physical attacks."""
+    frames = []
+    for filename in sorted(glob.glob(str(sensor_dir / "*_sensors.parquet"))):
+        frame = pd.read_parquet(filename)
+        label = str(frame["workload_label"].iloc[0])
+        is_training = label in physical.TRAINING_LABELS or label.startswith(EXTENDED_TRAINING_PREFIXES)
+        frame["target"] = int(is_training)
+        frames.append(frame)
+    if not frames:
+        raise RuntimeError(f"No sensor logs found in {sensor_dir}")
+    return pd.concat(frames, ignore_index=True)
 
 
 def load_source_nvml_module(source_repo: Path):
@@ -136,9 +154,9 @@ def out_of_fold_predictions(
     return pd.concat(outputs, ignore_index=True)
 
 
-def aggregate_runs(window_predictions: pd.DataFrame) -> pd.DataFrame:
+def aggregate_runs(window_predictions: pd.DataFrame, threshold: float = RUN_THRESHOLD) -> pd.DataFrame:
     def fixed_three_of_five(probabilities: pd.Series) -> int:
-        hits = (probabilities.to_numpy(dtype=float) >= 0.75).astype(int)
+        hits = (probabilities.to_numpy(dtype=float) >= threshold).astype(int)
         if len(hits) < 5:
             return int(hits.sum() >= 3)
         return int((np.convolve(hits, np.ones(5, dtype=int), mode="valid") >= 3).any())
@@ -191,7 +209,7 @@ def summarize(run_predictions: pd.DataFrame, window_predictions: pd.DataFrame) -
             "window_accuracy": float((windows["window_prediction"] == windows["target"]).mean()),
             "window_sec": 30,
             "stride_sec": 15,
-            "run_rule": "fixed 3-of-5 consecutive windows at probability >= 0.75",
+            "run_rule": f"fixed 3-of-5 consecutive windows at probability >= {RUN_THRESHOLD:.2f}",
             "split": "same 5-fold StratifiedGroupKFold by run_id",
         })
     return pd.DataFrame(rows)
@@ -266,6 +284,72 @@ def main() -> None:
     )
     print("\nLeave-one-workload-family-out:")
     print(family_summary.to_string(index=False))
+
+    # Broader development-only diagnostic. These additional attacks were
+    # created adaptively against earlier physical models, so they increase
+    # stress-test breadth but do not constitute a sealed independent test.
+    extended_data = load_extended_campaign(args.source_repo / "sensor_logs")
+    extended_windows = physical.make_windows(
+        extended_data,
+        physical.MODALITIES["GPU current clamp"]["channels"],
+        physical.MODALITIES["GPU current clamp"]["temporal"],
+        30,
+        15,
+    )
+    extended_windows["run_id"] = extended_windows["run_id"].astype(str)
+    extended_run_ids = set(extended_windows["run_id"].unique())
+    extended_nvml = load_paired_nvml(args.source_repo, extended_run_ids)
+    extended_nvml = nvml_module._normalize_columns(extended_nvml)
+    extended_targets = (
+        extended_nvml["workload_label"].isin(physical.TRAINING_LABELS)
+        | extended_nvml["workload_label"].str.startswith(EXTENDED_TRAINING_PREFIXES)
+    )
+    extended_nvml["target"] = extended_targets.astype(int)
+    extended_nvml["threeway_label"] = np.where(
+        extended_nvml["target"] == 1, "ml_training", "other"
+    )
+    extended_nvml_windows = nvml_module.sliding_windows(
+        extended_nvml, window_sec=30, stride_sec=15
+    )
+    extended_nvml_windows["target"] = (
+        extended_nvml_windows["threeway_label"] == "ml_training"
+    ).astype(int)
+    extended_nvml_windows["run_id"] = extended_nvml_windows["run_id"].astype(str)
+    if set(extended_nvml_windows["run_id"].unique()) != extended_run_ids:
+        raise RuntimeError("Extended NVML and current-sensor run sets differ")
+
+    extended_folds = make_family_heldout_folds(extended_windows)
+    extended_physical_features = [
+        column for column in extended_windows.columns
+        if column not in {"run_id", "workload_label", "target"}
+    ]
+    extended_nvml_features = nvml_module.get_feature_cols(extended_nvml_windows)
+    extended_window_predictions = pd.concat([
+        out_of_fold_predictions(
+            extended_nvml_windows, extended_nvml_features, extended_folds, "NVML"
+        ),
+        out_of_fold_predictions(
+            extended_windows, extended_physical_features, extended_folds,
+            "SensorGuard (GPU current)",
+        ),
+    ], ignore_index=True)
+    extended_run_predictions = aggregate_runs(extended_window_predictions)
+    extended_summary = summarize(extended_run_predictions, extended_window_predictions)
+    extended_summary["split"] = "leave-one-workload-label-out; adaptive development stress test"
+    extended_summary["campaign_note"] = (
+        "includes adaptive physical red-team attacks; not a sealed final test"
+    )
+    extended_summary.to_csv(
+        tables / "matched-extended-family-heldout-confusion.csv", index=False
+    )
+    extended_run_predictions.to_csv(
+        evaluation / "matched-extended-family-heldout-run-predictions.csv", index=False
+    )
+    extended_window_predictions.to_csv(
+        evaluation / "matched-extended-family-heldout-window-predictions.csv", index=False
+    )
+    print("\nExtended adaptive development stress test:")
+    print(extended_summary.to_string(index=False))
 
 
 if __name__ == "__main__":
