@@ -98,7 +98,24 @@ def main() -> int:
             active_mean = float(np.mean(active))
             mean_shift = abs(active_mean - baseline_mean)
             mean_shift_sigma = mean_shift / baseline_rms if baseline_rms > 0 else float("nan")
-            response_score = mean_shift_sigma + abs(math.log(ratio))
+            cycle_scores = []
+            cycle_ratios = []
+            for active_window, baseline_window in zip(active_windows, baseline_windows):
+                a0, a1 = active_window
+                b0, b1 = baseline_window
+                active_cycle = np.asarray(raw[(times >= a0) & (times <= a1)])
+                baseline_cycle = np.asarray(raw[(times >= b0) & (times <= b1)])
+                active_cycle_rms = robust_rms(active_cycle)
+                baseline_cycle_rms = robust_rms(baseline_cycle)
+                if not baseline_cycle_rms > 0:
+                    continue
+                cycle_ratio = active_cycle_rms / baseline_cycle_rms
+                cycle_shift_sigma = abs(
+                    float(np.mean(active_cycle)) - float(np.mean(baseline_cycle))
+                ) / baseline_cycle_rms
+                cycle_ratios.append(cycle_ratio)
+                cycle_scores.append(cycle_shift_sigma + abs(math.log(cycle_ratio)))
+            response_score = float(np.median(cycle_scores))
             rows.append({
                 "gpu_label": marker["label"],
                 "gpu_uuid": marker["gpu_uuid"],
@@ -112,6 +129,11 @@ def main() -> int:
                 "absolute_mean_shift_adc": mean_shift,
                 "mean_shift_baseline_sigma": mean_shift_sigma,
                 "response_score": response_score,
+                "cycle_response_min": float(np.min(cycle_scores)),
+                "cycle_response_max": float(np.max(cycle_scores)),
+                "cycle_rms_increase_fraction": float(
+                    np.mean(np.asarray(cycle_ratios) > 1.0)
+                ),
                 "active_start_epoch_s": active_windows[0][0],
                 "active_end_epoch_s": active_windows[-1][1],
                 "active_intervals": len(active_windows),
