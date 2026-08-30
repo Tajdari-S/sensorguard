@@ -1,0 +1,67 @@
+run_id: 20260830T150506Z_dev-ordinary_training_node1-gpu3_r02
+git_commit: bb6b2327e28ae01367b6d34de39a07e00ffab562
+operator: supervisor
+start_utc: '2026-08-30T15:08:53.239879+00:00'
+end_utc: '2026-08-30T15:12:39.364229+00:00'
+workload:
+  family: development_training_evasion
+  name: ordinary_training
+  command: env CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=GPU-42e33043-7008-2803-9ba8-9bb9ef7d0845
+    /home/felkru/sg-venv/bin/python scripts/workloads/development_evasion_workload.py
+    --mode ordinary_training --device cuda:0 --duration-s 180.0 --batch-size 256 --size
+    2048 --depth 3 --training-fraction 0.35 --seed 5301 --output data/development_runs/20260830T150506Z_dev-ordinary_training_node1-gpu3_r02/useful_work.json
+  seed: 5301
+  start_raw_s: 92349.643567242
+  end_raw_s: 92532.372133871
+  duration_s: 182.729
+hardware:
+  gpu_index_under_test: 3
+  gpu_uuid_under_test: GPU-42e33043-7008-2803-9ba8-9bb9ef7d0845
+  gpu_set: '3'
+sensors:
+  nvml: true
+  dcgm: true
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu3
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 226
+  missing_fraction: 0.0
+  alignment_error_ms: 9.5
+  edge_latency_ms: 1254.6
+  bursts_detected: 6
+  bursts_expected: 6
+- channel_id: dcgm.all
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW(receipt)
+  health: pass
+  samples: 226
+  error_lines: 0
+marker_bursts:
+  pre:
+  - - 92336.937789
+    - 92339.027439
+  - - 92341.027559
+    - 92343.095263
+  - - 92345.095365
+    - 92347.17523
+  post:
+  - - 92543.549487
+    - 92545.562222
+  - - 92547.562344
+    - 92549.65103
+  - - 92551.651137
+    - 92553.74319
+marker_cooldown_s: 10.0
+profiled: false
+artifact_checksums:
+  dcgm.tsv: 6d9565ac4ea7fd20aa040bb756ef6dbb666234657473b9d7102773c204a532a8
+  nvml.csv: a3e183afa70825e612dbb2ae9d378c9d190dcb72417a712d21d660c2d7b2f1ce
+  useful_work.json: 8536e0ae9e909d5c9e8e47ea5390a18d8f4dedaec5a6cba06feed0b7468cbd06
+status: completed

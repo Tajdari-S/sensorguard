@@ -1,0 +1,4 @@
+run_id,mode,repetition,seed,gpu_indices,gpu_uuids,sensors,started_utc,return_code,manifest_path
+20260830T152340Z_dev-memory_minimal_node1-gpu3_r01,memory_minimal,1,5500,3,GPU-42e33043-7008-2803-9ba8-9bb9ef7d0845,"nvml,dcgm",2026-08-30T15:23:40.867865+00:00,0,data/development_runs/20260830T152340Z_dev-memory_minimal_node1-gpu3_r01/manifest.yaml
+20260830T152340Z_dev-memory_minimal_node1-gpu3_r02,memory_minimal,2,5501,3,GPU-42e33043-7008-2803-9ba8-9bb9ef7d0845,"nvml,dcgm",2026-08-30T15:27:27.142517+00:00,0,data/development_runs/20260830T152340Z_dev-memory_minimal_node1-gpu3_r02/manifest.yaml
+20260830T152340Z_dev-memory_minimal_node1-gpu3_r03,memory_minimal,3,5502,3,GPU-42e33043-7008-2803-9ba8-9bb9ef7d0845,"nvml,dcgm",2026-08-30T15:31:13.433081+00:00,0,data/development_runs/20260830T152340Z_dev-memory_minimal_node1-gpu3_r03/manifest.yaml

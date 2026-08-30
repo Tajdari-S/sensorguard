@@ -1,0 +1,67 @@
+run_id: 20260830T150506Z_dev-ordinary_training_node1-gpu3_r03
+git_commit: bb6b2327e28ae01367b6d34de39a07e00ffab562
+operator: supervisor
+start_utc: '2026-08-30T15:12:39.491662+00:00'
+end_utc: '2026-08-30T15:16:25.634771+00:00'
+workload:
+  family: development_training_evasion
+  name: ordinary_training
+  command: env CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=GPU-42e33043-7008-2803-9ba8-9bb9ef7d0845
+    /home/felkru/sg-venv/bin/python scripts/workloads/development_evasion_workload.py
+    --mode ordinary_training --device cuda:0 --duration-s 180.0 --batch-size 256 --size
+    2048 --depth 3 --training-fraction 0.35 --seed 5302 --output data/development_runs/20260830T150506Z_dev-ordinary_training_node1-gpu3_r03/useful_work.json
+  seed: 5302
+  start_raw_s: 92575.835868633
+  end_raw_s: 92758.490823484
+  duration_s: 182.655
+hardware:
+  gpu_index_under_test: 3
+  gpu_uuid_under_test: GPU-42e33043-7008-2803-9ba8-9bb9ef7d0845
+  gpu_set: '3'
+sensors:
+  nvml: true
+  dcgm: true
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu3
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 226
+  missing_fraction: 0.0
+  alignment_error_ms: 10.2
+  edge_latency_ms: 1377.2
+  bursts_detected: 6
+  bursts_expected: 6
+- channel_id: dcgm.all
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW(receipt)
+  health: pass
+  samples: 225
+  error_lines: 0
+marker_bursts:
+  pre:
+  - - 92563.166624
+    - 92565.241413
+  - - 92567.24153
+    - 92569.295435
+  - - 92571.295539
+    - 92573.369187
+  post:
+  - - 92769.678205
+    - 92771.687415
+  - - 92773.68754
+    - 92775.772351
+  - - 92777.772466
+    - 92779.86414
+marker_cooldown_s: 10.0
+profiled: false
+artifact_checksums:
+  dcgm.tsv: 4690f3c2cd1868adbf39cc667caf2925418f0f9eba9862dc340d108854d2bc87
+  nvml.csv: 9f16ae32b7906c607ed6be944fa225b75ffe247669eb05e71fbacff5051e1373
+  useful_work.json: 19544a73a2cd72363461ee1db415fbb969fbd1afaa5a3626da3e8727ed4af773
+status: completed

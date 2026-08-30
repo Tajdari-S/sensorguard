@@ -1,0 +1,67 @@
+run_id: 20260830T150504Z_dev-memory_minimal_node1-gpu1_r02
+git_commit: bb6b2327e28ae01367b6d34de39a07e00ffab562
+operator: supervisor
+start_utc: '2026-08-30T15:08:51.176510+00:00'
+end_utc: '2026-08-30T15:12:37.332144+00:00'
+workload:
+  family: development_training_evasion
+  name: memory_minimal
+  command: env CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=GPU-b30ba66a-b9d4-b427-e99a-cdfa7021053e
+    /home/felkru/sg-venv/bin/python scripts/workloads/development_evasion_workload.py
+    --mode memory_minimal --device cuda:0 --duration-s 180.0 --batch-size 256 --size
+    2048 --depth 3 --training-fraction 0.35 --seed 5101 --output data/development_runs/20260830T150504Z_dev-memory_minimal_node1-gpu1_r02/useful_work.json
+  seed: 5101
+  start_raw_s: 92347.678461902
+  end_raw_s: 92530.433836556
+  duration_s: 182.755
+hardware:
+  gpu_index_under_test: 1
+  gpu_uuid_under_test: GPU-b30ba66a-b9d4-b427-e99a-cdfa7021053e
+  gpu_set: '1'
+sensors:
+  nvml: true
+  dcgm: true
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu1
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 226
+  missing_fraction: 0.0
+  alignment_error_ms: 5.5
+  edge_latency_ms: 1949.8
+  bursts_detected: 6
+  bursts_expected: 6
+- channel_id: dcgm.all
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW(receipt)
+  health: pass
+  samples: 226
+  error_lines: 0
+marker_bursts:
+  pre:
+  - - 92334.97577
+    - 92337.020261
+  - - 92339.020381
+    - 92341.091346
+  - - 92343.091448
+    - 92345.160242
+  post:
+  - - 92541.72406
+    - 92543.786898
+  - - 92545.787026
+    - 92547.800906
+  - - 92549.80101
+    - 92551.810637
+marker_cooldown_s: 10.0
+profiled: false
+artifact_checksums:
+  dcgm.tsv: 7fd687b5da0fccb5d476dd2d62a22953a556cd687375b6e7c8a2f47e219d1561
+  nvml.csv: e05ab0fbde20c34d5a6d27872acf857b889020411d5288feefa70436bd19c674
+  useful_work.json: b71dd7531560c50f4d6cc593c44f800eeda147595bf9f9a1eae038dc253e7689
+status: completed

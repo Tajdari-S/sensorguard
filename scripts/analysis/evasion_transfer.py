@@ -250,7 +250,7 @@ def evaluate_plan(plan: dict, runs: pd.DataFrame, windows: pd.DataFrame,
         })
 
     frame = pd.DataFrame(prediction_rows)
-    positives = frame["truth_training"]
+    positives = frame[frame["truth_training"]]
     negatives = frame[~frame["truth_training"]]
     tp = int(positives["alert"].sum())
     fn = int((~positives["alert"]).sum())

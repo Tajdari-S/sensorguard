@@ -1,0 +1,4 @@
+protocol,source_family,target_family,fit_runs,target_runs,control_runs,tp,fn,fp,tn,target_tpr,target_tpr_ci_low,target_tpr_ci_high,window_auc,negative_gpu_hours,false_alerts_per_gpu_hour
+declared_pairwise,timing_shaping,memory_minimization,13,3,7,0,3,0,7,0.0,5.551115123125783e-17,0.5614970317550454,0.9682456140350878,0.8433380555555554,0.0
+declared_pairwise,interleaving,memory_minimization,13,3,7,0,3,0,7,0.0,5.551115123125783e-17,0.5614970317550454,0.9921052631578946,0.8433380555555554,0.0
+declared_two_seen,timing_shaping+interleaving,memory_minimization,16,3,7,0,3,0,7,0.0,5.551115123125783e-17,0.5614970317550454,0.9857894736842105,0.8433380555555554,0.0

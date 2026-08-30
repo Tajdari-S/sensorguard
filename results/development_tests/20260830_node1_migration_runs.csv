@@ -1,0 +1,4 @@
+run_id,mode,repetition,seed,gpu_indices,gpu_uuids,sensors,started_utc,return_code,manifest_path
+20260830T145310Z_dev-migration_node1-gpu3-4_r01,migration,1,5100,"3,4","GPU-42e33043-7008-2803-9ba8-9bb9ef7d0845,GPU-392b25f7-d685-7d9d-ee07-864670a4e2e9","nvml,dcgm",2026-08-30T14:53:11.115833+00:00,0,data/development_runs/20260830T145310Z_dev-migration_node1-gpu3-4_r01/manifest.yaml
+20260830T145310Z_dev-migration_node1-gpu3-4_r02,migration,2,5101,"3,4","GPU-42e33043-7008-2803-9ba8-9bb9ef7d0845,GPU-392b25f7-d685-7d9d-ee07-864670a4e2e9","nvml,dcgm",2026-08-30T14:56:47.398685+00:00,0,data/development_runs/20260830T145310Z_dev-migration_node1-gpu3-4_r02/manifest.yaml
+20260830T145310Z_dev-migration_node1-gpu3-4_r03,migration,3,5102,"3,4","GPU-42e33043-7008-2803-9ba8-9bb9ef7d0845,GPU-392b25f7-d685-7d9d-ee07-864670a4e2e9","nvml,dcgm",2026-08-30T15:00:23.698838+00:00,0,data/development_runs/20260830T145310Z_dev-migration_node1-gpu3-4_r03/manifest.yaml

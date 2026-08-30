@@ -1,0 +1,64 @@
+run_id: 20260830T145309Z_dev-interleaving_node1-gpu2_r02
+git_commit: bb6b2327e28ae01367b6d34de39a07e00ffab562
+operator: supervisor
+start_utc: '2026-08-30T14:56:46.372721+00:00'
+end_utc: '2026-08-30T15:00:22.541759+00:00'
+workload:
+  family: development_training_evasion
+  name: interleaving
+  command: env CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=GPU-eed88a48-1a18-3483-1c52-932f281c983a
+    /home/felkru/sg-venv/bin/python scripts/workloads/development_evasion_workload.py
+    --mode interleaving --device cuda:0 --duration-s 180.0 --batch-size 256 --size
+    2048 --depth 3 --training-fraction 0.35 --seed 5101 --output data/development_runs/20260830T145309Z_dev-interleaving_node1-gpu2_r02/useful_work.json
+  seed: 5101
+  duration_s: 182.944
+hardware:
+  gpu_index_under_test: 2
+  gpu_uuid_under_test: GPU-eed88a48-1a18-3483-1c52-932f281c983a
+  gpu_set: '2'
+sensors:
+  nvml: true
+  dcgm: true
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu2
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 216
+  missing_fraction: 0.0
+  alignment_error_ms: 6.7
+  edge_latency_ms: 1926.4
+  bursts_detected: 6
+  bursts_expected: 6
+- channel_id: dcgm.all
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW(receipt)
+  health: pass
+  samples: 216
+  error_lines: 0
+marker_bursts:
+  pre:
+  - - 91610.171781
+    - 91612.254014
+  - - 91614.254127
+    - 91616.296725
+  - - 91618.297119
+    - 91620.328202
+  post:
+  - - 91806.951284
+    - 91809.007741
+  - - 91811.007948
+    - 91813.036335
+  - - 91815.036434
+    - 91817.050839
+profiled: false
+artifact_checksums:
+  dcgm.tsv: 7303ed182c224529c4498f09fd98a7e6ac8844bd141674b84e580bd030ba1223
+  nvml.csv: 05519a1bb6a8a9f7ffa5daf76c5c2f9966c9613b50ff00c2a5afdad1c365c52d
+  useful_work.json: 1ce9db967c1fc1f9b58a5042cae294a32e79ba238d509db4f3449e32235429e6
+status: completed

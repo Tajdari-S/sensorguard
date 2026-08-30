@@ -1,0 +1,64 @@
+run_id: 20260830T145308Z_dev-duty_shaping_node1-gpu1_r02
+git_commit: bb6b2327e28ae01367b6d34de39a07e00ffab562
+operator: supervisor
+start_utc: '2026-08-30T14:56:45.340810+00:00'
+end_utc: '2026-08-30T15:00:21.498298+00:00'
+workload:
+  family: development_training_evasion
+  name: duty_shaping
+  command: env CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=GPU-b30ba66a-b9d4-b427-e99a-cdfa7021053e
+    /home/felkru/sg-venv/bin/python scripts/workloads/development_evasion_workload.py
+    --mode duty_shaping --device cuda:0 --duration-s 180.0 --batch-size 256 --size
+    2048 --depth 3 --training-fraction 0.35 --seed 5101 --output data/development_runs/20260830T145308Z_dev-duty_shaping_node1-gpu1_r02/useful_work.json
+  seed: 5101
+  duration_s: 182.83
+hardware:
+  gpu_index_under_test: 1
+  gpu_uuid_under_test: GPU-b30ba66a-b9d4-b427-e99a-cdfa7021053e
+  gpu_set: '1'
+sensors:
+  nvml: true
+  dcgm: true
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu1
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 216
+  missing_fraction: 0.0
+  alignment_error_ms: 18.7
+  edge_latency_ms: 2171.0
+  bursts_detected: 6
+  bursts_expected: 6
+- channel_id: dcgm.all
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW(receipt)
+  health: pass
+  samples: 216
+  error_lines: 0
+marker_bursts:
+  pre:
+  - - 91609.131783
+    - 91611.208789
+  - - 91613.20892
+    - 91615.236616
+  - - 91617.236722
+    - 91619.265213
+  post:
+  - - 91805.689468
+    - 91807.73105
+  - - 91809.731169
+    - 91811.765314
+  - - 91813.765425
+    - 91815.798925
+profiled: false
+artifact_checksums:
+  dcgm.tsv: e728a2dc466de8034ec237b62913ff105d4b353681e811f6b5a7410138fe581a
+  nvml.csv: 5a15e3d3a5298116b6d8b3a7db031b1b50fa27376bb93e97e1a3b2bbe53e4688
+  useful_work.json: 01e98f827ef26e5033ea60173323a680c771ebcc952d00a01801bc46bb316a15
+status: completed

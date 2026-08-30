@@ -1,0 +1,4 @@
+run_id,mode,repetition,seed,gpu_indices,gpu_uuids,sensors,started_utc,return_code,manifest_path
+20260830T151044Z_dev-inference_control_node1-gpu4_r01,inference_control,1,5400,4,GPU-392b25f7-d685-7d9d-ee07-864670a4e2e9,"nvml,dcgm",2026-08-30T15:10:44.287553+00:00,0,data/development_runs/20260830T151044Z_dev-inference_control_node1-gpu4_r01/manifest.yaml
+20260830T151044Z_dev-inference_control_node1-gpu4_r02,inference_control,2,5401,4,GPU-392b25f7-d685-7d9d-ee07-864670a4e2e9,"nvml,dcgm",2026-08-30T15:14:30.548246+00:00,0,data/development_runs/20260830T151044Z_dev-inference_control_node1-gpu4_r02/manifest.yaml
+20260830T151044Z_dev-inference_control_node1-gpu4_r03,inference_control,3,5402,4,GPU-392b25f7-d685-7d9d-ee07-864670a4e2e9,"nvml,dcgm",2026-08-30T15:18:16.808895+00:00,0,data/development_runs/20260830T151044Z_dev-inference_control_node1-gpu4_r03/manifest.yaml

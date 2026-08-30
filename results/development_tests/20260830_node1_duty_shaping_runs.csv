@@ -1,0 +1,4 @@
+run_id,mode,repetition,seed,gpu_indices,gpu_uuids,sensors,started_utc,return_code,manifest_path
+20260830T145308Z_dev-duty_shaping_node1-gpu1_r01,duty_shaping,1,5100,1,GPU-b30ba66a-b9d4-b427-e99a-cdfa7021053e,"nvml,dcgm",2026-08-30T14:53:09.019726+00:00,0,data/development_runs/20260830T145308Z_dev-duty_shaping_node1-gpu1_r01/manifest.yaml
+20260830T145308Z_dev-duty_shaping_node1-gpu1_r02,duty_shaping,2,5101,1,GPU-b30ba66a-b9d4-b427-e99a-cdfa7021053e,"nvml,dcgm",2026-08-30T14:56:45.289277+00:00,0,data/development_runs/20260830T145308Z_dev-duty_shaping_node1-gpu1_r02/manifest.yaml
+20260830T145308Z_dev-duty_shaping_node1-gpu1_r03,duty_shaping,3,5102,1,GPU-b30ba66a-b9d4-b427-e99a-cdfa7021053e,"nvml,dcgm",2026-08-30T15:00:21.572789+00:00,0,data/development_runs/20260830T145308Z_dev-duty_shaping_node1-gpu1_r03/manifest.yaml

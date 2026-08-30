@@ -1,0 +1,2 @@
+run_id,mode,repetition,seed,gpu_indices,gpu_uuids,sensors,started_utc,return_code,manifest_path
+20260830T150505Z_dev-interleaving_node1-gpu2_r01,interleaving,1,5200,2,GPU-eed88a48-1a18-3483-1c52-932f281c983a,"nvml,dcgm",2026-08-30T15:05:05.855903+00:00,0,data/development_runs/20260830T150505Z_dev-interleaving_node1-gpu2_r01/manifest.yaml

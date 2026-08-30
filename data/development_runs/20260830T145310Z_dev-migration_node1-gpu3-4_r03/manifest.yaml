@@ -1,0 +1,65 @@
+run_id: 20260830T145310Z_dev-migration_node1-gpu3-4_r03
+git_commit: bb6b2327e28ae01367b6d34de39a07e00ffab562
+operator: supervisor
+start_utc: '2026-08-30T15:00:23.746000+00:00'
+end_utc: '2026-08-30T15:04:09.892821+00:00'
+workload:
+  family: development_training_evasion
+  name: migration
+  command: env CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=GPU-42e33043-7008-2803-9ba8-9bb9ef7d0845,GPU-392b25f7-d685-7d9d-ee07-864670a4e2e9
+    /home/felkru/sg-venv/bin/python scripts/workloads/development_evasion_workload.py
+    --mode migration --device cuda:0 --duration-s 180.0 --batch-size 256 --size 2048
+    --depth 3 --training-fraction 0.35 --seed 5102 --output data/development_runs/20260830T145310Z_dev-migration_node1-gpu3-4_r03/useful_work.json
+    --secondary-device cuda:1
+  seed: 5102
+  duration_s: 182.984
+hardware:
+  gpu_index_under_test: 3
+  gpu_uuid_under_test: GPU-42e33043-7008-2803-9ba8-9bb9ef7d0845
+  gpu_set: 3,4
+sensors:
+  nvml: true
+  dcgm: true
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu3
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 226
+  missing_fraction: 0.0
+  alignment_error_ms: 16.5
+  edge_latency_ms: 1032.7
+  bursts_detected: 6
+  bursts_expected: 6
+- channel_id: dcgm.all
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW(receipt)
+  health: pass
+  samples: 452
+  error_lines: 0
+marker_bursts:
+  pre:
+  - - 91827.428914
+    - 91829.526128
+  - - 91831.526239
+    - 91833.586501
+  - - 91835.586601
+    - 91837.650252
+  post:
+  - - 92034.282518
+    - 92036.298775
+  - - 92038.298895
+    - 92040.368525
+  - - 92042.368629
+    - 92044.45489
+profiled: false
+artifact_checksums:
+  dcgm.tsv: b49d5c040e9c91d62ff16f4b087fc2f9592199e1b8d105cecad4955df3afcb6f
+  nvml.csv: f3515b77acde32ee424b7437609d6e0ce27830882cc4c909b2288b6e881e09a3
+  useful_work.json: 621ddd80266edba2caf1ab10ace00f1ee28ee8e78d53e4d95604baaa92010b33
+status: completed

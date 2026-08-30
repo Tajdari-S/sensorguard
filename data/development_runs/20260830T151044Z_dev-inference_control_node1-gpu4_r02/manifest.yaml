@@ -1,0 +1,67 @@
+run_id: 20260830T151044Z_dev-inference_control_node1-gpu4_r02
+git_commit: bb6b2327e28ae01367b6d34de39a07e00ffab562
+operator: supervisor
+start_utc: '2026-08-30T15:14:30.600325+00:00'
+end_utc: '2026-08-30T15:18:16.731244+00:00'
+workload:
+  family: development_training_evasion
+  name: inference_control
+  command: env CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=GPU-392b25f7-d685-7d9d-ee07-864670a4e2e9
+    /home/felkru/sg-venv/bin/python scripts/workloads/development_evasion_workload.py
+    --mode inference_control --device cuda:0 --duration-s 180.0 --batch-size 256 --size
+    2048 --depth 3 --training-fraction 0.35 --seed 5401 --output data/development_runs/20260830T151044Z_dev-inference_control_node1-gpu4_r02/useful_work.json
+  seed: 5401
+  start_raw_s: 92686.837054559
+  end_raw_s: 92869.548654546
+  duration_s: 182.712
+hardware:
+  gpu_index_under_test: 4
+  gpu_uuid_under_test: GPU-392b25f7-d685-7d9d-ee07-864670a4e2e9
+  gpu_set: '4'
+sensors:
+  nvml: true
+  dcgm: true
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu4
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 226
+  missing_fraction: 0.0
+  alignment_error_ms: 14.7
+  edge_latency_ms: 1323.2
+  bursts_detected: 6
+  bursts_expected: 6
+- channel_id: dcgm.all
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW(receipt)
+  health: pass
+  samples: 225
+  error_lines: 0
+marker_bursts:
+  pre:
+  - - 92674.277094
+    - 92676.301815
+  - - 92678.301935
+    - 92680.379896
+  - - 92682.380002
+    - 92684.388396
+  post:
+  - - 92880.841542
+    - 92882.916266
+  - - 92884.916409
+    - 92886.993087
+  - - 92888.993206
+    - 92890.995805
+marker_cooldown_s: 10.0
+profiled: false
+artifact_checksums:
+  dcgm.tsv: 4462cc233682578c46cc25e72043cd4c47c777d4b85938448a92d47f6ba16c2f
+  nvml.csv: 119ad223d38259d159b7783823a174475eae70d2f038b36dc52d0a3d79e6724e
+  useful_work.json: c1816eda81f40177dd4dd4a2ba8fdeb57007f0a13270f83506c6bbfaea5c413d
+status: completed

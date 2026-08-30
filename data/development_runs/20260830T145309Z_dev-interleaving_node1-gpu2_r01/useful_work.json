@@ -1,0 +1,22 @@
+{
+  "active_inference_s": 116.898817,
+  "active_training_s": 63.038721,
+  "batch_size": 256,
+  "depth": 3,
+  "devices": [
+    "cuda:0"
+  ],
+  "elapsed_s": 180.000325,
+  "final_loss": 0.25478166341781616,
+  "inference_steps": 120925,
+  "initial_loss": 0.27199527621269226,
+  "matrix_size": 2048,
+  "max_weight_change": 0.0026451004669070244,
+  "meaningful_optimization_progress": true,
+  "microbatch_size": null,
+  "migrations": 0,
+  "mode": "interleaving",
+  "relative_loss_reduction": 0.06328644024470323,
+  "seed": 5100,
+  "steps": 24598
+}

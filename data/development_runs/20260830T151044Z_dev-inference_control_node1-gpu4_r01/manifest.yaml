@@ -1,0 +1,67 @@
+run_id: 20260830T151044Z_dev-inference_control_node1-gpu4_r01
+git_commit: bb6b2327e28ae01367b6d34de39a07e00ffab562
+operator: supervisor
+start_utc: '2026-08-30T15:10:44.334192+00:00'
+end_utc: '2026-08-30T15:14:30.470641+00:00'
+workload:
+  family: development_training_evasion
+  name: inference_control
+  command: env CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=GPU-392b25f7-d685-7d9d-ee07-864670a4e2e9
+    /home/felkru/sg-venv/bin/python scripts/workloads/development_evasion_workload.py
+    --mode inference_control --device cuda:0 --duration-s 180.0 --batch-size 256 --size
+    2048 --depth 3 --training-fraction 0.35 --seed 5400 --output data/development_runs/20260830T151044Z_dev-inference_control_node1-gpu4_r01/useful_work.json
+  seed: 5400
+  start_raw_s: 92460.687797107
+  end_raw_s: 92643.489084264
+  duration_s: 182.801
+hardware:
+  gpu_index_under_test: 4
+  gpu_uuid_under_test: GPU-392b25f7-d685-7d9d-ee07-864670a4e2e9
+  gpu_set: '4'
+sensors:
+  nvml: true
+  dcgm: true
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu4
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 226
+  missing_fraction: 0.0
+  alignment_error_ms: 10.4
+  edge_latency_ms: 1199.1
+  bursts_detected: 6
+  bursts_expected: 6
+- channel_id: dcgm.all
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW(receipt)
+  health: pass
+  samples: 226
+  error_lines: 0
+marker_bursts:
+  pre:
+  - - 92448.071629
+    - 92450.122542
+  - - 92452.122662
+    - 92454.148932
+  - - 92456.149041
+    - 92458.17747
+  post:
+  - - 92654.696849
+    - 92656.724438
+  - - 92658.724565
+    - 92660.727562
+  - - 92662.727672
+    - 92664.732374
+marker_cooldown_s: 10.0
+profiled: false
+artifact_checksums:
+  dcgm.tsv: 023ab27d07d2744f495cf81e7210d4b603e31640dfef3315ef90da676bc3dc88
+  nvml.csv: 1efa44352646585c15b4dbb55b953598c2a43124f68c0da29e0af548573c2bd0
+  useful_work.json: 49298976c228246a03b9094bcd0061341d5e6d11f0c8ea48c8eed6f980d4d961
+status: completed

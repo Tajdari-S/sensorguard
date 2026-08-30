@@ -1,0 +1,4 @@
+run_id,mode,repetition,seed,gpu_indices,gpu_uuids,sensors,started_utc,return_code,manifest_path
+20260830T150506Z_dev-ordinary_training_node1-gpu3_r01,ordinary_training,1,5300,3,GPU-42e33043-7008-2803-9ba8-9bb9ef7d0845,"nvml,dcgm",2026-08-30T15:05:06.895835+00:00,0,data/development_runs/20260830T150506Z_dev-ordinary_training_node1-gpu3_r01/manifest.yaml
+20260830T150506Z_dev-ordinary_training_node1-gpu3_r02,ordinary_training,2,5301,3,GPU-42e33043-7008-2803-9ba8-9bb9ef7d0845,"nvml,dcgm",2026-08-30T15:08:53.188425+00:00,0,data/development_runs/20260830T150506Z_dev-ordinary_training_node1-gpu3_r02/manifest.yaml
+20260830T150506Z_dev-ordinary_training_node1-gpu3_r03,ordinary_training,3,5302,3,GPU-42e33043-7008-2803-9ba8-9bb9ef7d0845,"nvml,dcgm",2026-08-30T15:12:39.442458+00:00,0,data/development_runs/20260830T150506Z_dev-ordinary_training_node1-gpu3_r03/manifest.yaml

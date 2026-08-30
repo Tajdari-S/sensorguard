@@ -1,0 +1,4 @@
+run_id,mode,repetition,seed,gpu_indices,gpu_uuids,sensors,started_utc,return_code,manifest_path
+20260830T145309Z_dev-interleaving_node1-gpu2_r01,interleaving,1,5100,2,GPU-eed88a48-1a18-3483-1c52-932f281c983a,"nvml,dcgm",2026-08-30T14:53:10.041971+00:00,1,data/development_runs/20260830T145309Z_dev-interleaving_node1-gpu2_r01/manifest.yaml
+20260830T145309Z_dev-interleaving_node1-gpu2_r02,interleaving,2,5101,2,GPU-eed88a48-1a18-3483-1c52-932f281c983a,"nvml,dcgm",2026-08-30T14:56:46.321180+00:00,0,data/development_runs/20260830T145309Z_dev-interleaving_node1-gpu2_r02/manifest.yaml
+20260830T145309Z_dev-interleaving_node1-gpu2_r03,interleaving,3,5102,2,GPU-eed88a48-1a18-3483-1c52-932f281c983a,"nvml,dcgm",2026-08-30T15:00:22.618712+00:00,0,data/development_runs/20260830T145309Z_dev-interleaving_node1-gpu2_r03/manifest.yaml
