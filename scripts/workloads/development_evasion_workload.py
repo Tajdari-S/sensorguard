@@ -101,7 +101,11 @@ def run(args) -> dict:
     active_training_s = 0.0
     active_inference_s = 0.0
 
-    while raw_now() < deadline or steps < args.min_steps:
+    def below_minimum_steps() -> bool:
+        completed = inference_steps if args.mode == "inference_control" else steps
+        return completed < args.min_steps
+
+    while raw_now() < deadline or below_minimum_steps():
         if args.mode == "duty_shaping":
             cycle_start = raw_now()
             train_deadline = min(deadline, cycle_start + args.cycle_s * args.training_fraction)
