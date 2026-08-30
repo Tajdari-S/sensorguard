@@ -6,3 +6,4 @@ N04,P0,Run untouched sequential test,pending,,next_paper/results/sequential_prim
 N05,P1,Complete WAVE fidelity table,pending,,next_paper/results/wave_fidelity_summary.csv,Trace size solver time recovery and missing counters reported,
 N06,P1,Cross-host and cross-architecture confirmation,pending,,next_paper/results/platform_transfer.csv,Held-out hardware groups remain untouched during selection,
 N07,P2,Optional physical modality gate,pending,,next_paper/results/optional_sensor_gate.csv,Retain only modalities with conditional validation gain,
+N08,P1,H200-to-RTX normalized application roofline,pending_h200_access,,next_paper/results/cross_gpu_roofline_link.csv,Identical workloads run on both architectures with measured per-platform ceilings,

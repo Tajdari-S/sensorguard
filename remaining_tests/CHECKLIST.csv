@@ -8,7 +8,6 @@ R05,P0,Matched clean synchronized corpus,pending,,results/paper/aligned_trace_pa
 R06,P0,Negative exposure target,partial,Sabiha,results/paper/operating_curve.csv,Exposure supports the declared false-alert confidence bound,
 R07,P0,Separate Nsight characterization,pending,,results/paper/matched_roofline.csv,Pair IDs frozen before sensor predictions are inspected,
 R07A,P0,RTX 3090 application-level roofline collection,prepared,Sabiha,results/roofline/applications/rtx3090-node2/rtx3090_application/application-roofline-points.csv,Matched ResNet and GPT-2 training inference points have three valid NCU repetitions,
-R07B,P0,H200-to-RTX normalized GPT-2 roofline bridge,prepared,Sabiha,results/paper/cross_gpu_roofline_link.csv,Identical GPT-2 shapes and timing gaps run on both GPUs with measured per-platform ceilings,
 R08,P0,Fused-update held-out attack,prepared,Sabiha,results/attacks/fused_update.csv,Useful training progress and energy are recorded,
 R09,P0,Power and duty-cycle shaping attack,pending,,results/attacks/power_shaping.csv,Useful training progress and energy are recorded,
 R10,P0,Training-inference interleaving attack,pending,,results/attacks/interleaving.csv,Useful training progress and energy are recorded,

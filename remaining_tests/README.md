@@ -74,17 +74,12 @@ Create `results/paper/matched_roofline.csv` using
 `docs/FIGURE_DATA_CONTRACT.md`. Freeze `pair_id` before inspecting sensor
 predictions.
 
-Two collection suites are ready. Previewing either suite is safe and does not
-touch the GPU:
+The current-paper RTX collection suite is ready. Previewing it is safe and
+does not touch the GPU:
 
 ```bash
-# Test 1: current-paper RTX 3090 application roofline.
 python3 scripts/roofline/run_application_roofline.py \
   --gpu-index 0 --platform rtx3090-node2 --suite rtx3090_application
-
-# Test 2: identical GPT-2 timing-shaping bridge cases for both GPU families.
-python3 scripts/roofline/run_application_roofline.py \
-  --gpu-index 0 --platform rtx3090-node2 --suite cross_gpu_bridge
 ```
 
 The application pairs are declared before collection in
@@ -107,29 +102,16 @@ python3 scripts/roofline/run_application_roofline.py \
   --gpu-index 0 --platform rtx3090-node2 --suite rtx3090_application \
   --peak-tflops RTX_MEASURED_TFLOPS --peak-gbps RTX_MEASURED_GBPS --execute
 
-python3 scripts/roofline/run_application_roofline.py \
-  --gpu-index 0 --platform rtx3090-node2 --suite cross_gpu_bridge \
-  --peak-tflops RTX_MEASURED_TFLOPS --peak-gbps RTX_MEASURED_GBPS --execute
 ```
 
-Run the same `cross_gpu_bridge` command on the H200 with a distinct platform
-label and its measured ceilings. Then join the two outputs:
-
-```bash
-python3 scripts/roofline/compare_cross_gpu_roofline.py \
-  --input results/roofline/applications/rtx3090-node2/cross_gpu_bridge/application-roofline-points.csv \
-  --input results/roofline/applications/h200-nvl/cross_gpu_bridge/application-roofline-points.csv \
-  --output results/paper/cross_gpu_roofline_link.csv
-```
-
-The bridge uses the same synthetic GPT-2 124M architecture, shapes, precision,
-seeds, and gaps on both GPUs. It does not pretend that raw RTX and H200 TFLOP/s
-are directly comparable: arithmetic intensity and throughput are normalized by
-each GPU's measured ridge point. Nsight runs remain separate from unprofiled
-sensor traces. FLOP counts are PyTorch-profiler estimates, so one case should
-be checked against an analytical or NCU FLOP count before using absolute
-TFLOP/s in the paper; the identical code path still supports the normalized
-cross-GPU comparison.
+The H200-to-RTX bridge code is retained for later work but is not a current
+execution dependency: this project has no H200 host available. Robi's older
+H200 timing-shaping results were collected under a different setup and cannot
+be converted into a matched RTX/H200 roofline. This comparison is therefore
+deferred to `next_paper/`, not awaited for the current paper. Nsight runs remain
+separate from unprofiled sensor traces. FLOP counts are PyTorch-profiler
+estimates, so one case should be checked against an analytical or NCU FLOP
+count before using absolute TFLOP/s in the paper.
 
 ### 5. Collect held-out evasions and tamper cases
 

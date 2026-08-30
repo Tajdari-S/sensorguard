@@ -27,6 +27,8 @@ Required work:
 
 - Complete WAVE trace-size, solver-time, and recovered-parameter tables.
 - Confirm the chosen monitor across broader GPU architectures and hosts.
+- Run the prepared normalized RTX/H200 application bridge only after an H200
+  host becomes available; historical H200 traces are not a matched substitute.
 - Test contact temperature, ultrasound, RF, thermal-camera, and mirrored
   Ethernet only under a new validation/test protocol.
 - Study exhaustive three-sensor combinations and broader cloud/platform
