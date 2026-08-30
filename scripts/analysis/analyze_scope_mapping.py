@@ -20,12 +20,38 @@ def robust_rms(values: np.ndarray) -> float:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--pico-prefix", type=Path, required=True)
-    parser.add_argument("--marker-json", type=Path, nargs="+", required=True)
+    parser.add_argument("--marker-json", type=Path, nargs="*", default=[])
+    parser.add_argument(
+        "--planned-pulse", action="append", default=[],
+        help="label,gpu_uuid,start_epoch_s,cycles,on_s,off_s; use only after marker logs verify schedule",
+    )
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--guard-s", type=float, default=1.0)
     args = parser.parse_args()
 
     markers = [json.loads(path.read_text()) for path in args.marker_json]
+    for spec in args.planned_pulse:
+        label, gpu_uuid, start_text, cycles_text, on_text, off_text = spec.split(",")
+        start = float(start_text)
+        cycles = int(cycles_text)
+        on_s = float(on_text)
+        off_s = float(off_text)
+        active = []
+        inactive = []
+        for cycle in range(cycles):
+            on_start = start + cycle * (on_s + off_s)
+            active.append([on_start, on_start + on_s])
+            inactive.append([on_start + on_s, on_start + on_s + off_s])
+        markers.append({
+            "label": label,
+            "gpu_uuid": gpu_uuid,
+            "actual_start_epoch_s": start,
+            "actual_end_epoch_s": start + cycles * (on_s + off_s),
+            "active_intervals_epoch_s": active,
+            "inactive_intervals_epoch_s": inactive,
+        })
+    if not markers:
+        parser.error("provide --marker-json or --planned-pulse")
     channels = []
     for meta_path in sorted(args.pico_prefix.parent.glob(args.pico_prefix.name + "_u*_meta.json")):
         meta = json.loads(meta_path.read_text())
