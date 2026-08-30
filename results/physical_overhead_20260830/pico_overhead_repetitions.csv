@@ -1,0 +1,6 @@
+repetition,condition_order,sensor,available,cpu_pct_mean,cpu_pct_max,bytes_per_gpu_hour,trace_bytes,units,channels,sample_interval_us,samples_per_channel_mean,overflow_units,clipped_units_channel_a,baseline_gemm_per_s,monitored_gemm_per_s,useful_work_penalty_pct
+1,baseline-first,pico,True,14.27,1714.14,863489080.0,21587227,6,12,100,899316.0,0,0,22.1,22.2,-0.452
+2,logger-first,pico,True,14.27,1714.57,863489000.0,21587225,6,12,100,899316.0,0,0,22.1,22.1,0.0
+3,baseline-first,pico,True,14.29,1714.44,863488880.0,21587222,6,12,100,899316.0,0,0,22.15,22.15,0.0
+4,logger-first,pico,True,14.27,1714.57,863489160.0,21587229,6,12,100,899316.0,0,0,22.1,22.1,0.0
+5,baseline-first,pico,True,14.3,1712.79,863489000.0,21587225,6,12,100,899316.0,0,0,22.15,22.1,0.226
