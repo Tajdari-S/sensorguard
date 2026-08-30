@@ -19,13 +19,27 @@ same 200 W setting were 64.73 TFLOP/s and 804.12 GB/s, giving a ridge point of
 | GPT-2 batch 2, sequence 256 | prefill inference | 113.79 | 18.98 |
 | GPT-2 batch 2, 32-token decode | decode inference | 14.22 | 0.77 |
 
-The paper-ready figure is in `results/figures/rtx3090-application-roofline.pdf`
-with SVG and PNG copies. Its raw 15-row input is under
+The standalone roofline characterization is in
+`results/figures/rtx3090-application-roofline.pdf` with SVG and PNG copies. It
+must not be presented as a detector: training and inference ranges overlap in
+both normalized intensity and normalized throughput. Its raw 15-row input is under
 `results/roofline/applications/validated-bb6b232/`; the six preregistered
 training/inference pair rows are in
 `results/paper/matched_application_roofline_node1_200w.csv`. These are Nsight
 characterization results, not detector or sensor-accuracy results. H200 is not
 part of this collection.
+
+The replacement paper-motivation figure is
+`results/figures/sensor-motivation-evidence.pdf`. It combines four measured
+facts without treating the datasets as paired: roofline-role overlap; the
+NVML-only held-out-family failure (0/23 training runs detected and 10/95
+non-training runs falsely alerted); the separate physical-sensor pilot where
+the GPU-current clamp reaches 1.00 macro F1 at 30 seconds; and the measured
+WAVE overhead range compared with the 0.0% useful-work penalty observed for
+the current NVML/DCGM loggers. The matched held-out-family sensor-fusion test
+and the physical-logger overhead measurement remain pending, so the current
+figure does not yet claim that the physical sensor resolves the exact NVML
+failures at low end-to-end overhead.
 
 ## Negative exposure (R06)
 
