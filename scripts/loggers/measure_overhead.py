@@ -75,6 +75,16 @@ def run_logger(sensor: str, out_dir: Path, duration_s: float, gpus: str):
         trace = out_dir / "dcgm.tsv"
         cmd = [sys.executable, str(HERE / "dcgm_logger.py"), "--output", str(trace),
                "--gpus", "-1" if gpus == "all" else gpus]
+    elif sensor == "pico":
+        trace = out_dir / "pico"
+        cmd = [
+            run_logger.pico_python,
+            str(HERE / "pico_logger.py"),
+            "--parallel",
+            "--duration-s", str(duration_s),
+            "--sample-interval-us", str(run_logger.pico_interval_us),
+            "--output-prefix", str(trace),
+        ]
     else:
         return {"sensor": sensor, "available": False, "reason": "no logger / not attached"}
 
@@ -83,12 +93,29 @@ def run_logger(sensor: str, out_dir: Path, duration_s: float, gpus: str):
     import threading
     t = threading.Thread(target=proc_cpu_sampler, args=(proc.pid, raw_now() + duration_s, cpu))
     t.start()
-    time.sleep(duration_s)
-    proc.terminate()
-    proc.wait(timeout=10)
+    if sensor == "pico":
+        try:
+            proc.wait(timeout=duration_s + 30)
+        except subprocess.TimeoutExpired:
+            proc.terminate()
+            proc.wait(timeout=10)
+            raise RuntimeError("PicoScope logger did not finish within its acquisition budget")
+        if proc.returncode:
+            return {"sensor": sensor, "available": False,
+                    "reason": f"pico logger exited {proc.returncode}"}
+    else:
+        time.sleep(duration_s)
+        proc.terminate()
+        proc.wait(timeout=10)
     t.join()
 
-    size = trace.stat().st_size if trace.exists() else 0
+    if sensor == "pico":
+        artifacts = list(out_dir.glob("pico_u*"))
+        size = sum(path.stat().st_size for path in artifacts)
+        metas = [json.loads(path.read_text()) for path in out_dir.glob("pico_u*_meta.json")]
+    else:
+        size = trace.stat().st_size if trace.exists() else 0
+        metas = []
     res = {
         "sensor": sensor, "available": True,
         "cpu_pct_mean": round(float(np.mean(cpu)), 2) if cpu else None,
@@ -98,6 +125,18 @@ def run_logger(sensor: str, out_dir: Path, duration_s: float, gpus: str):
     }
     if sensor == "nvml":
         res.update(nvml_latency_throughput(trace))
+    elif sensor == "pico":
+        res.update({
+            "units": len(metas),
+            "channels": 2 * len(metas),
+            "sample_interval_us": run_logger.pico_interval_us,
+            "samples_per_channel_mean": round(float(np.mean([m["samples"] for m in metas])), 1)
+                if metas else 0,
+            "overflow_units": sum(bool(m["overflow_flags"]) for m in metas),
+            "clipped_units_channel_a": sum(
+                (m["clipping_fraction_a"] or 0) > 0.01 for m in metas
+            ),
+        })
     return res
 
 
@@ -107,8 +146,13 @@ def main() -> int:
     parser.add_argument("--device", default="cuda:0")
     parser.add_argument("--gpus", default="all")
     parser.add_argument("--duration-s", type=float, default=120)
+    parser.add_argument("--pico-python", default=sys.executable,
+                        help="Python interpreter containing picosdk")
+    parser.add_argument("--pico-sample-interval-us", type=int, default=100)
     parser.add_argument("--output", type=Path, default=Path("results/sensor_overhead.json"))
     args = parser.parse_args()
+    run_logger.pico_python = args.pico_python
+    run_logger.pico_interval_us = args.pico_sample_interval_us
 
     import torch
     dev = torch.device(args.device)
@@ -132,21 +176,33 @@ def main() -> int:
     for sensor in [s.strip() for s in args.sensors.split(",") if s.strip()]:
         # useful-work penalty: throughput while this logger runs
         proc = None
-        if sensor in ("nvml", "dcgm"):
+        if sensor in ("nvml", "dcgm", "pico"):
             entry = run_logger(sensor, args.output.parent / f"overhead_{sensor}", args.duration_s, args.gpus)
             # separate short penalty measurement with logger live
             if sensor == "nvml":
                 p = subprocess.Popen([sys.executable, str(HERE / "nvml_logger.py"),
                                       "--output", "/dev/null", "--gpus", args.gpus],
                                      stderr=subprocess.DEVNULL)
-            else:
+            elif sensor == "dcgm":
                 p = subprocess.Popen([sys.executable, str(HERE / "dcgm_logger.py"),
                                       "--output", "/tmp/_oh_dcgm.tsv",
                                       "--gpus", "-1" if args.gpus == "all" else args.gpus],
                                      stderr=subprocess.DEVNULL)
+            else:
+                pico_penalty = args.output.parent / "overhead_pico_penalty"
+                pico_penalty.mkdir(parents=True, exist_ok=True)
+                p = subprocess.Popen([
+                    args.pico_python, str(HERE / "pico_logger.py"), "--parallel",
+                    "--duration-s", "25", "--sample-interval-us",
+                    str(args.pico_sample_interval_us), "--output-prefix",
+                    str(pico_penalty / "pico"),
+                ], stderr=subprocess.DEVNULL)
             time.sleep(2)
             rate = steady_gemm_throughput(20)
-            p.terminate(); p.wait(timeout=10)
+            if sensor == "pico":
+                p.wait(timeout=15)
+            else:
+                p.terminate(); p.wait(timeout=10)
             entry["useful_work_penalty_pct"] = round(100 * (base_rate - rate) / base_rate, 3)
         else:
             entry = {"sensor": sensor, "available": False, "reason": "physical sensor not attached"}

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """PicoScope 2000-series (legacy ps2000 API) fast-streaming logger.
 
-The verifier's two scopes (2204A/2205A class, USB 0ce9:1007) speak the
+The verifier's connected scopes (2204A/2205A class, USB 0ce9:1007) speak the
 old ps2000 API, not ps2000a. Fast streaming per unit, both channels.
 
 Modes:
@@ -22,6 +22,7 @@ import ctypes
 import json
 import sys
 import time
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 import numpy as np
@@ -117,6 +118,11 @@ def main() -> int:
     parser.add_argument("--duration-s", type=float, default=5)
     parser.add_argument("--sample-interval-us", type=int, default=100, help="100 us = 10 kS/s")
     parser.add_argument("--output-prefix", type=Path, default=Path("data/pico/dryrun"))
+    parser.add_argument(
+        "--parallel",
+        action="store_true",
+        help="stream every opened unit concurrently (required for whole-monitor overhead)",
+    )
     args = parser.parse_args()
 
     units = open_units()
@@ -130,22 +136,35 @@ def main() -> int:
         return 0
 
     args.output_prefix.parent.mkdir(parents=True, exist_ok=True)
-    rc = 0
-    for idx, handle in enumerate(units):
+    def capture(idx_handle):
+        idx, handle = idx_handle
         if args.dry_run:
             # 1 kHz, 1.5 V p-p sine (offset 0): args are offset_uV, pkToPk_uV,
             # wavetype (0=sine), start/stop freq, increment, dwell, sweep, sweeps
             ps.ps2000_set_sig_gen_built_in(
                 handle, 0, 1_500_000, 0, 1000.0, 1000.0, 0.0, 0.0, 0, 0)
-        meta = stream_unit(handle, args.duration_s, args.sample_interval_us,
-                           Path(f"{args.output_prefix}_u{idx}"))
-        p2p = "n/a" if meta["p2p_mv_a"] is None else f"{meta['p2p_mv_a']:.1f}"
-        print(f"unit {idx} ({meta['serial']}): {meta['samples']} samples "
-              f"in {meta['polls']} polls, p2p_A={p2p} mV, "
-              f"clip_A={meta['clipping_fraction_a']}, overflow={meta['overflow_flags']}")
-        if not meta["samples"]:
-            rc = 1
-        ps.ps2000_close_unit(handle)
+        return idx, stream_unit(handle, args.duration_s, args.sample_interval_us,
+                                Path(f"{args.output_prefix}_u{idx}"))
+
+    rc = 0
+    indexed_units = list(enumerate(units))
+    try:
+        if args.parallel and len(indexed_units) > 1:
+            with ThreadPoolExecutor(max_workers=len(indexed_units)) as pool:
+                captures = list(pool.map(capture, indexed_units))
+        else:
+            captures = [capture(item) for item in indexed_units]
+
+        for idx, meta in sorted(captures):
+            p2p = "n/a" if meta["p2p_mv_a"] is None else f"{meta['p2p_mv_a']:.1f}"
+            print(f"unit {idx} ({meta['serial']}): {meta['samples']} samples "
+                  f"in {meta['polls']} polls, p2p_A={p2p} mV, "
+                  f"clip_A={meta['clipping_fraction_a']}, overflow={meta['overflow_flags']}")
+            if not meta["samples"]:
+                rc = 1
+    finally:
+        for handle in units:
+            ps.ps2000_close_unit(handle)
     return rc
 
 
