@@ -1,0 +1,350 @@
+{
+  "experiment": "matched_wave_sensor_overhead",
+  "started_utc": "2026-08-30T03:31:29.995721+00:00",
+  "definition": "whole-process wall time; NVML+DCGM base loggers only",
+  "physical_sensor_overhead": "not measured",
+  "repetitions": 3,
+  "gpu": {
+    "index": 4,
+    "uuid": "GPU-392b25f7-d685-7d9d-ee07-864670a4e2e9",
+    "name": "NVIDIA GeForce RTX 3090",
+    "memory_total_mib": 24576.0,
+    "power_limit_w": 200.0
+  },
+  "wave_commit": "29773cdce6bf06313dc340bce5df86d920e2ed21",
+  "sensorguard_commit": "bb6b2327e28ae01367b6d34de39a07e00ffab562",
+  "configurations": [
+    {
+      "model_id": "gpt2_layer6_embd1024_ffn4096_head16_pos512_max2_batch4_prompt1",
+      "model_family": "gpt2",
+      "direct_seconds": [
+        3.619601356003841,
+        3.4972857399989152,
+        3.5139463109953795
+      ],
+      "monitored_seconds": [
+        3.7956359169984353,
+        3.790632767995703,
+        3.9226079549989663
+      ],
+      "direct_mean_seconds": 3.5436111356660454,
+      "monitored_mean_seconds": 3.836292213331035,
+      "runtime_multiplier": 1.0825940167980588,
+      "overhead_percent": 8.259401679805878,
+      "trace_health": [
+        {
+          "nvml_ok_rows": 5,
+          "dcgm_data_rows": 7
+        },
+        {
+          "nvml_ok_rows": 5,
+          "dcgm_data_rows": 7
+        },
+        {
+          "nvml_ok_rows": 6,
+          "dcgm_data_rows": 7
+        }
+      ],
+      "command": [
+        "/home/felkru/Wave/.venv/bin/python3",
+        "/home/felkru/Wave/eval/lower_bound/inference.py",
+        "--model-type",
+        "gpt2",
+        "--n_layer",
+        "6",
+        "--hidden-dim",
+        "1024",
+        "--ffn-dim",
+        "4096",
+        "--n_head",
+        "16",
+        "--n_positions",
+        "512",
+        "--max_new_tokens",
+        "2",
+        "--batch-size",
+        "4",
+        "--prompt-len",
+        "1"
+      ]
+    },
+    {
+      "model_id": "gpt2_layer8_embd3072_ffn12288_head48_pos1024_max2_batch4_prompt1",
+      "model_family": "gpt2",
+      "direct_seconds": [
+        4.227683725999668,
+        4.464943800994661,
+        4.212893718999112
+      ],
+      "monitored_seconds": [
+        4.494822713000758,
+        4.504588161995343,
+        4.545106186000339
+      ],
+      "direct_mean_seconds": 4.301840415331147,
+      "monitored_mean_seconds": 4.514839020332147,
+      "runtime_multiplier": 1.0495133674047747,
+      "overhead_percent": 4.951336740477482,
+      "trace_health": [
+        {
+          "nvml_ok_rows": 6,
+          "dcgm_data_rows": 8
+        },
+        {
+          "nvml_ok_rows": 6,
+          "dcgm_data_rows": 8
+        },
+        {
+          "nvml_ok_rows": 6,
+          "dcgm_data_rows": 8
+        }
+      ],
+      "command": [
+        "/home/felkru/Wave/.venv/bin/python3",
+        "/home/felkru/Wave/eval/lower_bound/inference.py",
+        "--model-type",
+        "gpt2",
+        "--n_layer",
+        "8",
+        "--hidden-dim",
+        "3072",
+        "--ffn-dim",
+        "12288",
+        "--n_head",
+        "48",
+        "--n_positions",
+        "1024",
+        "--max_new_tokens",
+        "2",
+        "--batch-size",
+        "4",
+        "--prompt-len",
+        "1"
+      ]
+    },
+    {
+      "model_id": "llama_layer6_embd1024_ffn4096_head8_pos512_max2_batch4_prompt1",
+      "model_family": "llama",
+      "direct_seconds": [
+        3.663349342998117,
+        3.8781032929982757,
+        3.636904383005458
+      ],
+      "monitored_seconds": [
+        3.9265924520004774,
+        3.944072286998562,
+        3.9192733029994997
+      ],
+      "direct_mean_seconds": 3.7261190063339504,
+      "monitored_mean_seconds": 3.9299793473328464,
+      "runtime_multiplier": 1.0547111728456224,
+      "overhead_percent": 5.47111728456225,
+      "trace_health": [
+        {
+          "nvml_ok_rows": 6,
+          "dcgm_data_rows": 8
+        },
+        {
+          "nvml_ok_rows": 6,
+          "dcgm_data_rows": 8
+        },
+        {
+          "nvml_ok_rows": 6,
+          "dcgm_data_rows": 7
+        }
+      ],
+      "command": [
+        "/home/felkru/Wave/.venv/bin/python3",
+        "/home/felkru/Wave/eval/lower_bound/inference.py",
+        "--model-type",
+        "llama",
+        "--n_layer",
+        "6",
+        "--hidden-dim",
+        "1024",
+        "--ffn-dim",
+        "4096",
+        "--n_head",
+        "8",
+        "--n_positions",
+        "512",
+        "--max_new_tokens",
+        "2",
+        "--batch-size",
+        "4",
+        "--prompt-len",
+        "1"
+      ]
+    },
+    {
+      "model_id": "llama_layer8_embd4096_ffn16384_head32_pos1024_max2_batch4_prompt1",
+      "model_family": "llama",
+      "direct_seconds": [
+        5.097701327002142,
+        5.18054421099805,
+        5.160707779999939
+      ],
+      "monitored_seconds": [
+        5.124836892995518,
+        5.339486474003934,
+        5.392252115001611
+      ],
+      "direct_mean_seconds": 5.14631777266671,
+      "monitored_mean_seconds": 5.285525160667021,
+      "runtime_multiplier": 1.0270499013371606,
+      "overhead_percent": 2.704990133716065,
+      "trace_health": [
+        {
+          "nvml_ok_rows": 7,
+          "dcgm_data_rows": 9
+        },
+        {
+          "nvml_ok_rows": 7,
+          "dcgm_data_rows": 9
+        },
+        {
+          "nvml_ok_rows": 7,
+          "dcgm_data_rows": 9
+        }
+      ],
+      "command": [
+        "/home/felkru/Wave/.venv/bin/python3",
+        "/home/felkru/Wave/eval/lower_bound/inference.py",
+        "--model-type",
+        "llama",
+        "--n_layer",
+        "8",
+        "--hidden-dim",
+        "4096",
+        "--ffn-dim",
+        "16384",
+        "--n_head",
+        "32",
+        "--n_positions",
+        "1024",
+        "--max_new_tokens",
+        "2",
+        "--batch-size",
+        "4",
+        "--prompt-len",
+        "1"
+      ]
+    },
+    {
+      "model_id": "qwen_layer6_embd1024_ffn4096_head8_pos512_max2_batch4_prompt1",
+      "model_family": "qwen",
+      "direct_seconds": [
+        3.815063674002886,
+        4.010709752001276,
+        3.7931185139968875
+      ],
+      "monitored_seconds": [
+        3.931044748998829,
+        4.138817127997754,
+        4.079128618999675
+      ],
+      "direct_mean_seconds": 3.8729639800003497,
+      "monitored_mean_seconds": 4.04966349866542,
+      "runtime_multiplier": 1.0456238476726174,
+      "overhead_percent": 4.562384767261745,
+      "trace_health": [
+        {
+          "nvml_ok_rows": 6,
+          "dcgm_data_rows": 8
+        },
+        {
+          "nvml_ok_rows": 6,
+          "dcgm_data_rows": 8
+        },
+        {
+          "nvml_ok_rows": 6,
+          "dcgm_data_rows": 8
+        }
+      ],
+      "command": [
+        "/home/felkru/Wave/.venv/bin/python3",
+        "/home/felkru/Wave/eval/lower_bound/inference.py",
+        "--model-type",
+        "qwen",
+        "--n_layer",
+        "6",
+        "--hidden-dim",
+        "1024",
+        "--ffn-dim",
+        "4096",
+        "--n_head",
+        "8",
+        "--n_positions",
+        "512",
+        "--max_new_tokens",
+        "2",
+        "--batch-size",
+        "4",
+        "--prompt-len",
+        "1"
+      ]
+    },
+    {
+      "model_id": "qwen_layer8_embd4096_ffn16384_head32_pos1024_max2_batch4_prompt1",
+      "model_family": "qwen",
+      "direct_seconds": [
+        5.451100680998934,
+        5.573460583000269,
+        5.487484660996415
+      ],
+      "monitored_seconds": [
+        5.78123900200444,
+        5.585389544998179,
+        5.801466925004206
+      ],
+      "direct_mean_seconds": 5.504015308331873,
+      "monitored_mean_seconds": 5.722698490668942,
+      "runtime_multiplier": 1.0397315723315723,
+      "overhead_percent": 3.973157233157237,
+      "trace_health": [
+        {
+          "nvml_ok_rows": 7,
+          "dcgm_data_rows": 9
+        },
+        {
+          "nvml_ok_rows": 7,
+          "dcgm_data_rows": 9
+        },
+        {
+          "nvml_ok_rows": 7,
+          "dcgm_data_rows": 9
+        }
+      ],
+      "command": [
+        "/home/felkru/Wave/.venv/bin/python3",
+        "/home/felkru/Wave/eval/lower_bound/inference.py",
+        "--model-type",
+        "qwen",
+        "--n_layer",
+        "8",
+        "--hidden-dim",
+        "4096",
+        "--ffn-dim",
+        "16384",
+        "--n_head",
+        "32",
+        "--n_positions",
+        "1024",
+        "--max_new_tokens",
+        "2",
+        "--batch-size",
+        "4",
+        "--prompt-len",
+        "1"
+      ]
+    }
+  ],
+  "summary": {
+    "configuration_count": 6,
+    "mean_runtime_multiplier": 1.049870646398301,
+    "minimum_runtime_multiplier": 1.0270499013371606,
+    "maximum_runtime_multiplier": 1.0825940167980588,
+    "mean_overhead_percent": 4.987064639830109
+  },
+  "completed_utc": "2026-08-30T03:35:20.759753+00:00"
+}

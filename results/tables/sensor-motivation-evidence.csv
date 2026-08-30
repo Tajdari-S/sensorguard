@@ -1,5 +1,5 @@
-method,monitoring_role,overhead_mean_pct,overhead_low_pct,overhead_high_pct,application_scope,target_applications,evidence,status
-Prior NVML,continuous hidden-training detection,0.0,0.0,0.0,"162 workloads: 106 training, 40 inference, 16 other",broad published corpus,current held-out-family audit: 0/23 training detected; 10/95 false positives,measured baseline
-WAVE,offline architectural verification,2749.6666666666665,2254.0,3059.0,3 decoder families; 6 overhead configurations,GPT-2; LLaMA; Qwen,verifies decoder architecture; not a training detector,measured RTX 3090 reproduction
-SensorGuard,continuous NVML plus independent physical evidence,0.0,0.0,0.0,3 current training targets; 4 inference and 8 control families,ResNet-50/CIFAR-10; GPT-2/WikiText; BERT; MLP in physical pilot,GPU-current pilot macro-F1 100.0%; matched transfer and physical overhead pending,partial current-paper evidence
-Roofline overlap,"offline characterization, not a detector",,,,prior sweep: 286 non-training configurations,101 configurations inside the training arithmetic-intensity range,application role remains ambiguous in roofline space,motivation evidence
+panel,method,metric,value,low,high,unit,scope
+A,NVML run-grouped,training detection rate,95.65217391304348,79.00884492974114,99.2283333856547,percent,same NVML-only RF; families represented during training
+A,NVML held-out family,training detection rate,0.0,0.0,14.311661845042686,percent,same NVML-only RF; 0/23 training runs detected
+B,WAVE,whole-process runtime multiplier,28.496666666666666,23.54,31.59,x,"same 6 configurations: 2 GPT-2, 2 LLaMA, 2 Qwen; 3 repetitions"
+B,SensorGuard base logger,whole-process runtime multiplier,1.049870646398301,1.0270499013371606,1.0825940167980588,x,"same 6 configurations: 2 GPT-2, 2 LLaMA, 2 Qwen; 3 repetitions; NVML+DCGM"
