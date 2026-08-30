@@ -22,6 +22,8 @@ def main() -> int:
     parser.add_argument("--gpus", default="0")
     parser.add_argument("--pico-python", default="/home/felkru/picoenv/bin/python")
     parser.add_argument("--sample-interval-us", type=int, default=100)
+    parser.add_argument("--aggregate-only", action="store_true",
+                        help="reuse existing repXX/result.json files")
     parser.add_argument(
         "--output-dir", type=Path,
         default=ROOT / "results" / "physical_overhead_20260830",
@@ -34,18 +36,21 @@ def main() -> int:
         rep_dir = args.output_dir / f"rep{rep:02d}"
         order = "baseline-first" if rep % 2 else "logger-first"
         output = rep_dir / "result.json"
-        subprocess.run(
-            [
-                sys.executable, str(MEASURE), "--sensors", "pico",
-                "--device", args.device, "--gpus", args.gpus,
-                "--duration-s", str(args.duration_s),
-                "--pico-python", args.pico_python,
-                "--pico-sample-interval-us", str(args.sample_interval_us),
-                "--penalty-order", order, "--output", str(output),
-            ],
-            cwd=ROOT,
-            check=True,
-        )
+        if not args.aggregate_only:
+            subprocess.run(
+                [
+                    sys.executable, str(MEASURE), "--sensors", "pico",
+                    "--device", args.device, "--gpus", args.gpus,
+                    "--duration-s", str(args.duration_s),
+                    "--pico-python", args.pico_python,
+                    "--pico-sample-interval-us", str(args.sample_interval_us),
+                    "--penalty-order", order, "--output", str(output),
+                ],
+                cwd=ROOT,
+                check=True,
+            )
+        elif not output.exists():
+            raise FileNotFoundError(f"missing completed repetition: {output}")
         payload = json.loads(output.read_text())
         result = payload["sensors"][0]
         if not result.get("available"):
@@ -85,7 +90,7 @@ def main() -> int:
         "max_useful_work_penalty_pct": max(penalties),
         "all_units_present": all(int(row["units"]) == 6 for row in rows),
         "any_overflow": any(int(row["overflow_units"]) for row in rows),
-        "source_csv": str(csv_path.relative_to(ROOT)),
+        "source_csv": str(csv_path.resolve().relative_to(ROOT)),
     }
     summary_path = args.output_dir / "pico_overhead_summary.json"
     summary_path.write_text(json.dumps(summary, indent=2) + "\n")
