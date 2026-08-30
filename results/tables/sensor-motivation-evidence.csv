@@ -1,17 +1,5 @@
-panel,scope,metric,method,value,value_low,value_high,unit,false_positives,negative_runs
-roofline_role_overlap,RTX 3090 application characterization; median of 3 repetitions,throughput,Training,0.1350981011656073,0.08752607100050398,0.1826701313307106,fraction_of_measured_ridge_or_peak,,
-roofline_role_overlap,RTX 3090 application characterization; median of 3 repetitions,throughput,Inference,0.2777394843047242,0.011849868673768403,0.2932107945922041,fraction_of_measured_ridge_or_peak,,
-roofline_role_overlap,RTX 3090 application characterization; median of 3 repetitions,ai,Training,0.24663259065471793,0.18146891633361664,0.3117962649758192,fraction_of_measured_ridge_or_peak,,
-roofline_role_overlap,RTX 3090 application characterization; median of 3 repetitions,ai,Inference,0.5535531992199398,0.17661049163294634,1.41352615327736,fraction_of_measured_ridge_or_peak,,
-nvml_generalization,NVML-only two-stage random forest; run-level 3-of-5 rule,training_tpr,Run grouped,95.65217391304348,79.00884492974114,99.2283333856547,percent,0,95
-nvml_generalization,NVML-only two-stage random forest; run-level 3-of-5 rule,training_tpr,Held-out RTX 3090,95.65217391304348,79.00884492974114,99.2283333856547,percent,0,95
-nvml_generalization,NVML-only two-stage random forest; run-level 3-of-5 rule,training_tpr,Held-out family,0.0,0.0,14.311661845042686,percent,10,95
-physical_sensor_screening,Separate 36-run base campaign; 30 s windows; grouped by run,macro_f1,UltraMic,50.850595204253736,,,percent,,
-physical_sensor_screening,Separate 36-run base campaign; 30 s windows; grouped by run,macro_f1,Motherboard clamp,71.12895041336387,,,percent,,
-physical_sensor_screening,Separate 36-run base campaign; 30 s windows; grouped by run,macro_f1,GPU current clamp,100.0,,,percent,,
-physical_sensor_screening,Separate 36-run base campaign; 30 s windows; grouped by run,macro_f1,Electrical clamps,100.0,,,percent,,
-physical_sensor_screening,Separate 36-run base campaign; 30 s windows; grouped by run,macro_f1,Electrical + acoustic,100.0,,,percent,,
-monitor_overhead,RTX 3090 measurements; our logger result is a 90 s GEMM check,useful_work_penalty,Our NVML logger,0.0,0.0,0.0,percent,,
-monitor_overhead,RTX 3090 measurements; our logger result is a 90 s GEMM check,useful_work_penalty,Our DCGM logger,0.0,0.0,0.0,percent,,
-monitor_overhead,RTX 3090 measurements; our logger result is a 90 s GEMM check,useful_work_penalty,WAVE: 1 NCU metric,161.5,131.0,186.0,percent,,
-monitor_overhead,RTX 3090 measurements; our logger result is a 90 s GEMM check,useful_work_penalty,WAVE: full metric set,2749.6666666666665,2254.0,3059.0,percent,,
+method,monitoring_role,overhead_mean_pct,overhead_low_pct,overhead_high_pct,application_scope,target_applications,evidence,status
+Prior NVML,continuous hidden-training detection,0.0,0.0,0.0,"162 workloads: 106 training, 40 inference, 16 other",broad published corpus,current held-out-family audit: 0/23 training detected; 10/95 false positives,measured baseline
+WAVE,offline architectural verification,2749.6666666666665,2254.0,3059.0,3 decoder families; 6 overhead configurations,GPT-2; LLaMA; Qwen,verifies decoder architecture; not a training detector,measured RTX 3090 reproduction
+SensorGuard,continuous NVML plus independent physical evidence,0.0,0.0,0.0,3 current training targets; 4 inference and 8 control families,ResNet-50/CIFAR-10; GPT-2/WikiText; BERT; MLP in physical pilot,GPU-current pilot macro-F1 100.0%; matched transfer and physical overhead pending,partial current-paper evidence
+Roofline overlap,"offline characterization, not a detector",,,,prior sweep: 286 non-training configurations,101 configurations inside the training arithmetic-intensity range,application role remains ambiguous in roofline space,motivation evidence

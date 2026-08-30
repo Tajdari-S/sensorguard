@@ -30,16 +30,17 @@ characterization results, not detector or sensor-accuracy results. H200 is not
 part of this collection.
 
 The replacement paper-motivation figure is
-`results/figures/sensor-motivation-evidence.pdf`. It combines four measured
-facts without treating the datasets as paired: roofline-role overlap; the
-NVML-only held-out-family failure (0/23 training runs detected and 10/95
-non-training runs falsely alerted); the separate physical-sensor pilot where
-the GPU-current clamp reaches 1.00 macro F1 at 30 seconds; and the measured
-WAVE overhead range compared with the 0.0% useful-work penalty observed for
-the current NVML/DCGM loggers. The matched held-out-family sensor-fusion test
-and the physical-logger overhead measurement remain pending, so the current
-figure does not yet claim that the physical sensor resolves the exact NVML
-failures at low end-to-end overhead.
+`results/figures/sensor-motivation-evidence.pdf`. It is one aligned comparison
+of method, measured application scope, and monitoring overhead. Prior NVML is
+broad but fails the current unseen-family audit; WAVE covers three decoder
+families at 2,254--3,059% overhead and performs a different architectural
+verification task; SensorGuard currently targets ResNet-50, GPT-2, and BERT,
+with MLP present only in the physical pilot. The figure labels the four
+inference and eight non-ML control families separately and does not count the
+pending fused-update run as completed coverage. It also retains the prior
+roofline-overlap result as motivation rather than presenting roofline position
+as a detector. The matched held-out-family sensor-fusion test and physical
+logger overhead measurement remain pending.
 
 ## Negative exposure (R06)
 

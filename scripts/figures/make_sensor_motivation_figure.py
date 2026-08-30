@@ -1,23 +1,13 @@
 #!/usr/bin/env python3
-"""Build the paper motivation figure from committed measured evidence.
-
-The four panels intentionally retain their evaluation scopes.  In particular,
-the physical-sensor pilot is not presented as a paired replacement for the
-NVML held-out-family audit; that matched transfer test is still pending.
-"""
+"""Build one motivation figure comparing prior monitoring with SensorGuard."""
 
 from __future__ import annotations
 
 import csv
 import json
-import math
-from collections import defaultdict
 from pathlib import Path
-from statistics import median
 
 import matplotlib.pyplot as plt
-import numpy as np
-from matplotlib.lines import Line2D
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -25,12 +15,11 @@ RESULTS = ROOT / "results"
 FIGURES = RESULTS / "figures"
 TABLES = RESULTS / "tables"
 
-TRAINING = "#C73E1D"
-INFERENCE = "#2E6F9E"
-SENSOR = "#237A57"
-NEUTRAL = "#555555"
-LIGHT = "#B8B8B8"
+NVML = "#4D4D4D"
 WAVE = "#7B4EA3"
+OURS = "#237A57"
+MUTED = "#666666"
+GRID = "#E2E2E2"
 
 
 def read_csv(path: Path) -> list[dict[str, str]]:
@@ -38,309 +27,252 @@ def read_csv(path: Path) -> list[dict[str, str]]:
         return list(csv.DictReader(handle))
 
 
+def collect_evidence() -> list[dict[str, object]]:
+    generalization = {
+        row["protocol"]: row
+        for row in read_csv(RESULTS / "tables" / "generalization-audit.csv")
+    }
+    family = generalization["Held-out family"]
+
+    wave = {
+        row["metric_set"]: row
+        for row in read_csv(RESULTS / "tables" / "wave-overhead-summary.csv")
+    }["WAVE metric set"]
+
+    logger = json.loads((RESULTS / "sensor_overhead_verifier.json").read_text())
+    penalties = {
+        row["sensor"]: float(row["useful_work_penalty_pct"])
+        for row in logger["sensors"]
+    }
+    if penalties != {"nvml": 0.0, "dcgm": 0.0}:
+        raise ValueError("the motivation figure expects the committed 0.0% logger check")
+
+    physical = {
+        row["modality"]: row
+        for row in read_csv(RESULTS / "tables" / "physical-sensor-ablation.csv")
+        if int(row["window_sec"]) == 30
+    }
+    gpu_current_f1 = 100.0 * float(physical["GPU current clamp"]["f1_macro"])
+
+    labels = read_csv(RESULTS / "e2_labels_combined.csv")
+    current_scope = {
+        label: sorted({row["family"] for row in labels if row["label"] == label})
+        for label in ("training", "inference", "non_ml")
+    }
+    if current_scope["training"] != ["train_bert", "train_gpt2_wikitext", "train_resnet_cifar10"]:
+        raise ValueError("unexpected current training-target scope")
+
+    return [
+        {
+            "method": "Prior NVML",
+            "monitoring_role": "continuous hidden-training detection",
+            "overhead_mean_pct": 0.0,
+            "overhead_low_pct": 0.0,
+            "overhead_high_pct": 0.0,
+            "application_scope": "162 workloads: 106 training, 40 inference, 16 other",
+            "target_applications": "broad published corpus",
+            "evidence": (
+                f"current held-out-family audit: {family['tp']}/{int(family['tp']) + int(family['fn'])} "
+                f"training detected; {family['fp']}/{int(family['fp']) + int(family['tn'])} false positives"
+            ),
+            "status": "measured baseline",
+        },
+        {
+            "method": "WAVE",
+            "monitoring_role": "offline architectural verification",
+            "overhead_mean_pct": float(wave["mean_overhead_pct"]),
+            "overhead_low_pct": float(wave["minimum_overhead_pct"]),
+            "overhead_high_pct": float(wave["maximum_overhead_pct"]),
+            "application_scope": "3 decoder families; 6 overhead configurations",
+            "target_applications": "GPT-2; LLaMA; Qwen",
+            "evidence": "verifies decoder architecture; not a training detector",
+            "status": "measured RTX 3090 reproduction",
+        },
+        {
+            "method": "SensorGuard",
+            "monitoring_role": "continuous NVML plus independent physical evidence",
+            "overhead_mean_pct": 0.0,
+            "overhead_low_pct": 0.0,
+            "overhead_high_pct": 0.0,
+            "application_scope": (
+                f"{len(current_scope['training'])} current training targets; "
+                f"{len(current_scope['inference'])} inference and {len(current_scope['non_ml'])} control families"
+            ),
+            "target_applications": "ResNet-50/CIFAR-10; GPT-2/WikiText; BERT; MLP in physical pilot",
+            "evidence": f"GPU-current pilot macro-F1 {gpu_current_f1:.1f}%; matched transfer and physical overhead pending",
+            "status": "partial current-paper evidence",
+        },
+        {
+            "method": "Roofline overlap",
+            "monitoring_role": "offline characterization, not a detector",
+            "overhead_mean_pct": "",
+            "overhead_low_pct": "",
+            "overhead_high_pct": "",
+            "application_scope": "prior sweep: 286 non-training configurations",
+            "target_applications": "101 configurations inside the training arithmetic-intensity range",
+            "evidence": "application role remains ambiguous in roofline space",
+            "status": "motivation evidence",
+        },
+    ]
+
+
+def write_evidence(rows: list[dict[str, object]]) -> None:
+    TABLES.mkdir(parents=True, exist_ok=True)
+    path = TABLES / "sensor-motivation-evidence.csv"
+    columns = [
+        "method",
+        "monitoring_role",
+        "overhead_mean_pct",
+        "overhead_low_pct",
+        "overhead_high_pct",
+        "application_scope",
+        "target_applications",
+        "evidence",
+        "status",
+    ]
+    with path.open("w", newline="") as handle:
+        writer = csv.DictWriter(handle, fieldnames=columns, lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+
+
 def configure() -> None:
     plt.rcParams.update(
         {
             "font.family": "DejaVu Sans",
-            "font.size": 8.2,
-            "axes.titlesize": 9.4,
-            "axes.labelsize": 8.4,
-            "xtick.labelsize": 7.5,
-            "ytick.labelsize": 7.5,
-            "legend.fontsize": 7.4,
+            "font.size": 8.4,
+            "axes.titlesize": 10.2,
+            "axes.labelsize": 8.8,
+            "xtick.labelsize": 7.8,
+            "ytick.labelsize": 8.6,
             "pdf.fonttype": 42,
             "ps.fonttype": 42,
             "axes.spines.top": False,
             "axes.spines.right": False,
+            "axes.spines.left": False,
         }
     )
 
 
-def roofline_panel(ax: plt.Axes, evidence: list[dict[str, object]]) -> None:
-    path = (
-        RESULTS
-        / "roofline"
-        / "applications"
-        / "validated-bb6b232"
-        / "rtx3090_application"
-        / "application-roofline-points.csv"
+def make_figure(rows: list[dict[str, object]]) -> None:
+    by_method = {row["method"]: row for row in rows}
+    wave = by_method["WAVE"]
+
+    fig = plt.figure(figsize=(7.15, 3.85))
+    grid = fig.add_gridspec(1, 2, width_ratios=[1.7, 1.0], wspace=0.08)
+    scope_ax = fig.add_subplot(grid[0, 0])
+    overhead_ax = fig.add_subplot(grid[0, 1], sharey=scope_ax)
+
+    for axis in (scope_ax, overhead_ax):
+        axis.set_ylim(0.45, 3.55)
+    scope_ax.set_xlim(0, 1)
+    scope_ax.axis("off")
+    for y in (1.5, 2.5):
+        scope_ax.axhline(y, color=GRID, linewidth=0.7, xmin=0.0, xmax=0.98)
+
+    method_rows = [
+        (3, "Prior NVML", NVML,
+         "162 workloads (106 training / 40 inference / 16 other)",
+         "Unseen family: 0/23 detected; 10/95 false positives"),
+        (2, "WAVE", WAVE,
+         "3 decoder families: GPT-2, LLaMA, Qwen",
+         "Architecture verification only; not training detection"),
+        (1, "SensorGuard", OURS,
+         "Targets: ResNet-50, GPT-2, BERT (+ MLP in the physical pilot)",
+         "Controls: 4 inference + 8 non-ML; fused update pending"),
+    ]
+    for y, method, color, scope, limitation in method_rows:
+        scope_ax.text(0.01, y + 0.20, method, color=color, fontsize=9.5,
+                      fontweight="bold", ha="left", va="center")
+        scope_ax.text(0.26, y + 0.20, scope, color=color, fontsize=7.8,
+                      ha="left", va="center")
+        scope_ax.text(0.26, y - 0.20, limitation, color=MUTED, fontsize=7.3,
+                      ha="left", va="center")
+
+    scope_ax.text(0.01, 3.48, "Method and measured application scope", color=NVML,
+                  fontsize=8.4, ha="left", va="bottom")
+
+    overhead_ax.set_xscale("symlog", linthresh=1.0, linscale=0.72)
+    overhead_ax.set_xlim(-0.25, 4300)
+    overhead_ax.set_xticks([0, 1, 10, 100, 1000], ["0", "1", "10", "100", "1000"])
+    overhead_ax.set_yticks([])
+    overhead_ax.set_xlabel("Workload penalty (%) - symlog")
+    overhead_ax.grid(axis="x", color=GRID, linewidth=0.65)
+    overhead_ax.axvspan(-0.2, 1.0, color=OURS, alpha=0.06, linewidth=0)
+    overhead_ax.axvline(1.0, color="#999999", linestyle=(0, (3, 3)), linewidth=0.9)
+    overhead_ax.text(0.02, 3.48, "Measured monitoring overhead", transform=overhead_ax.get_yaxis_transform(),
+                     color=NVML, fontsize=8.4, ha="left", va="bottom")
+    overhead_ax.text(0.95, 3.33, "continuous budget <=1%", color=MUTED,
+                     fontsize=6.8, ha="right", va="center")
+
+    overhead_ax.scatter(0, 3, s=62, color=NVML, marker="o", edgecolor="white",
+                        linewidth=0.8, zorder=3)
+    overhead_ax.scatter(0, 1, s=70, color=OURS, marker="D", edgecolor="white",
+                        linewidth=0.8, zorder=3)
+    overhead_ax.plot(
+        [float(wave["overhead_low_pct"]), float(wave["overhead_high_pct"])],
+        [2, 2],
+        color=WAVE,
+        linewidth=3.0,
+        solid_capstyle="round",
+        zorder=2,
     )
-    rows = read_csv(path)
-    grouped: dict[str, list[dict[str, str]]] = defaultdict(list)
-    for row in rows:
-        grouped[row["case_id"]].append(row)
-    if len(rows) != 15 or len(grouped) != 5 or any(len(value) != 3 for value in grouped.values()):
-        raise ValueError("roofline panel requires five cases with three repetitions each")
+    overhead_ax.scatter(float(wave["overhead_mean_pct"]), 2, s=70, color=WAVE,
+                        marker="s", edgecolor="white", linewidth=0.8, zorder=3)
 
-    cases = []
-    for case_id, repetitions in grouped.items():
-        cases.append(
-            {
-                "case_id": case_id,
-                "role": "Training" if "train" in case_id else "Inference",
-                "ai": median(float(row["normalized_arithmetic_intensity"]) for row in repetitions),
-                "throughput": median(float(row["normalized_wall_throughput"]) for row in repetitions),
-            }
-        )
-
-    metrics = [("Normalized throughput", "throughput", 0.0), ("Normalized intensity", "ai", 1.0)]
-    role_style = {
-        "Training": {"color": TRAINING, "marker": "^", "offset": 0.085},
-        "Inference": {"color": INFERENCE, "marker": "o", "offset": -0.085},
-    }
-    for metric_label, key, y_base in metrics:
-        for role, style in role_style.items():
-            values = [float(case[key]) for case in cases if case["role"] == role]
-            y = y_base + float(style["offset"])
-            ax.plot([min(values), max(values)], [y, y], color=style["color"], linewidth=2.1, zorder=1)
-            ax.scatter(
-                values,
-                [y] * len(values),
-                color=style["color"],
-                marker=style["marker"],
-                s=34,
-                edgecolor="white",
-                linewidth=0.6,
-                zorder=2,
-            )
-            evidence.append(
-                {
-                    "panel": "roofline_role_overlap",
-                    "scope": "RTX 3090 application characterization; median of 3 repetitions",
-                    "metric": key,
-                    "method": role,
-                    "value": median(values),
-                    "value_low": min(values),
-                    "value_high": max(values),
-                    "unit": "fraction_of_measured_ridge_or_peak",
-                }
-            )
-        ax.text(
-            0.012,
-            y_base + 0.25,
-            "training range is inside inference range",
-            color=NEUTRAL,
-            fontsize=7.0,
-            ha="left",
-            va="center",
-        )
-
-    ax.set_xscale("log")
-    ax.set_xlim(0.008, 1.9)
-    ax.set_ylim(-0.42, 1.42)
-    ax.set_yticks([0, 1], ["Throughput / peak", "Intensity / ridge"])
-    ax.set_xlabel("Normalized roofline coordinate")
-    ax.set_title("(a) Roofline position is not a role label", loc="left")
-    ax.grid(axis="x", which="both", color="#E5E5E5", linewidth=0.6)
-    ax.legend(
-        handles=[
-            Line2D([0], [0], marker="^", linestyle="none", markerfacecolor=TRAINING,
-                   markeredgecolor="white", markersize=6, label="Training"),
-            Line2D([0], [0], marker="o", linestyle="none", markerfacecolor=INFERENCE,
-                   markeredgecolor="white", markersize=6, label="Inference"),
-        ],
-        frameon=False,
-        ncol=2,
-        loc="center right",
-        handletextpad=0.3,
-        columnspacing=0.8,
+    overhead_ax.text(0.28, 3, "0.0% in our logger check", color=NVML, fontsize=7.3,
+                     ha="left", va="center")
+    overhead_ax.text(0.28, 1.10, "0.0% base logger*", color=OURS, fontsize=7.5,
+                     ha="left", va="center")
+    overhead_ax.text(0.28, 0.84, "*physical logger pending", color=MUTED, fontsize=6.7,
+                     ha="left", va="center")
+    overhead_ax.text(
+        650,
+        2.20,
+        f"{float(wave['overhead_mean_pct']):,.0f}% mean",
+        color=WAVE,
+        fontsize=7.4,
+        ha="left",
+        va="center",
+    )
+    overhead_ax.text(
+        650,
+        1.82,
+        f"range {float(wave['overhead_low_pct']):,.0f}-{float(wave['overhead_high_pct']):,.0f}%",
+        color=MUTED,
+        fontsize=6.8,
+        ha="left",
+        va="center",
     )
 
+    fig.suptitle("Motivation: broad hidden-training detection needs independent low-cost evidence",
+                 fontsize=10.7, y=0.985)
+    fig.text(
+        0.5, 0.045,
+        "Roofline ambiguity: 101/286 non-training configurations fell inside the training arithmetic-intensity range - characterization is not detection.",
+        ha="center", va="bottom", fontsize=7.1, color=MUTED,
+    )
+    fig.text(
+        0.5, 0.015,
+        "SensorGuard's end-to-end physical-logger overhead and matched held-out-family result remain pending.",
+        ha="center", va="bottom", fontsize=6.8, color=MUTED,
+    )
+    fig.subplots_adjust(left=0.025, right=0.99, top=0.88, bottom=0.20)
 
-def nvml_panel(ax: plt.Axes, evidence: list[dict[str, object]]) -> None:
-    rows = read_csv(RESULTS / "tables" / "generalization-audit.csv")
-    selected_names = ["Run grouped", "Held-out RTX 3090", "Held-out family"]
-    selected = {row["protocol"]: row for row in rows if row["protocol"] in selected_names}
-    if set(selected) != set(selected_names):
-        raise ValueError("NVML panel is missing a required generalization audit")
-
-    x = np.arange(3)
-    values = np.array([100.0 * float(selected[name]["training_tpr"]) for name in selected_names])
-    lower = np.array([100.0 * float(selected[name]["tpr_ci_95_low"]) for name in selected_names])
-    upper = np.array([100.0 * float(selected[name]["tpr_ci_95_high"]) for name in selected_names])
-    colors = [NEUTRAL, INFERENCE, TRAINING]
-    for index, (value, color) in enumerate(zip(values, colors)):
-        ax.errorbar(
-            index,
-            value,
-            yerr=[[value - lower[index]], [upper[index] - value]],
-            fmt="none",
-            ecolor=color,
-            elinewidth=1.2,
-            capsize=3,
-            zorder=1,
-        )
-        ax.scatter(index, value, s=44, color=color, edgecolor="white", linewidth=0.7, zorder=2)
-        row = selected[selected_names[index]]
-        total_training = int(row["tp"]) + int(row["fn"])
-        total_negative = int(row["fp"]) + int(row["tn"])
-        detected_y = 16 if value < 20 else value - 8
-        ax.text(index, detected_y, f"{int(row['tp'])}/{total_training} detected",
-                ha="center", va="bottom" if value < 20 else "top", fontsize=7.2, color=NEUTRAL)
-        ax.text(index, 4, f"FP {int(row['fp'])}/{total_negative}", ha="center", va="bottom",
-                fontsize=6.9, color=NEUTRAL)
-        evidence.append(
-            {
-                "panel": "nvml_generalization",
-                "scope": "NVML-only two-stage random forest; run-level 3-of-5 rule",
-                "metric": "training_tpr",
-                "method": selected_names[index],
-                "value": value,
-                "value_low": lower[index],
-                "value_high": upper[index],
-                "unit": "percent",
-                "false_positives": int(row["fp"]),
-                "negative_runs": total_negative,
-            }
-        )
-
-    ax.set_ylim(-2, 108)
-    ax.set_xticks(x, ["Run\ngrouped", "Held-out\nGPU", "Held-out\nfamily"])
-    ax.set_ylabel("Training detection rate (%)")
-    ax.set_title("(b) NVML fails on unseen families", loc="left")
-    ax.grid(axis="y", color="#E5E5E5", linewidth=0.6)
-
-
-def sensor_panel(ax: plt.Axes, evidence: list[dict[str, object]]) -> None:
-    rows = [
-        row
-        for row in read_csv(RESULTS / "tables" / "physical-sensor-ablation.csv")
-        if int(row["window_sec"]) == 30
-    ]
-    order = [
-        "UltraMic",
-        "Motherboard clamp",
-        "GPU current clamp",
-        "Electrical clamps",
-        "Electrical + acoustic",
-    ]
-    selected = {row["modality"]: row for row in rows}
-    if set(order) - set(selected):
-        raise ValueError("physical-sensor panel is missing a required modality")
-    labels = ["UltraMic", "Motherboard", "GPU current", "Both clamps", "All physical"]
-    values = [100.0 * float(selected[name]["f1_macro"]) for name in order]
-    colors = [LIGHT, LIGHT, SENSOR, SENSOR, SENSOR]
-    y = np.arange(len(order))
-    ax.barh(y, values, color=colors, height=0.62)
-    for index, value in enumerate(values):
-        ax.text(value - 1.4 if value > 70 else value + 1.2, index, f"{value:.1f}",
-                ha="right" if value > 70 else "left", va="center",
-                color="white" if value > 70 else NEUTRAL, fontsize=7.2)
-        evidence.append(
-            {
-                "panel": "physical_sensor_screening",
-                "scope": "Separate 36-run base campaign; 30 s windows; grouped by run",
-                "metric": "macro_f1",
-                "method": order[index],
-                "value": value,
-                "unit": "percent",
-            }
-        )
-    ax.set_xlim(0, 104)
-    ax.set_yticks(y, labels)
-    ax.set_xlabel("Window macro-F1 (%)")
-    ax.set_title("(c) GPU current is the retained sensor", loc="left")
-    ax.grid(axis="x", color="#E5E5E5", linewidth=0.6)
-
-
-def overhead_panel(ax: plt.Axes, evidence: list[dict[str, object]]) -> None:
-    sensor_result = json.loads((RESULTS / "sensor_overhead_verifier.json").read_text())
-    sensor_values = {row["sensor"]: float(row["useful_work_penalty_pct"]) for row in sensor_result["sensors"]}
-    wave_rows = {row["metric_set"]: row for row in read_csv(RESULTS / "tables" / "wave-overhead-summary.csv")}
-    items = [
-        ("Our NVML logger", sensor_values["nvml"], 0.0, 0.0, SENSOR),
-        ("Our DCGM logger", sensor_values["dcgm"], 0.0, 0.0, SENSOR),
-        (
-            "WAVE: 1 NCU metric",
-            float(wave_rows["One NCU metric"]["mean_overhead_pct"]),
-            float(wave_rows["One NCU metric"]["minimum_overhead_pct"]),
-            float(wave_rows["One NCU metric"]["maximum_overhead_pct"]),
-            WAVE,
-        ),
-        (
-            "WAVE: full metric set",
-            float(wave_rows["WAVE metric set"]["mean_overhead_pct"]),
-            float(wave_rows["WAVE metric set"]["minimum_overhead_pct"]),
-            float(wave_rows["WAVE metric set"]["maximum_overhead_pct"]),
-            WAVE,
-        ),
-    ]
-    y = np.arange(len(items))
-    for index, (label, value, low, high, color) in enumerate(items):
-        if high > low:
-            ax.plot([low, high], [index, index], color=color, linewidth=2.0, zorder=1)
-        ax.scatter(value, index, s=42, color=color, edgecolor="white", linewidth=0.7, zorder=2)
-        label_x = value + (0.35 if value == 0 else value * 0.10)
-        ax.text(label_x, index, f"{value:.1f}%", ha="left", va="center", fontsize=7.2, color=NEUTRAL)
-        evidence.append(
-            {
-                "panel": "monitor_overhead",
-                "scope": "RTX 3090 measurements; our logger result is a 90 s GEMM check",
-                "metric": "useful_work_penalty",
-                "method": label,
-                "value": value,
-                "value_low": low,
-                "value_high": high,
-                "unit": "percent",
-            }
-        )
-    ax.set_xscale("symlog", linthresh=1.0, linscale=0.8)
-    ax.set_xlim(-0.2, 4300)
-    ax.set_xticks([0, 1, 10, 100, 1000], ["0", "1", "10", "100", "1000"])
-    ax.set_yticks(y, [item[0] for item in items])
-    ax.invert_yaxis()
-    ax.set_xlabel("Measured useful-work penalty (%) - symlog")
-    ax.set_title("(d) Low-rate logging avoids NCU overhead", loc="left")
-    ax.grid(axis="x", color="#E5E5E5", linewidth=0.6)
-
-
-def write_evidence_csv(rows: list[dict[str, object]]) -> None:
-    TABLES.mkdir(parents=True, exist_ok=True)
-    columns = [
-        "panel",
-        "scope",
-        "metric",
-        "method",
-        "value",
-        "value_low",
-        "value_high",
-        "unit",
-        "false_positives",
-        "negative_runs",
-    ]
-    with (TABLES / "sensor-motivation-evidence.csv").open("w", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=columns, extrasaction="ignore")
-        writer.writeheader()
-        for row in rows:
-            writer.writerow(row)
+    FIGURES.mkdir(parents=True, exist_ok=True)
+    for suffix in ("pdf", "svg", "png"):
+        path = FIGURES / f"sensor-motivation-evidence.{suffix}"
+        fig.savefig(path, bbox_inches="tight", pad_inches=0.05,
+                    dpi=280 if suffix == "png" else None)
+        print(f"Wrote {path}")
+    plt.close(fig)
 
 
 def main() -> int:
     configure()
-    evidence: list[dict[str, object]] = []
-    fig, axes = plt.subplots(2, 2, figsize=(7.15, 5.25))
-    roofline_panel(axes[0, 0], evidence)
-    nvml_panel(axes[0, 1], evidence)
-    sensor_panel(axes[1, 0], evidence)
-    overhead_panel(axes[1, 1], evidence)
-    fig.suptitle("Why SensorGuard adds external sensing to NVML", fontsize=11.2, y=0.995)
-    fig.text(
-        0.5,
-        0.006,
-        "Measured RTX 3090 evidence. Physical-sensor screening is a separate pilot; matched held-out-family fusion remains pending.",
-        ha="center",
-        va="bottom",
-        fontsize=7.0,
-        color=NEUTRAL,
-    )
-    fig.tight_layout(rect=(0, 0.035, 1, 0.975), h_pad=1.8, w_pad=1.5)
-    FIGURES.mkdir(parents=True, exist_ok=True)
-    for suffix in ("pdf", "svg", "png"):
-        output = FIGURES / f"sensor-motivation-evidence.{suffix}"
-        fig.savefig(output, bbox_inches="tight", pad_inches=0.05, dpi=260 if suffix == "png" else None)
-        print(f"Wrote {output}")
-    plt.close(fig)
-    write_evidence_csv(evidence)
+    rows = collect_evidence()
+    write_evidence(rows)
+    make_figure(rows)
     print(f"Wrote {TABLES / 'sensor-motivation-evidence.csv'}")
     return 0
 
