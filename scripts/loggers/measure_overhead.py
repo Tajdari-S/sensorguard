@@ -140,6 +140,41 @@ def run_logger(sensor: str, out_dir: Path, duration_s: float, gpus: str):
     return res
 
 
+def start_penalty_logger(sensor: str, output_dir: Path, gpus: str,
+                         pico_python: str, pico_interval_us: int):
+    """Start the logger used during the paired useful-work interval."""
+    if sensor == "nvml":
+        return subprocess.Popen(
+            [sys.executable, str(HERE / "nvml_logger.py"),
+             "--output", "/dev/null", "--gpus", gpus],
+            stderr=subprocess.DEVNULL,
+        )
+    if sensor == "dcgm":
+        return subprocess.Popen(
+            [sys.executable, str(HERE / "dcgm_logger.py"),
+             "--output", "/tmp/_oh_dcgm.tsv", "--gpus",
+             "-1" if gpus == "all" else gpus],
+            stderr=subprocess.DEVNULL,
+        )
+    if sensor == "pico":
+        output_dir.mkdir(parents=True, exist_ok=True)
+        return subprocess.Popen(
+            [pico_python, str(HERE / "pico_logger.py"), "--parallel",
+             "--duration-s", "25", "--sample-interval-us", str(pico_interval_us),
+             "--output-prefix", str(output_dir / "pico")],
+            stderr=subprocess.DEVNULL,
+        )
+    raise ValueError(f"unsupported sensor: {sensor}")
+
+
+def stop_penalty_logger(proc: subprocess.Popen, sensor: str) -> None:
+    if sensor == "pico":
+        proc.wait(timeout=15)
+    else:
+        proc.terminate()
+        proc.wait(timeout=10)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--sensors", default="nvml,dcgm")
@@ -149,6 +184,9 @@ def main() -> int:
     parser.add_argument("--pico-python", default=sys.executable,
                         help="Python interpreter containing picosdk")
     parser.add_argument("--pico-sample-interval-us", type=int, default=100)
+    parser.add_argument("--penalty-order", choices=["baseline-first", "logger-first"],
+                        default="baseline-first",
+                        help="order of the paired 20 s useful-work measurements")
     parser.add_argument("--output", type=Path, default=Path("results/sensor_overhead.json"))
     args = parser.parse_args()
     run_logger.pico_python = args.pico_python
@@ -168,45 +206,43 @@ def main() -> int:
             n += 1
         return n / seconds
 
-    # Baseline useful-work rate with no logger running.
-    base_rate = steady_gemm_throughput(20)
+    # Warm the GPU before the paired measurement. The repetition driver
+    # alternates condition order to control remaining thermal/time drift.
+    steady_gemm_throughput(10)
 
     results = {"config": {"duration_s": args.duration_s, "device": args.device, "gpus": args.gpus},
-               "baseline_gemm_per_s": round(base_rate, 3), "sensors": []}
+               "penalty_order": args.penalty_order, "sensors": []}
     for sensor in [s.strip() for s in args.sensors.split(",") if s.strip()]:
-        # useful-work penalty: throughput while this logger runs
-        proc = None
         if sensor in ("nvml", "dcgm", "pico"):
             entry = run_logger(sensor, args.output.parent / f"overhead_{sensor}", args.duration_s, args.gpus)
-            # separate short penalty measurement with logger live
-            if sensor == "nvml":
-                p = subprocess.Popen([sys.executable, str(HERE / "nvml_logger.py"),
-                                      "--output", "/dev/null", "--gpus", args.gpus],
-                                     stderr=subprocess.DEVNULL)
-            elif sensor == "dcgm":
-                p = subprocess.Popen([sys.executable, str(HERE / "dcgm_logger.py"),
-                                      "--output", "/tmp/_oh_dcgm.tsv",
-                                      "--gpus", "-1" if args.gpus == "all" else args.gpus],
-                                     stderr=subprocess.DEVNULL)
+            def measured_rate():
+                proc = start_penalty_logger(
+                    sensor, args.output.parent / "overhead_pico_penalty", args.gpus,
+                    args.pico_python, args.pico_sample_interval_us,
+                )
+                time.sleep(2)
+                rate = steady_gemm_throughput(20)
+                stop_penalty_logger(proc, sensor)
+                return rate
+
+            if args.penalty_order == "baseline-first":
+                base_rate = steady_gemm_throughput(20)
+                monitored_rate = measured_rate()
             else:
-                pico_penalty = args.output.parent / "overhead_pico_penalty"
-                pico_penalty.mkdir(parents=True, exist_ok=True)
-                p = subprocess.Popen([
-                    args.pico_python, str(HERE / "pico_logger.py"), "--parallel",
-                    "--duration-s", "25", "--sample-interval-us",
-                    str(args.pico_sample_interval_us), "--output-prefix",
-                    str(pico_penalty / "pico"),
-                ], stderr=subprocess.DEVNULL)
-            time.sleep(2)
-            rate = steady_gemm_throughput(20)
-            if sensor == "pico":
-                p.wait(timeout=15)
-            else:
-                p.terminate(); p.wait(timeout=10)
-            entry["useful_work_penalty_pct"] = round(100 * (base_rate - rate) / base_rate, 3)
+                monitored_rate = measured_rate()
+                base_rate = steady_gemm_throughput(20)
+            entry["baseline_gemm_per_s"] = round(base_rate, 3)
+            entry["monitored_gemm_per_s"] = round(monitored_rate, 3)
+            entry["useful_work_penalty_pct"] = round(
+                100 * (base_rate - monitored_rate) / base_rate, 3
+            )
         else:
             entry = {"sensor": sensor, "available": False, "reason": "physical sensor not attached"}
         results["sensors"].append(entry)
+
+    available = [entry for entry in results["sensors"] if entry.get("available")]
+    if len(available) == 1 and "baseline_gemm_per_s" in available[0]:
+        results["baseline_gemm_per_s"] = available[0]["baseline_gemm_per_s"]
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(results, indent=2))
