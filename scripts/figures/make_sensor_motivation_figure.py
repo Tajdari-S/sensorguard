@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 
 import matplotlib.pyplot as plt
+import numpy as np
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -28,40 +29,16 @@ def read_csv(path: Path) -> list[dict[str, str]]:
 
 
 def collect_evidence() -> dict[str, dict[str, object]]:
-    generalization = {
-        row["protocol"]: row
-        for row in read_csv(RESULTS / "tables" / "generalization-audit.csv")
+    matched = {
+        row["method"]: row
+        for row in read_csv(RESULTS / "tables" / "matched-36-family-heldout-confusion.csv")
     }
-    run_grouped = generalization["Run grouped"]
-    family = generalization["Held-out family"]
-
-    nvml_labels = read_csv(RESULTS / "e2_labels_combined.csv")
-    nvml_families = {
-        label: {row["family"] for row in nvml_labels if row["label"] == label}
-        for label in ("training", "inference", "non_ml")
-    }
-    expected_training = {
-        "train_bert", "train_gpt2_wikitext", "train_resnet_cifar10"
-    }
-    if nvml_families["training"] != expected_training:
-        raise ValueError("unexpected synchronized NVML training scope")
-
-    physical_runs = read_csv(RESULTS / "tables" / "physical-run-signatures.csv")
-    physical_training = {
-        row["workload"] for row in physical_runs if row["label"] == "Training"
-    }
-    physical_controls = {
-        row["workload"] for row in physical_runs if row["label"] == "Other"
-    }
-    common_physical = {
-        "pytorch_resnet_cifar10", "gpt2_wikitext2", "bert_sst2"
-    }
-    if not common_physical.issubset(physical_training):
-        raise ValueError("physical pilot is missing a common training target")
-    physical_result = next(
-        row for row in read_csv(RESULTS / "tables" / "physical-sensor-ablation.csv")
-        if row["modality"] == "GPU current clamp" and row["window_sec"] == "30"
-    )
+    expected_methods = {"NVML", "SensorGuard (GPU current)"}
+    if set(matched) != expected_methods:
+        raise ValueError("matched comparison must contain NVML and SensorGuard")
+    for row in matched.values():
+        if row["total_runs"] != "36" or row["training_runs"] != "26" or row["nontraining_runs"] != "10":
+            raise ValueError("matched comparison must use the same 36-run cohort")
 
     wave_rows = read_csv(RESULTS / "wave" / "overhead_3090_all.csv")
     sensor_rows = read_csv(RESULTS / "wave" / "matched_sensor_overhead_3090.csv")
@@ -94,47 +71,35 @@ def collect_evidence() -> dict[str, dict[str, object]]:
     ]
 
     return {
-        "nvml_scope": {
+        "nvml_matched": {
             "panel": "A",
-            "method": "NVML synchronized corpus",
-            "metric": "evaluated workload classes/variants",
-            "value": sum(len(families) for families in nvml_families.values()),
+            "method": "NVML",
+            "metric": "run-level confusion count",
+            "value": matched["NVML"]["correct_runs"],
             "low": "",
             "high": "",
-            "unit": "count",
-            "common_core": len(nvml_families["training"]),
-            "additional_training": 0,
-            "controls": len(nvml_families["inference"] | nvml_families["non_ml"]),
-            "scope": (
-                f"{len(nvml_labels)} runs; 3 training, "
-                f"{len(nvml_families['inference'])} inference, "
-                f"{len(nvml_families['non_ml'])} non-ML families"
-            ),
-            "status": (
-                f"run-grouped {run_grouped['tp']}/{int(run_grouped['tp']) + int(run_grouped['fn'])} "
-                f"training runs detected; held-out family {family['tp']}/"
-                f"{int(family['tp']) + int(family['fn'])}"
-            ),
+            "unit": "runs",
+            "tp": matched["NVML"]["true_positive_detected_training"],
+            "fn": matched["NVML"]["false_negative_missed_training"],
+            "fp": matched["NVML"]["false_positive_false_alert"],
+            "tn": matched["NVML"]["true_negative_correct_rejection"],
+            "scope": "same 36 runs: 26 training and 10 non-training",
+            "status": "leave-one-workload-family-out; fixed 3-of-5 rule at 0.75",
         },
-        "sensor_scope": {
+        "sensor_matched": {
             "panel": "A",
-            "method": "SensorGuard current-clamp pilot",
-            "metric": "evaluated workload classes/variants",
-            "value": len(physical_training | physical_controls),
+            "method": "SensorGuard (GPU current)",
+            "metric": "run-level confusion count",
+            "value": matched["SensorGuard (GPU current)"]["correct_runs"],
             "low": "",
             "high": "",
-            "unit": "count",
-            "common_core": len(common_physical),
-            "additional_training": len(physical_training - common_physical),
-            "controls": len(physical_controls),
-            "scope": (
-                f"{len(physical_runs)} runs; {len(physical_training)} training and "
-                f"{len(physical_controls)} non-training workload variants"
-            ),
-            "status": (
-                f"30-s run-grouped pilot macro-F1 {float(physical_result['f1_macro']):.2f}; "
-                f"{physical_result['n_runs']} eligible runs; held-out-family sensor test pending"
-            ),
+            "unit": "runs",
+            "tp": matched["SensorGuard (GPU current)"]["true_positive_detected_training"],
+            "fn": matched["SensorGuard (GPU current)"]["false_negative_missed_training"],
+            "fp": matched["SensorGuard (GPU current)"]["false_positive_false_alert"],
+            "tn": matched["SensorGuard (GPU current)"]["true_negative_correct_rejection"],
+            "scope": "same 36 runs: 26 training and 10 non-training",
+            "status": "leave-one-workload-family-out; fixed 3-of-5 rule at 0.75",
         },
         "wave": {
             "panel": "B",
@@ -144,9 +109,10 @@ def collect_evidence() -> dict[str, dict[str, object]]:
             "low": min(wave_multipliers),
             "high": max(wave_multipliers),
             "unit": "x",
-            "common_core": "",
-            "additional_training": "",
-            "controls": "",
+            "tp": "",
+            "fn": "",
+            "fp": "",
+            "tn": "",
             "scope": "same 6 configurations: 2 GPT-2, 2 LLaMA, 2 Qwen; 3 repetitions",
             "status": "offline architectural verification",
         },
@@ -158,9 +124,10 @@ def collect_evidence() -> dict[str, dict[str, object]]:
             "low": min(sensor_multipliers),
             "high": max(sensor_multipliers),
             "unit": "x",
-            "common_core": "",
-            "additional_training": "",
-            "controls": "",
+            "tp": "",
+            "fn": "",
+            "fp": "",
+            "tn": "",
             "scope": "same 6 configurations: 2 GPT-2, 2 LLaMA, 2 Qwen; 3 repetitions; NVML+DCGM",
             "status": "base logger only; physical logger overhead pending",
         },
@@ -172,7 +139,7 @@ def write_evidence(evidence: dict[str, dict[str, object]]) -> None:
     path = TABLES / "sensor-motivation-evidence.csv"
     columns = [
         "panel", "method", "metric", "value", "low", "high", "unit",
-        "common_core", "additional_training", "controls", "scope", "status",
+        "tp", "fn", "fp", "tn", "scope", "status",
     ]
     with path.open("w", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=columns, lineterminator="\n")
@@ -198,8 +165,8 @@ def configure() -> None:
 
 
 def make_figure(evidence: dict[str, dict[str, object]]) -> None:
-    nvml_scope = evidence["nvml_scope"]
-    sensor_scope = evidence["sensor_scope"]
+    nvml_matched = evidence["nvml_matched"]
+    sensor_matched = evidence["sensor_matched"]
     wave = evidence["wave"]
     sensor = evidence["sensorguard"]
 
@@ -207,66 +174,44 @@ def make_figure(evidence: dict[str, dict[str, object]]) -> None:
         1, 2, figsize=(7.15, 2.75), gridspec_kw={"wspace": 0.26}
     )
 
-    # A: breadth of the two current measured corpora. The shared purple segment
-    # is the common ResNet-50/GPT-2/BERT core; it does not claim matched sensor
-    # recovery of the NVML misses.
-    scope_rows = [nvml_scope, sensor_scope]
-    common = [int(row["common_core"]) for row in scope_rows]
-    additional = [int(row["additional_training"]) for row in scope_rows]
-    controls = [int(row["controls"]) for row in scope_rows]
-    totals = [int(row["value"]) for row in scope_rows]
-    x_positions = [0, 1]
-    common_bars = scope_ax.bar(
-        x_positions, common, width=0.68, color=WAVE,
-        edgecolor="#555555", linewidth=0.45, label="Common training core",
+    # A: direct run-level outcomes on the exact same paired cohort.
+    outcomes = ["TP", "FN", "FP", "TN"]
+    nvml_counts = [int(nvml_matched[key.lower()]) for key in outcomes]
+    sensor_counts = [int(sensor_matched[key.lower()]) for key in outcomes]
+    x_positions = np.arange(len(outcomes))
+    width = 0.34
+    nvml_bars = scope_ax.bar(
+        x_positions - width / 2, nvml_counts, width=width, color=NVML,
+        edgecolor="#444444", linewidth=0.45, label="NVML",
     )
-    additional_bars = scope_ax.bar(
-        x_positions, additional, width=0.68, bottom=common, color="#D98C45",
-        edgecolor="#555555", linewidth=0.45, label="Additional training variants",
+    sensor_bars = scope_ax.bar(
+        x_positions + width / 2, sensor_counts, width=width, color="#78E6C9",
+        edgecolor="#444444", linewidth=0.45, label="SensorGuard (GPU current)",
     )
-    control_bottom = [base + extra for base, extra in zip(common, additional)]
-    control_bars = scope_ax.bar(
-        x_positions, controls, width=0.68, bottom=control_bottom, color="#AFC4DA",
-        edgecolor="#555555", linewidth=0.45, label="Non-training controls",
-    )
-    scope_ax.set_ylabel("Evaluated workloads (count)")
+    scope_ax.set_ylabel("Runs (count)")
     scope_ax.set_xticks(
-        [0, 1],
-        ["NVML corpus\n118 runs", "SensorGuard pilot\n40 runs*"],
+        x_positions,
+        ["Detected\ntraining (TP)", "Missed\ntraining (FN)",
+         "False\nalerts (FP)", "Correct\nrejection (TN)"],
     )
-    scope_ax.set_ylim(0, 34)
+    scope_ax.tick_params(axis="x", labelsize=6.8, pad=3)
+    scope_ax.set_ylim(0, 31)
     scope_ax.set_yticks([0, 5, 10, 15, 20, 25, 30])
     scope_ax.grid(axis="y", color=GRID, linestyle="--", linewidth=0.55, alpha=0.75)
     scope_ax.set_axisbelow(True)
     scope_ax.set_title("A", pad=3)
-    scope_ax.legend(
-        loc="upper center", bbox_to_anchor=(0.5, 0.99), ncol=1,
-        frameon=False, fontsize=6.4, handlelength=1.2, labelspacing=0.25,
-    )
-    annotations = [
-        "15 families\n22/23 seen\n0/23 held out",
-        "19 variants\ncurrent-clamp F1=1.00\nheld-out pending",
-    ]
-    for x, total, annotation in zip(x_positions, totals, annotations):
-        scope_ax.text(
-            x, total + 0.6, annotation,
-            ha="center", va="bottom", fontsize=7.0,
-        )
-    for bars, values in (
-        (common_bars, common), (additional_bars, additional), (control_bars, controls)
-    ):
+    scope_ax.legend(loc="upper right", frameon=False, fontsize=6.5)
+    for bars, values in ((nvml_bars, nvml_counts), (sensor_bars, sensor_counts)):
         for bar, value in zip(bars, values):
-            if value:
-                scope_ax.text(
-                    bar.get_x() + bar.get_width() / 2,
-                    bar.get_y() + bar.get_height() / 2,
-                    str(value), ha="center", va="center", fontsize=7.4,
-                    color="white" if bars is common_bars else NVML,
-                    fontweight="bold",
-                )
+            scope_ax.text(
+                bar.get_x() + bar.get_width() / 2,
+                value + (0.55 if value else 0.35),
+                str(value), ha="center", va="bottom", fontsize=7.4,
+                fontweight="bold",
+            )
     scope_ax.text(
         0.5, -0.27,
-        "Common core: ResNet-50, GPT-2, BERT   |   *30-s pilot uses 36 eligible runs",
+        "Same 36 runs; leave-one-family-out; fixed 3-of-5 rule at p >= 0.75",
         transform=scope_ax.transAxes, ha="center", va="top", fontsize=6.0, color=MUTED,
     )
 
@@ -309,7 +254,7 @@ def make_figure(evidence: dict[str, dict[str, object]]) -> None:
     )
     overhead_ax.text(
         0.98, 0.58,
-        "*NVML+DCGM base logger only\nphysical logger pending",
+        "*NVML+DCGM base logger only",
         transform=overhead_ax.transAxes, ha="right", va="center",
         fontsize=6.2, color=MUTED,
     )

@@ -1,0 +1,657 @@
+run_id,workload_label,target,fold,method,training_probability,window_prediction
+0dac05176434,adversarial_H_mimicry_cufft,1,1,NVML,0.8915764217908111,1
+0dac05176434,adversarial_H_mimicry_cufft,1,1,NVML,0.59534571434708,1
+0dac05176434,adversarial_H_mimicry_cufft,1,1,NVML,0.500436036465895,1
+0dac05176434,adversarial_H_mimicry_cufft,1,1,NVML,0.5519859794113737,1
+0dac05176434,adversarial_H_mimicry_cufft,1,1,NVML,0.696314358643532,1
+0dac05176434,adversarial_H_mimicry_cufft,1,1,NVML,0.6019945832866703,1
+0dac05176434,adversarial_H_mimicry_cufft,1,1,NVML,0.5716597200663666,1
+0dac05176434,adversarial_H_mimicry_cufft,1,1,NVML,0.6774037419592137,1
+0dac05176434,adversarial_H_mimicry_cufft,1,1,NVML,0.6654076945283838,1
+0dac05176434,adversarial_H_mimicry_cufft,1,1,NVML,0.4668747381463262,0
+0dac05176434,adversarial_H_mimicry_cufft,1,1,NVML,0.4720748739285743,0
+0dac05176434,adversarial_H_mimicry_cufft,1,1,NVML,0.6992930049414801,1
+ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,NVML,0.9226153733625329,1
+ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,NVML,0.4425264788453321,0
+ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,NVML,0.43959268963091674,0
+ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,NVML,0.5401639418417049,1
+ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,NVML,0.5027467733916408,1
+ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,NVML,0.4825627320535685,0
+ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,NVML,0.47218529554375677,0
+ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,NVML,0.46968529554375676,0
+ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,NVML,0.441253873841443,0
+ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,NVML,0.43999771620597505,0
+ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,NVML,0.4786912010555677,0
+ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,NVML,0.5185852362568691,1
+ed7ab69e9c47,adversarial_J_pid_75,1,2,NVML,0.9093662329935465,1
+ed7ab69e9c47,adversarial_J_pid_75,1,2,NVML,0.7994433578485615,1
+ed7ab69e9c47,adversarial_J_pid_75,1,2,NVML,0.7786165044057783,1
+ed7ab69e9c47,adversarial_J_pid_75,1,2,NVML,0.8114824140594642,1
+ed7ab69e9c47,adversarial_J_pid_75,1,2,NVML,0.8114540043443524,1
+ed7ab69e9c47,adversarial_J_pid_75,1,2,NVML,0.639302678214807,1
+ed7ab69e9c47,adversarial_J_pid_75,1,2,NVML,0.5342563257520591,1
+ed7ab69e9c47,adversarial_J_pid_75,1,2,NVML,0.5660907314089366,1
+ed7ab69e9c47,adversarial_J_pid_75,1,2,NVML,0.5601399986250656,1
+ed7ab69e9c47,adversarial_J_pid_75,1,2,NVML,0.5642970507381068,1
+ed7ab69e9c47,adversarial_J_pid_75,1,2,NVML,0.7893008299113471,1
+ed7ab69e9c47,adversarial_J_pid_75,1,2,NVML,0.79899209261213,1
+fe2433e75bdc,adversarial_J_pid_75,1,2,NVML,0.9102663532349744,1
+fe2433e75bdc,adversarial_J_pid_75,1,2,NVML,0.7468557184717907,1
+fe2433e75bdc,adversarial_J_pid_75,1,2,NVML,0.79399209261213,1
+fe2433e75bdc,adversarial_J_pid_75,1,2,NVML,0.8224422216916389,1
+fe2433e75bdc,adversarial_J_pid_75,1,2,NVML,0.800558835850275,1
+fe2433e75bdc,adversarial_J_pid_75,1,2,NVML,0.7801699037193928,1
+fe2433e75bdc,adversarial_J_pid_75,1,2,NVML,0.7699802349046203,1
+fe2433e75bdc,adversarial_J_pid_75,1,2,NVML,0.6660993813080076,1
+fe2433e75bdc,adversarial_J_pid_75,1,2,NVML,0.6820830088287206,1
+fe2433e75bdc,adversarial_J_pid_75,1,2,NVML,0.8215630725869412,1
+fe2433e75bdc,adversarial_J_pid_75,1,2,NVML,0.7075571670751301,1
+fe2433e75bdc,adversarial_J_pid_75,1,2,NVML,0.8095028139970555,1
+ac263ea21e2c,adversarial_K_online_learning,1,3,NVML,0.9562646669507984,1
+ac263ea21e2c,adversarial_K_online_learning,1,3,NVML,0.999005905511811,1
+ac263ea21e2c,adversarial_K_online_learning,1,3,NVML,1.0,1
+ac263ea21e2c,adversarial_K_online_learning,1,3,NVML,1.0,1
+ac263ea21e2c,adversarial_K_online_learning,1,3,NVML,1.0,1
+ac263ea21e2c,adversarial_K_online_learning,1,3,NVML,1.0,1
+ac263ea21e2c,adversarial_K_online_learning,1,3,NVML,1.0,1
+ac263ea21e2c,adversarial_K_online_learning,1,3,NVML,1.0,1
+ac263ea21e2c,adversarial_K_online_learning,1,3,NVML,1.0,1
+ac263ea21e2c,adversarial_K_online_learning,1,3,NVML,1.0,1
+ac263ea21e2c,adversarial_K_online_learning,1,3,NVML,1.0,1
+ac263ea21e2c,adversarial_K_online_learning,1,3,NVML,1.0,1
+d5e571cea1ec,adversarial_K_online_learning,1,3,NVML,0.9826153733625327,1
+d5e571cea1ec,adversarial_K_online_learning,1,3,NVML,1.0,1
+d5e571cea1ec,adversarial_K_online_learning,1,3,NVML,0.9983388157894737,1
+d5e571cea1ec,adversarial_K_online_learning,1,3,NVML,1.0,1
+d5e571cea1ec,adversarial_K_online_learning,1,3,NVML,1.0,1
+d5e571cea1ec,adversarial_K_online_learning,1,3,NVML,1.0,1
+d5e571cea1ec,adversarial_K_online_learning,1,3,NVML,1.0,1
+d5e571cea1ec,adversarial_K_online_learning,1,3,NVML,1.0,1
+d5e571cea1ec,adversarial_K_online_learning,1,3,NVML,1.0,1
+d5e571cea1ec,adversarial_K_online_learning,1,3,NVML,0.9983388157894737,1
+d5e571cea1ec,adversarial_K_online_learning,1,3,NVML,0.9983388157894737,1
+d5e571cea1ec,adversarial_K_online_learning,1,3,NVML,0.9975,1
+0e24a18363e3,adversarial_L_diluted_10,1,4,NVML,1.0,1
+0e24a18363e3,adversarial_L_diluted_10,1,4,NVML,1.0,1
+0e24a18363e3,adversarial_L_diluted_10,1,4,NVML,1.0,1
+0e24a18363e3,adversarial_L_diluted_10,1,4,NVML,1.0,1
+0e24a18363e3,adversarial_L_diluted_10,1,4,NVML,1.0,1
+0e24a18363e3,adversarial_L_diluted_10,1,4,NVML,1.0,1
+0e24a18363e3,adversarial_L_diluted_10,1,4,NVML,1.0,1
+0e24a18363e3,adversarial_L_diluted_10,1,4,NVML,1.0,1
+0e24a18363e3,adversarial_L_diluted_10,1,4,NVML,1.0,1
+0e24a18363e3,adversarial_L_diluted_10,1,4,NVML,1.0,1
+0e24a18363e3,adversarial_L_diluted_10,1,4,NVML,1.0,1
+0e24a18363e3,adversarial_L_diluted_10,1,4,NVML,1.0,1
+64c674b72b5c,adversarial_L_diluted_10,1,4,NVML,0.9945949734249416,1
+64c674b72b5c,adversarial_L_diluted_10,1,4,NVML,0.9983388157894737,1
+64c674b72b5c,adversarial_L_diluted_10,1,4,NVML,1.0,1
+64c674b72b5c,adversarial_L_diluted_10,1,4,NVML,1.0,1
+64c674b72b5c,adversarial_L_diluted_10,1,4,NVML,1.0,1
+64c674b72b5c,adversarial_L_diluted_10,1,4,NVML,0.999172131147541,1
+64c674b72b5c,adversarial_L_diluted_10,1,4,NVML,0.999172131147541,1
+64c674b72b5c,adversarial_L_diluted_10,1,4,NVML,0.999172131147541,1
+64c674b72b5c,adversarial_L_diluted_10,1,4,NVML,1.0,1
+64c674b72b5c,adversarial_L_diluted_10,1,4,NVML,1.0,1
+64c674b72b5c,adversarial_L_diluted_10,1,4,NVML,1.0,1
+64c674b72b5c,adversarial_L_diluted_10,1,4,NVML,1.0,1
+85b4d732488a,adversarial_L_diluted_5,1,5,NVML,0.986760110204638,1
+85b4d732488a,adversarial_L_diluted_5,1,5,NVML,0.9942601102046379,1
+85b4d732488a,adversarial_L_diluted_5,1,5,NVML,0.996760110204638,1
+85b4d732488a,adversarial_L_diluted_5,1,5,NVML,0.9975,1
+85b4d732488a,adversarial_L_diluted_5,1,5,NVML,0.9975,1
+85b4d732488a,adversarial_L_diluted_5,1,5,NVML,1.0,1
+85b4d732488a,adversarial_L_diluted_5,1,5,NVML,0.9975,1
+85b4d732488a,adversarial_L_diluted_5,1,5,NVML,0.9962561576354679,1
+85b4d732488a,adversarial_L_diluted_5,1,5,NVML,1.0,1
+85b4d732488a,adversarial_L_diluted_5,1,5,NVML,1.0,1
+85b4d732488a,adversarial_L_diluted_5,1,5,NVML,1.0,1
+85b4d732488a,adversarial_L_diluted_5,1,5,NVML,0.99550395256917,1
+977161b694e9,adversarial_L_diluted_5,1,5,NVML,0.99300395256917,1
+977161b694e9,adversarial_L_diluted_5,1,5,NVML,1.0,1
+977161b694e9,adversarial_L_diluted_5,1,5,NVML,0.99550395256917,1
+977161b694e9,adversarial_L_diluted_5,1,5,NVML,0.99800395256917,1
+977161b694e9,adversarial_L_diluted_5,1,5,NVML,0.99550395256917,1
+977161b694e9,adversarial_L_diluted_5,1,5,NVML,0.99550395256917,1
+977161b694e9,adversarial_L_diluted_5,1,5,NVML,0.99550395256917,1
+977161b694e9,adversarial_L_diluted_5,1,5,NVML,0.99550395256917,1
+977161b694e9,adversarial_L_diluted_5,1,5,NVML,0.9975,1
+977161b694e9,adversarial_L_diluted_5,1,5,NVML,0.99800395256917,1
+977161b694e9,adversarial_L_diluted_5,1,5,NVML,0.9975,1
+977161b694e9,adversarial_L_diluted_5,1,5,NVML,1.0,1
+341ff17e1e2f,adversarial_composite_50,1,6,NVML,0.9841242038216561,1
+341ff17e1e2f,adversarial_composite_50,1,6,NVML,0.9925,1
+341ff17e1e2f,adversarial_composite_50,1,6,NVML,1.0,1
+341ff17e1e2f,adversarial_composite_50,1,6,NVML,1.0,1
+341ff17e1e2f,adversarial_composite_50,1,6,NVML,1.0,1
+341ff17e1e2f,adversarial_composite_50,1,6,NVML,1.0,1
+341ff17e1e2f,adversarial_composite_50,1,6,NVML,1.0,1
+ac2b68140ba0,adversarial_composite_50,1,6,NVML,0.9317963802022485,1
+ac2b68140ba0,adversarial_composite_50,1,6,NVML,0.9933121019108281,1
+ac2b68140ba0,adversarial_composite_50,1,6,NVML,1.0,1
+ac2b68140ba0,adversarial_composite_50,1,6,NVML,0.9954847908745248,1
+ac2b68140ba0,adversarial_composite_50,1,6,NVML,0.9929847908745247,1
+ac2b68140ba0,adversarial_composite_50,1,6,NVML,0.9937968927853528,1
+ac2b68140ba0,adversarial_composite_50,1,6,NVML,0.9975,1
+7a6fc8762870,bert_sst2,1,7,NVML,0.9878340197444128,1
+7a6fc8762870,bert_sst2,1,7,NVML,0.9908069620253164,1
+7a6fc8762870,bert_sst2,1,7,NVML,0.99,1
+7a6fc8762870,bert_sst2,1,7,NVML,0.9904811320754717,1
+7a6fc8762870,bert_sst2,1,7,NVML,0.9875,1
+7a6fc8762870,bert_sst2,1,7,NVML,0.9899208860759492,1
+abaa0766715a,bert_sst2,1,7,NVML,0.9916139240506329,1
+abaa0766715a,bert_sst2,1,7,NVML,0.9914711538461538,1
+abaa0766715a,bert_sst2,1,7,NVML,0.9925,1
+abaa0766715a,bert_sst2,1,7,NVML,0.9925,1
+abaa0766715a,bert_sst2,1,7,NVML,0.9925,1
+abaa0766715a,bert_sst2,1,7,NVML,0.995,1
+3fdd46f7155b,bert_sst2_amp,1,8,NVML,1.0,1
+3fdd46f7155b,bert_sst2_amp,1,8,NVML,0.9919842201356286,1
+5d8b2cc8d619,bert_sst2_amp,1,8,NVML,1.0,1
+5d8b2cc8d619,bert_sst2_amp,1,8,NVML,1.0,1
+584f59f498e4,cufft_benchmark,0,9,NVML,0.3199886152147048,0
+584f59f498e4,cufft_benchmark,0,9,NVML,0.17372923826723669,0
+584f59f498e4,cufft_benchmark,0,9,NVML,0.23415669940713305,0
+584f59f498e4,cufft_benchmark,0,9,NVML,0.3872510864758725,0
+584f59f498e4,cufft_benchmark,0,9,NVML,0.3746834183959609,0
+584f59f498e4,cufft_benchmark,0,9,NVML,0.23649868748441524,0
+584f59f498e4,cufft_benchmark,0,9,NVML,0.4026651272383306,0
+584f59f498e4,cufft_benchmark,0,9,NVML,0.4725134678233632,0
+584f59f498e4,cufft_benchmark,0,9,NVML,0.39873264898448046,0
+584f59f498e4,cufft_benchmark,0,9,NVML,0.44795210710354416,0
+584f59f498e4,cufft_benchmark,0,9,NVML,0.4156911418201187,0
+c3bab27d8f97,cufft_benchmark,0,9,NVML,0.42432118187530854,0
+c3bab27d8f97,cufft_benchmark,0,9,NVML,0.40290468124711426,0
+c3bab27d8f97,cufft_benchmark,0,9,NVML,0.2888723096763293,0
+c3bab27d8f97,cufft_benchmark,0,9,NVML,0.36098256714783156,0
+c3bab27d8f97,cufft_benchmark,0,9,NVML,0.29168058144604186,0
+c3bab27d8f97,cufft_benchmark,0,9,NVML,0.20377402474832304,0
+c3bab27d8f97,cufft_benchmark,0,9,NVML,0.23688136214322522,0
+c3bab27d8f97,cufft_benchmark,0,9,NVML,0.3332672007193001,0
+c3bab27d8f97,cufft_benchmark,0,9,NVML,0.29947964707123154,0
+c3bab27d8f97,cufft_benchmark,0,9,NVML,0.3694764013668213,0
+c3bab27d8f97,cufft_benchmark,0,9,NVML,0.49593569122894954,0
+6fdc09475c9c,gpt2_wikitext2,1,10,NVML,0.9659342414947193,1
+6fdc09475c9c,gpt2_wikitext2,1,10,NVML,0.9714185641539801,1
+6fdc09475c9c,gpt2_wikitext2,1,10,NVML,0.9375371689600408,1
+6fdc09475c9c,gpt2_wikitext2,1,10,NVML,0.9398840885882649,1
+6fdc09475c9c,gpt2_wikitext2,1,10,NVML,0.7842385604025517,1
+6fdc09475c9c,gpt2_wikitext2,1,10,NVML,0.43587748344370864,0
+6fdc09475c9c,gpt2_wikitext2,1,10,NVML,0.509279307518344,1
+6fdc09475c9c,gpt2_wikitext2,1,10,NVML,0.8108941895416248,1
+6fdc09475c9c,gpt2_wikitext2,1,10,NVML,0.9289142604237055,1
+6fdc09475c9c,gpt2_wikitext2,1,10,NVML,0.9314142604237057,1
+6fdc09475c9c,gpt2_wikitext2,1,10,NVML,0.9127334868293414,1
+6fdc09475c9c,gpt2_wikitext2,1,10,NVML,0.9202620246566952,1
+6fdc09475c9c,gpt2_wikitext2,1,10,NVML,0.910117304392453,1
+aaa926354722,gpt2_wikitext2,1,10,NVML,0.9792454997728651,1
+aaa926354722,gpt2_wikitext2,1,10,NVML,0.9772298224321257,1
+aaa926354722,gpt2_wikitext2,1,10,NVML,0.9503652115859441,1
+aaa926354722,gpt2_wikitext2,1,10,NVML,0.9445539533077985,1
+aaa926354722,gpt2_wikitext2,1,10,NVML,0.9347255187018513,1
+aaa926354722,gpt2_wikitext2,1,10,NVML,0.9327418469368753,1
+aaa926354722,gpt2_wikitext2,1,10,NVML,0.8288222564335839,1
+aaa926354722,gpt2_wikitext2,1,10,NVML,0.8329210354046448,1
+aaa926354722,gpt2_wikitext2,1,10,NVML,0.904589158545143,1
+aaa926354722,gpt2_wikitext2,1,10,NVML,0.9171139110203906,1
+aaa926354722,gpt2_wikitext2,1,10,NVML,0.9241875455361601,1
+aaa926354722,gpt2_wikitext2,1,10,NVML,0.9196707611884026,1
+aaa926354722,gpt2_wikitext2,1,10,NVML,0.9232068145185246,1
+12218502b878,gpt2_wikitext2_amp,1,11,NVML,0.9845270577190963,1
+12218502b878,gpt2_wikitext2_amp,1,11,NVML,0.9733840064843239,1
+12218502b878,gpt2_wikitext2_amp,1,11,NVML,0.9275378641301252,1
+12218502b878,gpt2_wikitext2_amp,1,11,NVML,0.9672886055598517,1
+12218502b878,gpt2_wikitext2_amp,1,11,NVML,0.9830955675851683,1
+12218502b878,gpt2_wikitext2_amp,1,11,NVML,0.927916860672017,1
+b2a8baa95276,gpt2_wikitext2_amp,1,11,NVML,0.9003340197444127,1
+b2a8baa95276,gpt2_wikitext2_amp,1,11,NVML,0.8835372391449076,1
+b2a8baa95276,gpt2_wikitext2_amp,1,11,NVML,0.9366287665712286,1
+b2a8baa95276,gpt2_wikitext2_amp,1,11,NVML,0.9074616759285489,1
+b2a8baa95276,gpt2_wikitext2_amp,1,11,NVML,0.9108218045459122,1
+b2a8baa95276,gpt2_wikitext2_amp,1,11,NVML,0.9502697376353234,1
+67207d9b03ee,idle,0,12,NVML,0.39352050477445155,0
+67207d9b03ee,idle,0,12,NVML,0.37125849541489736,0
+67207d9b03ee,idle,0,12,NVML,0.36387470799285665,0
+67207d9b03ee,idle,0,12,NVML,0.35957534493553184,0
+67207d9b03ee,idle,0,12,NVML,0.353422283711042,0
+67207d9b03ee,idle,0,12,NVML,0.35207534493553183,0
+67207d9b03ee,idle,0,12,NVML,0.35409648218640505,0
+80a34acdeb1d,idle,0,12,NVML,0.43230555403976145,0
+80a34acdeb1d,idle,0,12,NVML,0.35207534493553183,0
+80a34acdeb1d,idle,0,12,NVML,0.35207534493553183,0
+80a34acdeb1d,idle,0,12,NVML,0.35137470799285664,0
+80a34acdeb1d,idle,0,12,NVML,0.35666191425917515,0
+80a34acdeb1d,idle,0,12,NVML,0.3559612773165,0
+80a34acdeb1d,idle,0,12,NVML,0.35637470799285664,0
+50f59294d415,mining_ethash_proxy,0,13,NVML,0.6637963316187095,1
+50f59294d415,mining_ethash_proxy,0,13,NVML,0.4632529396570309,0
+50f59294d415,mining_ethash_proxy,0,13,NVML,0.461016791899775,0
+50f59294d415,mining_ethash_proxy,0,13,NVML,0.4400993448857891,0
+50f59294d415,mining_ethash_proxy,0,13,NVML,0.4673216899641713,0
+50f59294d415,mining_ethash_proxy,0,13,NVML,0.448628879506655,0
+50f59294d415,mining_ethash_proxy,0,13,NVML,0.6033124694651377,1
+50f59294d415,mining_ethash_proxy,0,13,NVML,0.5292575744695491,1
+50f59294d415,mining_ethash_proxy,0,13,NVML,0.5512250935924605,1
+50f59294d415,mining_ethash_proxy,0,13,NVML,0.5511062711763945,1
+50f59294d415,mining_ethash_proxy,0,13,NVML,0.5221425406064465,1
+c95103b2e217,mining_ethash_proxy,0,13,NVML,0.6720993995477282,1
+c95103b2e217,mining_ethash_proxy,0,13,NVML,0.5521425406064465,1
+c95103b2e217,mining_ethash_proxy,0,13,NVML,0.504818717528326,1
+c95103b2e217,mining_ethash_proxy,0,13,NVML,0.5687250935924606,1
+c95103b2e217,mining_ethash_proxy,0,13,NVML,0.5893786883637023,1
+c95103b2e217,mining_ethash_proxy,0,13,NVML,0.4776340571677264,0
+c95103b2e217,mining_ethash_proxy,0,13,NVML,0.5850700017463428,1
+c95103b2e217,mining_ethash_proxy,0,13,NVML,0.4473216899641713,0
+c95103b2e217,mining_ethash_proxy,0,13,NVML,0.45047528473541315,0
+c95103b2e217,mining_ethash_proxy,0,13,NVML,0.5175806605944182,1
+c95103b2e217,mining_ethash_proxy,0,13,NVML,0.47769992129188266,0
+110f9abd97cb,nbody_sim,0,14,NVML,0.22449535557724637,0
+110f9abd97cb,nbody_sim,0,14,NVML,0.24008120312643755,0
+110f9abd97cb,nbody_sim,0,14,NVML,0.048260905986521364,0
+110f9abd97cb,nbody_sim,0,14,NVML,0.03946078431372549,0
+110f9abd97cb,nbody_sim,0,14,NVML,0.05921103125823011,0
+110f9abd97cb,nbody_sim,0,14,NVML,0.04912482065997131,0
+110f9abd97cb,nbody_sim,0,14,NVML,0.05982837214067909,0
+110f9abd97cb,nbody_sim,0,14,NVML,0.05201223515825486,0
+110f9abd97cb,nbody_sim,0,14,NVML,0.0525862105982588,0
+110f9abd97cb,nbody_sim,0,14,NVML,0.05401044157500399,0
+110f9abd97cb,nbody_sim,0,14,NVML,0.0656917731840041,0
+4773e1a29fb4,nbody_sim,0,14,NVML,0.20249587973119698,0
+4773e1a29fb4,nbody_sim,0,14,NVML,0.05475877953679815,0
+4773e1a29fb4,nbody_sim,0,14,NVML,0.0516248206599713,0
+4773e1a29fb4,nbody_sim,0,14,NVML,0.05793201020245497,0
+4773e1a29fb4,nbody_sim,0,14,NVML,0.04977841543121314,0
+4773e1a29fb4,nbody_sim,0,14,NVML,0.047594743190552326,0
+4773e1a29fb4,nbody_sim,0,14,NVML,0.056987859424366294,0
+4773e1a29fb4,nbody_sim,0,14,NVML,0.05095158999431448,0
+4773e1a29fb4,nbody_sim,0,14,NVML,0.0379970537437773,0
+4773e1a29fb4,nbody_sim,0,14,NVML,0.036784607391845976,0
+4773e1a29fb4,nbody_sim,0,14,NVML,0.045025257441776656,0
+cff47fb488da,pytorch_mlp_cifar10,1,15,NVML,0.6985286098181714,1
+cff47fb488da,pytorch_mlp_cifar10,1,15,NVML,0.8110840785050819,1
+cff47fb488da,pytorch_mlp_cifar10,1,15,NVML,0.8143145367261062,1
+cff47fb488da,pytorch_mlp_cifar10,1,15,NVML,0.8202758923092552,1
+cff47fb488da,pytorch_mlp_cifar10,1,15,NVML,0.805485486955786,1
+ddc3d611de21,pytorch_mlp_cifar10,1,15,NVML,0.7769154943392048,1
+ddc3d611de21,pytorch_mlp_cifar10,1,15,NVML,0.8115616065949695,1
+ddc3d611de21,pytorch_mlp_cifar10,1,15,NVML,0.8152758923092552,1
+ddc3d611de21,pytorch_mlp_cifar10,1,15,NVML,0.7968859652975346,1
+ddc3d611de21,pytorch_mlp_cifar10,1,15,NVML,0.8152758923092552,1
+5b66597fad00,pytorch_resnet_cifar10,1,16,NVML,0.9595323656841037,1
+5b66597fad00,pytorch_resnet_cifar10,1,16,NVML,0.9808510315156103,1
+5b66597fad00,pytorch_resnet_cifar10,1,16,NVML,0.985028450870449,1
+5b66597fad00,pytorch_resnet_cifar10,1,16,NVML,0.9767828647850573,1
+5b66597fad00,pytorch_resnet_cifar10,1,16,NVML,1.0,1
+5b66597fad00,pytorch_resnet_cifar10,1,16,NVML,0.9975,1
+5b66597fad00,pytorch_resnet_cifar10,1,16,NVML,0.9975,1
+5b66597fad00,pytorch_resnet_cifar10,1,16,NVML,1.0,1
+5b66597fad00,pytorch_resnet_cifar10,1,16,NVML,1.0,1
+6ec160e0e8db,pytorch_resnet_cifar10,1,16,NVML,0.9595323656841037,1
+6ec160e0e8db,pytorch_resnet_cifar10,1,16,NVML,0.980028450870449,1
+6ec160e0e8db,pytorch_resnet_cifar10,1,16,NVML,0.982528450870449,1
+6ec160e0e8db,pytorch_resnet_cifar10,1,16,NVML,0.985028450870449,1
+6ec160e0e8db,pytorch_resnet_cifar10,1,16,NVML,0.9833510315156103,1
+6ec160e0e8db,pytorch_resnet_cifar10,1,16,NVML,0.9833510315156103,1
+6ec160e0e8db,pytorch_resnet_cifar10,1,16,NVML,0.9821981482175657,1
+6ec160e0e8db,pytorch_resnet_cifar10,1,16,NVML,0.9725783282630234,1
+6ec160e0e8db,pytorch_resnet_cifar10,1,16,NVML,0.9649112120263075,1
+2b26e3764f81,pytorch_resnet_cifar10_amp,1,17,NVML,0.9413711776187378,1
+2b26e3764f81,pytorch_resnet_cifar10_amp,1,17,NVML,0.94,1
+2b26e3764f81,pytorch_resnet_cifar10_amp,1,17,NVML,0.9375,1
+2b26e3764f81,pytorch_resnet_cifar10_amp,1,17,NVML,0.9333018867924529,1
+2b26e3764f81,pytorch_resnet_cifar10_amp,1,17,NVML,0.9358018867924528,1
+351fa9211f65,pytorch_resnet_cifar10_amp,1,17,NVML,0.9393487057086253,1
+351fa9211f65,pytorch_resnet_cifar10_amp,1,17,NVML,0.9408018867924528,1
+351fa9211f65,pytorch_resnet_cifar10_amp,1,17,NVML,0.94,1
+351fa9211f65,pytorch_resnet_cifar10_amp,1,17,NVML,0.9433018867924529,1
+351fa9211f65,pytorch_resnet_cifar10_amp,1,17,NVML,0.935,1
+89eb78e296d6,rendering_proxy,0,18,NVML,0.3137087281231052,0
+89eb78e296d6,rendering_proxy,0,18,NVML,0.1294840380275545,0
+89eb78e296d6,rendering_proxy,0,18,NVML,0.11292679892120049,0
+89eb78e296d6,rendering_proxy,0,18,NVML,0.10607504799923323,0
+89eb78e296d6,rendering_proxy,0,18,NVML,0.09570971775675091,0
+89eb78e296d6,rendering_proxy,0,18,NVML,0.0959803048086809,0
+89eb78e296d6,rendering_proxy,0,18,NVML,0.1035923924155609,0
+89eb78e296d6,rendering_proxy,0,18,NVML,0.11359239241556089,0
+89eb78e296d6,rendering_proxy,0,18,NVML,0.11359239241556089,0
+89eb78e296d6,rendering_proxy,0,18,NVML,0.09887004733717866,0
+89eb78e296d6,rendering_proxy,0,18,NVML,0.10321645256593684,0
+d8ac49f7c850,rendering_proxy,0,18,NVML,0.3069210014350622,0
+d8ac49f7c850,rendering_proxy,0,18,NVML,0.10075284877664237,0
+d8ac49f7c850,rendering_proxy,0,18,NVML,0.09402658836464318,0
+d8ac49f7c850,rendering_proxy,0,18,NVML,0.09468018313588501,0
+d8ac49f7c850,rendering_proxy,0,18,NVML,0.09821645256593683,0
+d8ac49f7c850,rendering_proxy,0,18,NVML,0.10852343582857235,0
+d8ac49f7c850,rendering_proxy,0,18,NVML,0.09825958358582829,0
+d8ac49f7c850,rendering_proxy,0,18,NVML,0.10174598718680272,0
+d8ac49f7c850,rendering_proxy,0,18,NVML,0.1213050564285345,0
+d8ac49f7c850,rendering_proxy,0,18,NVML,0.12640644354788416,0
+d8ac49f7c850,rendering_proxy,0,18,NVML,0.14435510235783738,0
+0dac05176434,adversarial_H_mimicry_cufft,1,1,SensorGuard (GPU current),0.9274226345711096,1
+0dac05176434,adversarial_H_mimicry_cufft,1,1,SensorGuard (GPU current),0.9466827447757479,1
+0dac05176434,adversarial_H_mimicry_cufft,1,1,SensorGuard (GPU current),0.9853399764171041,1
+0dac05176434,adversarial_H_mimicry_cufft,1,1,SensorGuard (GPU current),0.9741827447757478,1
+0dac05176434,adversarial_H_mimicry_cufft,1,1,SensorGuard (GPU current),0.9758439289862741,1
+0dac05176434,adversarial_H_mimicry_cufft,1,1,SensorGuard (GPU current),0.990323529048683,1
+0dac05176434,adversarial_H_mimicry_cufft,1,1,SensorGuard (GPU current),0.990323529048683,1
+0dac05176434,adversarial_H_mimicry_cufft,1,1,SensorGuard (GPU current),0.9967601102046381,1
+0dac05176434,adversarial_H_mimicry_cufft,1,1,SensorGuard (GPU current),0.9967601102046381,1
+0dac05176434,adversarial_H_mimicry_cufft,1,1,SensorGuard (GPU current),0.9967601102046381,1
+0dac05176434,adversarial_H_mimicry_cufft,1,1,SensorGuard (GPU current),1.0,1
+0dac05176434,adversarial_H_mimicry_cufft,1,1,SensorGuard (GPU current),1.0,1
+ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,SensorGuard (GPU current),0.9149862593449367,1
+ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,SensorGuard (GPU current),0.9603399764171041,1
+ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,SensorGuard (GPU current),0.9503399764171041,1
+ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,SensorGuard (GPU current),0.9620011606276304,1
+ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,SensorGuard (GPU current),0.9786623448381567,1
+ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,SensorGuard (GPU current),0.9886623448381567,1
+ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,SensorGuard (GPU current),0.9886623448381567,1
+ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,SensorGuard (GPU current),0.9967601102046381,1
+ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,SensorGuard (GPU current),1.0,1
+ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,SensorGuard (GPU current),1.0,1
+ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,SensorGuard (GPU current),1.0,1
+ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,SensorGuard (GPU current),1.0,1
+ed7ab69e9c47,adversarial_J_pid_75,1,2,SensorGuard (GPU current),0.9520751578141332,1
+ed7ab69e9c47,adversarial_J_pid_75,1,2,SensorGuard (GPU current),0.9884377417835855,1
+ed7ab69e9c47,adversarial_J_pid_75,1,2,SensorGuard (GPU current),0.9903486738704547,1
+ed7ab69e9c47,adversarial_J_pid_75,1,2,SensorGuard (GPU current),1.0,1
+ed7ab69e9c47,adversarial_J_pid_75,1,2,SensorGuard (GPU current),0.9945949734249416,1
+ed7ab69e9c47,adversarial_J_pid_75,1,2,SensorGuard (GPU current),0.9404337892144154,1
+ed7ab69e9c47,adversarial_J_pid_75,1,2,SensorGuard (GPU current),0.9341899468498833,1
+ed7ab69e9c47,adversarial_J_pid_75,1,2,SensorGuard (GPU current),0.9429337892144154,1
+ed7ab69e9c47,adversarial_J_pid_75,1,2,SensorGuard (GPU current),0.9391899468498833,1
+ed7ab69e9c47,adversarial_J_pid_75,1,2,SensorGuard (GPU current),0.9341899468498833,1
+ed7ab69e9c47,adversarial_J_pid_75,1,2,SensorGuard (GPU current),0.9913427683586437,1
+ed7ab69e9c47,adversarial_J_pid_75,1,2,SensorGuard (GPU current),0.9913427683586437,1
+fe2433e75bdc,adversarial_J_pid_75,1,2,SensorGuard (GPU current),0.9349238316845878,1
+fe2433e75bdc,adversarial_J_pid_75,1,2,SensorGuard (GPU current),0.9846237360642988,1
+fe2433e75bdc,adversarial_J_pid_75,1,2,SensorGuard (GPU current),0.9884377417835855,1
+fe2433e75bdc,adversarial_J_pid_75,1,2,SensorGuard (GPU current),0.9884377417835855,1
+fe2433e75bdc,adversarial_J_pid_75,1,2,SensorGuard (GPU current),0.9913427683586437,1
+fe2433e75bdc,adversarial_J_pid_75,1,2,SensorGuard (GPU current),0.978294778355806,1
+fe2433e75bdc,adversarial_J_pid_75,1,2,SensorGuard (GPU current),0.9884377417835855,1
+fe2433e75bdc,adversarial_J_pid_75,1,2,SensorGuard (GPU current),0.9884377417835855,1
+fe2433e75bdc,adversarial_J_pid_75,1,2,SensorGuard (GPU current),0.9871938994190533,1
+fe2433e75bdc,adversarial_J_pid_75,1,2,SensorGuard (GPU current),0.9913427683586437,1
+fe2433e75bdc,adversarial_J_pid_75,1,2,SensorGuard (GPU current),1.0,1
+fe2433e75bdc,adversarial_J_pid_75,1,2,SensorGuard (GPU current),1.0,1
+ac263ea21e2c,adversarial_K_online_learning,1,3,SensorGuard (GPU current),0.9983388157894737,1
+ac263ea21e2c,adversarial_K_online_learning,1,3,SensorGuard (GPU current),1.0,1
+ac263ea21e2c,adversarial_K_online_learning,1,3,SensorGuard (GPU current),1.0,1
+ac263ea21e2c,adversarial_K_online_learning,1,3,SensorGuard (GPU current),1.0,1
+ac263ea21e2c,adversarial_K_online_learning,1,3,SensorGuard (GPU current),1.0,1
+ac263ea21e2c,adversarial_K_online_learning,1,3,SensorGuard (GPU current),1.0,1
+ac263ea21e2c,adversarial_K_online_learning,1,3,SensorGuard (GPU current),1.0,1
+ac263ea21e2c,adversarial_K_online_learning,1,3,SensorGuard (GPU current),1.0,1
+ac263ea21e2c,adversarial_K_online_learning,1,3,SensorGuard (GPU current),1.0,1
+ac263ea21e2c,adversarial_K_online_learning,1,3,SensorGuard (GPU current),1.0,1
+ac263ea21e2c,adversarial_K_online_learning,1,3,SensorGuard (GPU current),1.0,1
+ac263ea21e2c,adversarial_K_online_learning,1,3,SensorGuard (GPU current),1.0,1
+d5e571cea1ec,adversarial_K_online_learning,1,3,SensorGuard (GPU current),0.9930203999375911,1
+d5e571cea1ec,adversarial_K_online_learning,1,3,SensorGuard (GPU current),1.0,1
+d5e571cea1ec,adversarial_K_online_learning,1,3,SensorGuard (GPU current),1.0,1
+d5e571cea1ec,adversarial_K_online_learning,1,3,SensorGuard (GPU current),1.0,1
+d5e571cea1ec,adversarial_K_online_learning,1,3,SensorGuard (GPU current),1.0,1
+d5e571cea1ec,adversarial_K_online_learning,1,3,SensorGuard (GPU current),1.0,1
+d5e571cea1ec,adversarial_K_online_learning,1,3,SensorGuard (GPU current),1.0,1
+d5e571cea1ec,adversarial_K_online_learning,1,3,SensorGuard (GPU current),1.0,1
+d5e571cea1ec,adversarial_K_online_learning,1,3,SensorGuard (GPU current),1.0,1
+d5e571cea1ec,adversarial_K_online_learning,1,3,SensorGuard (GPU current),1.0,1
+d5e571cea1ec,adversarial_K_online_learning,1,3,SensorGuard (GPU current),1.0,1
+d5e571cea1ec,adversarial_K_online_learning,1,3,SensorGuard (GPU current),1.0,1
+0e24a18363e3,adversarial_L_diluted_10,1,4,SensorGuard (GPU current),0.9638947932059514,1
+0e24a18363e3,adversarial_L_diluted_10,1,4,SensorGuard (GPU current),0.9958388157894738,1
+0e24a18363e3,adversarial_L_diluted_10,1,4,SensorGuard (GPU current),0.9904337892144155,1
+0e24a18363e3,adversarial_L_diluted_10,1,4,SensorGuard (GPU current),1.0,1
+0e24a18363e3,adversarial_L_diluted_10,1,4,SensorGuard (GPU current),1.0,1
+0e24a18363e3,adversarial_L_diluted_10,1,4,SensorGuard (GPU current),1.0,1
+0e24a18363e3,adversarial_L_diluted_10,1,4,SensorGuard (GPU current),1.0,1
+0e24a18363e3,adversarial_L_diluted_10,1,4,SensorGuard (GPU current),0.9936008789367528,1
+0e24a18363e3,adversarial_L_diluted_10,1,4,SensorGuard (GPU current),0.9936008789367528,1
+0e24a18363e3,adversarial_L_diluted_10,1,4,SensorGuard (GPU current),1.0,1
+0e24a18363e3,adversarial_L_diluted_10,1,4,SensorGuard (GPU current),1.0,1
+0e24a18363e3,adversarial_L_diluted_10,1,4,SensorGuard (GPU current),1.0,1
+64c674b72b5c,adversarial_L_diluted_10,1,4,SensorGuard (GPU current),0.9727533656939283,1
+64c674b72b5c,adversarial_L_diluted_10,1,4,SensorGuard (GPU current),0.9958388157894738,1
+64c674b72b5c,adversarial_L_diluted_10,1,4,SensorGuard (GPU current),0.9933388157894737,1
+64c674b72b5c,adversarial_L_diluted_10,1,4,SensorGuard (GPU current),1.0,1
+64c674b72b5c,adversarial_L_diluted_10,1,4,SensorGuard (GPU current),0.992762063147279,1
+64c674b72b5c,adversarial_L_diluted_10,1,4,SensorGuard (GPU current),0.990262063147279,1
+64c674b72b5c,adversarial_L_diluted_10,1,4,SensorGuard (GPU current),0.9858511310604097,1
+64c674b72b5c,adversarial_L_diluted_10,1,4,SensorGuard (GPU current),0.9952246030545712,1
+64c674b72b5c,adversarial_L_diluted_10,1,4,SensorGuard (GPU current),1.0,1
+64c674b72b5c,adversarial_L_diluted_10,1,4,SensorGuard (GPU current),0.9884456002380374,1
+64c674b72b5c,adversarial_L_diluted_10,1,4,SensorGuard (GPU current),0.9933916927769085,1
+64c674b72b5c,adversarial_L_diluted_10,1,4,SensorGuard (GPU current),0.9819353993591924,1
+85b4d732488a,adversarial_L_diluted_5,1,5,SensorGuard (GPU current),0.9886426325763955,1
+85b4d732488a,adversarial_L_diluted_5,1,5,SensorGuard (GPU current),0.99800395256917,1
+85b4d732488a,adversarial_L_diluted_5,1,5,SensorGuard (GPU current),0.99550395256917,1
+85b4d732488a,adversarial_L_diluted_5,1,5,SensorGuard (GPU current),1.0,1
+85b4d732488a,adversarial_L_diluted_5,1,5,SensorGuard (GPU current),0.99800395256917,1
+85b4d732488a,adversarial_L_diluted_5,1,5,SensorGuard (GPU current),1.0,1
+85b4d732488a,adversarial_L_diluted_5,1,5,SensorGuard (GPU current),0.99800395256917,1
+85b4d732488a,adversarial_L_diluted_5,1,5,SensorGuard (GPU current),0.99800395256917,1
+85b4d732488a,adversarial_L_diluted_5,1,5,SensorGuard (GPU current),0.99800395256917,1
+85b4d732488a,adversarial_L_diluted_5,1,5,SensorGuard (GPU current),0.9838427683586437,1
+85b4d732488a,adversarial_L_diluted_5,1,5,SensorGuard (GPU current),0.9811928381512651,1
+85b4d732488a,adversarial_L_diluted_5,1,5,SensorGuard (GPU current),0.99800395256917,1
+977161b694e9,adversarial_L_diluted_5,1,5,SensorGuard (GPU current),0.9584051999709884,1
+977161b694e9,adversarial_L_diluted_5,1,5,SensorGuard (GPU current),0.99800395256917,1
+977161b694e9,adversarial_L_diluted_5,1,5,SensorGuard (GPU current),0.99800395256917,1
+977161b694e9,adversarial_L_diluted_5,1,5,SensorGuard (GPU current),0.99550395256917,1
+977161b694e9,adversarial_L_diluted_5,1,5,SensorGuard (GPU current),0.982420233147376,1
+977161b694e9,adversarial_L_diluted_5,1,5,SensorGuard (GPU current),0.9938427683586437,1
+977161b694e9,adversarial_L_diluted_5,1,5,SensorGuard (GPU current),1.0,1
+977161b694e9,adversarial_L_diluted_5,1,5,SensorGuard (GPU current),1.0,1
+977161b694e9,adversarial_L_diluted_5,1,5,SensorGuard (GPU current),0.9863427683586437,1
+977161b694e9,adversarial_L_diluted_5,1,5,SensorGuard (GPU current),0.9938427683586437,1
+977161b694e9,adversarial_L_diluted_5,1,5,SensorGuard (GPU current),0.99550395256917,1
+977161b694e9,adversarial_L_diluted_5,1,5,SensorGuard (GPU current),0.99800395256917,1
+341ff17e1e2f,adversarial_composite_50,1,6,SensorGuard (GPU current),0.9946089946961808,1
+341ff17e1e2f,adversarial_composite_50,1,6,SensorGuard (GPU current),1.0,1
+341ff17e1e2f,adversarial_composite_50,1,6,SensorGuard (GPU current),1.0,1
+341ff17e1e2f,adversarial_composite_50,1,6,SensorGuard (GPU current),1.0,1
+341ff17e1e2f,adversarial_composite_50,1,6,SensorGuard (GPU current),1.0,1
+341ff17e1e2f,adversarial_composite_50,1,6,SensorGuard (GPU current),1.0,1
+341ff17e1e2f,adversarial_composite_50,1,6,SensorGuard (GPU current),1.0,1
+ac2b68140ba0,adversarial_composite_50,1,6,SensorGuard (GPU current),0.9962968927853527,1
+ac2b68140ba0,adversarial_composite_50,1,6,SensorGuard (GPU current),1.0,1
+ac2b68140ba0,adversarial_composite_50,1,6,SensorGuard (GPU current),1.0,1
+ac2b68140ba0,adversarial_composite_50,1,6,SensorGuard (GPU current),1.0,1
+ac2b68140ba0,adversarial_composite_50,1,6,SensorGuard (GPU current),1.0,1
+ac2b68140ba0,adversarial_composite_50,1,6,SensorGuard (GPU current),1.0,1
+ac2b68140ba0,adversarial_composite_50,1,6,SensorGuard (GPU current),1.0,1
+7a6fc8762870,bert_sst2,1,7,SensorGuard (GPU current),0.9539168359554197,1
+7a6fc8762870,bert_sst2,1,7,SensorGuard (GPU current),1.0,1
+7a6fc8762870,bert_sst2,1,7,SensorGuard (GPU current),1.0,1
+7a6fc8762870,bert_sst2,1,7,SensorGuard (GPU current),1.0,1
+7a6fc8762870,bert_sst2,1,7,SensorGuard (GPU current),1.0,1
+7a6fc8762870,bert_sst2,1,7,SensorGuard (GPU current),1.0,1
+abaa0766715a,bert_sst2,1,7,SensorGuard (GPU current),0.9711505879684029,1
+abaa0766715a,bert_sst2,1,7,SensorGuard (GPU current),1.0,1
+abaa0766715a,bert_sst2,1,7,SensorGuard (GPU current),1.0,1
+abaa0766715a,bert_sst2,1,7,SensorGuard (GPU current),1.0,1
+abaa0766715a,bert_sst2,1,7,SensorGuard (GPU current),1.0,1
+abaa0766715a,bert_sst2,1,7,SensorGuard (GPU current),1.0,1
+3fdd46f7155b,bert_sst2_amp,1,8,SensorGuard (GPU current),0.9910582942097027,1
+3fdd46f7155b,bert_sst2_amp,1,8,SensorGuard (GPU current),1.0,1
+5d8b2cc8d619,bert_sst2_amp,1,8,SensorGuard (GPU current),0.9901773418287503,1
+5d8b2cc8d619,bert_sst2_amp,1,8,SensorGuard (GPU current),1.0,1
+584f59f498e4,cufft_benchmark,0,9,SensorGuard (GPU current),0.17676283838348184,0
+584f59f498e4,cufft_benchmark,0,9,SensorGuard (GPU current),0.04117807029571735,0
+584f59f498e4,cufft_benchmark,0,9,SensorGuard (GPU current),0.0714433934337147,0
+584f59f498e4,cufft_benchmark,0,9,SensorGuard (GPU current),0.09010204730134688,0
+584f59f498e4,cufft_benchmark,0,9,SensorGuard (GPU current),0.09760204730134689,0
+584f59f498e4,cufft_benchmark,0,9,SensorGuard (GPU current),0.03537593984962406,0
+584f59f498e4,cufft_benchmark,0,9,SensorGuard (GPU current),0.0851020473013469,0
+584f59f498e4,cufft_benchmark,0,9,SensorGuard (GPU current),0.10129485775886322,0
+584f59f498e4,cufft_benchmark,0,9,SensorGuard (GPU current),0.16841218310005324,0
+584f59f498e4,cufft_benchmark,0,9,SensorGuard (GPU current),0.06591218310005326,0
+584f59f498e4,cufft_benchmark,0,9,SensorGuard (GPU current),0.07444845253010507,0
+c3bab27d8f97,cufft_benchmark,0,9,SensorGuard (GPU current),0.3092423008954222,0
+c3bab27d8f97,cufft_benchmark,0,9,SensorGuard (GPU current),0.17879485775886322,0
+c3bab27d8f97,cufft_benchmark,0,9,SensorGuard (GPU current),0.03565359477124183,0
+c3bab27d8f97,cufft_benchmark,0,9,SensorGuard (GPU current),0.03787593984962406,0
+c3bab27d8f97,cufft_benchmark,0,9,SensorGuard (GPU current),0.028024475524475526,0
+c3bab27d8f97,cufft_benchmark,0,9,SensorGuard (GPU current),0.0225,0
+c3bab27d8f97,cufft_benchmark,0,9,SensorGuard (GPU current),0.03315359477124183,0
+c3bab27d8f97,cufft_benchmark,0,9,SensorGuard (GPU current),0.041036269430051814,0
+c3bab27d8f97,cufft_benchmark,0,9,SensorGuard (GPU current),0.06156074495452734,0
+c3bab27d8f97,cufft_benchmark,0,9,SensorGuard (GPU current),0.099184600287361,0
+c3bab27d8f97,cufft_benchmark,0,9,SensorGuard (GPU current),0.12025858832881141,0
+6fdc09475c9c,gpt2_wikitext2,1,10,SensorGuard (GPU current),0.7699697406792722,1
+6fdc09475c9c,gpt2_wikitext2,1,10,SensorGuard (GPU current),0.9792134941971018,1
+6fdc09475c9c,gpt2_wikitext2,1,10,SensorGuard (GPU current),1.0,1
+6fdc09475c9c,gpt2_wikitext2,1,10,SensorGuard (GPU current),0.9983443708609272,1
+6fdc09475c9c,gpt2_wikitext2,1,10,SensorGuard (GPU current),0.9983443708609272,1
+6fdc09475c9c,gpt2_wikitext2,1,10,SensorGuard (GPU current),0.8734105960264901,1
+6fdc09475c9c,gpt2_wikitext2,1,10,SensorGuard (GPU current),0.8663286014031867,1
+6fdc09475c9c,gpt2_wikitext2,1,10,SensorGuard (GPU current),0.9866887417218543,1
+6fdc09475c9c,gpt2_wikitext2,1,10,SensorGuard (GPU current),0.9783443708609272,1
+6fdc09475c9c,gpt2_wikitext2,1,10,SensorGuard (GPU current),0.9555410807102716,1
+6fdc09475c9c,gpt2_wikitext2,1,10,SensorGuard (GPU current),0.9588523389884172,1
+6fdc09475c9c,gpt2_wikitext2,1,10,SensorGuard (GPU current),0.9613523389884172,1
+6fdc09475c9c,gpt2_wikitext2,1,10,SensorGuard (GPU current),0.9638523389884172,1
+aaa926354722,gpt2_wikitext2,1,10,SensorGuard (GPU current),0.7849697406792719,1
+aaa926354722,gpt2_wikitext2,1,10,SensorGuard (GPU current),0.9826285396953903,1
+aaa926354722,gpt2_wikitext2,1,10,SensorGuard (GPU current),1.0,1
+aaa926354722,gpt2_wikitext2,1,10,SensorGuard (GPU current),1.0,1
+aaa926354722,gpt2_wikitext2,1,10,SensorGuard (GPU current),1.0,1
+aaa926354722,gpt2_wikitext2,1,10,SensorGuard (GPU current),1.0,1
+aaa926354722,gpt2_wikitext2,1,10,SensorGuard (GPU current),1.0,1
+aaa926354722,gpt2_wikitext2,1,10,SensorGuard (GPU current),1.0,1
+aaa926354722,gpt2_wikitext2,1,10,SensorGuard (GPU current),1.0,1
+aaa926354722,gpt2_wikitext2,1,10,SensorGuard (GPU current),0.9668034569478953,1
+aaa926354722,gpt2_wikitext2,1,10,SensorGuard (GPU current),0.9680410807102714,1
+aaa926354722,gpt2_wikitext2,1,10,SensorGuard (GPU current),0.9713523389884172,1
+aaa926354722,gpt2_wikitext2,1,10,SensorGuard (GPU current),0.9613523389884172,1
+12218502b878,gpt2_wikitext2_amp,1,11,SensorGuard (GPU current),0.8329248250080781,1
+12218502b878,gpt2_wikitext2_amp,1,11,SensorGuard (GPU current),1.0,1
+12218502b878,gpt2_wikitext2_amp,1,11,SensorGuard (GPU current),1.0,1
+12218502b878,gpt2_wikitext2_amp,1,11,SensorGuard (GPU current),1.0,1
+12218502b878,gpt2_wikitext2_amp,1,11,SensorGuard (GPU current),1.0,1
+12218502b878,gpt2_wikitext2_amp,1,11,SensorGuard (GPU current),1.0,1
+b2a8baa95276,gpt2_wikitext2_amp,1,11,SensorGuard (GPU current),0.8225908052636651,1
+b2a8baa95276,gpt2_wikitext2_amp,1,11,SensorGuard (GPU current),1.0,1
+b2a8baa95276,gpt2_wikitext2_amp,1,11,SensorGuard (GPU current),1.0,1
+b2a8baa95276,gpt2_wikitext2_amp,1,11,SensorGuard (GPU current),1.0,1
+b2a8baa95276,gpt2_wikitext2_amp,1,11,SensorGuard (GPU current),1.0,1
+b2a8baa95276,gpt2_wikitext2_amp,1,11,SensorGuard (GPU current),0.9618688298709951,1
+67207d9b03ee,idle,0,12,SensorGuard (GPU current),0.10378528844324679,0
+67207d9b03ee,idle,0,12,SensorGuard (GPU current),0.0318077775077758,0
+67207d9b03ee,idle,0,12,SensorGuard (GPU current),0.03319973315769323,0
+67207d9b03ee,idle,0,12,SensorGuard (GPU current),0.03319973315769323,0
+67207d9b03ee,idle,0,12,SensorGuard (GPU current),0.22454668888072324,0
+67207d9b03ee,idle,0,12,SensorGuard (GPU current),0.27752468905334166,0
+67207d9b03ee,idle,0,12,SensorGuard (GPU current),0.23893436044162317,0
+80a34acdeb1d,idle,0,12,SensorGuard (GPU current),0.037215184915183205,0
+80a34acdeb1d,idle,0,12,SensorGuard (GPU current),0.10909203496541302,0
+80a34acdeb1d,idle,0,12,SensorGuard (GPU current),0.042281631016770974,0
+80a34acdeb1d,idle,0,12,SensorGuard (GPU current),0.03471938366664881,0
+80a34acdeb1d,idle,0,12,SensorGuard (GPU current),0.05502193143734944,0
+80a34acdeb1d,idle,0,12,SensorGuard (GPU current),0.027512613201916555,0
+80a34acdeb1d,idle,0,12,SensorGuard (GPU current),0.04000841445045095,0
+50f59294d415,mining_ethash_proxy,0,13,SensorGuard (GPU current),0.04138869935577093,0
+50f59294d415,mining_ethash_proxy,0,13,SensorGuard (GPU current),0.05208313366881689,0
+50f59294d415,mining_ethash_proxy,0,13,SensorGuard (GPU current),0.04561266828968279,0
+50f59294d415,mining_ethash_proxy,0,13,SensorGuard (GPU current),0.04730253249097642,0
+50f59294d415,mining_ethash_proxy,0,13,SensorGuard (GPU current),0.04914893771973459,0
+50f59294d415,mining_ethash_proxy,0,13,SensorGuard (GPU current),0.04773672844005871,0
+50f59294d415,mining_ethash_proxy,0,13,SensorGuard (GPU current),0.04958313366881688,0
+50f59294d415,mining_ethash_proxy,0,13,SensorGuard (GPU current),0.048112668289682775,0
+50f59294d415,mining_ethash_proxy,0,13,SensorGuard (GPU current),0.04311266828968278,0
+50f59294d415,mining_ethash_proxy,0,13,SensorGuard (GPU current),0.04708313366881688,0
+50f59294d415,mining_ethash_proxy,0,13,SensorGuard (GPU current),0.04561266828968279,0
+c95103b2e217,mining_ethash_proxy,0,13,SensorGuard (GPU current),0.09593396591862899,0
+c95103b2e217,mining_ethash_proxy,0,13,SensorGuard (GPU current),0.046926592641352356,0
+c95103b2e217,mining_ethash_proxy,0,13,SensorGuard (GPU current),0.04458313366881689,0
+c95103b2e217,mining_ethash_proxy,0,13,SensorGuard (GPU current),0.016927915042045435,0
+c95103b2e217,mining_ethash_proxy,0,13,SensorGuard (GPU current),0.019803854891669494,0
+c95103b2e217,mining_ethash_proxy,0,13,SensorGuard (GPU current),0.044959073518440945,0
+c95103b2e217,mining_ethash_proxy,0,13,SensorGuard (GPU current),0.04458313366881689,0
+c95103b2e217,mining_ethash_proxy,0,13,SensorGuard (GPU current),0.020934776631885074,0
+c95103b2e217,mining_ethash_proxy,0,13,SensorGuard (GPU current),0.04104686423876507,0
+c95103b2e217,mining_ethash_proxy,0,13,SensorGuard (GPU current),0.0456194030988687,0
+c95103b2e217,mining_ethash_proxy,0,13,SensorGuard (GPU current),0.048772997870110524,0
+110f9abd97cb,nbody_sim,0,14,SensorGuard (GPU current),0.09441258404526566,0
+110f9abd97cb,nbody_sim,0,14,SensorGuard (GPU current),0.1425,0
+110f9abd97cb,nbody_sim,0,14,SensorGuard (GPU current),0.00315359477124183,0
+110f9abd97cb,nbody_sim,0,14,SensorGuard (GPU current),0.0,0
+110f9abd97cb,nbody_sim,0,14,SensorGuard (GPU current),0.0006535947712418301,0
+110f9abd97cb,nbody_sim,0,14,SensorGuard (GPU current),0.00315359477124183,0
+110f9abd97cb,nbody_sim,0,14,SensorGuard (GPU current),0.0,0
+110f9abd97cb,nbody_sim,0,14,SensorGuard (GPU current),0.003630921740215577,0
+110f9abd97cb,nbody_sim,0,14,SensorGuard (GPU current),0.00315359477124183,0
+110f9abd97cb,nbody_sim,0,14,SensorGuard (GPU current),0.0006535947712418301,0
+110f9abd97cb,nbody_sim,0,14,SensorGuard (GPU current),0.0,0
+4773e1a29fb4,nbody_sim,0,14,SensorGuard (GPU current),0.09979525870407563,0
+4773e1a29fb4,nbody_sim,0,14,SensorGuard (GPU current),0.0010362694300518136,0
+4773e1a29fb4,nbody_sim,0,14,SensorGuard (GPU current),0.00315359477124183,0
+4773e1a29fb4,nbody_sim,0,14,SensorGuard (GPU current),0.00315359477124183,0
+4773e1a29fb4,nbody_sim,0,14,SensorGuard (GPU current),0.00205906924173178,0
+4773e1a29fb4,nbody_sim,0,14,SensorGuard (GPU current),0.003630921740215577,0
+4773e1a29fb4,nbody_sim,0,14,SensorGuard (GPU current),0.0010362694300518136,0
+4773e1a29fb4,nbody_sim,0,14,SensorGuard (GPU current),0.00315359477124183,0
+4773e1a29fb4,nbody_sim,0,14,SensorGuard (GPU current),0.00455906924173178,0
+4773e1a29fb4,nbody_sim,0,14,SensorGuard (GPU current),0.00315359477124183,0
+4773e1a29fb4,nbody_sim,0,14,SensorGuard (GPU current),0.0,0
+cff47fb488da,pytorch_mlp_cifar10,1,15,SensorGuard (GPU current),0.7150792541980736,1
+cff47fb488da,pytorch_mlp_cifar10,1,15,SensorGuard (GPU current),0.9424937005966261,1
+cff47fb488da,pytorch_mlp_cifar10,1,15,SensorGuard (GPU current),0.9391855144007996,1
+cff47fb488da,pytorch_mlp_cifar10,1,15,SensorGuard (GPU current),0.9358836276083466,1
+cff47fb488da,pytorch_mlp_cifar10,1,15,SensorGuard (GPU current),0.9358836276083466,1
+ddc3d611de21,pytorch_mlp_cifar10,1,15,SensorGuard (GPU current),0.7270954267048121,1
+ddc3d611de21,pytorch_mlp_cifar10,1,15,SensorGuard (GPU current),0.9316918138041733,1
+ddc3d611de21,pytorch_mlp_cifar10,1,15,SensorGuard (GPU current),0.9316918138041733,1
+ddc3d611de21,pytorch_mlp_cifar10,1,15,SensorGuard (GPU current),0.9316918138041733,1
+ddc3d611de21,pytorch_mlp_cifar10,1,15,SensorGuard (GPU current),0.9316918138041733,1
+5b66597fad00,pytorch_resnet_cifar10,1,16,SensorGuard (GPU current),0.8979495602170928,1
+5b66597fad00,pytorch_resnet_cifar10,1,16,SensorGuard (GPU current),0.9960955999171099,1
+5b66597fad00,pytorch_resnet_cifar10,1,16,SensorGuard (GPU current),0.9923334639947798,1
+5b66597fad00,pytorch_resnet_cifar10,1,16,SensorGuard (GPU current),0.9898334639947798,1
+5b66597fad00,pytorch_resnet_cifar10,1,16,SensorGuard (GPU current),1.0,1
+5b66597fad00,pytorch_resnet_cifar10,1,16,SensorGuard (GPU current),1.0,1
+5b66597fad00,pytorch_resnet_cifar10,1,16,SensorGuard (GPU current),0.9975,1
+5b66597fad00,pytorch_resnet_cifar10,1,16,SensorGuard (GPU current),0.9923334639947798,1
+5b66597fad00,pytorch_resnet_cifar10,1,16,SensorGuard (GPU current),0.9948334639947798,1
+6ec160e0e8db,pytorch_resnet_cifar10,1,16,SensorGuard (GPU current),0.9899644071073618,1
+6ec160e0e8db,pytorch_resnet_cifar10,1,16,SensorGuard (GPU current),1.0,1
+6ec160e0e8db,pytorch_resnet_cifar10,1,16,SensorGuard (GPU current),1.0,1
+6ec160e0e8db,pytorch_resnet_cifar10,1,16,SensorGuard (GPU current),1.0,1
+6ec160e0e8db,pytorch_resnet_cifar10,1,16,SensorGuard (GPU current),0.9960955999171099,1
+6ec160e0e8db,pytorch_resnet_cifar10,1,16,SensorGuard (GPU current),0.9960955999171099,1
+6ec160e0e8db,pytorch_resnet_cifar10,1,16,SensorGuard (GPU current),0.9898334639947798,1
+6ec160e0e8db,pytorch_resnet_cifar10,1,16,SensorGuard (GPU current),0.9983225806451612,1
+6ec160e0e8db,pytorch_resnet_cifar10,1,16,SensorGuard (GPU current),0.9011554512437531,1
+2b26e3764f81,pytorch_resnet_cifar10_amp,1,17,SensorGuard (GPU current),0.9846630424906871,1
+2b26e3764f81,pytorch_resnet_cifar10_amp,1,17,SensorGuard (GPU current),0.9941037735849056,1
+2b26e3764f81,pytorch_resnet_cifar10_amp,1,17,SensorGuard (GPU current),1.0,1
+2b26e3764f81,pytorch_resnet_cifar10_amp,1,17,SensorGuard (GPU current),1.0,1
+2b26e3764f81,pytorch_resnet_cifar10_amp,1,17,SensorGuard (GPU current),1.0,1
+351fa9211f65,pytorch_resnet_cifar10_amp,1,17,SensorGuard (GPU current),0.9663885175202157,1
+351fa9211f65,pytorch_resnet_cifar10_amp,1,17,SensorGuard (GPU current),1.0,1
+351fa9211f65,pytorch_resnet_cifar10_amp,1,17,SensorGuard (GPU current),1.0,1
+351fa9211f65,pytorch_resnet_cifar10_amp,1,17,SensorGuard (GPU current),1.0,1
+351fa9211f65,pytorch_resnet_cifar10_amp,1,17,SensorGuard (GPU current),1.0,1
+89eb78e296d6,rendering_proxy,0,18,SensorGuard (GPU current),0.9028347295101713,1
+89eb78e296d6,rendering_proxy,0,18,SensorGuard (GPU current),0.7403176837501658,1
+89eb78e296d6,rendering_proxy,0,18,SensorGuard (GPU current),0.7372852028730773,1
+89eb78e296d6,rendering_proxy,0,18,SensorGuard (GPU current),0.8291007940671358,1
+89eb78e296d6,rendering_proxy,0,18,SensorGuard (GPU current),0.6717823659231581,1
+89eb78e296d6,rendering_proxy,0,18,SensorGuard (GPU current),0.4006936235997899,0
+89eb78e296d6,rendering_proxy,0,18,SensorGuard (GPU current),0.3542298930298417,0
+89eb78e296d6,rendering_proxy,0,18,SensorGuard (GPU current),0.43988348780108355,0
+89eb78e296d6,rendering_proxy,0,18,SensorGuard (GPU current),0.40803708257232535,0
+89eb78e296d6,rendering_proxy,0,18,SensorGuard (GPU current),0.32091975723113536,0
+89eb78e296d6,rendering_proxy,0,18,SensorGuard (GPU current),0.31814210230951756,0
+d8ac49f7c850,rendering_proxy,0,18,SensorGuard (GPU current),0.9212521765241573,1
+d8ac49f7c850,rendering_proxy,0,18,SensorGuard (GPU current),0.8454009157399318,1
+d8ac49f7c850,rendering_proxy,0,18,SensorGuard (GPU current),0.8441133620918632,1
+d8ac49f7c850,rendering_proxy,0,18,SensorGuard (GPU current),0.4984780133305936,0
+d8ac49f7c850,rendering_proxy,0,18,SensorGuard (GPU current),0.47472100520333904,0
+d8ac49f7c850,rendering_proxy,0,18,SensorGuard (GPU current),0.6106936235997898,1
+d8ac49f7c850,rendering_proxy,0,18,SensorGuard (GPU current),0.6342321845079291,1
+d8ac49f7c850,rendering_proxy,0,18,SensorGuard (GPU current),0.5275409804315921,1
+d8ac49f7c850,rendering_proxy,0,18,SensorGuard (GPU current),0.5013926233946604,1
+d8ac49f7c850,rendering_proxy,0,18,SensorGuard (GPU current),0.3281936235997899,0
+d8ac49f7c850,rendering_proxy,0,18,SensorGuard (GPU current),0.41178236592315814,0

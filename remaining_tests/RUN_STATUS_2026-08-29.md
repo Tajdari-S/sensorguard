@@ -30,17 +30,16 @@ characterization results, not detector or sensor-accuracy results. H200 is not
 part of this collection.
 
 The replacement paper-motivation figure is
-`results/figures/sensor-motivation-evidence.pdf`. Panel A reports the breadth
-of both currently measured corpora without calling the 95.7% NVML-only result
-SensorGuard. The synchronized NVML corpus contains 15 workload families and
-118 runs: the random forest detects 22/23 training runs when the three training
-families are represented during fitting, but 0/23 when families are held out.
-The separate SensorGuard GPU-current pilot contains 19 named workload variants
-and 40 runs; its 30-second run-grouped result uses 36 eligible runs and reaches
-1.00 macro F1. It is not a held-out-family result, so the figure explicitly
-marks matched SensorGuard recovery of the NVML misses as pending. The shared
-purple segment identifies the common ResNet-50, GPT-2, and BERT core; it is not
-a claim of paired detection on the same runs.
+`results/figures/sensor-motivation-evidence.pdf`. Panel A now compares NVML and
+the GPU-current detector on the exact same 36 paired RTX 3090 runs (26 training
+and 10 non-training). It leaves each workload label out of fitting in turn and
+applies the fixed 3-of-5 rule at probability 0.75. NVML gives TP=22, FN=4,
+FP=0, TN=10; SensorGuard gives TP=24, FN=2, FP=1, TN=9. SensorGuard recovers
+both held-out `adversarial_H_mimicry_cufft` runs that NVML misses, but raises
+one false alert on `rendering_proxy`. Both methods miss the two short
+`bert_sst2_amp` runs because each yields only two 30-second windows and cannot
+satisfy a three-window alert. This is a matched development diagnostic, not
+the sealed final attack-family test.
 
 Panel B is a matched overhead comparison. WAVE and the SensorGuard NVML+DCGM
 base logger were measured on the exact same
@@ -52,16 +51,22 @@ with a 1.027--1.083x range. All 18 monitored runs passed the NVML and DCGM
 trace-health gates. Raw aggregate measurements and the run manifest are in
 `results/wave/matched_sensor_overhead_3090.csv` and `.json`.
 
-Suggested caption: **A:** Current measured workload scope. The NVML corpus has
-15 families (118 runs), with 22/23 training runs detected when families are
-represented during fitting but 0/23 under held-out-family evaluation. The
-separate SensorGuard current-clamp pilot has 19 workload variants (40 runs) and
-achieves 1.00 macro F1 on the 36 runs eligible for 30-second run-grouped
-evaluation; held-out-family sensor validation remains pending. **B:** On six
+Suggested caption: **A:** Leave-one-workload-family-out results on the same 36
+paired runs. Under the fixed 3-of-5 rule at probability 0.75, NVML detects
+22/26 training runs with no false alerts; SensorGuard's GPU-current detector
+detects 24/26 with one false alert among 10 non-training runs. **B:** On six
 identical GPT-2, LLaMA, and Qwen configurations on the same RTX 3090, WAVE
 costs 28.50x runtime while the SensorGuard NVML+DCGM base logger costs 1.05x;
-whiskers show the range across configurations. Physical-sensor logger overhead
-is not included and remains pending.
+whiskers show the range across configurations. The overhead bar covers the
+NVML+DCGM base logger only.
+
+For the final claim, collect more synchronized application-level pairs chosen
+from NVML-hard development cases before inspecting their sensor predictions:
+matched GPT-2 and BERT training/inference, the fused-update held-out attack,
+and useful-work-preserving timing/dilution or online-update training paired
+with inference, FFT, mining, and rendering controls. Freeze which families are
+validation and which are final test before fitting. These new electrical runs
+remain blocked only on safe PicoScope probe wiring and the channel-to-GPU map.
 
 ## Negative exposure (R06)
 

@@ -1,0 +1,73 @@
+method,run_id,workload_label,target,fold,training_probability,n_windows,correct_windows,prediction,outcome
+NVML,0dac05176434,adversarial_H_mimicry_cufft,1,1,0.6158639056263089,12,10,0,FN
+NVML,0e24a18363e3,adversarial_L_diluted_10,1,4,1.0,12,12,1,TP
+NVML,110f9abd97cb,nbody_sim,0,14,0.08588755759803028,11,11,0,TN
+NVML,12218502b878,gpt2_wikitext2_amp,1,11,0.9606249936917637,6,6,1,TP
+NVML,2b26e3764f81,pytorch_resnet_cifar10_amp,1,17,0.9375949902407287,5,5,1,TP
+NVML,341ff17e1e2f,adversarial_composite_50,1,6,0.9966606005459508,7,7,1,TP
+NVML,351fa9211f65,pytorch_resnet_cifar10_amp,1,17,0.9396904958587061,5,5,1,TP
+NVML,3fdd46f7155b,bert_sst2_amp,1,8,0.9959921100678143,2,2,0,FN
+NVML,4773e1a29fb4,nbody_sim,0,14,0.06290281970438796,11,11,0,TN
+NVML,50f59294d415,mining_ethash_proxy,0,13,0.5182872660765563,11,5,0,TN
+NVML,584f59f498e4,cufft_benchmark,0,9,0.35126020347410547,11,11,0,TN
+NVML,5b66597fad00,pytorch_resnet_cifar10,1,16,0.9885771903172468,9,9,1,TP
+NVML,5d8b2cc8d619,bert_sst2_amp,1,8,1.0,2,2,0,FN
+NVML,64c674b72b5c,adversarial_L_diluted_10,1,4,0.9992041818880866,12,12,1,TP
+NVML,67207d9b03ee,idle,0,12,0.3639747377072452,7,7,0,TN
+NVML,6ec160e0e8db,pytorch_resnet_cifar10,1,16,0.9770563855370631,9,9,1,TP
+NVML,6fdc09475c9c,gpt2_wikitext2,1,10,0.8429619185253181,13,12,1,TP
+NVML,7a6fc8762870,bert_sst2,1,7,0.9894238333201916,6,6,1,TP
+NVML,80a34acdeb1d,idle,0,12,0.3652612644960305,7,7,0,TN
+NVML,85b4d732488a,adversarial_L_diluted_5,1,5,0.996836703401546,12,12,1,TP
+NVML,89eb78e296d6,rendering_proxy,0,18,0.1260680284351203,11,11,0,TN
+NVML,977161b694e9,adversarial_L_diluted_5,1,5,0.99679430171278,12,12,1,TP
+NVML,aaa926354722,gpt2_wikitext2,1,10,0.920721025798793,13,13,1,TP
+NVML,abaa0766715a,bert_sst2,1,7,0.9925975129827979,6,6,1,TP
+NVML,ac263ea21e2c,adversarial_K_online_learning,1,3,0.9962725477052174,12,12,1,TP
+NVML,ac2b68140ba0,adversarial_composite_50,1,6,0.986410708092497,7,7,1,TP
+NVML,ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,0.5125505506310887,12,4,0,FN
+NVML,b2a8baa95276,gpt2_wikitext2_amp,1,11,0.9148422072617223,6,6,1,TP
+NVML,c3bab27d8f97,cufft_benchmark,0,9,0.337052331697316,11,11,0,TN
+NVML,c95103b2e217,mining_ethash_proxy,0,13,0.5311769141035108,11,4,0,TN
+NVML,cff47fb488da,pytorch_mlp_cifar10,1,15,0.7899377208628802,5,5,1,TP
+NVML,d5e571cea1ec,adversarial_K_online_learning,1,3,0.9979276517275796,12,12,1,TP
+NVML,d8ac49f7c850,rendering_proxy,0,18,0.12683569847396628,11,11,0,TN
+NVML,ddc3d611de21,pytorch_mlp_cifar10,1,15,0.8031829701700438,5,5,1,TP
+NVML,ed7ab69e9c47,adversarial_J_pid_75,1,2,0.7135618517428463,12,12,1,TP
+NVML,fe2433e75bdc,adversarial_J_pid_75,1,2,0.7759225670233897,12,12,1,TP
+SensorGuard (GPU current),0dac05176434,adversarial_H_mimicry_cufft,1,1,0.9816999515197721,12,12,1,TP
+SensorGuard (GPU current),0e24a18363e3,adversarial_L_diluted_10,1,4,0.9947807630069455,12,12,1,TP
+SensorGuard (GPU current),110f9abd97cb,nbody_sim,0,14,0.02284649814924458,11,11,0,TN
+SensorGuard (GPU current),12218502b878,gpt2_wikitext2_amp,1,11,0.9721541375013464,6,6,1,TP
+SensorGuard (GPU current),2b26e3764f81,pytorch_resnet_cifar10_amp,1,17,0.9957533632151186,5,5,1,TP
+SensorGuard (GPU current),341ff17e1e2f,adversarial_composite_50,1,6,0.9992298563851687,7,7,1,TP
+SensorGuard (GPU current),351fa9211f65,pytorch_resnet_cifar10_amp,1,17,0.9932777035040431,5,5,1,TP
+SensorGuard (GPU current),3fdd46f7155b,bert_sst2_amp,1,8,0.9955291471048513,2,2,0,FN
+SensorGuard (GPU current),4773e1a29fb4,nbody_sim,0,14,0.011339203352075064,11,11,0,TN
+SensorGuard (GPU current),50f59294d415,mining_ethash_proxy,0,13,0.04697972474288386,11,11,0,TN
+SensorGuard (GPU current),584f59f498e4,cufft_benchmark,0,9,0.09160309639596848,11,11,0,TN
+SensorGuard (GPU current),5b66597fad00,pytorch_resnet_cifar10,1,16,0.9845421129014803,9,9,1,TP
+SensorGuard (GPU current),5d8b2cc8d619,bert_sst2_amp,1,8,0.9950886709143751,2,2,0,FN
+SensorGuard (GPU current),64c674b72b5c,adversarial_L_diluted_10,1,4,0.9908169625047129,12,12,1,TP
+SensorGuard (GPU current),67207d9b03ee,idle,0,12,0.13471403866315673,7,7,0,TN
+SensorGuard (GPU current),6ec160e0e8db,pytorch_resnet_cifar10,1,16,0.9857185669805862,9,9,1,TP
+SensorGuard (GPU current),6fdc09475c9c,gpt2_wikitext2,1,10,0.9454032603297085,13,13,1,TP
+SensorGuard (GPU current),7a6fc8762870,bert_sst2,1,7,0.9923194726592367,6,6,1,TP
+SensorGuard (GPU current),80a34acdeb1d,idle,0,12,0.04940731337910471,7,7,0,TN
+SensorGuard (GPU current),85b4d732488a,adversarial_L_diluted_5,1,5,0.9947671589225412,12,12,1,TP
+SensorGuard (GPU current),89eb78e296d6,rendering_proxy,0,18,0.5566569747879456,11,6,0,TN
+SensorGuard (GPU current),977161b694e9,adversarial_L_diluted_5,1,5,0.9916561250866788,12,12,1,TP
+SensorGuard (GPU current),aaa926354722,gpt2_wikitext2,1,10,0.9719344227699741,13,13,1,TP
+SensorGuard (GPU current),abaa0766715a,bert_sst2,1,7,0.9951917646614005,6,6,1,TP
+SensorGuard (GPU current),ac263ea21e2c,adversarial_K_online_learning,1,3,0.9998615679824562,12,12,1,TP
+SensorGuard (GPU current),ac2b68140ba0,adversarial_composite_50,1,6,0.9994709846836217,7,7,1,TP
+SensorGuard (GPU current),ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,0.9783678764604903,12,12,1,TP
+SensorGuard (GPU current),b2a8baa95276,gpt2_wikitext2_amp,1,11,0.9640766058557767,6,6,1,TP
+SensorGuard (GPU current),c3bab27d8f97,cufft_benchmark,0,9,0.08793499696105639,11,11,0,TN
+SensorGuard (GPU current),c95103b2e217,mining_ethash_proxy,0,13,0.042735610108127306,11,11,0,TN
+SensorGuard (GPU current),cff47fb488da,pytorch_mlp_cifar10,1,15,0.8937051448824385,5,5,1,TP
+SensorGuard (GPU current),d5e571cea1ec,adversarial_K_online_learning,1,3,0.999418366661466,12,12,1,TP
+SensorGuard (GPU current),d8ac49f7c850,rendering_proxy,0,18,0.5998000794860731,11,4,1,FP
+SensorGuard (GPU current),ddc3d611de21,pytorch_mlp_cifar10,1,15,0.890772536384301,5,5,1,TP
+SensorGuard (GPU current),ed7ab69e9c47,adversarial_J_pid_75,1,2,0.9665899585490735,12,12,1,TP
+SensorGuard (GPU current),fe2433e75bdc,adversarial_J_pid_75,1,2,0.9851227291146145,12,12,1,TP
