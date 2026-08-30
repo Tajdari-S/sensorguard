@@ -13,6 +13,18 @@ NVML/retained-sensor features -> random-forest window probability
                               -> run-level alert
 ```
 
+## Paper interpretation boundary
+
+- H200 appears only as the prior state-of-the-art NVML reference used for a
+  like-for-like comparison of reported detector behavior. We do not claim a
+  newly collected H200 result, pool H200 and RTX runs, or describe them as a
+  matched cross-hardware experiment.
+- Current-paper measurements and matched roofline pairs are RTX~3090 results.
+- Future paper tables should not contain literal `N/A` result entries. Omit
+  metrics that are outside a method's task or use an explained dash; leave a
+  required but uncollected measurement explicitly pending rather than
+  inventing a value.
+
 The machine-readable tracker is [`CHECKLIST.csv`](CHECKLIST.csv). Update its
 `status`, `owner`, `artifact_path`, and `generating_commit` fields in the same
 commit that adds a result. The claim release gates are in
