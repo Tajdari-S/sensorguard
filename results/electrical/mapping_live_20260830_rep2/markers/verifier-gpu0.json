@@ -1,0 +1,10 @@
+{
+  "label": "verifier-gpu0",
+  "gpu_uuid": "GPU-bff95c83-0adb-feb7-9825-359f31b26de8",
+  "planned_start_epoch_s": 1788111000.0,
+  "actual_start_epoch_s": 1788111000.0001009,
+  "actual_end_epoch_s": 1788111020.0024025,
+  "duration_s": 20.002301692962646,
+  "iterations": 443,
+  "hostname": "verifier"
+}

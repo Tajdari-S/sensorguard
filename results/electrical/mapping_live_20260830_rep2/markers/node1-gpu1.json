@@ -1,0 +1,10 @@
+{
+  "label": "node1-gpu1",
+  "gpu_uuid": "GPU-b30ba66a-b9d4-b427-e99a-cdfa7021053e",
+  "planned_start_epoch_s": 1788110960.0,
+  "actual_start_epoch_s": 1788110960.0000813,
+  "actual_end_epoch_s": 1788110980.0518336,
+  "duration_s": 20.05175232887268,
+  "iterations": 263,
+  "hostname": "testbed-node1"
+}
