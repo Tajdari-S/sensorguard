@@ -1,0 +1,61 @@
+run_id: 20260829_neg-fft_node2-gpu2_s2_n005
+git_commit: 24917ad0a5f71d311919957b98c498ea9a0f37f4
+operator: supervisor
+start_utc: '2026-08-29T22:21:26.945609+00:00'
+end_utc: '2026-08-29T22:52:04.151563+00:00'
+workload:
+  family: non_ml
+  name: neg_fft
+  command: python scripts/workloads/hpc_workload.py --mode fft --device cuda:2 --duration-s
+    1800 --seed 2
+  seed: 0
+  duration_s: 1802.5
+hardware:
+  gpu_index_under_test: 2
+  gpu_set: '2'
+sensors:
+  nvml: true
+  dcgm: true
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu2
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 1837
+  missing_fraction: 0.0
+  alignment_error_ms: 7.8
+  edge_latency_ms: 1488.8
+  bursts_detected: 6
+  bursts_expected: 6
+- channel_id: dcgm.all
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW(receipt)
+  health: pass
+  samples: 1834
+  error_lines: 0
+marker_bursts:
+  pre:
+  - - 31911.06931
+    - 31913.097197
+  - - 31915.097373
+    - 31917.117836
+  - - 31919.117975
+    - 31921.135319
+  post:
+  - - 33727.955147
+    - 33729.998443
+  - - 33731.998627
+    - 33734.0241
+  - - 33736.024231
+    - 33738.046434
+profiled: false
+artifact_checksums:
+  dcgm.tsv: f870341a3163bb65e4610bcff564de27bcc0839b9e5ed406b211697e6a81493d
+  nvml.csv: 1d48a9668626fc7747bef1324c2be6ecbe40f1f52d5d252fe85869c424ce17ac
+status: completed

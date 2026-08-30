@@ -1,0 +1,61 @@
+run_id: 20260829_neg-gemm_node2-gpu0_s0_n008
+git_commit: 24917ad0a5f71d311919957b98c498ea9a0f37f4
+operator: supervisor
+start_utc: '2026-08-29T23:53:15.767020+00:00'
+end_utc: '2026-08-30T00:23:53.966096+00:00'
+workload:
+  family: non_ml
+  name: neg_gemm
+  command: python scripts/workloads/hpc_workload.py --mode gemm --device cuda:0 --duration-s
+    1800 --seed 0
+  seed: 0
+  duration_s: 1804.054
+hardware:
+  gpu_index_under_test: 0
+  gpu_set: '0'
+sensors:
+  nvml: true
+  dcgm: true
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu0
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 1838
+  missing_fraction: 0.0
+  alignment_error_ms: 7.4
+  edge_latency_ms: 895.9
+  bursts_detected: 6
+  bursts_expected: 6
+- channel_id: dcgm.all
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW(receipt)
+  health: pass
+  samples: 1835
+  error_lines: 0
+marker_bursts:
+  pre:
+  - - 37419.784944
+    - 37421.817894
+  - - 37423.818073
+    - 37425.824939
+  - - 37427.825104
+    - 37429.833896
+  post:
+  - - 39238.458767
+    - 39240.483167
+  - - 39242.483348
+    - 39244.511268
+  - - 39246.511519
+    - 39248.537315
+profiled: false
+artifact_checksums:
+  dcgm.tsv: c0e631fc9f6d92578aea04829af3fa52ebc7e2718649d67ea99c8782947e2a50
+  nvml.csv: 68430d9f42cffb2f22b07e43ceb2e3b180b90b681e8f63260f27aa8b7b219c26
+status: completed
