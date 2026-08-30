@@ -108,6 +108,8 @@ def main() -> int:
     parser.add_argument("--max-alignment-error-ms", type=float, default=100.0)
     parser.add_argument("--max-edge-latency-ms", type=float, default=3000.0,
                         help="power-edge detection budget: sensor lag + 1 Hz quantization")
+    parser.add_argument("--marker-cooldown-s", type=float, default=10.0,
+                        help="idle interval before the post-workload load marker")
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--profiled", action="store_true",
                         help="mark this run as a profiled characterization pass")
@@ -162,6 +164,12 @@ def main() -> int:
         workload_rc = subprocess.run(f"nice -n 10 {args.workload_cmd}",
                                      shell=True).returncode
         t_wl_end = raw_now()
+        # A continuously active workload can leave the 10-second pre-marker
+        # floor near the power cap, making a healthy post-run marker unable to
+        # rise another 50 W.  Cool down after recording the workload endpoint
+        # so the marker measures alignment rather than residual GPU load.
+        if args.marker_cooldown_s > 0:
+            time.sleep(args.marker_cooldown_s)
         bursts_post = marker()
     except Exception as err:
         status = f"failed:{err}"
