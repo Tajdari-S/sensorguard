@@ -30,11 +30,20 @@ characterization results, not detector or sensor-accuracy results. H200 is not
 part of this collection.
 
 The replacement paper-motivation figure is
-`results/figures/sensor-motivation-evidence.pdf`. Panel A now compares one
-coherent quantity under the same NVML-only random forest and fixed 3-of-5 rule:
-training detection is 95.7% under run-grouped evaluation but 0/23 (0.0%) when
-the application family is held out. Panel B is a matched overhead comparison.
-WAVE and the SensorGuard NVML+DCGM base logger were measured on the exact same
+`results/figures/sensor-motivation-evidence.pdf`. Panel A reports the breadth
+of both currently measured corpora without calling the 95.7% NVML-only result
+SensorGuard. The synchronized NVML corpus contains 15 workload families and
+118 runs: the random forest detects 22/23 training runs when the three training
+families are represented during fitting, but 0/23 when families are held out.
+The separate SensorGuard GPU-current pilot contains 19 named workload variants
+and 40 runs; its 30-second run-grouped result uses 36 eligible runs and reaches
+1.00 macro F1. It is not a held-out-family result, so the figure explicitly
+marks matched SensorGuard recovery of the NVML misses as pending. The shared
+purple segment identifies the common ResNet-50, GPT-2, and BERT core; it is not
+a claim of paired detection on the same runs.
+
+Panel B is a matched overhead comparison. WAVE and the SensorGuard NVML+DCGM
+base logger were measured on the exact same
 six configurations (two GPT-2, two LLaMA, and two Qwen), the same power-capped
 RTX 3090 (GPU-392b25f7...), three repetitions per condition, and the same
 whole-process wall-time definition. WAVE averages 28.497x runtime with a
@@ -43,13 +52,16 @@ with a 1.027--1.083x range. All 18 monitored runs passed the NVML and DCGM
 trace-health gates. Raw aggregate measurements and the run manifest are in
 `results/wave/matched_sensor_overhead_3090.csv` and `.json`.
 
-Suggested caption: **A:** The same NVML-only detector achieves 95.7% training
-detection when workload families are represented during fitting, but detects
-0/23 runs from held-out families; whiskers show 95% confidence intervals.
-**B:** On six identical GPT-2, LLaMA, and Qwen configurations on the same RTX
-3090, WAVE costs 28.50x runtime while the SensorGuard NVML+DCGM base logger
-costs 1.05x; whiskers show the range across configurations. Physical-sensor
-logger overhead is not included and remains pending.
+Suggested caption: **A:** Current measured workload scope. The NVML corpus has
+15 families (118 runs), with 22/23 training runs detected when families are
+represented during fitting but 0/23 under held-out-family evaluation. The
+separate SensorGuard current-clamp pilot has 19 workload variants (40 runs) and
+achieves 1.00 macro F1 on the 36 runs eligible for 30-second run-grouped
+evaluation; held-out-family sensor validation remains pending. **B:** On six
+identical GPT-2, LLaMA, and Qwen configurations on the same RTX 3090, WAVE
+costs 28.50x runtime while the SensorGuard NVML+DCGM base logger costs 1.05x;
+whiskers show the range across configurations. Physical-sensor logger overhead
+is not included and remains pending.
 
 ## Negative exposure (R06)
 
