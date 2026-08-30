@@ -169,7 +169,9 @@ def start_penalty_logger(sensor: str, output_dir: Path, gpus: str,
 
 def stop_penalty_logger(proc: subprocess.Popen, sensor: str) -> None:
     if sensor == "pico":
-        proc.wait(timeout=15)
+        # Six legacy ps2000 handles can take several seconds each to close
+        # after their streaming callbacks have drained.
+        proc.wait(timeout=60)
     else:
         proc.terminate()
         proc.wait(timeout=10)
