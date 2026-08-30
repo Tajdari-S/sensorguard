@@ -140,16 +140,15 @@ def configure() -> None:
     plt.rcParams.update(
         {
             "font.family": "DejaVu Sans",
-            "font.size": 8.4,
-            "axes.titlesize": 10.2,
-            "axes.labelsize": 8.8,
-            "xtick.labelsize": 7.8,
-            "ytick.labelsize": 8.6,
+            "font.size": 9.0,
+            "axes.titlesize": 10.0,
+            "axes.labelsize": 10.0,
+            "xtick.labelsize": 8.5,
+            "ytick.labelsize": 8.5,
             "pdf.fonttype": 42,
             "ps.fonttype": 42,
-            "axes.spines.top": False,
-            "axes.spines.right": False,
-            "axes.spines.left": False,
+            "axes.edgecolor": "#888888",
+            "axes.linewidth": 0.65,
         }
     )
 
@@ -158,111 +157,99 @@ def make_figure(rows: list[dict[str, object]]) -> None:
     by_method = {row["method"]: row for row in rows}
     wave = by_method["WAVE"]
 
-    fig = plt.figure(figsize=(7.15, 3.85))
-    grid = fig.add_gridspec(1, 2, width_ratios=[1.7, 1.0], wspace=0.08)
-    scope_ax = fig.add_subplot(grid[0, 0])
-    overhead_ax = fig.add_subplot(grid[0, 1], sharey=scope_ax)
-
-    for axis in (scope_ax, overhead_ax):
-        axis.set_ylim(0.45, 3.55)
-    scope_ax.set_xlim(0, 1)
-    scope_ax.axis("off")
-    for y in (1.5, 2.5):
-        scope_ax.axhline(y, color=GRID, linewidth=0.7, xmin=0.0, xmax=0.98)
-
-    method_rows = [
-        (3, "Prior NVML", NVML,
-         "162 workloads (106 training / 40 inference / 16 other)",
-         "Unseen family: 0/23 detected; 10/95 false positives"),
-        (2, "WAVE", WAVE,
-         "3 decoder families: GPT-2, LLaMA, Qwen",
-         "Architecture verification only; not training detection"),
-        (1, "SensorGuard", OURS,
-         "Targets: ResNet-50, GPT-2, BERT (+ MLP in the physical pilot)",
-         "Controls: 4 inference + 8 non-ML; fused update pending"),
+    roofline_total = 286
+    roofline_overlap = 101
+    roofline_separated = roofline_total - roofline_overlap
+    roofline_pct = [
+        100.0 * roofline_overlap / roofline_total,
+        100.0 * roofline_separated / roofline_total,
     ]
-    for y, method, color, scope, limitation in method_rows:
-        scope_ax.text(0.01, y + 0.20, method, color=color, fontsize=9.5,
-                      fontweight="bold", ha="left", va="center")
-        scope_ax.text(0.26, y + 0.20, scope, color=color, fontsize=7.8,
-                      ha="left", va="center")
-        scope_ax.text(0.26, y - 0.20, limitation, color=MUTED, fontsize=7.3,
-                      ha="left", va="center")
 
-    scope_ax.text(0.01, 3.48, "Method and measured application scope", color=NVML,
-                  fontsize=8.4, ha="left", va="bottom")
+    wave_multiplier = 1.0 + float(wave["overhead_mean_pct"]) / 100.0
+    wave_low = 1.0 + float(wave["overhead_low_pct"]) / 100.0
+    wave_high = 1.0 + float(wave["overhead_high_pct"]) / 100.0
+    logger_multiplier = 1.0
 
-    overhead_ax.set_xscale("symlog", linthresh=1.0, linscale=0.72)
-    overhead_ax.set_xlim(-0.25, 4300)
-    overhead_ax.set_xticks([0, 1, 10, 100, 1000], ["0", "1", "10", "100", "1000"])
-    overhead_ax.set_yticks([])
-    overhead_ax.set_xlabel("Workload penalty (%) - symlog")
-    overhead_ax.grid(axis="x", color=GRID, linewidth=0.65)
-    overhead_ax.axvspan(-0.2, 1.0, color=OURS, alpha=0.06, linewidth=0)
-    overhead_ax.axvline(1.0, color="#999999", linestyle=(0, (3, 3)), linewidth=0.9)
-    overhead_ax.text(0.02, 3.48, "Measured monitoring overhead", transform=overhead_ax.get_yaxis_transform(),
-                     color=NVML, fontsize=8.4, ha="left", va="bottom")
-    overhead_ax.text(0.95, 3.33, "continuous budget <=1%", color=MUTED,
-                     fontsize=6.8, ha="right", va="center")
-
-    overhead_ax.scatter(0, 3, s=62, color=NVML, marker="o", edgecolor="white",
-                        linewidth=0.8, zorder=3)
-    overhead_ax.scatter(0, 1, s=70, color=OURS, marker="D", edgecolor="white",
-                        linewidth=0.8, zorder=3)
-    overhead_ax.plot(
-        [float(wave["overhead_low_pct"]), float(wave["overhead_high_pct"])],
-        [2, 2],
-        color=WAVE,
-        linewidth=3.0,
-        solid_capstyle="round",
-        zorder=2,
+    fig, (roofline_ax, overhead_ax) = plt.subplots(
+        1, 2, figsize=(7.15, 2.75), gridspec_kw={"wspace": 0.26}
     )
-    overhead_ax.scatter(float(wave["overhead_mean_pct"]), 2, s=70, color=WAVE,
-                        marker="s", edgecolor="white", linewidth=0.8, zorder=3)
 
-    overhead_ax.text(0.28, 3, "0.0% in our logger check", color=NVML, fontsize=7.3,
-                     ha="left", va="center")
-    overhead_ax.text(0.28, 1.10, "0.0% base logger*", color=OURS, fontsize=7.5,
-                     ha="left", va="center")
-    overhead_ax.text(0.28, 0.84, "*physical logger pending", color=MUTED, fontsize=6.7,
-                     ha="left", va="center")
+    # A: Roofline overlap. A substantial fraction of non-training work occupies
+    # the same arithmetic-intensity range as training, so location is ambiguous.
+    roofline_bars = roofline_ax.bar(
+        [0, 1], roofline_pct, width=0.68,
+        color=[WAVE, "#AFC4DA"], edgecolor="#555555", linewidth=0.45,
+    )
+    roofline_ax.set_ylabel("Non-training configs (%)")
+    roofline_ax.set_xticks(
+        [0, 1],
+        [f"Inside training range\n({roofline_overlap} cases)",
+         f"Outside training range\n({roofline_separated} cases)"],
+    )
+    roofline_ax.set_ylim(0, 78)
+    roofline_ax.set_yticks([0, 20, 40, 60])
+    roofline_ax.grid(axis="y", color=GRID, linestyle="--", linewidth=0.55, alpha=0.75)
+    roofline_ax.set_axisbelow(True)
+    roofline_ax.set_title("A", pad=3)
+    for bar, value in zip(roofline_bars, roofline_pct):
+        roofline_ax.text(
+            bar.get_x() + bar.get_width() / 2,
+            value + 2.0,
+            f"{value:.1f}%",
+            ha="center", va="bottom", fontsize=10.5,
+        )
+    roofline_ax.text(
+        0.5, 0.96,
+        "NVML unseen family: 0/23 training runs detected",
+        transform=roofline_ax.transAxes, ha="center", va="top",
+        fontsize=7.2, color=MUTED,
+    )
+
+    # B: WAVE is a high-overhead architectural verifier. The SensorGuard value
+    # is the measured base logger only; the physical logger is not yet measured.
+    overhead_bars = overhead_ax.bar(
+        [0, 1], [wave_multiplier, logger_multiplier], width=0.68,
+        color=["#F4EADF", "#78E6C9"], edgecolor="#555555", linewidth=0.45,
+        yerr=[[wave_multiplier - wave_low, 0.0], [wave_high - wave_multiplier, 0.0]],
+        capsize=3, error_kw={"elinewidth": 0.75, "capthick": 0.75, "ecolor": "#555555"},
+    )
+    overhead_ax.set_ylabel("Runtime multiplier (x)")
+    overhead_ax.set_xticks(
+        [0, 1],
+        ["WAVE\nGPT-2 / LLaMA\nQwen (3 families)",
+         "SensorGuard\nResNet-50 / GPT-2\nBERT (3 targets)"],
+    )
+    overhead_ax.tick_params(axis="x", labelsize=7.6, pad=4)
+    overhead_ax.set_ylim(0, 36)
+    overhead_ax.set_yticks([0, 10, 20, 30])
+    overhead_ax.grid(axis="y", color=GRID, linestyle="--", linewidth=0.55, alpha=0.75)
+    overhead_ax.set_axisbelow(True)
+    overhead_ax.set_title("B", pad=3)
     overhead_ax.text(
-        650,
-        2.20,
-        f"{float(wave['overhead_mean_pct']):,.0f}% mean",
-        color=WAVE,
-        fontsize=7.4,
-        ha="left",
-        va="center",
+        overhead_bars[0].get_x() + overhead_bars[0].get_width() / 2,
+        wave_high + 0.6,
+        f"{wave_multiplier:.1f}x",
+        ha="center", va="bottom", fontsize=10.5,
     )
     overhead_ax.text(
-        650,
-        1.82,
-        f"range {float(wave['overhead_low_pct']):,.0f}-{float(wave['overhead_high_pct']):,.0f}%",
-        color=MUTED,
-        fontsize=6.8,
-        ha="left",
-        va="center",
+        overhead_bars[1].get_x() + overhead_bars[1].get_width() / 2,
+        logger_multiplier + 1.0,
+        f"{logger_multiplier:.1f}x*",
+        ha="center", va="bottom", fontsize=10.5, fontweight="bold",
+    )
+    overhead_ax.text(
+        0.99, 0.96,
+        "*base logger; physical logger pending",
+        transform=overhead_ax.transAxes, ha="right", va="top",
+        fontsize=6.5, color=MUTED,
     )
 
-    fig.suptitle("Motivation: broad hidden-training detection needs independent low-cost evidence",
-                 fontsize=10.7, y=0.985)
-    fig.text(
-        0.5, 0.045,
-        "Roofline ambiguity: 101/286 non-training configurations fell inside the training arithmetic-intensity range - characterization is not detection.",
-        ha="center", va="bottom", fontsize=7.1, color=MUTED,
-    )
-    fig.text(
-        0.5, 0.015,
-        "SensorGuard's end-to-end physical-logger overhead and matched held-out-family result remain pending.",
-        ha="center", va="bottom", fontsize=6.8, color=MUTED,
-    )
-    fig.subplots_adjust(left=0.025, right=0.99, top=0.88, bottom=0.20)
+    fig.subplots_adjust(left=0.095, right=0.99, top=0.92, bottom=0.31)
 
     FIGURES.mkdir(parents=True, exist_ok=True)
     for suffix in ("pdf", "svg", "png"):
         path = FIGURES / f"sensor-motivation-evidence.{suffix}"
-        fig.savefig(path, bbox_inches="tight", pad_inches=0.05,
+        fig.savefig(path, bbox_inches="tight", pad_inches=0.04,
                     dpi=280 if suffix == "png" else None)
         print(f"Wrote {path}")
     plt.close(fig)

@@ -30,17 +30,24 @@ characterization results, not detector or sensor-accuracy results. H200 is not
 part of this collection.
 
 The replacement paper-motivation figure is
-`results/figures/sensor-motivation-evidence.pdf`. It is one aligned comparison
-of method, measured application scope, and monitoring overhead. Prior NVML is
-broad but fails the current unseen-family audit; WAVE covers three decoder
-families at 2,254--3,059% overhead and performs a different architectural
-verification task; SensorGuard currently targets ResNet-50, GPT-2, and BERT,
-with MLP present only in the physical pilot. The figure labels the four
-inference and eight non-ML control families separately and does not count the
-pending fused-update run as completed coverage. It also retains the prior
-roofline-overlap result as motivation rather than presenting roofline position
-as a detector. The matched held-out-family sensor-fusion test and physical
-logger overhead measurement remain pending.
+`results/figures/sensor-motivation-evidence.pdf`. Panel A shows that 101/286
+(35.3%) non-training configurations fall inside the training
+arithmetic-intensity range and notes that the NVML held-out-family detector
+finds 0/23 training runs. Panel B compares the measured WAVE runtime multiplier
+(28.5x mean; 23.5--31.6x range) with the 1.0x SensorGuard base-logger check.
+The x-axis names the three evaluated application families for each method:
+WAVE uses GPT-2, LLaMA, and Qwen; the current SensorGuard corpus uses ResNet-50,
+GPT-2, and BERT. MLP remains a separate physical pilot, fused update is pending,
+and the 1.0x SensorGuard bar must not be described as end-to-end overhead until
+the physical logger is measured.
+
+Suggested caption: **A:** In a prior roofline sweep, 101 of 286 non-training
+configurations occupy the training arithmetic-intensity range; roofline
+position alone is therefore ambiguous, and the NVML held-out-family test
+detects 0/23 training runs. **B:** WAVE's three-family architectural-verification
+reproduction costs 28.5x runtime on average, whereas the current SensorGuard
+base logger measures 1.0x on three training targets (ResNet-50, GPT-2, and
+BERT). SensorGuard's end-to-end physical-logger overhead remains pending.
 
 ## Negative exposure (R06)
 
