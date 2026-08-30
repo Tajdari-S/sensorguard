@@ -34,7 +34,7 @@ import yaml
 sys.path.insert(0, str(Path(__file__).parent))
 from evaluation import first_alert_index, run_alert, wilson_interval  # noqa: E402
 from features import extract_run, feature_names, stage2_names  # noqa: E402
-from train_baseline import K_OF_N, RF_KW, THRESHOLD, trace_duration_hours  # noqa: E402
+from train_baseline import K_OF_N, RF_KW, THRESHOLD  # noqa: E402
 
 REQUIRED_COLUMNS = {
     "run_id", "trace_path", "gpu_index", "label", "family",
@@ -168,6 +168,16 @@ def extract_all_windows(runs: pd.DataFrame, window_s: int, stride_s: int) -> pd.
     frames = []
     for _, run in runs.iterrows():
         features = extract_run(run["trace_path"], int(run["gpu_index"]), window_s, stride_s)
+        start = run.get("evaluation_start_raw_s")
+        end = run.get("evaluation_end_raw_s")
+        if start is not None and end is not None and math.isfinite(float(start)):
+            # Keep only causal windows wholly inside the workload.  Raw files
+            # also contain synchronization load markers, which must never be
+            # allowed to trigger an attack detection.
+            features = features[
+                (features["window_end_raw_s"] >= float(start) + window_s - 1)
+                & (features["window_end_raw_s"] <= float(end))
+            ].copy()
         if features.empty:
             print(f"WARNING: no windows for {run['run_id']}", file=sys.stderr)
             continue
@@ -219,6 +229,11 @@ def evaluate_plan(plan: dict, runs: pd.DataFrame, windows: pd.DataFrame,
         run_times = test.loc[mask, "window_end_raw_s"].to_numpy()[order]
         trigger_index = first_alert_index(run_probabilities, THRESHOLD, *K_OF_N)
         metadata = runs.loc[runs["run_id"] == run_id].iloc[0]
+        trigger_time = None if trigger_index is None else float(run_times[trigger_index])
+        evaluation_start = metadata.get("evaluation_start_raw_s")
+        time_to_alert = None
+        if trigger_time is not None and evaluation_start is not None:
+            time_to_alert = trigger_time - float(evaluation_start)
         prediction_rows.append({
             "protocol": plan["protocol"],
             "source_family": plan["source_family"],
@@ -227,12 +242,11 @@ def evaluate_plan(plan: dict, runs: pd.DataFrame, windows: pd.DataFrame,
             "truth_training": bool(metadata["label"] == "training"),
             "alert": run_alert(run_probabilities, THRESHOLD, *K_OF_N),
             "evasion_family": metadata["evasion_family"],
-            "duration_hours": trace_duration_hours(metadata["trace_path"], int(metadata["gpu_index"])),
+            "duration_hours": float(metadata["evaluation_duration_hours"]),
             "max_p_training": float(np.max(run_probabilities)),
             "mean_p_training": float(np.mean(run_probabilities)),
-            "first_trigger_window_end_raw_s": (
-                None if trigger_index is None else float(run_times[trigger_index])
-            ),
+            "first_trigger_window_end_raw_s": trigger_time,
+            "time_to_alert_s": time_to_alert,
         })
 
     frame = pd.DataFrame(prediction_rows)
@@ -264,6 +278,37 @@ def evaluate_plan(plan: dict, runs: pd.DataFrame, windows: pd.DataFrame,
     return summary, prediction_rows
 
 
+def evaluation_interval(trace_path: str | Path, gpu_index: int) -> tuple[float, float, str]:
+    """Return the workload-only interval, falling back to the usable trace."""
+    trace = Path(trace_path)
+    manifest_path = trace.with_name("manifest.yaml")
+    if manifest_path.is_file():
+        manifest = yaml.safe_load(manifest_path.read_text())
+        workload = manifest.get("workload") or {}
+        start = workload.get("start_raw_s")
+        end = workload.get("end_raw_s")
+        if start is not None and end is not None:
+            return float(start), float(end), "exact_manifest"
+        pre = (manifest.get("marker_bursts") or {}).get("pre") or []
+        duration = workload.get("duration_s")
+        if pre and duration is not None:
+            start = max(float(burst[1]) for burst in pre) + 2.0
+            return start, start + float(duration), "inferred_manifest"
+
+    trace_frame = pd.read_csv(trace)
+    usable = trace_frame[
+        (trace_frame["status"] == "ok")
+        & (trace_frame["gpu_index"] == int(gpu_index))
+    ]
+    if usable.empty:
+        raise ValueError(f"no usable rows for GPU {gpu_index} in {trace}")
+    return (
+        float(usable["t_target_raw_s"].min()),
+        float(usable["t_target_raw_s"].max()),
+        "full_usable_trace_no_manifest",
+    )
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--labels", type=Path, required=True)
@@ -280,6 +325,16 @@ def main() -> int:
     preregistration = yaml.safe_load(args.preregistration.read_text())
     sealed_family = str(preregistration["held_out_evasion_family"])
     runs = normalize_labels(pd.read_csv(args.labels, keep_default_na=False))
+    intervals = [
+        evaluation_interval(row["trace_path"], int(row["gpu_index"]))
+        for _, row in runs.iterrows()
+    ]
+    runs["evaluation_start_raw_s"] = [interval[0] for interval in intervals]
+    runs["evaluation_end_raw_s"] = [interval[1] for interval in intervals]
+    runs["evaluation_interval_source"] = [interval[2] for interval in intervals]
+    runs["evaluation_duration_hours"] = [
+        (interval[1] - interval[0]) / 3600.0 for interval in intervals
+    ]
     if args.family_plan:
         family_plan = yaml.safe_load(args.family_plan.read_text())
         seen_families = [str(value) for value in family_plan["seen_families"]]
