@@ -1,0 +1,7 @@
+gpu_label,gpu_uuid,scope_serial,scope_channel,median_cycle_score,min_cycle_score,max_cycle_score,rms_increase_fraction,active_to_idle_rms_ratio,second_best_score,status
+node1-gpu0,GPU-2b58b04d-b17b-4649-d4f5-2982568fb468,,,,,,,,,blocked_gpu_requires_reset
+node1-gpu1,GPU-b30ba66a-b9d4-b427-e99a-cdfa7021053e,12789/2929,A,0.447710,0.267127,0.489159,1.000,1.264896,0.298175,provisional_pulse_match
+node1-gpu2,GPU-eed88a48-1a18-3483-1c52-932f281c983a,13239/1303,B,0.274672,0.152067,0.290638,1.000,1.182119,0.188598,provisional_pulse_match
+node1-gpu3,GPU-42e33043-7008-2803-9ba8-9bb9ef7d0845,13239/2968,B,0.094107,0.022709,0.153691,1.000,1.058594,0.088681,weak_margin_needs_confirmation
+node1-gpu4,GPU-392b25f7-d685-7d9d-ee07-864670a4e2e9,13239/0093,B,0.298246,0.166285,0.504790,1.000,1.346699,0.102738,provisional_pulse_match
+verifier-gpu0,GPU-bff95c83-0adb-feb7-9825-359f31b26de8,13239/2968,A,0.125438,0.090600,0.154345,1.000,1.111181,0.095573,weak_margin_needs_confirmation
