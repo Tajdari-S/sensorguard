@@ -1,0 +1,7 @@
+gpu_label,gpu_uuid,forward_scope_serial,forward_channel,forward_score,reverse_scope_serial,reverse_channel,reverse_score,replicated,status,reason
+node1-gpu0,GPU-2b58b04d-b17b-4649-d4f5-2982568fb468,,,,,,,False,blocked_gpu_requires_reset,GPU could not be safely activated
+node1-gpu1,GPU-b30ba66a-b9d4-b427-e99a-cdfa7021053e,12789/2929,A,0.316978,12789/2929,A,0.285483,True,provisional_replicated,Only GPU whose top channel repeated in both orders
+node1-gpu2,GPU-eed88a48-1a18-3483-1c52-932f281c983a,13239/1303,B,0.292588,13239/2980,B,0.152512,False,failed_replication,Top scope changed in reverse-order pass
+node1-gpu3,GPU-42e33043-7008-2803-9ba8-9bb9ef7d0845,13239/2968,B,0.229445,13239/2980,A,0.198022,False,failed_replication,Top scope and channel changed in reverse-order pass
+node1-gpu4,GPU-392b25f7-d685-7d9d-ee07-864670a4e2e9,13239/0093,A,0.246722,13239/2980,A,0.209301,False,failed_replication,Top scope changed in reverse-order pass
+verifier-gpu0,GPU-bff95c83-0adb-feb7-9825-359f31b26de8,13239/2980,A,0.293365,13239/2968,A,0.173554,False,failed_replication,Top scope changed in reverse-order pass
