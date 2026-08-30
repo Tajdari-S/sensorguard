@@ -3,6 +3,30 @@
 All times below are UTC. This note records acquisition status, not final model
 results. Do not report the projected exposure as a measured false-alert rate.
 
+## RTX 3090 application roofline (R07A complete at 200 W)
+
+The corrected node1 GPU1 run completed all five FP16 application cases with
+three finite repetitions per case: ResNet-50 training and inference, GPT-2
+training, prefill, and autoregressive decode. The measured ceilings at the
+same 200 W setting were 64.73 TFLOP/s and 804.12 GB/s, giving a ridge point of
+80.50 FLOP/DRAM byte.
+
+| case | role | median intensity (FLOP/byte) | median wall throughput (TFLOP/s) |
+|---|---|---:|---:|
+| ResNet-50 batch 64 | training | 14.61 | 5.67 |
+| ResNet-50 batch 64 | inference | 44.56 | 17.98 |
+| GPT-2 batch 2, sequence 256 | training | 25.10 | 11.82 |
+| GPT-2 batch 2, sequence 256 | prefill inference | 113.79 | 18.98 |
+| GPT-2 batch 2, 32-token decode | decode inference | 14.22 | 0.77 |
+
+The paper-ready figure is in `results/figures/rtx3090-application-roofline.pdf`
+with SVG and PNG copies. Its raw 15-row input is under
+`results/roofline/applications/validated-bb6b232/`; the six preregistered
+training/inference pair rows are in
+`results/paper/matched_application_roofline_node1_200w.csv`. These are Nsight
+characterization results, not detector or sensor-accuracy results. H200 is not
+part of this collection.
+
 ## Negative exposure (R06)
 
 The following unprofiled NVML+DCGM campaigns were observed or started:
