@@ -127,6 +127,10 @@ def main() -> int:
     parser.add_argument("--sample-interval-us", type=int, default=100, help="100 us = 10 kS/s")
     parser.add_argument("--output-prefix", type=Path, default=Path("data/pico/dryrun"))
     parser.add_argument(
+        "--serial",
+        help="capture only this unit serial (for example 12789/2929)",
+    )
+    parser.add_argument(
         "--parallel",
         action="store_true",
         help="stream every opened unit concurrently (required for whole-monitor overhead)",
@@ -142,6 +146,16 @@ def main() -> int:
         for h in units:
             ps.ps2000_close_unit(h)
         return 0
+
+    if args.serial:
+        selected = [handle for handle in units if unit_serial(handle) == args.serial]
+        for handle in units:
+            if handle not in selected:
+                ps.ps2000_close_unit(handle)
+        units = selected
+        if not units:
+            print(f"Requested serial {args.serial!r} was not found", file=sys.stderr)
+            return 2
 
     args.output_prefix.parent.mkdir(parents=True, exist_ok=True)
     def capture(idx_handle):

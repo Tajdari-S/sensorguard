@@ -29,6 +29,15 @@ def raw_now() -> float:
     return time.clock_gettime(time.CLOCK_MONOTONIC_RAW)
 
 
+def wait_for_epoch(target: float | None) -> None:
+    if target is None:
+        return
+    if time.time() > target + 2.0:
+        raise RuntimeError(f"scheduled start {target} is already more than 2 s late")
+    while time.time() < target:
+        time.sleep(min(0.05, target - time.time()))
+
+
 class MatchedLinearFn(torch.autograd.Function):
     """Linear backward that either discards dW or updates W in-place."""
 
@@ -120,6 +129,8 @@ def run(args) -> dict:
         ).to(device=device, dtype=dtype)
         optimizer = None
 
+    wait_for_epoch(args.start_epoch_s)
+    start_epoch_s = time.time()
     start = raw_now()
     deadline = start + args.duration_s
     steps = 0
@@ -157,7 +168,9 @@ def run(args) -> dict:
         final_loss = value
         steps += 1
 
-    elapsed = raw_now() - start
+    end = raw_now()
+    end_epoch_s = time.time()
+    elapsed = end - start
     max_weight_change = max(
         (float((after - before).abs().max()) for before, after in zip(initial_weights, weight_tensors)),
         default=0.0,
@@ -177,6 +190,9 @@ def run(args) -> dict:
         "seed": args.seed,
         "steps": steps,
         "elapsed_s": round(elapsed, 6),
+        "scheduled_start_epoch_s": args.start_epoch_s,
+        "start_epoch_s": start_epoch_s,
+        "end_epoch_s": end_epoch_s,
         "examples": steps * args.batch_size,
         "examples_per_s": round(steps * args.batch_size / elapsed, 3),
         "initial_loss": initial_loss,
@@ -196,6 +212,7 @@ def main() -> int:
     )
     parser.add_argument("--device", default="cuda:0")
     parser.add_argument("--duration-s", type=float, default=600)
+    parser.add_argument("--start-epoch-s", type=float)
     parser.add_argument("--min-steps", type=int, default=3)
     parser.add_argument("--batch-size", type=int, default=256)
     parser.add_argument("--size", type=int, default=2048)

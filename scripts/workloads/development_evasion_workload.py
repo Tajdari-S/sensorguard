@@ -20,6 +20,15 @@ def raw_now() -> float:
     return time.clock_gettime(time.CLOCK_MONOTONIC_RAW)
 
 
+def wait_for_epoch(target: float | None) -> None:
+    if target is None:
+        return
+    if time.time() > target + 2.0:
+        raise RuntimeError(f"scheduled start {target} is already more than 2 s late")
+    while time.time() < target:
+        time.sleep(min(0.05, target - time.time()))
+
+
 def synchronize(device: torch.device) -> None:
     torch.cuda.synchronize(device)
 
@@ -92,6 +101,8 @@ def run(args) -> dict:
     target = cpu_target.to(current_device)
     initial_loss = loss_value(model, x, target, current_device)
 
+    wait_for_epoch(args.start_epoch_s)
+    start_epoch_s = time.time()
     start = raw_now()
     deadline = start + args.duration_s
     next_migration = start + args.migration_period_s
@@ -165,6 +176,7 @@ def run(args) -> dict:
                 steps += 1
 
     end = raw_now()
+    end_epoch_s = time.time()
     elapsed = end - start
     # Evaluate on the complete fixed problem after the last migration.
     x = cpu_x.to(current_device)
@@ -198,6 +210,9 @@ def run(args) -> dict:
         "elapsed_s": round(elapsed, 6),
         "start_raw_s": start,
         "end_raw_s": end,
+        "scheduled_start_epoch_s": args.start_epoch_s,
+        "start_epoch_s": start_epoch_s,
+        "end_epoch_s": end_epoch_s,
         "active_training_s": round(active_training_s, 6),
         "active_inference_s": round(active_inference_s, 6),
         "initial_loss": initial_loss,
@@ -226,6 +241,7 @@ def main() -> int:
     parser.add_argument("--device", default="cuda:0")
     parser.add_argument("--secondary-device", default="cuda:1")
     parser.add_argument("--duration-s", type=float, default=180.0)
+    parser.add_argument("--start-epoch-s", type=float)
     parser.add_argument("--min-steps", type=int, default=3)
     parser.add_argument("--batch-size", type=int, default=256)
     parser.add_argument("--microbatch-size", type=int, default=8)
