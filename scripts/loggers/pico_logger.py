@@ -78,6 +78,8 @@ def stream_unit(handle, seconds: float, sample_interval_us: int, out_prefix: Pat
     cb = STREAMING_CB(py_cb)
 
     # PS2000_TIME_UNITS: 0=fs 1=ps 2=ns 3=us 4=ms 5=s
+    capture_start_raw_s = raw_now()
+    capture_start_epoch_ns = time.time_ns()
     ok = ps.ps2000_run_streaming_ns(
         handle, sample_interval_us, 3, 60000, 0, 1, 30000)
     assert ok != 0, "run_streaming_ns failed"
@@ -87,6 +89,8 @@ def stream_unit(handle, seconds: float, sample_interval_us: int, out_prefix: Pat
         ps.ps2000_get_streaming_last_values(handle, cb)
         time.sleep(0.01)
     ps.ps2000_stop(handle)
+    capture_end_raw_s = raw_now()
+    capture_end_epoch_ns = time.time_ns()
 
     a = np.concatenate(chunks_a) if chunks_a else np.array([], dtype=np.int16)
     b = np.concatenate(chunks_b) if chunks_b else np.array([], dtype=np.int16)
@@ -100,6 +104,10 @@ def stream_unit(handle, seconds: float, sample_interval_us: int, out_prefix: Pat
         "range_mv": RANGE_MV,
         "samples": int(a.size),
         "polls": len(anchors),
+        "capture_start_raw_s": capture_start_raw_s,
+        "capture_end_raw_s": capture_end_raw_s,
+        "capture_start_epoch_ns": capture_start_epoch_ns,
+        "capture_end_epoch_ns": capture_end_epoch_ns,
         "overflow_flags": int(state["overflow"]),
         "first_anchor_raw_s": anchors[0][0] if anchors else None,
         "last_anchor_raw_s": anchors[-1][0] if anchors else None,
