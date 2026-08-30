@@ -22,7 +22,7 @@ def main() -> int:
     parser.add_argument("--pico-prefix", type=Path, required=True)
     parser.add_argument("--marker-json", type=Path, nargs="+", required=True)
     parser.add_argument("--output", type=Path, required=True)
-    parser.add_argument("--guard-s", type=float, default=3.0)
+    parser.add_argument("--guard-s", type=float, default=1.0)
     args = parser.parse_args()
 
     markers = [json.loads(path.read_text()) for path in args.marker_json]
@@ -40,13 +40,31 @@ def main() -> int:
 
     rows = []
     for marker in markers:
-        active_start = float(marker["actual_start_epoch_s"]) + args.guard_s
-        active_end = float(marker["actual_end_epoch_s"]) - args.guard_s
-        baseline_start = active_start - 18.0
-        baseline_end = active_start - 5.0
+        burst_active = marker.get("active_intervals_epoch_s") or []
+        burst_inactive = marker.get("inactive_intervals_epoch_s") or []
+        if burst_active:
+            active_windows = [
+                (float(start) + args.guard_s, float(end) - args.guard_s)
+                for start, end in burst_active
+            ]
+            baseline_windows = [
+                (float(start) + args.guard_s, float(end) - args.guard_s)
+                for start, end in burst_inactive
+            ]
+        else:
+            active_start = float(marker["actual_start_epoch_s"]) + max(3.0, args.guard_s)
+            active_end = float(marker["actual_end_epoch_s"]) - max(3.0, args.guard_s)
+            active_windows = [(active_start, active_end)]
+            baseline_windows = [(active_start - 18.0, active_start - 5.0)]
         for serial, channel, raw, times in channels:
-            active = np.asarray(raw[(times >= active_start) & (times <= active_end)])
-            baseline = np.asarray(raw[(times >= baseline_start) & (times <= baseline_end)])
+            active_mask = np.zeros(times.shape, dtype=bool)
+            baseline_mask = np.zeros(times.shape, dtype=bool)
+            for start, end in active_windows:
+                active_mask |= (times >= start) & (times <= end)
+            for start, end in baseline_windows:
+                baseline_mask |= (times >= start) & (times <= end)
+            active = np.asarray(raw[active_mask])
+            baseline = np.asarray(raw[baseline_mask])
             active_rms = robust_rms(active)
             baseline_rms = robust_rms(baseline)
             ratio = active_rms / baseline_rms if baseline_rms > 0 else float("nan")
@@ -68,8 +86,9 @@ def main() -> int:
                 "absolute_mean_shift_adc": mean_shift,
                 "mean_shift_baseline_sigma": mean_shift_sigma,
                 "response_score": response_score,
-                "active_start_epoch_s": active_start,
-                "active_end_epoch_s": active_end,
+                "active_start_epoch_s": active_windows[0][0],
+                "active_end_epoch_s": active_windows[-1][1],
+                "active_intervals": len(active_windows),
             })
 
     for gpu_label in {row["gpu_label"] for row in rows}:
