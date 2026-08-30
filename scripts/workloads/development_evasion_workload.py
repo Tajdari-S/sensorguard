@@ -160,7 +160,8 @@ def run(args) -> dict:
                 active_training_s += raw_now() - step_start
                 steps += 1
 
-    elapsed = raw_now() - start
+    end = raw_now()
+    elapsed = end - start
     # Evaluate on the complete fixed problem after the last migration.
     x = cpu_x.to(current_device)
     target = cpu_target.to(current_device)
@@ -191,6 +192,8 @@ def run(args) -> dict:
         "inference_steps": inference_steps,
         "migrations": migrations,
         "elapsed_s": round(elapsed, 6),
+        "start_raw_s": start,
+        "end_raw_s": end,
         "active_training_s": round(active_training_s, 6),
         "active_inference_s": round(active_inference_s, 6),
         "initial_loss": initial_loss,

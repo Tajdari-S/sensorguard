@@ -222,6 +222,8 @@ def main() -> int:
         "end_utc": datetime.now(timezone.utc).isoformat(),
         "workload": {"family": args.workload_family, "name": args.workload_name,
                      "command": args.workload_cmd, "seed": args.seed,
+                     "start_raw_s": t_wl_start,
+                     "end_raw_s": t_wl_end,
                      "duration_s": None if t_wl_end is None else round(t_wl_end - t_wl_start, 3)},
         "hardware": {"gpu_index_under_test": args.gpu_index,
                      "gpu_uuid_under_test": args.gpu_uuid or None,
@@ -231,6 +233,7 @@ def main() -> int:
                      "ultrasound", "network_mirror"]},  # rf_sdr dropped 2026-08-29
         "sensor_channels": channels,
         "marker_bursts": {"pre": bursts_pre, "post": bursts_post},
+        "marker_cooldown_s": args.marker_cooldown_s,
         "profiled": bool(args.profiled),
         "artifact_checksums": {p.name: sha256(p) for p in sorted(out.iterdir()) if p.is_file()},
         "status": status,
