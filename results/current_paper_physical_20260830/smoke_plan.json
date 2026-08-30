@@ -1,0 +1,16 @@
+{
+  "campaign": "current-paper-physical-smoke-20260830",
+  "scope_serial": "12789/2929",
+  "scope_channel": "A",
+  "runs": [
+    {
+      "run_id": "smoke_gemm_r1",
+      "kind": "control",
+      "mode": "gemm",
+      "target": 0,
+      "seed": 9001,
+      "duration_s": 20,
+      "start_epoch_s": 1788125520
+    }
+  ]
+}
