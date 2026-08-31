@@ -67,11 +67,15 @@ class MatchedLinearFn(torch.autograd.Function):
 
 
 class MatchedLinear(nn.Module):
-    def __init__(self, size: int, mode: str, learning_rate: float, generator):
+    def __init__(self, size: int, mode: str, learning_rate: float, generator,
+                 device, dtype):
         super().__init__()
         scale = 1.0 / math.sqrt(size)
-        self.register_buffer("weight", torch.randn(size, size, generator=generator) * scale)
-        self.register_buffer("scratch", torch.empty(size, size))
+        self.register_buffer(
+            "weight",
+            torch.randn(size, size, generator=generator, device=device, dtype=dtype) * scale,
+        )
+        self.register_buffer("scratch", torch.empty(size, size, device=device, dtype=dtype))
         self.mode = mode
         self.learning_rate = learning_rate
 
@@ -82,10 +86,12 @@ class MatchedLinear(nn.Module):
 
 
 class FusedNetwork(nn.Module):
-    def __init__(self, size: int, depth: int, mode: str, learning_rate: float, generator):
+    def __init__(self, size: int, depth: int, mode: str, learning_rate: float,
+                 generator, device, dtype):
         super().__init__()
         self.layers = nn.ModuleList(
-            MatchedLinear(size, mode, learning_rate, generator) for _ in range(depth)
+            MatchedLinear(size, mode, learning_rate, generator, device, dtype)
+            for _ in range(depth)
         )
 
     def forward(self, x):
@@ -97,13 +103,11 @@ class FusedNetwork(nn.Module):
 
 
 def make_batch(batch_size: int, size: int, device, dtype, seed: int):
-    generator = torch.Generator(device="cpu").manual_seed(seed)
-    x = torch.randn(batch_size, size, generator=generator, dtype=torch.float32).to(
-        device=device, dtype=dtype)
-    teacher = (
-        torch.randn(size, size, generator=generator, dtype=torch.float32)
-        / math.sqrt(size)
-    ).to(device=device, dtype=dtype)
+    generator = torch.Generator(device=device).manual_seed(seed)
+    x = torch.randn(batch_size, size, generator=generator, device=device, dtype=dtype)
+    teacher = torch.randn(
+        size, size, generator=generator, device=device, dtype=dtype
+    ) / math.sqrt(size)
     # Target construction is setup, not measured useful work. Performing the
     # large matrix multiply on the selected GPU prevents CPU-only setup from
     # missing an absolute synchronized start on minimally provisioned nodes.
@@ -125,15 +129,17 @@ def run(args) -> dict:
     if args.mode == "adamw":
         layers = []
         for index in range(args.depth):
-            layers.append(nn.Linear(args.size, args.size, bias=False))
+            layers.append(nn.Linear(
+                args.size, args.size, bias=False, device=device, dtype=dtype))
             if index + 1 < args.depth:
                 layers.append(nn.GELU())
-        model = nn.Sequential(*layers).to(device=device, dtype=dtype)
+        model = nn.Sequential(*layers)
         optimizer = torch.optim.AdamW(model.parameters(), lr=args.learning_rate)
     else:
         model = FusedNetwork(
-            args.size, args.depth, args.mode, args.learning_rate, generator
-        ).to(device=device, dtype=dtype)
+            args.size, args.depth, args.mode, args.learning_rate, generator,
+            device, dtype,
+        )
         optimizer = None
 
     wait_for_epoch(args.start_epoch_s)
