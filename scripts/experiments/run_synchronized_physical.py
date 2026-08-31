@@ -27,8 +27,16 @@ def node_command(run: dict, python: str, output: Path) -> list[str]:
     if run["kind"] == "fused":
         # This branch is used only after a frozen manifest authorizes the sealed family.
         common_no_output = common[:-2]
-        return [python, "scripts/workloads/fused_update_workload.py", "--mode", run["mode"],
-                *common_no_output]
+        command = [python, "scripts/workloads/fused_update_workload.py", "--mode", run["mode"],
+                   *common_no_output]
+        for plan_key, cli_flag in (
+            ("batch_size", "--batch-size"), ("size", "--size"),
+            ("depth", "--depth"), ("dtype", "--dtype"),
+            ("learning_rate", "--learning-rate"),
+        ):
+            if plan_key in run:
+                command.extend([cli_flag, str(run[plan_key])])
+        return command
     raise ValueError(run["kind"])
 
 
@@ -68,7 +76,8 @@ def main() -> int:
             wait_until(run["start_epoch_s"] - 25)
             command = [args.scope_python, "scripts/loggers/pico_logger.py",
                        "--serial", args.scope_serial, "--duration-s", str(run["duration_s"] + 25),
-                       "--sample-interval-us", "100", "--output-prefix", str(run_dir / "pico")]
+                       "--sample-interval-us", str(plan.get("sample_interval_us", 100)),
+                       "--output-prefix", str(run_dir / "pico")]
             started = time.time()
             code = subprocess.run(command, stdout=(run_dir / "pico.stdout").open("w"),
                                   stderr=(run_dir / "pico.stderr").open("w")).returncode

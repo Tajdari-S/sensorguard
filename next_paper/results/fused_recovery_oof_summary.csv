@@ -1,0 +1,13 @@
+modality,model,fused_runs,fused_detected,positive_runs,positives_detected,control_runs,false_alerts,threshold,rule_windows,rule_hits,median_fused_time_to_alert_s
+Electrical,extra_trees,3,3,6,6,9,0,0.25,3,3,60.0
+Electrical,logistic,3,2,6,5,9,0,0.475,2,2,52.5
+Electrical,random_forest,3,3,6,6,9,0,0.45,1,1,45.0
+Electrical + drift,extra_trees,3,3,6,6,9,0,0.2,4,4,75.0
+Electrical + drift,logistic,3,2,6,5,9,0,0.65,3,2,90.0
+Electrical + drift,random_forest,3,3,6,6,9,0,0.45,4,2,75.0
+NVML + electrical,extra_trees,3,3,6,6,9,0,0.25,3,3,60.0
+NVML + electrical,logistic,3,2,6,5,9,0,0.25,5,3,90.0
+NVML + electrical,random_forest,3,3,6,6,9,0,0.425,3,2,60.0
+NVML + electrical + drift,extra_trees,3,3,6,6,9,0,0.225,4,4,75.0
+NVML + electrical + drift,logistic,3,2,6,5,9,0,0.55,3,2,90.0
+NVML + electrical + drift,random_forest,3,3,6,6,9,0,0.45,1,1,45.0

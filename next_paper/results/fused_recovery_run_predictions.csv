@@ -1,0 +1,1231 @@
+protocol,modality,model,split,run_id,family,target,alert,time_to_alert_s,max_probability,mean_probability,fit_runs,threshold,rule_windows,rule_hits
+adamw_transfer_no_fused_fit,NVML,random_forest,test,sealed_01_fused_update_r1,fused_update,1,0,,0.7397196394810827,0.4488213209790663,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML,random_forest,test,sealed_06_fused_update_r2,fused_update,1,0,,0.48864713470875415,0.36644976306473165,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML,random_forest,test,sealed_11_fused_update_r3,fused_update,1,0,,0.30802845105072474,0.201076275251343,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML,random_forest,test,sealed_12_forward3_r3,forward3,0,0,,0.6557827403624609,0.48831815516567467,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML,random_forest,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9975,0.9893083333333333,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML,random_forest,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.2756766707710155,0.19215544532468615,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML,random_forest,test,sealed_15_forward_r3,forward,0,0,,0.5516461780780018,0.46123781872983705,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML,extra_trees,test,sealed_01_fused_update_r1,fused_update,1,0,,0.6440686593115617,0.4033603357355607,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML,extra_trees,test,sealed_06_fused_update_r2,fused_update,1,0,,0.4029782319448547,0.3048727712178528,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML,extra_trees,test,sealed_11_fused_update_r3,fused_update,1,0,,0.3343291326976066,0.23725073229949198,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML,extra_trees,test,sealed_12_forward3_r3,forward3,0,0,,0.6192466028472269,0.4715532843839094,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML,extra_trees,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9988636363636364,0.9976722008863226,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML,extra_trees,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.21487486698559669,0.1440668814129349,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML,extra_trees,test,sealed_15_forward_r3,forward,0,0,,0.5345587204851668,0.4418874060009797,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML,logistic,test,sealed_01_fused_update_r1,fused_update,1,0,,0.6563832146819852,0.5289969194079416,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML,logistic,test,sealed_06_fused_update_r2,fused_update,1,0,,0.4318927319993397,0.3364889241609821,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML,logistic,test,sealed_11_fused_update_r3,fused_update,1,0,,0.41239376281235435,0.287105758335207,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML,logistic,test,sealed_12_forward3_r3,forward3,0,0,,0.7057573778119612,0.5396137853047922,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML,logistic,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.999453343206741,0.9976596485528327,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML,logistic,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.3331383565403884,0.24535992593388825,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML,logistic,test,sealed_15_forward_r3,forward,0,0,,0.4289076255072388,0.3338020401906403,38,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML,random_forest,test,sealed_11_fused_update_r3,fused_update,1,0,,0.3305246713005587,0.217971850820566,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML,random_forest,test,sealed_12_forward3_r3,forward3,0,0,,0.712555884439508,0.5472990487849505,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML,random_forest,test,sealed_13_adamw_r3,adamw,1,1,90.0,1.0,0.9931750000000001,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML,random_forest,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.23193631437251022,0.16791030588287295,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML,random_forest,test,sealed_15_forward_r3,forward,0,0,,0.6987262434595565,0.5563533602760059,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML,extra_trees,test,sealed_11_fused_update_r3,fused_update,1,0,,0.34568833712842817,0.23775246696574212,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML,extra_trees,test,sealed_12_forward3_r3,forward3,0,0,,0.69599414750112,0.5681943229834342,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML,extra_trees,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9975,0.9971982097186702,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML,extra_trees,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.17227985162022577,0.1189127206183604,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML,extra_trees,test,sealed_15_forward_r3,forward,0,0,,0.6704091946472975,0.5462094031482471,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML,logistic,test,sealed_11_fused_update_r3,fused_update,1,0,,0.44532891941521346,0.2986689224213015,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML,logistic,test,sealed_12_forward3_r3,forward3,0,0,,0.7469801379589857,0.6045928294401008,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML,logistic,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9995981631759685,0.9979607934888455,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML,logistic,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.3968299335339196,0.2918278011134724,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML,logistic,test,sealed_15_forward_r3,forward,0,0,,0.5483693896728121,0.40961939613411386,40,0.85,5,3
+nested_r1_fit_r2_rule_r3_test,NVML,random_forest,calibration,sealed_06_fused_update_r2,fused_update,1,0,,0.5822310587191901,0.38664217443646814,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML,random_forest,calibration,sealed_07_forward3_r2,forward3,0,0,,0.24099483557378287,0.20337301516100856,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML,random_forest,calibration,sealed_08_adamw_r2,adamw,1,1,90.0,1.0,0.9888035714285713,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML,random_forest,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.6603865651871966,0.5621507641082505,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML,random_forest,calibration,sealed_10_forward_r2,forward,0,0,,0.6356265194072711,0.5731062620465859,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML,random_forest,test,sealed_11_fused_update_r3,fused_update,1,0,,0.3124970217743234,0.22500902306240675,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML,random_forest,test,sealed_12_forward3_r3,forward3,0,0,,0.7452984341153699,0.5348248020341723,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML,random_forest,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9966666666666667,0.9838333333333333,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML,random_forest,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.3345450700615175,0.24911329872612767,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML,random_forest,test,sealed_15_forward_r3,forward,0,0,,0.5840683603064918,0.47757179368725505,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML,extra_trees,calibration,sealed_06_fused_update_r2,fused_update,1,0,,0.4981057600231613,0.3395046205146552,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML,extra_trees,calibration,sealed_07_forward3_r2,forward3,0,0,,0.29674941738066357,0.2543022612584015,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML,extra_trees,calibration,sealed_08_adamw_r2,adamw,1,1,90.0,1.0,0.9973802421858,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML,extra_trees,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.6646516460881289,0.5200341815590207,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML,extra_trees,calibration,sealed_10_forward_r2,forward,0,0,,0.684629159883141,0.6004139337472836,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML,extra_trees,test,sealed_11_fused_update_r3,fused_update,1,0,,0.3881128816262326,0.24226455199896946,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML,extra_trees,test,sealed_12_forward3_r3,forward3,0,0,,0.7512638327620498,0.5667458561191631,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML,extra_trees,test,sealed_13_adamw_r3,adamw,1,1,90.0,1.0,0.9959613256244255,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML,extra_trees,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.3513344773398879,0.25736671521578447,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML,extra_trees,test,sealed_15_forward_r3,forward,0,0,,0.5607843493314063,0.4808551540007547,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML,logistic,calibration,sealed_06_fused_update_r2,fused_update,1,1,60.0,0.5318355385505134,0.4177544297255986,35,0.45,3,3
+nested_r1_fit_r2_rule_r3_test,NVML,logistic,calibration,sealed_07_forward3_r2,forward3,0,0,,0.47759377001728714,0.3815724916231758,35,0.45,3,3
+nested_r1_fit_r2_rule_r3_test,NVML,logistic,calibration,sealed_08_adamw_r2,adamw,1,1,60.0,0.9991788594704546,0.9988561280316972,35,0.45,3,3
+nested_r1_fit_r2_rule_r3_test,NVML,logistic,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.6091651052507268,0.5369790001803703,35,0.45,3,3
+nested_r1_fit_r2_rule_r3_test,NVML,logistic,calibration,sealed_10_forward_r2,forward,0,0,,0.5641908969914557,0.47567552717485884,35,0.45,3,3
+nested_r1_fit_r2_rule_r3_test,NVML,logistic,test,sealed_11_fused_update_r3,fused_update,1,0,,0.5650630319238309,0.3790325942720945,35,0.45,3,3
+nested_r1_fit_r2_rule_r3_test,NVML,logistic,test,sealed_12_forward3_r3,forward3,0,1,60.0,0.7877439206961049,0.6141679279224432,35,0.45,3,3
+nested_r1_fit_r2_rule_r3_test,NVML,logistic,test,sealed_13_adamw_r3,adamw,1,1,60.0,0.9997322642021063,0.9984377734277325,35,0.45,3,3
+nested_r1_fit_r2_rule_r3_test,NVML,logistic,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.4714302984200121,0.341327953516949,35,0.45,3,3
+nested_r1_fit_r2_rule_r3_test,NVML,logistic,test,sealed_15_forward_r3,forward,0,1,60.0,0.6553172585730987,0.470573192348279,35,0.45,3,3
+rotation_fit_r1_cal_r2_test_r3,NVML,random_forest,calibration,sealed_06_fused_update_r2,fused_update,1,0,,0.5822310587191901,0.38664217443646814,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML,random_forest,calibration,sealed_07_forward3_r2,forward3,0,0,,0.24099483557378287,0.20337301516100856,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML,random_forest,calibration,sealed_08_adamw_r2,adamw,1,1,90.0,1.0,0.9888035714285713,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML,random_forest,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.6603865651871966,0.5621507641082505,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML,random_forest,calibration,sealed_10_forward_r2,forward,0,0,,0.6356265194072711,0.5731062620465859,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML,random_forest,test,sealed_11_fused_update_r3,fused_update,1,0,,0.3124970217743234,0.22500902306240675,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML,random_forest,test,sealed_12_forward3_r3,forward3,0,0,,0.7452984341153699,0.5348248020341723,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML,random_forest,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9966666666666667,0.9838333333333333,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML,random_forest,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.3345450700615175,0.2491132987261277,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML,random_forest,test,sealed_15_forward_r3,forward,0,0,,0.5840683603064918,0.47757179368725505,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML,extra_trees,calibration,sealed_06_fused_update_r2,fused_update,1,0,,0.4981057600231613,0.3395046205146552,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML,extra_trees,calibration,sealed_07_forward3_r2,forward3,0,0,,0.29674941738066357,0.2543022612584015,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML,extra_trees,calibration,sealed_08_adamw_r2,adamw,1,1,90.0,1.0,0.9973802421858,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML,extra_trees,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.664651646088129,0.5200341815590206,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML,extra_trees,calibration,sealed_10_forward_r2,forward,0,0,,0.684629159883141,0.6004139337472836,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML,extra_trees,test,sealed_11_fused_update_r3,fused_update,1,0,,0.3881128816262326,0.24226455199896946,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML,extra_trees,test,sealed_12_forward3_r3,forward3,0,0,,0.7512638327620498,0.5667458561191632,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML,extra_trees,test,sealed_13_adamw_r3,adamw,1,1,90.0,1.0,0.9959613256244255,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML,extra_trees,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.3513344773398879,0.25736671521578447,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML,extra_trees,test,sealed_15_forward_r3,forward,0,0,,0.5607843493314063,0.4808551540007547,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML,logistic,calibration,sealed_06_fused_update_r2,fused_update,1,1,60.0,0.5318355385505134,0.4177544297255986,35,0.45,3,3
+rotation_fit_r1_cal_r2_test_r3,NVML,logistic,calibration,sealed_07_forward3_r2,forward3,0,0,,0.47759377001728714,0.3815724916231758,35,0.45,3,3
+rotation_fit_r1_cal_r2_test_r3,NVML,logistic,calibration,sealed_08_adamw_r2,adamw,1,1,60.0,0.9991788594704546,0.9988561280316972,35,0.45,3,3
+rotation_fit_r1_cal_r2_test_r3,NVML,logistic,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.6091651052507268,0.5369790001803703,35,0.45,3,3
+rotation_fit_r1_cal_r2_test_r3,NVML,logistic,calibration,sealed_10_forward_r2,forward,0,0,,0.5641908969914557,0.47567552717485884,35,0.45,3,3
+rotation_fit_r1_cal_r2_test_r3,NVML,logistic,test,sealed_11_fused_update_r3,fused_update,1,0,,0.5650630319238309,0.3790325942720945,35,0.45,3,3
+rotation_fit_r1_cal_r2_test_r3,NVML,logistic,test,sealed_12_forward3_r3,forward3,0,1,60.0,0.7877439206961049,0.6141679279224432,35,0.45,3,3
+rotation_fit_r1_cal_r2_test_r3,NVML,logistic,test,sealed_13_adamw_r3,adamw,1,1,60.0,0.9997322642021063,0.9984377734277325,35,0.45,3,3
+rotation_fit_r1_cal_r2_test_r3,NVML,logistic,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.4714302984200121,0.341327953516949,35,0.45,3,3
+rotation_fit_r1_cal_r2_test_r3,NVML,logistic,test,sealed_15_forward_r3,forward,0,1,60.0,0.6553172585730987,0.470573192348279,35,0.45,3,3
+rotation_fit_r1_cal_r3_test_r2,NVML,random_forest,calibration,sealed_11_fused_update_r3,fused_update,1,0,,0.3124970217743234,0.22500902306240675,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML,random_forest,calibration,sealed_12_forward3_r3,forward3,0,0,,0.7452984341153699,0.5348248020341723,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML,random_forest,calibration,sealed_13_adamw_r3,adamw,1,1,90.0,0.9966666666666667,0.9838333333333333,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML,random_forest,calibration,sealed_14_dummy_write_r3,dummy_write,0,0,,0.3345450700615175,0.2491132987261277,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML,random_forest,calibration,sealed_15_forward_r3,forward,0,0,,0.5840683603064918,0.47757179368725505,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML,random_forest,test,sealed_06_fused_update_r2,fused_update,1,0,,0.5822310587191901,0.38664217443646814,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML,random_forest,test,sealed_07_forward3_r2,forward3,0,0,,0.24099483557378287,0.20337301516100856,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML,random_forest,test,sealed_08_adamw_r2,adamw,1,1,90.0,1.0,0.9888035714285713,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML,random_forest,test,sealed_09_dummy_write_r2,dummy_write,0,0,,0.6603865651871966,0.5621507641082505,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML,random_forest,test,sealed_10_forward_r2,forward,0,0,,0.6356265194072711,0.5731062620465859,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML,extra_trees,calibration,sealed_11_fused_update_r3,fused_update,1,0,,0.3881128816262326,0.24226455199896946,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML,extra_trees,calibration,sealed_12_forward3_r3,forward3,0,0,,0.7512638327620498,0.5667458561191631,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML,extra_trees,calibration,sealed_13_adamw_r3,adamw,1,1,90.0,1.0,0.9959613256244255,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML,extra_trees,calibration,sealed_14_dummy_write_r3,dummy_write,0,0,,0.3513344773398879,0.25736671521578447,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML,extra_trees,calibration,sealed_15_forward_r3,forward,0,0,,0.5607843493314063,0.4808551540007547,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML,extra_trees,test,sealed_06_fused_update_r2,fused_update,1,0,,0.4981057600231613,0.3395046205146552,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML,extra_trees,test,sealed_07_forward3_r2,forward3,0,0,,0.29674941738066357,0.2543022612584015,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML,extra_trees,test,sealed_08_adamw_r2,adamw,1,1,90.0,1.0,0.9973802421858,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML,extra_trees,test,sealed_09_dummy_write_r2,dummy_write,0,0,,0.664651646088129,0.5200341815590206,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML,extra_trees,test,sealed_10_forward_r2,forward,0,0,,0.684629159883141,0.6004139337472836,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML,logistic,calibration,sealed_11_fused_update_r3,fused_update,1,0,,0.5650630319238309,0.3790325942720945,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML,logistic,calibration,sealed_12_forward3_r3,forward3,0,0,,0.7877439206961049,0.6141679279224432,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML,logistic,calibration,sealed_13_adamw_r3,adamw,1,1,90.0,0.9997322642021063,0.9984377734277325,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML,logistic,calibration,sealed_14_dummy_write_r3,dummy_write,0,0,,0.4714302984200121,0.341327953516949,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML,logistic,calibration,sealed_15_forward_r3,forward,0,0,,0.6553172585730987,0.470573192348279,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML,logistic,test,sealed_06_fused_update_r2,fused_update,1,0,,0.5318355385505134,0.4177544297255986,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML,logistic,test,sealed_07_forward3_r2,forward3,0,0,,0.47759377001728714,0.3815724916231758,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML,logistic,test,sealed_08_adamw_r2,adamw,1,1,90.0,0.9991788594704546,0.9988561280316972,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML,logistic,test,sealed_09_dummy_write_r2,dummy_write,0,0,,0.6091651052507268,0.5369790001803703,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML,logistic,test,sealed_10_forward_r2,forward,0,0,,0.5641908969914557,0.47567552717485884,35,0.85,5,5
+rotation_fit_r2_cal_r1_test_r3,NVML,random_forest,calibration,sealed_01_fused_update_r1,fused_update,1,1,45.0,0.6677799137113112,0.4722918840133984,35,0.6,2,2
+rotation_fit_r2_cal_r1_test_r3,NVML,random_forest,calibration,sealed_02_forward3_r1,forward3,0,0,,0.5776054891643195,0.4332031631624796,35,0.6,2,2
+rotation_fit_r2_cal_r1_test_r3,NVML,random_forest,calibration,sealed_03_adamw_r1,adamw,1,1,45.0,0.99875,0.9950416666666666,35,0.6,2,2
+rotation_fit_r2_cal_r1_test_r3,NVML,random_forest,calibration,sealed_04_dummy_write_r1,dummy_write,0,0,,0.4685353356089827,0.3994103809879518,35,0.6,2,2
+rotation_fit_r2_cal_r1_test_r3,NVML,random_forest,calibration,sealed_05_forward_r1,forward,0,0,,0.6632508537888434,0.44157198527755126,35,0.6,2,2
+rotation_fit_r2_cal_r1_test_r3,NVML,random_forest,test,sealed_11_fused_update_r3,fused_update,1,0,,0.5201445643681561,0.4147494657393403,35,0.6,2,2
+rotation_fit_r2_cal_r1_test_r3,NVML,random_forest,test,sealed_12_forward3_r3,forward3,0,1,60.0,0.6773818351816542,0.5232985237379053,35,0.6,2,2
+rotation_fit_r2_cal_r1_test_r3,NVML,random_forest,test,sealed_13_adamw_r3,adamw,1,1,45.0,0.9992857142857143,0.9872226190476191,35,0.6,2,2
+rotation_fit_r2_cal_r1_test_r3,NVML,random_forest,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.21976576835788594,0.1569246573459854,35,0.6,2,2
+rotation_fit_r2_cal_r1_test_r3,NVML,random_forest,test,sealed_15_forward_r3,forward,0,0,,0.7312551134301691,0.5615088777367657,35,0.6,2,2
+rotation_fit_r2_cal_r1_test_r3,NVML,extra_trees,calibration,sealed_01_fused_update_r1,fused_update,1,1,45.0,0.6216371119605605,0.4378458080284332,35,0.6,1,1
+rotation_fit_r2_cal_r1_test_r3,NVML,extra_trees,calibration,sealed_02_forward3_r1,forward3,0,0,,0.5237893877934863,0.3739391188020515,35,0.6,1,1
+rotation_fit_r2_cal_r1_test_r3,NVML,extra_trees,calibration,sealed_03_adamw_r1,adamw,1,1,30.0,0.998780487804878,0.9986540198735321,35,0.6,1,1
+rotation_fit_r2_cal_r1_test_r3,NVML,extra_trees,calibration,sealed_04_dummy_write_r1,dummy_write,0,0,,0.3514017142640091,0.31918369298870614,35,0.6,1,1
+rotation_fit_r2_cal_r1_test_r3,NVML,extra_trees,calibration,sealed_05_forward_r1,forward,0,0,,0.507650161804823,0.4417468627822645,35,0.6,1,1
+rotation_fit_r2_cal_r1_test_r3,NVML,extra_trees,test,sealed_11_fused_update_r3,fused_update,1,0,,0.44739380798104156,0.36291371952178897,35,0.6,1,1
+rotation_fit_r2_cal_r1_test_r3,NVML,extra_trees,test,sealed_12_forward3_r3,forward3,0,1,60.0,0.6725778400952451,0.518040404626185,35,0.6,1,1
+rotation_fit_r2_cal_r1_test_r3,NVML,extra_trees,test,sealed_13_adamw_r3,adamw,1,1,30.0,0.9975,0.996088160495091,35,0.6,1,1
+rotation_fit_r2_cal_r1_test_r3,NVML,extra_trees,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.17194637987013117,0.12611628682410753,35,0.6,1,1
+rotation_fit_r2_cal_r1_test_r3,NVML,extra_trees,test,sealed_15_forward_r3,forward,0,1,60.0,0.6796344311310406,0.5513943216866518,35,0.6,1,1
+rotation_fit_r2_cal_r1_test_r3,NVML,logistic,calibration,sealed_01_fused_update_r1,fused_update,1,1,45.0,0.7010843823480502,0.5754644201206048,35,0.7,1,1
+rotation_fit_r2_cal_r1_test_r3,NVML,logistic,calibration,sealed_02_forward3_r1,forward3,0,0,,0.3836531222847432,0.34076233597551303,35,0.7,1,1
+rotation_fit_r2_cal_r1_test_r3,NVML,logistic,calibration,sealed_03_adamw_r1,adamw,1,1,30.0,0.9995725215929288,0.9968038468216441,35,0.7,1,1
+rotation_fit_r2_cal_r1_test_r3,NVML,logistic,calibration,sealed_04_dummy_write_r1,dummy_write,0,0,,0.41720179971371746,0.3231580703455151,35,0.7,1,1
+rotation_fit_r2_cal_r1_test_r3,NVML,logistic,calibration,sealed_05_forward_r1,forward,0,0,,0.698475361651809,0.5331438040138724,35,0.7,1,1
+rotation_fit_r2_cal_r1_test_r3,NVML,logistic,test,sealed_11_fused_update_r3,fused_update,1,0,,0.459347095531274,0.3492465935160078,35,0.7,1,1
+rotation_fit_r2_cal_r1_test_r3,NVML,logistic,test,sealed_12_forward3_r3,forward3,0,1,30.0,0.8180219243074743,0.6359124653233311,35,0.7,1,1
+rotation_fit_r2_cal_r1_test_r3,NVML,logistic,test,sealed_13_adamw_r3,adamw,1,1,30.0,0.9997789486770354,0.9975718942732129,35,0.7,1,1
+rotation_fit_r2_cal_r1_test_r3,NVML,logistic,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.375631322486801,0.2985287056889385,35,0.7,1,1
+rotation_fit_r2_cal_r1_test_r3,NVML,logistic,test,sealed_15_forward_r3,forward,0,0,,0.5485105820513256,0.4373540789109838,35,0.7,1,1
+rotation_fit_r2_cal_r3_test_r1,NVML,random_forest,calibration,sealed_11_fused_update_r3,fused_update,1,0,,0.5201445643681561,0.4147494657393403,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML,random_forest,calibration,sealed_12_forward3_r3,forward3,0,0,,0.6773818351816542,0.5232985237379053,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML,random_forest,calibration,sealed_13_adamw_r3,adamw,1,1,90.0,0.9992857142857143,0.9872226190476191,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML,random_forest,calibration,sealed_14_dummy_write_r3,dummy_write,0,0,,0.21976576835788594,0.1569246573459854,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML,random_forest,calibration,sealed_15_forward_r3,forward,0,0,,0.7312551134301691,0.5615088777367657,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML,random_forest,test,sealed_01_fused_update_r1,fused_update,1,0,,0.6677799137113112,0.4722918840133984,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML,random_forest,test,sealed_02_forward3_r1,forward3,0,0,,0.5776054891643195,0.4332031631624796,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML,random_forest,test,sealed_03_adamw_r1,adamw,1,1,90.0,0.99875,0.9950416666666666,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML,random_forest,test,sealed_04_dummy_write_r1,dummy_write,0,0,,0.4685353356089827,0.3994103809879518,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML,random_forest,test,sealed_05_forward_r1,forward,0,0,,0.6632508537888434,0.44157198527755126,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML,extra_trees,calibration,sealed_11_fused_update_r3,fused_update,1,0,,0.44739380798104156,0.36291371952178897,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML,extra_trees,calibration,sealed_12_forward3_r3,forward3,0,0,,0.6725778400952451,0.5180404046261851,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML,extra_trees,calibration,sealed_13_adamw_r3,adamw,1,1,90.0,0.9975,0.996088160495091,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML,extra_trees,calibration,sealed_14_dummy_write_r3,dummy_write,0,0,,0.17194637987013117,0.12611628682410753,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML,extra_trees,calibration,sealed_15_forward_r3,forward,0,0,,0.6796344311310406,0.5513943216866518,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML,extra_trees,test,sealed_01_fused_update_r1,fused_update,1,0,,0.6216371119605606,0.4378458080284333,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML,extra_trees,test,sealed_02_forward3_r1,forward3,0,0,,0.5237893877934863,0.3739391188020515,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML,extra_trees,test,sealed_03_adamw_r1,adamw,1,1,90.0,0.998780487804878,0.9986540198735321,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML,extra_trees,test,sealed_04_dummy_write_r1,dummy_write,0,0,,0.3514017142640091,0.31918369298870614,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML,extra_trees,test,sealed_05_forward_r1,forward,0,0,,0.507650161804823,0.4417468627822645,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML,logistic,calibration,sealed_11_fused_update_r3,fused_update,1,0,,0.459347095531274,0.3492465935160078,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML,logistic,calibration,sealed_12_forward3_r3,forward3,0,0,,0.8180219243074743,0.6359124653233311,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML,logistic,calibration,sealed_13_adamw_r3,adamw,1,1,90.0,0.9997789486770354,0.9975718942732129,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML,logistic,calibration,sealed_14_dummy_write_r3,dummy_write,0,0,,0.375631322486801,0.2985287056889385,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML,logistic,calibration,sealed_15_forward_r3,forward,0,0,,0.5485105820513256,0.4373540789109838,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML,logistic,test,sealed_01_fused_update_r1,fused_update,1,0,,0.7010843823480502,0.5754644201206048,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML,logistic,test,sealed_02_forward3_r1,forward3,0,0,,0.3836531222847432,0.34076233597551303,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML,logistic,test,sealed_03_adamw_r1,adamw,1,1,90.0,0.9995725215929288,0.9968038468216441,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML,logistic,test,sealed_04_dummy_write_r1,dummy_write,0,0,,0.41720179971371746,0.3231580703455151,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML,logistic,test,sealed_05_forward_r1,forward,0,0,,0.698475361651809,0.5331438040138724,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML,random_forest,calibration,sealed_01_fused_update_r1,fused_update,1,0,,0.6258094902500391,0.43469923458967913,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML,random_forest,calibration,sealed_02_forward3_r1,forward3,0,0,,0.3006223477899395,0.26389192143353146,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML,random_forest,calibration,sealed_03_adamw_r1,adamw,1,1,90.0,0.998125,0.9921916666666666,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML,random_forest,calibration,sealed_04_dummy_write_r1,dummy_write,0,0,,0.7261758612759955,0.625726740841691,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML,random_forest,calibration,sealed_05_forward_r1,forward,0,0,,0.5093116874288666,0.3793275035018893,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML,random_forest,test,sealed_06_fused_update_r2,fused_update,1,0,,0.42441208468343333,0.36712402749065703,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML,random_forest,test,sealed_07_forward3_r2,forward3,0,0,,0.09326680309554565,0.07826289244526405,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML,random_forest,test,sealed_08_adamw_r2,adamw,1,1,90.0,1.0,0.989425,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML,random_forest,test,sealed_09_dummy_write_r2,dummy_write,0,0,,0.5909014287902837,0.5063912072542333,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML,random_forest,test,sealed_10_forward_r2,forward,0,0,,0.662120134792889,0.5628961943172779,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML,extra_trees,calibration,sealed_01_fused_update_r1,fused_update,1,0,,0.5945766143002074,0.40865973249288706,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML,extra_trees,calibration,sealed_02_forward3_r1,forward3,0,0,,0.2690890900329847,0.2281582570005103,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML,extra_trees,calibration,sealed_03_adamw_r1,adamw,1,1,90.0,0.998780487804878,0.9975716558960462,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML,extra_trees,calibration,sealed_04_dummy_write_r1,dummy_write,0,0,,0.6554741133676485,0.6178844869003183,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML,extra_trees,calibration,sealed_05_forward_r1,forward,0,0,,0.6034306712794025,0.46781036020574585,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML,extra_trees,test,sealed_06_fused_update_r2,fused_update,1,0,,0.32400633569895143,0.2891084364425476,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML,extra_trees,test,sealed_07_forward3_r2,forward3,0,0,,0.16131089412098287,0.14174804798211535,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML,extra_trees,test,sealed_08_adamw_r2,adamw,1,1,90.0,1.0,0.9971340425116478,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML,extra_trees,test,sealed_09_dummy_write_r2,dummy_write,0,0,,0.5529797832642,0.42630293508396394,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML,extra_trees,test,sealed_10_forward_r2,forward,0,0,,0.6433985644727488,0.5902122050671121,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML,logistic,calibration,sealed_01_fused_update_r1,fused_update,1,1,45.0,0.5942267461706753,0.49990477600552924,35,0.575,1,1
+rotation_fit_r3_cal_r1_test_r2,NVML,logistic,calibration,sealed_02_forward3_r1,forward3,0,0,,0.2940161320024418,0.2705345930774282,35,0.575,1,1
+rotation_fit_r3_cal_r1_test_r2,NVML,logistic,calibration,sealed_03_adamw_r1,adamw,1,1,30.0,0.9986835152334845,0.9968251818871808,35,0.575,1,1
+rotation_fit_r3_cal_r1_test_r2,NVML,logistic,calibration,sealed_04_dummy_write_r1,dummy_write,0,0,,0.5378646204654954,0.46000217337436516,35,0.575,1,1
+rotation_fit_r3_cal_r1_test_r2,NVML,logistic,calibration,sealed_05_forward_r1,forward,0,0,,0.5561087913141496,0.45745629265640825,35,0.575,1,1
+rotation_fit_r3_cal_r1_test_r2,NVML,logistic,test,sealed_06_fused_update_r2,fused_update,1,0,,0.4459253695716941,0.36349777719470694,35,0.575,1,1
+rotation_fit_r3_cal_r1_test_r2,NVML,logistic,test,sealed_07_forward3_r2,forward3,0,0,,0.35598174732316284,0.32384316238003424,35,0.575,1,1
+rotation_fit_r3_cal_r1_test_r2,NVML,logistic,test,sealed_08_adamw_r2,adamw,1,1,30.0,0.998590685472952,0.9981083110722795,35,0.575,1,1
+rotation_fit_r3_cal_r1_test_r2,NVML,logistic,test,sealed_09_dummy_write_r2,dummy_write,0,1,75.0,0.624623992237306,0.5135048726358188,35,0.575,1,1
+rotation_fit_r3_cal_r1_test_r2,NVML,logistic,test,sealed_10_forward_r2,forward,0,0,,0.5744539945119783,0.5055574430307744,35,0.575,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML,random_forest,calibration,sealed_06_fused_update_r2,fused_update,1,0,,0.42441208468343333,0.36712402749065703,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML,random_forest,calibration,sealed_07_forward3_r2,forward3,0,0,,0.09326680309554565,0.07826289244526405,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML,random_forest,calibration,sealed_08_adamw_r2,adamw,1,1,90.0,1.0,0.989425,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML,random_forest,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.5909014287902837,0.5063912072542333,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML,random_forest,calibration,sealed_10_forward_r2,forward,0,0,,0.662120134792889,0.5628961943172779,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML,random_forest,test,sealed_01_fused_update_r1,fused_update,1,0,,0.6258094902500391,0.43469923458967913,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML,random_forest,test,sealed_02_forward3_r1,forward3,0,0,,0.3006223477899395,0.26389192143353146,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML,random_forest,test,sealed_03_adamw_r1,adamw,1,1,90.0,0.998125,0.9921916666666666,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML,random_forest,test,sealed_04_dummy_write_r1,dummy_write,0,0,,0.7261758612759955,0.625726740841691,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML,random_forest,test,sealed_05_forward_r1,forward,0,0,,0.5093116874288666,0.3793275035018893,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML,extra_trees,calibration,sealed_06_fused_update_r2,fused_update,1,0,,0.32400633569895143,0.2891084364425476,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML,extra_trees,calibration,sealed_07_forward3_r2,forward3,0,0,,0.16131089412098287,0.14174804798211535,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML,extra_trees,calibration,sealed_08_adamw_r2,adamw,1,1,90.0,1.0,0.9971340425116478,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML,extra_trees,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.5529797832642,0.42630293508396394,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML,extra_trees,calibration,sealed_10_forward_r2,forward,0,0,,0.6433985644727488,0.5902122050671121,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML,extra_trees,test,sealed_01_fused_update_r1,fused_update,1,0,,0.5945766143002074,0.40865973249288706,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML,extra_trees,test,sealed_02_forward3_r1,forward3,0,0,,0.2690890900329847,0.2281582570005103,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML,extra_trees,test,sealed_03_adamw_r1,adamw,1,1,90.0,0.998780487804878,0.9975716558960462,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML,extra_trees,test,sealed_04_dummy_write_r1,dummy_write,0,0,,0.6554741133676485,0.6178844869003183,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML,extra_trees,test,sealed_05_forward_r1,forward,0,0,,0.6034306712794025,0.46781036020574585,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML,logistic,calibration,sealed_06_fused_update_r2,fused_update,1,0,,0.4459253695716941,0.36349777719470694,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML,logistic,calibration,sealed_07_forward3_r2,forward3,0,0,,0.35598174732316284,0.32384316238003424,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML,logistic,calibration,sealed_08_adamw_r2,adamw,1,1,90.0,0.998590685472952,0.9981083110722795,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML,logistic,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.624623992237306,0.5135048726358188,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML,logistic,calibration,sealed_10_forward_r2,forward,0,0,,0.5744539945119783,0.5055574430307744,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML,logistic,test,sealed_01_fused_update_r1,fused_update,1,0,,0.5942267461706753,0.49990477600552924,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML,logistic,test,sealed_02_forward3_r1,forward3,0,0,,0.2940161320024418,0.2705345930774282,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML,logistic,test,sealed_03_adamw_r1,adamw,1,1,90.0,0.9986835152334845,0.9968251818871808,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML,logistic,test,sealed_04_dummy_write_r1,dummy_write,0,0,,0.5378646204654954,0.46000217337436516,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML,logistic,test,sealed_05_forward_r1,forward,0,0,,0.5561087913141496,0.45745629265640825,35,0.85,5,5
+adamw_transfer_no_fused_fit,Electrical,random_forest,test,sealed_01_fused_update_r1,fused_update,1,0,,0.04791666666666666,0.031880952380952385,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical,random_forest,test,sealed_06_fused_update_r2,fused_update,1,0,,0.04583333333333333,0.029199999999999997,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical,random_forest,test,sealed_11_fused_update_r3,fused_update,1,0,,0.04020833333333334,0.029158333333333335,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical,random_forest,test,sealed_12_forward3_r3,forward3,0,0,,0.10441071428571429,0.025429761904761906,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical,random_forest,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.981125,0.9568440476190476,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical,random_forest,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.034708333333333334,0.01863333333333333,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical,random_forest,test,sealed_15_forward_r3,forward,0,0,,0.005,0.002,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical,extra_trees,test,sealed_01_fused_update_r1,fused_update,1,0,,0.05656584224598932,0.04083856951871658,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical,extra_trees,test,sealed_06_fused_update_r2,fused_update,1,0,,0.038011363636363635,0.031134692513368985,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical,extra_trees,test,sealed_11_fused_update_r3,fused_update,1,0,,0.05779077540106953,0.03111631016042781,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical,extra_trees,test,sealed_12_forward3_r3,forward3,0,0,,0.11876002673796794,0.03340040106951873,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical,extra_trees,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9885578208556148,0.9679418449197861,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical,extra_trees,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.04037600267379679,0.015836564171122995,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical,extra_trees,test,sealed_15_forward_r3,forward,0,0,,0.017954545454545456,0.005454545454545455,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical,logistic,test,sealed_01_fused_update_r1,fused_update,1,0,,0.0015111640635752605,0.0005543361788290233,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical,logistic,test,sealed_06_fused_update_r2,fused_update,1,0,,0.005794679050193733,0.002749150126522962,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical,logistic,test,sealed_11_fused_update_r3,fused_update,1,0,,0.0046618841040968915,0.0017502125781873833,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical,logistic,test,sealed_12_forward3_r3,forward3,0,0,,0.030765629022562146,0.008034738351806554,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical,logistic,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9999987247884693,0.9999913298211908,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical,logistic,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.004997328334053184,0.0019791503663652617,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical,logistic,test,sealed_15_forward_r3,forward,0,0,,0.0069665313686579034,0.002425189587507798,38,0.85,5,3
+fused_r1r2_to_r3_adaptation,Electrical,random_forest,test,sealed_11_fused_update_r3,fused_update,1,0,,0.693452380952381,0.5958309523809524,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,Electrical,random_forest,test,sealed_12_forward3_r3,forward3,0,0,,0.08948214285714284,0.053563095238095236,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,Electrical,random_forest,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9742083333333333,0.9581083333333333,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,Electrical,random_forest,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.4262202380952381,0.23988214285714288,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,Electrical,random_forest,test,sealed_15_forward_r3,forward,0,0,,0.02341666666666667,0.013358333333333333,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,Electrical,extra_trees,test,sealed_11_fused_update_r3,fused_update,1,0,,0.713470215745873,0.6444108867969017,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,Electrical,extra_trees,test,sealed_12_forward3_r3,forward3,0,0,,0.10857806600901228,0.05013252953355255,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,Electrical,extra_trees,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9914009864815492,0.957410360223677,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,Electrical,extra_trees,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.5270434017721614,0.19793549700153515,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,Electrical,extra_trees,test,sealed_15_forward_r3,forward,0,0,,0.07486938253562292,0.021269711362805987,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,Electrical,logistic,test,sealed_11_fused_update_r3,fused_update,1,0,,0.530984273767828,0.347197249954028,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,Electrical,logistic,test,sealed_12_forward3_r3,forward3,0,0,,0.1173832497831511,0.05667254613455971,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,Electrical,logistic,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9984406323395794,0.9883418396714587,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,Electrical,logistic,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.6638654293020474,0.21459847453958553,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,Electrical,logistic,test,sealed_15_forward_r3,forward,0,0,,0.42248032383499606,0.10615006691537118,40,0.85,5,3
+nested_r1_fit_r2_rule_r3_test,Electrical,random_forest,calibration,sealed_06_fused_update_r2,fused_update,1,1,90.0,0.26337499999999997,0.22210000000000002,35,0.225,4,4
+nested_r1_fit_r2_rule_r3_test,Electrical,random_forest,calibration,sealed_07_forward3_r2,forward3,0,0,,0.052625000000000005,0.03275833333333333,35,0.225,4,4
+nested_r1_fit_r2_rule_r3_test,Electrical,random_forest,calibration,sealed_08_adamw_r2,adamw,1,1,75.0,0.9588303571428571,0.9364678571428572,35,0.225,4,4
+nested_r1_fit_r2_rule_r3_test,Electrical,random_forest,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.26512499999999994,0.157425,35,0.225,4,4
+nested_r1_fit_r2_rule_r3_test,Electrical,random_forest,calibration,sealed_10_forward_r2,forward,0,0,,0.07200000000000001,0.03838333333333334,35,0.225,4,4
+nested_r1_fit_r2_rule_r3_test,Electrical,random_forest,test,sealed_11_fused_update_r3,fused_update,1,0,,0.28295833333333337,0.2263,35,0.225,4,4
+nested_r1_fit_r2_rule_r3_test,Electrical,random_forest,test,sealed_12_forward3_r3,forward3,0,0,,0.10799999999999998,0.048091666666666665,35,0.225,4,4
+nested_r1_fit_r2_rule_r3_test,Electrical,random_forest,test,sealed_13_adamw_r3,adamw,1,1,75.0,0.9303720238095238,0.908322023809524,35,0.225,4,4
+nested_r1_fit_r2_rule_r3_test,Electrical,random_forest,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.14016666666666666,0.12088333333333334,35,0.225,4,4
+nested_r1_fit_r2_rule_r3_test,Electrical,random_forest,test,sealed_15_forward_r3,forward,0,0,,0.03333333333333333,0.01891666666666667,35,0.225,4,4
+nested_r1_fit_r2_rule_r3_test,Electrical,extra_trees,calibration,sealed_06_fused_update_r2,fused_update,1,1,90.0,0.11295532733320966,0.10279795621852128,35,0.1,4,4
+nested_r1_fit_r2_rule_r3_test,Electrical,extra_trees,calibration,sealed_07_forward3_r2,forward3,0,0,,0.06525170033036143,0.034701265704367296,35,0.1,4,4
+nested_r1_fit_r2_rule_r3_test,Electrical,extra_trees,calibration,sealed_08_adamw_r2,adamw,1,1,75.0,0.9842822870851659,0.95589193191934,35,0.1,4,4
+nested_r1_fit_r2_rule_r3_test,Electrical,extra_trees,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.14480289893778175,0.0821768363401206,35,0.1,4,4
+nested_r1_fit_r2_rule_r3_test,Electrical,extra_trees,calibration,sealed_10_forward_r2,forward,0,0,,0.09468033628338768,0.04810817558079905,35,0.1,4,4
+nested_r1_fit_r2_rule_r3_test,Electrical,extra_trees,test,sealed_11_fused_update_r3,fused_update,1,1,75.0,0.16148929012120747,0.12637985983354774,35,0.1,4,4
+nested_r1_fit_r2_rule_r3_test,Electrical,extra_trees,test,sealed_12_forward3_r3,forward3,0,0,,0.14238727089809244,0.0659538743383331,35,0.1,4,4
+nested_r1_fit_r2_rule_r3_test,Electrical,extra_trees,test,sealed_13_adamw_r3,adamw,1,1,75.0,0.9522620477425728,0.9101751283181997,35,0.1,4,4
+nested_r1_fit_r2_rule_r3_test,Electrical,extra_trees,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.10395215440883104,0.052051308295663345,35,0.1,4,4
+nested_r1_fit_r2_rule_r3_test,Electrical,extra_trees,test,sealed_15_forward_r3,forward,0,0,,0.04265738865744024,0.017387980291754264,35,0.1,4,4
+nested_r1_fit_r2_rule_r3_test,Electrical,logistic,calibration,sealed_06_fused_update_r2,fused_update,1,0,,0.07978654152863392,0.06148034511320154,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,Electrical,logistic,calibration,sealed_07_forward3_r2,forward3,0,0,,0.015470795737754466,0.0064691900956168145,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,Electrical,logistic,calibration,sealed_08_adamw_r2,adamw,1,1,90.0,0.999852170930582,0.9984801771166897,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,Electrical,logistic,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.07372866703858615,0.03148618782609517,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,Electrical,logistic,calibration,sealed_10_forward_r2,forward,0,0,,0.05486510721628831,0.016585770852788978,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,Electrical,logistic,test,sealed_11_fused_update_r3,fused_update,1,0,,0.03812912395392099,0.023760214727440533,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,Electrical,logistic,test,sealed_12_forward3_r3,forward3,0,0,,0.056117780361654865,0.015343218225519215,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,Electrical,logistic,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9974877149787701,0.9915909133631399,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,Electrical,logistic,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.08777050313127138,0.025225824327443313,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,Electrical,logistic,test,sealed_15_forward_r3,forward,0,0,,0.15526254559620373,0.041904930260183125,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,Electrical,random_forest,calibration,sealed_06_fused_update_r2,fused_update,1,1,90.0,0.26337499999999997,0.22210000000000002,35,0.225,4,4
+rotation_fit_r1_cal_r2_test_r3,Electrical,random_forest,calibration,sealed_07_forward3_r2,forward3,0,0,,0.052625000000000005,0.03275833333333333,35,0.225,4,4
+rotation_fit_r1_cal_r2_test_r3,Electrical,random_forest,calibration,sealed_08_adamw_r2,adamw,1,1,75.0,0.9588303571428571,0.9364678571428572,35,0.225,4,4
+rotation_fit_r1_cal_r2_test_r3,Electrical,random_forest,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.26512499999999994,0.157425,35,0.225,4,4
+rotation_fit_r1_cal_r2_test_r3,Electrical,random_forest,calibration,sealed_10_forward_r2,forward,0,0,,0.07200000000000001,0.03838333333333334,35,0.225,4,4
+rotation_fit_r1_cal_r2_test_r3,Electrical,random_forest,test,sealed_11_fused_update_r3,fused_update,1,0,,0.28295833333333337,0.2263,35,0.225,4,4
+rotation_fit_r1_cal_r2_test_r3,Electrical,random_forest,test,sealed_12_forward3_r3,forward3,0,0,,0.10799999999999998,0.048091666666666665,35,0.225,4,4
+rotation_fit_r1_cal_r2_test_r3,Electrical,random_forest,test,sealed_13_adamw_r3,adamw,1,1,75.0,0.9303720238095238,0.908322023809524,35,0.225,4,4
+rotation_fit_r1_cal_r2_test_r3,Electrical,random_forest,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.14016666666666666,0.12088333333333334,35,0.225,4,4
+rotation_fit_r1_cal_r2_test_r3,Electrical,random_forest,test,sealed_15_forward_r3,forward,0,0,,0.03333333333333333,0.01891666666666667,35,0.225,4,4
+rotation_fit_r1_cal_r2_test_r3,Electrical,extra_trees,calibration,sealed_06_fused_update_r2,fused_update,1,1,90.0,0.11295532733320966,0.10279795621852128,35,0.1,4,4
+rotation_fit_r1_cal_r2_test_r3,Electrical,extra_trees,calibration,sealed_07_forward3_r2,forward3,0,0,,0.06525170033036143,0.034701265704367296,35,0.1,4,4
+rotation_fit_r1_cal_r2_test_r3,Electrical,extra_trees,calibration,sealed_08_adamw_r2,adamw,1,1,75.0,0.9842822870851659,0.95589193191934,35,0.1,4,4
+rotation_fit_r1_cal_r2_test_r3,Electrical,extra_trees,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.14480289893778175,0.0821768363401206,35,0.1,4,4
+rotation_fit_r1_cal_r2_test_r3,Electrical,extra_trees,calibration,sealed_10_forward_r2,forward,0,0,,0.09468033628338768,0.04810817558079905,35,0.1,4,4
+rotation_fit_r1_cal_r2_test_r3,Electrical,extra_trees,test,sealed_11_fused_update_r3,fused_update,1,1,75.0,0.1614892901212075,0.12637985983354774,35,0.1,4,4
+rotation_fit_r1_cal_r2_test_r3,Electrical,extra_trees,test,sealed_12_forward3_r3,forward3,0,0,,0.14238727089809244,0.0659538743383331,35,0.1,4,4
+rotation_fit_r1_cal_r2_test_r3,Electrical,extra_trees,test,sealed_13_adamw_r3,adamw,1,1,75.0,0.9522620477425728,0.9101751283181997,35,0.1,4,4
+rotation_fit_r1_cal_r2_test_r3,Electrical,extra_trees,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.10395215440883104,0.052051308295663345,35,0.1,4,4
+rotation_fit_r1_cal_r2_test_r3,Electrical,extra_trees,test,sealed_15_forward_r3,forward,0,0,,0.04265738865744024,0.017387980291754264,35,0.1,4,4
+rotation_fit_r1_cal_r2_test_r3,Electrical,logistic,calibration,sealed_06_fused_update_r2,fused_update,1,0,,0.07978654152863392,0.06148034511320154,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,Electrical,logistic,calibration,sealed_07_forward3_r2,forward3,0,0,,0.015470795737754466,0.0064691900956168145,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,Electrical,logistic,calibration,sealed_08_adamw_r2,adamw,1,1,90.0,0.999852170930582,0.9984801771166897,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,Electrical,logistic,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.07372866703858615,0.03148618782609517,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,Electrical,logistic,calibration,sealed_10_forward_r2,forward,0,0,,0.05486510721628831,0.016585770852788978,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,Electrical,logistic,test,sealed_11_fused_update_r3,fused_update,1,0,,0.03812912395392099,0.023760214727440533,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,Electrical,logistic,test,sealed_12_forward3_r3,forward3,0,0,,0.056117780361654865,0.015343218225519215,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,Electrical,logistic,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9974877149787701,0.9915909133631399,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,Electrical,logistic,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.08777050313127138,0.025225824327443313,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,Electrical,logistic,test,sealed_15_forward_r3,forward,0,0,,0.15526254559620373,0.041904930260183125,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,Electrical,random_forest,calibration,sealed_11_fused_update_r3,fused_update,1,1,30.0,0.28295833333333337,0.2263,35,0.275,1,1
+rotation_fit_r1_cal_r3_test_r2,Electrical,random_forest,calibration,sealed_12_forward3_r3,forward3,0,0,,0.10799999999999998,0.048091666666666665,35,0.275,1,1
+rotation_fit_r1_cal_r3_test_r2,Electrical,random_forest,calibration,sealed_13_adamw_r3,adamw,1,1,30.0,0.9303720238095238,0.908322023809524,35,0.275,1,1
+rotation_fit_r1_cal_r3_test_r2,Electrical,random_forest,calibration,sealed_14_dummy_write_r3,dummy_write,0,0,,0.14016666666666666,0.12088333333333334,35,0.275,1,1
+rotation_fit_r1_cal_r3_test_r2,Electrical,random_forest,calibration,sealed_15_forward_r3,forward,0,0,,0.03333333333333333,0.01891666666666667,35,0.275,1,1
+rotation_fit_r1_cal_r3_test_r2,Electrical,random_forest,test,sealed_06_fused_update_r2,fused_update,1,0,,0.26337499999999997,0.22210000000000002,35,0.275,1,1
+rotation_fit_r1_cal_r3_test_r2,Electrical,random_forest,test,sealed_07_forward3_r2,forward3,0,0,,0.052625000000000005,0.03275833333333333,35,0.275,1,1
+rotation_fit_r1_cal_r3_test_r2,Electrical,random_forest,test,sealed_08_adamw_r2,adamw,1,1,30.0,0.9588303571428571,0.9364678571428572,35,0.275,1,1
+rotation_fit_r1_cal_r3_test_r2,Electrical,random_forest,test,sealed_09_dummy_write_r2,dummy_write,0,0,,0.26512499999999994,0.157425,35,0.275,1,1
+rotation_fit_r1_cal_r3_test_r2,Electrical,random_forest,test,sealed_10_forward_r2,forward,0,0,,0.07200000000000001,0.03838333333333334,35,0.275,1,1
+rotation_fit_r1_cal_r3_test_r2,Electrical,extra_trees,calibration,sealed_11_fused_update_r3,fused_update,1,1,30.0,0.16148929012120747,0.12637985983354774,35,0.15,1,1
+rotation_fit_r1_cal_r3_test_r2,Electrical,extra_trees,calibration,sealed_12_forward3_r3,forward3,0,0,,0.14238727089809244,0.0659538743383331,35,0.15,1,1
+rotation_fit_r1_cal_r3_test_r2,Electrical,extra_trees,calibration,sealed_13_adamw_r3,adamw,1,1,30.0,0.9522620477425728,0.9101751283181997,35,0.15,1,1
+rotation_fit_r1_cal_r3_test_r2,Electrical,extra_trees,calibration,sealed_14_dummy_write_r3,dummy_write,0,0,,0.10395215440883104,0.052051308295663345,35,0.15,1,1
+rotation_fit_r1_cal_r3_test_r2,Electrical,extra_trees,calibration,sealed_15_forward_r3,forward,0,0,,0.04265738865744024,0.017387980291754264,35,0.15,1,1
+rotation_fit_r1_cal_r3_test_r2,Electrical,extra_trees,test,sealed_06_fused_update_r2,fused_update,1,0,,0.11295532733320966,0.10279795621852128,35,0.15,1,1
+rotation_fit_r1_cal_r3_test_r2,Electrical,extra_trees,test,sealed_07_forward3_r2,forward3,0,0,,0.06525170033036143,0.034701265704367296,35,0.15,1,1
+rotation_fit_r1_cal_r3_test_r2,Electrical,extra_trees,test,sealed_08_adamw_r2,adamw,1,1,30.0,0.9842822870851659,0.95589193191934,35,0.15,1,1
+rotation_fit_r1_cal_r3_test_r2,Electrical,extra_trees,test,sealed_09_dummy_write_r2,dummy_write,0,0,,0.14480289893778175,0.0821768363401206,35,0.15,1,1
+rotation_fit_r1_cal_r3_test_r2,Electrical,extra_trees,test,sealed_10_forward_r2,forward,0,0,,0.09468033628338768,0.04810817558079905,35,0.15,1,1
+rotation_fit_r1_cal_r3_test_r2,Electrical,logistic,calibration,sealed_11_fused_update_r3,fused_update,1,0,,0.03812912395392099,0.023760214727440533,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,Electrical,logistic,calibration,sealed_12_forward3_r3,forward3,0,0,,0.056117780361654865,0.015343218225519215,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,Electrical,logistic,calibration,sealed_13_adamw_r3,adamw,1,1,90.0,0.9974877149787701,0.9915909133631399,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,Electrical,logistic,calibration,sealed_14_dummy_write_r3,dummy_write,0,0,,0.08777050313127138,0.025225824327443313,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,Electrical,logistic,calibration,sealed_15_forward_r3,forward,0,0,,0.15526254559620373,0.041904930260183125,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,Electrical,logistic,test,sealed_06_fused_update_r2,fused_update,1,0,,0.07978654152863392,0.06148034511320154,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,Electrical,logistic,test,sealed_07_forward3_r2,forward3,0,0,,0.015470795737754466,0.0064691900956168145,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,Electrical,logistic,test,sealed_08_adamw_r2,adamw,1,1,90.0,0.999852170930582,0.9984801771166897,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,Electrical,logistic,test,sealed_09_dummy_write_r2,dummy_write,0,0,,0.07372866703858615,0.03148618782609517,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,Electrical,logistic,test,sealed_10_forward_r2,forward,0,0,,0.05486510721628831,0.016585770852788978,35,0.85,5,5
+rotation_fit_r2_cal_r1_test_r3,Electrical,random_forest,calibration,sealed_01_fused_update_r1,fused_update,1,1,90.0,0.4761666666666666,0.4519666666666667,35,0.475,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical,random_forest,calibration,sealed_02_forward3_r1,forward3,0,0,,0.44604166666666667,0.09806666666666666,35,0.475,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical,random_forest,calibration,sealed_03_adamw_r1,adamw,1,1,30.0,0.9715714285714288,0.9623464285714285,35,0.475,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical,random_forest,calibration,sealed_04_dummy_write_r1,dummy_write,0,0,,0.3809583333333334,0.34096666666666675,35,0.475,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical,random_forest,calibration,sealed_05_forward_r1,forward,0,0,,0.07958333333333333,0.06174999999999999,35,0.475,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical,random_forest,test,sealed_11_fused_update_r3,fused_update,1,1,30.0,0.6667797619047617,0.6221107142857142,35,0.475,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical,random_forest,test,sealed_12_forward3_r3,forward3,0,0,,0.12033333333333333,0.06969880952380952,35,0.475,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical,random_forest,test,sealed_13_adamw_r3,adamw,1,1,30.0,0.9659464285714285,0.9367214285714287,35,0.475,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical,random_forest,test,sealed_14_dummy_write_r3,dummy_write,0,1,30.0,0.5119583333333333,0.28646666666666665,35,0.475,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical,random_forest,test,sealed_15_forward_r3,forward,0,0,,0.06104166666666667,0.038925,35,0.475,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical,extra_trees,calibration,sealed_01_fused_update_r1,fused_update,1,1,75.0,0.3580819810665936,0.3301022897268574,35,0.35,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical,extra_trees,calibration,sealed_02_forward3_r1,forward3,0,0,,0.2940969158163304,0.08021336830214945,35,0.35,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical,extra_trees,calibration,sealed_03_adamw_r1,adamw,1,1,30.0,0.9929740361919748,0.9633074513654731,35,0.35,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical,extra_trees,calibration,sealed_04_dummy_write_r1,dummy_write,0,0,,0.293898466054579,0.23231324074488566,35,0.35,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical,extra_trees,calibration,sealed_05_forward_r1,forward,0,0,,0.08753239121808581,0.06418911719279274,35,0.35,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical,extra_trees,test,sealed_11_fused_update_r3,fused_update,1,1,30.0,0.6837780197906294,0.6303314617382713,35,0.35,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical,extra_trees,test,sealed_12_forward3_r3,forward3,0,0,,0.13991461479924167,0.0633198994571588,35,0.35,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical,extra_trees,test,sealed_13_adamw_r3,adamw,1,1,30.0,0.9889763127007261,0.9665844096237066,35,0.35,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical,extra_trees,test,sealed_14_dummy_write_r3,dummy_write,0,1,30.0,0.5522236751562608,0.2746583792324138,35,0.35,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical,extra_trees,test,sealed_15_forward_r3,forward,0,0,,0.07901137806022529,0.043048764113418694,35,0.35,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical,logistic,calibration,sealed_01_fused_update_r1,fused_update,1,0,,0.19467718817757343,0.08332161969730847,35,0.85,5,5
+rotation_fit_r2_cal_r1_test_r3,Electrical,logistic,calibration,sealed_02_forward3_r1,forward3,0,0,,0.2622181204357678,0.059840198743764464,35,0.85,5,5
+rotation_fit_r2_cal_r1_test_r3,Electrical,logistic,calibration,sealed_03_adamw_r1,adamw,1,1,90.0,0.9999999984338586,0.9999489675435805,35,0.85,5,5
+rotation_fit_r2_cal_r1_test_r3,Electrical,logistic,calibration,sealed_04_dummy_write_r1,dummy_write,0,0,,0.22588997991380338,0.09782783722025007,35,0.85,5,5
+rotation_fit_r2_cal_r1_test_r3,Electrical,logistic,calibration,sealed_05_forward_r1,forward,0,0,,0.050865339385955055,0.020497046395853247,35,0.85,5,5
+rotation_fit_r2_cal_r1_test_r3,Electrical,logistic,test,sealed_11_fused_update_r3,fused_update,1,0,,0.8232384833694246,0.3961383256276247,35,0.85,5,5
+rotation_fit_r2_cal_r1_test_r3,Electrical,logistic,test,sealed_12_forward3_r3,forward3,0,0,,0.13442359098884726,0.07698779324592778,35,0.85,5,5
+rotation_fit_r2_cal_r1_test_r3,Electrical,logistic,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9999793013730626,0.9998266121494505,35,0.85,5,5
+rotation_fit_r2_cal_r1_test_r3,Electrical,logistic,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.7787124590400915,0.3674936644775204,35,0.85,5,5
+rotation_fit_r2_cal_r1_test_r3,Electrical,logistic,test,sealed_15_forward_r3,forward,0,0,,0.2744602657593226,0.07767420435720221,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,Electrical,random_forest,calibration,sealed_11_fused_update_r3,fused_update,1,1,90.0,0.6667797619047617,0.6221107142857142,35,0.65,2,2
+rotation_fit_r2_cal_r3_test_r1,Electrical,random_forest,calibration,sealed_12_forward3_r3,forward3,0,0,,0.12033333333333333,0.06969880952380952,35,0.65,2,2
+rotation_fit_r2_cal_r3_test_r1,Electrical,random_forest,calibration,sealed_13_adamw_r3,adamw,1,1,45.0,0.9659464285714285,0.9367214285714287,35,0.65,2,2
+rotation_fit_r2_cal_r3_test_r1,Electrical,random_forest,calibration,sealed_14_dummy_write_r3,dummy_write,0,0,,0.5119583333333333,0.28646666666666665,35,0.65,2,2
+rotation_fit_r2_cal_r3_test_r1,Electrical,random_forest,calibration,sealed_15_forward_r3,forward,0,0,,0.06104166666666667,0.038925,35,0.65,2,2
+rotation_fit_r2_cal_r3_test_r1,Electrical,random_forest,test,sealed_01_fused_update_r1,fused_update,1,0,,0.4761666666666666,0.4519666666666667,35,0.65,2,2
+rotation_fit_r2_cal_r3_test_r1,Electrical,random_forest,test,sealed_02_forward3_r1,forward3,0,0,,0.44604166666666667,0.09806666666666666,35,0.65,2,2
+rotation_fit_r2_cal_r3_test_r1,Electrical,random_forest,test,sealed_03_adamw_r1,adamw,1,1,45.0,0.9715714285714288,0.9623464285714285,35,0.65,2,2
+rotation_fit_r2_cal_r3_test_r1,Electrical,random_forest,test,sealed_04_dummy_write_r1,dummy_write,0,0,,0.3809583333333334,0.34096666666666675,35,0.65,2,2
+rotation_fit_r2_cal_r3_test_r1,Electrical,random_forest,test,sealed_05_forward_r1,forward,0,0,,0.07958333333333333,0.06174999999999999,35,0.65,2,2
+rotation_fit_r2_cal_r3_test_r1,Electrical,extra_trees,calibration,sealed_11_fused_update_r3,fused_update,1,1,90.0,0.6837780197906292,0.6303314617382713,35,0.675,1,1
+rotation_fit_r2_cal_r3_test_r1,Electrical,extra_trees,calibration,sealed_12_forward3_r3,forward3,0,0,,0.13991461479924167,0.06331989945715878,35,0.675,1,1
+rotation_fit_r2_cal_r3_test_r1,Electrical,extra_trees,calibration,sealed_13_adamw_r3,adamw,1,1,30.0,0.9889763127007261,0.9665844096237066,35,0.675,1,1
+rotation_fit_r2_cal_r3_test_r1,Electrical,extra_trees,calibration,sealed_14_dummy_write_r3,dummy_write,0,0,,0.5522236751562608,0.2746583792324138,35,0.675,1,1
+rotation_fit_r2_cal_r3_test_r1,Electrical,extra_trees,calibration,sealed_15_forward_r3,forward,0,0,,0.07901137806022529,0.043048764113418694,35,0.675,1,1
+rotation_fit_r2_cal_r3_test_r1,Electrical,extra_trees,test,sealed_01_fused_update_r1,fused_update,1,0,,0.3580819810665936,0.3301022897268574,35,0.675,1,1
+rotation_fit_r2_cal_r3_test_r1,Electrical,extra_trees,test,sealed_02_forward3_r1,forward3,0,0,,0.2940969158163304,0.08021336830214945,35,0.675,1,1
+rotation_fit_r2_cal_r3_test_r1,Electrical,extra_trees,test,sealed_03_adamw_r1,adamw,1,1,30.0,0.9929740361919748,0.9633074513654731,35,0.675,1,1
+rotation_fit_r2_cal_r3_test_r1,Electrical,extra_trees,test,sealed_04_dummy_write_r1,dummy_write,0,0,,0.293898466054579,0.23231324074488566,35,0.675,1,1
+rotation_fit_r2_cal_r3_test_r1,Electrical,extra_trees,test,sealed_05_forward_r1,forward,0,0,,0.08753239121808581,0.06418911719279274,35,0.675,1,1
+rotation_fit_r2_cal_r3_test_r1,Electrical,logistic,calibration,sealed_11_fused_update_r3,fused_update,1,1,45.0,0.8232384833694246,0.3961383256276247,35,0.8,1,1
+rotation_fit_r2_cal_r3_test_r1,Electrical,logistic,calibration,sealed_12_forward3_r3,forward3,0,0,,0.13442359098884726,0.07698779324592778,35,0.8,1,1
+rotation_fit_r2_cal_r3_test_r1,Electrical,logistic,calibration,sealed_13_adamw_r3,adamw,1,1,30.0,0.9999793013730626,0.9998266121494505,35,0.8,1,1
+rotation_fit_r2_cal_r3_test_r1,Electrical,logistic,calibration,sealed_14_dummy_write_r3,dummy_write,0,0,,0.7787124590400915,0.3674936644775204,35,0.8,1,1
+rotation_fit_r2_cal_r3_test_r1,Electrical,logistic,calibration,sealed_15_forward_r3,forward,0,0,,0.2744602657593226,0.07767420435720221,35,0.8,1,1
+rotation_fit_r2_cal_r3_test_r1,Electrical,logistic,test,sealed_01_fused_update_r1,fused_update,1,0,,0.19467718817757343,0.08332161969730847,35,0.8,1,1
+rotation_fit_r2_cal_r3_test_r1,Electrical,logistic,test,sealed_02_forward3_r1,forward3,0,0,,0.2622181204357678,0.059840198743764464,35,0.8,1,1
+rotation_fit_r2_cal_r3_test_r1,Electrical,logistic,test,sealed_03_adamw_r1,adamw,1,1,30.0,0.9999999984338586,0.9999489675435805,35,0.8,1,1
+rotation_fit_r2_cal_r3_test_r1,Electrical,logistic,test,sealed_04_dummy_write_r1,dummy_write,0,0,,0.22588997991380338,0.09782783722025007,35,0.8,1,1
+rotation_fit_r2_cal_r3_test_r1,Electrical,logistic,test,sealed_05_forward_r1,forward,0,0,,0.050865339385955055,0.020497046395853247,35,0.8,1,1
+rotation_fit_r3_cal_r1_test_r2,Electrical,random_forest,calibration,sealed_01_fused_update_r1,fused_update,1,1,90.0,0.3823888888888888,0.3489488095238096,35,0.35,4,3
+rotation_fit_r3_cal_r1_test_r2,Electrical,random_forest,calibration,sealed_02_forward3_r1,forward3,0,0,,0.4367083333333334,0.09417500000000002,35,0.35,4,3
+rotation_fit_r3_cal_r1_test_r2,Electrical,random_forest,calibration,sealed_03_adamw_r1,adamw,1,1,75.0,0.9680714285714287,0.9397380952380953,35,0.35,4,3
+rotation_fit_r3_cal_r1_test_r2,Electrical,random_forest,calibration,sealed_04_dummy_write_r1,dummy_write,0,0,,0.27604166666666663,0.23758055555555554,35,0.35,4,3
+rotation_fit_r3_cal_r1_test_r2,Electrical,random_forest,calibration,sealed_05_forward_r1,forward,0,0,,0.05011904761904762,0.032797619047619055,35,0.35,4,3
+rotation_fit_r3_cal_r1_test_r2,Electrical,random_forest,test,sealed_06_fused_update_r2,fused_update,1,1,75.0,0.6425833333333333,0.5007214285714287,35,0.35,4,3
+rotation_fit_r3_cal_r1_test_r2,Electrical,random_forest,test,sealed_07_forward3_r2,forward3,0,0,,0.26830357142857136,0.11484285714285714,35,0.35,4,3
+rotation_fit_r3_cal_r1_test_r2,Electrical,random_forest,test,sealed_08_adamw_r2,adamw,1,1,75.0,0.9539880952380955,0.9456880952380955,35,0.35,4,3
+rotation_fit_r3_cal_r1_test_r2,Electrical,random_forest,test,sealed_09_dummy_write_r2,dummy_write,0,0,,0.36380357142857134,0.26919404761904764,35,0.35,4,3
+rotation_fit_r3_cal_r1_test_r2,Electrical,random_forest,test,sealed_10_forward_r2,forward,0,0,,0.2882619047619048,0.15384642857142858,35,0.35,4,3
+rotation_fit_r3_cal_r1_test_r2,Electrical,extra_trees,calibration,sealed_01_fused_update_r1,fused_update,1,1,90.0,0.23471316859158375,0.21765153334236573,35,0.225,4,3
+rotation_fit_r3_cal_r1_test_r2,Electrical,extra_trees,calibration,sealed_02_forward3_r1,forward3,0,0,,0.2623521407376328,0.0628118521514017,35,0.225,4,3
+rotation_fit_r3_cal_r1_test_r2,Electrical,extra_trees,calibration,sealed_03_adamw_r1,adamw,1,1,75.0,0.977541172928419,0.9361214609026576,35,0.225,4,3
+rotation_fit_r3_cal_r1_test_r2,Electrical,extra_trees,calibration,sealed_04_dummy_write_r1,dummy_write,0,0,,0.14180876036682113,0.11847950279662725,35,0.225,4,3
+rotation_fit_r3_cal_r1_test_r2,Electrical,extra_trees,calibration,sealed_05_forward_r1,forward,0,0,,0.038134830894404476,0.027962285336761344,35,0.225,4,3
+rotation_fit_r3_cal_r1_test_r2,Electrical,extra_trees,test,sealed_06_fused_update_r2,fused_update,1,1,75.0,0.7381568306534896,0.5217409415530069,35,0.225,4,3
+rotation_fit_r3_cal_r1_test_r2,Electrical,extra_trees,test,sealed_07_forward3_r2,forward3,0,0,,0.19341005303971615,0.1112522004922939,35,0.225,4,3
+rotation_fit_r3_cal_r1_test_r2,Electrical,extra_trees,test,sealed_08_adamw_r2,adamw,1,1,75.0,0.9797087575074905,0.9652084241371657,35,0.225,4,3
+rotation_fit_r3_cal_r1_test_r2,Electrical,extra_trees,test,sealed_09_dummy_write_r2,dummy_write,0,0,,0.4729819589148403,0.22801070290577902,35,0.225,4,3
+rotation_fit_r3_cal_r1_test_r2,Electrical,extra_trees,test,sealed_10_forward_r2,forward,0,0,,0.36896636672877586,0.20564209817298051,35,0.225,4,3
+rotation_fit_r3_cal_r1_test_r2,Electrical,logistic,calibration,sealed_01_fused_update_r1,fused_update,1,0,,0.059669562609648334,0.025352293926989573,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,Electrical,logistic,calibration,sealed_02_forward3_r1,forward3,0,0,,0.2920890849130892,0.05947723292880146,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,Electrical,logistic,calibration,sealed_03_adamw_r1,adamw,1,1,90.0,0.9999999999941218,0.9999997333854234,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,Electrical,logistic,calibration,sealed_04_dummy_write_r1,dummy_write,0,0,,0.08173201424399953,0.03973633995235705,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,Electrical,logistic,calibration,sealed_05_forward_r1,forward,0,0,,0.0047318654270734,0.003001099547753007,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,Electrical,logistic,test,sealed_06_fused_update_r2,fused_update,1,0,,0.6031892690537708,0.30428573948586496,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,Electrical,logistic,test,sealed_07_forward3_r2,forward3,0,0,,0.23993262035602703,0.10122172536266974,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,Electrical,logistic,test,sealed_08_adamw_r2,adamw,1,1,90.0,0.999999946281608,0.9999998032485818,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,Electrical,logistic,test,sealed_09_dummy_write_r2,dummy_write,0,0,,0.6850899520844752,0.17038652085439585,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,Electrical,logistic,test,sealed_10_forward_r2,forward,0,0,,0.6123614937283482,0.23283143909178233,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,Electrical,random_forest,calibration,sealed_06_fused_update_r2,fused_update,1,1,45.0,0.6425833333333333,0.5007214285714287,35,0.625,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical,random_forest,calibration,sealed_07_forward3_r2,forward3,0,0,,0.26830357142857136,0.11484285714285714,35,0.625,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical,random_forest,calibration,sealed_08_adamw_r2,adamw,1,1,30.0,0.9539880952380955,0.9456880952380955,35,0.625,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical,random_forest,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.36380357142857134,0.26919404761904764,35,0.625,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical,random_forest,calibration,sealed_10_forward_r2,forward,0,0,,0.2882619047619048,0.15384642857142858,35,0.625,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical,random_forest,test,sealed_01_fused_update_r1,fused_update,1,0,,0.3823888888888888,0.3489488095238096,35,0.625,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical,random_forest,test,sealed_02_forward3_r1,forward3,0,0,,0.4367083333333334,0.09417500000000002,35,0.625,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical,random_forest,test,sealed_03_adamw_r1,adamw,1,1,30.0,0.9680714285714287,0.9397380952380953,35,0.625,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical,random_forest,test,sealed_04_dummy_write_r1,dummy_write,0,0,,0.27604166666666663,0.23758055555555554,35,0.625,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical,random_forest,test,sealed_05_forward_r1,forward,0,0,,0.05011904761904762,0.032797619047619055,35,0.625,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical,extra_trees,calibration,sealed_06_fused_update_r2,fused_update,1,1,45.0,0.7381568306534896,0.5217409415530069,35,0.725,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical,extra_trees,calibration,sealed_07_forward3_r2,forward3,0,0,,0.19341005303971615,0.1112522004922939,35,0.725,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical,extra_trees,calibration,sealed_08_adamw_r2,adamw,1,1,30.0,0.9797087575074905,0.9652084241371657,35,0.725,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical,extra_trees,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.4729819589148403,0.22801070290577902,35,0.725,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical,extra_trees,calibration,sealed_10_forward_r2,forward,0,0,,0.36896636672877586,0.20564209817298051,35,0.725,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical,extra_trees,test,sealed_01_fused_update_r1,fused_update,1,0,,0.23471316859158375,0.21765153334236573,35,0.725,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical,extra_trees,test,sealed_02_forward3_r1,forward3,0,0,,0.2623521407376328,0.0628118521514017,35,0.725,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical,extra_trees,test,sealed_03_adamw_r1,adamw,1,1,30.0,0.977541172928419,0.9361214609026576,35,0.725,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical,extra_trees,test,sealed_04_dummy_write_r1,dummy_write,0,0,,0.14180876036682113,0.11847950279662725,35,0.725,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical,extra_trees,test,sealed_05_forward_r1,forward,0,0,,0.038134830894404476,0.027962285336761344,35,0.725,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical,logistic,calibration,sealed_06_fused_update_r2,fused_update,1,1,75.0,0.6031892690537708,0.30428573948586496,35,0.275,3,3
+rotation_fit_r3_cal_r2_test_r1,Electrical,logistic,calibration,sealed_07_forward3_r2,forward3,0,0,,0.23993262035602703,0.10122172536266974,35,0.275,3,3
+rotation_fit_r3_cal_r2_test_r1,Electrical,logistic,calibration,sealed_08_adamw_r2,adamw,1,1,60.0,0.999999946281608,0.9999998032485818,35,0.275,3,3
+rotation_fit_r3_cal_r2_test_r1,Electrical,logistic,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.6850899520844752,0.17038652085439585,35,0.275,3,3
+rotation_fit_r3_cal_r2_test_r1,Electrical,logistic,calibration,sealed_10_forward_r2,forward,0,0,,0.6123614937283482,0.23283143909178233,35,0.275,3,3
+rotation_fit_r3_cal_r2_test_r1,Electrical,logistic,test,sealed_01_fused_update_r1,fused_update,1,0,,0.059669562609648334,0.025352293926989573,35,0.275,3,3
+rotation_fit_r3_cal_r2_test_r1,Electrical,logistic,test,sealed_02_forward3_r1,forward3,0,0,,0.2920890849130892,0.05947723292880146,35,0.275,3,3
+rotation_fit_r3_cal_r2_test_r1,Electrical,logistic,test,sealed_03_adamw_r1,adamw,1,1,60.0,0.9999999999941218,0.9999997333854234,35,0.275,3,3
+rotation_fit_r3_cal_r2_test_r1,Electrical,logistic,test,sealed_04_dummy_write_r1,dummy_write,0,0,,0.08173201424399953,0.03973633995235705,35,0.275,3,3
+rotation_fit_r3_cal_r2_test_r1,Electrical,logistic,test,sealed_05_forward_r1,forward,0,0,,0.0047318654270734,0.003001099547753007,35,0.275,3,3
+adamw_transfer_no_fused_fit,NVML + electrical,random_forest,test,sealed_01_fused_update_r1,fused_update,1,0,,0.05658333333333333,0.04334999999999999,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical,random_forest,test,sealed_06_fused_update_r2,fused_update,1,0,,0.04158333333333333,0.036616666666666665,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical,random_forest,test,sealed_11_fused_update_r3,fused_update,1,0,,0.0495,0.04086666666666666,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical,random_forest,test,sealed_12_forward3_r3,forward3,0,0,,0.09654166666666665,0.02355833333333333,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical,random_forest,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9789166666666667,0.9609583333333334,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical,random_forest,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.04416666666666667,0.0278,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical,random_forest,test,sealed_15_forward_r3,forward,0,0,,0.005,0.0027083333333333334,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical,extra_trees,test,sealed_01_fused_update_r1,fused_update,1,0,,0.06126318330362448,0.042066102198455135,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical,extra_trees,test,sealed_06_fused_update_r2,fused_update,1,0,,0.04369652406417112,0.029534018251569406,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical,extra_trees,test,sealed_11_fused_update_r3,fused_update,1,0,,0.052190293278049034,0.03202822663979953,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical,extra_trees,test,sealed_12_forward3_r3,forward3,0,0,,0.15309139185977422,0.040765932987160615,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical,extra_trees,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9963636363636362,0.9847386363636363,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical,extra_trees,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.04463402406417112,0.022820998854087088,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical,extra_trees,test,sealed_15_forward_r3,forward,0,0,,0.02131016042780749,0.009126336898395721,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical,logistic,test,sealed_01_fused_update_r1,fused_update,1,0,,0.002469516473636591,0.0009806434189396094,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical,logistic,test,sealed_06_fused_update_r2,fused_update,1,0,,0.005847832444589709,0.0029403507298126894,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical,logistic,test,sealed_11_fused_update_r3,fused_update,1,0,,0.0044609333226217,0.0017824430321912506,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical,logistic,test,sealed_12_forward3_r3,forward3,0,0,,0.06704337779818031,0.01601044971287247,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical,logistic,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9999999626094623,0.9999991738764086,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical,logistic,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.0035691341548514605,0.001713365013729232,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical,logistic,test,sealed_15_forward_r3,forward,0,0,,0.011886370637172048,0.0035169947890500174,38,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML + electrical,random_forest,test,sealed_11_fused_update_r3,fused_update,1,0,,0.6244702380952382,0.5535428571428572,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML + electrical,random_forest,test,sealed_12_forward3_r3,forward3,0,0,,0.11304166666666665,0.05970714285714285,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML + electrical,random_forest,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.979986111111111,0.9675805555555554,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML + electrical,random_forest,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.45487500000000003,0.25536309523809525,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML + electrical,random_forest,test,sealed_15_forward_r3,forward,0,0,,0.064,0.03348333333333333,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML + electrical,extra_trees,test,sealed_11_fused_update_r3,fused_update,1,0,,0.5092147210410527,0.4607239826180239,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML + electrical,extra_trees,test,sealed_12_forward3_r3,forward3,0,0,,0.16164214973686047,0.06996788920933775,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML + electrical,extra_trees,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9983823529411765,0.9842084398976982,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML + electrical,extra_trees,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.5124287165374937,0.25036506839553574,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML + electrical,extra_trees,test,sealed_15_forward_r3,forward,0,0,,0.07056016319571304,0.04102978930702715,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML + electrical,logistic,test,sealed_11_fused_update_r3,fused_update,1,0,,0.36536809217535804,0.23230466957725682,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML + electrical,logistic,test,sealed_12_forward3_r3,forward3,0,0,,0.5410076894991772,0.2353361957711499,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML + electrical,logistic,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9999873501729263,0.9976629383197271,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML + electrical,logistic,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.44954427294843347,0.18258991696412302,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML + electrical,logistic,test,sealed_15_forward_r3,forward,0,0,,0.7740870817774057,0.20756733758248017,40,0.85,5,3
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,random_forest,calibration,sealed_06_fused_update_r2,fused_update,1,1,75.0,0.2230833333333333,0.18869999999999998,35,0.2,3,2
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,random_forest,calibration,sealed_07_forward3_r2,forward3,0,0,,0.06533333333333333,0.03585,35,0.2,3,2
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,random_forest,calibration,sealed_08_adamw_r2,adamw,1,1,60.0,0.9367916666666667,0.9162750000000001,35,0.2,3,2
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,random_forest,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.23872023809523807,0.15997738095238095,35,0.2,3,2
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,random_forest,calibration,sealed_10_forward_r2,forward,0,0,,0.07895833333333332,0.042249999999999996,35,0.2,3,2
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,random_forest,test,sealed_11_fused_update_r3,fused_update,1,1,90.0,0.24424999999999997,0.1983,35,0.2,3,2
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,random_forest,test,sealed_12_forward3_r3,forward3,0,0,,0.11117857142857143,0.055894047619047614,35,0.2,3,2
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,random_forest,test,sealed_13_adamw_r3,adamw,1,1,60.0,0.9102083333333334,0.8943666666666669,35,0.2,3,2
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,random_forest,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.157125,0.11774166666666666,35,0.2,3,2
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,random_forest,test,sealed_15_forward_r3,forward,0,0,,0.023375,0.012175,35,0.2,3,2
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,extra_trees,calibration,sealed_06_fused_update_r2,fused_update,1,1,90.0,0.1406472775286541,0.12175769859320315,35,0.1,5,5
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,extra_trees,calibration,sealed_07_forward3_r2,forward3,0,0,,0.07510186248081412,0.03378727218789903,35,0.1,5,5
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,extra_trees,calibration,sealed_08_adamw_r2,adamw,1,1,90.0,0.9979740361919748,0.9805678094094658,35,0.1,5,5
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,extra_trees,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.17951040969514231,0.11390763790063427,35,0.1,5,5
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,extra_trees,calibration,sealed_10_forward_r2,forward,0,0,,0.057460241709767705,0.04097976054500541,35,0.1,5,5
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,extra_trees,test,sealed_11_fused_update_r3,fused_update,1,1,90.0,0.15402551882472829,0.12358631386155221,35,0.1,5,5
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,extra_trees,test,sealed_12_forward3_r3,forward3,0,0,,0.1832046213772556,0.06895162580129241,35,0.1,5,5
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,extra_trees,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9850545533826889,0.9609148157293632,35,0.1,5,5
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,extra_trees,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.11537220595632719,0.07555736343455449,35,0.1,5,5
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,extra_trees,test,sealed_15_forward_r3,forward,0,0,,0.058977860468715726,0.024703699165495092,35,0.1,5,5
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,logistic,calibration,sealed_06_fused_update_r2,fused_update,1,0,,0.061568592230529795,0.04355775430776081,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,logistic,calibration,sealed_07_forward3_r2,forward3,0,0,,0.007200913907104589,0.0036152605322856642,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,logistic,calibration,sealed_08_adamw_r2,adamw,1,1,90.0,0.9999956566235267,0.999969992039991,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,logistic,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.04193760685352436,0.02113327540087557,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,logistic,calibration,sealed_10_forward_r2,forward,0,0,,0.04918426708859581,0.01482363832163871,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,logistic,test,sealed_11_fused_update_r3,fused_update,1,0,,0.03542766159843047,0.022966555749644124,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,logistic,test,sealed_12_forward3_r3,forward3,0,0,,0.3275313307972298,0.08476261117095361,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,logistic,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9999852007678601,0.999707415801048,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,logistic,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.02577763218805457,0.007826082841369547,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,logistic,test,sealed_15_forward_r3,forward,0,0,,0.18993199831927632,0.04598278803681337,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,random_forest,calibration,sealed_06_fused_update_r2,fused_update,1,1,75.0,0.2230833333333333,0.18869999999999998,35,0.2,3,2
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,random_forest,calibration,sealed_07_forward3_r2,forward3,0,0,,0.06533333333333333,0.03585,35,0.2,3,2
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,random_forest,calibration,sealed_08_adamw_r2,adamw,1,1,60.0,0.9367916666666667,0.9162750000000001,35,0.2,3,2
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,random_forest,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.23872023809523807,0.15997738095238095,35,0.2,3,2
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,random_forest,calibration,sealed_10_forward_r2,forward,0,0,,0.07895833333333332,0.042249999999999996,35,0.2,3,2
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,random_forest,test,sealed_11_fused_update_r3,fused_update,1,1,90.0,0.24424999999999997,0.1983,35,0.2,3,2
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,random_forest,test,sealed_12_forward3_r3,forward3,0,0,,0.11117857142857143,0.055894047619047614,35,0.2,3,2
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,random_forest,test,sealed_13_adamw_r3,adamw,1,1,60.0,0.9102083333333334,0.8943666666666669,35,0.2,3,2
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,random_forest,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.157125,0.11774166666666666,35,0.2,3,2
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,random_forest,test,sealed_15_forward_r3,forward,0,0,,0.023375,0.012175,35,0.2,3,2
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,extra_trees,calibration,sealed_06_fused_update_r2,fused_update,1,1,90.0,0.1406472775286541,0.12175769859320315,35,0.1,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,extra_trees,calibration,sealed_07_forward3_r2,forward3,0,0,,0.07510186248081412,0.03378727218789903,35,0.1,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,extra_trees,calibration,sealed_08_adamw_r2,adamw,1,1,90.0,0.9979740361919748,0.9805678094094658,35,0.1,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,extra_trees,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.17951040969514234,0.11390763790063427,35,0.1,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,extra_trees,calibration,sealed_10_forward_r2,forward,0,0,,0.057460241709767705,0.04097976054500541,35,0.1,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,extra_trees,test,sealed_11_fused_update_r3,fused_update,1,1,90.0,0.15402551882472829,0.12358631386155221,35,0.1,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,extra_trees,test,sealed_12_forward3_r3,forward3,0,0,,0.1832046213772556,0.06895162580129241,35,0.1,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,extra_trees,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9850545533826889,0.9609148157293632,35,0.1,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,extra_trees,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.11537220595632719,0.07555736343455449,35,0.1,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,extra_trees,test,sealed_15_forward_r3,forward,0,0,,0.058977860468715726,0.024703699165495092,35,0.1,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,logistic,calibration,sealed_06_fused_update_r2,fused_update,1,0,,0.061568592230529795,0.04355775430776081,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,logistic,calibration,sealed_07_forward3_r2,forward3,0,0,,0.007200913907104589,0.0036152605322856642,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,logistic,calibration,sealed_08_adamw_r2,adamw,1,1,90.0,0.9999956566235267,0.999969992039991,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,logistic,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.04193760685352436,0.02113327540087557,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,logistic,calibration,sealed_10_forward_r2,forward,0,0,,0.04918426708859581,0.01482363832163871,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,logistic,test,sealed_11_fused_update_r3,fused_update,1,0,,0.03542766159843047,0.022966555749644124,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,logistic,test,sealed_12_forward3_r3,forward3,0,0,,0.3275313307972298,0.08476261117095361,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,logistic,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9999852007678601,0.999707415801048,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,logistic,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.02577763218805457,0.007826082841369547,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,logistic,test,sealed_15_forward_r3,forward,0,0,,0.18993199831927632,0.04598278803681337,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,random_forest,calibration,sealed_11_fused_update_r3,fused_update,1,1,30.0,0.24424999999999997,0.1983,35,0.225,1,1
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,random_forest,calibration,sealed_12_forward3_r3,forward3,0,0,,0.11117857142857143,0.055894047619047614,35,0.225,1,1
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,random_forest,calibration,sealed_13_adamw_r3,adamw,1,1,30.0,0.9102083333333334,0.8943666666666669,35,0.225,1,1
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,random_forest,calibration,sealed_14_dummy_write_r3,dummy_write,0,0,,0.157125,0.11774166666666666,35,0.225,1,1
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,random_forest,calibration,sealed_15_forward_r3,forward,0,0,,0.023375,0.012175,35,0.225,1,1
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,random_forest,test,sealed_06_fused_update_r2,fused_update,1,0,,0.2230833333333333,0.18869999999999998,35,0.225,1,1
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,random_forest,test,sealed_07_forward3_r2,forward3,0,0,,0.06533333333333333,0.03585,35,0.225,1,1
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,random_forest,test,sealed_08_adamw_r2,adamw,1,1,30.0,0.9367916666666667,0.9162750000000001,35,0.225,1,1
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,random_forest,test,sealed_09_dummy_write_r2,dummy_write,0,1,30.0,0.23872023809523807,0.15997738095238095,35,0.225,1,1
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,random_forest,test,sealed_10_forward_r2,forward,0,0,,0.07895833333333332,0.042249999999999996,35,0.225,1,1
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,extra_trees,calibration,sealed_11_fused_update_r3,fused_update,1,1,45.0,0.15402551882472829,0.12358631386155221,35,0.125,2,2
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,extra_trees,calibration,sealed_12_forward3_r3,forward3,0,0,,0.1832046213772556,0.06895162580129241,35,0.125,2,2
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,extra_trees,calibration,sealed_13_adamw_r3,adamw,1,1,45.0,0.9850545533826889,0.9609148157293632,35,0.125,2,2
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,extra_trees,calibration,sealed_14_dummy_write_r3,dummy_write,0,0,,0.11537220595632719,0.07555736343455449,35,0.125,2,2
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,extra_trees,calibration,sealed_15_forward_r3,forward,0,0,,0.058977860468715726,0.024703699165495092,35,0.125,2,2
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,extra_trees,test,sealed_06_fused_update_r2,fused_update,1,0,,0.1406472775286541,0.12175769859320315,35,0.125,2,2
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,extra_trees,test,sealed_07_forward3_r2,forward3,0,0,,0.07510186248081412,0.03378727218789903,35,0.125,2,2
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,extra_trees,test,sealed_08_adamw_r2,adamw,1,1,45.0,0.9979740361919748,0.9805678094094658,35,0.125,2,2
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,extra_trees,test,sealed_09_dummy_write_r2,dummy_write,0,1,45.0,0.17951040969514231,0.11390763790063427,35,0.125,2,2
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,extra_trees,test,sealed_10_forward_r2,forward,0,0,,0.057460241709767705,0.04097976054500541,35,0.125,2,2
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,logistic,calibration,sealed_11_fused_update_r3,fused_update,1,0,,0.03542766159843047,0.022966555749644124,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,logistic,calibration,sealed_12_forward3_r3,forward3,0,0,,0.3275313307972298,0.08476261117095361,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,logistic,calibration,sealed_13_adamw_r3,adamw,1,1,90.0,0.9999852007678601,0.999707415801048,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,logistic,calibration,sealed_14_dummy_write_r3,dummy_write,0,0,,0.02577763218805457,0.007826082841369547,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,logistic,calibration,sealed_15_forward_r3,forward,0,0,,0.18993199831927632,0.04598278803681337,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,logistic,test,sealed_06_fused_update_r2,fused_update,1,0,,0.061568592230529795,0.04355775430776081,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,logistic,test,sealed_07_forward3_r2,forward3,0,0,,0.007200913907104589,0.0036152605322856642,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,logistic,test,sealed_08_adamw_r2,adamw,1,1,90.0,0.9999956566235267,0.999969992039991,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,logistic,test,sealed_09_dummy_write_r2,dummy_write,0,0,,0.04193760685352436,0.02113327540087557,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,logistic,test,sealed_10_forward_r2,forward,0,0,,0.04918426708859581,0.01482363832163871,35,0.85,5,5
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,random_forest,calibration,sealed_01_fused_update_r1,fused_update,1,1,90.0,0.4713333333333335,0.4430589285714287,35,0.45,3,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,random_forest,calibration,sealed_02_forward3_r1,forward3,0,0,,0.4667559523809524,0.10994285714285715,35,0.45,3,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,random_forest,calibration,sealed_03_adamw_r1,adamw,1,1,60.0,0.9396666666666669,0.9289916666666669,35,0.45,3,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,random_forest,calibration,sealed_04_dummy_write_r1,dummy_write,0,0,,0.3753244047619049,0.32642499999999997,35,0.45,3,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,random_forest,calibration,sealed_05_forward_r1,forward,0,0,,0.09370833333333334,0.07235595238095238,35,0.45,3,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,random_forest,test,sealed_11_fused_update_r3,fused_update,1,1,60.0,0.5708988095238097,0.542274404761905,35,0.45,3,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,random_forest,test,sealed_12_forward3_r3,forward3,0,0,,0.1267916666666667,0.07170833333333335,35,0.45,3,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,random_forest,test,sealed_13_adamw_r3,adamw,1,1,60.0,0.9458750000000002,0.9364666666666668,35,0.45,3,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,random_forest,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.5460922619047621,0.3344095238095238,35,0.45,3,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,random_forest,test,sealed_15_forward_r3,forward,0,0,,0.0715952380952381,0.04442142857142858,35,0.45,3,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,extra_trees,calibration,sealed_01_fused_update_r1,fused_update,1,1,90.0,0.31078627012438675,0.28614250827428817,35,0.3,3,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,extra_trees,calibration,sealed_02_forward3_r1,forward3,0,0,,0.31643258281607684,0.08497353860919969,35,0.3,3,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,extra_trees,calibration,sealed_03_adamw_r1,adamw,1,1,60.0,0.9819086707560503,0.9567475094141354,35,0.3,3,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,extra_trees,calibration,sealed_04_dummy_write_r1,dummy_write,0,0,,0.2286432618010935,0.18734731708831598,35,0.3,3,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,extra_trees,calibration,sealed_05_forward_r1,forward,0,0,,0.09900388231804054,0.06908639414496612,35,0.3,3,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,extra_trees,test,sealed_11_fused_update_r3,fused_update,1,1,60.0,0.5050680180429076,0.45493068378399837,35,0.3,3,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,extra_trees,test,sealed_12_forward3_r3,forward3,0,0,,0.15283899343488416,0.0677916599955329,35,0.3,3,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,extra_trees,test,sealed_13_adamw_r3,adamw,1,1,60.0,0.9886453428733444,0.969008212805045,35,0.3,3,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,extra_trees,test,sealed_14_dummy_write_r3,dummy_write,0,1,60.0,0.524851525872068,0.3271197925459085,35,0.3,3,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,extra_trees,test,sealed_15_forward_r3,forward,0,0,,0.07093475513020597,0.05317357007910082,35,0.3,3,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,logistic,calibration,sealed_01_fused_update_r1,fused_update,1,1,60.0,0.28299536745557285,0.10254276794214848,35,0.15,2,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,logistic,calibration,sealed_02_forward3_r1,forward3,0,0,,0.49036987858348463,0.10717021910135585,35,0.15,2,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,logistic,calibration,sealed_03_adamw_r1,adamw,1,1,45.0,0.9999999999897256,0.999996333976207,35,0.15,2,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,logistic,calibration,sealed_04_dummy_write_r1,dummy_write,0,0,,0.182350562328374,0.057512268055782925,35,0.15,2,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,logistic,calibration,sealed_05_forward_r1,forward,0,0,,0.17359867409248522,0.058402857863528224,35,0.15,2,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,logistic,test,sealed_11_fused_update_r3,fused_update,1,1,45.0,0.6336579367688561,0.23260665956366652,35,0.15,2,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,logistic,test,sealed_12_forward3_r3,forward3,0,1,45.0,0.39767607087072143,0.22760945500802662,35,0.15,2,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,logistic,test,sealed_13_adamw_r3,adamw,1,1,45.0,0.999999930466051,0.999991350114511,35,0.15,2,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,logistic,test,sealed_14_dummy_write_r3,dummy_write,0,1,45.0,0.6532117851717085,0.41860027562175767,35,0.15,2,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,logistic,test,sealed_15_forward_r3,forward,0,1,45.0,0.6159592815211721,0.19274178868649453,35,0.15,2,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,random_forest,calibration,sealed_11_fused_update_r3,fused_update,1,1,90.0,0.5708988095238097,0.542274404761905,35,0.55,5,4
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,random_forest,calibration,sealed_12_forward3_r3,forward3,0,0,,0.1267916666666667,0.07170833333333335,35,0.55,5,4
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,random_forest,calibration,sealed_13_adamw_r3,adamw,1,1,90.0,0.9458750000000002,0.9364666666666668,35,0.55,5,4
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,random_forest,calibration,sealed_14_dummy_write_r3,dummy_write,0,0,,0.5460922619047621,0.3344095238095238,35,0.55,5,4
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,random_forest,calibration,sealed_15_forward_r3,forward,0,0,,0.0715952380952381,0.04442142857142858,35,0.55,5,4
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,random_forest,test,sealed_01_fused_update_r1,fused_update,1,0,,0.4713333333333335,0.4430589285714287,35,0.55,5,4
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,random_forest,test,sealed_02_forward3_r1,forward3,0,0,,0.4667559523809524,0.10994285714285715,35,0.55,5,4
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,random_forest,test,sealed_03_adamw_r1,adamw,1,1,90.0,0.939666666666667,0.9289916666666669,35,0.55,5,4
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,random_forest,test,sealed_04_dummy_write_r1,dummy_write,0,0,,0.3753244047619049,0.32642499999999997,35,0.55,5,4
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,random_forest,test,sealed_05_forward_r1,forward,0,0,,0.09370833333333334,0.07235595238095238,35,0.55,5,4
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,extra_trees,calibration,sealed_11_fused_update_r3,fused_update,1,1,90.0,0.5050680180429076,0.45493068378399837,35,0.5,5,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,extra_trees,calibration,sealed_12_forward3_r3,forward3,0,0,,0.15283899343488416,0.0677916599955329,35,0.5,5,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,extra_trees,calibration,sealed_13_adamw_r3,adamw,1,1,90.0,0.9886453428733444,0.969008212805045,35,0.5,5,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,extra_trees,calibration,sealed_14_dummy_write_r3,dummy_write,0,0,,0.524851525872068,0.3271197925459085,35,0.5,5,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,extra_trees,calibration,sealed_15_forward_r3,forward,0,0,,0.07093475513020597,0.05317357007910082,35,0.5,5,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,extra_trees,test,sealed_01_fused_update_r1,fused_update,1,0,,0.31078627012438675,0.28614250827428817,35,0.5,5,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,extra_trees,test,sealed_02_forward3_r1,forward3,0,0,,0.31643258281607684,0.08497353860919969,35,0.5,5,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,extra_trees,test,sealed_03_adamw_r1,adamw,1,1,90.0,0.9819086707560503,0.9567475094141354,35,0.5,5,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,extra_trees,test,sealed_04_dummy_write_r1,dummy_write,0,0,,0.2286432618010935,0.18734731708831598,35,0.5,5,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,extra_trees,test,sealed_05_forward_r1,forward,0,0,,0.09900388231804054,0.06908639414496612,35,0.5,5,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,logistic,calibration,sealed_11_fused_update_r3,fused_update,1,0,,0.6336579367688561,0.23260665956366652,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,logistic,calibration,sealed_12_forward3_r3,forward3,0,0,,0.39767607087072143,0.22760945500802662,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,logistic,calibration,sealed_13_adamw_r3,adamw,1,1,90.0,0.999999930466051,0.999991350114511,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,logistic,calibration,sealed_14_dummy_write_r3,dummy_write,0,0,,0.6532117851717085,0.41860027562175767,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,logistic,calibration,sealed_15_forward_r3,forward,0,0,,0.6159592815211721,0.19274178868649453,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,logistic,test,sealed_01_fused_update_r1,fused_update,1,0,,0.28299536745557285,0.10254276794214848,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,logistic,test,sealed_02_forward3_r1,forward3,0,0,,0.49036987858348463,0.10717021910135585,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,logistic,test,sealed_03_adamw_r1,adamw,1,1,90.0,0.9999999999897256,0.999996333976207,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,logistic,test,sealed_04_dummy_write_r1,dummy_write,0,0,,0.182350562328374,0.057512268055782925,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,logistic,test,sealed_05_forward_r1,forward,0,0,,0.17359867409248522,0.058402857863528224,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,random_forest,calibration,sealed_01_fused_update_r1,fused_update,1,1,90.0,0.36616666666666675,0.33147857142857146,35,0.325,4,3
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,random_forest,calibration,sealed_02_forward3_r1,forward3,0,0,,0.4418809523809526,0.09849285714285719,35,0.325,4,3
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,random_forest,calibration,sealed_03_adamw_r1,adamw,1,1,75.0,0.9348750000000001,0.9196904761904763,35,0.325,4,3
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,random_forest,calibration,sealed_04_dummy_write_r1,dummy_write,0,0,,0.32212500000000005,0.27562380952380944,35,0.325,4,3
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,random_forest,calibration,sealed_05_forward_r1,forward,0,0,,0.09079166666666667,0.058683333333333344,35,0.325,4,3
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,random_forest,test,sealed_06_fused_update_r2,fused_update,1,1,75.0,0.5583095238095238,0.4306904761904763,35,0.325,4,3
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,random_forest,test,sealed_07_forward3_r2,forward3,0,0,,0.2870833333333334,0.12953333333333336,35,0.325,4,3
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,random_forest,test,sealed_08_adamw_r2,adamw,1,1,75.0,0.9549107142857145,0.943657142857143,35,0.325,4,3
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,random_forest,test,sealed_09_dummy_write_r2,dummy_write,0,0,,0.3506250000000001,0.2868833333333334,35,0.325,4,3
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,random_forest,test,sealed_10_forward_r2,forward,0,0,,0.3608750000000001,0.1946666666666667,35,0.325,4,3
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,extra_trees,calibration,sealed_01_fused_update_r1,fused_update,1,0,,0.2746198253384227,0.23440652221660888,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,extra_trees,calibration,sealed_02_forward3_r1,forward3,0,0,,0.30221599943748084,0.07285927861729458,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,extra_trees,calibration,sealed_03_adamw_r1,adamw,1,1,90.0,0.9701824444415782,0.9435777121409499,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,extra_trees,calibration,sealed_04_dummy_write_r1,dummy_write,0,0,,0.2915341752343911,0.2650299194394313,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,extra_trees,calibration,sealed_05_forward_r1,forward,0,0,,0.09742605639438745,0.07740814266617327,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,extra_trees,test,sealed_06_fused_update_r2,fused_update,1,0,,0.5270085125058093,0.3631875110336368,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,extra_trees,test,sealed_07_forward3_r2,forward3,0,0,,0.13352256943287957,0.07773456696588975,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,extra_trees,test,sealed_08_adamw_r2,adamw,1,1,90.0,0.9876824444415782,0.9750673549934865,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,extra_trees,test,sealed_09_dummy_write_r2,dummy_write,0,0,,0.42875928541544844,0.23886080271363963,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,extra_trees,test,sealed_10_forward_r2,forward,0,0,,0.34932528459709755,0.2110353167718344,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,logistic,calibration,sealed_01_fused_update_r1,fused_update,1,0,,0.0886074640326918,0.030830312985286712,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,logistic,calibration,sealed_02_forward3_r1,forward3,0,0,,0.09756672068187906,0.01985145274029175,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,logistic,calibration,sealed_03_adamw_r1,adamw,1,1,90.0,0.999999999999631,0.9999999958940109,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,logistic,calibration,sealed_04_dummy_write_r1,dummy_write,0,0,,0.22482335404357484,0.0933835539086845,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,logistic,calibration,sealed_05_forward_r1,forward,0,0,,0.009866117937535758,0.005505383771724402,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,logistic,test,sealed_06_fused_update_r2,fused_update,1,0,,0.3628331760674059,0.1937624854588807,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,logistic,test,sealed_07_forward3_r2,forward3,0,0,,0.059971980135820044,0.026704121492699413,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,logistic,test,sealed_08_adamw_r2,adamw,1,1,90.0,0.9999999989298978,0.9999999969597992,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,logistic,test,sealed_09_dummy_write_r2,dummy_write,0,0,,0.776852071820885,0.1937773210406177,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,logistic,test,sealed_10_forward_r2,forward,0,0,,0.6690129781113381,0.27819808613494573,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,random_forest,calibration,sealed_06_fused_update_r2,fused_update,1,1,45.0,0.5583095238095238,0.4306904761904763,35,0.55,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,random_forest,calibration,sealed_07_forward3_r2,forward3,0,0,,0.2870833333333334,0.12953333333333336,35,0.55,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,random_forest,calibration,sealed_08_adamw_r2,adamw,1,1,30.0,0.9549107142857145,0.943657142857143,35,0.55,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,random_forest,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.3506250000000001,0.2868833333333334,35,0.55,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,random_forest,calibration,sealed_10_forward_r2,forward,0,0,,0.3608750000000001,0.1946666666666667,35,0.55,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,random_forest,test,sealed_01_fused_update_r1,fused_update,1,0,,0.36616666666666675,0.33147857142857146,35,0.55,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,random_forest,test,sealed_02_forward3_r1,forward3,0,0,,0.4418809523809526,0.09849285714285719,35,0.55,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,random_forest,test,sealed_03_adamw_r1,adamw,1,1,30.0,0.9348750000000001,0.9196904761904763,35,0.55,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,random_forest,test,sealed_04_dummy_write_r1,dummy_write,0,0,,0.32212500000000005,0.27562380952380944,35,0.55,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,random_forest,test,sealed_05_forward_r1,forward,0,0,,0.09079166666666667,0.058683333333333344,35,0.55,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,extra_trees,calibration,sealed_06_fused_update_r2,fused_update,1,1,45.0,0.5270085125058093,0.3631875110336368,35,0.525,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,extra_trees,calibration,sealed_07_forward3_r2,forward3,0,0,,0.13352256943287957,0.07773456696588975,35,0.525,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,extra_trees,calibration,sealed_08_adamw_r2,adamw,1,1,30.0,0.9876824444415782,0.9750673549934865,35,0.525,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,extra_trees,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.42875928541544844,0.23886080271363963,35,0.525,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,extra_trees,calibration,sealed_10_forward_r2,forward,0,0,,0.34932528459709755,0.2110353167718344,35,0.525,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,extra_trees,test,sealed_01_fused_update_r1,fused_update,1,0,,0.2746198253384227,0.23440652221660888,35,0.525,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,extra_trees,test,sealed_02_forward3_r1,forward3,0,0,,0.30221599943748084,0.07285927861729458,35,0.525,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,extra_trees,test,sealed_03_adamw_r1,adamw,1,1,30.0,0.9701824444415782,0.9435777121409499,35,0.525,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,extra_trees,test,sealed_04_dummy_write_r1,dummy_write,0,0,,0.2915341752343911,0.2650299194394313,35,0.525,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,extra_trees,test,sealed_05_forward_r1,forward,0,0,,0.09742605639438745,0.07740814266617327,35,0.525,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,logistic,calibration,sealed_06_fused_update_r2,fused_update,1,1,75.0,0.3628331760674059,0.1937624854588807,35,0.2,3,3
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,logistic,calibration,sealed_07_forward3_r2,forward3,0,0,,0.059971980135820044,0.026704121492699413,35,0.2,3,3
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,logistic,calibration,sealed_08_adamw_r2,adamw,1,1,60.0,0.9999999989298978,0.9999999969597992,35,0.2,3,3
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,logistic,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.776852071820885,0.1937773210406177,35,0.2,3,3
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,logistic,calibration,sealed_10_forward_r2,forward,0,0,,0.6690129781113381,0.27819808613494573,35,0.2,3,3
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,logistic,test,sealed_01_fused_update_r1,fused_update,1,0,,0.0886074640326918,0.030830312985286712,35,0.2,3,3
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,logistic,test,sealed_02_forward3_r1,forward3,0,0,,0.09756672068187906,0.01985145274029175,35,0.2,3,3
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,logistic,test,sealed_03_adamw_r1,adamw,1,1,60.0,0.999999999999631,0.9999999958940109,35,0.2,3,3
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,logistic,test,sealed_04_dummy_write_r1,dummy_write,0,0,,0.22482335404357484,0.0933835539086845,35,0.2,3,3
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,logistic,test,sealed_05_forward_r1,forward,0,0,,0.009866117937535758,0.005505383771724402,35,0.2,3,3
+adamw_transfer_no_fused_fit,Electrical + drift,random_forest,test,sealed_01_fused_update_r1,fused_update,1,0,,0.042666666666666665,0.026158333333333332,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical + drift,random_forest,test,sealed_06_fused_update_r2,fused_update,1,0,,0.042249999999999996,0.03095,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical + drift,random_forest,test,sealed_11_fused_update_r3,fused_update,1,0,,0.03645833333333333,0.02769166666666667,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical + drift,random_forest,test,sealed_12_forward3_r3,forward3,0,0,,0.10079166666666667,0.023958333333333335,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical + drift,random_forest,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9850595238095239,0.9658392857142857,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical + drift,random_forest,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.03370833333333333,0.020616666666666665,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical + drift,random_forest,test,sealed_15_forward_r3,forward,0,0,,0.012916666666666667,0.004458333333333333,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical + drift,extra_trees,test,sealed_01_fused_update_r1,fused_update,1,0,,0.051483957219251336,0.03556784759358289,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical + drift,extra_trees,test,sealed_06_fused_update_r2,fused_update,1,0,,0.05614286244800952,0.030881981580510996,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical + drift,extra_trees,test,sealed_11_fused_update_r3,fused_update,1,0,,0.04194184491978609,0.026491310160427807,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical + drift,extra_trees,test,sealed_12_forward3_r3,forward3,0,0,,0.13376671122994654,0.03835691473559122,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical + drift,extra_trees,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9909415584415584,0.9757893111790171,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical + drift,extra_trees,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.0443499331550802,0.018976031321619555,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical + drift,extra_trees,test,sealed_15_forward_r3,forward,0,0,,0.026704545454545453,0.009204545454545455,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical + drift,logistic,test,sealed_01_fused_update_r1,fused_update,1,0,,0.0038466338206527453,0.0015870903717502387,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical + drift,logistic,test,sealed_06_fused_update_r2,fused_update,1,0,,0.010265763269315543,0.003948114447827484,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical + drift,logistic,test,sealed_11_fused_update_r3,fused_update,1,0,,0.005534613666998358,0.002230681469966294,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical + drift,logistic,test,sealed_12_forward3_r3,forward3,0,0,,0.023167941638608868,0.007893788791050195,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical + drift,logistic,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9999984409908529,0.9999804923294354,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical + drift,logistic,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.0029280239354329417,0.0020134979141438964,38,0.85,5,3
+adamw_transfer_no_fused_fit,Electrical + drift,logistic,test,sealed_15_forward_r3,forward,0,0,,0.011515264893259292,0.004472323515716207,38,0.85,5,3
+fused_r1r2_to_r3_adaptation,Electrical + drift,random_forest,test,sealed_11_fused_update_r3,fused_update,1,0,,0.6795119047619047,0.5733940476190476,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,Electrical + drift,random_forest,test,sealed_12_forward3_r3,forward3,0,0,,0.100625,0.05407142857142857,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,Electrical + drift,random_forest,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9627499999999999,0.9465166666666667,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,Electrical + drift,random_forest,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.4500892857142857,0.22003571428571428,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,Electrical + drift,random_forest,test,sealed_15_forward_r3,forward,0,0,,0.041416666666666664,0.02693333333333333,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,Electrical + drift,extra_trees,test,sealed_11_fused_update_r3,fused_update,1,0,,0.6315137011326266,0.5753719766167332,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,Electrical + drift,extra_trees,test,sealed_12_forward3_r3,forward3,0,0,,0.15524168797953958,0.06835074899525026,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,Electrical + drift,extra_trees,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.993309523809524,0.9768647480571355,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,Electrical + drift,extra_trees,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.5210120569967114,0.21133449031786616,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,Electrical + drift,extra_trees,test,sealed_15_forward_r3,forward,0,0,,0.05891450493240774,0.02221669711362806,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,Electrical + drift,logistic,test,sealed_11_fused_update_r3,fused_update,1,0,,0.8461926136313019,0.34959154626714534,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,Electrical + drift,logistic,test,sealed_12_forward3_r3,forward3,0,0,,0.11002137378405634,0.04962849682086286,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,Electrical + drift,logistic,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9996652344272416,0.9899960372926238,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,Electrical + drift,logistic,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.6653258330297952,0.22569788713220426,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,Electrical + drift,logistic,test,sealed_15_forward_r3,forward,0,0,,0.4002845598946948,0.10385137862947462,40,0.85,5,3
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,random_forest,calibration,sealed_06_fused_update_r2,fused_update,1,1,60.0,0.23808333333333334,0.20315833333333333,35,0.225,2,2
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,random_forest,calibration,sealed_07_forward3_r2,forward3,0,0,,0.034166666666666665,0.022366666666666667,35,0.225,2,2
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,random_forest,calibration,sealed_08_adamw_r2,adamw,1,1,45.0,0.9414166666666668,0.9190250000000001,35,0.225,2,2
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,random_forest,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.24387499999999998,0.14011309523809523,35,0.225,2,2
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,random_forest,calibration,sealed_10_forward_r2,forward,0,0,,0.06958333333333333,0.02793333333333333,35,0.225,2,2
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,random_forest,test,sealed_11_fused_update_r3,fused_update,1,1,90.0,0.2697083333333333,0.21949642857142856,35,0.225,2,2
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,random_forest,test,sealed_12_forward3_r3,forward3,0,0,,0.09770833333333333,0.03430833333333333,35,0.225,2,2
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,random_forest,test,sealed_13_adamw_r3,adamw,1,1,45.0,0.9049583333333335,0.8879250000000001,35,0.225,2,2
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,random_forest,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.12062499999999998,0.09845833333333333,35,0.225,2,2
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,random_forest,test,sealed_15_forward_r3,forward,0,0,,0.023333333333333334,0.010166666666666668,35,0.225,2,2
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,extra_trees,calibration,sealed_06_fused_update_r2,fused_update,1,1,90.0,0.12884259199545994,0.10978838787065821,35,0.1,4,4
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,extra_trees,calibration,sealed_07_forward3_r2,forward3,0,0,,0.0784002205569385,0.04113870580799937,35,0.1,4,4
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,extra_trees,calibration,sealed_08_adamw_r2,adamw,1,1,75.0,0.9752025963808026,0.9411337301270132,35,0.1,4,4
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,extra_trees,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.16076105041854238,0.08534170094107715,35,0.1,4,4
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,extra_trees,calibration,sealed_10_forward_r2,forward,0,0,,0.0798992661000116,0.048193038913466865,35,0.1,4,4
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,extra_trees,test,sealed_11_fused_update_r3,fused_update,1,0,,0.17452054662006172,0.12522763797706726,35,0.1,4,4
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,extra_trees,test,sealed_12_forward3_r3,forward3,0,0,,0.18283089989810528,0.06726738981826623,35,0.1,4,4
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,extra_trees,test,sealed_13_adamw_r3,adamw,1,1,75.0,0.9201763810604788,0.8920572534297587,35,0.1,4,4
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,extra_trees,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.1185034050895771,0.06660095316712025,35,0.1,4,4
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,extra_trees,test,sealed_15_forward_r3,forward,0,0,,0.050854109968915664,0.016478544066244473,35,0.1,4,4
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,logistic,calibration,sealed_06_fused_update_r2,fused_update,1,1,90.0,0.29226492204965676,0.08924942808877431,35,0.275,1,1
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,logistic,calibration,sealed_07_forward3_r2,forward3,0,0,,0.009831883598870068,0.003689550206704569,35,0.275,1,1
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,logistic,calibration,sealed_08_adamw_r2,adamw,1,1,30.0,0.9999845313003166,0.9990169816240029,35,0.275,1,1
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,logistic,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.06749697633454814,0.02528016103352544,35,0.275,1,1
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,logistic,calibration,sealed_10_forward_r2,forward,0,0,,0.06911378271045777,0.017953574185661136,35,0.275,1,1
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,logistic,test,sealed_11_fused_update_r3,fused_update,1,0,,0.13300541242406946,0.04754759657866666,35,0.275,1,1
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,logistic,test,sealed_12_forward3_r3,forward3,0,0,,0.023188187731597504,0.009219287481316094,35,0.275,1,1
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,logistic,test,sealed_13_adamw_r3,adamw,1,1,30.0,0.9985536507093299,0.9917253635479517,35,0.275,1,1
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,logistic,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.056150023549023306,0.022788164249169594,35,0.275,1,1
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,logistic,test,sealed_15_forward_r3,forward,0,0,,0.17207178142367294,0.054758149922933985,35,0.275,1,1
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,random_forest,calibration,sealed_06_fused_update_r2,fused_update,1,1,60.0,0.23808333333333334,0.20315833333333333,35,0.225,2,2
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,random_forest,calibration,sealed_07_forward3_r2,forward3,0,0,,0.034166666666666665,0.022366666666666667,35,0.225,2,2
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,random_forest,calibration,sealed_08_adamw_r2,adamw,1,1,45.0,0.9414166666666668,0.9190250000000001,35,0.225,2,2
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,random_forest,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.24387499999999998,0.14011309523809523,35,0.225,2,2
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,random_forest,calibration,sealed_10_forward_r2,forward,0,0,,0.06958333333333333,0.02793333333333333,35,0.225,2,2
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,random_forest,test,sealed_11_fused_update_r3,fused_update,1,1,90.0,0.2697083333333333,0.21949642857142856,35,0.225,2,2
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,random_forest,test,sealed_12_forward3_r3,forward3,0,0,,0.09770833333333333,0.03430833333333333,35,0.225,2,2
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,random_forest,test,sealed_13_adamw_r3,adamw,1,1,45.0,0.9049583333333335,0.8879250000000001,35,0.225,2,2
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,random_forest,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.12062499999999998,0.09845833333333333,35,0.225,2,2
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,random_forest,test,sealed_15_forward_r3,forward,0,0,,0.023333333333333334,0.010166666666666668,35,0.225,2,2
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,extra_trees,calibration,sealed_06_fused_update_r2,fused_update,1,1,90.0,0.12884259199545994,0.10978838787065821,35,0.1,4,4
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,extra_trees,calibration,sealed_07_forward3_r2,forward3,0,0,,0.0784002205569385,0.04113870580799937,35,0.1,4,4
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,extra_trees,calibration,sealed_08_adamw_r2,adamw,1,1,75.0,0.9752025963808026,0.9411337301270132,35,0.1,4,4
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,extra_trees,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.16076105041854238,0.08534170094107715,35,0.1,4,4
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,extra_trees,calibration,sealed_10_forward_r2,forward,0,0,,0.0798992661000116,0.048193038913466865,35,0.1,4,4
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,extra_trees,test,sealed_11_fused_update_r3,fused_update,1,0,,0.17452054662006172,0.12522763797706726,35,0.1,4,4
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,extra_trees,test,sealed_12_forward3_r3,forward3,0,0,,0.18283089989810528,0.06726738981826623,35,0.1,4,4
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,extra_trees,test,sealed_13_adamw_r3,adamw,1,1,75.0,0.9201763810604788,0.8920572534297587,35,0.1,4,4
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,extra_trees,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.1185034050895771,0.06660095316712025,35,0.1,4,4
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,extra_trees,test,sealed_15_forward_r3,forward,0,0,,0.050854109968915664,0.016478544066244473,35,0.1,4,4
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,logistic,calibration,sealed_06_fused_update_r2,fused_update,1,1,90.0,0.29226492204965676,0.08924942808877431,35,0.275,1,1
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,logistic,calibration,sealed_07_forward3_r2,forward3,0,0,,0.009831883598870068,0.003689550206704569,35,0.275,1,1
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,logistic,calibration,sealed_08_adamw_r2,adamw,1,1,30.0,0.9999845313003166,0.9990169816240029,35,0.275,1,1
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,logistic,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.06749697633454814,0.02528016103352544,35,0.275,1,1
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,logistic,calibration,sealed_10_forward_r2,forward,0,0,,0.06911378271045777,0.017953574185661136,35,0.275,1,1
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,logistic,test,sealed_11_fused_update_r3,fused_update,1,0,,0.13300541242406946,0.04754759657866666,35,0.275,1,1
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,logistic,test,sealed_12_forward3_r3,forward3,0,0,,0.023188187731597504,0.009219287481316094,35,0.275,1,1
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,logistic,test,sealed_13_adamw_r3,adamw,1,1,30.0,0.9985536507093299,0.9917253635479517,35,0.275,1,1
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,logistic,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.056150023549023306,0.022788164249169594,35,0.275,1,1
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,logistic,test,sealed_15_forward_r3,forward,0,0,,0.17207178142367294,0.054758149922933985,35,0.275,1,1
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,random_forest,calibration,sealed_11_fused_update_r3,fused_update,1,1,90.0,0.2697083333333333,0.21949642857142856,35,0.25,5,3
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,random_forest,calibration,sealed_12_forward3_r3,forward3,0,0,,0.09770833333333333,0.03430833333333333,35,0.25,5,3
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,random_forest,calibration,sealed_13_adamw_r3,adamw,1,1,90.0,0.9049583333333335,0.8879250000000001,35,0.25,5,3
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,random_forest,calibration,sealed_14_dummy_write_r3,dummy_write,0,0,,0.12062499999999998,0.09845833333333333,35,0.25,5,3
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,random_forest,calibration,sealed_15_forward_r3,forward,0,0,,0.023333333333333334,0.010166666666666668,35,0.25,5,3
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,random_forest,test,sealed_06_fused_update_r2,fused_update,1,0,,0.23808333333333334,0.20315833333333333,35,0.25,5,3
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,random_forest,test,sealed_07_forward3_r2,forward3,0,0,,0.034166666666666665,0.022366666666666667,35,0.25,5,3
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,random_forest,test,sealed_08_adamw_r2,adamw,1,1,90.0,0.9414166666666668,0.9190250000000001,35,0.25,5,3
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,random_forest,test,sealed_09_dummy_write_r2,dummy_write,0,0,,0.24387499999999998,0.14011309523809523,35,0.25,5,3
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,random_forest,test,sealed_10_forward_r2,forward,0,0,,0.06958333333333333,0.02793333333333333,35,0.25,5,3
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,extra_trees,calibration,sealed_11_fused_update_r3,fused_update,1,1,90.0,0.17452054662006172,0.12522763797706726,35,0.1,5,4
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,extra_trees,calibration,sealed_12_forward3_r3,forward3,0,0,,0.18283089989810528,0.06726738981826623,35,0.1,5,4
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,extra_trees,calibration,sealed_13_adamw_r3,adamw,1,1,90.0,0.9201763810604788,0.8920572534297587,35,0.1,5,4
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,extra_trees,calibration,sealed_14_dummy_write_r3,dummy_write,0,0,,0.1185034050895771,0.06660095316712025,35,0.1,5,4
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,extra_trees,calibration,sealed_15_forward_r3,forward,0,0,,0.050854109968915664,0.016478544066244473,35,0.1,5,4
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,extra_trees,test,sealed_06_fused_update_r2,fused_update,1,1,90.0,0.12884259199545994,0.10978838787065821,35,0.1,5,4
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,extra_trees,test,sealed_07_forward3_r2,forward3,0,0,,0.0784002205569385,0.04113870580799937,35,0.1,5,4
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,extra_trees,test,sealed_08_adamw_r2,adamw,1,1,90.0,0.9752025963808024,0.9411337301270132,35,0.1,5,4
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,extra_trees,test,sealed_09_dummy_write_r2,dummy_write,0,0,,0.16076105041854238,0.08534170094107715,35,0.1,5,4
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,extra_trees,test,sealed_10_forward_r2,forward,0,0,,0.0798992661000116,0.048193038913466865,35,0.1,5,4
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,logistic,calibration,sealed_11_fused_update_r3,fused_update,1,0,,0.13300541242406946,0.04754759657866666,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,logistic,calibration,sealed_12_forward3_r3,forward3,0,0,,0.023188187731597504,0.009219287481316094,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,logistic,calibration,sealed_13_adamw_r3,adamw,1,1,90.0,0.9985536507093299,0.9917253635479517,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,logistic,calibration,sealed_14_dummy_write_r3,dummy_write,0,0,,0.056150023549023306,0.022788164249169594,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,logistic,calibration,sealed_15_forward_r3,forward,0,0,,0.17207178142367294,0.054758149922933985,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,logistic,test,sealed_06_fused_update_r2,fused_update,1,0,,0.29226492204965676,0.08924942808877431,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,logistic,test,sealed_07_forward3_r2,forward3,0,0,,0.009831883598870068,0.003689550206704569,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,logistic,test,sealed_08_adamw_r2,adamw,1,1,90.0,0.9999845313003166,0.9990169816240029,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,logistic,test,sealed_09_dummy_write_r2,dummy_write,0,0,,0.06749697633454814,0.02528016103352544,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,logistic,test,sealed_10_forward_r2,forward,0,0,,0.06911378271045777,0.017953574185661136,35,0.85,5,5
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,random_forest,calibration,sealed_01_fused_update_r1,fused_update,1,1,45.0,0.4839523809523811,0.4540357142857143,35,0.475,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,random_forest,calibration,sealed_02_forward3_r1,forward3,0,0,,0.4749166666666666,0.11003333333333332,35,0.475,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,random_forest,calibration,sealed_03_adamw_r1,adamw,1,1,30.0,0.9650595238095238,0.9471130952380953,35,0.475,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,random_forest,calibration,sealed_04_dummy_write_r1,dummy_write,0,0,,0.33899404761904756,0.30597142857142856,35,0.475,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,random_forest,calibration,sealed_05_forward_r1,forward,0,0,,0.08875,0.06496666666666667,35,0.475,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,random_forest,test,sealed_11_fused_update_r3,fused_update,1,1,30.0,0.6295148809523807,0.5722690476190476,35,0.475,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,random_forest,test,sealed_12_forward3_r3,forward3,0,0,,0.14754166666666665,0.06723333333333334,35,0.475,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,random_forest,test,sealed_13_adamw_r3,adamw,1,1,30.0,0.9464583333333334,0.9265773809523811,35,0.475,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,random_forest,test,sealed_14_dummy_write_r3,dummy_write,0,1,30.0,0.5168690476190476,0.29857738095238096,35,0.475,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,random_forest,test,sealed_15_forward_r3,forward,0,0,,0.05395833333333333,0.03371666666666666,35,0.475,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,extra_trees,calibration,sealed_01_fused_update_r1,fused_update,1,1,90.0,0.30815389429148654,0.2653087624646992,35,0.25,4,4
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,extra_trees,calibration,sealed_02_forward3_r1,forward3,0,0,,0.3835567385948845,0.09665151109789234,35,0.25,4,4
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,extra_trees,calibration,sealed_03_adamw_r1,adamw,1,1,75.0,0.9922285601888277,0.9662078217697389,35,0.25,4,4
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,extra_trees,calibration,sealed_04_dummy_write_r1,dummy_write,0,0,,0.26429556665479936,0.23026029689173697,35,0.25,4,4
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,extra_trees,calibration,sealed_05_forward_r1,forward,0,0,,0.09924143245927437,0.07654128671112201,35,0.25,4,4
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,extra_trees,test,sealed_11_fused_update_r3,fused_update,1,1,75.0,0.614951986947156,0.5832328795442182,35,0.25,4,4
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,extra_trees,test,sealed_12_forward3_r3,forward3,0,0,,0.1930295946137676,0.07227865784970541,35,0.25,4,4
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,extra_trees,test,sealed_13_adamw_r3,adamw,1,1,75.0,0.984543815687584,0.9599988102727846,35,0.25,4,4
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,extra_trees,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.5468545584002101,0.2759711092224787,35,0.25,4,4
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,extra_trees,test,sealed_15_forward_r3,forward,0,0,,0.08447833769717919,0.05260756878748694,35,0.25,4,4
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,logistic,calibration,sealed_01_fused_update_r1,fused_update,1,1,60.0,0.2848066945402912,0.07074879176183975,35,0.275,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,logistic,calibration,sealed_02_forward3_r1,forward3,0,0,,0.12009155129936831,0.027984765000841683,35,0.275,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,logistic,calibration,sealed_03_adamw_r1,adamw,1,1,30.0,0.999999999995649,0.9999942822987821,35,0.275,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,logistic,calibration,sealed_04_dummy_write_r1,dummy_write,0,0,,0.1953294341372141,0.06777199579419983,35,0.275,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,logistic,calibration,sealed_05_forward_r1,forward,0,0,,0.01804019396249113,0.011081182286686054,35,0.275,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,logistic,test,sealed_11_fused_update_r3,fused_update,1,1,60.0,0.6715007693654643,0.31535564072483285,35,0.275,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,logistic,test,sealed_12_forward3_r3,forward3,0,0,,0.17585089274227036,0.06407197225005166,35,0.275,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,logistic,test,sealed_13_adamw_r3,adamw,1,1,30.0,0.9999992963513658,0.9999810467004517,35,0.275,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,logistic,test,sealed_14_dummy_write_r3,dummy_write,0,1,30.0,0.8382306089709226,0.25674274821907517,35,0.275,1,1
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,logistic,test,sealed_15_forward_r3,forward,0,0,,0.15457808737453282,0.050955340119834436,35,0.275,1,1
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,random_forest,calibration,sealed_11_fused_update_r3,fused_update,1,1,30.0,0.6295148809523807,0.5722690476190476,35,0.625,1,1
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,random_forest,calibration,sealed_12_forward3_r3,forward3,0,0,,0.14754166666666665,0.06723333333333334,35,0.625,1,1
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,random_forest,calibration,sealed_13_adamw_r3,adamw,1,1,30.0,0.9464583333333334,0.9265773809523811,35,0.625,1,1
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,random_forest,calibration,sealed_14_dummy_write_r3,dummy_write,0,0,,0.5168690476190476,0.29857738095238096,35,0.625,1,1
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,random_forest,calibration,sealed_15_forward_r3,forward,0,0,,0.05395833333333333,0.03371666666666666,35,0.625,1,1
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,random_forest,test,sealed_01_fused_update_r1,fused_update,1,0,,0.4839523809523811,0.4540357142857143,35,0.625,1,1
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,random_forest,test,sealed_02_forward3_r1,forward3,0,0,,0.4749166666666666,0.11003333333333332,35,0.625,1,1
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,random_forest,test,sealed_03_adamw_r1,adamw,1,1,30.0,0.9650595238095238,0.9471130952380953,35,0.625,1,1
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,random_forest,test,sealed_04_dummy_write_r1,dummy_write,0,0,,0.33899404761904756,0.30597142857142856,35,0.625,1,1
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,random_forest,test,sealed_05_forward_r1,forward,0,0,,0.08875,0.06496666666666667,35,0.625,1,1
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,extra_trees,calibration,sealed_11_fused_update_r3,fused_update,1,1,45.0,0.614951986947156,0.5832328795442182,35,0.6,2,2
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,extra_trees,calibration,sealed_12_forward3_r3,forward3,0,0,,0.1930295946137676,0.07227865784970541,35,0.6,2,2
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,extra_trees,calibration,sealed_13_adamw_r3,adamw,1,1,45.0,0.984543815687584,0.9599988102727846,35,0.6,2,2
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,extra_trees,calibration,sealed_14_dummy_write_r3,dummy_write,0,0,,0.5468545584002101,0.2759711092224787,35,0.6,2,2
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,extra_trees,calibration,sealed_15_forward_r3,forward,0,0,,0.08447833769717919,0.05260756878748694,35,0.6,2,2
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,extra_trees,test,sealed_01_fused_update_r1,fused_update,1,0,,0.30815389429148654,0.2653087624646992,35,0.6,2,2
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,extra_trees,test,sealed_02_forward3_r1,forward3,0,0,,0.3835567385948845,0.09665151109789234,35,0.6,2,2
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,extra_trees,test,sealed_03_adamw_r1,adamw,1,1,45.0,0.9922285601888277,0.9662078217697389,35,0.6,2,2
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,extra_trees,test,sealed_04_dummy_write_r1,dummy_write,0,0,,0.26429556665479936,0.23026029689173697,35,0.6,2,2
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,extra_trees,test,sealed_05_forward_r1,forward,0,0,,0.09924143245927437,0.07654128671112201,35,0.6,2,2
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,logistic,calibration,sealed_11_fused_update_r3,fused_update,1,1,90.0,0.6715007693654643,0.31535564072483285,35,0.525,3,2
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,logistic,calibration,sealed_12_forward3_r3,forward3,0,0,,0.17585089274227036,0.06407197225005166,35,0.525,3,2
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,logistic,calibration,sealed_13_adamw_r3,adamw,1,1,60.0,0.9999992963513658,0.9999810467004517,35,0.525,3,2
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,logistic,calibration,sealed_14_dummy_write_r3,dummy_write,0,0,,0.8382306089709226,0.25674274821907517,35,0.525,3,2
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,logistic,calibration,sealed_15_forward_r3,forward,0,0,,0.15457808737453282,0.050955340119834436,35,0.525,3,2
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,logistic,test,sealed_01_fused_update_r1,fused_update,1,0,,0.2848066945402912,0.07074879176183975,35,0.525,3,2
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,logistic,test,sealed_02_forward3_r1,forward3,0,0,,0.12009155129936831,0.027984765000841683,35,0.525,3,2
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,logistic,test,sealed_03_adamw_r1,adamw,1,1,60.0,0.999999999995649,0.9999942822987821,35,0.525,3,2
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,logistic,test,sealed_04_dummy_write_r1,dummy_write,0,0,,0.1953294341372141,0.06777199579419983,35,0.525,3,2
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,logistic,test,sealed_05_forward_r1,forward,0,0,,0.01804019396249113,0.011081182286686054,35,0.525,3,2
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,random_forest,calibration,sealed_01_fused_update_r1,fused_update,1,1,90.0,0.41575,0.3802833333333333,35,0.375,4,3
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,random_forest,calibration,sealed_02_forward3_r1,forward3,0,0,,0.4565416666666666,0.10244166666666665,35,0.375,4,3
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,random_forest,calibration,sealed_03_adamw_r1,adamw,1,1,75.0,0.9644583333333334,0.942729761904762,35,0.375,4,3
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,random_forest,calibration,sealed_04_dummy_write_r1,dummy_write,0,0,,0.28520238095238093,0.23340595238095235,35,0.375,4,3
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,random_forest,calibration,sealed_05_forward_r1,forward,0,0,,0.03983333333333333,0.03519166666666666,35,0.375,4,3
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,random_forest,test,sealed_06_fused_update_r2,fused_update,1,1,75.0,0.6221666666666665,0.4899238095238093,35,0.375,4,3
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,random_forest,test,sealed_07_forward3_r2,forward3,0,0,,0.22341666666666668,0.10186547619047619,35,0.375,4,3
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,random_forest,test,sealed_08_adamw_r2,adamw,1,1,75.0,0.9648690476190477,0.9466273809523811,35,0.375,4,3
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,random_forest,test,sealed_09_dummy_write_r2,dummy_write,0,0,,0.3408273809523809,0.278797619047619,35,0.375,4,3
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,random_forest,test,sealed_10_forward_r2,forward,0,0,,0.28454166666666664,0.1510654761904762,35,0.375,4,3
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,extra_trees,calibration,sealed_01_fused_update_r1,fused_update,1,1,90.0,0.23113848009183427,0.19972256832034221,35,0.2,4,2
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,extra_trees,calibration,sealed_02_forward3_r1,forward3,0,0,,0.35051291192005857,0.08657841785627442,35,0.2,4,2
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,extra_trees,calibration,sealed_03_adamw_r1,adamw,1,1,75.0,0.9831501915362887,0.9372643265274535,35,0.2,4,2
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,extra_trees,calibration,sealed_04_dummy_write_r1,dummy_write,0,0,,0.14648443848267162,0.13049464491383864,35,0.2,4,2
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,extra_trees,calibration,sealed_05_forward_r1,forward,0,0,,0.061312785519006256,0.03520948562032773,35,0.2,4,2
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,extra_trees,test,sealed_06_fused_update_r2,fused_update,1,1,75.0,0.6965425765177793,0.47812449787110217,35,0.2,4,2
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,extra_trees,test,sealed_07_forward3_r2,forward3,0,0,,0.21079989390145976,0.11271666673832262,35,0.2,4,2
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,extra_trees,test,sealed_08_adamw_r2,adamw,1,1,75.0,0.9680285895746636,0.9571939342413053,35,0.2,4,2
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,extra_trees,test,sealed_09_dummy_write_r2,dummy_write,0,1,90.0,0.47023923524974676,0.23504038312990216,35,0.2,4,2
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,extra_trees,test,sealed_10_forward_r2,forward,0,1,90.0,0.40712713719768945,0.2113947833053158,35,0.2,4,2
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,logistic,calibration,sealed_01_fused_update_r1,fused_update,1,0,,0.05744582418252798,0.021954488151908747,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,logistic,calibration,sealed_02_forward3_r1,forward3,0,0,,0.041015667458018074,0.009301274086387241,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,logistic,calibration,sealed_03_adamw_r1,adamw,1,1,90.0,0.9999999999997158,0.9999997980295603,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,logistic,calibration,sealed_04_dummy_write_r1,dummy_write,0,0,,0.05107850872424082,0.022968857470123578,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,logistic,calibration,sealed_05_forward_r1,forward,0,0,,0.020013767392438757,0.005717859049998418,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,logistic,test,sealed_06_fused_update_r2,fused_update,1,0,,0.6116791764757132,0.3798858795859855,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,logistic,test,sealed_07_forward3_r2,forward3,0,0,,0.27616070087417405,0.08165593073410507,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,logistic,test,sealed_08_adamw_r2,adamw,1,1,90.0,0.9999999866252769,0.9999999083386006,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,logistic,test,sealed_09_dummy_write_r2,dummy_write,0,0,,0.37069239647983976,0.11436720394658213,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,logistic,test,sealed_10_forward_r2,forward,0,0,,0.9798831020765633,0.2357852236653363,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,random_forest,calibration,sealed_06_fused_update_r2,fused_update,1,1,45.0,0.6221666666666665,0.4899238095238093,35,0.6,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,random_forest,calibration,sealed_07_forward3_r2,forward3,0,0,,0.22341666666666668,0.10186547619047619,35,0.6,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,random_forest,calibration,sealed_08_adamw_r2,adamw,1,1,30.0,0.9648690476190477,0.9466273809523811,35,0.6,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,random_forest,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.3408273809523809,0.278797619047619,35,0.6,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,random_forest,calibration,sealed_10_forward_r2,forward,0,0,,0.28454166666666664,0.1510654761904762,35,0.6,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,random_forest,test,sealed_01_fused_update_r1,fused_update,1,0,,0.41575,0.3802833333333333,35,0.6,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,random_forest,test,sealed_02_forward3_r1,forward3,0,0,,0.4565416666666666,0.10244166666666665,35,0.6,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,random_forest,test,sealed_03_adamw_r1,adamw,1,1,30.0,0.9644583333333334,0.942729761904762,35,0.6,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,random_forest,test,sealed_04_dummy_write_r1,dummy_write,0,0,,0.28520238095238093,0.23340595238095235,35,0.6,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,random_forest,test,sealed_05_forward_r1,forward,0,0,,0.03983333333333333,0.03519166666666666,35,0.6,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,extra_trees,calibration,sealed_06_fused_update_r2,fused_update,1,1,45.0,0.6965425765177793,0.47812449787110217,35,0.675,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,extra_trees,calibration,sealed_07_forward3_r2,forward3,0,0,,0.21079989390145976,0.11271666673832262,35,0.675,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,extra_trees,calibration,sealed_08_adamw_r2,adamw,1,1,30.0,0.9680285895746636,0.9571939342413053,35,0.675,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,extra_trees,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.47023923524974676,0.23504038312990216,35,0.675,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,extra_trees,calibration,sealed_10_forward_r2,forward,0,0,,0.40712713719768945,0.2113947833053158,35,0.675,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,extra_trees,test,sealed_01_fused_update_r1,fused_update,1,0,,0.23113848009183427,0.19972256832034221,35,0.675,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,extra_trees,test,sealed_02_forward3_r1,forward3,0,0,,0.35051291192005857,0.08657841785627442,35,0.675,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,extra_trees,test,sealed_03_adamw_r1,adamw,1,1,30.0,0.9831501915362887,0.9372643265274535,35,0.675,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,extra_trees,test,sealed_04_dummy_write_r1,dummy_write,0,0,,0.14648443848267162,0.13049464491383864,35,0.675,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,extra_trees,test,sealed_05_forward_r1,forward,0,0,,0.061312785519006256,0.03520948562032773,35,0.675,1,1
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,logistic,calibration,sealed_06_fused_update_r2,fused_update,1,1,90.0,0.6116791764757132,0.3798858795859855,35,0.5,3,2
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,logistic,calibration,sealed_07_forward3_r2,forward3,0,0,,0.27616070087417405,0.08165593073410507,35,0.5,3,2
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,logistic,calibration,sealed_08_adamw_r2,adamw,1,1,60.0,0.9999999866252769,0.9999999083386006,35,0.5,3,2
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,logistic,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.37069239647983976,0.11436720394658213,35,0.5,3,2
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,logistic,calibration,sealed_10_forward_r2,forward,0,0,,0.9798831020765633,0.2357852236653363,35,0.5,3,2
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,logistic,test,sealed_01_fused_update_r1,fused_update,1,0,,0.05744582418252798,0.021954488151908747,35,0.5,3,2
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,logistic,test,sealed_02_forward3_r1,forward3,0,0,,0.041015667458018074,0.009301274086387241,35,0.5,3,2
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,logistic,test,sealed_03_adamw_r1,adamw,1,1,60.0,0.9999999999997158,0.9999997980295603,35,0.5,3,2
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,logistic,test,sealed_04_dummy_write_r1,dummy_write,0,0,,0.05107850872424082,0.022968857470123578,35,0.5,3,2
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,logistic,test,sealed_05_forward_r1,forward,0,0,,0.020013767392438757,0.005717859049998418,35,0.5,3,2
+adamw_transfer_no_fused_fit,NVML + electrical + drift,random_forest,test,sealed_01_fused_update_r1,fused_update,1,0,,0.05579166666666666,0.044191666666666664,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical + drift,random_forest,test,sealed_06_fused_update_r2,fused_update,1,0,,0.05366666666666667,0.04155,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical + drift,random_forest,test,sealed_11_fused_update_r3,fused_update,1,0,,0.05633333333333334,0.04443333333333334,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical + drift,random_forest,test,sealed_12_forward3_r3,forward3,0,0,,0.11537499999999998,0.03464166666666666,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical + drift,random_forest,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9825,0.9707833333333333,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical + drift,random_forest,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.04416666666666666,0.029479166666666667,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical + drift,random_forest,test,sealed_15_forward_r3,forward,0,0,,0.00625,0.0034000000000000002,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical + drift,extra_trees,test,sealed_01_fused_update_r1,fused_update,1,0,,0.06305314171122996,0.04450167112299465,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical + drift,extra_trees,test,sealed_06_fused_update_r2,fused_update,1,0,,0.04323863636363637,0.02912132352941177,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical + drift,extra_trees,test,sealed_11_fused_update_r3,fused_update,1,0,,0.039097593582887696,0.02981517379679144,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical + drift,extra_trees,test,sealed_12_forward3_r3,forward3,0,0,,0.1620597399516992,0.04538988916681043,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical + drift,extra_trees,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9865909090909091,0.9799104278074866,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical + drift,extra_trees,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.027788349577367602,0.019517897188200795,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical + drift,extra_trees,test,sealed_15_forward_r3,forward,0,0,,0.024321524064171124,0.010960895721925133,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical + drift,logistic,test,sealed_01_fused_update_r1,fused_update,1,0,,0.005711800269246015,0.0021507674840723122,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical + drift,logistic,test,sealed_06_fused_update_r2,fused_update,1,0,,0.014480077168686378,0.0050191752277142804,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical + drift,logistic,test,sealed_11_fused_update_r3,fused_update,1,0,,0.006107400719755781,0.0017853312093076702,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical + drift,logistic,test,sealed_12_forward3_r3,forward3,0,0,,0.047471208638732436,0.012880604096240294,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical + drift,logistic,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9999999901209965,0.9999989557567848,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical + drift,logistic,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.006255699255145344,0.0025992736118218914,38,0.85,5,3
+adamw_transfer_no_fused_fit,NVML + electrical + drift,logistic,test,sealed_15_forward_r3,forward,0,0,,0.034140478959880025,0.010325356805102678,38,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML + electrical + drift,random_forest,test,sealed_11_fused_update_r3,fused_update,1,0,,0.566261904761905,0.49511428571428573,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML + electrical + drift,random_forest,test,sealed_12_forward3_r3,forward3,0,0,,0.15383333333333332,0.09622857142857141,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML + electrical + drift,random_forest,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9895833333333333,0.969,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML + electrical + drift,random_forest,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.4427678571428571,0.25987261904761905,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML + electrical + drift,random_forest,test,sealed_15_forward_r3,forward,0,0,,0.04145833333333333,0.027999999999999997,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML + electrical + drift,extra_trees,test,sealed_11_fused_update_r3,fused_update,1,0,,0.42181633155351506,0.38081920822174276,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML + electrical + drift,extra_trees,test,sealed_12_forward3_r3,forward3,0,0,,0.1514835586408476,0.09174862988673727,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML + electrical + drift,extra_trees,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9925,0.9840871026671539,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML + electrical + drift,extra_trees,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.47283427193966004,0.2561040047203288,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML + electrical + drift,extra_trees,test,sealed_15_forward_r3,forward,0,0,,0.09490208257215926,0.04190573620752648,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML + electrical + drift,logistic,test,sealed_11_fused_update_r3,fused_update,1,0,,0.7571164382789719,0.29301983558225075,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML + electrical + drift,logistic,test,sealed_12_forward3_r3,forward3,0,0,,0.7907951517379834,0.28651277080693377,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML + electrical + drift,logistic,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9999977809908753,0.99977397466013,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML + electrical + drift,logistic,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.3005283550300125,0.12762189824524556,40,0.85,5,3
+fused_r1r2_to_r3_adaptation,NVML + electrical + drift,logistic,test,sealed_15_forward_r3,forward,0,0,,0.27134967679061034,0.0667505664527569,40,0.85,5,3
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,random_forest,calibration,sealed_06_fused_update_r2,fused_update,1,1,90.0,0.225625,0.19474642857142857,35,0.175,4,4
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,random_forest,calibration,sealed_07_forward3_r2,forward3,0,0,,0.050511904761904765,0.03439642857142857,35,0.175,4,4
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,random_forest,calibration,sealed_08_adamw_r2,adamw,1,1,75.0,0.9356666666666666,0.9197833333333334,35,0.175,4,4
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,random_forest,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.2689761904761905,0.15407738095238094,35,0.175,4,4
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,random_forest,calibration,sealed_10_forward_r2,forward,0,0,,0.07609523809523809,0.03781071428571429,35,0.175,4,4
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,random_forest,test,sealed_11_fused_update_r3,fused_update,1,0,,0.24020833333333336,0.18308333333333332,35,0.175,4,4
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,random_forest,test,sealed_12_forward3_r3,forward3,0,0,,0.17305555555555557,0.06887777777777779,35,0.175,4,4
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,random_forest,test,sealed_13_adamw_r3,adamw,1,1,75.0,0.9117500000000001,0.895125,35,0.175,4,4
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,random_forest,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.13276190476190478,0.11772857142857145,35,0.175,4,4
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,random_forest,test,sealed_15_forward_r3,forward,0,0,,0.039970238095238086,0.015910714285714285,35,0.175,4,4
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,extra_trees,calibration,sealed_06_fused_update_r2,fused_update,1,1,45.0,0.15375517534921523,0.13785893384581657,35,0.15,1,1
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,extra_trees,calibration,sealed_07_forward3_r2,forward3,0,0,,0.05835410996891565,0.03650541479943267,35,0.15,1,1
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,extra_trees,calibration,sealed_08_adamw_r2,adamw,1,1,30.0,0.993780487804878,0.9744528054635699,35,0.15,1,1
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,extra_trees,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.1383756765463268,0.09968016446744274,35,0.15,1,1
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,extra_trees,calibration,sealed_10_forward_r2,forward,0,0,,0.09326669332267094,0.05318259792857051,35,0.15,1,1
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,extra_trees,test,sealed_11_fused_update_r3,fused_update,1,1,30.0,0.16869964917258912,0.12444840773368075,35,0.15,1,1
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,extra_trees,test,sealed_12_forward3_r3,forward3,0,1,30.0,0.1880239194644723,0.08958963511369647,35,0.15,1,1
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,extra_trees,test,sealed_13_adamw_r3,adamw,1,1,30.0,0.9802483621690259,0.960995018345265,35,0.15,1,1
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,extra_trees,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.11053614038255669,0.07864683803897796,35,0.15,1,1
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,extra_trees,test,sealed_15_forward_r3,forward,0,0,,0.06592616597327618,0.0279996792203071,35,0.15,1,1
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,logistic,calibration,sealed_06_fused_update_r2,fused_update,1,0,,0.0765518417564815,0.035923135710509604,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,logistic,calibration,sealed_07_forward3_r2,forward3,0,0,,0.0024233865384103797,0.0012063079750870194,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,logistic,calibration,sealed_08_adamw_r2,adamw,1,1,90.0,0.9999994462017852,0.9999742231431782,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,logistic,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.05108394957473796,0.015522717420849371,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,logistic,calibration,sealed_10_forward_r2,forward,0,0,,0.0504440148701787,0.012455638680257178,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,logistic,test,sealed_11_fused_update_r3,fused_update,1,0,,0.1257819633486187,0.03587602719615219,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,logistic,test,sealed_12_forward3_r3,forward3,0,0,,0.1644793293643068,0.05227453833136503,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,logistic,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9999875150680718,0.9998274147535311,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,logistic,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.011063709304453063,0.004793956801646735,35,0.85,5,5
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,logistic,test,sealed_15_forward_r3,forward,0,0,,0.18609136367956763,0.04846435714821791,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,random_forest,calibration,sealed_06_fused_update_r2,fused_update,1,1,90.0,0.225625,0.19474642857142857,35,0.175,4,4
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,random_forest,calibration,sealed_07_forward3_r2,forward3,0,0,,0.050511904761904765,0.03439642857142857,35,0.175,4,4
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,random_forest,calibration,sealed_08_adamw_r2,adamw,1,1,75.0,0.9356666666666666,0.9197833333333334,35,0.175,4,4
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,random_forest,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.2689761904761905,0.15407738095238094,35,0.175,4,4
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,random_forest,calibration,sealed_10_forward_r2,forward,0,0,,0.07609523809523809,0.03781071428571429,35,0.175,4,4
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,random_forest,test,sealed_11_fused_update_r3,fused_update,1,0,,0.24020833333333336,0.18308333333333332,35,0.175,4,4
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,random_forest,test,sealed_12_forward3_r3,forward3,0,0,,0.17305555555555557,0.06887777777777779,35,0.175,4,4
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,random_forest,test,sealed_13_adamw_r3,adamw,1,1,75.0,0.9117500000000001,0.895125,35,0.175,4,4
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,random_forest,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.13276190476190478,0.11772857142857145,35,0.175,4,4
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,random_forest,test,sealed_15_forward_r3,forward,0,0,,0.039970238095238086,0.015910714285714285,35,0.175,4,4
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,extra_trees,calibration,sealed_06_fused_update_r2,fused_update,1,1,45.0,0.15375517534921523,0.13785893384581657,35,0.15,1,1
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,extra_trees,calibration,sealed_07_forward3_r2,forward3,0,0,,0.05835410996891565,0.03650541479943267,35,0.15,1,1
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,extra_trees,calibration,sealed_08_adamw_r2,adamw,1,1,30.0,0.993780487804878,0.9744528054635699,35,0.15,1,1
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,extra_trees,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.1383756765463268,0.09968016446744274,35,0.15,1,1
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,extra_trees,calibration,sealed_10_forward_r2,forward,0,0,,0.09326669332267094,0.05318259792857051,35,0.15,1,1
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,extra_trees,test,sealed_11_fused_update_r3,fused_update,1,1,30.0,0.16869964917258912,0.12444840773368075,35,0.15,1,1
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,extra_trees,test,sealed_12_forward3_r3,forward3,0,1,30.0,0.1880239194644723,0.08958963511369647,35,0.15,1,1
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,extra_trees,test,sealed_13_adamw_r3,adamw,1,1,30.0,0.9802483621690259,0.960995018345265,35,0.15,1,1
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,extra_trees,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.11053614038255669,0.07864683803897796,35,0.15,1,1
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,extra_trees,test,sealed_15_forward_r3,forward,0,0,,0.06592616597327618,0.0279996792203071,35,0.15,1,1
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,logistic,calibration,sealed_06_fused_update_r2,fused_update,1,0,,0.0765518417564815,0.035923135710509604,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,logistic,calibration,sealed_07_forward3_r2,forward3,0,0,,0.0024233865384103797,0.0012063079750870194,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,logistic,calibration,sealed_08_adamw_r2,adamw,1,1,90.0,0.9999994462017852,0.9999742231431782,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,logistic,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.05108394957473796,0.015522717420849371,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,logistic,calibration,sealed_10_forward_r2,forward,0,0,,0.0504440148701787,0.012455638680257178,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,logistic,test,sealed_11_fused_update_r3,fused_update,1,0,,0.1257819633486187,0.03587602719615219,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,logistic,test,sealed_12_forward3_r3,forward3,0,0,,0.1644793293643068,0.05227453833136503,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,logistic,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9999875150680718,0.9998274147535311,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,logistic,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.011063709304453063,0.004793956801646735,35,0.85,5,5
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,logistic,test,sealed_15_forward_r3,forward,0,0,,0.18609136367956763,0.04846435714821791,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,random_forest,calibration,sealed_11_fused_update_r3,fused_update,1,1,30.0,0.24020833333333336,0.18308333333333332,35,0.225,1,1
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,random_forest,calibration,sealed_12_forward3_r3,forward3,0,0,,0.17305555555555557,0.06887777777777779,35,0.225,1,1
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,random_forest,calibration,sealed_13_adamw_r3,adamw,1,1,30.0,0.9117500000000001,0.895125,35,0.225,1,1
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,random_forest,calibration,sealed_14_dummy_write_r3,dummy_write,0,0,,0.13276190476190478,0.11772857142857145,35,0.225,1,1
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,random_forest,calibration,sealed_15_forward_r3,forward,0,0,,0.039970238095238086,0.015910714285714285,35,0.225,1,1
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,random_forest,test,sealed_06_fused_update_r2,fused_update,1,1,45.0,0.225625,0.19474642857142857,35,0.225,1,1
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,random_forest,test,sealed_07_forward3_r2,forward3,0,0,,0.050511904761904765,0.03439642857142857,35,0.225,1,1
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,random_forest,test,sealed_08_adamw_r2,adamw,1,1,30.0,0.9356666666666666,0.9197833333333334,35,0.225,1,1
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,random_forest,test,sealed_09_dummy_write_r2,dummy_write,0,1,30.0,0.2689761904761905,0.15407738095238094,35,0.225,1,1
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,random_forest,test,sealed_10_forward_r2,forward,0,0,,0.07609523809523809,0.03781071428571429,35,0.225,1,1
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,extra_trees,calibration,sealed_11_fused_update_r3,fused_update,1,1,60.0,0.16869964917258912,0.12444840773368075,35,0.125,3,3
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,extra_trees,calibration,sealed_12_forward3_r3,forward3,0,0,,0.1880239194644723,0.08958963511369647,35,0.125,3,3
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,extra_trees,calibration,sealed_13_adamw_r3,adamw,1,1,60.0,0.9802483621690259,0.960995018345265,35,0.125,3,3
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,extra_trees,calibration,sealed_14_dummy_write_r3,dummy_write,0,0,,0.11053614038255669,0.07864683803897796,35,0.125,3,3
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,extra_trees,calibration,sealed_15_forward_r3,forward,0,0,,0.06592616597327618,0.0279996792203071,35,0.125,3,3
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,extra_trees,test,sealed_06_fused_update_r2,fused_update,1,0,,0.15375517534921523,0.13785893384581657,35,0.125,3,3
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,extra_trees,test,sealed_07_forward3_r2,forward3,0,0,,0.05835410996891565,0.03650541479943267,35,0.125,3,3
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,extra_trees,test,sealed_08_adamw_r2,adamw,1,1,60.0,0.993780487804878,0.9744528054635699,35,0.125,3,3
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,extra_trees,test,sealed_09_dummy_write_r2,dummy_write,0,0,,0.1383756765463268,0.09968016446744274,35,0.125,3,3
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,extra_trees,test,sealed_10_forward_r2,forward,0,0,,0.09326669332267094,0.05318259792857051,35,0.125,3,3
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,logistic,calibration,sealed_11_fused_update_r3,fused_update,1,0,,0.1257819633486187,0.03587602719615219,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,logistic,calibration,sealed_12_forward3_r3,forward3,0,0,,0.1644793293643068,0.05227453833136503,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,logistic,calibration,sealed_13_adamw_r3,adamw,1,1,90.0,0.9999875150680718,0.9998274147535311,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,logistic,calibration,sealed_14_dummy_write_r3,dummy_write,0,0,,0.011063709304453063,0.004793956801646735,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,logistic,calibration,sealed_15_forward_r3,forward,0,0,,0.18609136367956763,0.04846435714821791,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,logistic,test,sealed_06_fused_update_r2,fused_update,1,0,,0.0765518417564815,0.035923135710509604,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,logistic,test,sealed_07_forward3_r2,forward3,0,0,,0.0024233865384103797,0.0012063079750870194,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,logistic,test,sealed_08_adamw_r2,adamw,1,1,90.0,0.9999994462017852,0.9999742231431782,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,logistic,test,sealed_09_dummy_write_r2,dummy_write,0,0,,0.05108394957473796,0.015522717420849371,35,0.85,5,5
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,logistic,test,sealed_10_forward_r2,forward,0,0,,0.0504440148701787,0.012455638680257178,35,0.85,5,5
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,random_forest,calibration,sealed_01_fused_update_r1,fused_update,1,1,75.0,0.44695833333333335,0.4299666666666666,35,0.425,3,3
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,random_forest,calibration,sealed_02_forward3_r1,forward3,0,0,,0.494720238095238,0.11901071428571428,35,0.425,3,3
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,random_forest,calibration,sealed_03_adamw_r1,adamw,1,1,60.0,0.934,0.9204500000000001,35,0.425,3,3
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,random_forest,calibration,sealed_04_dummy_write_r1,dummy_write,0,0,,0.33575000000000005,0.28753095238095233,35,0.425,3,3
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,random_forest,calibration,sealed_05_forward_r1,forward,0,0,,0.09183333333333334,0.06838333333333334,35,0.425,3,3
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,random_forest,test,sealed_11_fused_update_r3,fused_update,1,1,60.0,0.5593035714285716,0.5204005952380953,35,0.425,3,3
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,random_forest,test,sealed_12_forward3_r3,forward3,0,0,,0.16966071428571428,0.0845154761904762,35,0.425,3,3
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,random_forest,test,sealed_13_adamw_r3,adamw,1,1,60.0,0.9424166666666668,0.9245416666666667,35,0.425,3,3
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,random_forest,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.505125,0.325,35,0.425,3,3
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,random_forest,test,sealed_15_forward_r3,forward,0,0,,0.06166666666666666,0.03594166666666666,35,0.425,3,3
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,extra_trees,calibration,sealed_01_fused_update_r1,fused_update,1,1,90.0,0.3391372904686736,0.31147761291523,35,0.325,3,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,extra_trees,calibration,sealed_02_forward3_r1,forward3,0,0,,0.3086345784266939,0.08798643768299133,35,0.325,3,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,extra_trees,calibration,sealed_03_adamw_r1,adamw,1,1,60.0,0.97464149280047,0.9618066224734356,35,0.325,3,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,extra_trees,calibration,sealed_04_dummy_write_r1,dummy_write,0,0,,0.23577165363936042,0.1862398269363069,35,0.325,3,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,extra_trees,calibration,sealed_05_forward_r1,forward,0,0,,0.1384550363590466,0.09044952807069867,35,0.325,3,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,extra_trees,test,sealed_11_fused_update_r3,fused_update,1,1,60.0,0.4478322521494729,0.41218785755886156,35,0.325,3,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,extra_trees,test,sealed_12_forward3_r3,forward3,0,0,,0.1960646064154984,0.10735061101486301,35,0.325,3,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,extra_trees,test,sealed_13_adamw_r3,adamw,1,1,60.0,0.9826976197472816,0.9699693928103068,35,0.325,3,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,extra_trees,test,sealed_14_dummy_write_r3,dummy_write,0,1,60.0,0.47810658314773813,0.30200690609207337,35,0.325,3,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,extra_trees,test,sealed_15_forward_r3,forward,0,0,,0.09411766356778677,0.062195063500795324,35,0.325,3,2
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,logistic,calibration,sealed_01_fused_update_r1,fused_update,1,0,,0.26654282379580074,0.0851365697736632,35,0.85,5,5
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,logistic,calibration,sealed_02_forward3_r1,forward3,0,0,,0.36611877283772765,0.08463459501507484,35,0.85,5,5
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,logistic,calibration,sealed_03_adamw_r1,adamw,1,1,90.0,0.9999999999999711,0.999999810559547,35,0.85,5,5
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,logistic,calibration,sealed_04_dummy_write_r1,dummy_write,0,0,,0.09748820399719224,0.02954329756151073,35,0.85,5,5
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,logistic,calibration,sealed_05_forward_r1,forward,0,0,,0.318172309038363,0.09104833360840689,35,0.85,5,5
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,logistic,test,sealed_11_fused_update_r3,fused_update,1,0,,0.3800616069042091,0.18530078849525938,35,0.85,5,5
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,logistic,test,sealed_12_forward3_r3,forward3,0,0,,0.6462597443398685,0.32572075727278393,35,0.85,5,5
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,logistic,test,sealed_13_adamw_r3,adamw,1,1,90.0,0.9999999991512918,0.999999666472914,35,0.85,5,5
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,logistic,test,sealed_14_dummy_write_r3,dummy_write,0,0,,0.5372625757462641,0.29777353462615397,35,0.85,5,5
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,logistic,test,sealed_15_forward_r3,forward,0,0,,0.10182195738938347,0.03830790226914314,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,random_forest,calibration,sealed_11_fused_update_r3,fused_update,1,1,90.0,0.5593035714285716,0.5204005952380953,35,0.55,5,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,random_forest,calibration,sealed_12_forward3_r3,forward3,0,0,,0.16966071428571428,0.0845154761904762,35,0.55,5,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,random_forest,calibration,sealed_13_adamw_r3,adamw,1,1,90.0,0.9424166666666668,0.9245416666666667,35,0.55,5,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,random_forest,calibration,sealed_14_dummy_write_r3,dummy_write,0,0,,0.505125,0.325,35,0.55,5,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,random_forest,calibration,sealed_15_forward_r3,forward,0,0,,0.06166666666666666,0.03594166666666666,35,0.55,5,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,random_forest,test,sealed_01_fused_update_r1,fused_update,1,0,,0.44695833333333335,0.4299666666666666,35,0.55,5,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,random_forest,test,sealed_02_forward3_r1,forward3,0,0,,0.494720238095238,0.11901071428571428,35,0.55,5,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,random_forest,test,sealed_03_adamw_r1,adamw,1,1,90.0,0.934,0.9204500000000001,35,0.55,5,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,random_forest,test,sealed_04_dummy_write_r1,dummy_write,0,0,,0.33575000000000005,0.28753095238095233,35,0.55,5,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,random_forest,test,sealed_05_forward_r1,forward,0,0,,0.09183333333333334,0.06838333333333334,35,0.55,5,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,extra_trees,calibration,sealed_11_fused_update_r3,fused_update,1,1,90.0,0.44783225214947303,0.41218785755886156,35,0.425,5,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,extra_trees,calibration,sealed_12_forward3_r3,forward3,0,0,,0.1960646064154984,0.10735061101486301,35,0.425,5,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,extra_trees,calibration,sealed_13_adamw_r3,adamw,1,1,90.0,0.9826976197472816,0.9699693928103068,35,0.425,5,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,extra_trees,calibration,sealed_14_dummy_write_r3,dummy_write,0,0,,0.478106583147738,0.30200690609207337,35,0.425,5,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,extra_trees,calibration,sealed_15_forward_r3,forward,0,0,,0.09411766356778677,0.062195063500795324,35,0.425,5,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,extra_trees,test,sealed_01_fused_update_r1,fused_update,1,0,,0.3391372904686736,0.31147761291523,35,0.425,5,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,extra_trees,test,sealed_02_forward3_r1,forward3,0,0,,0.3086345784266939,0.08798643768299133,35,0.425,5,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,extra_trees,test,sealed_03_adamw_r1,adamw,1,1,90.0,0.97464149280047,0.9618066224734356,35,0.425,5,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,extra_trees,test,sealed_04_dummy_write_r1,dummy_write,0,0,,0.23577165363936042,0.1862398269363069,35,0.425,5,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,extra_trees,test,sealed_05_forward_r1,forward,0,0,,0.1384550363590466,0.09044952807069867,35,0.425,5,2
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,logistic,calibration,sealed_11_fused_update_r3,fused_update,1,0,,0.3800616069042091,0.18530078849525938,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,logistic,calibration,sealed_12_forward3_r3,forward3,0,0,,0.6462597443398685,0.32572075727278393,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,logistic,calibration,sealed_13_adamw_r3,adamw,1,1,90.0,0.9999999991512918,0.999999666472914,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,logistic,calibration,sealed_14_dummy_write_r3,dummy_write,0,0,,0.5372625757462641,0.29777353462615397,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,logistic,calibration,sealed_15_forward_r3,forward,0,0,,0.10182195738938347,0.03830790226914314,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,logistic,test,sealed_01_fused_update_r1,fused_update,1,0,,0.26654282379580074,0.0851365697736632,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,logistic,test,sealed_02_forward3_r1,forward3,0,0,,0.36611877283772765,0.08463459501507484,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,logistic,test,sealed_03_adamw_r1,adamw,1,1,90.0,0.9999999999999711,0.999999810559547,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,logistic,test,sealed_04_dummy_write_r1,dummy_write,0,0,,0.09748820399719224,0.02954329756151073,35,0.85,5,5
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,logistic,test,sealed_05_forward_r1,forward,0,0,,0.318172309038363,0.09104833360840689,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,random_forest,calibration,sealed_01_fused_update_r1,fused_update,1,1,60.0,0.3728333333333334,0.3375916666666667,35,0.35,2,2
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,random_forest,calibration,sealed_02_forward3_r1,forward3,0,0,,0.4848750000000001,0.11463333333333336,35,0.35,2,2
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,random_forest,calibration,sealed_03_adamw_r1,adamw,1,1,45.0,0.9238273809523811,0.9123023809523811,35,0.35,2,2
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,random_forest,calibration,sealed_04_dummy_write_r1,dummy_write,0,0,,0.3077916666666667,0.263125,35,0.35,2,2
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,random_forest,calibration,sealed_05_forward_r1,forward,0,0,,0.07729166666666668,0.05681666666666667,35,0.35,2,2
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,random_forest,test,sealed_06_fused_update_r2,fused_update,1,1,60.0,0.5587916666666668,0.4357000000000001,35,0.35,2,2
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,random_forest,test,sealed_07_forward3_r2,forward3,0,0,,0.23079166666666662,0.11274523809523809,35,0.35,2,2
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,random_forest,test,sealed_08_adamw_r2,adamw,1,1,45.0,0.9476190476190479,0.9328023809523811,35,0.35,2,2
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,random_forest,test,sealed_09_dummy_write_r2,dummy_write,0,0,,0.3393928571428571,0.26061547619047615,35,0.35,2,2
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,random_forest,test,sealed_10_forward_r2,forward,0,0,,0.3294761904761904,0.1717702380952381,35,0.35,2,2
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,extra_trees,calibration,sealed_01_fused_update_r1,fused_update,1,0,,0.28355561001405893,0.25500884807367374,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,extra_trees,calibration,sealed_02_forward3_r1,forward3,0,0,,0.2722380080225976,0.07454005494576367,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,extra_trees,calibration,sealed_03_adamw_r1,adamw,1,1,90.0,0.9825,0.9630851377489625,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,extra_trees,calibration,sealed_04_dummy_write_r1,dummy_write,0,0,,0.3108752573591629,0.2886279128083332,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,extra_trees,calibration,sealed_05_forward_r1,forward,0,0,,0.12590176832492814,0.09907729354890454,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,extra_trees,test,sealed_06_fused_update_r2,fused_update,1,0,,0.49532973363316907,0.35034927311624886,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,extra_trees,test,sealed_07_forward3_r2,forward3,0,0,,0.16419293572893434,0.09865350416382226,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,extra_trees,test,sealed_08_adamw_r2,adamw,1,1,90.0,0.9913611329661685,0.9819999613058004,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,extra_trees,test,sealed_09_dummy_write_r2,dummy_write,0,0,,0.44860319844079444,0.2613796964696438,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,extra_trees,test,sealed_10_forward_r2,forward,0,0,,0.40970854214145574,0.23316824463075533,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,logistic,calibration,sealed_01_fused_update_r1,fused_update,1,0,,0.04734679775127002,0.018314434956177718,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,logistic,calibration,sealed_02_forward3_r1,forward3,0,0,,0.011835951961573764,0.002575325300925246,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,logistic,calibration,sealed_03_adamw_r1,adamw,1,1,90.0,0.9999999999999742,0.9999999984690943,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,logistic,calibration,sealed_04_dummy_write_r1,dummy_write,0,0,,0.137726594908525,0.07778600456144806,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,logistic,calibration,sealed_05_forward_r1,forward,0,0,,0.033082656122485336,0.008935940356347143,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,logistic,test,sealed_06_fused_update_r2,fused_update,1,0,,0.47336818245290835,0.2513436638371009,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,logistic,test,sealed_07_forward3_r2,forward3,0,0,,0.03955380609260054,0.013133706835703318,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,logistic,test,sealed_08_adamw_r2,adamw,1,1,90.0,0.9999999999026636,0.999999999184193,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,logistic,test,sealed_09_dummy_write_r2,dummy_write,0,0,,0.46729469432474174,0.17631033148820724,35,0.85,5,5
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,logistic,test,sealed_10_forward_r2,forward,0,0,,0.9869716842283265,0.2595538629371908,35,0.85,5,5
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,random_forest,calibration,sealed_06_fused_update_r2,fused_update,1,1,45.0,0.5587916666666668,0.4357000000000001,35,0.55,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,random_forest,calibration,sealed_07_forward3_r2,forward3,0,0,,0.23079166666666662,0.11274523809523809,35,0.55,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,random_forest,calibration,sealed_08_adamw_r2,adamw,1,1,30.0,0.9476190476190479,0.9328023809523811,35,0.55,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,random_forest,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.33939285714285705,0.26061547619047615,35,0.55,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,random_forest,calibration,sealed_10_forward_r2,forward,0,0,,0.3294761904761904,0.1717702380952381,35,0.55,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,random_forest,test,sealed_01_fused_update_r1,fused_update,1,0,,0.3728333333333334,0.3375916666666667,35,0.55,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,random_forest,test,sealed_02_forward3_r1,forward3,0,0,,0.4848750000000001,0.11463333333333336,35,0.55,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,random_forest,test,sealed_03_adamw_r1,adamw,1,1,30.0,0.9238273809523811,0.9123023809523811,35,0.55,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,random_forest,test,sealed_04_dummy_write_r1,dummy_write,0,0,,0.3077916666666667,0.263125,35,0.55,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,random_forest,test,sealed_05_forward_r1,forward,0,0,,0.07729166666666668,0.05681666666666667,35,0.55,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,extra_trees,calibration,sealed_06_fused_update_r2,fused_update,1,1,45.0,0.49532973363316907,0.35034927311624886,35,0.475,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,extra_trees,calibration,sealed_07_forward3_r2,forward3,0,0,,0.16419293572893434,0.09865350416382226,35,0.475,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,extra_trees,calibration,sealed_08_adamw_r2,adamw,1,1,30.0,0.9913611329661685,0.9819999613058004,35,0.475,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,extra_trees,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.44860319844079444,0.2613796964696438,35,0.475,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,extra_trees,calibration,sealed_10_forward_r2,forward,0,0,,0.40970854214145574,0.23316824463075533,35,0.475,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,extra_trees,test,sealed_01_fused_update_r1,fused_update,1,0,,0.28355561001405893,0.25500884807367374,35,0.475,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,extra_trees,test,sealed_02_forward3_r1,forward3,0,0,,0.2722380080225976,0.07454005494576367,35,0.475,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,extra_trees,test,sealed_03_adamw_r1,adamw,1,1,30.0,0.9825,0.9630851377489625,35,0.475,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,extra_trees,test,sealed_04_dummy_write_r1,dummy_write,0,0,,0.3108752573591629,0.2886279128083332,35,0.475,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,extra_trees,test,sealed_05_forward_r1,forward,0,0,,0.12590176832492814,0.09907729354890454,35,0.475,1,1
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,logistic,calibration,sealed_06_fused_update_r2,fused_update,1,1,90.0,0.47336818245290835,0.2513436638371009,35,0.35,3,2
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,logistic,calibration,sealed_07_forward3_r2,forward3,0,0,,0.03955380609260054,0.013133706835703318,35,0.35,3,2
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,logistic,calibration,sealed_08_adamw_r2,adamw,1,1,60.0,0.9999999999026636,0.999999999184193,35,0.35,3,2
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,logistic,calibration,sealed_09_dummy_write_r2,dummy_write,0,0,,0.46729469432474174,0.17631033148820724,35,0.35,3,2
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,logistic,calibration,sealed_10_forward_r2,forward,0,0,,0.9869716842283265,0.2595538629371908,35,0.35,3,2
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,logistic,test,sealed_01_fused_update_r1,fused_update,1,0,,0.04734679775127002,0.018314434956177718,35,0.35,3,2
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,logistic,test,sealed_02_forward3_r1,forward3,0,0,,0.011835951961573764,0.002575325300925246,35,0.35,3,2
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,logistic,test,sealed_03_adamw_r1,adamw,1,1,60.0,0.9999999999999742,0.9999999984690943,35,0.35,3,2
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,logistic,test,sealed_04_dummy_write_r1,dummy_write,0,0,,0.137726594908525,0.07778600456144806,35,0.35,3,2
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,logistic,test,sealed_05_forward_r1,forward,0,0,,0.033082656122485336,0.008935940356347143,35,0.35,3,2

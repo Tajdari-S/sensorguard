@@ -1,0 +1,136 @@
+protocol,modality,model,fused_runs,fused_detected,fused_detection_rate,matched_control_runs,false_alerts,positive_control_runs,positive_controls_detected,median_fused_time_to_alert_s,threshold,rule_windows,rule_hits,candidate_solution
+adamw_transfer_no_fused_fit,Electrical,extra_trees,3,0,0.0,3,0,1,1,,0.85,5,3,False
+adamw_transfer_no_fused_fit,Electrical,logistic,3,0,0.0,3,0,1,1,,0.85,5,3,False
+adamw_transfer_no_fused_fit,Electrical,random_forest,3,0,0.0,3,0,1,1,,0.85,5,3,False
+adamw_transfer_no_fused_fit,Electrical + drift,extra_trees,3,0,0.0,3,0,1,1,,0.85,5,3,False
+adamw_transfer_no_fused_fit,Electrical + drift,logistic,3,0,0.0,3,0,1,1,,0.85,5,3,False
+adamw_transfer_no_fused_fit,Electrical + drift,random_forest,3,0,0.0,3,0,1,1,,0.85,5,3,False
+adamw_transfer_no_fused_fit,NVML,extra_trees,3,0,0.0,3,0,1,1,,0.85,5,3,False
+adamw_transfer_no_fused_fit,NVML,logistic,3,0,0.0,3,0,1,1,,0.85,5,3,False
+adamw_transfer_no_fused_fit,NVML,random_forest,3,0,0.0,3,0,1,1,,0.85,5,3,False
+adamw_transfer_no_fused_fit,NVML + electrical,extra_trees,3,0,0.0,3,0,1,1,,0.85,5,3,False
+adamw_transfer_no_fused_fit,NVML + electrical,logistic,3,0,0.0,3,0,1,1,,0.85,5,3,False
+adamw_transfer_no_fused_fit,NVML + electrical,random_forest,3,0,0.0,3,0,1,1,,0.85,5,3,False
+adamw_transfer_no_fused_fit,NVML + electrical + drift,extra_trees,3,0,0.0,3,0,1,1,,0.85,5,3,False
+adamw_transfer_no_fused_fit,NVML + electrical + drift,logistic,3,0,0.0,3,0,1,1,,0.85,5,3,False
+adamw_transfer_no_fused_fit,NVML + electrical + drift,random_forest,3,0,0.0,3,0,1,1,,0.85,5,3,False
+fused_r1r2_to_r3_adaptation,Electrical,extra_trees,1,0,0.0,3,0,1,1,,0.85,5,3,False
+fused_r1r2_to_r3_adaptation,Electrical,logistic,1,0,0.0,3,0,1,1,,0.85,5,3,False
+fused_r1r2_to_r3_adaptation,Electrical,random_forest,1,0,0.0,3,0,1,1,,0.85,5,3,False
+fused_r1r2_to_r3_adaptation,Electrical + drift,extra_trees,1,0,0.0,3,0,1,1,,0.85,5,3,False
+fused_r1r2_to_r3_adaptation,Electrical + drift,logistic,1,0,0.0,3,0,1,1,,0.85,5,3,False
+fused_r1r2_to_r3_adaptation,Electrical + drift,random_forest,1,0,0.0,3,0,1,1,,0.85,5,3,False
+fused_r1r2_to_r3_adaptation,NVML,extra_trees,1,0,0.0,3,0,1,1,,0.85,5,3,False
+fused_r1r2_to_r3_adaptation,NVML,logistic,1,0,0.0,3,0,1,1,,0.85,5,3,False
+fused_r1r2_to_r3_adaptation,NVML,random_forest,1,0,0.0,3,0,1,1,,0.85,5,3,False
+fused_r1r2_to_r3_adaptation,NVML + electrical,extra_trees,1,0,0.0,3,0,1,1,,0.85,5,3,False
+fused_r1r2_to_r3_adaptation,NVML + electrical,logistic,1,0,0.0,3,0,1,1,,0.85,5,3,False
+fused_r1r2_to_r3_adaptation,NVML + electrical,random_forest,1,0,0.0,3,0,1,1,,0.85,5,3,False
+fused_r1r2_to_r3_adaptation,NVML + electrical + drift,extra_trees,1,0,0.0,3,0,1,1,,0.85,5,3,False
+fused_r1r2_to_r3_adaptation,NVML + electrical + drift,logistic,1,0,0.0,3,0,1,1,,0.85,5,3,False
+fused_r1r2_to_r3_adaptation,NVML + electrical + drift,random_forest,1,0,0.0,3,0,1,1,,0.85,5,3,False
+nested_r1_fit_r2_rule_r3_test,Electrical,extra_trees,1,1,1.0,3,0,1,1,75.0,0.1,4,4,True
+nested_r1_fit_r2_rule_r3_test,Electrical,logistic,1,0,0.0,3,0,1,1,,0.85,5,5,False
+nested_r1_fit_r2_rule_r3_test,Electrical,random_forest,1,0,0.0,3,0,1,1,,0.225,4,4,False
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,extra_trees,1,0,0.0,3,0,1,1,,0.1,4,4,False
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,logistic,1,0,0.0,3,0,1,1,,0.275,1,1,False
+nested_r1_fit_r2_rule_r3_test,Electrical + drift,random_forest,1,1,1.0,3,0,1,1,90.0,0.225,2,2,True
+nested_r1_fit_r2_rule_r3_test,NVML,extra_trees,1,0,0.0,3,0,1,1,,0.85,5,5,False
+nested_r1_fit_r2_rule_r3_test,NVML,logistic,1,0,0.0,3,2,1,1,,0.45,3,3,False
+nested_r1_fit_r2_rule_r3_test,NVML,random_forest,1,0,0.0,3,0,1,1,,0.85,5,5,False
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,extra_trees,1,1,1.0,3,0,1,1,90.0,0.1,5,5,True
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,logistic,1,0,0.0,3,0,1,1,,0.85,5,5,False
+nested_r1_fit_r2_rule_r3_test,NVML + electrical,random_forest,1,1,1.0,3,0,1,1,90.0,0.2,3,2,True
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,extra_trees,1,1,1.0,3,1,1,1,30.0,0.15,1,1,False
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,logistic,1,0,0.0,3,0,1,1,,0.85,5,5,False
+nested_r1_fit_r2_rule_r3_test,NVML + electrical + drift,random_forest,1,0,0.0,3,0,1,1,,0.175,4,4,False
+rotation_fit_r1_cal_r2_test_r3,Electrical,extra_trees,1,1,1.0,3,0,1,1,75.0,0.1,4,4,True
+rotation_fit_r1_cal_r2_test_r3,Electrical,logistic,1,0,0.0,3,0,1,1,,0.85,5,5,False
+rotation_fit_r1_cal_r2_test_r3,Electrical,random_forest,1,0,0.0,3,0,1,1,,0.225,4,4,False
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,extra_trees,1,0,0.0,3,0,1,1,,0.1,4,4,False
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,logistic,1,0,0.0,3,0,1,1,,0.275,1,1,False
+rotation_fit_r1_cal_r2_test_r3,Electrical + drift,random_forest,1,1,1.0,3,0,1,1,90.0,0.225,2,2,True
+rotation_fit_r1_cal_r2_test_r3,NVML,extra_trees,1,0,0.0,3,0,1,1,,0.85,5,5,False
+rotation_fit_r1_cal_r2_test_r3,NVML,logistic,1,0,0.0,3,2,1,1,,0.45,3,3,False
+rotation_fit_r1_cal_r2_test_r3,NVML,random_forest,1,0,0.0,3,0,1,1,,0.85,5,5,False
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,extra_trees,1,1,1.0,3,0,1,1,90.0,0.1,5,5,True
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,logistic,1,0,0.0,3,0,1,1,,0.85,5,5,False
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical,random_forest,1,1,1.0,3,0,1,1,90.0,0.2,3,2,True
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,extra_trees,1,1,1.0,3,1,1,1,30.0,0.15,1,1,False
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,logistic,1,0,0.0,3,0,1,1,,0.85,5,5,False
+rotation_fit_r1_cal_r2_test_r3,NVML + electrical + drift,random_forest,1,0,0.0,3,0,1,1,,0.175,4,4,False
+rotation_fit_r1_cal_r3_test_r2,Electrical,extra_trees,1,0,0.0,3,0,1,1,,0.15,1,1,False
+rotation_fit_r1_cal_r3_test_r2,Electrical,logistic,1,0,0.0,3,0,1,1,,0.85,5,5,False
+rotation_fit_r1_cal_r3_test_r2,Electrical,random_forest,1,0,0.0,3,0,1,1,,0.275,1,1,False
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,extra_trees,1,1,1.0,3,0,1,1,90.0,0.1,5,4,True
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,logistic,1,0,0.0,3,0,1,1,,0.85,5,5,False
+rotation_fit_r1_cal_r3_test_r2,Electrical + drift,random_forest,1,0,0.0,3,0,1,1,,0.25,5,3,False
+rotation_fit_r1_cal_r3_test_r2,NVML,extra_trees,1,0,0.0,3,0,1,1,,0.85,5,5,False
+rotation_fit_r1_cal_r3_test_r2,NVML,logistic,1,0,0.0,3,0,1,1,,0.85,5,5,False
+rotation_fit_r1_cal_r3_test_r2,NVML,random_forest,1,0,0.0,3,0,1,1,,0.85,5,5,False
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,extra_trees,1,0,0.0,3,1,1,1,,0.125,2,2,False
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,logistic,1,0,0.0,3,0,1,1,,0.85,5,5,False
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical,random_forest,1,0,0.0,3,1,1,1,,0.225,1,1,False
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,extra_trees,1,0,0.0,3,0,1,1,,0.125,3,3,False
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,logistic,1,0,0.0,3,0,1,1,,0.85,5,5,False
+rotation_fit_r1_cal_r3_test_r2,NVML + electrical + drift,random_forest,1,1,1.0,3,1,1,1,45.0,0.225,1,1,False
+rotation_fit_r2_cal_r1_test_r3,Electrical,extra_trees,1,1,1.0,3,1,1,1,30.0,0.35,1,1,False
+rotation_fit_r2_cal_r1_test_r3,Electrical,logistic,1,0,0.0,3,0,1,1,,0.85,5,5,False
+rotation_fit_r2_cal_r1_test_r3,Electrical,random_forest,1,1,1.0,3,1,1,1,30.0,0.475,1,1,False
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,extra_trees,1,1,1.0,3,0,1,1,75.0,0.25,4,4,True
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,logistic,1,1,1.0,3,1,1,1,60.0,0.275,1,1,False
+rotation_fit_r2_cal_r1_test_r3,Electrical + drift,random_forest,1,1,1.0,3,1,1,1,30.0,0.475,1,1,False
+rotation_fit_r2_cal_r1_test_r3,NVML,extra_trees,1,0,0.0,3,2,1,1,,0.6,1,1,False
+rotation_fit_r2_cal_r1_test_r3,NVML,logistic,1,0,0.0,3,1,1,1,,0.7,1,1,False
+rotation_fit_r2_cal_r1_test_r3,NVML,random_forest,1,0,0.0,3,1,1,1,,0.6,2,2,False
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,extra_trees,1,1,1.0,3,1,1,1,60.0,0.3,3,2,False
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,logistic,1,1,1.0,3,3,1,1,45.0,0.15,2,2,False
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical,random_forest,1,1,1.0,3,0,1,1,60.0,0.45,3,2,True
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,extra_trees,1,1,1.0,3,1,1,1,60.0,0.325,3,2,False
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,logistic,1,0,0.0,3,0,1,1,,0.85,5,5,False
+rotation_fit_r2_cal_r1_test_r3,NVML + electrical + drift,random_forest,1,1,1.0,3,0,1,1,60.0,0.425,3,3,True
+rotation_fit_r2_cal_r3_test_r1,Electrical,extra_trees,1,0,0.0,3,0,1,1,,0.675,1,1,False
+rotation_fit_r2_cal_r3_test_r1,Electrical,logistic,1,0,0.0,3,0,1,1,,0.8,1,1,False
+rotation_fit_r2_cal_r3_test_r1,Electrical,random_forest,1,0,0.0,3,0,1,1,,0.65,2,2,False
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,extra_trees,1,0,0.0,3,0,1,1,,0.6,2,2,False
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,logistic,1,0,0.0,3,0,1,1,,0.525,3,2,False
+rotation_fit_r2_cal_r3_test_r1,Electrical + drift,random_forest,1,0,0.0,3,0,1,1,,0.625,1,1,False
+rotation_fit_r2_cal_r3_test_r1,NVML,extra_trees,1,0,0.0,3,0,1,1,,0.85,5,5,False
+rotation_fit_r2_cal_r3_test_r1,NVML,logistic,1,0,0.0,3,0,1,1,,0.85,5,5,False
+rotation_fit_r2_cal_r3_test_r1,NVML,random_forest,1,0,0.0,3,0,1,1,,0.85,5,5,False
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,extra_trees,1,0,0.0,3,0,1,1,,0.5,5,2,False
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,logistic,1,0,0.0,3,0,1,1,,0.85,5,5,False
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical,random_forest,1,0,0.0,3,0,1,1,,0.55,5,4,False
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,extra_trees,1,0,0.0,3,0,1,1,,0.425,5,2,False
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,logistic,1,0,0.0,3,0,1,1,,0.85,5,5,False
+rotation_fit_r2_cal_r3_test_r1,NVML + electrical + drift,random_forest,1,0,0.0,3,0,1,1,,0.55,5,2,False
+rotation_fit_r3_cal_r1_test_r2,Electrical,extra_trees,1,1,1.0,3,0,1,1,75.0,0.225,4,3,True
+rotation_fit_r3_cal_r1_test_r2,Electrical,logistic,1,0,0.0,3,0,1,1,,0.85,5,5,False
+rotation_fit_r3_cal_r1_test_r2,Electrical,random_forest,1,1,1.0,3,0,1,1,75.0,0.35,4,3,True
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,extra_trees,1,1,1.0,3,2,1,1,75.0,0.2,4,2,False
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,logistic,1,0,0.0,3,0,1,1,,0.85,5,5,False
+rotation_fit_r3_cal_r1_test_r2,Electrical + drift,random_forest,1,1,1.0,3,0,1,1,75.0,0.375,4,3,True
+rotation_fit_r3_cal_r1_test_r2,NVML,extra_trees,1,0,0.0,3,0,1,1,,0.85,5,5,False
+rotation_fit_r3_cal_r1_test_r2,NVML,logistic,1,0,0.0,3,1,1,1,,0.575,1,1,False
+rotation_fit_r3_cal_r1_test_r2,NVML,random_forest,1,0,0.0,3,0,1,1,,0.85,5,5,False
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,extra_trees,1,0,0.0,3,0,1,1,,0.85,5,5,False
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,logistic,1,0,0.0,3,0,1,1,,0.85,5,5,False
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical,random_forest,1,1,1.0,3,0,1,1,75.0,0.325,4,3,True
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,extra_trees,1,0,0.0,3,0,1,1,,0.85,5,5,False
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,logistic,1,0,0.0,3,0,1,1,,0.85,5,5,False
+rotation_fit_r3_cal_r1_test_r2,NVML + electrical + drift,random_forest,1,1,1.0,3,0,1,1,60.0,0.35,2,2,True
+rotation_fit_r3_cal_r2_test_r1,Electrical,extra_trees,1,0,0.0,3,0,1,1,,0.725,1,1,False
+rotation_fit_r3_cal_r2_test_r1,Electrical,logistic,1,0,0.0,3,0,1,1,,0.275,3,3,False
+rotation_fit_r3_cal_r2_test_r1,Electrical,random_forest,1,0,0.0,3,0,1,1,,0.625,1,1,False
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,extra_trees,1,0,0.0,3,0,1,1,,0.675,1,1,False
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,logistic,1,0,0.0,3,0,1,1,,0.5,3,2,False
+rotation_fit_r3_cal_r2_test_r1,Electrical + drift,random_forest,1,0,0.0,3,0,1,1,,0.6,1,1,False
+rotation_fit_r3_cal_r2_test_r1,NVML,extra_trees,1,0,0.0,3,0,1,1,,0.85,5,5,False
+rotation_fit_r3_cal_r2_test_r1,NVML,logistic,1,0,0.0,3,0,1,1,,0.85,5,5,False
+rotation_fit_r3_cal_r2_test_r1,NVML,random_forest,1,0,0.0,3,0,1,1,,0.85,5,5,False
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,extra_trees,1,0,0.0,3,0,1,1,,0.525,1,1,False
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,logistic,1,0,0.0,3,0,1,1,,0.2,3,3,False
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical,random_forest,1,0,0.0,3,0,1,1,,0.55,1,1,False
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,extra_trees,1,0,0.0,3,0,1,1,,0.475,1,1,False
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,logistic,1,0,0.0,3,0,1,1,,0.35,3,2,False
+rotation_fit_r3_cal_r2_test_r1,NVML + electrical + drift,random_forest,1,0,0.0,3,0,1,1,,0.55,1,1,False

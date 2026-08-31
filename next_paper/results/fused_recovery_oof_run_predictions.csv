@@ -1,0 +1,181 @@
+protocol,modality,model,split,run_id,family,target,alert,time_to_alert_s,max_probability,mean_probability,fit_runs,threshold,rule_windows,rule_hits
+leave_one_repetition_out,Electrical,random_forest,development_oof,sealed_01_fused_update_r1,fused_update,1,1,45.0,0.4651964285714286,0.4283047619047619,0,0.45,1,1
+leave_one_repetition_out,Electrical,random_forest,development_oof,sealed_02_forward3_r1,forward3,0,0,,0.41954166666666665,0.0945,0,0.45,1,1
+leave_one_repetition_out,Electrical,random_forest,development_oof,sealed_03_adamw_r1,adamw,1,1,30.0,0.9975,0.9791833333333335,0,0.45,1,1
+leave_one_repetition_out,Electrical,random_forest,development_oof,sealed_04_dummy_write_r1,dummy_write,0,0,,0.30604166666666666,0.24075952380952378,0,0.45,1,1
+leave_one_repetition_out,Electrical,random_forest,development_oof,sealed_05_forward_r1,forward,0,0,,0.04895833333333332,0.035805952380952376,0,0.45,1,1
+leave_one_repetition_out,Electrical,random_forest,development_oof,sealed_06_fused_update_r2,fused_update,1,1,45.0,0.659625,0.5344952380952381,0,0.45,1,1
+leave_one_repetition_out,Electrical,random_forest,development_oof,sealed_07_forward3_r2,forward3,0,0,,0.19404166666666664,0.0844125,0,0.45,1,1
+leave_one_repetition_out,Electrical,random_forest,development_oof,sealed_08_adamw_r2,adamw,1,1,30.0,0.9877083333333333,0.9788154761904762,0,0.45,1,1
+leave_one_repetition_out,Electrical,random_forest,development_oof,sealed_09_dummy_write_r2,dummy_write,0,0,,0.30383333333333334,0.24292083333333334,0,0.45,1,1
+leave_one_repetition_out,Electrical,random_forest,development_oof,sealed_10_forward_r2,forward,0,0,,0.20287500000000003,0.11301666666666668,0,0.45,1,1
+leave_one_repetition_out,Electrical,random_forest,development_oof,sealed_11_fused_update_r3,fused_update,1,1,30.0,0.693452380952381,0.5958309523809524,0,0.45,1,1
+leave_one_repetition_out,Electrical,random_forest,development_oof,sealed_12_forward3_r3,forward3,0,0,,0.08948214285714284,0.053563095238095236,0,0.45,1,1
+leave_one_repetition_out,Electrical,random_forest,development_oof,sealed_13_adamw_r3,adamw,1,1,30.0,0.9742083333333333,0.9581083333333333,0,0.45,1,1
+leave_one_repetition_out,Electrical,random_forest,development_oof,sealed_14_dummy_write_r3,dummy_write,0,0,,0.4262202380952381,0.23988214285714288,0,0.45,1,1
+leave_one_repetition_out,Electrical,random_forest,development_oof,sealed_15_forward_r3,forward,0,0,,0.02341666666666667,0.013358333333333333,0,0.45,1,1
+leave_one_repetition_out,Electrical,extra_trees,development_oof,sealed_01_fused_update_r1,fused_update,1,1,75.0,0.2894994234511566,0.2560362549460117,0,0.25,3,3
+leave_one_repetition_out,Electrical,extra_trees,development_oof,sealed_02_forward3_r1,forward3,0,0,,0.2595789185239312,0.06829075630252099,0,0.25,3,3
+leave_one_repetition_out,Electrical,extra_trees,development_oof,sealed_03_adamw_r1,adamw,1,1,60.0,1.0,0.9803290145290309,0,0.25,3,3
+leave_one_repetition_out,Electrical,extra_trees,development_oof,sealed_04_dummy_write_r1,dummy_write,0,0,,0.14783076153680705,0.11624138713764869,0,0.25,3,3
+leave_one_repetition_out,Electrical,extra_trees,development_oof,sealed_05_forward_r1,forward,0,0,,0.03467175130921934,0.02686395688710267,0,0.25,3,3
+leave_one_repetition_out,Electrical,extra_trees,development_oof,sealed_06_fused_update_r2,fused_update,1,1,60.0,0.7908466920432541,0.5525163857547152,0,0.25,3,3
+leave_one_repetition_out,Electrical,extra_trees,development_oof,sealed_07_forward3_r2,forward3,0,0,,0.20680236877359634,0.10613234076239186,0,0.25,3,3
+leave_one_repetition_out,Electrical,extra_trees,development_oof,sealed_08_adamw_r2,adamw,1,1,60.0,0.9983823529411765,0.9955946291560103,0,0.25,3,3
+leave_one_repetition_out,Electrical,extra_trees,development_oof,sealed_09_dummy_write_r2,dummy_write,0,0,,0.47246803440170637,0.2275282611061507,0,0.25,3,3
+leave_one_repetition_out,Electrical,extra_trees,development_oof,sealed_10_forward_r2,forward,0,0,,0.35553025002785565,0.20104420652627372,0,0.25,3,3
+leave_one_repetition_out,Electrical,extra_trees,development_oof,sealed_11_fused_update_r3,fused_update,1,1,60.0,0.713470215745873,0.6444108867969017,0,0.25,3,3
+leave_one_repetition_out,Electrical,extra_trees,development_oof,sealed_12_forward3_r3,forward3,0,0,,0.10857806600901228,0.05013252953355255,0,0.25,3,3
+leave_one_repetition_out,Electrical,extra_trees,development_oof,sealed_13_adamw_r3,adamw,1,1,60.0,0.9914009864815492,0.957410360223677,0,0.25,3,3
+leave_one_repetition_out,Electrical,extra_trees,development_oof,sealed_14_dummy_write_r3,dummy_write,0,0,,0.5270434017721614,0.19793549700153515,0,0.25,3,3
+leave_one_repetition_out,Electrical,extra_trees,development_oof,sealed_15_forward_r3,forward,0,0,,0.07486938253562292,0.021269711362805987,0,0.25,3,3
+leave_one_repetition_out,Electrical,logistic,development_oof,sealed_01_fused_update_r1,fused_update,1,0,,0.18994969585705465,0.08746063184174015,0,0.475,2,2
+leave_one_repetition_out,Electrical,logistic,development_oof,sealed_02_forward3_r1,forward3,0,0,,0.2490966984472937,0.05280433299994158,0,0.475,2,2
+leave_one_repetition_out,Electrical,logistic,development_oof,sealed_03_adamw_r1,adamw,1,1,45.0,0.9999999961972055,0.9995596080093193,0,0.475,2,2
+leave_one_repetition_out,Electrical,logistic,development_oof,sealed_04_dummy_write_r1,dummy_write,0,0,,0.18993505410208586,0.06629637847203187,0,0.475,2,2
+leave_one_repetition_out,Electrical,logistic,development_oof,sealed_05_forward_r1,forward,0,0,,0.012222866574398696,0.005571909458034314,0,0.475,2,2
+leave_one_repetition_out,Electrical,logistic,development_oof,sealed_06_fused_update_r2,fused_update,1,1,60.0,0.7238346866569186,0.4264189626051683,0,0.475,2,2
+leave_one_repetition_out,Electrical,logistic,development_oof,sealed_07_forward3_r2,forward3,0,0,,0.16872772877849376,0.0833849657086712,0,0.475,2,2
+leave_one_repetition_out,Electrical,logistic,development_oof,sealed_08_adamw_r2,adamw,1,1,45.0,0.9999831994260862,0.9998215088466837,0,0.475,2,2
+leave_one_repetition_out,Electrical,logistic,development_oof,sealed_09_dummy_write_r2,dummy_write,0,0,,0.5611946358213572,0.24931463853290955,0,0.475,2,2
+leave_one_repetition_out,Electrical,logistic,development_oof,sealed_10_forward_r2,forward,0,0,,0.2855533192572715,0.13383347255680889,0,0.475,2,2
+leave_one_repetition_out,Electrical,logistic,development_oof,sealed_11_fused_update_r3,fused_update,1,1,45.0,0.530984273767828,0.347197249954028,0,0.475,2,2
+leave_one_repetition_out,Electrical,logistic,development_oof,sealed_12_forward3_r3,forward3,0,0,,0.1173832497831511,0.05667254613455971,0,0.475,2,2
+leave_one_repetition_out,Electrical,logistic,development_oof,sealed_13_adamw_r3,adamw,1,1,45.0,0.9984406323395794,0.9883418396714587,0,0.475,2,2
+leave_one_repetition_out,Electrical,logistic,development_oof,sealed_14_dummy_write_r3,dummy_write,0,0,,0.6638654293020474,0.21459847453958553,0,0.475,2,2
+leave_one_repetition_out,Electrical,logistic,development_oof,sealed_15_forward_r3,forward,0,0,,0.42248032383499606,0.10615006691537118,0,0.475,2,2
+leave_one_repetition_out,NVML + electrical,random_forest,development_oof,sealed_01_fused_update_r1,fused_update,1,1,90.0,0.441875,0.41991666666666666,0,0.425,3,2
+leave_one_repetition_out,NVML + electrical,random_forest,development_oof,sealed_02_forward3_r1,forward3,0,0,,0.4690416666666667,0.10548333333333333,0,0.425,3,2
+leave_one_repetition_out,NVML + electrical,random_forest,development_oof,sealed_03_adamw_r1,adamw,1,1,60.0,0.9832499999999998,0.9663666666666666,0,0.425,3,2
+leave_one_repetition_out,NVML + electrical,random_forest,development_oof,sealed_04_dummy_write_r1,dummy_write,0,0,,0.31154166666666666,0.260727380952381,0,0.425,3,2
+leave_one_repetition_out,NVML + electrical,random_forest,development_oof,sealed_05_forward_r1,forward,0,0,,0.07658333333333334,0.05634761904761905,0,0.425,3,2
+leave_one_repetition_out,NVML + electrical,random_forest,development_oof,sealed_06_fused_update_r2,fused_update,1,1,60.0,0.6415119047619048,0.495677380952381,0,0.425,3,2
+leave_one_repetition_out,NVML + electrical,random_forest,development_oof,sealed_07_forward3_r2,forward3,0,0,,0.2009702380952381,0.08947142857142858,0,0.425,3,2
+leave_one_repetition_out,NVML + electrical,random_forest,development_oof,sealed_08_adamw_r2,adamw,1,1,60.0,0.9895833333333335,0.9807559523809524,0,0.425,3,2
+leave_one_repetition_out,NVML + electrical,random_forest,development_oof,sealed_09_dummy_write_r2,dummy_write,0,0,,0.2970833333333333,0.24039166666666664,0,0.425,3,2
+leave_one_repetition_out,NVML + electrical,random_forest,development_oof,sealed_10_forward_r2,forward,0,0,,0.22676190476190478,0.13315714285714286,0,0.425,3,2
+leave_one_repetition_out,NVML + electrical,random_forest,development_oof,sealed_11_fused_update_r3,fused_update,1,1,60.0,0.6244702380952382,0.5535428571428572,0,0.425,3,2
+leave_one_repetition_out,NVML + electrical,random_forest,development_oof,sealed_12_forward3_r3,forward3,0,0,,0.11304166666666665,0.05970714285714285,0,0.425,3,2
+leave_one_repetition_out,NVML + electrical,random_forest,development_oof,sealed_13_adamw_r3,adamw,1,1,60.0,0.979986111111111,0.9675805555555554,0,0.425,3,2
+leave_one_repetition_out,NVML + electrical,random_forest,development_oof,sealed_14_dummy_write_r3,dummy_write,0,0,,0.45487500000000003,0.25536309523809525,0,0.425,3,2
+leave_one_repetition_out,NVML + electrical,random_forest,development_oof,sealed_15_forward_r3,forward,0,0,,0.064,0.03348333333333333,0,0.425,3,2
+leave_one_repetition_out,NVML + electrical,extra_trees,development_oof,sealed_01_fused_update_r1,fused_update,1,1,90.0,0.2611603945926196,0.24929173993371623,0,0.25,3,3
+leave_one_repetition_out,NVML + electrical,extra_trees,development_oof,sealed_02_forward3_r1,forward3,0,0,,0.300472597734746,0.07210730727073436,0,0.25,3,3
+leave_one_repetition_out,NVML + electrical,extra_trees,development_oof,sealed_03_adamw_r1,adamw,1,1,60.0,0.99035336743393,0.9720676531482159,0,0.25,3,3
+leave_one_repetition_out,NVML + electrical,extra_trees,development_oof,sealed_04_dummy_write_r1,dummy_write,0,0,,0.20759605491371955,0.18534180262809766,0,0.25,3,3
+leave_one_repetition_out,NVML + electrical,extra_trees,development_oof,sealed_05_forward_r1,forward,0,0,,0.08187559371574714,0.05607409572524662,0,0.25,3,3
+leave_one_repetition_out,NVML + electrical,extra_trees,development_oof,sealed_06_fused_update_r2,fused_update,1,1,60.0,0.6324130329376608,0.46671621837276583,0,0.25,3,3
+leave_one_repetition_out,NVML + electrical,extra_trees,development_oof,sealed_07_forward3_r2,forward3,0,0,,0.19039753884902713,0.09657114560902988,0,0.25,3,3
+leave_one_repetition_out,NVML + electrical,extra_trees,development_oof,sealed_08_adamw_r2,adamw,1,1,60.0,1.0,0.9949684691267813,0,0.25,3,3
+leave_one_repetition_out,NVML + electrical,extra_trees,development_oof,sealed_09_dummy_write_r2,dummy_write,0,0,,0.4043392633649204,0.22208499179455257,0,0.25,3,3
+leave_one_repetition_out,NVML + electrical,extra_trees,development_oof,sealed_10_forward_r2,forward,0,0,,0.36314635141753276,0.205666592557467,0,0.25,3,3
+leave_one_repetition_out,NVML + electrical,extra_trees,development_oof,sealed_11_fused_update_r3,fused_update,1,1,60.0,0.5092147210410527,0.4607239826180239,0,0.25,3,3
+leave_one_repetition_out,NVML + electrical,extra_trees,development_oof,sealed_12_forward3_r3,forward3,0,0,,0.16164214973686047,0.06996788920933775,0,0.25,3,3
+leave_one_repetition_out,NVML + electrical,extra_trees,development_oof,sealed_13_adamw_r3,adamw,1,1,60.0,0.9983823529411765,0.9842084398976982,0,0.25,3,3
+leave_one_repetition_out,NVML + electrical,extra_trees,development_oof,sealed_14_dummy_write_r3,dummy_write,0,0,,0.5124287165374937,0.25036506839553574,0,0.25,3,3
+leave_one_repetition_out,NVML + electrical,extra_trees,development_oof,sealed_15_forward_r3,forward,0,0,,0.07056016319571304,0.04102978930702715,0,0.25,3,3
+leave_one_repetition_out,NVML + electrical,logistic,development_oof,sealed_01_fused_update_r1,fused_update,1,0,,0.38704566079040703,0.1565631312885175,0,0.25,5,3
+leave_one_repetition_out,NVML + electrical,logistic,development_oof,sealed_02_forward3_r1,forward3,0,0,,0.16356296627629294,0.03494818324320447,0,0.25,5,3
+leave_one_repetition_out,NVML + electrical,logistic,development_oof,sealed_03_adamw_r1,adamw,1,1,90.0,0.9999999995844404,0.9999379768861993,0,0.25,5,3
+leave_one_repetition_out,NVML + electrical,logistic,development_oof,sealed_04_dummy_write_r1,dummy_write,0,0,,0.3356913760540601,0.11994640992655872,0,0.25,5,3
+leave_one_repetition_out,NVML + electrical,logistic,development_oof,sealed_05_forward_r1,forward,0,0,,0.06738531377230923,0.021525918411347655,0,0.25,5,3
+leave_one_repetition_out,NVML + electrical,logistic,development_oof,sealed_06_fused_update_r2,fused_update,1,1,90.0,0.4583523113547404,0.2731745546261793,0,0.25,5,3
+leave_one_repetition_out,NVML + electrical,logistic,development_oof,sealed_07_forward3_r2,forward3,0,0,,0.038801091868886854,0.018327779699435182,0,0.25,5,3
+leave_one_repetition_out,NVML + electrical,logistic,development_oof,sealed_08_adamw_r2,adamw,1,1,90.0,0.9999986106031828,0.999982002555625,0,0.25,5,3
+leave_one_repetition_out,NVML + electrical,logistic,development_oof,sealed_09_dummy_write_r2,dummy_write,0,0,,0.49015400312944757,0.20496711075881677,0,0.25,5,3
+leave_one_repetition_out,NVML + electrical,logistic,development_oof,sealed_10_forward_r2,forward,0,0,,0.24846028963727773,0.14010271295588916,0,0.25,5,3
+leave_one_repetition_out,NVML + electrical,logistic,development_oof,sealed_11_fused_update_r3,fused_update,1,1,90.0,0.36536809217535804,0.23230466957725682,0,0.25,5,3
+leave_one_repetition_out,NVML + electrical,logistic,development_oof,sealed_12_forward3_r3,forward3,0,0,,0.5410076894991772,0.2353361957711499,0,0.25,5,3
+leave_one_repetition_out,NVML + electrical,logistic,development_oof,sealed_13_adamw_r3,adamw,1,1,90.0,0.9999873501729263,0.9976629383197271,0,0.25,5,3
+leave_one_repetition_out,NVML + electrical,logistic,development_oof,sealed_14_dummy_write_r3,dummy_write,0,0,,0.44954427294843347,0.18258991696412302,0,0.25,5,3
+leave_one_repetition_out,NVML + electrical,logistic,development_oof,sealed_15_forward_r3,forward,0,0,,0.7740870817774057,0.20756733758248017,0,0.25,5,3
+leave_one_repetition_out,Electrical + drift,random_forest,development_oof,sealed_01_fused_update_r1,fused_update,1,1,90.0,0.4580833333333334,0.4439333333333334,0,0.45,4,2
+leave_one_repetition_out,Electrical + drift,random_forest,development_oof,sealed_02_forward3_r1,forward3,0,0,,0.4467083333333333,0.10220833333333332,0,0.45,4,2
+leave_one_repetition_out,Electrical + drift,random_forest,development_oof,sealed_03_adamw_r1,adamw,1,1,75.0,0.99425,0.9817499999999999,0,0.45,4,2
+leave_one_repetition_out,Electrical + drift,random_forest,development_oof,sealed_04_dummy_write_r1,dummy_write,0,0,,0.29370833333333324,0.2126642857142857,0,0.45,4,2
+leave_one_repetition_out,Electrical + drift,random_forest,development_oof,sealed_05_forward_r1,forward,0,0,,0.050958333333333335,0.041541666666666664,0,0.45,4,2
+leave_one_repetition_out,Electrical + drift,random_forest,development_oof,sealed_06_fused_update_r2,fused_update,1,1,75.0,0.7046666666666666,0.54625,0,0.45,4,2
+leave_one_repetition_out,Electrical + drift,random_forest,development_oof,sealed_07_forward3_r2,forward3,0,0,,0.19947619047619047,0.09080714285714285,0,0.45,4,2
+leave_one_repetition_out,Electrical + drift,random_forest,development_oof,sealed_08_adamw_r2,adamw,1,1,75.0,0.9918214285714286,0.9793797619047618,0,0.45,4,2
+leave_one_repetition_out,Electrical + drift,random_forest,development_oof,sealed_09_dummy_write_r2,dummy_write,0,0,,0.288875,0.22916666666666666,0,0.45,4,2
+leave_one_repetition_out,Electrical + drift,random_forest,development_oof,sealed_10_forward_r2,forward,0,0,,0.21926785714285713,0.12375714285714286,0,0.45,4,2
+leave_one_repetition_out,Electrical + drift,random_forest,development_oof,sealed_11_fused_update_r3,fused_update,1,1,75.0,0.6795119047619047,0.5733940476190476,0,0.45,4,2
+leave_one_repetition_out,Electrical + drift,random_forest,development_oof,sealed_12_forward3_r3,forward3,0,0,,0.100625,0.05407142857142857,0,0.45,4,2
+leave_one_repetition_out,Electrical + drift,random_forest,development_oof,sealed_13_adamw_r3,adamw,1,1,75.0,0.9627499999999999,0.9465166666666667,0,0.45,4,2
+leave_one_repetition_out,Electrical + drift,random_forest,development_oof,sealed_14_dummy_write_r3,dummy_write,0,0,,0.4500892857142857,0.22003571428571428,0,0.45,4,2
+leave_one_repetition_out,Electrical + drift,random_forest,development_oof,sealed_15_forward_r3,forward,0,0,,0.041416666666666664,0.02693333333333333,0,0.45,4,2
+leave_one_repetition_out,Electrical + drift,extra_trees,development_oof,sealed_01_fused_update_r1,fused_update,1,1,90.0,0.25739739374010473,0.22343241992449148,0,0.2,4,4
+leave_one_repetition_out,Electrical + drift,extra_trees,development_oof,sealed_02_forward3_r1,forward3,0,0,,0.32167953758355755,0.07938640075748607,0,0.2,4,4
+leave_one_repetition_out,Electrical + drift,extra_trees,development_oof,sealed_03_adamw_r1,adamw,1,1,75.0,0.9992142857142858,0.984267153818049,0,0.2,4,4
+leave_one_repetition_out,Electrical + drift,extra_trees,development_oof,sealed_04_dummy_write_r1,dummy_write,0,0,,0.16930276458409443,0.13373090975520635,0,0.2,4,4
+leave_one_repetition_out,Electrical + drift,extra_trees,development_oof,sealed_05_forward_r1,forward,0,0,,0.065138899037876,0.03675859213250517,0,0.2,4,4
+leave_one_repetition_out,Electrical + drift,extra_trees,development_oof,sealed_06_fused_update_r2,fused_update,1,1,75.0,0.6800068614033679,0.47764792393007316,0,0.2,4,4
+leave_one_repetition_out,Electrical + drift,extra_trees,development_oof,sealed_07_forward3_r2,forward3,0,0,,0.23651473632931427,0.11620489587139202,0,0.2,4,4
+leave_one_repetition_out,Electrical + drift,extra_trees,development_oof,sealed_08_adamw_r2,adamw,1,1,75.0,0.9988043478260868,0.9910199610278895,0,0.2,4,4
+leave_one_repetition_out,Electrical + drift,extra_trees,development_oof,sealed_09_dummy_write_r2,dummy_write,0,0,,0.4676368286445009,0.2228548897819996,0,0.2,4,4
+leave_one_repetition_out,Electrical + drift,extra_trees,development_oof,sealed_10_forward_r2,forward,0,0,,0.3752342589209596,0.1970715868956278,0,0.2,4,4
+leave_one_repetition_out,Electrical + drift,extra_trees,development_oof,sealed_11_fused_update_r3,fused_update,1,1,75.0,0.6315137011326266,0.5753719766167332,0,0.2,4,4
+leave_one_repetition_out,Electrical + drift,extra_trees,development_oof,sealed_12_forward3_r3,forward3,0,0,,0.15524168797953958,0.06835074899525026,0,0.2,4,4
+leave_one_repetition_out,Electrical + drift,extra_trees,development_oof,sealed_13_adamw_r3,adamw,1,1,75.0,0.993309523809524,0.9768647480571355,0,0.2,4,4
+leave_one_repetition_out,Electrical + drift,extra_trees,development_oof,sealed_14_dummy_write_r3,dummy_write,0,0,,0.5210120569967114,0.21133449031786616,0,0.2,4,4
+leave_one_repetition_out,Electrical + drift,extra_trees,development_oof,sealed_15_forward_r3,forward,0,0,,0.05891450493240774,0.02221669711362806,0,0.2,4,4
+leave_one_repetition_out,Electrical + drift,logistic,development_oof,sealed_01_fused_update_r1,fused_update,1,0,,0.20034283634060687,0.062145435017272634,0,0.65,3,2
+leave_one_repetition_out,Electrical + drift,logistic,development_oof,sealed_02_forward3_r1,forward3,0,0,,0.07519040026471181,0.017761134840209584,0,0.65,3,2
+leave_one_repetition_out,Electrical + drift,logistic,development_oof,sealed_03_adamw_r1,adamw,1,1,60.0,0.9999999999958202,0.9998014513196031,0,0.65,3,2
+leave_one_repetition_out,Electrical + drift,logistic,development_oof,sealed_04_dummy_write_r1,dummy_write,0,0,,0.11066433160864327,0.049382930265430905,0,0.65,3,2
+leave_one_repetition_out,Electrical + drift,logistic,development_oof,sealed_05_forward_r1,forward,0,0,,0.0036608851496904918,0.002771175078183196,0,0.65,3,2
+leave_one_repetition_out,Electrical + drift,logistic,development_oof,sealed_06_fused_update_r2,fused_update,1,1,90.0,0.7679373706454536,0.47852660390064833,0,0.65,3,2
+leave_one_repetition_out,Electrical + drift,logistic,development_oof,sealed_07_forward3_r2,forward3,0,0,,0.355357258809159,0.09617467677223743,0,0.65,3,2
+leave_one_repetition_out,Electrical + drift,logistic,development_oof,sealed_08_adamw_r2,adamw,1,1,60.0,0.9999968832096795,0.9999154898092874,0,0.65,3,2
+leave_one_repetition_out,Electrical + drift,logistic,development_oof,sealed_09_dummy_write_r2,dummy_write,0,0,,0.3688331722674735,0.20563931520009365,0,0.65,3,2
+leave_one_repetition_out,Electrical + drift,logistic,development_oof,sealed_10_forward_r2,forward,0,0,,0.9415221629904149,0.21988208638927637,0,0.65,3,2
+leave_one_repetition_out,Electrical + drift,logistic,development_oof,sealed_11_fused_update_r3,fused_update,1,1,90.0,0.8461926136313019,0.34959154626714534,0,0.65,3,2
+leave_one_repetition_out,Electrical + drift,logistic,development_oof,sealed_12_forward3_r3,forward3,0,0,,0.11002137378405634,0.04962849682086286,0,0.65,3,2
+leave_one_repetition_out,Electrical + drift,logistic,development_oof,sealed_13_adamw_r3,adamw,1,1,60.0,0.9996652344272416,0.9899960372926238,0,0.65,3,2
+leave_one_repetition_out,Electrical + drift,logistic,development_oof,sealed_14_dummy_write_r3,dummy_write,0,0,,0.6653258330297952,0.22569788713220426,0,0.65,3,2
+leave_one_repetition_out,Electrical + drift,logistic,development_oof,sealed_15_forward_r3,forward,0,0,,0.4002845598946948,0.10385137862947462,0,0.65,3,2
+leave_one_repetition_out,NVML + electrical + drift,random_forest,development_oof,sealed_01_fused_update_r1,fused_update,1,1,90.0,0.4645357142857143,0.4295107142857143,0,0.45,1,1
+leave_one_repetition_out,NVML + electrical + drift,random_forest,development_oof,sealed_02_forward3_r1,forward3,0,0,,0.4442916666666667,0.10661666666666667,0,0.45,1,1
+leave_one_repetition_out,NVML + electrical + drift,random_forest,development_oof,sealed_03_adamw_r1,adamw,1,1,30.0,0.98125,0.9716559523809524,0,0.45,1,1
+leave_one_repetition_out,NVML + electrical + drift,random_forest,development_oof,sealed_04_dummy_write_r1,dummy_write,0,0,,0.29823214285714283,0.24820000000000003,0,0.45,1,1
+leave_one_repetition_out,NVML + electrical + drift,random_forest,development_oof,sealed_05_forward_r1,forward,0,0,,0.08233333333333334,0.06650833333333334,0,0.45,1,1
+leave_one_repetition_out,NVML + electrical + drift,random_forest,development_oof,sealed_06_fused_update_r2,fused_update,1,1,45.0,0.6051666666666666,0.47770833333333335,0,0.45,1,1
+leave_one_repetition_out,NVML + electrical + drift,random_forest,development_oof,sealed_07_forward3_r2,forward3,0,0,,0.23047222222222216,0.11227222222222219,0,0.45,1,1
+leave_one_repetition_out,NVML + electrical + drift,random_forest,development_oof,sealed_08_adamw_r2,adamw,1,1,30.0,0.9958333333333332,0.9866499999999998,0,0.45,1,1
+leave_one_repetition_out,NVML + electrical + drift,random_forest,development_oof,sealed_09_dummy_write_r2,dummy_write,0,0,,0.27995833333333336,0.2334944444444444,0,0.45,1,1
+leave_one_repetition_out,NVML + electrical + drift,random_forest,development_oof,sealed_10_forward_r2,forward,0,0,,0.30113888888888884,0.15703888888888887,0,0.45,1,1
+leave_one_repetition_out,NVML + electrical + drift,random_forest,development_oof,sealed_11_fused_update_r3,fused_update,1,1,30.0,0.566261904761905,0.49511428571428573,0,0.45,1,1
+leave_one_repetition_out,NVML + electrical + drift,random_forest,development_oof,sealed_12_forward3_r3,forward3,0,0,,0.15383333333333332,0.09622857142857141,0,0.45,1,1
+leave_one_repetition_out,NVML + electrical + drift,random_forest,development_oof,sealed_13_adamw_r3,adamw,1,1,30.0,0.9895833333333333,0.969,0,0.45,1,1
+leave_one_repetition_out,NVML + electrical + drift,random_forest,development_oof,sealed_14_dummy_write_r3,dummy_write,0,0,,0.4427678571428571,0.25987261904761905,0,0.45,1,1
+leave_one_repetition_out,NVML + electrical + drift,random_forest,development_oof,sealed_15_forward_r3,forward,0,0,,0.04145833333333333,0.027999999999999997,0,0.45,1,1
+leave_one_repetition_out,NVML + electrical + drift,extra_trees,development_oof,sealed_01_fused_update_r1,fused_update,1,1,75.0,0.28594428206065037,0.24048120813542803,0,0.225,4,4
+leave_one_repetition_out,NVML + electrical + drift,extra_trees,development_oof,sealed_02_forward3_r1,forward3,0,0,,0.26783193277310924,0.07417650712458898,0,0.225,4,4
+leave_one_repetition_out,NVML + electrical + drift,extra_trees,development_oof,sealed_03_adamw_r1,adamw,1,1,75.0,0.9872953964194374,0.9781842893679213,0,0.225,4,4
+leave_one_repetition_out,NVML + electrical + drift,extra_trees,development_oof,sealed_04_dummy_write_r1,dummy_write,0,0,,0.2085160759956156,0.15873022489291735,0,0.225,4,4
+leave_one_repetition_out,NVML + electrical + drift,extra_trees,development_oof,sealed_05_forward_r1,forward,0,0,,0.08270679576178296,0.06559605791973538,0,0.225,4,4
+leave_one_repetition_out,NVML + electrical + drift,extra_trees,development_oof,sealed_06_fused_update_r2,fused_update,1,1,75.0,0.5549711362805989,0.40130929241261704,0,0.225,4,4
+leave_one_repetition_out,NVML + electrical + drift,extra_trees,development_oof,sealed_07_forward3_r2,forward3,0,0,,0.17864145658263295,0.09787816343928872,0,0.225,4,4
+leave_one_repetition_out,NVML + electrical + drift,extra_trees,development_oof,sealed_08_adamw_r2,adamw,1,1,75.0,0.9992142857142858,0.9922269272926563,0,0.225,4,4
+leave_one_repetition_out,NVML + electrical + drift,extra_trees,development_oof,sealed_09_dummy_write_r2,dummy_write,0,0,,0.39470996224576765,0.22614689928432172,0,0.225,4,4
+leave_one_repetition_out,NVML + electrical + drift,extra_trees,development_oof,sealed_10_forward_r2,forward,0,0,,0.3871713554987211,0.21569055310911542,0,0.225,4,4
+leave_one_repetition_out,NVML + electrical + drift,extra_trees,development_oof,sealed_11_fused_update_r3,fused_update,1,1,75.0,0.42181633155351506,0.38081920822174276,0,0.225,4,4
+leave_one_repetition_out,NVML + electrical + drift,extra_trees,development_oof,sealed_12_forward3_r3,forward3,0,0,,0.1514835586408476,0.09174862988673727,0,0.225,4,4
+leave_one_repetition_out,NVML + electrical + drift,extra_trees,development_oof,sealed_13_adamw_r3,adamw,1,1,75.0,0.9925,0.9840871026671539,0,0.225,4,4
+leave_one_repetition_out,NVML + electrical + drift,extra_trees,development_oof,sealed_14_dummy_write_r3,dummy_write,0,0,,0.47283427193966004,0.2561040047203288,0,0.225,4,4
+leave_one_repetition_out,NVML + electrical + drift,extra_trees,development_oof,sealed_15_forward_r3,forward,0,0,,0.09490208257215926,0.04190573620752648,0,0.225,4,4
+leave_one_repetition_out,NVML + electrical + drift,logistic,development_oof,sealed_01_fused_update_r1,fused_update,1,0,,0.2941236463493946,0.11027879032261816,0,0.55,3,2
+leave_one_repetition_out,NVML + electrical + drift,logistic,development_oof,sealed_02_forward3_r1,forward3,0,0,,0.04128352834937181,0.010865747986379452,0,0.55,3,2
+leave_one_repetition_out,NVML + electrical + drift,logistic,development_oof,sealed_03_adamw_r1,adamw,1,1,60.0,0.9999999999997167,0.9999991757672555,0,0.55,3,2
+leave_one_repetition_out,NVML + electrical + drift,logistic,development_oof,sealed_04_dummy_write_r1,dummy_write,0,0,,0.20384804543652846,0.07090526382859372,0,0.55,3,2
+leave_one_repetition_out,NVML + electrical + drift,logistic,development_oof,sealed_05_forward_r1,forward,0,0,,0.035680704688333335,0.01866946734004254,0,0.55,3,2
+leave_one_repetition_out,NVML + electrical + drift,logistic,development_oof,sealed_06_fused_update_r2,fused_update,1,1,90.0,0.5858399128504603,0.32676953423219246,0,0.55,3,2
+leave_one_repetition_out,NVML + electrical + drift,logistic,development_oof,sealed_07_forward3_r2,forward3,0,0,,0.053162077265281896,0.013676933008409992,0,0.55,3,2
+leave_one_repetition_out,NVML + electrical + drift,logistic,development_oof,sealed_08_adamw_r2,adamw,1,1,60.0,0.9999998481059229,0.9999911828325398,0,0.55,3,2
+leave_one_repetition_out,NVML + electrical + drift,logistic,development_oof,sealed_09_dummy_write_r2,dummy_write,0,0,,0.31443409285541535,0.16577088005613877,0,0.55,3,2
+leave_one_repetition_out,NVML + electrical + drift,logistic,development_oof,sealed_10_forward_r2,forward,0,0,,0.948375724742,0.22688675600638897,0,0.55,3,2
+leave_one_repetition_out,NVML + electrical + drift,logistic,development_oof,sealed_11_fused_update_r3,fused_update,1,1,90.0,0.7571164382789719,0.29301983558225075,0,0.55,3,2
+leave_one_repetition_out,NVML + electrical + drift,logistic,development_oof,sealed_12_forward3_r3,forward3,0,0,,0.7907951517379834,0.28651277080693377,0,0.55,3,2
+leave_one_repetition_out,NVML + electrical + drift,logistic,development_oof,sealed_13_adamw_r3,adamw,1,1,60.0,0.9999977809908753,0.99977397466013,0,0.55,3,2
+leave_one_repetition_out,NVML + electrical + drift,logistic,development_oof,sealed_14_dummy_write_r3,dummy_write,0,0,,0.3005283550300125,0.12762189824524556,0,0.55,3,2
+leave_one_repetition_out,NVML + electrical + drift,logistic,development_oof,sealed_15_forward_r3,forward,0,0,,0.27134967679061034,0.0667505664527569,0,0.55,3,2
