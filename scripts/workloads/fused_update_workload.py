@@ -98,10 +98,17 @@ class FusedNetwork(nn.Module):
 
 def make_batch(batch_size: int, size: int, device, dtype, seed: int):
     generator = torch.Generator(device="cpu").manual_seed(seed)
-    x = torch.randn(batch_size, size, generator=generator, dtype=torch.float32)
-    teacher = torch.randn(size, size, generator=generator, dtype=torch.float32) / math.sqrt(size)
+    x = torch.randn(batch_size, size, generator=generator, dtype=torch.float32).to(
+        device=device, dtype=dtype)
+    teacher = (
+        torch.randn(size, size, generator=generator, dtype=torch.float32)
+        / math.sqrt(size)
+    ).to(device=device, dtype=dtype)
+    # Target construction is setup, not measured useful work. Performing the
+    # large matrix multiply on the selected GPU prevents CPU-only setup from
+    # missing an absolute synchronized start on minimally provisioned nodes.
     y = torch.tanh(x.matmul(teacher.t()))
-    return x.to(device=device, dtype=dtype), y.to(device=device, dtype=dtype), generator
+    return x, y, generator
 
 
 def synchronize(device) -> None:
