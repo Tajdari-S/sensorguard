@@ -1,0 +1,15 @@
+metric,value,unit,scope,note
+development_overall_detection_gain,40.0,percentage_points,15 positive development runs,"SensorGuard 6/15 versus NVML 0/15"
+development_worst_family_detection_gain,0.0,percentage_points,5 held-out positive families,"Both methods have at least one family with 0/3 detections"
+sealed_fused_update_detection_nvml,0.0,percent,3 sealed fused-update runs,0/3 alerts
+sealed_fused_update_detection_electrical,0.0,percent,3 sealed fused-update runs,0/3 alerts
+sealed_fused_update_detection_fusion,0.0,percent,3 sealed fused-update runs,0/3 alerts
+sensorguard_false_alerts_per_gpu_hour,0.0,alerts_per_gpu_hour,0.6625 matched-negative GPU-hours,0 false-alert runs
+nvml_false_alerts_per_gpu_hour,3.018868,alerts_per_gpu_hour,0.6625 matched-negative GPU-hours,2 false-alert runs
+development_detected_time_to_alert_median,90.0,seconds,6 SensorGuard-detected development runs,fixed 3-of-5 rule
+sealed_fused_update_time_to_alert,NA,seconds,3 fused-update runs,no alerts
+monitor_overhead_mean,-0.045,percent,5 repetitions,no measurable slowdown
+monitor_overhead_ci95_low,-0.353,percent,5 repetitions,
+monitor_overhead_ci95_high,0.262,percent,5 repetitions,
+minimum_retained_sample_rate,10000,samples_per_second,offline replay,exactly preserves all full-rate run decisions
+minimum_retained_bit_depth,8,bits,offline replay,hardware-in-loop confirmation remains separate

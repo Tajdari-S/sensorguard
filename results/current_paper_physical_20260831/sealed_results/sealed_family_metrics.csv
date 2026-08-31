@@ -1,0 +1,16 @@
+modality,family,runs,target,alerts,detection_rate,median_time_to_alert_s
+NVML,adamw,3,1,3,1.0,90.0
+NVML,dummy_write,3,0,0,0.0,
+NVML,forward,3,0,0,0.0,
+NVML,forward3,3,0,0,0.0,
+NVML,fused_update,3,1,0,0.0,
+Electrical,adamw,3,1,0,0.0,
+Electrical,dummy_write,3,0,0,0.0,
+Electrical,forward,3,0,0,0.0,
+Electrical,forward3,3,0,0,0.0,
+Electrical,fused_update,3,1,0,0.0,
+NVML + electrical,adamw,3,1,0,0.0,
+NVML + electrical,dummy_write,3,0,0,0.0,
+NVML + electrical,forward,3,0,0,0.0,
+NVML + electrical,forward3,3,0,0,0.0,
+NVML + electrical,fused_update,3,1,0,0.0,
