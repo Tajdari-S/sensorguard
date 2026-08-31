@@ -1,0 +1,14 @@
+{
+  "selection_rule": "lowest sample rate, then lowest bit depth, exactly preserving every full-rate leave-one-family-out run decision",
+  "selected": {
+    "sample_hz": 10000,
+    "bits": 8,
+    "runs": 30,
+    "tp": 6,
+    "fn": 9,
+    "fp": 0,
+    "tn": 15,
+    "exactly_preserves_full_rate_run_decisions": true
+  },
+  "qualification": "offline decimation and quantization; hardware-in-loop confirmation is separate"
+}

@@ -21,3 +21,10 @@ Electrical high-frequency features detect all duty-shaping and migration runs, b
 ## Remaining sealed test
 
 Run fused-update once using the frozen model hashes in `freeze_manifest.json`, then append its predictions without retraining or changing the threshold.
+
+## Minimum retained electrical specification
+
+Offline decimation and quantization selected 10 kS/s at 8-bit as the lowest
+tested configuration that exactly preserved all 30 full-rate run decisions.
+At 1 kS/s, one of the six full-rate detections was lost. This is an offline
+retention result, not a hardware-in-loop confirmation at the selected setting.

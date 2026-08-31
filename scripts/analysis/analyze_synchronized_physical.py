@@ -123,7 +123,16 @@ def build(plan: dict, node_root: Path, pico_root: Path,
     physical_frames, nvml_frames = [], []
     for run in plan["runs"]:
         run_id = run["run_id"]
-        workload = json.loads((node_root / run_id / "workload.json").read_text())
+        workload_path = node_root / run_id / "workload.json"
+        if workload_path.is_file():
+            workload = json.loads(workload_path.read_text())
+        else:
+            lines = (node_root / run_id / "workload.stdout").read_text().splitlines()
+            records = [json.loads(line.removeprefix("useful_work "))
+                       for line in lines if line.startswith("useful_work ")]
+            if len(records) != 1:
+                raise RuntimeError(f"expected one useful_work record for {run_id}")
+            workload = records[0]
         start, end = float(workload["start_epoch_s"]), float(workload["end_epoch_s"])
         ps = physical_seconds(pico_root / run_id, start, end, sample_hz, bits)
         ns = nvml_seconds(node_root / run_id / "nvml.csv", start, end)
