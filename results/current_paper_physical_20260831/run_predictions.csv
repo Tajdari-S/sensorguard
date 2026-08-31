@@ -1,0 +1,91 @@
+modality,held_out_family,run_id,target,alert,time_to_alert_s,max_probability,duration_hours
+NVML,duty_shaping,phys_03_duty_shaping_r1,1,0,,0.3936807026861375,0.029166666666666667
+NVML,duty_shaping,phys_13_duty_shaping_r2,1,0,,0.29519399350649356,0.029166666666666667
+NVML,duty_shaping,phys_23_duty_shaping_r3,1,0,,0.7306333678901613,0.029166666666666667
+NVML,fft,phys_04_fft_r1,0,0,,0.7628206081134841,0.029166666666666667
+NVML,fft,phys_14_fft_r2,0,0,,0.8522377629274053,0.029166666666666667
+NVML,fft,phys_24_fft_r3,0,0,,0.8327263467166637,0.029166666666666667
+NVML,gemm,phys_02_gemm_r1,0,0,,0.8327687067721553,0.029166666666666667
+NVML,gemm,phys_12_gemm_r2,0,0,,0.3907417980570155,0.029166666666666667
+NVML,gemm,phys_22_gemm_r3,0,1,90.0,0.9245902597402599,0.029166666666666667
+NVML,idle,phys_10_idle_r1,0,0,,0.7410376835941379,0.029166666666666667
+NVML,idle,phys_20_idle_r2,0,1,90.0,0.9231637300081323,0.029166666666666667
+NVML,idle,phys_30_idle_r3,0,0,,0.6580223948119013,0.029166666666666667
+NVML,inference_control,phys_08_inference_control_r1,0,0,,0.7753240248397862,0.029166666666666667
+NVML,inference_control,phys_18_inference_control_r2,0,0,,0.9178099467066029,0.029166666666666667
+NVML,inference_control,phys_28_inference_control_r3,0,0,,0.7240138558421174,0.029166666666666667
+NVML,interleaving,phys_05_interleaving_r1,1,0,,0.2815333333333333,0.029166666666666667
+NVML,interleaving,phys_15_interleaving_r2,1,0,,0.11232843671777293,0.029166666666666667
+NVML,interleaving,phys_25_interleaving_r3,1,0,,0.2869452511038037,0.029166666666666667
+NVML,memcpy,phys_06_memcpy_r1,0,0,,0.6224778836419415,0.029166666666666667
+NVML,memcpy,phys_16_memcpy_r2,0,0,,0.6810889941815891,0.029166666666666667
+NVML,memcpy,phys_26_memcpy_r3,0,0,,0.9047635281385281,0.029166666666666667
+NVML,memory_minimal,phys_07_memory_minimal_r1,1,0,,0.633905382684438,0.029166666666666667
+NVML,memory_minimal,phys_17_memory_minimal_r2,1,0,,0.35328840491468994,0.029166666666666667
+NVML,memory_minimal,phys_27_memory_minimal_r3,1,0,,0.6813072206125917,0.029166666666666667
+NVML,migration,phys_09_migration_r1,1,0,,0.3701379754443483,0.029166666666666667
+NVML,migration,phys_19_migration_r2,1,0,,0.5937567777364877,0.029166666666666667
+NVML,migration,phys_29_migration_r3,1,0,,0.43862380012997787,0.029166666666666667
+NVML,ordinary_training,phys_01_ordinary_training_r1,1,0,,0.73845601307127,0.029166666666666667
+NVML,ordinary_training,phys_11_ordinary_training_r2,1,0,,0.5476028976906597,0.029166666666666667
+NVML,ordinary_training,phys_21_ordinary_training_r3,1,0,,0.5817271082418428,0.029166666666666667
+Electrical,duty_shaping,phys_03_duty_shaping_r1,1,1,90.0,0.9365833333333332,0.029166666666666667
+Electrical,duty_shaping,phys_13_duty_shaping_r2,1,1,90.0,0.9758333333333334,0.029166666666666667
+Electrical,duty_shaping,phys_23_duty_shaping_r3,1,1,90.0,0.9389583333333333,0.029166666666666667
+Electrical,fft,phys_04_fft_r1,0,0,,0.7016666666666665,0.029166666666666667
+Electrical,fft,phys_14_fft_r2,0,0,,0.7485416666666665,0.029166666666666667
+Electrical,fft,phys_24_fft_r3,0,0,,0.7025833333333332,0.029166666666666667
+Electrical,gemm,phys_02_gemm_r1,0,0,,0.9689583333333333,0.029166666666666667
+Electrical,gemm,phys_12_gemm_r2,0,0,,0.9593749999999999,0.029166666666666667
+Electrical,gemm,phys_22_gemm_r3,0,0,,0.9527083333333332,0.029166666666666667
+Electrical,idle,phys_10_idle_r1,0,0,,0.02125,0.029166666666666667
+Electrical,idle,phys_20_idle_r2,0,0,,0.03716666666666667,0.029166666666666667
+Electrical,idle,phys_30_idle_r3,0,0,,0.07229166666666667,0.029166666666666667
+Electrical,inference_control,phys_08_inference_control_r1,0,0,,0.5881666666666666,0.029166666666666667
+Electrical,inference_control,phys_18_inference_control_r2,0,0,,0.695625,0.029166666666666667
+Electrical,inference_control,phys_28_inference_control_r3,0,0,,0.16833333333333336,0.029166666666666667
+Electrical,interleaving,phys_05_interleaving_r1,1,0,,0.8737916666666666,0.029166666666666667
+Electrical,interleaving,phys_15_interleaving_r2,1,0,,0.8881666666666667,0.029166666666666667
+Electrical,interleaving,phys_25_interleaving_r3,1,0,,0.8987916666666668,0.029166666666666667
+Electrical,memcpy,phys_06_memcpy_r1,0,0,,0.03375,0.029166666666666667
+Electrical,memcpy,phys_16_memcpy_r2,0,0,,0.028583333333333336,0.029166666666666667
+Electrical,memcpy,phys_26_memcpy_r3,0,0,,0.024583333333333336,0.029166666666666667
+Electrical,memory_minimal,phys_07_memory_minimal_r1,1,0,,0.12395833333333334,0.029166666666666667
+Electrical,memory_minimal,phys_17_memory_minimal_r2,1,0,,0.16848809523809521,0.029166666666666667
+Electrical,memory_minimal,phys_27_memory_minimal_r3,1,0,,0.18898809523809526,0.029166666666666667
+Electrical,migration,phys_09_migration_r1,1,1,90.0,0.9875,0.029166666666666667
+Electrical,migration,phys_19_migration_r2,1,1,90.0,0.9675,0.029166666666666667
+Electrical,migration,phys_29_migration_r3,1,1,90.0,0.9195833333333334,0.029166666666666667
+Electrical,ordinary_training,phys_01_ordinary_training_r1,1,0,,0.22631547619047615,0.029166666666666667
+Electrical,ordinary_training,phys_11_ordinary_training_r2,1,0,,0.24848214285714285,0.029166666666666667
+Electrical,ordinary_training,phys_21_ordinary_training_r3,1,0,,0.25160714285714286,0.029166666666666667
+NVML + electrical,duty_shaping,phys_03_duty_shaping_r1,1,1,90.0,0.9266666666666665,0.029166666666666667
+NVML + electrical,duty_shaping,phys_13_duty_shaping_r2,1,1,90.0,0.9620833333333333,0.029166666666666667
+NVML + electrical,duty_shaping,phys_23_duty_shaping_r3,1,1,90.0,0.9245833333333333,0.029166666666666667
+NVML + electrical,fft,phys_04_fft_r1,0,0,,0.7349999999999999,0.029166666666666667
+NVML + electrical,fft,phys_14_fft_r2,0,0,,0.8022916666666666,0.029166666666666667
+NVML + electrical,fft,phys_24_fft_r3,0,0,,0.7340833333333333,0.029166666666666667
+NVML + electrical,gemm,phys_02_gemm_r1,0,0,,0.9687916666666666,0.029166666666666667
+NVML + electrical,gemm,phys_12_gemm_r2,0,0,,0.9375416666666667,0.029166666666666667
+NVML + electrical,gemm,phys_22_gemm_r3,0,0,,0.9510833333333335,0.029166666666666667
+NVML + electrical,idle,phys_10_idle_r1,0,0,,0.03166666666666666,0.029166666666666667
+NVML + electrical,idle,phys_20_idle_r2,0,0,,0.039107142857142854,0.029166666666666667
+NVML + electrical,idle,phys_30_idle_r3,0,0,,0.0795654761904762,0.029166666666666667
+NVML + electrical,inference_control,phys_08_inference_control_r1,0,0,,0.5512916666666667,0.029166666666666667
+NVML + electrical,inference_control,phys_18_inference_control_r2,0,0,,0.61775,0.029166666666666667
+NVML + electrical,inference_control,phys_28_inference_control_r3,0,0,,0.19629166666666667,0.029166666666666667
+NVML + electrical,interleaving,phys_05_interleaving_r1,1,0,,0.8388750000000001,0.029166666666666667
+NVML + electrical,interleaving,phys_15_interleaving_r2,1,0,,0.8140000000000001,0.029166666666666667
+NVML + electrical,interleaving,phys_25_interleaving_r3,1,0,,0.8824583333333336,0.029166666666666667
+NVML + electrical,memcpy,phys_06_memcpy_r1,0,0,,0.03791666666666667,0.029166666666666667
+NVML + electrical,memcpy,phys_16_memcpy_r2,0,0,,0.03783333333333333,0.029166666666666667
+NVML + electrical,memcpy,phys_26_memcpy_r3,0,0,,0.035416666666666666,0.029166666666666667
+NVML + electrical,memory_minimal,phys_07_memory_minimal_r1,1,0,,0.12833333333333333,0.029166666666666667
+NVML + electrical,memory_minimal,phys_17_memory_minimal_r2,1,0,,0.14875,0.029166666666666667
+NVML + electrical,memory_minimal,phys_27_memory_minimal_r3,1,0,,0.1720833333333333,0.029166666666666667
+NVML + electrical,migration,phys_09_migration_r1,1,1,90.0,0.9683333333333333,0.029166666666666667
+NVML + electrical,migration,phys_19_migration_r2,1,1,90.0,0.9716666666666667,0.029166666666666667
+NVML + electrical,migration,phys_29_migration_r3,1,1,90.0,0.91775,0.029166666666666667
+NVML + electrical,ordinary_training,phys_01_ordinary_training_r1,1,0,,0.2325,0.029166666666666667
+NVML + electrical,ordinary_training,phys_11_ordinary_training_r2,1,0,,0.241875,0.029166666666666667
+NVML + electrical,ordinary_training,phys_21_ordinary_training_r3,1,0,,0.25175000000000003,0.029166666666666667

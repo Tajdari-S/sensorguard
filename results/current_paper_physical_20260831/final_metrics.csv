@@ -1,0 +1,4 @@
+modality,runs,tp,fn,fp,tn,detection_rate,worst_family_detection_rate,negative_gpu_hours,false_alerts_per_gpu_hour,median_time_to_alert_s,worst_family_gain_over_nvml_pp
+NVML,30,0,15,2,13,0.0,0.0,0.43750000000000006,4.571428571428571,,0.0
+Electrical,30,6,9,0,15,0.4,0.0,0.43750000000000006,0.0,90.0,0.0
+NVML + electrical,30,6,9,0,15,0.4,0.0,0.43750000000000006,0.0,90.0,0.0

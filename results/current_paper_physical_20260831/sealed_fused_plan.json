@@ -1,0 +1,147 @@
+{
+  "campaign": "current-paper-sealed-fused-update-20260831",
+  "protocol": "sealed once after frozen model; rep-major order; fused_update is held-out target; adamw is known positive control; other modes are matched negatives",
+  "scope_serial": "12789/2929",
+  "scope_channel": "A",
+  "gpu_index": 1,
+  "run_duration_s": 90,
+  "cadence_s": 120,
+  "runs": [
+    {
+      "run_id": "sealed_01_fused_update_r1",
+      "kind": "fused",
+      "mode": "fused_update",
+      "target": 1,
+      "seed": 12100,
+      "duration_s": 90,
+      "start_epoch_s": 0
+    },
+    {
+      "run_id": "sealed_02_forward3_r1",
+      "kind": "fused",
+      "mode": "forward3",
+      "target": 0,
+      "seed": 12101,
+      "duration_s": 90,
+      "start_epoch_s": 120
+    },
+    {
+      "run_id": "sealed_03_adamw_r1",
+      "kind": "fused",
+      "mode": "adamw",
+      "target": 1,
+      "seed": 12102,
+      "duration_s": 90,
+      "start_epoch_s": 240
+    },
+    {
+      "run_id": "sealed_04_dummy_write_r1",
+      "kind": "fused",
+      "mode": "dummy_write",
+      "target": 0,
+      "seed": 12103,
+      "duration_s": 90,
+      "start_epoch_s": 360
+    },
+    {
+      "run_id": "sealed_05_forward_r1",
+      "kind": "fused",
+      "mode": "forward",
+      "target": 0,
+      "seed": 12104,
+      "duration_s": 90,
+      "start_epoch_s": 480
+    },
+    {
+      "run_id": "sealed_06_fused_update_r2",
+      "kind": "fused",
+      "mode": "fused_update",
+      "target": 1,
+      "seed": 12205,
+      "duration_s": 90,
+      "start_epoch_s": 600
+    },
+    {
+      "run_id": "sealed_07_forward3_r2",
+      "kind": "fused",
+      "mode": "forward3",
+      "target": 0,
+      "seed": 12206,
+      "duration_s": 90,
+      "start_epoch_s": 720
+    },
+    {
+      "run_id": "sealed_08_adamw_r2",
+      "kind": "fused",
+      "mode": "adamw",
+      "target": 1,
+      "seed": 12207,
+      "duration_s": 90,
+      "start_epoch_s": 840
+    },
+    {
+      "run_id": "sealed_09_dummy_write_r2",
+      "kind": "fused",
+      "mode": "dummy_write",
+      "target": 0,
+      "seed": 12208,
+      "duration_s": 90,
+      "start_epoch_s": 960
+    },
+    {
+      "run_id": "sealed_10_forward_r2",
+      "kind": "fused",
+      "mode": "forward",
+      "target": 0,
+      "seed": 12209,
+      "duration_s": 90,
+      "start_epoch_s": 1080
+    },
+    {
+      "run_id": "sealed_11_fused_update_r3",
+      "kind": "fused",
+      "mode": "fused_update",
+      "target": 1,
+      "seed": 12310,
+      "duration_s": 90,
+      "start_epoch_s": 1200
+    },
+    {
+      "run_id": "sealed_12_forward3_r3",
+      "kind": "fused",
+      "mode": "forward3",
+      "target": 0,
+      "seed": 12311,
+      "duration_s": 90,
+      "start_epoch_s": 1320
+    },
+    {
+      "run_id": "sealed_13_adamw_r3",
+      "kind": "fused",
+      "mode": "adamw",
+      "target": 1,
+      "seed": 12312,
+      "duration_s": 90,
+      "start_epoch_s": 1440
+    },
+    {
+      "run_id": "sealed_14_dummy_write_r3",
+      "kind": "fused",
+      "mode": "dummy_write",
+      "target": 0,
+      "seed": 12313,
+      "duration_s": 90,
+      "start_epoch_s": 1560
+    },
+    {
+      "run_id": "sealed_15_forward_r3",
+      "kind": "fused",
+      "mode": "forward",
+      "target": 0,
+      "seed": 12314,
+      "duration_s": 90,
+      "start_epoch_s": 1680
+    }
+  ]
+}
+
