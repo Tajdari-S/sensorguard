@@ -1,0 +1,105 @@
+sensor_subset,family,runs,detection_rate
+NVML,adversarial_H_mimicry_cufft,2,0.0
+NVML,adversarial_J_pid_75,2,0.0
+NVML,adversarial_K_online_learning,2,1.0
+NVML,adversarial_L_diluted_10,2,1.0
+NVML,adversarial_L_diluted_5,2,1.0
+NVML,adversarial_composite_50,2,1.0
+NVML,bert_sst2,2,1.0
+NVML,bert_sst2_amp,2,0.0
+NVML,gpt2_wikitext2,2,1.0
+NVML,gpt2_wikitext2_amp,2,1.0
+NVML,pytorch_mlp_cifar10,2,0.0
+NVML,pytorch_resnet_cifar10,2,1.0
+NVML,pytorch_resnet_cifar10_amp,2,1.0
+NVML + GPU current,adversarial_H_mimicry_cufft,2,0.0
+NVML + GPU current,adversarial_J_pid_75,2,1.0
+NVML + GPU current,adversarial_K_online_learning,2,1.0
+NVML + GPU current,adversarial_L_diluted_10,2,1.0
+NVML + GPU current,adversarial_L_diluted_5,2,1.0
+NVML + GPU current,adversarial_composite_50,2,1.0
+NVML + GPU current,bert_sst2,2,1.0
+NVML + GPU current,bert_sst2_amp,2,0.0
+NVML + GPU current,gpt2_wikitext2,2,1.0
+NVML + GPU current,gpt2_wikitext2_amp,2,1.0
+NVML + GPU current,pytorch_mlp_cifar10,2,1.0
+NVML + GPU current,pytorch_resnet_cifar10,2,1.0
+NVML + GPU current,pytorch_resnet_cifar10_amp,2,1.0
+NVML + Motherboard current,adversarial_H_mimicry_cufft,2,0.0
+NVML + Motherboard current,adversarial_J_pid_75,2,0.0
+NVML + Motherboard current,adversarial_K_online_learning,2,1.0
+NVML + Motherboard current,adversarial_L_diluted_10,2,1.0
+NVML + Motherboard current,adversarial_L_diluted_5,2,1.0
+NVML + Motherboard current,adversarial_composite_50,2,1.0
+NVML + Motherboard current,bert_sst2,2,1.0
+NVML + Motherboard current,bert_sst2_amp,2,0.0
+NVML + Motherboard current,gpt2_wikitext2,2,1.0
+NVML + Motherboard current,gpt2_wikitext2_amp,2,1.0
+NVML + Motherboard current,pytorch_mlp_cifar10,2,0.0
+NVML + Motherboard current,pytorch_resnet_cifar10,2,1.0
+NVML + Motherboard current,pytorch_resnet_cifar10_amp,2,1.0
+NVML + Ultrasound,adversarial_H_mimicry_cufft,2,0.0
+NVML + Ultrasound,adversarial_J_pid_75,2,0.0
+NVML + Ultrasound,adversarial_K_online_learning,2,1.0
+NVML + Ultrasound,adversarial_L_diluted_10,2,1.0
+NVML + Ultrasound,adversarial_L_diluted_5,2,1.0
+NVML + Ultrasound,adversarial_composite_50,2,1.0
+NVML + Ultrasound,bert_sst2,2,1.0
+NVML + Ultrasound,bert_sst2_amp,2,0.0
+NVML + Ultrasound,gpt2_wikitext2,2,1.0
+NVML + Ultrasound,gpt2_wikitext2_amp,2,1.0
+NVML + Ultrasound,pytorch_mlp_cifar10,2,0.0
+NVML + Ultrasound,pytorch_resnet_cifar10,2,1.0
+NVML + Ultrasound,pytorch_resnet_cifar10_amp,2,1.0
+NVML + GPU current + Motherboard current,adversarial_H_mimicry_cufft,2,0.0
+NVML + GPU current + Motherboard current,adversarial_J_pid_75,2,1.0
+NVML + GPU current + Motherboard current,adversarial_K_online_learning,2,1.0
+NVML + GPU current + Motherboard current,adversarial_L_diluted_10,2,1.0
+NVML + GPU current + Motherboard current,adversarial_L_diluted_5,2,1.0
+NVML + GPU current + Motherboard current,adversarial_composite_50,2,1.0
+NVML + GPU current + Motherboard current,bert_sst2,2,1.0
+NVML + GPU current + Motherboard current,bert_sst2_amp,2,0.0
+NVML + GPU current + Motherboard current,gpt2_wikitext2,2,1.0
+NVML + GPU current + Motherboard current,gpt2_wikitext2_amp,2,1.0
+NVML + GPU current + Motherboard current,pytorch_mlp_cifar10,2,1.0
+NVML + GPU current + Motherboard current,pytorch_resnet_cifar10,2,1.0
+NVML + GPU current + Motherboard current,pytorch_resnet_cifar10_amp,2,1.0
+NVML + GPU current + Ultrasound,adversarial_H_mimicry_cufft,2,0.0
+NVML + GPU current + Ultrasound,adversarial_J_pid_75,2,1.0
+NVML + GPU current + Ultrasound,adversarial_K_online_learning,2,1.0
+NVML + GPU current + Ultrasound,adversarial_L_diluted_10,2,1.0
+NVML + GPU current + Ultrasound,adversarial_L_diluted_5,2,1.0
+NVML + GPU current + Ultrasound,adversarial_composite_50,2,1.0
+NVML + GPU current + Ultrasound,bert_sst2,2,1.0
+NVML + GPU current + Ultrasound,bert_sst2_amp,2,0.0
+NVML + GPU current + Ultrasound,gpt2_wikitext2,2,1.0
+NVML + GPU current + Ultrasound,gpt2_wikitext2_amp,2,1.0
+NVML + GPU current + Ultrasound,pytorch_mlp_cifar10,2,1.0
+NVML + GPU current + Ultrasound,pytorch_resnet_cifar10,2,1.0
+NVML + GPU current + Ultrasound,pytorch_resnet_cifar10_amp,2,1.0
+NVML + Motherboard current + Ultrasound,adversarial_H_mimicry_cufft,2,0.0
+NVML + Motherboard current + Ultrasound,adversarial_J_pid_75,2,0.0
+NVML + Motherboard current + Ultrasound,adversarial_K_online_learning,2,1.0
+NVML + Motherboard current + Ultrasound,adversarial_L_diluted_10,2,1.0
+NVML + Motherboard current + Ultrasound,adversarial_L_diluted_5,2,1.0
+NVML + Motherboard current + Ultrasound,adversarial_composite_50,2,1.0
+NVML + Motherboard current + Ultrasound,bert_sst2,2,1.0
+NVML + Motherboard current + Ultrasound,bert_sst2_amp,2,0.0
+NVML + Motherboard current + Ultrasound,gpt2_wikitext2,2,1.0
+NVML + Motherboard current + Ultrasound,gpt2_wikitext2_amp,2,1.0
+NVML + Motherboard current + Ultrasound,pytorch_mlp_cifar10,2,0.0
+NVML + Motherboard current + Ultrasound,pytorch_resnet_cifar10,2,1.0
+NVML + Motherboard current + Ultrasound,pytorch_resnet_cifar10_amp,2,1.0
+NVML + GPU current + Motherboard current + Ultrasound,adversarial_H_mimicry_cufft,2,0.0
+NVML + GPU current + Motherboard current + Ultrasound,adversarial_J_pid_75,2,1.0
+NVML + GPU current + Motherboard current + Ultrasound,adversarial_K_online_learning,2,1.0
+NVML + GPU current + Motherboard current + Ultrasound,adversarial_L_diluted_10,2,1.0
+NVML + GPU current + Motherboard current + Ultrasound,adversarial_L_diluted_5,2,1.0
+NVML + GPU current + Motherboard current + Ultrasound,adversarial_composite_50,2,1.0
+NVML + GPU current + Motherboard current + Ultrasound,bert_sst2,2,1.0
+NVML + GPU current + Motherboard current + Ultrasound,bert_sst2_amp,2,0.0
+NVML + GPU current + Motherboard current + Ultrasound,gpt2_wikitext2,2,1.0
+NVML + GPU current + Motherboard current + Ultrasound,gpt2_wikitext2_amp,2,1.0
+NVML + GPU current + Motherboard current + Ultrasound,pytorch_mlp_cifar10,2,1.0
+NVML + GPU current + Motherboard current + Ultrasound,pytorch_resnet_cifar10,2,1.0
+NVML + GPU current + Motherboard current + Ultrasound,pytorch_resnet_cifar10_amp,2,1.0

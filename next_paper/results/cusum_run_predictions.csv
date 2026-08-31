@@ -1,0 +1,151 @@
+modality,run_id,family,target,method,alert,time_to_alert_s,right_censored,censor_time_s,drift,threshold,dataset
+Electrical,phys_23_duty_shaping_r3,duty_shaping,1,fixed_3of5,1,90.0,False,105.0,,,development_rep3_validation
+Electrical,phys_24_fft_r3,fft,0,fixed_3of5,0,,True,105.0,,,development_rep3_validation
+Electrical,phys_22_gemm_r3,gemm,0,fixed_3of5,0,,True,105.0,,,development_rep3_validation
+Electrical,phys_30_idle_r3,idle,0,fixed_3of5,0,,True,105.0,,,development_rep3_validation
+Electrical,phys_28_inference_control_r3,inference_control,0,fixed_3of5,0,,True,105.0,,,development_rep3_validation
+Electrical,phys_25_interleaving_r3,interleaving,1,fixed_3of5,0,,True,105.0,,,development_rep3_validation
+Electrical,phys_26_memcpy_r3,memcpy,0,fixed_3of5,0,,True,105.0,,,development_rep3_validation
+Electrical,phys_27_memory_minimal_r3,memory_minimal,1,fixed_3of5,0,,True,105.0,,,development_rep3_validation
+Electrical,phys_29_migration_r3,migration,1,fixed_3of5,1,90.0,False,105.0,,,development_rep3_validation
+Electrical,phys_21_ordinary_training_r3,ordinary_training,1,fixed_3of5,0,,True,105.0,,,development_rep3_validation
+Electrical,phys_23_duty_shaping_r3,duty_shaping,1,CUSUM,1,45.0,False,105.0,0.8,0.2,development_rep3_validation
+Electrical,phys_24_fft_r3,fft,0,CUSUM,0,,True,105.0,0.8,0.2,development_rep3_validation
+Electrical,phys_22_gemm_r3,gemm,0,CUSUM,1,105.0,False,105.0,0.8,0.2,development_rep3_validation
+Electrical,phys_30_idle_r3,idle,0,CUSUM,0,,True,105.0,0.8,0.2,development_rep3_validation
+Electrical,phys_28_inference_control_r3,inference_control,0,CUSUM,0,,True,105.0,0.8,0.2,development_rep3_validation
+Electrical,phys_25_interleaving_r3,interleaving,1,CUSUM,0,,True,105.0,0.8,0.2,development_rep3_validation
+Electrical,phys_26_memcpy_r3,memcpy,0,CUSUM,0,,True,105.0,0.8,0.2,development_rep3_validation
+Electrical,phys_27_memory_minimal_r3,memory_minimal,1,CUSUM,0,,True,105.0,0.8,0.2,development_rep3_validation
+Electrical,phys_29_migration_r3,migration,1,CUSUM,1,60.0,False,105.0,0.8,0.2,development_rep3_validation
+Electrical,phys_21_ordinary_training_r3,ordinary_training,1,CUSUM,0,,True,105.0,0.8,0.2,development_rep3_validation
+Electrical,sealed_01_fused_update_r1,fused_update,1,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+Electrical,sealed_02_forward3_r1,forward3,0,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+Electrical,sealed_03_adamw_r1,adamw,1,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+Electrical,sealed_04_dummy_write_r1,dummy_write,0,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+Electrical,sealed_05_forward_r1,forward,0,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+Electrical,sealed_06_fused_update_r2,fused_update,1,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+Electrical,sealed_07_forward3_r2,forward3,0,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+Electrical,sealed_08_adamw_r2,adamw,1,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+Electrical,sealed_09_dummy_write_r2,dummy_write,0,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+Electrical,sealed_10_forward_r2,forward,0,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+Electrical,sealed_11_fused_update_r3,fused_update,1,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+Electrical,sealed_12_forward3_r3,forward3,0,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+Electrical,sealed_13_adamw_r3,adamw,1,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+Electrical,sealed_14_dummy_write_r3,dummy_write,0,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+Electrical,sealed_15_forward_r3,forward,0,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+Electrical,sealed_01_fused_update_r1,fused_update,1,CUSUM,0,,True,90.0,0.8,0.2,prior_fused_posthoc
+Electrical,sealed_02_forward3_r1,forward3,0,CUSUM,0,,True,90.0,0.8,0.2,prior_fused_posthoc
+Electrical,sealed_03_adamw_r1,adamw,1,CUSUM,0,,True,90.0,0.8,0.2,prior_fused_posthoc
+Electrical,sealed_04_dummy_write_r1,dummy_write,0,CUSUM,0,,True,90.0,0.8,0.2,prior_fused_posthoc
+Electrical,sealed_05_forward_r1,forward,0,CUSUM,0,,True,90.0,0.8,0.2,prior_fused_posthoc
+Electrical,sealed_06_fused_update_r2,fused_update,1,CUSUM,0,,True,90.0,0.8,0.2,prior_fused_posthoc
+Electrical,sealed_07_forward3_r2,forward3,0,CUSUM,0,,True,90.0,0.8,0.2,prior_fused_posthoc
+Electrical,sealed_08_adamw_r2,adamw,1,CUSUM,0,,True,90.0,0.8,0.2,prior_fused_posthoc
+Electrical,sealed_09_dummy_write_r2,dummy_write,0,CUSUM,0,,True,90.0,0.8,0.2,prior_fused_posthoc
+Electrical,sealed_10_forward_r2,forward,0,CUSUM,0,,True,90.0,0.8,0.2,prior_fused_posthoc
+Electrical,sealed_11_fused_update_r3,fused_update,1,CUSUM,0,,True,90.0,0.8,0.2,prior_fused_posthoc
+Electrical,sealed_12_forward3_r3,forward3,0,CUSUM,0,,True,90.0,0.8,0.2,prior_fused_posthoc
+Electrical,sealed_13_adamw_r3,adamw,1,CUSUM,0,,True,90.0,0.8,0.2,prior_fused_posthoc
+Electrical,sealed_14_dummy_write_r3,dummy_write,0,CUSUM,0,,True,90.0,0.8,0.2,prior_fused_posthoc
+Electrical,sealed_15_forward_r3,forward,0,CUSUM,0,,True,90.0,0.8,0.2,prior_fused_posthoc
+NVML,phys_23_duty_shaping_r3,duty_shaping,1,fixed_3of5,0,,True,105.0,,,development_rep3_validation
+NVML,phys_24_fft_r3,fft,0,fixed_3of5,0,,True,105.0,,,development_rep3_validation
+NVML,phys_22_gemm_r3,gemm,0,fixed_3of5,1,90.0,False,105.0,,,development_rep3_validation
+NVML,phys_30_idle_r3,idle,0,fixed_3of5,0,,True,105.0,,,development_rep3_validation
+NVML,phys_28_inference_control_r3,inference_control,0,fixed_3of5,0,,True,105.0,,,development_rep3_validation
+NVML,phys_25_interleaving_r3,interleaving,1,fixed_3of5,0,,True,105.0,,,development_rep3_validation
+NVML,phys_26_memcpy_r3,memcpy,0,fixed_3of5,0,,True,105.0,,,development_rep3_validation
+NVML,phys_27_memory_minimal_r3,memory_minimal,1,fixed_3of5,0,,True,105.0,,,development_rep3_validation
+NVML,phys_29_migration_r3,migration,1,fixed_3of5,0,,True,105.0,,,development_rep3_validation
+NVML,phys_21_ordinary_training_r3,ordinary_training,1,fixed_3of5,0,,True,105.0,,,development_rep3_validation
+NVML,phys_23_duty_shaping_r3,duty_shaping,1,CUSUM,0,,True,105.0,0.8,5.0,development_rep3_validation
+NVML,phys_24_fft_r3,fft,0,CUSUM,0,,True,105.0,0.8,5.0,development_rep3_validation
+NVML,phys_22_gemm_r3,gemm,0,CUSUM,0,,True,105.0,0.8,5.0,development_rep3_validation
+NVML,phys_30_idle_r3,idle,0,CUSUM,0,,True,105.0,0.8,5.0,development_rep3_validation
+NVML,phys_28_inference_control_r3,inference_control,0,CUSUM,0,,True,105.0,0.8,5.0,development_rep3_validation
+NVML,phys_25_interleaving_r3,interleaving,1,CUSUM,0,,True,105.0,0.8,5.0,development_rep3_validation
+NVML,phys_26_memcpy_r3,memcpy,0,CUSUM,0,,True,105.0,0.8,5.0,development_rep3_validation
+NVML,phys_27_memory_minimal_r3,memory_minimal,1,CUSUM,0,,True,105.0,0.8,5.0,development_rep3_validation
+NVML,phys_29_migration_r3,migration,1,CUSUM,0,,True,105.0,0.8,5.0,development_rep3_validation
+NVML,phys_21_ordinary_training_r3,ordinary_training,1,CUSUM,0,,True,105.0,0.8,5.0,development_rep3_validation
+NVML,sealed_01_fused_update_r1,fused_update,1,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+NVML,sealed_02_forward3_r1,forward3,0,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+NVML,sealed_03_adamw_r1,adamw,1,fixed_3of5,1,90.0,False,90.0,,,prior_fused_posthoc
+NVML,sealed_04_dummy_write_r1,dummy_write,0,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+NVML,sealed_05_forward_r1,forward,0,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+NVML,sealed_06_fused_update_r2,fused_update,1,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+NVML,sealed_07_forward3_r2,forward3,0,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+NVML,sealed_08_adamw_r2,adamw,1,fixed_3of5,1,90.0,False,90.0,,,prior_fused_posthoc
+NVML,sealed_09_dummy_write_r2,dummy_write,0,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+NVML,sealed_10_forward_r2,forward,0,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+NVML,sealed_11_fused_update_r3,fused_update,1,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+NVML,sealed_12_forward3_r3,forward3,0,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+NVML,sealed_13_adamw_r3,adamw,1,fixed_3of5,1,90.0,False,90.0,,,prior_fused_posthoc
+NVML,sealed_14_dummy_write_r3,dummy_write,0,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+NVML,sealed_15_forward_r3,forward,0,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+NVML,sealed_01_fused_update_r1,fused_update,1,CUSUM,0,,True,90.0,0.8,5.0,prior_fused_posthoc
+NVML,sealed_02_forward3_r1,forward3,0,CUSUM,0,,True,90.0,0.8,5.0,prior_fused_posthoc
+NVML,sealed_03_adamw_r1,adamw,1,CUSUM,0,,True,90.0,0.8,5.0,prior_fused_posthoc
+NVML,sealed_04_dummy_write_r1,dummy_write,0,CUSUM,0,,True,90.0,0.8,5.0,prior_fused_posthoc
+NVML,sealed_05_forward_r1,forward,0,CUSUM,0,,True,90.0,0.8,5.0,prior_fused_posthoc
+NVML,sealed_06_fused_update_r2,fused_update,1,CUSUM,0,,True,90.0,0.8,5.0,prior_fused_posthoc
+NVML,sealed_07_forward3_r2,forward3,0,CUSUM,0,,True,90.0,0.8,5.0,prior_fused_posthoc
+NVML,sealed_08_adamw_r2,adamw,1,CUSUM,0,,True,90.0,0.8,5.0,prior_fused_posthoc
+NVML,sealed_09_dummy_write_r2,dummy_write,0,CUSUM,0,,True,90.0,0.8,5.0,prior_fused_posthoc
+NVML,sealed_10_forward_r2,forward,0,CUSUM,0,,True,90.0,0.8,5.0,prior_fused_posthoc
+NVML,sealed_11_fused_update_r3,fused_update,1,CUSUM,0,,True,90.0,0.8,5.0,prior_fused_posthoc
+NVML,sealed_12_forward3_r3,forward3,0,CUSUM,0,,True,90.0,0.8,5.0,prior_fused_posthoc
+NVML,sealed_13_adamw_r3,adamw,1,CUSUM,0,,True,90.0,0.8,5.0,prior_fused_posthoc
+NVML,sealed_14_dummy_write_r3,dummy_write,0,CUSUM,0,,True,90.0,0.8,5.0,prior_fused_posthoc
+NVML,sealed_15_forward_r3,forward,0,CUSUM,0,,True,90.0,0.8,5.0,prior_fused_posthoc
+NVML + electrical,phys_23_duty_shaping_r3,duty_shaping,1,fixed_3of5,1,90.0,False,105.0,,,development_rep3_validation
+NVML + electrical,phys_24_fft_r3,fft,0,fixed_3of5,0,,True,105.0,,,development_rep3_validation
+NVML + electrical,phys_22_gemm_r3,gemm,0,fixed_3of5,0,,True,105.0,,,development_rep3_validation
+NVML + electrical,phys_30_idle_r3,idle,0,fixed_3of5,0,,True,105.0,,,development_rep3_validation
+NVML + electrical,phys_28_inference_control_r3,inference_control,0,fixed_3of5,0,,True,105.0,,,development_rep3_validation
+NVML + electrical,phys_25_interleaving_r3,interleaving,1,fixed_3of5,0,,True,105.0,,,development_rep3_validation
+NVML + electrical,phys_26_memcpy_r3,memcpy,0,fixed_3of5,0,,True,105.0,,,development_rep3_validation
+NVML + electrical,phys_27_memory_minimal_r3,memory_minimal,1,fixed_3of5,0,,True,105.0,,,development_rep3_validation
+NVML + electrical,phys_29_migration_r3,migration,1,fixed_3of5,1,90.0,False,105.0,,,development_rep3_validation
+NVML + electrical,phys_21_ordinary_training_r3,ordinary_training,1,fixed_3of5,0,,True,105.0,,,development_rep3_validation
+NVML + electrical,phys_23_duty_shaping_r3,duty_shaping,1,CUSUM,1,60.0,False,105.0,0.8,0.3,development_rep3_validation
+NVML + electrical,phys_24_fft_r3,fft,0,CUSUM,0,,True,105.0,0.8,0.3,development_rep3_validation
+NVML + electrical,phys_22_gemm_r3,gemm,0,CUSUM,1,105.0,False,105.0,0.8,0.3,development_rep3_validation
+NVML + electrical,phys_30_idle_r3,idle,0,CUSUM,0,,True,105.0,0.8,0.3,development_rep3_validation
+NVML + electrical,phys_28_inference_control_r3,inference_control,0,CUSUM,0,,True,105.0,0.8,0.3,development_rep3_validation
+NVML + electrical,phys_25_interleaving_r3,interleaving,1,CUSUM,0,,True,105.0,0.8,0.3,development_rep3_validation
+NVML + electrical,phys_26_memcpy_r3,memcpy,0,CUSUM,0,,True,105.0,0.8,0.3,development_rep3_validation
+NVML + electrical,phys_27_memory_minimal_r3,memory_minimal,1,CUSUM,0,,True,105.0,0.8,0.3,development_rep3_validation
+NVML + electrical,phys_29_migration_r3,migration,1,CUSUM,1,90.0,False,105.0,0.8,0.3,development_rep3_validation
+NVML + electrical,phys_21_ordinary_training_r3,ordinary_training,1,CUSUM,0,,True,105.0,0.8,0.3,development_rep3_validation
+NVML + electrical,sealed_01_fused_update_r1,fused_update,1,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+NVML + electrical,sealed_02_forward3_r1,forward3,0,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+NVML + electrical,sealed_03_adamw_r1,adamw,1,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+NVML + electrical,sealed_04_dummy_write_r1,dummy_write,0,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+NVML + electrical,sealed_05_forward_r1,forward,0,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+NVML + electrical,sealed_06_fused_update_r2,fused_update,1,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+NVML + electrical,sealed_07_forward3_r2,forward3,0,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+NVML + electrical,sealed_08_adamw_r2,adamw,1,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+NVML + electrical,sealed_09_dummy_write_r2,dummy_write,0,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+NVML + electrical,sealed_10_forward_r2,forward,0,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+NVML + electrical,sealed_11_fused_update_r3,fused_update,1,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+NVML + electrical,sealed_12_forward3_r3,forward3,0,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+NVML + electrical,sealed_13_adamw_r3,adamw,1,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+NVML + electrical,sealed_14_dummy_write_r3,dummy_write,0,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+NVML + electrical,sealed_15_forward_r3,forward,0,fixed_3of5,0,,True,90.0,,,prior_fused_posthoc
+NVML + electrical,sealed_01_fused_update_r1,fused_update,1,CUSUM,0,,True,90.0,0.8,0.3,prior_fused_posthoc
+NVML + electrical,sealed_02_forward3_r1,forward3,0,CUSUM,0,,True,90.0,0.8,0.3,prior_fused_posthoc
+NVML + electrical,sealed_03_adamw_r1,adamw,1,CUSUM,0,,True,90.0,0.8,0.3,prior_fused_posthoc
+NVML + electrical,sealed_04_dummy_write_r1,dummy_write,0,CUSUM,0,,True,90.0,0.8,0.3,prior_fused_posthoc
+NVML + electrical,sealed_05_forward_r1,forward,0,CUSUM,0,,True,90.0,0.8,0.3,prior_fused_posthoc
+NVML + electrical,sealed_06_fused_update_r2,fused_update,1,CUSUM,0,,True,90.0,0.8,0.3,prior_fused_posthoc
+NVML + electrical,sealed_07_forward3_r2,forward3,0,CUSUM,0,,True,90.0,0.8,0.3,prior_fused_posthoc
+NVML + electrical,sealed_08_adamw_r2,adamw,1,CUSUM,0,,True,90.0,0.8,0.3,prior_fused_posthoc
+NVML + electrical,sealed_09_dummy_write_r2,dummy_write,0,CUSUM,0,,True,90.0,0.8,0.3,prior_fused_posthoc
+NVML + electrical,sealed_10_forward_r2,forward,0,CUSUM,0,,True,90.0,0.8,0.3,prior_fused_posthoc
+NVML + electrical,sealed_11_fused_update_r3,fused_update,1,CUSUM,0,,True,90.0,0.8,0.3,prior_fused_posthoc
+NVML + electrical,sealed_12_forward3_r3,forward3,0,CUSUM,0,,True,90.0,0.8,0.3,prior_fused_posthoc
+NVML + electrical,sealed_13_adamw_r3,adamw,1,CUSUM,0,,True,90.0,0.8,0.3,prior_fused_posthoc
+NVML + electrical,sealed_14_dummy_write_r3,dummy_write,0,CUSUM,0,,True,90.0,0.8,0.3,prior_fused_posthoc
+NVML + electrical,sealed_15_forward_r3,forward,0,CUSUM,0,,True,90.0,0.8,0.3,prior_fused_posthoc

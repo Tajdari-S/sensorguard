@@ -33,12 +33,16 @@ def main() -> int:
     fusion = nvml.merge(electrical, on=list(META), validate="one_to_one")
     datasets = {"NVML": nvml, "Electrical": electrical, "NVML + electrical": fusion}
     rows = []
+    window_rows = []
     for modality, data in datasets.items():
         frozen = joblib.load(args.frozen_dir / MODELS[modality])
         model, features = frozen["model"], frozen["features"]
         probabilities = model.predict_proba(data[features].fillna(0))[:, list(model.classes_).index(1)]
         scored = data.copy()
         scored["probability"] = probabilities
+        window_rows.extend(scored[["run_id", "family", "target", "window_index",
+                                   "window_end_s", "probability"]].assign(
+                                       modality=modality).to_dict("records"))
         for run_id, run in scored.groupby("run_id"):
             run = run.sort_values("window_index")
             detected, tta = alert(run["probability"].to_numpy())
@@ -60,6 +64,7 @@ def main() -> int:
     summary = pd.DataFrame(summaries)
     args.output_dir.mkdir(parents=True, exist_ok=True)
     predictions.to_csv(args.output_dir / "sealed_run_predictions.csv", index=False)
+    pd.DataFrame(window_rows).to_csv(args.output_dir / "sealed_window_predictions.csv", index=False)
     summary.to_csv(args.output_dir / "sealed_family_metrics.csv", index=False)
     print(summary.to_string(index=False))
     return 0

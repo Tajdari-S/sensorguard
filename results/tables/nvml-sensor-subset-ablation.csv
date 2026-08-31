@@ -1,0 +1,9 @@
+sensor_subset,added_physical_sensors,feature_count,runs,tp,fn,fp,tn,detection_rate,worst_family_detection_rate,false_alert_rate_per_run,detection_gain_over_nvml_pp,worst_family_gain_over_nvml_pp,detection_gain_ci95_low_pp,detection_gain_ci95_high_pp,retained_over_nvml,incremental_gain_over_nvml_plus_gpu_pp,minimal_selected_subset,rank
+NVML + GPU current,1,193,36,22,4,0,10,0.8461538461538461,0.0,0.0,15.384615384615385,0.0,3.8461538461538463,30.76923076923077,True,0.0,True,1
+NVML + GPU current + Motherboard current,2,206,36,22,4,0,10,0.8461538461538461,0.0,0.0,15.384615384615385,0.0,3.8461538461538463,30.76923076923077,True,0.0,False,2
+NVML + GPU current + Ultrasound,2,249,36,22,4,0,10,0.8461538461538461,0.0,0.0,15.384615384615385,0.0,3.8461538461538463,30.76923076923077,True,0.0,False,3
+NVML + GPU current + Motherboard current + Ultrasound,3,262,36,22,4,0,10,0.8461538461538461,0.0,0.0,15.384615384615385,0.0,3.8461538461538463,30.76923076923077,True,0.0,False,4
+NVML,0,163,36,18,8,0,10,0.6923076923076923,0.0,0.0,0.0,0.0,0.0,0.0,False,,False,5
+NVML + Motherboard current,1,176,36,18,8,0,10,0.6923076923076923,0.0,0.0,0.0,0.0,0.0,0.0,False,,False,6
+NVML + Ultrasound,1,219,36,18,8,0,10,0.6923076923076923,0.0,0.0,0.0,0.0,0.0,0.0,False,,False,7
+NVML + Motherboard current + Ultrasound,2,232,36,18,8,0,10,0.6923076923076923,0.0,0.0,0.0,0.0,0.0,0.0,False,,False,8

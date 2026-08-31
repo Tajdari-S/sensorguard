@@ -1,0 +1,44 @@
+{
+  "rule": "S_t=max(0,S_(t-1)+p_t-drift); alert at first S_t>=threshold",
+  "causal": true,
+  "right_censoring": true,
+  "unit_checks": {
+    "sustained_evidence": true,
+    "reset_after_negative_increment": true,
+    "right_censored": true,
+    "fixed_rule_reference": true
+  },
+  "calibration_partition": "development repetitions 1-2 only",
+  "validation_partition": "development repetition 3",
+  "fixed_rule_false_alert_budget": true,
+  "selected_parameters": {
+    "Electrical": {
+      "modality": "Electrical",
+      "drift": 0.8,
+      "threshold": 0.2,
+      "fp_budget_runs": 0,
+      "calibration_tp": 4,
+      "calibration_fp": 0,
+      "calibration_median_tta_s": 52.5
+    },
+    "NVML": {
+      "modality": "NVML",
+      "drift": 0.8,
+      "threshold": 5.0,
+      "fp_budget_runs": 1,
+      "calibration_tp": 0,
+      "calibration_fp": 0,
+      "calibration_median_tta_s": null
+    },
+    "NVML + electrical": {
+      "modality": "NVML + electrical",
+      "drift": 0.8,
+      "threshold": 0.3,
+      "fp_budget_runs": 0,
+      "calibration_tp": 4,
+      "calibration_fp": 0,
+      "calibration_median_tta_s": 67.5
+    }
+  },
+  "sealed_status": "post-hoc secondary; not a new untouched primary test"
+}

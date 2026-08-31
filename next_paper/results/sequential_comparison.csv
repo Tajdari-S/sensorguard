@@ -1,0 +1,13 @@
+dataset,modality,method,positive_runs,tp,negative_runs,fp,worst_family_detection_rate,median_time_to_alert_s,p95_time_to_alert_s,right_censored_positive_runs
+development_rep3_validation,Electrical,fixed_3of5,5,2,5,0,0.0,90.0,90.0,3
+development_rep3_validation,Electrical,CUSUM,5,2,5,1,0.0,52.5,59.25,3
+prior_fused_posthoc,Electrical,fixed_3of5,6,0,9,0,0.0,,,6
+prior_fused_posthoc,Electrical,CUSUM,6,0,9,0,0.0,,,6
+development_rep3_validation,NVML,fixed_3of5,5,0,5,1,0.0,,,5
+development_rep3_validation,NVML,CUSUM,5,0,5,0,0.0,,,5
+prior_fused_posthoc,NVML,fixed_3of5,6,3,9,0,0.0,90.0,90.0,3
+prior_fused_posthoc,NVML,CUSUM,6,0,9,0,0.0,,,6
+development_rep3_validation,NVML + electrical,fixed_3of5,5,2,5,0,0.0,90.0,90.0,3
+development_rep3_validation,NVML + electrical,CUSUM,5,2,5,1,0.0,75.0,88.5,3
+prior_fused_posthoc,NVML + electrical,fixed_3of5,6,0,9,0,0.0,,,6
+prior_fused_posthoc,NVML + electrical,CUSUM,6,0,9,0,0.0,,,6

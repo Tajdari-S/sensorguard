@@ -1,0 +1,226 @@
+run_id,family,target,window_index,window_end_s,probability,modality
+sealed_01_fused_update_r1,fused_update,1,0,30,0.5613356020814481,NVML
+sealed_01_fused_update_r1,fused_update,1,1,45,0.6253323924642681,NVML
+sealed_01_fused_update_r1,fused_update,1,2,60,0.3819286295605053,NVML
+sealed_01_fused_update_r1,fused_update,1,3,75,0.29284579572767144,NVML
+sealed_01_fused_update_r1,fused_update,1,4,90,0.3173424693971393,NVML
+sealed_02_forward3_r1,forward3,0,0,30,0.4009088192148508,NVML
+sealed_02_forward3_r1,forward3,0,1,45,0.2765069294734467,NVML
+sealed_02_forward3_r1,forward3,0,2,60,0.30837879643498756,NVML
+sealed_02_forward3_r1,forward3,0,3,75,0.2689001473666647,NVML
+sealed_02_forward3_r1,forward3,0,4,90,0.2649793320708493,NVML
+sealed_03_adamw_r1,adamw,1,0,30,0.965,NVML
+sealed_03_adamw_r1,adamw,1,1,45,0.9728333333333333,NVML
+sealed_03_adamw_r1,adamw,1,2,60,0.9833333333333333,NVML
+sealed_03_adamw_r1,adamw,1,3,75,0.9819583333333333,NVML
+sealed_03_adamw_r1,adamw,1,4,90,0.9690000000000001,NVML
+sealed_04_dummy_write_r1,dummy_write,0,0,30,0.5155394064433859,NVML
+sealed_04_dummy_write_r1,dummy_write,0,1,45,0.5054977397767191,NVML
+sealed_04_dummy_write_r1,dummy_write,0,2,60,0.380061155527635,NVML
+sealed_04_dummy_write_r1,dummy_write,0,3,75,0.3950849650514446,NVML
+sealed_04_dummy_write_r1,dummy_write,0,4,90,0.32876262072910023,NVML
+sealed_05_forward_r1,forward,0,0,30,0.24601525004422953,NVML
+sealed_05_forward_r1,forward,0,1,45,0.3685718739758536,NVML
+sealed_05_forward_r1,forward,0,2,60,0.34812655015667077,NVML
+sealed_05_forward_r1,forward,0,3,75,0.42611193976706035,NVML
+sealed_05_forward_r1,forward,0,4,90,0.6545925465258926,NVML
+sealed_06_fused_update_r2,fused_update,1,0,30,0.4318593344765043,NVML
+sealed_06_fused_update_r2,fused_update,1,1,45,0.21502752938007602,NVML
+sealed_06_fused_update_r2,fused_update,1,2,60,0.5258461884154043,NVML
+sealed_06_fused_update_r2,fused_update,1,3,75,0.44938104143707297,NVML
+sealed_06_fused_update_r2,fused_update,1,4,90,0.4575179461989778,NVML
+sealed_07_forward3_r2,forward3,0,0,30,0.13947711625723677,NVML
+sealed_07_forward3_r2,forward3,0,1,45,0.18530029552894545,NVML
+sealed_07_forward3_r2,forward3,0,2,60,0.18525862886227876,NVML
+sealed_07_forward3_r2,forward3,0,3,75,0.16297291457656446,NVML
+sealed_07_forward3_r2,forward3,0,4,90,0.19371497806862792,NVML
+sealed_08_adamw_r2,adamw,1,0,30,0.936875,NVML
+sealed_08_adamw_r2,adamw,1,1,45,0.9929166666666667,NVML
+sealed_08_adamw_r2,adamw,1,2,60,0.9627083333333334,NVML
+sealed_08_adamw_r2,adamw,1,3,75,0.9945833333333334,NVML
+sealed_08_adamw_r2,adamw,1,4,90,0.9929166666666667,NVML
+sealed_09_dummy_write_r2,dummy_write,0,0,30,0.4258185261958494,NVML
+sealed_09_dummy_write_r2,dummy_write,0,1,45,0.5687697842852919,NVML
+sealed_09_dummy_write_r2,dummy_write,0,2,60,0.31388923880420283,NVML
+sealed_09_dummy_write_r2,dummy_write,0,3,75,0.5142635544395477,NVML
+sealed_09_dummy_write_r2,dummy_write,0,4,90,0.5097068794968435,NVML
+sealed_10_forward_r2,forward,0,0,30,0.39784143142367484,NVML
+sealed_10_forward_r2,forward,0,1,45,0.5749720230542664,NVML
+sealed_10_forward_r2,forward,0,2,60,0.6366846472001547,NVML
+sealed_10_forward_r2,forward,0,3,75,0.682154885295393,NVML
+sealed_10_forward_r2,forward,0,4,90,0.5755638830443713,NVML
+sealed_11_fused_update_r3,fused_update,1,0,30,0.38818466743239705,NVML
+sealed_11_fused_update_r3,fused_update,1,1,45,0.4686310960038256,NVML
+sealed_11_fused_update_r3,fused_update,1,2,60,0.42389663683554274,NVML
+sealed_11_fused_update_r3,fused_update,1,3,75,0.3979046568538951,NVML
+sealed_11_fused_update_r3,fused_update,1,4,90,0.20936850095998047,NVML
+sealed_12_forward3_r3,forward3,0,0,30,0.49259381206143243,NVML
+sealed_12_forward3_r3,forward3,0,1,45,0.6179155111956315,NVML
+sealed_12_forward3_r3,forward3,0,2,60,0.7149133331738854,NVML
+sealed_12_forward3_r3,forward3,0,3,75,0.5087784125389647,NVML
+sealed_12_forward3_r3,forward3,0,4,90,0.2668287061995524,NVML
+sealed_13_adamw_r3,adamw,1,0,30,0.9589583333333335,NVML
+sealed_13_adamw_r3,adamw,1,1,45,0.9748333333333333,NVML
+sealed_13_adamw_r3,adamw,1,2,60,0.9958333333333335,NVML
+sealed_13_adamw_r3,adamw,1,3,75,0.964375,NVML
+sealed_13_adamw_r3,adamw,1,4,90,0.9589583333333335,NVML
+sealed_14_dummy_write_r3,dummy_write,0,0,30,0.17245745536257595,NVML
+sealed_14_dummy_write_r3,dummy_write,0,1,45,0.2179483973915614,NVML
+sealed_14_dummy_write_r3,dummy_write,0,2,60,0.2791293157734069,NVML
+sealed_14_dummy_write_r3,dummy_write,0,3,75,0.2880889860051359,NVML
+sealed_14_dummy_write_r3,dummy_write,0,4,90,0.2368471559397764,NVML
+sealed_15_forward_r3,forward,0,0,30,0.44808555887670853,NVML
+sealed_15_forward_r3,forward,0,1,45,0.47318007256194816,NVML
+sealed_15_forward_r3,forward,0,2,60,0.6089284270579876,NVML
+sealed_15_forward_r3,forward,0,3,75,0.41438798448165703,NVML
+sealed_15_forward_r3,forward,0,4,90,0.4464532542484159,NVML
+sealed_01_fused_update_r1,fused_update,1,0,30,0.06829166666666668,Electrical
+sealed_01_fused_update_r1,fused_update,1,1,45,0.08787500000000001,Electrical
+sealed_01_fused_update_r1,fused_update,1,2,60,0.09254166666666666,Electrical
+sealed_01_fused_update_r1,fused_update,1,3,75,0.06954166666666668,Electrical
+sealed_01_fused_update_r1,fused_update,1,4,90,0.07370833333333335,Electrical
+sealed_02_forward3_r1,forward3,0,0,30,0.4369583333333334,Electrical
+sealed_02_forward3_r1,forward3,0,1,45,0.006583333333333333,Electrical
+sealed_02_forward3_r1,forward3,0,2,60,0.006083333333333333,Electrical
+sealed_02_forward3_r1,forward3,0,3,75,0.007958333333333333,Electrical
+sealed_02_forward3_r1,forward3,0,4,90,0.00875,Electrical
+sealed_03_adamw_r1,adamw,1,0,30,0.42391666666666666,Electrical
+sealed_03_adamw_r1,adamw,1,1,45,0.4111666666666667,Electrical
+sealed_03_adamw_r1,adamw,1,2,60,0.4225416666666667,Electrical
+sealed_03_adamw_r1,adamw,1,3,75,0.4225416666666667,Electrical
+sealed_03_adamw_r1,adamw,1,4,90,0.42337500000000006,Electrical
+sealed_04_dummy_write_r1,dummy_write,0,0,30,0.10475000000000001,Electrical
+sealed_04_dummy_write_r1,dummy_write,0,1,45,0.09741666666666669,Electrical
+sealed_04_dummy_write_r1,dummy_write,0,2,60,0.07475000000000001,Electrical
+sealed_04_dummy_write_r1,dummy_write,0,3,75,0.081,Electrical
+sealed_04_dummy_write_r1,dummy_write,0,4,90,0.060375000000000005,Electrical
+sealed_05_forward_r1,forward,0,0,30,0.040874999999999995,Electrical
+sealed_05_forward_r1,forward,0,1,45,0.020666666666666663,Electrical
+sealed_05_forward_r1,forward,0,2,60,0.0215,Electrical
+sealed_05_forward_r1,forward,0,3,75,0.034833333333333334,Electrical
+sealed_05_forward_r1,forward,0,4,90,0.02625,Electrical
+sealed_06_fused_update_r2,fused_update,1,0,30,0.11570833333333334,Electrical
+sealed_06_fused_update_r2,fused_update,1,1,45,0.1403333333333333,Electrical
+sealed_06_fused_update_r2,fused_update,1,2,60,0.12350000000000001,Electrical
+sealed_06_fused_update_r2,fused_update,1,3,75,0.12329166666666667,Electrical
+sealed_06_fused_update_r2,fused_update,1,4,90,0.11474999999999999,Electrical
+sealed_07_forward3_r2,forward3,0,0,30,0.028458333333333332,Electrical
+sealed_07_forward3_r2,forward3,0,1,45,0.01270833333333333,Electrical
+sealed_07_forward3_r2,forward3,0,2,60,0.044375,Electrical
+sealed_07_forward3_r2,forward3,0,3,75,0.06095833333333333,Electrical
+sealed_07_forward3_r2,forward3,0,4,90,0.026666666666666665,Electrical
+sealed_08_adamw_r2,adamw,1,0,30,0.41325,Electrical
+sealed_08_adamw_r2,adamw,1,1,45,0.4028333333333333,Electrical
+sealed_08_adamw_r2,adamw,1,2,60,0.40825,Electrical
+sealed_08_adamw_r2,adamw,1,3,75,0.42554166666666665,Electrical
+sealed_08_adamw_r2,adamw,1,4,90,0.4262916666666667,Electrical
+sealed_09_dummy_write_r2,dummy_write,0,0,30,0.18741666666666668,Electrical
+sealed_09_dummy_write_r2,dummy_write,0,1,45,0.10995833333333335,Electrical
+sealed_09_dummy_write_r2,dummy_write,0,2,60,0.15533333333333332,Electrical
+sealed_09_dummy_write_r2,dummy_write,0,3,75,0.1415833333333333,Electrical
+sealed_09_dummy_write_r2,dummy_write,0,4,90,0.08537500000000002,Electrical
+sealed_10_forward_r2,forward,0,0,30,0.08541666666666665,Electrical
+sealed_10_forward_r2,forward,0,1,45,0.018333333333333333,Electrical
+sealed_10_forward_r2,forward,0,2,60,0.05137499999999999,Electrical
+sealed_10_forward_r2,forward,0,3,75,0.04645833333333333,Electrical
+sealed_10_forward_r2,forward,0,4,90,0.05354166666666667,Electrical
+sealed_11_fused_update_r3,fused_update,1,0,30,0.132875,Electrical
+sealed_11_fused_update_r3,fused_update,1,1,45,0.14679166666666668,Electrical
+sealed_11_fused_update_r3,fused_update,1,2,60,0.14470833333333333,Electrical
+sealed_11_fused_update_r3,fused_update,1,3,75,0.11287500000000003,Electrical
+sealed_11_fused_update_r3,fused_update,1,4,90,0.11016666666666669,Electrical
+sealed_12_forward3_r3,forward3,0,0,30,0.13945833333333332,Electrical
+sealed_12_forward3_r3,forward3,0,1,45,0.019291666666666665,Electrical
+sealed_12_forward3_r3,forward3,0,2,60,0.053875,Electrical
+sealed_12_forward3_r3,forward3,0,3,75,0.05479166666666667,Electrical
+sealed_12_forward3_r3,forward3,0,4,90,0.055,Electrical
+sealed_13_adamw_r3,adamw,1,0,30,0.4107500000000001,Electrical
+sealed_13_adamw_r3,adamw,1,1,45,0.420125,Electrical
+sealed_13_adamw_r3,adamw,1,2,60,0.4084166666666667,Electrical
+sealed_13_adamw_r3,adamw,1,3,75,0.4197083333333334,Electrical
+sealed_13_adamw_r3,adamw,1,4,90,0.4103333333333334,Electrical
+sealed_14_dummy_write_r3,dummy_write,0,0,30,0.1185,Electrical
+sealed_14_dummy_write_r3,dummy_write,0,1,45,0.07600000000000001,Electrical
+sealed_14_dummy_write_r3,dummy_write,0,2,60,0.09158333333333334,Electrical
+sealed_14_dummy_write_r3,dummy_write,0,3,75,0.12825,Electrical
+sealed_14_dummy_write_r3,dummy_write,0,4,90,0.0785,Electrical
+sealed_15_forward_r3,forward,0,0,30,0.02770833333333333,Electrical
+sealed_15_forward_r3,forward,0,1,45,0.016041666666666666,Electrical
+sealed_15_forward_r3,forward,0,2,60,0.021875,Electrical
+sealed_15_forward_r3,forward,0,3,75,0.014791666666666665,Electrical
+sealed_15_forward_r3,forward,0,4,90,0.0029166666666666664,Electrical
+sealed_01_fused_update_r1,fused_update,1,0,30,0.06916666666666667,NVML + electrical
+sealed_01_fused_update_r1,fused_update,1,1,45,0.11145833333333333,NVML + electrical
+sealed_01_fused_update_r1,fused_update,1,2,60,0.10916666666666666,NVML + electrical
+sealed_01_fused_update_r1,fused_update,1,3,75,0.08208333333333334,NVML + electrical
+sealed_01_fused_update_r1,fused_update,1,4,90,0.09895833333333331,NVML + electrical
+sealed_02_forward3_r1,forward3,0,0,30,0.4101666666666667,NVML + electrical
+sealed_02_forward3_r1,forward3,0,1,45,0.013125,NVML + electrical
+sealed_02_forward3_r1,forward3,0,2,60,0.009708333333333333,NVML + electrical
+sealed_02_forward3_r1,forward3,0,3,75,0.00875,NVML + electrical
+sealed_02_forward3_r1,forward3,0,4,90,0.004375,NVML + electrical
+sealed_03_adamw_r1,adamw,1,0,30,0.45143750000000005,NVML + electrical
+sealed_03_adamw_r1,adamw,1,1,45,0.3977708333333333,NVML + electrical
+sealed_03_adamw_r1,adamw,1,2,60,0.4055625,NVML + electrical
+sealed_03_adamw_r1,adamw,1,3,75,0.4020208333333333,NVML + electrical
+sealed_03_adamw_r1,adamw,1,4,90,0.3999375,NVML + electrical
+sealed_04_dummy_write_r1,dummy_write,0,0,30,0.1082708333333333,NVML + electrical
+sealed_04_dummy_write_r1,dummy_write,0,1,45,0.10427083333333333,NVML + electrical
+sealed_04_dummy_write_r1,dummy_write,0,2,60,0.10854166666666666,NVML + electrical
+sealed_04_dummy_write_r1,dummy_write,0,3,75,0.127,NVML + electrical
+sealed_04_dummy_write_r1,dummy_write,0,4,90,0.07283333333333333,NVML + electrical
+sealed_05_forward_r1,forward,0,0,30,0.04999999999999999,NVML + electrical
+sealed_05_forward_r1,forward,0,1,45,0.027041666666666665,NVML + electrical
+sealed_05_forward_r1,forward,0,2,60,0.03870833333333334,NVML + electrical
+sealed_05_forward_r1,forward,0,3,75,0.05499999999999999,NVML + electrical
+sealed_05_forward_r1,forward,0,4,90,0.04645833333333333,NVML + electrical
+sealed_06_fused_update_r2,fused_update,1,0,30,0.08529166666666667,NVML + electrical
+sealed_06_fused_update_r2,fused_update,1,1,45,0.11041666666666665,NVML + electrical
+sealed_06_fused_update_r2,fused_update,1,2,60,0.10145833333333332,NVML + electrical
+sealed_06_fused_update_r2,fused_update,1,3,75,0.139375,NVML + electrical
+sealed_06_fused_update_r2,fused_update,1,4,90,0.1345,NVML + electrical
+sealed_07_forward3_r2,forward3,0,0,30,0.044041666666666666,NVML + electrical
+sealed_07_forward3_r2,forward3,0,1,45,0.004166666666666667,NVML + electrical
+sealed_07_forward3_r2,forward3,0,2,60,0.05395833333333333,NVML + electrical
+sealed_07_forward3_r2,forward3,0,3,75,0.06979166666666667,NVML + electrical
+sealed_07_forward3_r2,forward3,0,4,90,0.028875,NVML + electrical
+sealed_08_adamw_r2,adamw,1,0,30,0.40381249999999985,NVML + electrical
+sealed_08_adamw_r2,adamw,1,1,45,0.3931875,NVML + electrical
+sealed_08_adamw_r2,adamw,1,2,60,0.39618749999999997,NVML + electrical
+sealed_08_adamw_r2,adamw,1,3,75,0.40722916666666664,NVML + electrical
+sealed_08_adamw_r2,adamw,1,4,90,0.4134791666666667,NVML + electrical
+sealed_09_dummy_write_r2,dummy_write,0,0,30,0.21158333333333337,NVML + electrical
+sealed_09_dummy_write_r2,dummy_write,0,1,45,0.14125,NVML + electrical
+sealed_09_dummy_write_r2,dummy_write,0,2,60,0.14854166666666668,NVML + electrical
+sealed_09_dummy_write_r2,dummy_write,0,3,75,0.115625,NVML + electrical
+sealed_09_dummy_write_r2,dummy_write,0,4,90,0.126875,NVML + electrical
+sealed_10_forward_r2,forward,0,0,30,0.09666666666666668,NVML + electrical
+sealed_10_forward_r2,forward,0,1,45,0.013645833333333333,NVML + electrical
+sealed_10_forward_r2,forward,0,2,60,0.03854166666666667,NVML + electrical
+sealed_10_forward_r2,forward,0,3,75,0.05937500000000001,NVML + electrical
+sealed_10_forward_r2,forward,0,4,90,0.08260416666666666,NVML + electrical
+sealed_11_fused_update_r3,fused_update,1,0,30,0.12583333333333332,NVML + electrical
+sealed_11_fused_update_r3,fused_update,1,1,45,0.16770833333333335,NVML + electrical
+sealed_11_fused_update_r3,fused_update,1,2,60,0.129375,NVML + electrical
+sealed_11_fused_update_r3,fused_update,1,3,75,0.12187499999999998,NVML + electrical
+sealed_11_fused_update_r3,fused_update,1,4,90,0.10562499999999998,NVML + electrical
+sealed_12_forward3_r3,forward3,0,0,30,0.19266666666666665,NVML + electrical
+sealed_12_forward3_r3,forward3,0,1,45,0.03145833333333333,NVML + electrical
+sealed_12_forward3_r3,forward3,0,2,60,0.06127083333333333,NVML + electrical
+sealed_12_forward3_r3,forward3,0,3,75,0.05679166666666667,NVML + electrical
+sealed_12_forward3_r3,forward3,0,4,90,0.04895833333333334,NVML + electrical
+sealed_13_adamw_r3,adamw,1,0,30,0.4108958333333333,NVML + electrical
+sealed_13_adamw_r3,adamw,1,1,45,0.41493749999999996,NVML + electrical
+sealed_13_adamw_r3,adamw,1,2,60,0.4063958333333333,NVML + electrical
+sealed_13_adamw_r3,adamw,1,3,75,0.39931249999999996,NVML + electrical
+sealed_13_adamw_r3,adamw,1,4,90,0.39881249999999996,NVML + electrical
+sealed_14_dummy_write_r3,dummy_write,0,0,30,0.11541666666666667,NVML + electrical
+sealed_14_dummy_write_r3,dummy_write,0,1,45,0.08729166666666668,NVML + electrical
+sealed_14_dummy_write_r3,dummy_write,0,2,60,0.09395833333333334,NVML + electrical
+sealed_14_dummy_write_r3,dummy_write,0,3,75,0.12270833333333334,NVML + electrical
+sealed_14_dummy_write_r3,dummy_write,0,4,90,0.10770833333333334,NVML + electrical
+sealed_15_forward_r3,forward,0,0,30,0.03698809523809524,NVML + electrical
+sealed_15_forward_r3,forward,0,1,45,0.018958333333333334,NVML + electrical
+sealed_15_forward_r3,forward,0,2,60,0.024791666666666667,NVML + electrical
+sealed_15_forward_r3,forward,0,3,75,0.02125,NVML + electrical
+sealed_15_forward_r3,forward,0,4,90,0.005833333333333334,NVML + electrical

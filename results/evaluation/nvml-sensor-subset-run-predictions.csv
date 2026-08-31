@@ -1,0 +1,289 @@
+method,run_id,workload_label,target,fold,training_probability,n_windows,correct_windows,prediction,outcome
+NVML,0dac05176434,adversarial_H_mimicry_cufft,1,1,0.5241388888888889,12,5,0,FN
+NVML,0e24a18363e3,adversarial_L_diluted_10,1,4,0.9976041666666667,12,12,1,TP
+NVML,110f9abd97cb,nbody_sim,0,14,0.08441161616161617,11,11,0,TN
+NVML,12218502b878,gpt2_wikitext2_amp,1,11,0.9503680555555555,6,6,1,TP
+NVML,2b26e3764f81,pytorch_resnet_cifar10_amp,1,17,0.9408749999999999,5,5,1,TP
+NVML,341ff17e1e2f,adversarial_composite_50,1,6,0.9921845238095238,7,7,1,TP
+NVML,351fa9211f65,pytorch_resnet_cifar10_amp,1,17,0.9418333333333333,5,5,1,TP
+NVML,3fdd46f7155b,bert_sst2_amp,1,8,0.9927083333333333,2,2,0,FN
+NVML,4773e1a29fb4,nbody_sim,0,14,0.06722519841269842,11,11,0,TN
+NVML,50f59294d415,mining_ethash_proxy,0,13,0.5478652597402597,11,5,0,TN
+NVML,584f59f498e4,cufft_benchmark,0,9,0.3420281385281385,11,11,0,TN
+NVML,5b66597fad00,pytorch_resnet_cifar10,1,16,0.9923009259259259,9,9,1,TP
+NVML,5d8b2cc8d619,bert_sst2_amp,1,8,0.9947916666666667,2,2,0,FN
+NVML,64c674b72b5c,adversarial_L_diluted_10,1,4,0.9940625000000001,12,12,1,TP
+NVML,67207d9b03ee,idle,0,12,0.40566666666666673,7,7,0,TN
+NVML,6ec160e0e8db,pytorch_resnet_cifar10,1,16,0.9852453703703703,9,9,1,TP
+NVML,6fdc09475c9c,gpt2_wikitext2,1,10,0.8164967948717948,13,11,1,TP
+NVML,7a6fc8762870,bert_sst2,1,7,0.9900486111111112,6,6,1,TP
+NVML,80a34acdeb1d,idle,0,12,0.4130714285714286,7,6,0,TN
+NVML,85b4d732488a,adversarial_L_diluted_5,1,5,0.9970486111111111,12,12,1,TP
+NVML,89eb78e296d6,rendering_proxy,0,18,0.11497835497835497,11,11,0,TN
+NVML,977161b694e9,adversarial_L_diluted_5,1,5,0.9970486111111111,12,12,1,TP
+NVML,aaa926354722,gpt2_wikitext2,1,10,0.9089487179487179,13,13,1,TP
+NVML,abaa0766715a,bert_sst2,1,7,0.9884771825396825,6,6,1,TP
+NVML,ac263ea21e2c,adversarial_K_online_learning,1,3,0.9938090277777777,12,12,1,TP
+NVML,ac2b68140ba0,adversarial_composite_50,1,6,0.9825833333333334,7,7,1,TP
+NVML,ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,0.42084375,12,1,0,FN
+NVML,b2a8baa95276,gpt2_wikitext2_amp,1,11,0.9092569444444445,6,6,1,TP
+NVML,c3bab27d8f97,cufft_benchmark,0,9,0.3279734848484849,11,11,0,TN
+NVML,c95103b2e217,mining_ethash_proxy,0,13,0.5621401515151514,11,3,0,TN
+NVML,cff47fb488da,pytorch_mlp_cifar10,1,15,0.7689559523809525,5,5,0,FN
+NVML,d5e571cea1ec,adversarial_K_online_learning,1,3,0.9953263888888889,12,12,1,TP
+NVML,d8ac49f7c850,rendering_proxy,0,18,0.11358116883116884,11,11,0,TN
+NVML,ddc3d611de21,pytorch_mlp_cifar10,1,15,0.784275,5,5,0,FN
+NVML,ed7ab69e9c47,adversarial_J_pid_75,1,2,0.7047388392857145,12,12,0,FN
+NVML,fe2433e75bdc,adversarial_J_pid_75,1,2,0.7709461805555556,12,12,0,FN
+NVML + GPU current,0dac05176434,adversarial_H_mimicry_cufft,1,1,0.7869856150793652,12,12,0,FN
+NVML + GPU current,0e24a18363e3,adversarial_L_diluted_10,1,4,0.9966666666666667,12,12,1,TP
+NVML + GPU current,110f9abd97cb,nbody_sim,0,14,0.03392676767676768,11,11,0,TN
+NVML + GPU current,12218502b878,gpt2_wikitext2_amp,1,11,0.9598263888888888,6,6,1,TP
+NVML + GPU current,2b26e3764f81,pytorch_resnet_cifar10_amp,1,17,0.9744166666666667,5,5,1,TP
+NVML + GPU current,341ff17e1e2f,adversarial_composite_50,1,6,0.9927976190476191,7,7,1,TP
+NVML + GPU current,351fa9211f65,pytorch_resnet_cifar10_amp,1,17,0.9720583333333334,5,5,1,TP
+NVML + GPU current,3fdd46f7155b,bert_sst2_amp,1,8,0.9913541666666668,2,2,0,FN
+NVML + GPU current,4773e1a29fb4,nbody_sim,0,14,0.01660227272727273,11,11,0,TN
+NVML + GPU current,50f59294d415,mining_ethash_proxy,0,13,0.33652218614718615,11,11,0,TN
+NVML + GPU current,584f59f498e4,cufft_benchmark,0,9,0.19643362193362196,11,11,0,TN
+NVML + GPU current,5b66597fad00,pytorch_resnet_cifar10,1,16,0.9938333333333333,9,9,1,TP
+NVML + GPU current,5d8b2cc8d619,bert_sst2_amp,1,8,0.9962500000000001,2,2,0,FN
+NVML + GPU current,64c674b72b5c,adversarial_L_diluted_10,1,4,0.9905347222222223,12,12,1,TP
+NVML + GPU current,67207d9b03ee,idle,0,12,0.23662797619047615,7,7,0,TN
+NVML + GPU current,6ec160e0e8db,pytorch_resnet_cifar10,1,16,0.9872546296296297,9,9,1,TP
+NVML + GPU current,6fdc09475c9c,gpt2_wikitext2,1,10,0.8606030219780219,13,13,1,TP
+NVML + GPU current,7a6fc8762870,bert_sst2,1,7,0.9939513888888888,6,6,1,TP
+NVML + GPU current,80a34acdeb1d,idle,0,12,0.22250297619047618,7,7,0,TN
+NVML + GPU current,85b4d732488a,adversarial_L_diluted_5,1,5,0.9976770833333334,12,12,1,TP
+NVML + GPU current,89eb78e296d6,rendering_proxy,0,18,0.31027651515151516,11,10,0,TN
+NVML + GPU current,977161b694e9,adversarial_L_diluted_5,1,5,0.9984895833333334,12,12,1,TP
+NVML + GPU current,aaa926354722,gpt2_wikitext2,1,10,0.9296794871794872,13,13,1,TP
+NVML + GPU current,abaa0766715a,bert_sst2,1,7,0.9949930555555556,6,6,1,TP
+NVML + GPU current,ac263ea21e2c,adversarial_K_online_learning,1,3,0.9971944444444444,12,12,1,TP
+NVML + GPU current,ac2b68140ba0,adversarial_composite_50,1,6,0.988452380952381,7,7,1,TP
+NVML + GPU current,ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,0.7163000992063493,12,12,0,FN
+NVML + GPU current,b2a8baa95276,gpt2_wikitext2_amp,1,11,0.9275277777777778,6,6,1,TP
+NVML + GPU current,c3bab27d8f97,cufft_benchmark,0,9,0.1829514790764791,11,11,0,TN
+NVML + GPU current,c95103b2e217,mining_ethash_proxy,0,13,0.3424404761904762,11,11,0,TN
+NVML + GPU current,cff47fb488da,pytorch_mlp_cifar10,1,15,0.8536583333333334,5,5,1,TP
+NVML + GPU current,d5e571cea1ec,adversarial_K_online_learning,1,3,0.9979930555555555,12,12,1,TP
+NVML + GPU current,d8ac49f7c850,rendering_proxy,0,18,0.32871022727272725,11,10,0,TN
+NVML + GPU current,ddc3d611de21,pytorch_mlp_cifar10,1,15,0.8719916666666666,5,5,1,TP
+NVML + GPU current,ed7ab69e9c47,adversarial_J_pid_75,1,2,0.8515381944444443,12,12,1,TP
+NVML + GPU current,fe2433e75bdc,adversarial_J_pid_75,1,2,0.883829861111111,12,12,1,TP
+NVML + Motherboard current,0dac05176434,adversarial_H_mimicry_cufft,1,1,0.5777599206349207,12,9,0,FN
+NVML + Motherboard current,0e24a18363e3,adversarial_L_diluted_10,1,4,0.9966145833333333,12,12,1,TP
+NVML + Motherboard current,110f9abd97cb,nbody_sim,0,14,0.08249552341597796,11,11,0,TN
+NVML + Motherboard current,12218502b878,gpt2_wikitext2_amp,1,11,0.9598263888888887,6,6,1,TP
+NVML + Motherboard current,2b26e3764f81,pytorch_resnet_cifar10_amp,1,17,0.919875,5,5,1,TP
+NVML + Motherboard current,341ff17e1e2f,adversarial_composite_50,1,6,0.9928724489795918,7,7,1,TP
+NVML + Motherboard current,351fa9211f65,pytorch_resnet_cifar10_amp,1,17,0.9168749999999999,5,5,1,TP
+NVML + Motherboard current,3fdd46f7155b,bert_sst2_amp,1,8,0.9963541666666667,2,2,0,FN
+NVML + Motherboard current,4773e1a29fb4,nbody_sim,0,14,0.059809917355371896,11,11,0,TN
+NVML + Motherboard current,50f59294d415,mining_ethash_proxy,0,13,0.5700097402597403,11,1,0,TN
+NVML + Motherboard current,584f59f498e4,cufft_benchmark,0,9,0.34363852813852813,11,11,0,TN
+NVML + Motherboard current,5b66597fad00,pytorch_resnet_cifar10,1,16,0.9930753968253969,9,9,1,TP
+NVML + Motherboard current,5d8b2cc8d619,bert_sst2_amp,1,8,0.9969791666666667,2,2,0,FN
+NVML + Motherboard current,64c674b72b5c,adversarial_L_diluted_10,1,4,0.9944861111111111,12,12,1,TP
+NVML + Motherboard current,67207d9b03ee,idle,0,12,0.3771126700680271,7,7,0,TN
+NVML + Motherboard current,6ec160e0e8db,pytorch_resnet_cifar10,1,16,0.9861726190476191,9,9,1,TP
+NVML + Motherboard current,6fdc09475c9c,gpt2_wikitext2,1,10,0.8130302197802197,13,11,1,TP
+NVML + Motherboard current,7a6fc8762870,bert_sst2,1,7,0.9857638888888888,6,6,1,TP
+NVML + Motherboard current,80a34acdeb1d,idle,0,12,0.4358745748299319,7,6,0,TN
+NVML + Motherboard current,85b4d732488a,adversarial_L_diluted_5,1,5,0.9943229166666666,12,12,1,TP
+NVML + Motherboard current,89eb78e296d6,rendering_proxy,0,18,0.10426893939393941,11,11,0,TN
+NVML + Motherboard current,977161b694e9,adversarial_L_diluted_5,1,5,0.9930208333333334,12,12,1,TP
+NVML + Motherboard current,aaa926354722,gpt2_wikitext2,1,10,0.8979871794871794,13,13,1,TP
+NVML + Motherboard current,abaa0766715a,bert_sst2,1,7,0.9874999999999999,6,6,1,TP
+NVML + Motherboard current,ac263ea21e2c,adversarial_K_online_learning,1,3,0.994763888888889,12,12,1,TP
+NVML + Motherboard current,ac2b68140ba0,adversarial_composite_50,1,6,0.9852831632653061,7,7,1,TP
+NVML + Motherboard current,ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,0.4531746031746032,12,1,0,FN
+NVML + Motherboard current,b2a8baa95276,gpt2_wikitext2_amp,1,11,0.9105069444444444,6,6,1,TP
+NVML + Motherboard current,c3bab27d8f97,cufft_benchmark,0,9,0.32668587662337667,11,11,0,TN
+NVML + Motherboard current,c95103b2e217,mining_ethash_proxy,0,13,0.5859377705627705,11,0,0,TN
+NVML + Motherboard current,cff47fb488da,pytorch_mlp_cifar10,1,15,0.7490892857142858,5,5,0,FN
+NVML + Motherboard current,d5e571cea1ec,adversarial_K_online_learning,1,3,0.9976111111111111,12,12,1,TP
+NVML + Motherboard current,d8ac49f7c850,rendering_proxy,0,18,0.109228354978355,11,11,0,TN
+NVML + Motherboard current,ddc3d611de21,pytorch_mlp_cifar10,1,15,0.7637083333333334,5,5,0,FN
+NVML + Motherboard current,ed7ab69e9c47,adversarial_J_pid_75,1,2,0.7167118055555556,12,12,0,FN
+NVML + Motherboard current,fe2433e75bdc,adversarial_J_pid_75,1,2,0.7607326388888889,12,12,0,FN
+NVML + Ultrasound,0dac05176434,adversarial_H_mimicry_cufft,1,1,0.5401478174603175,12,7,0,FN
+NVML + Ultrasound,0e24a18363e3,adversarial_L_diluted_10,1,4,0.997951388888889,12,12,1,TP
+NVML + Ultrasound,110f9abd97cb,nbody_sim,0,14,0.09059523809523809,11,11,0,TN
+NVML + Ultrasound,12218502b878,gpt2_wikitext2_amp,1,11,0.9524513888888889,6,6,1,TP
+NVML + Ultrasound,2b26e3764f81,pytorch_resnet_cifar10_amp,1,17,0.9268333333333334,5,5,1,TP
+NVML + Ultrasound,341ff17e1e2f,adversarial_composite_50,1,6,0.9875510204081632,7,7,1,TP
+NVML + Ultrasound,351fa9211f65,pytorch_resnet_cifar10_amp,1,17,0.9192666666666666,5,5,1,TP
+NVML + Ultrasound,3fdd46f7155b,bert_sst2_amp,1,8,0.9902083333333334,2,2,0,FN
+NVML + Ultrasound,4773e1a29fb4,nbody_sim,0,14,0.06812445887445887,11,11,0,TN
+NVML + Ultrasound,50f59294d415,mining_ethash_proxy,0,13,0.5608514610389611,11,5,0,TN
+NVML + Ultrasound,584f59f498e4,cufft_benchmark,0,9,0.3451396103896104,11,11,0,TN
+NVML + Ultrasound,5b66597fad00,pytorch_resnet_cifar10,1,16,0.9837824074074075,9,9,1,TP
+NVML + Ultrasound,5d8b2cc8d619,bert_sst2_amp,1,8,0.9963541666666667,2,2,0,FN
+NVML + Ultrasound,64c674b72b5c,adversarial_L_diluted_10,1,4,0.995642361111111,12,12,1,TP
+NVML + Ultrasound,67207d9b03ee,idle,0,12,0.433642006802721,7,7,0,TN
+NVML + Ultrasound,6ec160e0e8db,pytorch_resnet_cifar10,1,16,0.9725555555555556,9,9,1,TP
+NVML + Ultrasound,6fdc09475c9c,gpt2_wikitext2,1,10,0.8088461538461538,13,11,1,TP
+NVML + Ultrasound,7a6fc8762870,bert_sst2,1,7,0.9900034722222223,6,6,1,TP
+NVML + Ultrasound,80a34acdeb1d,idle,0,12,0.43343027210884344,7,6,0,TN
+NVML + Ultrasound,85b4d732488a,adversarial_L_diluted_5,1,5,0.9954236111111112,12,12,1,TP
+NVML + Ultrasound,89eb78e296d6,rendering_proxy,0,18,0.12555176767676768,11,11,0,TN
+NVML + Ultrasound,977161b694e9,adversarial_L_diluted_5,1,5,0.9937256944444446,12,12,1,TP
+NVML + Ultrasound,aaa926354722,gpt2_wikitext2,1,10,0.9006442307692308,13,13,1,TP
+NVML + Ultrasound,abaa0766715a,bert_sst2,1,7,0.9916180555555556,6,6,1,TP
+NVML + Ultrasound,ac263ea21e2c,adversarial_K_online_learning,1,3,0.9939722222222223,12,12,1,TP
+NVML + Ultrasound,ac2b68140ba0,adversarial_composite_50,1,6,0.9837797619047619,7,7,1,TP
+NVML + Ultrasound,ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,0.4371466600529101,12,1,0,FN
+NVML + Ultrasound,b2a8baa95276,gpt2_wikitext2_amp,1,11,0.9135555555555556,6,6,1,TP
+NVML + Ultrasound,c3bab27d8f97,cufft_benchmark,0,9,0.34411742424242425,11,10,0,TN
+NVML + Ultrasound,c95103b2e217,mining_ethash_proxy,0,13,0.5827941017316017,11,2,0,TN
+NVML + Ultrasound,cff47fb488da,pytorch_mlp_cifar10,1,15,0.7322571428571428,5,5,0,FN
+NVML + Ultrasound,d5e571cea1ec,adversarial_K_online_learning,1,3,0.9944583333333333,12,12,1,TP
+NVML + Ultrasound,d8ac49f7c850,rendering_proxy,0,18,0.12401551226551227,11,11,0,TN
+NVML + Ultrasound,ddc3d611de21,pytorch_mlp_cifar10,1,15,0.7427178571428572,5,5,0,FN
+NVML + Ultrasound,ed7ab69e9c47,adversarial_J_pid_75,1,2,0.6865729166666665,12,12,0,FN
+NVML + Ultrasound,fe2433e75bdc,adversarial_J_pid_75,1,2,0.7547222222222221,12,12,0,FN
+NVML + GPU current + Motherboard current,0dac05176434,adversarial_H_mimicry_cufft,1,1,0.7838315972222221,12,12,0,FN
+NVML + GPU current + Motherboard current,0e24a18363e3,adversarial_L_diluted_10,1,4,0.9967361111111112,12,12,1,TP
+NVML + GPU current + Motherboard current,110f9abd97cb,nbody_sim,0,14,0.036352272727272726,11,11,0,TN
+NVML + GPU current + Motherboard current,12218502b878,gpt2_wikitext2_amp,1,11,0.9573402777777776,6,6,1,TP
+NVML + GPU current + Motherboard current,2b26e3764f81,pytorch_resnet_cifar10_amp,1,17,0.9789999999999999,5,5,1,TP
+NVML + GPU current + Motherboard current,341ff17e1e2f,adversarial_composite_50,1,6,0.9950892857142858,7,7,1,TP
+NVML + GPU current + Motherboard current,351fa9211f65,pytorch_resnet_cifar10_amp,1,17,0.9765357142857143,5,5,1,TP
+NVML + GPU current + Motherboard current,3fdd46f7155b,bert_sst2_amp,1,8,0.9920833333333334,2,2,0,FN
+NVML + GPU current + Motherboard current,4773e1a29fb4,nbody_sim,0,14,0.018443181818181817,11,11,0,TN
+NVML + GPU current + Motherboard current,50f59294d415,mining_ethash_proxy,0,13,0.28106060606060607,11,11,0,TN
+NVML + GPU current + Motherboard current,584f59f498e4,cufft_benchmark,0,9,0.17366287878787878,11,11,0,TN
+NVML + GPU current + Motherboard current,5b66597fad00,pytorch_resnet_cifar10,1,16,0.9922222222222222,9,9,1,TP
+NVML + GPU current + Motherboard current,5d8b2cc8d619,bert_sst2_amp,1,8,0.9935416666666668,2,2,0,FN
+NVML + GPU current + Motherboard current,64c674b72b5c,adversarial_L_diluted_10,1,4,0.9947395833333333,12,12,1,TP
+NVML + GPU current + Motherboard current,67207d9b03ee,idle,0,12,0.2360297619047619,7,7,0,TN
+NVML + GPU current + Motherboard current,6ec160e0e8db,pytorch_resnet_cifar10,1,16,0.9884768518518519,9,9,1,TP
+NVML + GPU current + Motherboard current,6fdc09475c9c,gpt2_wikitext2,1,10,0.8660576923076924,13,13,1,TP
+NVML + GPU current + Motherboard current,7a6fc8762870,bert_sst2,1,7,0.9905902777777778,6,6,1,TP
+NVML + GPU current + Motherboard current,80a34acdeb1d,idle,0,12,0.22204761904761905,7,7,0,TN
+NVML + GPU current + Motherboard current,85b4d732488a,adversarial_L_diluted_5,1,5,0.9941805555555555,12,12,1,TP
+NVML + GPU current + Motherboard current,89eb78e296d6,rendering_proxy,0,18,0.3143585858585859,11,10,0,TN
+NVML + GPU current + Motherboard current,977161b694e9,adversarial_L_diluted_5,1,5,0.9943194444444444,12,12,1,TP
+NVML + GPU current + Motherboard current,aaa926354722,gpt2_wikitext2,1,10,0.9309294871794873,13,13,1,TP
+NVML + GPU current + Motherboard current,abaa0766715a,bert_sst2,1,7,0.9912152777777777,6,6,1,TP
+NVML + GPU current + Motherboard current,ac263ea21e2c,adversarial_K_online_learning,1,3,0.9969444444444444,12,12,1,TP
+NVML + GPU current + Motherboard current,ac2b68140ba0,adversarial_composite_50,1,6,0.9910416666666667,7,7,1,TP
+NVML + GPU current + Motherboard current,ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,0.7126770833333332,12,12,0,FN
+NVML + GPU current + Motherboard current,b2a8baa95276,gpt2_wikitext2_amp,1,11,0.9310555555555555,6,6,1,TP
+NVML + GPU current + Motherboard current,c3bab27d8f97,cufft_benchmark,0,9,0.1642819264069264,11,11,0,TN
+NVML + GPU current + Motherboard current,c95103b2e217,mining_ethash_proxy,0,13,0.2792045454545455,11,11,0,TN
+NVML + GPU current + Motherboard current,cff47fb488da,pytorch_mlp_cifar10,1,15,0.8609916666666667,5,5,1,TP
+NVML + GPU current + Motherboard current,d5e571cea1ec,adversarial_K_online_learning,1,3,0.9992013888888889,12,12,1,TP
+NVML + GPU current + Motherboard current,d8ac49f7c850,rendering_proxy,0,18,0.3411688311688312,11,8,0,TN
+NVML + GPU current + Motherboard current,ddc3d611de21,pytorch_mlp_cifar10,1,15,0.8714500000000001,5,5,1,TP
+NVML + GPU current + Motherboard current,ed7ab69e9c47,adversarial_J_pid_75,1,2,0.8502063492063493,12,12,1,TP
+NVML + GPU current + Motherboard current,fe2433e75bdc,adversarial_J_pid_75,1,2,0.8799002976190476,12,12,1,TP
+NVML + GPU current + Ultrasound,0dac05176434,adversarial_H_mimicry_cufft,1,1,0.7782633928571429,12,12,0,FN
+NVML + GPU current + Ultrasound,0e24a18363e3,adversarial_L_diluted_10,1,4,0.997013888888889,12,12,1,TP
+NVML + GPU current + Ultrasound,110f9abd97cb,nbody_sim,0,14,0.037659090909090906,11,11,0,TN
+NVML + GPU current + Ultrasound,12218502b878,gpt2_wikitext2_amp,1,11,0.9647569444444444,6,6,1,TP
+NVML + GPU current + Ultrasound,2b26e3764f81,pytorch_resnet_cifar10_amp,1,17,0.96975,5,5,1,TP
+NVML + GPU current + Ultrasound,341ff17e1e2f,adversarial_composite_50,1,6,0.9938214285714286,7,7,1,TP
+NVML + GPU current + Ultrasound,351fa9211f65,pytorch_resnet_cifar10_amp,1,17,0.96875,5,5,1,TP
+NVML + GPU current + Ultrasound,3fdd46f7155b,bert_sst2_amp,1,8,0.9901041666666668,2,2,0,FN
+NVML + GPU current + Ultrasound,4773e1a29fb4,nbody_sim,0,14,0.020880681818181816,11,11,0,TN
+NVML + GPU current + Ultrasound,50f59294d415,mining_ethash_proxy,0,13,0.3175246212121212,11,11,0,TN
+NVML + GPU current + Ultrasound,584f59f498e4,cufft_benchmark,0,9,0.18154220779220778,11,11,0,TN
+NVML + GPU current + Ultrasound,5b66597fad00,pytorch_resnet_cifar10,1,16,0.9912731481481482,9,9,1,TP
+NVML + GPU current + Ultrasound,5d8b2cc8d619,bert_sst2_amp,1,8,0.994375,2,2,0,FN
+NVML + GPU current + Ultrasound,64c674b72b5c,adversarial_L_diluted_10,1,4,0.9946527777777777,12,12,1,TP
+NVML + GPU current + Ultrasound,67207d9b03ee,idle,0,12,0.2550595238095238,7,7,0,TN
+NVML + GPU current + Ultrasound,6ec160e0e8db,pytorch_resnet_cifar10,1,16,0.9827222222222223,9,9,1,TP
+NVML + GPU current + Ultrasound,6fdc09475c9c,gpt2_wikitext2,1,10,0.861330586080586,13,13,1,TP
+NVML + GPU current + Ultrasound,7a6fc8762870,bert_sst2,1,7,0.9975,6,6,1,TP
+NVML + GPU current + Ultrasound,80a34acdeb1d,idle,0,12,0.2401845238095238,7,7,0,TN
+NVML + GPU current + Ultrasound,85b4d732488a,adversarial_L_diluted_5,1,5,0.9967916666666667,12,12,1,TP
+NVML + GPU current + Ultrasound,89eb78e296d6,rendering_proxy,0,18,0.3303939393939394,11,10,0,TN
+NVML + GPU current + Ultrasound,977161b694e9,adversarial_L_diluted_5,1,5,0.9946979166666666,12,12,1,TP
+NVML + GPU current + Ultrasound,aaa926354722,gpt2_wikitext2,1,10,0.9368914835164835,13,13,1,TP
+NVML + GPU current + Ultrasound,abaa0766715a,bert_sst2,1,7,0.9972222222222222,6,6,1,TP
+NVML + GPU current + Ultrasound,ac263ea21e2c,adversarial_K_online_learning,1,3,0.9963784722222222,12,12,1,TP
+NVML + GPU current + Ultrasound,ac2b68140ba0,adversarial_composite_50,1,6,0.9909166666666666,7,7,1,TP
+NVML + GPU current + Ultrasound,ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,0.7147281746031745,12,12,0,FN
+NVML + GPU current + Ultrasound,b2a8baa95276,gpt2_wikitext2_amp,1,11,0.9319097222222222,6,6,1,TP
+NVML + GPU current + Ultrasound,c3bab27d8f97,cufft_benchmark,0,9,0.18096374458874462,11,11,0,TN
+NVML + GPU current + Ultrasound,c95103b2e217,mining_ethash_proxy,0,13,0.3278996212121212,11,11,0,TN
+NVML + GPU current + Ultrasound,cff47fb488da,pytorch_mlp_cifar10,1,15,0.8595749999999999,5,5,1,TP
+NVML + GPU current + Ultrasound,d5e571cea1ec,adversarial_K_online_learning,1,3,0.9978472222222222,12,12,1,TP
+NVML + GPU current + Ultrasound,d8ac49f7c850,rendering_proxy,0,18,0.3624583333333333,11,9,0,TN
+NVML + GPU current + Ultrasound,ddc3d611de21,pytorch_mlp_cifar10,1,15,0.874325,5,5,1,TP
+NVML + GPU current + Ultrasound,ed7ab69e9c47,adversarial_J_pid_75,1,2,0.8368229166666666,12,12,1,TP
+NVML + GPU current + Ultrasound,fe2433e75bdc,adversarial_J_pid_75,1,2,0.8692083333333334,12,12,1,TP
+NVML + Motherboard current + Ultrasound,0dac05176434,adversarial_H_mimicry_cufft,1,1,0.5743819444444445,12,9,0,FN
+NVML + Motherboard current + Ultrasound,0e24a18363e3,adversarial_L_diluted_10,1,4,0.9975520833333333,12,12,1,TP
+NVML + Motherboard current + Ultrasound,110f9abd97cb,nbody_sim,0,14,0.09222772366522364,11,11,0,TN
+NVML + Motherboard current + Ultrasound,12218502b878,gpt2_wikitext2_amp,1,11,0.9452083333333334,6,6,1,TP
+NVML + Motherboard current + Ultrasound,2b26e3764f81,pytorch_resnet_cifar10_amp,1,17,0.9208095238095237,5,5,1,TP
+NVML + Motherboard current + Ultrasound,341ff17e1e2f,adversarial_composite_50,1,6,0.9966666666666667,7,7,1,TP
+NVML + Motherboard current + Ultrasound,351fa9211f65,pytorch_resnet_cifar10_amp,1,17,0.9180416666666666,5,5,1,TP
+NVML + Motherboard current + Ultrasound,3fdd46f7155b,bert_sst2_amp,1,8,0.9975,2,2,0,FN
+NVML + Motherboard current + Ultrasound,4773e1a29fb4,nbody_sim,0,14,0.0725530303030303,11,11,0,TN
+NVML + Motherboard current + Ultrasound,50f59294d415,mining_ethash_proxy,0,13,0.5483200757575758,11,5,0,TN
+NVML + Motherboard current + Ultrasound,584f59f498e4,cufft_benchmark,0,9,0.33544967532467534,11,11,0,TN
+NVML + Motherboard current + Ultrasound,5b66597fad00,pytorch_resnet_cifar10,1,16,0.9869212962962963,9,9,1,TP
+NVML + Motherboard current + Ultrasound,5d8b2cc8d619,bert_sst2_amp,1,8,0.9981249999999999,2,2,0,FN
+NVML + Motherboard current + Ultrasound,64c674b72b5c,adversarial_L_diluted_10,1,4,0.9932638888888888,12,12,1,TP
+NVML + Motherboard current + Ultrasound,67207d9b03ee,idle,0,12,0.40372448979591835,7,7,0,TN
+NVML + Motherboard current + Ultrasound,6ec160e0e8db,pytorch_resnet_cifar10,1,16,0.9789953703703704,9,9,1,TP
+NVML + Motherboard current + Ultrasound,6fdc09475c9c,gpt2_wikitext2,1,10,0.7928296703296703,13,11,1,TP
+NVML + Motherboard current + Ultrasound,7a6fc8762870,bert_sst2,1,7,0.9857876984126984,6,6,1,TP
+NVML + Motherboard current + Ultrasound,80a34acdeb1d,idle,0,12,0.42778273809523804,7,7,0,TN
+NVML + Motherboard current + Ultrasound,85b4d732488a,adversarial_L_diluted_5,1,5,0.9925763888888889,12,12,1,TP
+NVML + Motherboard current + Ultrasound,89eb78e296d6,rendering_proxy,0,18,0.11620481601731604,11,11,0,TN
+NVML + Motherboard current + Ultrasound,977161b694e9,adversarial_L_diluted_5,1,5,0.9925173611111112,12,12,1,TP
+NVML + Motherboard current + Ultrasound,aaa926354722,gpt2_wikitext2,1,10,0.8826675824175824,13,13,1,TP
+NVML + Motherboard current + Ultrasound,abaa0766715a,bert_sst2,1,7,0.9902777777777777,6,6,1,TP
+NVML + Motherboard current + Ultrasound,ac263ea21e2c,adversarial_K_online_learning,1,3,0.9929340277777778,12,12,1,TP
+NVML + Motherboard current + Ultrasound,ac2b68140ba0,adversarial_composite_50,1,6,0.9872083333333334,7,7,1,TP
+NVML + Motherboard current + Ultrasound,ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,0.45307118055555556,12,1,0,FN
+NVML + Motherboard current + Ultrasound,b2a8baa95276,gpt2_wikitext2_amp,1,11,0.8976875,6,6,1,TP
+NVML + Motherboard current + Ultrasound,c3bab27d8f97,cufft_benchmark,0,9,0.32058198051948056,11,11,0,TN
+NVML + Motherboard current + Ultrasound,c95103b2e217,mining_ethash_proxy,0,13,0.5748184523809523,11,2,0,TN
+NVML + Motherboard current + Ultrasound,cff47fb488da,pytorch_mlp_cifar10,1,15,0.7372972222222222,5,5,0,FN
+NVML + Motherboard current + Ultrasound,d5e571cea1ec,adversarial_K_online_learning,1,3,0.9954131944444445,12,12,1,TP
+NVML + Motherboard current + Ultrasound,d8ac49f7c850,rendering_proxy,0,18,0.11607756132756135,11,11,0,TN
+NVML + Motherboard current + Ultrasound,ddc3d611de21,pytorch_mlp_cifar10,1,15,0.7398222222222222,5,5,0,FN
+NVML + Motherboard current + Ultrasound,ed7ab69e9c47,adversarial_J_pid_75,1,2,0.6936840277777776,12,12,0,FN
+NVML + Motherboard current + Ultrasound,fe2433e75bdc,adversarial_J_pid_75,1,2,0.7482395833333332,12,12,0,FN
+NVML + GPU current + Motherboard current + Ultrasound,0dac05176434,adversarial_H_mimicry_cufft,1,1,0.8024444444444444,12,12,0,FN
+NVML + GPU current + Motherboard current + Ultrasound,0e24a18363e3,adversarial_L_diluted_10,1,4,0.9981944444444445,12,12,1,TP
+NVML + GPU current + Motherboard current + Ultrasound,110f9abd97cb,nbody_sim,0,14,0.041578282828282825,11,11,0,TN
+NVML + GPU current + Motherboard current + Ultrasound,12218502b878,gpt2_wikitext2_amp,1,11,0.9569097222222221,6,6,1,TP
+NVML + GPU current + Motherboard current + Ultrasound,2b26e3764f81,pytorch_resnet_cifar10_amp,1,17,0.9846999999999999,5,5,1,TP
+NVML + GPU current + Motherboard current + Ultrasound,341ff17e1e2f,adversarial_composite_50,1,6,0.993452380952381,7,7,1,TP
+NVML + GPU current + Motherboard current + Ultrasound,351fa9211f65,pytorch_resnet_cifar10_amp,1,17,0.9811666666666667,5,5,1,TP
+NVML + GPU current + Motherboard current + Ultrasound,3fdd46f7155b,bert_sst2_amp,1,8,0.9934375,2,2,0,FN
+NVML + GPU current + Motherboard current + Ultrasound,4773e1a29fb4,nbody_sim,0,14,0.022750000000000003,11,11,0,TN
+NVML + GPU current + Motherboard current + Ultrasound,50f59294d415,mining_ethash_proxy,0,13,0.3069204545454545,11,11,0,TN
+NVML + GPU current + Motherboard current + Ultrasound,584f59f498e4,cufft_benchmark,0,9,0.18864015151515154,11,11,0,TN
+NVML + GPU current + Motherboard current + Ultrasound,5b66597fad00,pytorch_resnet_cifar10,1,16,0.991199074074074,9,9,1,TP
+NVML + GPU current + Motherboard current + Ultrasound,5d8b2cc8d619,bert_sst2_amp,1,8,0.9952083333333334,2,2,0,FN
+NVML + GPU current + Motherboard current + Ultrasound,64c674b72b5c,adversarial_L_diluted_10,1,4,0.9943402777777778,12,12,1,TP
+NVML + GPU current + Motherboard current + Ultrasound,67207d9b03ee,idle,0,12,0.26350595238095237,7,7,0,TN
+NVML + GPU current + Motherboard current + Ultrasound,6ec160e0e8db,pytorch_resnet_cifar10,1,16,0.9858009259259259,9,9,1,TP
+NVML + GPU current + Motherboard current + Ultrasound,6fdc09475c9c,gpt2_wikitext2,1,10,0.8451923076923078,13,13,1,TP
+NVML + GPU current + Motherboard current + Ultrasound,7a6fc8762870,bert_sst2,1,7,0.9925,6,6,1,TP
+NVML + GPU current + Motherboard current + Ultrasound,80a34acdeb1d,idle,0,12,0.2449974489795918,7,7,0,TN
+NVML + GPU current + Motherboard current + Ultrasound,85b4d732488a,adversarial_L_diluted_5,1,5,0.9930347222222223,12,12,1,TP
+NVML + GPU current + Motherboard current + Ultrasound,89eb78e296d6,rendering_proxy,0,18,0.3233598484848485,11,10,0,TN
+NVML + GPU current + Motherboard current + Ultrasound,977161b694e9,adversarial_L_diluted_5,1,5,0.9943715277777779,12,12,1,TP
+NVML + GPU current + Motherboard current + Ultrasound,aaa926354722,gpt2_wikitext2,1,10,0.9220160256410257,13,13,1,TP
+NVML + GPU current + Motherboard current + Ultrasound,abaa0766715a,bert_sst2,1,7,0.9927777777777779,6,6,1,TP
+NVML + GPU current + Motherboard current + Ultrasound,ac263ea21e2c,adversarial_K_online_learning,1,3,0.9958680555555556,12,12,1,TP
+NVML + GPU current + Motherboard current + Ultrasound,ac2b68140ba0,adversarial_composite_50,1,6,0.9875416666666668,7,7,1,TP
+NVML + GPU current + Motherboard current + Ultrasound,ad50fa608a8a,adversarial_H_mimicry_cufft,1,1,0.7216180555555556,12,12,0,FN
+NVML + GPU current + Motherboard current + Ultrasound,b2a8baa95276,gpt2_wikitext2_amp,1,11,0.9208680555555556,6,6,1,TP
+NVML + GPU current + Motherboard current + Ultrasound,c3bab27d8f97,cufft_benchmark,0,9,0.18393235930735932,11,11,0,TN
+NVML + GPU current + Motherboard current + Ultrasound,c95103b2e217,mining_ethash_proxy,0,13,0.3105681818181818,11,11,0,TN
+NVML + GPU current + Motherboard current + Ultrasound,cff47fb488da,pytorch_mlp_cifar10,1,15,0.8438166666666668,5,5,1,TP
+NVML + GPU current + Motherboard current + Ultrasound,d5e571cea1ec,adversarial_K_online_learning,1,3,0.9977291666666667,12,12,1,TP
+NVML + GPU current + Motherboard current + Ultrasound,d8ac49f7c850,rendering_proxy,0,18,0.34612012987012986,11,10,0,TN
+NVML + GPU current + Motherboard current + Ultrasound,ddc3d611de21,pytorch_mlp_cifar10,1,15,0.8561499999999999,5,5,1,TP
+NVML + GPU current + Motherboard current + Ultrasound,ed7ab69e9c47,adversarial_J_pid_75,1,2,0.88275,12,12,1,TP
+NVML + GPU current + Motherboard current + Ultrasound,fe2433e75bdc,adversarial_J_pid_75,1,2,0.9083229166666666,12,12,1,TP

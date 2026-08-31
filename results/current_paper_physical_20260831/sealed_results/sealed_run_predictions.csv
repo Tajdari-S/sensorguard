@@ -1,19 +1,19 @@
 modality,run_id,family,target,alert,time_to_alert_s,max_probability,mean_probability
-NVML,sealed_01_fused_update_r1,fused_update,1,0,,0.6253323924642682,0.43575697784620654
-NVML,sealed_02_forward3_r1,forward3,0,0,,0.4009088192148507,0.3039348049121598
+NVML,sealed_01_fused_update_r1,fused_update,1,0,,0.6253323924642681,0.43575697784620643
+NVML,sealed_02_forward3_r1,forward3,0,0,,0.4009088192148508,0.3039348049121598
 NVML,sealed_03_adamw_r1,adamw,1,1,90.0,0.9833333333333333,0.9744250000000001
 NVML,sealed_04_dummy_write_r1,dummy_write,0,0,,0.5155394064433859,0.424989177505657
-NVML,sealed_05_forward_r1,forward,0,0,,0.6545925465258928,0.4086836320939414
+NVML,sealed_05_forward_r1,forward,0,0,,0.6545925465258926,0.4086836320939414
 NVML,sealed_06_fused_update_r2,fused_update,1,0,,0.5258461884154043,0.41592640798160707
 NVML,sealed_07_forward3_r2,forward3,0,0,,0.19371497806862792,0.17334478665873068
-NVML,sealed_08_adamw_r2,adamw,1,1,90.0,0.9945833333333333,0.976
-NVML,sealed_09_dummy_write_r2,dummy_write,0,0,,0.5687697842852918,0.4664895966443471
+NVML,sealed_08_adamw_r2,adamw,1,1,90.0,0.9945833333333334,0.976
+NVML,sealed_09_dummy_write_r2,dummy_write,0,0,,0.5687697842852919,0.4664895966443471
 NVML,sealed_10_forward_r2,forward,0,0,,0.682154885295393,0.573443374003572
 NVML,sealed_11_fused_update_r3,fused_update,1,0,,0.4686310960038256,0.37759711161712817
-NVML,sealed_12_forward3_r3,forward3,0,0,,0.7149133331738855,0.5202059550338933
-NVML,sealed_13_adamw_r3,adamw,1,1,90.0,0.9958333333333332,0.9705916666666667
-NVML,sealed_14_dummy_write_r3,dummy_write,0,0,,0.288088986005136,0.2388942620944913
-NVML,sealed_15_forward_r3,forward,0,0,,0.6089284270579874,0.4782070594453434
+NVML,sealed_12_forward3_r3,forward3,0,0,,0.7149133331738854,0.5202059550338933
+NVML,sealed_13_adamw_r3,adamw,1,1,90.0,0.9958333333333335,0.9705916666666667
+NVML,sealed_14_dummy_write_r3,dummy_write,0,0,,0.2880889860051359,0.2388942620944913
+NVML,sealed_15_forward_r3,forward,0,0,,0.6089284270579876,0.4782070594453435
 Electrical,sealed_01_fused_update_r1,fused_update,1,0,,0.09254166666666666,0.07839166666666668
 Electrical,sealed_02_forward3_r1,forward3,0,0,,0.4369583333333334,0.09326666666666668
 Electrical,sealed_03_adamw_r1,adamw,1,0,,0.42391666666666666,0.42070833333333335
@@ -26,7 +26,7 @@ Electrical,sealed_09_dummy_write_r2,dummy_write,0,0,,0.18741666666666668,0.13593
 Electrical,sealed_10_forward_r2,forward,0,0,,0.08541666666666665,0.05102499999999999
 Electrical,sealed_11_fused_update_r3,fused_update,1,0,,0.14679166666666668,0.12948333333333334
 Electrical,sealed_12_forward3_r3,forward3,0,0,,0.13945833333333332,0.06448333333333334
-Electrical,sealed_13_adamw_r3,adamw,1,0,,0.4201250000000001,0.4138666666666667
+Electrical,sealed_13_adamw_r3,adamw,1,0,,0.420125,0.4138666666666667
 Electrical,sealed_14_dummy_write_r3,dummy_write,0,0,,0.12825,0.09856666666666666
 Electrical,sealed_15_forward_r3,forward,0,0,,0.02770833333333333,0.016666666666666663
 NVML + electrical,sealed_01_fused_update_r1,fused_update,1,0,,0.11145833333333333,0.09416666666666666
@@ -34,7 +34,7 @@ NVML + electrical,sealed_02_forward3_r1,forward3,0,0,,0.4101666666666667,0.08922
 NVML + electrical,sealed_03_adamw_r1,adamw,1,0,,0.45143750000000005,0.4113458333333333
 NVML + electrical,sealed_04_dummy_write_r1,dummy_write,0,0,,0.127,0.10418333333333332
 NVML + electrical,sealed_05_forward_r1,forward,0,0,,0.05499999999999999,0.04344166666666666
-NVML + electrical,sealed_06_fused_update_r2,fused_update,1,0,,0.13937500000000003,0.11420833333333333
+NVML + electrical,sealed_06_fused_update_r2,fused_update,1,0,,0.139375,0.11420833333333333
 NVML + electrical,sealed_07_forward3_r2,forward3,0,0,,0.06979166666666667,0.04016666666666667
 NVML + electrical,sealed_08_adamw_r2,adamw,1,0,,0.4134791666666667,0.40277916666666663
 NVML + electrical,sealed_09_dummy_write_r2,dummy_write,0,0,,0.21158333333333337,0.148775
