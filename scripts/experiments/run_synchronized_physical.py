@@ -63,9 +63,11 @@ def main() -> int:
             write_status(args.out_root / f"status_{args.role}.csv", rows)
             continue
         if args.role == "verifier":
-            wait_until(run["start_epoch_s"] - 5)
+            # Opening/enumerating all six legacy units takes about 13 s on the
+            # verifier.  Start early enough to retain a measured pre-run baseline.
+            wait_until(run["start_epoch_s"] - 25)
             command = [args.scope_python, "scripts/loggers/pico_logger.py",
-                       "--serial", args.scope_serial, "--duration-s", str(run["duration_s"] + 10),
+                       "--serial", args.scope_serial, "--duration-s", str(run["duration_s"] + 25),
                        "--sample-interval-us", "100", "--output-prefix", str(run_dir / "pico")]
             started = time.time()
             code = subprocess.run(command, stdout=(run_dir / "pico.stdout").open("w"),
@@ -74,7 +76,7 @@ def main() -> int:
             wait_until(run["start_epoch_s"] - 18)
             nvml = subprocess.Popen(
                 [args.python, "scripts/loggers/nvml_logger.py", "--gpus", "1", "--interval-s", "1",
-                 "--duration-s", str(run["duration_s"] + 12), "--output", str(run_dir / "nvml.csv")],
+                 "--duration-s", str(run["duration_s"] + 30), "--output", str(run_dir / "nvml.csv")],
                 stdout=(run_dir / "nvml.stdout").open("w"), stderr=(run_dir / "nvml.stderr").open("w"))
             command = node_command(run, args.python, run_dir / "workload.json")
             started = time.time()
