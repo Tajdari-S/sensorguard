@@ -9,13 +9,42 @@ from pathlib import Path
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from analyze_synchronized_physical import build, evaluate  # noqa: E402
+from analyze_synchronized_physical import (  # noqa: E402
+    build,
+    evaluate,
+    physical_seconds,
+    windows,
+)
+
+
+def electrical_from_plan(plan: dict, pico_root: Path, sample_hz: int,
+                         bits: int) -> pd.DataFrame:
+    frames = []
+    for run in plan["runs"]:
+        start = float(run["start_epoch_s"])
+        end = start + float(run["duration_s"])
+        seconds = physical_seconds(
+            pico_root / run["run_id"], start, end, sample_hz, bits
+        )
+        frames.append(windows(
+            seconds,
+            [column for column in seconds.columns if column != "second"],
+            "elec_",
+            run["run_id"],
+            run["mode"],
+            int(run["target"]),
+        ))
+    return pd.concat(frames, ignore_index=True)
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--plan", type=Path, required=True)
-    parser.add_argument("--node-root", type=Path, required=True)
+    parser.add_argument(
+        "--node-root",
+        type=Path,
+        help="optional legacy timing source; omit to use frozen plan times",
+    )
     parser.add_argument("--pico-root", type=Path, required=True)
     parser.add_argument("--baseline-predictions", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
@@ -26,7 +55,14 @@ def main() -> int:
     rows = []
     for sample_hz in (10, 100, 1000, 10000):
         for bits in (8, 12, 16):
-            electrical, _ = build(plan, args.node_root, args.pico_root, sample_hz, bits)
+            if args.node_root:
+                electrical, _ = build(
+                    plan, args.node_root, args.pico_root, sample_hz, bits
+                )
+            else:
+                electrical = electrical_from_plan(
+                    plan, args.pico_root, sample_hz, bits
+                )
             predictions, _ = evaluate(electrical, f"Electrical {sample_hz} Hz/{bits} bit")
             decisions = predictions.set_index("run_id")["alert"].sort_index()
             positives = predictions[predictions.target == 1]
