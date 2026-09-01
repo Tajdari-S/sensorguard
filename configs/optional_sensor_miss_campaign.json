@@ -1,0 +1,42 @@
+{
+  "policy": {
+    "selection": "rerun only attack families missed by frozen NVML+GPU-current, plus matched controls",
+    "repetitions": 3,
+    "one_target_workload_at_a_time": true,
+    "fixed_decision_threshold": 0.85,
+    "fixed_run_rule": "3-of-5 causal windows",
+    "retention_gate": "positive held-family detection gain with no added false-alert run"
+  },
+  "known_miss_block": [
+    {
+      "family": "fused_update",
+      "role": "positive",
+      "matched_controls": ["forward_only", "dummy_write", "inference"],
+      "note": "Current/power-like channels may remain unable to establish semantic weight updates."
+    },
+    {
+      "family": "hard_campaign_false_negatives",
+      "role": "positive",
+      "matched_controls": ["inference", "fft_hpc"],
+      "note": "Populate from frozen hard-family predictions; do not select using optional-sensor labels."
+    }
+  ],
+  "distributed_network_block": {
+    "run_only_if_passive_tap_verified": true,
+    "positive": "two-node DDP training",
+    "controls": ["two-node distributed inference", "matched all-reduce without optimizer update"],
+    "capture": "timestamp, direction, packet length only; no payload"
+  },
+  "physical_health_block": {
+    "visible_light": ["baseline", "lens_obstruction", "camera_disconnect", "camera_reconnect"],
+    "purpose": "sensor-health evaluation only, not workload classification"
+  },
+  "minimum_acquisition": {
+    "ultrasound": ">=384 kS/s, fixed microphone position and gain",
+    "thermal_camera": "25 Hz, 256x192, fixed ROIs, ambient and emissivity recorded",
+    "thermistors": ">=10 Hz at inlet, exhaust and GPU backplate; calibrated 10K 3590B divider",
+    "network_tap": "tap/SPAN interface mapping, CAP_NET_RAW and synchronized header-only capture",
+    "rf_sdr": ">=2.4 MS/s IQ after a frozen spectrum scout; fixed center frequency, gain and antenna",
+    "visible_light": ">=5 Hz, privacy-masked fixed field of view"
+  }
+}

@@ -156,3 +156,23 @@ Until optional sensors are physically attached, the fastest valid strategy is
 parallel **analysis on node2** and **no duplicate collection on node1**. More
 GPU runs alone cannot fix the fused-update failure because the missing
 information is semantic, not statistical power.
+
+## Optional-sensor readiness test (2026-09-01)
+
+The non-invasive readiness probe is
+`scripts/experiments/probe_optional_sensors.py`; the frozen miss-only protocol
+is `configs/optional_sensor_miss_campaign.json`.  On the current machines it
+finds six PicoScopes on the verifier, but no attached UltraMic, thermal/visible
+camera, thermistor interface, or RTL-SDR.  The old SAIGE health endpoint returns
+HTTP 530 and neither remote account has SAIGE credentials.  Node1 has an Intel
+X710 10GBASE-T interface, but this is not proof of a passive tap and the account
+lacks `CAP_NET_RAW`, so packet capture cannot start yet.
+
+Once a modality becomes ready, rerun only frozen NVML+current false-negative
+families (three repetitions) and their matched controls.  The first known block
+is fused update versus forward-only, dummy-write, and inference.  Network is
+tested separately with two-node DDP training versus distributed inference and
+matched all-reduce.  Visible light is evaluated only for obstruction/disconnect
+health checks.  A modality is retained only if it adds at least one held-family
+detection without adding a false-alert run; otherwise it remains excluded from
+the headline system.
