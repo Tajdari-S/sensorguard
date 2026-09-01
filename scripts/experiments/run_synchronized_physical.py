@@ -29,9 +29,8 @@ def node_command(run: dict, python: str, output: Path) -> list[str]:
         return [python, "scripts/workloads/scheduled_control_workload.py", "--mode", run["mode"], *common]
     if run["kind"] == "fused":
         # This branch is used only after a frozen manifest authorizes the sealed family.
-        common_no_output = common[:-2]
         command = [python, "scripts/workloads/fused_update_workload.py", "--mode", run["mode"],
-                   *common_no_output]
+                   *common]
         for plan_key, cli_flag in (
             ("batch_size", "--batch-size"), ("size", "--size"),
             ("depth", "--depth"), ("dtype", "--dtype"),

@@ -21,6 +21,7 @@ import json
 import math
 import os
 import time
+from pathlib import Path
 
 import torch
 from torch import nn
@@ -235,9 +236,13 @@ def main() -> int:
     parser.add_argument("--learning-rate", type=float, default=1e-3)
     parser.add_argument("--dtype", choices=["float32", "float16", "bfloat16"], default="float32")
     parser.add_argument("--seed", type=int, default=0)
+    parser.add_argument("--output", type=Path)
     args = parser.parse_args()
 
     result = run(args)
+    if args.output:
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        args.output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n")
     print("useful_work " + json.dumps(result, sort_keys=True))
     if args.mode in {"fused_update", "adamw"} and not result["meaningful_optimization_progress"]:
         print("ERROR: training mode did not make measurable optimization progress")
