@@ -84,7 +84,8 @@ current provides an independently collected, 10 kS/s view of the same device;
 it is not assumed to reveal the semantics of a memory write.
 
 The following table states what was actually executed rather than treating all
-red-team ideas as equivalent evidence.
+red-team ideas as equivalent evidence. A machine-readable version is in
+[threat-model-test-matrix.csv](tables/threat-model-test-matrix.csv).
 
 | Adversary/test | Knowledge and action | Executed workload and controls | Origin and status |
 | --- | --- | --- | --- |
@@ -213,3 +214,4 @@ evident sensing hardware.
 - [Hardware sensor specification](final_paper_completion/hardware_sensor_spec/)
 - [Fused-update recovery](../next_paper/FUSED_UPDATE_RECOVERY.md)
 - [Rahman/SensorGuard evidence inventory](tables/combined_evidence_inventory.csv)
+- [Threat-model test matrix](tables/threat-model-test-matrix.csv)
