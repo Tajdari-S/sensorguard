@@ -81,6 +81,33 @@ for physical-integrity/tamper monitoring, not workload classification.
   counted. The final frozen detector has not yet been applied to all exposure,
   so a final false-alerts/GPU-hour claim is not released.
 
+## Queued on 2026-09-01
+
+- **Hard-family replay:** 24 synchronized cells are running: seven difficult
+  Rahman attack variants with three repetitions each and three matched
+  white-box inference controls. Node1 records 1 Hz NVML from RTX 3090 GPU1;
+  the verifier records the mapped 10 kS/s GPU-current channel.
+- **Calibrated late fusion:** after collection, node2 fits logistic late fusion
+  with isotonic calibration using development-only out-of-family modality
+  probabilities, then applies the frozen 0.85 threshold and 3-of-5 rule to the
+  new attack families. No new-family label is used for fitting or calibration.
+- **Simulated health, consistency, replay, and spoofing:** queued injections
+  cover modality freeze, dropout, bias/scale, time shift, control replay, and
+  channel swap. These are explicitly probability-trace injections, not claims
+  about physically unplugged or rewired sensors.
+- **Privacy:** queued leave-one-repetition-out classification measures how much
+  application-family identity can be recovered from GPU-current features.
+  Higher accuracy means greater privacy leakage.
+- **Sensor roofline:** `results/tables/sensor-roofline.csv` records sensing
+  bitrate/storage against detection, false alerts, decision retention, and the
+  measured full-rate overhead. It identifies 10 kS/s at 8 bit as the minimum
+  offline-retained point, while retaining the measured 0% worst-family result.
+
+The feature exports run automatically after all 24 node and verifier cells
+pass. Node2 waits for both exports, runs every offline analysis above, and
+publishes compact CSV and Markdown results through the private tailnet transfer
+path. Raw Robi data are neither modified nor transferred.
+
 ## Do not rerun
 
 Do not repeat Rahman's large NVML corpus, the 36-run paired corpus, the 61-run
