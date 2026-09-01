@@ -136,7 +136,8 @@ training interleaved with inference, memory-minimal microbatch training, and
 GPU migration, with matched GEMM, FFT, memcpy, inference, and idle controls.
 Every positive workload records nonzero weight change and loss reduction. We
 also replay seven difficult families from Rahman et al.~\cite{rahman2026hidden}
-using their public implementations: low-utilization training, temporal
+using their public implementations\footnote{\url{https://github.com/robirahman/GPU-monitoring}}:
+low-utilization training, temporal
 disruption, 30\% interleaving, composite dilution, and white-box LoRA dilution
 at three strengths, together with a white-box inference control. These attacks
 are downloaded from the authors' repository, not designed by us. Finally, we

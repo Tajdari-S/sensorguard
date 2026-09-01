@@ -91,14 +91,28 @@ def main() -> int:
     parser.add_argument("--host", default="node2")
     parser.add_argument("--artifact", type=Path, required=True)
     parser.add_argument("--expected-artifact-sha256")
+    parser.add_argument(
+        "--freeze-manifest",
+        type=Path,
+        help="hash source; selects the NVML record from a freeze manifest",
+    )
     parser.add_argument("--output-dir", type=Path, required=True)
     args = parser.parse_args()
 
+    expected_hash = args.expected_artifact_sha256
+    if args.freeze_manifest:
+        manifest = json.loads(args.freeze_manifest.read_text())
+        manifest_hash = next(
+            record["sha256"]
+            for record in manifest["models"]
+            if record["modality"] == "NVML"
+        )
+        if expected_hash and expected_hash != manifest_hash:
+            raise RuntimeError("conflicting expected NVML artifact hashes")
+        expected_hash = manifest_hash
+
     observed_hash = hashlib.sha256(args.artifact.read_bytes()).hexdigest()
-    if (
-        args.expected_artifact_sha256
-        and observed_hash != args.expected_artifact_sha256
-    ):
+    if expected_hash and observed_hash != expected_hash:
         raise RuntimeError(
             "frozen artifact hash does not match the freeze manifest"
         )
