@@ -107,7 +107,8 @@ def nvml_seconds(path: Path, start: float, end: float) -> pd.DataFrame:
 def windows(seconds: pd.DataFrame, columns: list[str], prefix: str,
             run_id: str, family: str, target: int) -> pd.DataFrame:
     rows = []
-    for index, offset in enumerate(range(0, 106 - WINDOW_S, STRIDE_S)):
+    usable_seconds = int(seconds["second"].max()) + 1 if len(seconds) else 0
+    for index, offset in enumerate(range(0, usable_seconds - WINDOW_S + 1, STRIDE_S)):
         chunk = seconds[(seconds["second"] >= offset) & (seconds["second"] < offset + WINDOW_S)]
         if len(chunk) < 20:
             continue

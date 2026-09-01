@@ -38,6 +38,25 @@ def node_command(run: dict, python: str, output: Path) -> list[str]:
             if plan_key in run:
                 command.extend([cli_flag, str(run[plan_key])])
         return command
+    if run["kind"] == "external":
+        command = run.get("command")
+        workdir = run.get("workdir")
+        if not isinstance(command, list) or not command:
+            raise ValueError("external run requires a non-empty command list")
+        if not workdir:
+            raise ValueError("external run requires workdir")
+        return [
+            python,
+            "scripts/workloads/scheduled_external_workload.py",
+            "--start-epoch-s",
+            str(run["start_epoch_s"]),
+            "--workdir",
+            str(workdir),
+            "--output",
+            str(output),
+            "--",
+            *map(str, command),
+        ]
     raise ValueError(run["kind"])
 
 
@@ -99,8 +118,9 @@ def main() -> int:
                                   stderr=(run_dir / "pico.stderr").open("w")).returncode
         else:
             wait_until(run["start_epoch_s"] - 18)
+            gpu_index = str(plan.get("gpu_index", 1))
             nvml = subprocess.Popen(
-                [args.python, "scripts/loggers/nvml_logger.py", "--gpus", "1", "--interval-s", "1",
+                [args.python, "scripts/loggers/nvml_logger.py", "--gpus", gpu_index, "--interval-s", "1",
                  "--duration-s", str(run["duration_s"] + 30), "--output", str(run_dir / "nvml.csv")],
                 stdout=(run_dir / "nvml.stdout").open("w"), stderr=(run_dir / "nvml.stderr").open("w"))
             command = node_command(run, args.python, run_dir / "workload.json")
