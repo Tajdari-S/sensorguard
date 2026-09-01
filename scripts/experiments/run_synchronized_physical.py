@@ -82,18 +82,14 @@ def main() -> int:
 
     plan = json.loads(args.plan.read_text())
     if args.role == "node" and plan.get("expected_cuda_uuid"):
-        device = str(plan["runs"][0].get("cuda_device", "cuda:1"))
-        device_index = int(device.rsplit(":", 1)[-1])
         actual_uuid = subprocess.check_output(
-            [args.python, "-c", (
-                "import torch; print(torch.cuda.get_device_properties("
-                f"{device_index}).uuid)"
-            )],
+            ["nvidia-smi", f"--id={int(plan.get('gpu_index', 1))}",
+             "--query-gpu=uuid", "--format=csv,noheader"],
             text=True,
         ).strip()
         if actual_uuid != plan["expected_cuda_uuid"]:
             raise RuntimeError(
-                f"CUDA mapping mismatch: {device} is {actual_uuid}, expected "
+                f"physical GPU {int(plan.get('gpu_index', 1))} is {actual_uuid}, expected "
                 f"{plan['expected_cuda_uuid']}"
             )
     rows = []

@@ -43,13 +43,16 @@ def main() -> int:
         for label, target, prior_rate, script, extra in TARGETS:
             run_id = f"hard_{cell + 1:02d}_{label}_r{repetition}"
             command = [
+                "env",
+                "CUDA_DEVICE_ORDER=PCI_BUS_ID",
+                f"CUDA_VISIBLE_DEVICES={args.gpu_uuid}",
                 args.python,
                 str(args.source_root / "workloads" / script),
                 *extra,
                 "--duration",
                 str(args.duration_s),
                 "--device",
-                f"cuda:{args.gpu_index}",
+                "cuda:0",
             ]
             runs.append({
                 "run_id": run_id,
@@ -61,7 +64,7 @@ def main() -> int:
                 "duration_s": args.duration_s,
                 "start_epoch_s": start + cell * args.cadence_s,
                 "seed": 7600 + cell,
-                "cuda_device": f"cuda:{args.gpu_index}",
+                "cuda_device": "cuda:0",
                 "workdir": str(args.workdir),
                 "command": command,
             })
