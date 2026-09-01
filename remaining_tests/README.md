@@ -20,66 +20,127 @@ are not part of the headline system unless a new synchronized test shows an
 incremental gain on a family that NVML + GPU current misses. Visible light is
 for physical-integrity/tamper monitoring, not workload classification.
 
-## Results already available
+## Completed results from Robi Rahman
 
-- **Large prior NVML corpus:** Rahman's committed classifier evaluates 1,396
-  eligible runs across nine NVIDIA GPU models and reports 98.21% random-forest
-  accuracy at 30 seconds. The prior paper covers 1,404 collected runs; the
-  difference is collection count versus classifier-eligible count. Its fixed
-  run-level rebuttal result used threshold 0.75, not the current 0.85 threshold,
-  so it is prior context rather than a direct SensorGuard comparison.
-- **Matched 36-run RTX 3090 development comparison:** 26 training and 10
-  non-training runs. NVML detects 18/26, GPU current detects 24/26, and
-  NVML + GPU current detects 22/26; every method has 0/10 false-alert runs.
-  These are exactly matched runs. They are development evidence, not a sealed
-  final-family test.
-- **Sensor subsets on the same 36 runs:** GPU current is the only added sensor
-  that changes decisions. Adding motherboard current or UltraMic to NVML, or
-  adding either after GPU current, changes no run decision. The minimum useful
-  development subset is therefore GPU current; fusion is not automatically
-  better than current alone.
-- **Extended 61-run adaptive stress test:** NVML detects 44/51 training runs
-  with 0/10 false alerts; current alone detects 42/51 with 2/10 false alerts.
-  This harder development result prevents a claim that current always wins.
-- **New independent synchronized corpus:** 30 valid paired runs on node1 RTX
-  3090 GPU1 with PicoScope `12789/2929` channel A at 10 kS/s. NVML detects
-  0/15 training runs and gives 2/15 false-alert runs; current and fusion each
-  detect 6/15 with 0/15 false alerts. Current catches duty shaping and GPU
-  migration but misses ordinary training, interleaving, and memory-minimal
-  training. Worst-family detection is 0% for every method, so worst-family gain
-  is **0 percentage points**.
+These results were already present in Robi's repository or the NeurIPS
+author-response material. We reuse the files without modifying them.
+
+- **Large NVML corpus:** 1,404 runs were collected across nine NVIDIA GPU
+  models and four architecture generations; 1,396 runs are classifier-eligible.
+  A random forest reaches **98.21% accuracy and 98.20% macro-F1** on 30-second
+  windows under run-grouped cross-validation. This is the broad prior NVML
+  result, not a held-family SensorGuard result.
+- **Prior fixed run rule:** on 760 training and 542 non-training runs, 30-second
+  windows, 15-second stride, threshold 0.75, and the 3-of-5 rule alert on
+  **731/760 training runs** and **5/542 non-training runs**. The reported rate
+  is **0.059 false alerts/GPU-hour**; median time to alert is **60 seconds** and
+  the maximum is **225 seconds**. Because our current threshold is 0.85, these
+  values remain a separate prior reference.
+- **Unseen NVML attack families:** exact committed window-detection rates for
+  difficult held families include low-utilization **60.6%**, temporal
+  disruption **67.9%**, 30% training/inference interleaving **64.3%**, one
+  composite attack **50.0%**, and white-box LoRA variants **61.1%**, **66.7%**,
+  and **11.1%**. These results explain why pooled 98.21% accuracy is not a
+  robustness guarantee.
+- **RTX 3090 physical-sensor pilot:** the completed channels are the GPU-current
+  clamp, motherboard-current clamp, and Dodotronic UltraMic. Under five-fold
+  `StratifiedGroupKFold` grouped by run ID, GPU current obtains **99.2%, 100%,
+  and 100% window accuracy** at 15, 30, and 60 seconds. Motherboard current
+  obtains **77.7%, 74.5%, and 66.4%**; UltraMic obtains **47.5%, 60.6%, and
+  55.1%**. GPU plus motherboard current and the full electrical-plus-acoustic
+  group give the same window accuracies as GPU current alone. This small,
+  single-host, run-grouped pilot is proof of signal, not unseen-family evidence.
+- **Physical red-team development:** gradient accumulation, randomized batch
+  timing, and gap-filling ballast were caught without large throughput loss.
+  Continuous co-filling remained caught at about **105x slowdown**; a combined
+  attack barely evaded at **112x slowdown**; dominant ballast dilution evaded
+  at about **50x slowdown**. After the detector was hardened using attack
+  examples, fresh dilution and cuFFT-mimicry variants were caught. These are
+  adaptive development rounds, not a sealed final attack test.
+- **Hardware scope:** Robi's large software-telemetry corpus includes H200 and
+  other GPU models, but the completed physical pilot is RTX 3090. We have no
+  H200 GPU-current SensorGuard result and do not present one.
+
+## Completed results from this SensorGuard work
+
+- **Matched 36-run comparison:** the same 26 training and 10 non-training RTX
+  3090 runs are scored with leave-one-workload-family-out evaluation, threshold
+  0.85, and the 3-of-5 rule. NVML detects **18/26**, GPU current **24/26**, and
+  NVML plus current **22/26**; all three produce **0/10 false-alert runs**. This
+  is development evidence and shows that fusion is not automatically better.
+- **All completed sensor subsets:** we tested the GPU-current clamp,
+  motherboard-current clamp, and UltraMic individually and in physical-only
+  groups, then evaluated all eight NVML-anchored subsets on the same 36 runs.
+  NVML plus GPU current detects **22/26**, compared with **18/26** for NVML, a
+  **15.4-point gain** with paired-bootstrap 95% interval **3.85--30.77 points**.
+  NVML plus motherboard current, NVML plus UltraMic, and NVML plus both make
+  exactly the same decisions as NVML. Every subset containing GPU current makes
+  the same decisions as NVML plus GPU current. Therefore the minimum useful
+  added sensor in this cohort is GPU current.
+- **Extended 61-run adaptive stress test:** NVML detects **44/51** training runs
+  with **0/10** false alerts, while current alone detects **42/51** with **2/10**
+  false alerts. This prevents a claim that current always outperforms NVML.
+- **Two-seen/one-unseen transfer:** models trained with timing shaping,
+  interleaving, or both detect **0/3** disjoint-GPU memory-minimal training runs
+  at threshold 0.85, despite window AUCs of **0.968, 0.992, and 0.986**. There
+  are **0 alerts over 0.843 control GPU-hours**. High AUC therefore does not
+  imply transfer at the fixed run-level operating point.
+- **Independent synchronized 30-run corpus:** all 30 node/verifier pairs are
+  valid on node1 RTX 3090 GPU1 with PicoScope `12789/2929` channel A at 10 kS/s.
+  NVML detects **0/15** training runs with **2/15** false-alert runs; current and
+  NVML-plus-current each detect **6/15** with **0/15** false alerts. Current
+  detects duty shaping and GPU migration but misses ordinary, interleaved, and
+  memory-minimal training. Overall gain is **40 percentage points**, but
+  worst-family detection is 0% for every method, so worst-family gain is
+  **0 percentage points**.
 - **Sealed fused-update test:** three fused-update runs, three AdamW positive
-  controls, and nine matched negatives all completed with valid synchronized
-  traces. Fused update is detected 0/3 by NVML, current, and fusion. NVML detects
-  AdamW 3/3; current and fusion detect it 0/3. Every method gives 0/9 matched
-  false alerts. Fused update is therefore a measured failure, not a missing
-  experiment.
-- **Fused-recovery attempt:** a candidate trained after opening fused examples
-  detected 3/3 new fused variants but also alerted on all 9/9 matched negatives,
-  equal to 48 false alerts/GPU-hour. The candidate is rejected. The held-variant
-  diagnostic also fails to provide a stable fused solution. Aggregate NVML and
-  current do not reveal whether a write updates real model weights or scratch
-  memory; solving this requires a trusted semantic observable, not more blind
-  threshold tuning on the same runs.
-- **CUSUM:** on held development repetition 3, CUSUM produces the same current
-  and fusion detections as the fixed rule, alerts earlier on detected runs, but
-  adds one false alert. It detects 0/3 fused-update runs. CUSUM is useful as a
-  secondary latency comparison but does not solve the fused failure.
-- **Overhead:** on six matched GPT-2, LLaMA, and Qwen configurations, WAVE
-  averages 28.497x runtime and the SensorGuard NVML+DCGM logger averages 1.050x.
-  The separate physical logger test measures -0.045% useful-work penalty, with
-  a 95% confidence interval of -0.353% to 0.262%; no physical-monitor slowdown
-  is resolved at this sample size.
-- **Minimum current specification:** offline replay finds that 10 kS/s at 8 bit
-  preserves all 30 full-rate decisions, while 1 kS/s loses one of six
-  detections. This is an offline result; a small hardware-in-loop confirmation
-  remains.
-- **Application roofline:** five RTX 3090 application cases with three
-  repetitions each show training/inference overlap in arithmetic intensity and
-  throughput. This supports motivation only; roofline is not the detector.
-- **Negative exposure:** 14.454316 committed, auditable GPU-hours are presently
-  counted. The final frozen detector has not yet been applied to all exposure,
-  so a final false-alerts/GPU-hour claim is not released.
+  controls, and nine matched forward/inference/dummy-write controls all have
+  valid synchronized traces. Fused update is detected **0/3** by NVML, current,
+  and fusion. NVML detects AdamW **3/3**; current and fusion detect it **0/3**.
+  Every method produces **0/9** matched-negative alerts. This is a completed
+  negative result, not a missing experiment.
+- **Released paper metrics:** across the 0.6625 matched-negative GPU-hours from
+  the synchronized development and sealed tests, current and fusion produce
+  **0.000 alerts/GPU-hour**, while NVML produces **3.019 alerts/GPU-hour**.
+  Median alert time among the six current-detected development runs is
+  **90 seconds**. Fused-update time to alert is not estimable because no method
+  alerts.
+- **Fused-recovery attempt:** a candidate fitted after opening fused examples
+  detects **3/3** fresh fused variants but also alerts on **9/9** matched
+  negatives, equal to **48 false alerts/GPU-hour**. The candidate is rejected;
+  aggregate current cannot distinguish real weight updates from matched scratch
+  writes.
+- **CUSUM comparison:** on held development repetition 3, current CUSUM detects
+  the same **2/5** positives as 3-of-5 and reduces median alert time from 90 to
+  **52.5 seconds**, but adds one false alert. Fusion CUSUM also detects **2/5**,
+  reduces median latency to **75 seconds**, and adds one false alert. Every CUSUM
+  configuration detects **0/3** fused-update runs, so CUSUM is not selected.
+- **Matched monitor overhead:** on the same six GPT-2, LLaMA, and Qwen
+  configurations, WAVE averages **28.497x runtime**, while the SensorGuard
+  NVML-plus-DCGM base logger averages **1.050x**. In a separate five-repetition
+  test, streaming all six PicoScopes at 10 kS/s gives a mean useful-work penalty
+  of **-0.045%** with 95% CI **-0.353% to 0.262%**, so no slowdown is resolved.
+  Logger CPU use is 14.28% of one core-equivalent and raw output is 863.49 MB per
+  monitored GPU-hour.
+- **Sampling and quantization:** offline replay preserves all full-rate
+  decisions at **10 kS/s and 8 bits**. At 1 kS/s, detection falls from 6/15 to
+  **5/15**; at 100 Hz and 10 Hz it is **0/15**. All current configurations have
+  0/15 false alerts. The 10 kS/s, 8-bit point still needs hardware-in-loop
+  confirmation.
+- **RTX 3090 application roofline:** five cases with three repetitions each
+  cover ResNet-50 training/inference and GPT-2 training/prefill/decode. Training
+  and inference overlap in arithmetic intensity and throughput, demonstrating
+  that roofline is a workload-matching tool rather than a detector.
+- **Negative-exposure accounting:** 14.454316 GPU-hours have valid manifests
+  and checksums, including 11.45 prior hours. The final frozen detector has not
+  yet been applied to all of this exposure, so this is completed exposure
+  accounting but not a released final false-alert rate.
+- **Optional-sensor readiness:** six PicoScopes and the verified GPU1 current
+  map are available. No UltraMic, thermal/visible camera, wired thermistor,
+  or RTL-SDR is currently exposed to our accounts; the old SAIGE endpoint
+  returns HTTP 530. A normal Intel X710 interface exists, but no passive network
+  tap is verified and packet capture lacks `CAP_NET_RAW`. Therefore no result is
+  claimed for thermal, contact-temperature, network, RF, or visible-light data.
 
 ## Queued on 2026-09-01
 
