@@ -16,7 +16,8 @@ def wait_until(epoch_s: float) -> None:
 
 
 def node_command(run: dict, python: str, output: Path) -> list[str]:
-    common = ["--device", "cuda:1", "--duration-s", str(run["duration_s"]),
+    common = ["--device", str(run.get("cuda_device", "cuda:1")),
+              "--duration-s", str(run["duration_s"]),
               "--start-epoch-s", str(run["start_epoch_s"]), "--seed", str(run["seed"]),
               "--output", str(output)]
     if run["kind"] == "development":
@@ -61,6 +62,21 @@ def main() -> int:
     args = parser.parse_args()
 
     plan = json.loads(args.plan.read_text())
+    if args.role == "node" and plan.get("expected_cuda_uuid"):
+        device = str(plan["runs"][0].get("cuda_device", "cuda:1"))
+        device_index = int(device.rsplit(":", 1)[-1])
+        actual_uuid = subprocess.check_output(
+            [args.python, "-c", (
+                "import torch; print(torch.cuda.get_device_properties("
+                f"{device_index}).uuid)"
+            )],
+            text=True,
+        ).strip()
+        if actual_uuid != plan["expected_cuda_uuid"]:
+            raise RuntimeError(
+                f"CUDA mapping mismatch: {device} is {actual_uuid}, expected "
+                f"{plan['expected_cuda_uuid']}"
+            )
     rows = []
     for run in plan["runs"]:
         run_dir = args.out_root / run["run_id"]

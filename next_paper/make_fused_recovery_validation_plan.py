@@ -44,6 +44,7 @@ def main() -> int:
                 "run_id": f"recovery_{cell:02d}_{mode}_{variant['variant']}_r{repetition}",
                 "kind": "fused", "mode": mode, "target": target,
                 "duration_s": args.duration_s,
+                "cuda_device": "cuda:0",
                 "start_epoch_s": start + (cell - 1) * args.cadence_s,
                 **variant,
             }
@@ -58,7 +59,8 @@ def main() -> int:
         "frozen_artifact_sha256":
             "2f922014b1a132b20cf605746584dea074d6a72bcbc91607589bf3389a9db648",
         "scope_serial": "12789/2929", "scope_channel": "A",
-        "gpu_index": 1, "sample_interval_us": 100,
+        "gpu_index": 1, "cuda_device": "cuda:0", "sample_interval_us": 100,
+        "expected_cuda_uuid": "b30ba66a-b9d4-b427-e99a-cdfa7021053e",
         "start_epoch_s": start, "cadence_s": args.cadence_s,
         "runs": runs,
     }
