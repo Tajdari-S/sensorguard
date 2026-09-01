@@ -1,0 +1,15 @@
+host,sensor,hardware_present,software_ready,mapping_verified,result,blocking_requirement
+node1,gpu_current,false,false,false,not locally attached,current acquisition is on verifier
+node1,ultrasound,false,false,false,not ready,"attach UltraMic; fix placement; acquire at >=384 kS/s; calibrate channel"
+node1,thermal_camera,false,false,false,not ready,"attach TOPDON; fix GPU/exhaust ROIs; record emissivity and ambient; acquire at 25 Hz"
+node1,thermistors,false,false,false,not ready,"wire calibrated 10K 3590B probes at inlet, exhaust, and backplate; acquire at >=10 Hz"
+node1,network_tap,false,false,false,not ready,"identify and verify TAP/SPAN-facing interface; grant CAP_NET_RAW; approve header-only capture"
+node1,rf_sdr,false,false,false,not ready,"attach Nooelec SDR; fix antenna; freeze center frequency and gain after spectrum scout"
+node1,visible_light,false,false,false,not ready,"attach camera; fix privacy-masked field of view; acquire at >=5 Hz"
+verifier,gpu_current,true,true,true,ready,validated map is PicoScope 12789/2929 channel A to node1 GPU1
+verifier,ultrasound,false,false,false,not ready,"attach UltraMic or restore authenticated SAIGE feed; current unauthenticated endpoint returns HTTP 530"
+verifier,thermal_camera,false,false,false,not ready,"attach TOPDON; fix GPU/exhaust ROIs; record emissivity and ambient; acquire at 25 Hz"
+verifier,thermistors,false,true,false,acquisition backend only,"wire calibrated 10K 3590B probes and record channel-to-location map; six PicoScopes are present"
+verifier,network_tap,false,false,false,not ready,"identify and verify TAP/SPAN-facing interface; grant CAP_NET_RAW; approve header-only capture"
+verifier,rf_sdr,false,false,false,not ready,"attach Nooelec SDR; install rtl-sdr tools; fix antenna and acquisition settings"
+verifier,visible_light,false,false,false,not ready,"attach camera; fix privacy-masked field of view; acquire at >=5 Hz"
