@@ -19,6 +19,7 @@ TinyLlama implementation and its prior measurements remain separate evidence.
 import argparse
 import json
 import math
+import os
 import time
 
 import torch
@@ -196,6 +197,7 @@ def run(args) -> dict:
     return {
         "mode": args.mode,
         "device": str(device),
+        "cuda_visible_devices": os.environ.get("CUDA_VISIBLE_DEVICES"),
         "dtype": args.dtype,
         "batch_size": args.batch_size,
         "matrix_size": args.size,

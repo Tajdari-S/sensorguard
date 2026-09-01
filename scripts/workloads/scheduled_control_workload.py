@@ -3,6 +3,7 @@
 
 import argparse
 import json
+import os
 import time
 from pathlib import Path
 
@@ -55,6 +56,7 @@ def main() -> int:
         "mode": args.mode,
         "target": 0,
         "device": str(device),
+        "cuda_visible_devices": os.environ.get("CUDA_VISIBLE_DEVICES"),
         "seed": args.seed,
         "iterations": iterations,
         "scheduled_start_epoch_s": args.start_epoch_s,

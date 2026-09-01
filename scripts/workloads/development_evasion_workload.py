@@ -9,6 +9,7 @@ for detector development only; they do not open the sealed fused-update family.
 import argparse
 import json
 import math
+import os
 import time
 from pathlib import Path
 
@@ -199,6 +200,7 @@ def run(args) -> dict:
     result = {
         "mode": args.mode,
         "devices": [str(device) for device in devices],
+        "cuda_visible_devices": os.environ.get("CUDA_VISIBLE_DEVICES"),
         "batch_size": args.batch_size,
         "microbatch_size": args.microbatch_size if args.mode == "memory_minimal" else None,
         "matrix_size": args.size,
