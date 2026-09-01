@@ -7,3 +7,4 @@ N05,P1,Complete WAVE fidelity table,pending,,next_paper/results/wave_fidelity_su
 N06,P1,Cross-host and cross-architecture confirmation,pending,,next_paper/results/platform_transfer.csv,Held-out hardware groups remain untouched during selection,
 N07,P2,Optional physical modality gate,completed_development_only,,next_paper/results/optional_sensor_gate.csv,GPU current retained; motherboard current and ultrasound add no conditional run decisions on paired 36-run development corpus,
 N08,P1,H200-to-RTX normalized application roofline,pending_h200_access,,next_paper/results/cross_gpu_roofline_link.csv,Identical workloads run on both architectures with measured per-platform ceilings,
+N09,P0,Add trusted fused-update semantic observable,pending_design_choice,,next_paper/results/fused_semantic_validation.csv,Freeze randomized weight-integrity or protected write-address telemetry then detect a new fused implementation with zero matched dummy-write alerts,

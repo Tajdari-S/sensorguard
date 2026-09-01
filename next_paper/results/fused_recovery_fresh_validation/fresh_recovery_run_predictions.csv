@@ -1,0 +1,16 @@
+protocol,modality,model,split,run_id,family,target,alert,time_to_alert_s,max_probability,mean_probability,fit_runs,threshold,rule_windows,rule_hits,variant
+fresh_recovery_validation,Electrical,extra_trees,fresh_validation,recovery_01_fused_update_smaller_deeper_r1,fused_update,1,1,60.0,0.9335782976180311,0.9297789763510627,45,0.25,3,3,smaller_deeper
+fresh_recovery_validation,Electrical,extra_trees,fresh_validation,recovery_02_forward3_smaller_deeper_r1,forward3,0,1,60.0,0.8447524886877829,0.8228583710407239,45,0.25,3,3,smaller_deeper
+fresh_recovery_validation,Electrical,extra_trees,fresh_validation,recovery_03_adamw_smaller_deeper_r1,adamw,1,1,60.0,0.9813701357466061,0.978126357466063,45,0.25,3,3,smaller_deeper
+fresh_recovery_validation,Electrical,extra_trees,fresh_validation,recovery_04_dummy_write_smaller_deeper_r1,dummy_write,0,1,60.0,0.8452628959276016,0.8323029411764706,45,0.25,3,3,smaller_deeper
+fresh_recovery_validation,Electrical,extra_trees,fresh_validation,recovery_05_forward_smaller_deeper_r1,forward,0,1,60.0,0.7842497737556562,0.7736449095022626,45,0.25,3,3,smaller_deeper
+fresh_recovery_validation,Electrical,extra_trees,fresh_validation,recovery_06_fused_update_baseline_shape_new_seed_r2,fused_update,1,1,60.0,0.662497737556561,0.6597488687782805,45,0.25,3,3,baseline_shape_new_seed
+fresh_recovery_validation,Electrical,extra_trees,fresh_validation,recovery_07_forward3_baseline_shape_new_seed_r2,forward3,0,1,60.0,0.8756135746606333,0.8395968435264923,45,0.25,3,3,baseline_shape_new_seed
+fresh_recovery_validation,Electrical,extra_trees,fresh_validation,recovery_08_adamw_baseline_shape_new_seed_r2,adamw,1,1,60.0,0.9763701357466061,0.9763701357466061,45,0.25,3,3,baseline_shape_new_seed
+fresh_recovery_validation,Electrical,extra_trees,fresh_validation,recovery_09_dummy_write_baseline_shape_new_seed_r2,dummy_write,0,1,60.0,0.6595389140271493,0.6582197963800904,45,0.25,3,3,baseline_shape_new_seed
+fresh_recovery_validation,Electrical,extra_trees,fresh_validation,recovery_10_forward_baseline_shape_new_seed_r2,forward,0,1,60.0,0.8751371040723979,0.8426188914027146,45,0.25,3,3,baseline_shape_new_seed
+fresh_recovery_validation,Electrical,extra_trees,fresh_validation,recovery_11_fused_update_wider_shallower_r3,fused_update,1,1,60.0,0.65280814479638,0.6444440045248868,45,0.25,3,3,wider_shallower
+fresh_recovery_validation,Electrical,extra_trees,fresh_validation,recovery_12_forward3_wider_shallower_r3,forward3,0,1,60.0,0.8532584356819648,0.838280365223012,45,0.25,3,3,wider_shallower
+fresh_recovery_validation,Electrical,extra_trees,fresh_validation,recovery_13_adamw_wider_shallower_r3,adamw,1,1,60.0,0.9788701357466061,0.9782451357466061,45,0.25,3,3,wider_shallower
+fresh_recovery_validation,Electrical,extra_trees,fresh_validation,recovery_14_dummy_write_wider_shallower_r3,dummy_write,0,1,60.0,0.6386226244343891,0.625624886877828,45,0.25,3,3,wider_shallower
+fresh_recovery_validation,Electrical,extra_trees,fresh_validation,recovery_15_forward_wider_shallower_r3,forward,0,1,60.0,0.8749276664511956,0.8710391725921135,45,0.25,3,3,wider_shallower

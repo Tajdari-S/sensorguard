@@ -37,11 +37,39 @@ write.
 
 These are post-sealed development results, not a new sealed claim.
 
-## Required validation
+## Fresh frozen validation result
 
-Evaluate the frozen artifact once on three fresh fused-update configurations
-and their matched forward, three-forward, dummy-write, and AdamW controls. Do
-not change the model, features, threshold, or run rule after opening those
-runs. If all three fresh fused configurations are detected with zero matched
-control alerts, report this as a corrective within-family validation. A new
-unseen attack family is still required for a new zero-shot sealed-family claim.
+The artifact above was committed before collection and evaluated once on three
+fresh configurations: smaller/deeper, the original shape with a new seed, and
+wider/shallower. Each configuration included fused update, forward3, AdamW,
+dummy write, and forward. All 15 node runs and all 15 paired PicoScope captures
+returned code 0. Every trace contains 999,156 samples from serial `12789/2929`,
+with zero overflow and zero clipping. All six learning runs made meaningful
+optimization progress.
+
+The frozen detector alerted on 3/3 fused-update and 3/3 AdamW runs, but also on
+9/9 matched controls. This is 48 false alerts per GPU-hour over 0.1875 negative
+GPU-hours, so the recovery candidate is rejected. Attempts 1--4 were never
+scored: they exposed pre-measurement setup, CUDA-to-physical-GPU mapping, and
+scope-cadence errors. Attempt 5 is the only valid fresh validation corpus.
+
+A held-configuration diagnostic also failed. Training on the first two fresh
+configurations did not detect the third fused variant with random forest or
+Extra Trees; logistic regression instead alerted on its matched controls.
+CUSUM cannot repair probabilities with this ordering.
+
+## What is required to solve this family
+
+Aggregate current and NVML observe the amount and timing of work, not whether a
+matrix result is written to a parameter or a scratch buffer. The fused-update
+attack and dummy-write control intentionally make those observable operations
+nearly identical. Therefore no new RF threshold, sensor subset, or sequential
+rule on the present signals is supported as a solution.
+
+A defensible fused-update detector requires one additional trusted semantic
+observable, such as secret randomized parameter-block hashing, a trusted model
+weight-integrity sentinel, or protected write-address telemetry from the GPU
+driver/hypervisor. Freeze that mechanism and its alert rule, then collect a new
+unseen fused implementation plus matched dummy-write controls. Without that
+additional trust or telemetry, report fused update as an observability limit;
+do not claim that SensorGuard detects it.

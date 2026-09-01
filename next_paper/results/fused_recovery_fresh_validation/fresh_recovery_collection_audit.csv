@@ -1,0 +1,16 @@
+run_id,family,variant,target,node_return_code,verifier_return_code,scope_serial,scope_samples,scope_overflow_flags,scope_clipping_fraction_a,scheduled_start_error_ms,meaningful_optimization_progress
+recovery_01_fused_update_smaller_deeper_r1,fused_update,smaller_deeper,1,0,0,12789/2929,999156,0,0.0,0.07653236389160156,True
+recovery_02_forward3_smaller_deeper_r1,forward3,smaller_deeper,0,0,0,12789/2929,999156,0,0.0,0.07486343383789062,
+recovery_03_adamw_smaller_deeper_r1,adamw,smaller_deeper,1,0,0,12789/2929,999156,0,0.0,0.07390975952148438,True
+recovery_04_dummy_write_smaller_deeper_r1,dummy_write,smaller_deeper,0,0,0,12789/2929,999156,0,0.0,0.07390975952148438,
+recovery_05_forward_smaller_deeper_r1,forward,smaller_deeper,0,0,0,12789/2929,999156,0,0.0,0.06389617919921875,
+recovery_06_fused_update_baseline_shape_new_seed_r2,fused_update,baseline_shape_new_seed,1,0,0,12789/2929,999156,0,0.0,0.07534027099609375,True
+recovery_07_forward3_baseline_shape_new_seed_r2,forward3,baseline_shape_new_seed,0,0,0,12789/2929,999156,0,0.0,0.07653236389160156,
+recovery_08_adamw_baseline_shape_new_seed_r2,adamw,baseline_shape_new_seed,1,0,0,12789/2929,999156,0,0.0,0.07510185241699219,True
+recovery_09_dummy_write_baseline_shape_new_seed_r2,dummy_write,baseline_shape_new_seed,0,0,0,12789/2929,999156,0,0.0,0.07653236389160156,
+recovery_10_forward_baseline_shape_new_seed_r2,forward,baseline_shape_new_seed,0,0,0,12789/2929,999156,0,0.0,0.07605552673339844,
+recovery_11_fused_update_wider_shallower_r3,fused_update,wider_shallower,1,0,0,12789/2929,999156,0,0.0,0.07534027099609375,True
+recovery_12_forward3_wider_shallower_r3,forward3,wider_shallower,0,0,0,12789/2929,999156,0,0.0,0.07557868957519531,
+recovery_13_adamw_wider_shallower_r3,adamw,wider_shallower,1,0,0,12789/2929,999156,0,0.0,0.07414817810058594,True
+recovery_14_dummy_write_wider_shallower_r3,dummy_write,wider_shallower,0,0,0,12789/2929,999156,0,0.0,0.03933906555175781,
+recovery_15_forward_wider_shallower_r3,forward,wider_shallower,0,0,0,12789/2929,999156,0,0.0,0.07414817810058594,

@@ -54,9 +54,58 @@ def main() -> int:
                 if group.alert.any() else None,
         })
     summary = pd.DataFrame(summary_rows)
+    controls = rows[rows.target == 0]
+    fused = rows[rows.family == "fused_update"]
+    adamw = rows[rows.family == "adamw"]
+    negative_hours = sum(
+        float(run["duration_s"]) / 3600
+        for run in plan["runs"] if int(run["target"]) == 0
+    )
+    confusion = pd.DataFrame([{
+        "artifact_sha256": digest,
+        "fused_runs": len(fused), "fused_detected": int(fused.alert.sum()),
+        "adamw_runs": len(adamw), "adamw_detected": int(adamw.alert.sum()),
+        "matched_control_runs": len(controls),
+        "matched_control_false_alerts": int(controls.alert.sum()),
+        "matched_control_negative_gpu_hours": negative_hours,
+        "false_alerts_per_gpu_hour": float(controls.alert.sum()) / negative_hours,
+        "acceptable_recovery": bool(
+            fused.alert.sum() == len(fused) and controls.alert.sum() == 0),
+    }])
+    node_status = pd.read_csv(args.node_root / "status_node.csv").set_index("run_id")
+    pico_status = pd.read_csv(args.pico_root / "status_verifier.csv").set_index("run_id")
+    audit_rows = []
+    for run in plan["runs"]:
+        run_id = run["run_id"]
+        meta = json.loads((args.pico_root / run_id / "pico_u0_meta.json").read_text())
+        records = [
+            json.loads(line.removeprefix("useful_work "))
+            for line in (args.node_root / run_id / "workload.stdout").read_text().splitlines()
+            if line.startswith("useful_work ")
+        ]
+        workload = records[0] if len(records) == 1 else {}
+        audit_rows.append({
+            "run_id": run_id, "family": run["mode"], "variant": run["variant"],
+            "target": int(run["target"]),
+            "node_return_code": int(node_status.loc[run_id, "return_code"]),
+            "verifier_return_code": int(pico_status.loc[run_id, "return_code"]),
+            "scope_serial": meta["serial"], "scope_samples": int(meta["samples"]),
+            "scope_overflow_flags": int(meta["overflow_flags"]),
+            "scope_clipping_fraction_a": float(meta["clipping_fraction_a"]),
+            "scheduled_start_error_ms": 1000 * abs(
+                float(workload.get("start_epoch_s", 0)) - float(run["start_epoch_s"])),
+            "meaningful_optimization_progress": workload.get(
+                "meaningful_optimization_progress")
+                if run["mode"] in {"fused_update", "adamw"} else None,
+        })
+    audit = pd.DataFrame(audit_rows)
     args.output_dir.mkdir(parents=True, exist_ok=True)
     rows.to_csv(args.output_dir / "fresh_recovery_run_predictions.csv", index=False)
     summary.to_csv(args.output_dir / "fresh_recovery_family_summary.csv", index=False)
+    confusion.to_csv(args.output_dir / "fresh_recovery_confusion.csv", index=False)
+    audit.to_csv(args.output_dir / "fresh_recovery_collection_audit.csv", index=False)
+    (args.output_dir / "fresh_recovery_validation_plan.json").write_text(
+        json.dumps(plan, indent=2) + "\n")
     print(summary.to_string(index=False))
     return 0
 

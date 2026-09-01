@@ -1,0 +1,2 @@
+artifact_sha256,fused_runs,fused_detected,adamw_runs,adamw_detected,matched_control_runs,matched_control_false_alerts,matched_control_negative_gpu_hours,false_alerts_per_gpu_hour,acceptable_recovery
+2f922014b1a132b20cf605746584dea074d6a72bcbc91607589bf3389a9db648,3,3,3,3,9,9,0.1875,48.0,False

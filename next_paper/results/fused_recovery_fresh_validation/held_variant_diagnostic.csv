@@ -1,0 +1,16 @@
+protocol,modality,model,split,run_id,family,target,alert,time_to_alert_s,max_probability,mean_probability,fit_runs,threshold,rule_windows,rule_hits
+fit_old_plus_variants12,Electrical,random_forest,test,recovery_11_fused_update_wider_shallower_r3,fused_update,1,0,,0.1225,0.11870312499999999,55,0.5,3,3
+fit_old_plus_variants12,Electrical,random_forest,test,recovery_12_forward3_wider_shallower_r3,forward3,0,0,,0.2313958333333333,0.22915625,55,0.5,3,3
+fit_old_plus_variants12,Electrical,random_forest,test,recovery_13_adamw_wider_shallower_r3,adamw,1,1,60.0,0.9983333333333333,0.9964583333333332,55,0.5,3,3
+fit_old_plus_variants12,Electrical,random_forest,test,recovery_14_dummy_write_wider_shallower_r3,dummy_write,0,0,,0.09116666666666667,0.07982291666666667,55,0.5,3,3
+fit_old_plus_variants12,Electrical,random_forest,test,recovery_15_forward_wider_shallower_r3,forward,0,0,,0.071875,0.05848958333333333,55,0.5,3,3
+fit_old_plus_variants12,Electrical,extra_trees,test,recovery_11_fused_update_wider_shallower_r3,fused_update,1,0,,0.20484390126589808,0.19629881070103647,55,0.5,3,3
+fit_old_plus_variants12,Electrical,extra_trees,test,recovery_12_forward3_wider_shallower_r3,forward3,0,0,,0.4354694900713566,0.42303178922729934,55,0.5,3,3
+fit_old_plus_variants12,Electrical,extra_trees,test,recovery_13_adamw_wider_shallower_r3,adamw,1,1,60.0,0.985,0.985,55,0.5,3,3
+fit_old_plus_variants12,Electrical,extra_trees,test,recovery_14_dummy_write_wider_shallower_r3,dummy_write,0,0,,0.3166412796944564,0.29920079886443884,55,0.5,3,3
+fit_old_plus_variants12,Electrical,extra_trees,test,recovery_15_forward_wider_shallower_r3,forward,0,0,,0.15201541031846758,0.13082816079254214,55,0.5,3,3
+fit_old_plus_variants12,Electrical,logistic,test,recovery_11_fused_update_wider_shallower_r3,fused_update,1,0,,0.7005444666877129,0.42978583423024785,55,0.5,3,3
+fit_old_plus_variants12,Electrical,logistic,test,recovery_12_forward3_wider_shallower_r3,forward3,0,1,60.0,0.8852530026274209,0.8354681608432863,55,0.5,3,3
+fit_old_plus_variants12,Electrical,logistic,test,recovery_13_adamw_wider_shallower_r3,adamw,1,1,60.0,0.9999808800866613,0.9999456566904765,55,0.5,3,3
+fit_old_plus_variants12,Electrical,logistic,test,recovery_14_dummy_write_wider_shallower_r3,dummy_write,0,1,60.0,0.9999999342711553,0.9999983707202066,55,0.5,3,3
+fit_old_plus_variants12,Electrical,logistic,test,recovery_15_forward_wider_shallower_r3,forward,0,1,60.0,0.8755003402123085,0.732934716079309,55,0.5,3,3
