@@ -44,7 +44,10 @@ def main() -> int:
                 "duration_s": args.duration_s,
                 "start_epoch_s": start + cell * args.cadence_s,
                 "seed": 13000 + cell,
-                "cuda_device": f"cuda:{args.gpu_index}",
+                # The runner isolates the physical UUID, so it becomes CUDA
+                # ordinal zero even when an unhealthy lower-index GPU is
+                # omitted from CUDA enumeration.
+                "cuda_device": "cuda:0",
             })
             cell += 1
     plan = {
@@ -55,6 +58,7 @@ def main() -> int:
         ),
         "gpu_index": args.gpu_index,
         "expected_cuda_uuid": args.gpu_uuid,
+        "cuda_visible_devices": args.gpu_uuid,
         "scope_serial": "12789/2929",
         "scope_channel": "A",
         "sample_interval_us": 100,

@@ -4,6 +4,7 @@
 import argparse
 import csv
 import json
+import os
 import subprocess
 import sys
 import time
@@ -22,7 +23,8 @@ def node_command(run: dict, python: str, output: Path) -> list[str]:
               "--output", str(output)]
     if run["kind"] == "development":
         return [python, "scripts/workloads/development_evasion_workload.py", "--mode", run["mode"],
-                "--secondary-device", "cuda:2", *common]
+                "--secondary-device", str(run.get("secondary_cuda_device", "cuda:1")),
+                *common]
     if run["kind"] == "control":
         return [python, "scripts/workloads/scheduled_control_workload.py", "--mode", run["mode"], *common]
     if run["kind"] == "fused":
@@ -121,8 +123,17 @@ def main() -> int:
                 stdout=(run_dir / "nvml.stdout").open("w"), stderr=(run_dir / "nvml.stderr").open("w"))
             command = node_command(run, args.python, run_dir / "workload.json")
             started = time.time()
-            code = subprocess.run(command, stdout=(run_dir / "workload.stdout").open("w"),
-                                  stderr=(run_dir / "workload.stderr").open("w")).returncode
+            workload_env = os.environ.copy()
+            if plan.get("cuda_visible_devices"):
+                workload_env["CUDA_VISIBLE_DEVICES"] = str(
+                    plan["cuda_visible_devices"]
+                )
+            code = subprocess.run(
+                command,
+                stdout=(run_dir / "workload.stdout").open("w"),
+                stderr=(run_dir / "workload.stderr").open("w"),
+                env=workload_env,
+            ).returncode
             nvml_code = nvml.wait()
             code = code or nvml_code
         rows.append({"run_id": run["run_id"], "role": args.role, "return_code": code,
