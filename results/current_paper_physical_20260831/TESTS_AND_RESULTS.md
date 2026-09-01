@@ -1,5 +1,16 @@
 # Current-paper synchronized physical tests (2026-08-31)
 
+> **INVALIDATED 2026-09-01:** the node1 CUDA ordinal shifted after physical
+> GPU0 became unhealthy. These runs launched the workload as CUDA ordinal 1
+> while NVML and PicoScope monitored physical GPU1; the workload resolved to
+> physical GPU2. The audit found 0% NVML utilization for every family,
+> including ordinary training. Consequently this file's synchronized-30
+> detector metrics, frozen models, sealed scores, CUSUM result, privacy result,
+> and minimum retained sensor decision are not paper evidence. The raw
+> hard-family campaign is separately valid because it isolated the target by
+> UUID. Replacement collection uses commit a683c7d or later and records
+> CUDA_VISIBLE_DEVICES in the plan.
+
 ## Setup
 
 RTX 3090 GPU1 on node1; PicoScope serial `12789/2929`, channel A; 10 kS/s electrical acquisition plus 1 Hz NVML. Each of ten workload families has three independent 105-second runs (30 runs total).

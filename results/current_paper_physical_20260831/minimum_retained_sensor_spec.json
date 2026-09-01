@@ -10,5 +10,5 @@
     "tn": 15,
     "exactly_preserves_full_rate_run_decisions": true
   },
-  "qualification": "offline decimation and quantization; hardware-in-loop confirmation is separate"
+  "qualification": "INVALIDATED by CUDA-ordinal mismatch; recompute from UUID-isolated synchronized runs"
 }
