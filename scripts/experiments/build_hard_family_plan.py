@@ -23,6 +23,8 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--start-delay-s", type=float, default=90.0)
+    parser.add_argument("--start-epoch-s", type=float,
+                        help="explicit shared start time; overrides --start-delay-s")
     parser.add_argument("--duration-s", type=int, default=300)
     parser.add_argument("--cadence-s", type=int, default=345)
     parser.add_argument("--repetitions", type=int, default=3)
@@ -33,7 +35,7 @@ def main() -> int:
     parser.add_argument("--workdir", type=Path, default=Path("/home/felkru/SPAR-GPU-monitoring"))
     args = parser.parse_args()
 
-    start = time.time() + args.start_delay_s
+    start = args.start_epoch_s if args.start_epoch_s is not None else time.time() + args.start_delay_s
     runs = []
     cell = 0
     # Repetition-major order balances sensor drift across attack families.
