@@ -5,6 +5,10 @@ all relevant committed evidence from `robirahman/GPU-monitoring` and
 `Tajdari-S/sensorguard` without altering or duplicating Robi's data. The
 machine-readable provenance and rerun decisions are in
 [`../results/tables/combined_evidence_inventory.csv`](../results/tables/combined_evidence_inventory.csv).
+The code-ready, freeze-gated extension for chunked updates, throttling,
+inference dilution, and sealed diluted LoRA is specified in
+[`STRONGER_PAPER_PROTOCOL.md`](STRONGER_PAPER_PROTOCOL.md); it has not yet been
+collected and therefore supplies no result claims yet.
 
 ## Detector being evaluated
 

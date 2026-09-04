@@ -3,12 +3,14 @@
 
 import argparse
 import csv
+import hashlib
 import json
 import os
 import subprocess
 import sys
 import time
 from pathlib import Path
+from typing import Optional
 
 
 def wait_until(epoch_s: float) -> None:
@@ -35,6 +37,20 @@ def node_command(run: dict, python: str, output: Path) -> list[str]:
             ("batch_size", "--batch-size"), ("size", "--size"),
             ("depth", "--depth"), ("dtype", "--dtype"),
             ("learning_rate", "--learning-rate"),
+        ):
+            if plan_key in run:
+                command.extend([cli_flag, str(run[plan_key])])
+        return command
+    if run["kind"] == "redteam":
+        command = [python, "scripts/workloads/physical_redteam_workload.py", "--mode", run["mode"],
+                   *common]
+        for plan_key, cli_flag in (
+            ("batch_size", "--batch-size"), ("size", "--size"),
+            ("depth", "--depth"), ("dtype", "--dtype"),
+            ("learning_rate", "--learning-rate"),
+            ("optimizer_chunks", "--optimizer-chunks"),
+            ("dilution", "--dilution"), ("throttle_s", "--throttle-s"),
+            ("lora_rank", "--lora-rank"),
         ):
             if plan_key in run:
                 command.extend([cli_flag, str(run[plan_key])])
@@ -71,6 +87,23 @@ def write_status(path: Path, rows: list[dict]) -> None:
         writer.writerows(rows)
 
 
+def validate_frozen_manifest(plan: dict, path: Optional[Path]) -> Optional[str]:
+    """Fail closed before a sealed plan can expose its held-out family."""
+
+    if not plan.get("requires_frozen_detector_manifest"):
+        return None
+    if path is None or not path.is_file():
+        raise RuntimeError("sealed plan requires --frozen-manifest")
+    frozen = json.loads(path.read_text())
+    if frozen.get("status") != "frozen":
+        raise RuntimeError("frozen manifest must declare status='frozen'")
+    required = {"feature_contract", "threshold", "run_rule", "fit_run_ids"}
+    missing = sorted(required - set(frozen))
+    if missing:
+        raise RuntimeError(f"frozen manifest is missing required fields: {missing}")
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--role", required=True, choices=["node", "verifier"])
@@ -79,9 +112,15 @@ def main() -> int:
     parser.add_argument("--python", default=sys.executable)
     parser.add_argument("--scope-python", default="/home/felkru/picoenv/bin/python")
     parser.add_argument("--scope-serial", default="12789/2929")
+    parser.add_argument(
+        "--frozen-manifest",
+        type=Path,
+        help="required for a plan marked requires_frozen_detector_manifest",
+    )
     args = parser.parse_args()
 
     plan = json.loads(args.plan.read_text())
+    frozen_manifest_sha256 = validate_frozen_manifest(plan, args.frozen_manifest)
     if args.role == "node" and plan.get("expected_cuda_uuid"):
         actual_uuid = subprocess.check_output(
             ["nvidia-smi", f"--id={int(plan.get('gpu_index', 1))}",
@@ -99,7 +138,8 @@ def main() -> int:
         run_dir.mkdir(parents=True, exist_ok=True)
         if time.time() > run["start_epoch_s"] + 2:
             rows.append({"run_id": run["run_id"], "role": args.role, "return_code": 98,
-                         "started_epoch_s": time.time(), "finished_epoch_s": time.time()})
+                         "started_epoch_s": time.time(), "finished_epoch_s": time.time(),
+                         "frozen_manifest_sha256": frozen_manifest_sha256})
             write_status(args.out_root / f"status_{args.role}.csv", rows)
             continue
         if args.role == "verifier":
@@ -107,7 +147,8 @@ def main() -> int:
             # verifier.  Start early enough to retain a measured pre-run baseline.
             wait_until(run["start_epoch_s"] - 25)
             command = [args.scope_python, "scripts/loggers/pico_logger.py",
-                       "--serial", args.scope_serial, "--duration-s", str(run["duration_s"] + 25),
+                       "--serial", str(plan.get("scope_serial", args.scope_serial)),
+                       "--duration-s", str(run["duration_s"] + 25),
                        "--sample-interval-us", str(plan.get("sample_interval_us", 100)),
                        "--output-prefix", str(run_dir / "pico")]
             started = time.time()
@@ -136,7 +177,8 @@ def main() -> int:
             nvml_code = nvml.wait()
             code = code or nvml_code
         rows.append({"run_id": run["run_id"], "role": args.role, "return_code": code,
-                     "started_epoch_s": started, "finished_epoch_s": time.time()})
+                     "started_epoch_s": started, "finished_epoch_s": time.time(),
+                     "frozen_manifest_sha256": frozen_manifest_sha256})
         write_status(args.out_root / f"status_{args.role}.csv", rows)
     return 0 if rows and all(row["return_code"] == 0 for row in rows) else 1
 
