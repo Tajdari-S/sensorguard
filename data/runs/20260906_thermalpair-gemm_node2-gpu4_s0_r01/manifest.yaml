@@ -1,0 +1,61 @@
+run_id: 20260906_thermalpair-gemm_node2-gpu4_s0_r01
+git_commit: 24917ad0a5f71d311919957b98c498ea9a0f37f4
+operator: supervisor
+start_utc: '2026-09-06T20:11:39.106474+00:00'
+end_utc: '2026-09-06T20:14:19.305502+00:00'
+workload:
+  family: non_ml
+  name: thermalpair_gemm
+  command: python scripts/workloads/hpc_workload.py --mode gemm --device cuda:4 --duration-s
+    120 --seed 4
+  seed: 0
+  duration_s: 124.564
+hardware:
+  gpu_index_under_test: 4
+  gpu_set: '4'
+sensors:
+  nvml: true
+  dcgm: true
+  electrical: false
+  thermal_camera: false
+  contact_temperature: false
+  ultrasound: false
+  rf_sdr: false
+  network_mirror: false
+sensor_channels:
+- channel_id: nvml.gpu4
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW
+  health: pass
+  samples: 160
+  missing_fraction: 0.0
+  alignment_error_ms: 13.9
+  edge_latency_ms: 1573.9
+  bursts_detected: 6
+  bursts_expected: 6
+- channel_id: dcgm.all
+  sample_rate_hz: 1.0
+  clock_source: CLOCK_MONOTONIC_RAW(receipt)
+  health: pass
+  samples: 159
+  error_lines: 0
+marker_bursts:
+  pre:
+  - - 715329.778739
+    - 715331.822751
+  - - 715333.82305
+    - 715335.842062
+  - - 715337.842315
+    - 715339.868192
+  post:
+  - - 715469.266087
+    - 715471.286237
+  - - 715473.286535
+    - 715475.332113
+  - - 715477.332364
+    - 715479.381721
+profiled: false
+artifact_checksums:
+  dcgm.tsv: 7b9b8bb6cd31c71694db0ab163e8f1fb0074ec3a8206928503f7467da5ff6424
+  nvml.csv: 5f83c67d3fdeaede7895da99479f4be028a9f84ae0d3b13bd6afb6915d16f43c
+status: completed
