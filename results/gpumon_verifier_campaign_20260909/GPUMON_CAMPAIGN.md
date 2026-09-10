@@ -18,6 +18,12 @@ sustained GPU load (≥30 samples at util>50% & mem>1 GB): **51**.
   (node1, where they are wired, is offline). Pico traces are captured and
   dual-timestamped (CLOCK_MONOTONIC_RAW + epoch_ns) for completeness and
   future alignment, but are **not** a coupled electrical signal for these runs.
+  A machine-readable flag `pico_channel.json` (`{"coupled": false,
+  "use_as_feature": false, ...}`) is written into every `data/runs/gpumon_*`
+  run dir, and `PICO_UNCOUPLED_20260909T155817Z.json` here mirrors it —
+  feature-extraction/fusion code must read this and exclude the pico channel
+  from any verifier-GPU features. The raw pico traces are retained as the
+  documented null control, not deleted.
 - **Thermal is N/A** for the verifier (camera aims at node2; see
   `docs/THERMAL_FINDINGS.md`).
 - **"sustained_load"** counts NVML samples with util>50% AND mem>1 GB. The two

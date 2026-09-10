@@ -1,0 +1,10 @@
+{
+  "channel": "pico_electrical",
+  "coupled": false,
+  "use_as_feature": false,
+  "reason": "PicoScope probes are not on the verifier GPU power rails (wired to node1, which was offline). Traces are flat vs GPU load.",
+  "evidence": "idle-vs-load test 2026-09-09: 0.0 mV p2p delta across all 6 units; per-run pico_max_p2p_mv flat ~54-91 mV regardless of workload.",
+  "captured_for": "completeness + dual-timestamp (CLOCK_MONOTONIC_RAW + epoch_ns) alignment-readiness if probes are rewired to the verifier later.",
+  "units": 6,
+  "applies_to_stamp": "20260909T155817Z"
+}
